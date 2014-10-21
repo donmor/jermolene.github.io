@@ -18882,7 +18882,7 @@ The ''action-sendmessage'' widget is invisible. Any content within it is ignored
 |!Attribute |!Description |
 |$message |The message to send (eg, [[WidgetMessage: tm-new-tiddler]]) |
 |$param |Optional parameter string whose meaning is dependent on the message being sent |
-|//{any attributes not starting with $}// |Multiple parameters that are attached to the message if the `$param$` attribute is not provided |
+|//{any attributes not starting with $}// |Multiple parameters that are attached to the message if the `$param` attribute is not provided |
 
 ! Examples
 
@@ -26975,12 +26975,12 @@ The add field  message is usually generated with the ButtonWidget, and is handle
 </pre>
 </div>
 <div caption="tm-add-tag" created="20140908185153663" modified="20140908185153663" tags="Messages" title="WidgetMessage: tm-add-tag" type="text/vnd.tiddlywiki">
-<pre>The `tm-add-tag` message is handled by the FieldMangerWidget. It adds the specified tag.
+<pre>The `tm-add-tag` message is handled by the FieldManglerWidget. It adds the specified tag.
 
 |!Name |!Description |
 |param |Name of tag to add |
 
-The add tag message is usually generated with the ButtonWidget, and is handled by the FieldMangerWidget.
+The add tag message is usually generated with the ButtonWidget, and is handled by the FieldManglerWidget.
 </pre>
 </div>
 <div caption="tm-auto-save-wiki" created="20140830112325641" modified="20140830115149288" tags="Messages" title="WidgetMessage: tm-auto-save-wiki" type="text/vnd.tiddlywiki">
@@ -27145,7 +27145,7 @@ The title for the draft tiddler is chosen according to these rules:
 * If a hashmap was used without a title field, use a default title, if necessary making it unique with a numeric suffix
 * If a template tiddler was used, use the title of the template tiddler, if necessary making it unique with a numeric suffix
 
-The new tiddler message is usually generated with the LinkWidget, ButtonWidget or ActionSendMessageWidget and is handled by the NavigatorWidget.
+The new tiddler message is usually generated with the ButtonWidget or ActionSendMessageWidget and is handled by the NavigatorWidget.
 
 ! Example
 
