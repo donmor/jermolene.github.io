@@ -24898,7 +24898,7 @@ Instructions for use:
 # Verify that your changes have been saved correctly
 </pre>
 </div>
-<div created="20130825213500000" modified="20140912141002181" tags="Saving" title="Saving on TiddlySpot" type="text/vnd.tiddlywiki">
+<div created="20130825213500000" modified="20141009010050619" tags="Saving" title="Saving on TiddlySpot" type="text/vnd.tiddlywiki">
 <pre>TiddlySpot is a free hosting service for TiddlyWiki documents from Simon and Daniel Baird. The easiest way to get started is to sign up for a new wiki at http://tiddlyspot.com - by default you'll get the latest release of TiddlyWiki.
 
 You can upload an existing TiddlyWiki document from your local disc to TiddlySpot it by following these steps:
@@ -24909,17 +24909,32 @@ You can upload an existing TiddlyWiki document from your local disc to TiddlySpo
 # Click the &quot;Save Changes&quot; button. You should get a confirmation notification at the top right saying ''Saved wiki''. Saving can take several seconds if you're on a slow connection or working with a large wiki.
 # Navigate to your TiddlySpot URL at http://{wikiname}.tiddlyspot.com/
 
-Note that this procedure does not work in Firefox.
-
-!! TiddlySpot Security
-
-Your password is sent unencrypted when using TiddlySpot. From http://faq.tiddlyspot.com/:
+Note that your password is sent unencrypted when using TiddlySpot. From http://faq.tiddlyspot.com/:
 
 &lt;&lt;&lt;
 ''Is Tiddlyspot secure?''
 
 No. Tiddlyspot does not use SSL/https. Your password is sent in clear text when uploading and when authenticating to access a private site. This means that your Tiddlyspot is vulnerable to packet sniffing and your password could be discovered by a malicious third party. Also your data is transmitted unencrypted when you view your site, even if it is a private site. For this reason please don't put sensitive information such as banking details in your Tiddlyspot and don't use a password that you use for other high security sites.
 &lt;&lt;&lt;
+
+! Problems with saving on TiddlySpot
+
+In case you run into this error when uploading a new or freshly upgraded local TiddlyWiki to TiddlySpot :
+
+&lt;&lt;&lt;
+Error while saving:
+
+Error:NS_ERROR_DOM_BAD_URI: Access to restricted URI denied
+&lt;&lt;&lt;
+
+The upgrade operation falls foul of a security restriction in Firefox. Until this can be resolved, we suggest using Chrome.
+
+*# Use Chrome to open the local TiddlyWiki document you want to upload to TiddlySpot and follow the steps 1 through 5 described above
+*# Once you've checked the TiddlySpot-hosted TiddlyWiki loads properly in Chrome, you should be able to access, edit and [[save using TiddlyFox|Saving with TiddlyFox]] again
+* After you've uploaded your local document once, further editing and saving of the online version hosted on TiddlySpot should work with any modern browser of your choice.
+** Don't forget to fill in the TiddlySpot wikiname and password in your TiddlySpot TiddlyWiki control panel for any new browser you want to use for saving changes
+
+* //See also : [[Upgrading]]//
 </pre>
 </div>
 <div created="20131129092604900" modified="20140912140952153" tags="Saving" title="Saving with the HTML5 fallback saver" type="text/vnd.tiddlywiki">
@@ -26681,7 +26696,7 @@ $$$
 
 </pre>
 </div>
-<div created="20131202102427114" modified="20140919154634754" tags="Features [[Working with TiddlyWiki]]" title="Upgrading" type="text/vnd.tiddlywiki">
+<div created="20131202102427114" modified="20141009004937229" tags="Features [[Working with TiddlyWiki]]" title="Upgrading" type="text/vnd.tiddlywiki">
 <pre>There are regular releases of TiddlyWiki with bug fixes and improvements. It's a good idea to keep up to date by regularly upgrading to the latest version.
 
 ! Introduction
@@ -26691,16 +26706,19 @@ The process described here is for upgrading standalone TiddlyWiki files. There i
 &lt;&lt;&lt;
 When upgrading, please remember the [[The First Rule of Using TiddlyWiki]]:
 
-//Backup your data!//
+//You are responsible for looking after your own data; take care to make backups, especially when upgrading the ~TiddlyWiki core//
 &lt;&lt;&lt;
 
 ! Online upgrading
 
 This process will work on most desktop browsers. Note that none of your personal data leaves your browser with this process.
 
-# Visit the new version tiddywiki in http://tiddlywiki.com/upgrade.html in your browser
+# Locate your TiddlyWiki file in the file system (ie using Windows Explorer, the Finder on Mac OS X, or your file manager on Linux)
+# Visit http://tiddlywiki.com/upgrade.html in your browser
+
 # Drag your old TiddlyWiki HTML file into the browser window
 #* If the file is encrypted you will be prompted for the password
+# Review the list of tiddlers that will be upgraded
 # Click ''Upgrade''
 # Save changes to save the new version
 
@@ -26711,6 +26729,24 @@ This will download a file called ''upgrade.html'' to your computer. This file is
 You can also download http://tiddlywiki.com/upgrade.html locally and perform the same drag-and-drop procedure to upgrade your files.
 
 ! Problems with Upgrades
+
+!! Firefox Security Restrictions
+
+In case you run into this error with the upgrader, upon confirming the upgrade selection :
+
+&lt;&lt;&lt;
+Error while saving:
+
+Error:NS_ERROR_DOM_BAD_URI: Access to restricted URI denied
+&lt;&lt;&lt;
+
+The upgrade operation falls foul of a security restriction in Firefox. Until this can be resolved, we suggest either using the offline upgrader, or using Chrome to perform the upgrade:
+
+*# Use Chrome to open http://tiddlywiki.com/upgrade.html, then drag your local TiddlyWiki html file to be upgraded into the upgrader window, as described above in ''Online upgrading''
+*# After you've saved your upgraded file, you should be able to open it in Firefox and [[save using TiddlyFox|Saving with TiddlyFox]] again
+* //See also : [[Saving on TiddlySpot]]//
+
+!! Incompatible Customisations
 
 It is possible for a customisation applied in a previous version to break when upgraded to the latest version. There are two techniques you can use to help track down issues:
 
