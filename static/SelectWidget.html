@@ -47,7 +47,7 @@ SelectWidget
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 11 months ago
+</a> 90 seconds ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -59,7 +59,7 @@ SelectWidget
 </span>
 </div>
 
-<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The select widget displays an <a class='tc-tiddlylink-external' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select' target='_blank'>HTML select element</a> containing a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements and binds the selected value to the text of a tiddler field or index.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
+<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The select widget displays a popup menu based on a <a class='tc-tiddlylink-external' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select' target='_blank'>HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. The selected value to the text of a specified tiddler field or index.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
 &lt;$list filter='[all[shadows+tiddlers]tags[]sort[title]]'&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;

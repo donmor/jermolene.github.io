@@ -19397,7 +19397,7 @@ This example creates a checkbox that is checked if the field ''status'' is equal
 <pre>{{$:/language/Help/clearpassword}}
 </pre>
 </div>
-<div caption="Code Blocks" created="20131205160047557" modified="20140214190843724" tags="WikiText" title="Code Blocks in WikiText" type="text/vnd.tiddlywiki">
+<div caption="Code Blocks" created="20131205160047557" modified="20141024134125489" tags="WikiText" title="Code Blocks in WikiText" type="text/vnd.tiddlywiki">
 <pre>You can  use triple backticks &lt;code&gt;&amp;#96;&amp;#96;&amp;#96;&lt;/code&gt; to mark code blocks:
 
 &lt;pre&gt;
@@ -19406,13 +19406,32 @@ This will be monospaced
 &amp;#96;&amp;#96;&amp;#96;
 &lt;/pre&gt;
 
-The three backticks need to be at the start of the line and immediately followed by a newline, otherwise they won't be interpreted correctly.
-
 Renders as:
 
 ```
 This will be monospaced
 ```
+
+To be interpreted correctly, the three backticks need to be at the start of the line and immediately followed by a line-break.
+
+Be aware that any preceding paragraph content should be properly terminated with a double line break, too. So, this example is wrong:
+
+&lt;pre&gt;
+This is an ordinary paragraph
+&amp;#96;&amp;#96;&amp;#96;
+This will be monospaced
+&amp;#96;&amp;#96;&amp;#96;
+&lt;/pre&gt;
+
+The correct version is:
+
+&lt;pre&gt;
+This is an ordinary paragraph
+
+&amp;#96;&amp;#96;&amp;#96;
+This will be monospaced
+&amp;#96;&amp;#96;&amp;#96;
+&lt;/pre&gt;
 
 Note that  some keyboard layouts treat the backtick as a [[dead key|http://en.wikipedia.org/wiki/Dead_key]], making it hard to type. The trick is to type three backticks followed by a space. Alternatively, type all six backticks in one go, then a space, and then move the cursor back three characters to type or paste the content.
 
@@ -24492,7 +24511,7 @@ This is another small release with documentation updates and a few bug fixes and
 
 </pre>
 </div>
-<div caption="5.1.4" created="20141020181015200" modified="20141022155524581" released="20141022155524581" tags="ReleaseNotes" title="Release 5.1.4" type="text/vnd.tiddlywiki">
+<div caption="5.1.4" created="20141022155524581" modified="20141022155524581" released="20141022155524581" tags="ReleaseNotes" title="Release 5.1.4" type="text/vnd.tiddlywiki">
 <pre>//[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.3...v5.1.4]]//
 
 This is a small release with documentation improvements and some important bug fixes from [[Release 5.1.3]].
@@ -25118,10 +25137,10 @@ To the right of the search box, when there are no search results displayed below
 <div tags="Second" title="SecondTwo">
 <pre>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</pre>
 </div>
-<div caption="select" created="20131024141900000" modified="20131030083700000" tags="Widgets" title="SelectWidget">
+<div caption="select" created="20131024141900000" modified="20141024155137508" tags="Widgets" title="SelectWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
-The select widget displays an [[HTML select element|https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select]] containing a list of items defined by `&lt;option&gt;` and `&lt;optgroup&gt;` elements and binds the selected value to the text of a tiddler field or index.
+The select widget displays a popup menu based on a [[HTML select element|https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select]]. The popup (or dropdown) contains a list of items defined by `&lt;option&gt;` and `&lt;optgroup&gt;` elements. The selected value to the text of a specified tiddler field or index.
 
 For example, this select widget displays a list of the tags in this wiki:
 

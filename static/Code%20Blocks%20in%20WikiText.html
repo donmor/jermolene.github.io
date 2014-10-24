@@ -47,7 +47,7 @@ Code Blocks in WikiText
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 8 months ago
+</a> 2 hours ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -63,7 +63,18 @@ Code Blocks in WikiText
 ```
 This will be monospaced
 ```
-</pre></p><p>The three backticks need to be at the start of the line and immediately followed by a newline, otherwise they won't be interpreted correctly.</p><p>Renders as:</p><pre><code>This will be monospaced</code></pre><p>Note that  some keyboard layouts treat the backtick as a <a class='tc-tiddlylink-external' href='http://en.wikipedia.org/wiki/Dead_key' target='_blank'>dead key</a>, making it hard to type. The trick is to type three backticks followed by a space. Alternatively, type all six backticks in one go, then a space, and then move the cursor back three characters to type or paste the content.</p></div>
+</pre></p><p>Renders as:</p><pre><code>This will be monospaced</code></pre><p>To be interpreted correctly, the three backticks need to be at the start of the line and immediately followed by a line-break.</p><p>Be aware that any preceding paragraph content should be properly terminated with a double line break, too. So, this example is wrong:</p><p><pre>
+This is an ordinary paragraph
+```
+This will be monospaced
+```
+</pre></p><p>The correct version is:</p><p><pre>
+This is an ordinary paragraph
+
+```
+This will be monospaced
+```
+</pre></p><p>Note that  some keyboard layouts treat the backtick as a <a class='tc-tiddlylink-external' href='http://en.wikipedia.org/wiki/Dead_key' target='_blank'>dead key</a>, making it hard to type. The trick is to type three backticks followed by a space. Alternatively, type all six backticks in one go, then a space, and then move the cursor back three characters to type or paste the content.</p></div>
 
 
 
