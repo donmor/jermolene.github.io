@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.5-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.5-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText'><div class='tc-tiddler-title'>
+<h2 class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='info' class='tc-btn-invisible' title='Show information for this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span style='fill:;'>
+
+</span>
+
+
+
+<span class='tc-title'>
+Macros in WikiText
+</span>
+
+</h2>
+
+<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 4 months ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;'>
+ WikiText
+</button>
+
+<span class=' tc-reveal' hidden='true'></span>
+</span>
+</div>
+
+<div class='tc-tiddler-body'><h1 class=''>Defining Macros</h1><p>Macros are snippets of text that can be inserted with a concise shortcut.</p><p>Multi-line macros are defined like this:</p><pre><code>\define mysamplemacro(name:&quot;Bugs Bunny&quot;,address:&quot;Rabbit Hole Hill&quot;)
+Hi, I'm $name$ and I live in $address$
+\end</code></pre><h2 class=''>Parameter Substitution</h2><p>The first line of the definition specifies the macro name and any parameters. Parameters are named and can optionally have default values that are used if the parameter isn't specified at the time of calling. The body of the macro definition follows, terminated with <code>\end</code> on a line by itself.</p><p>The text of the macro can reference parameters using the <code>$name$</code> syntax. The value of the parameter is substituted at the time the macro is invoked.</p><h2 class=''>Variable Substitution</h2><p>The values of named variables can also be substituted into the text of a macro using the syntax <code>$(variable)$</code>. For example:</p><pre><code>\define mysamplemacro2()
+Hi, I'm $(name)$ and I live in $(address)$
+\end
+\define name() Bugs Bunny
+
+&lt;$set name=&quot;address&quot; value=&quot;Rabbit Hole Hill&quot;&gt;
+&lt;&lt;mysamplemacro2&gt;&gt;
+&lt;/$set&gt;</code></pre><p>The result is: <code>Hi, I'm Bugs Bunny and I live in Rabbit Hole Hill</code>.</p><h2 class=''>Single Line macros</h2><p>Single-line macros can omit the <code>\end</code> marker like this:</p><pre><code>\define mysamplemacro3(name:&quot;Bugs Bunny&quot;) Hi, I'm $name$</code></pre><h2 class=''>Macro Scope</h2><p>Macro definitions must be placed at the top of a tiddler. Macros are available to the tiddler that defines them, plus any tiddlers that it transcludes.</p><p>Global macros can be defined in any tiddler with the tag <a class='tc-tiddlylink tc-tiddlylink-missing' href='%2524%253A%252Ftags%252FMacro.html'>$:/tags/Macro</a>. They are then available within all tiddlers.</p><p>Macros can be imported from other tiddlers with the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ImportVariablesWidget.html'>ImportVariablesWidget</a>.</p><p><a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/index.html#JavaScript%20Macros' target='_blank'>JavaScript Macros</a> can also be used for more flexibility.</p><h1 class=''>Using Macros</h1><p>In their simplest form, macros are used like this:</p><pre><code>&lt;&lt;mysamplemacro&gt;&gt;
+&lt;&lt;mysamplemacro &quot;Donald Duck&quot;&gt;&gt;
+&lt;&lt;mysamplemacro &quot;Mickey Mouse&quot; &quot;Mouse House&quot;&gt;&gt;
+&lt;&lt;mysamplemacro name:&quot;Minnie Mouse&quot; address:&quot;Mouse House&quot;&gt;&gt;</code></pre><p>Resulting in:</p><pre><code>Hi I'm Bugs Bunny and I live in Rabbit Hole Hill
+Hi I'm Donald Duck and I live in Rabbit Hole Hill
+Hi I'm Mickey Mouse and I live in Mouse House
+Hi I'm Minnie Mouse and I live in Mouse House
+</code></pre><p>Note that parameter values that do not specify names are mapped in sequence to the parameters defined in the macro.</p><h2 class=''>Multiline Parameters</h2><p>Parameters can include line breaks. For example:</p><pre><code>&lt;&lt;mysamplemacro &quot;Mickey Mouse&quot; &quot;Mouse House,
+Mouse Lane,
+Rodentville,
+Ratland.&quot;&gt;&gt;</code></pre><p>By using triple-double quotes you can specify parameter values that include single double quotes. For example:</p><pre><code>&lt;&lt;mysamplemacro &quot;Mickey Mouse&quot; &quot;&quot;&quot;Mouse House,
+&quot;Mouse&quot; Lane,
+Rodentville,
+Ratland.&quot;&quot;&quot;&gt;&gt;</code></pre><h1 class=''>Using Macros with the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='MacroCallWidget.html'>MacroCallWidget</a></h1><p>Macros can also be invoked with the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='MacroCallWidget.html'>MacroCallWidget</a></p><pre><code>&lt;&lt;italicise &quot;Text to be made into italics&quot;&gt;&gt;
+&lt;&lt;italicise text:&quot;Text to be made into italics&quot;&gt;&gt;
+&lt;$macrocall $name=&quot;italicise&quot; text=&quot;Text to be made into italics&quot;/&gt;
+&lt;$macrocall $name=&quot;italicise&quot; text={{Title of tiddler containing text to be italicised}}/&gt;
+&lt;$macrocall $name=&quot;italicise&quot; text=&lt;&lt;textMaker &quot;Another macro to generate the text to be italicised&quot;&gt;&gt;/&gt;</code></pre><p>Also see:</p><ul><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros.html'>Macros</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='MacroCallWidget.html'>MacroCallWidget</a></li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

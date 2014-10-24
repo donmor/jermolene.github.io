@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.5-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.5-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts'><div class='tc-tiddler-title'>
+<h2 class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='info' class='tc-btn-invisible' title='Show information for this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span style='fill:;'>
+
+</span>
+
+
+
+<span class='tc-title'>
+TemplateTiddlers
+</span>
+
+</h2>
+
+<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 7 months ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:#FF8383;'>
+ Concepts
+</button>
+
+<span class=' tc-reveal' hidden='true'></span>
+</span>
+</div>
+
+<div class='tc-tiddler-body'><p>A template tiddler is not in fact a type of tiddler, it is a role in which a tiddler can be used.</p><p>When text is wikified there is the concept of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>CurrentTiddler</a>. Certain widgets (like the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ViewWidget.html'>ViewWidget</a>) can use the current tiddler implicitly. For example:</p><pre><code>&lt;$view tiddler=&quot;HelloThere&quot; field=&quot;myfield&quot;/&gt; - displays the field &quot;myfield&quot; of the tiddler HelloThere
+&lt;$view field=&quot;myfield&quot;/&gt; - displays the field &quot;myfield&quot; of the current tiddler</code></pre><p>When the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget.html'>TranscludeWidget</a> pulls in the content from another tiddler, by default it does not change the current tiddler, so the transcluded content behaves as if it were in the context of the transcluding tiddler.</p><p>So, if we have a tiddler &quot;A&quot; that contains:</p><pre><code>&lt;$view field=&quot;myfield&quot;/&gt;</code></pre><p>And then transclude it from a tiddler &quot;B&quot; like so:</p><pre><code>My field value is: &lt;$transclude tiddler=&quot;A&quot;/&gt;</code></pre><p>The result will be that the field from the tiddler &quot;B&quot; is displayed; in other words, tiddler &quot;A&quot; is acting as a template for displaying information from tiddler &quot;B&quot;.</p><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerWidget.html'>TiddlerWidget</a> is used to change the current tiddler. Consider a tiddler &quot;C&quot; containing:</p><pre><code>&lt;$tiddler tiddler=&quot;A&quot;&gt;&lt;$transclude tiddler=&quot;A&quot;/&gt;&lt;/$tiddler&gt;</code></pre><p>It is still transcluding tiddler &quot;A&quot;, but now it is also setting the current tiddler to &quot;A&quot;. The result is therefore that the field &quot;myfield&quot; for tiddler &quot;A&quot; is displayed.</p><p>The shorthand syntax for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion%2520in%2520WikiText.html'>Transclusion in WikiText</a> actually generates both a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerWidget.html'>TiddlerWidget</a> and a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget.html'>TranscludeWidget</a>.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

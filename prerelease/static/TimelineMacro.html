@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.5-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.5-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros'><div class='tc-tiddler-title'>
+<h2 class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='info' class='tc-btn-invisible' title='Show information for this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span style='fill:;'>
+
+</span>
+
+
+
+<span class='tc-title'>
+TimelineMacro
+</span>
+
+</h2>
+
+<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 8 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;'>
+ Macros
+</button>
+
+<span class=' tc-reveal' hidden='true'></span>
+</span>
+</div>
+
+<div class='tc-tiddler-body'><p>The timeline macro produces a list of tiddlers in reverse chronological order of modification date that is grouped by the date of the day of modification.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>limit</td><td align='left'>The maximum number of tiddlers to list (see below)</td><td align='left'>100</td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>format</td><td align='left'>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat.html'>DateFormat</a> string for formatting the date</td><td align='left'>DDth MMM YYYY</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subfilter</td><td align='left'>A subfilter to include in the timeline filter (see below)</td><td align='center'></td></tr></tbody></table><p>The subfilter and limit parameters are spliced into the filter string like this:</p><pre><code>[!is[system]$subfilter$has[modified]!sort[modified]limit[$limit$]eachday[modified]]</code></pre><p>To restrict the timeline to a particular tag, the subfilter can be set to something like <code>tag[mytag]</code>:</p><pre><code>&lt;&lt;timeline limit:10 subfilter:&quot;tag[mytag]&quot;&gt;&gt;</code></pre><p>Note that the timeline macro does not truncate the entries for a particular day, instead always displaying all the tiddlers under each displayed day heading. This means that the limit parameter works in an unexpected way because it is possible for more than the specified number of tiddlers to be displayed.</p><h1 class=''>Examples</h1><pre><code>&lt;&lt;timeline limit:30 format:'DD/MM/YYYY'&gt;&gt;
+</code></pre><p>Renders as:</p><p><div class='tc-timeline'>
+
+<div class='tc-menu-list-item'>
+22/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Release%25205.1.4.html'>
+Release 5.1.4
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>
+HelloThere
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ViewWidget.html'>
+ViewWidget
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+20/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Release%25205.1.3.html'>
+Release 5.1.3
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='BrowseWidget.html'>
+BrowseWidget
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='How%2520to%2520put%2520the%2520last%2520modification%2520date%2520in%2520a%2520banner.html'>
+How to put the last modification date in a banner
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='%2522TiddlyWiki5%2520Bourbon%2522%2520by%2520mkt_memory.html'>
+&quot;TiddlyWiki5 Bourbon&quot; by mkt_memory
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+19/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Audio.html'>
+Audio
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+18/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HTML%2520in%2520WikiText.html'>
+HTML in WikiText
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables%2520in%2520WikiText.html'>
+Variables in WikiText
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+15/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TimelineMacro.html'>
+TimelineMacro
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Scripts%2520for%2520TiddlyWiki%2520on%2520Node.js.html'>
+Scripts for TiddlyWiki on Node.js
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+13/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWikiFolders.html'>
+TiddlyWikiFolders
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki%2520Pre-release.html'>
+TiddlyWiki Pre-release
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='NowMacro.html'>
+NowMacro
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Generating%2520Static%2520Sites%2520with%2520TiddlyWiki.html'>
+Generating Static Sites with TiddlyWiki
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TestingMechanism.html'>
+TestingMechanism
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+12/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>
+CurrentTiddler
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+10/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Navigating%2520between%2520open%2520tiddlers.html'>
+Navigating between open tiddlers
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Using%2520links%2520to%2520navigate%2520between%2520tiddlers.html'>
+Using links to navigate between tiddlers
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Creating%2520and%2520editing%2520tiddlers.html'>
+Creating and editing tiddlers
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Creating%2520journal%2520tiddlers.html'>
+Creating journal tiddlers
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='BetaReleases.html'>
+BetaReleases
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+9/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Introduction%2520to%2520Filters.html'>
+Introduction to Filters
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='%2522TiddlyWiki5%255E2%2520documenting%2520while%2520learning%2520TiddlyWiki5%2522%2520by%2520Iannis%2520Zannos.html'>
+&quot;TiddlyWiki5^2 documenting while learning TiddlyWiki5&quot; by Iannis Zannos
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+8/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionNavigateWidget.html'>
+ActionNavigateWidget
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionSendMessageWidget.html'>
+ActionSendMessageWidget
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget.html'>
+ButtonWidget
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>
+ActionWidgets
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetMessage%253A%2520tm-new-tiddler.html'>
+WidgetMessage: tm-new-tiddler
+</a>
+</div>
+
+</div>
+
+</div></p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
