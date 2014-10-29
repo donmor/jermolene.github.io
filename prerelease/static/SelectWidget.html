@@ -47,7 +47,7 @@ SelectWidget
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 21 hours ago
+</a> 4 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -96,6 +96,8 @@ SelectWidget
 <option value='$:/tags/PageTemplate'>$:/tags/PageTemplate</option>
 
 <option value='$:/tags/Palette'>$:/tags/Palette</option>
+
+<option value='$:/tags/SearchResults'>$:/tags/SearchResults</option>
 
 <option value='$:/tags/SideBar'>$:/tags/SideBar</option>
 
@@ -273,14 +275,36 @@ SelectWidget
 <option value='recursive'>The Recursive Universe</option>
 </optgroup>
 </select>
-</p><h2 class=''>Generated Lists</h2><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged <strong>introduction</strong> with a transclusion to display the text of the selected one.</p><pre><code>&lt;$select tiddler='$:/generated-list-demo-state'&gt;
-&lt;$list filter='[tag[introduction]]'&gt;
+</p><h2 class=''>Generated Lists</h2><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged <strong><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TableOfContents.html'>TableOfContents</a></strong> with a transclusion to display the text of the selected one.</p><pre><code>&lt;$select tiddler='$:/generated-list-demo-state'&gt;
+&lt;$list filter='[tag[TableOfContents]]'&gt;
 &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
 &lt;$tiddler tiddler={{$:/generated-list-demo-state}}&gt;
 &lt;$transclude mode='block'/&gt;
 &lt;/$tiddler&gt;</code></pre><p>Renders as:</p><p><select>
+
+<option>HelloThere</option>
+
+<option>Working with TiddlyWiki</option>
+
+<option>Learning</option>
+
+<option>Customise TiddlyWiki</option>
+
+<option>Features</option>
+
+<option>Editions</option>
+
+<option>Plugins</option>
+
+<option>TiddlyWiki Configurations</option>
+
+<option>Reference</option>
+
+<option>Community</option>
+
+<option>About</option>
 
 </select>
 
