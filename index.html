@@ -151,7 +151,7 @@ Here I will post the tools and Macros that I develop for this awesome tool. That
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20140916203526273" modified="20140916203526273" tags="Resources" title="&quot;Briefcase&quot; by Roma Hicks" type="text/vnd.tiddlywiki" url="http://romahicks.com/example.html">
+<div created="20140916203526273" modified="20140916203526273" tags="Resources" title="&quot;Briefcase&quot; by Roma Hicks" type="text/vnd.tiddlywiki" url="https://drive.google.com/open?id=0Bydfk9tNRJHBc3FvclFBMzRreTQ&amp;authuser=0">
 <pre>An adaptation of the [[TiddlyWiki powered GTD® system formerly known as MonkeyGTD|http://mgsd.tiddlyspot.com/]] for TiddlyWiki version 5.
 
 &lt;&lt;&lt;
@@ -20773,7 +20773,7 @@ See also [[FilterOperator: sort]], [[FilterOperator: sortcs]] and [[FilterOperat
 </pre>
 </div>
 <div caption="nth" created="20140410103123179" modified="20140410103123179" tags="Filters" title="FilterOperator: nth" type="text/vnd.tiddlywiki">
-<pre>Without an operand, the ''nth'' filter operator returns the first entry in the current list. The optional operand specifies the number of entries to return.
+<pre>Without an operand, the ''nth'' filter operator returns the first entry in the current list. The optional operand specifies the position of the entry in the list.
 
 For example:
 
@@ -22391,7 +22391,7 @@ And here is the second of several paragraphs.
 ```
 </pre>
 </div>
-<div caption="list" created="20131024141900000" modified="20131030083700000" tags="Widgets" title="ListWidget">
+<div caption="list" created="20131024141900000" modified="20141027193838998" tags="Widgets" title="ListWidget">
 <pre>! Introduction
 
 The list widget displays a sequence of tiddlers that match a [[tiddler filter|Filters]]. It can be used for many purposes:
@@ -22401,11 +22401,11 @@ The list widget displays a sequence of tiddlers that match a [[tiddler filter|Fi
 * Listing each of the tags applied to a tiddler
 * Handling the main story river
 
-The tiddlers can either be displayed by transcluding each in turn through an optional template.
+The tiddlers are displayed by transcluding each in turn through a template. There are several ways to specify the template and for controlling the behaviour of the list.
 
 ! Content and Attributes
 
-The content of the `&lt;$list&gt;` widget is an optional template to use for rendering each tiddler in the list (alternatively, the template can be specified as a tiddler title in the ``template`` attribute).
+The content of the `&lt;$list&gt;` widget is an optional template to use for rendering each tiddler in the list. Alternatively, the template can be specified as a tiddler title in the ``template`` attribute. As a fallback, the default template just displays the tiddler title.
 
 |!Attribute |!Description |
 |filter |The [[tiddler filter|Filters]] to display |
@@ -25222,10 +25222,10 @@ Entries in the list can be grouped together with the `&lt;optgroup&gt;` element
 
 !! Generated Lists
 
-The ListWidget can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged ''introduction'' with a transclusion to display the text of the selected one.
+The ListWidget can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged ''TableOfContents'' with a transclusion to display the text of the selected one.
 
 &lt;$macrocall $name=&quot;wikitext-example-without-html&quot; src=&quot;&lt;$select tiddler='$:/generated-list-demo-state'&gt;
-&lt;$list filter='[tag[introduction]]'&gt;
+&lt;$list filter='[tag[TableOfContents]]'&gt;
 &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;
@@ -25270,10 +25270,8 @@ On the server, the ServerCommand will serve the tiddler [[$:/favicon.ico]] at th
 
 </pre>
 </div>
-<div caption="setvariable" created="20131024141900000" modified="20131115182700000" tags="Widgets" title="SetVariableWidget">
-<pre>The `&lt;$setvariable&gt;` widget has been renamed `&lt;$set/&gt;`; see SetWidget for more details.
-
-For the moment, you can continue to use `&lt;$setvariable&gt;` as a synonym for `&lt;$set/&gt;`, but it will be removed for the beta.
+<div caption="setvariable" created="20131024141900000" modified="20141025115603373" tags="Widgets" title="SetVariableWidget">
+<pre>The `&lt;$setvariable&gt;` widget is a synonym for `&lt;$set/&gt;`; see SetWidget for more details.
 </pre>
 </div>
 <div caption="set" created="20131115182700000" modified="20131115182700000" tags="Widgets" title="SetWidget">
