@@ -13766,6 +13766,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Notifications/Save/Starting&quot;,
             &quot;text&quot;: &quot;Идёт сохранение&quot;
         },
+        &quot;$:/language/Search/DefaultResults/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/DefaultResults/Caption&quot;,
+            &quot;text&quot;: &quot;Список&quot;
+        },
         &quot;$:/language/Search/Filter/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
             &quot;text&quot;: &quot;Фильтр&quot;
@@ -15637,6 +15641,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\n用法: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\n可用的命令：\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\n取得关于某个命令的详细帮助：\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
         },
+        &quot;$:/language/Help/editions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
+            &quot;description&quot;: &quot;列出可用的 TiddlyWiki 版本&quot;,
+            &quot;text&quot;: &quot;列出可用版本的名称和描述。您可以用 `--init` 命令创建一个指定版本的新维基。\n\n```\n--editions\n```\n&quot;
+        },
         &quot;$:/language/Help/help&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/help&quot;,
             &quot;description&quot;: &quot;显示 TiddlyWiki 命令的说明&quot;,
@@ -15870,6 +15879,10 @@ Error message and password prompt
         &quot;$:/language/Notifications/Save/Starting&quot;: {
             &quot;title&quot;: &quot;$:/language/Notifications/Save/Starting&quot;,
             &quot;text&quot;: &quot;开始保存 wiki&quot;
+        },
+        &quot;$:/language/Search/DefaultResults/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/DefaultResults/Caption&quot;,
+            &quot;text&quot;: &quot;列表&quot;
         },
         &quot;$:/language/Search/Filter/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
@@ -17746,6 +17759,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\n用法: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\n可用的命令：\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\n取得關於某個命令的詳細説明：\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
         },
+        &quot;$:/language/Help/editions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
+            &quot;description&quot;: &quot;列出可用的 TiddlyWiki 版本&quot;,
+            &quot;text&quot;: &quot;列出可用版本的名稱和描述。您可以用 `--init` 命令建立一個指定版本的新維基。\n\n```\n--editions\n```\n&quot;
+        },
         &quot;$:/language/Help/help&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/help&quot;,
             &quot;description&quot;: &quot;顯示 TiddlyWiki 命令的説明&quot;,
@@ -17979,6 +17997,10 @@ Error message and password prompt
         &quot;$:/language/Notifications/Save/Starting&quot;: {
             &quot;title&quot;: &quot;$:/language/Notifications/Save/Starting&quot;,
             &quot;text&quot;: &quot;開始儲存 wiki&quot;
+        },
+        &quot;$:/language/Search/DefaultResults/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/DefaultResults/Caption&quot;,
+            &quot;text&quot;: &quot;列表&quot;
         },
         &quot;$:/language/Search/Filter/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
@@ -18266,7 +18288,7 @@ Error message and password prompt
     &quot;tiddlers&quot;: {
         &quot;$:/Translators&quot;: {
             &quot;title&quot;: &quot;$:/Translators&quot;,
-            &quot;text&quot;: &quot;\\define allTheTranslatableTiddlerTitles()\n[all[tiddlers+shadows]prefix[$:/language/]] [all[tiddlers+shadows]prefix[$:/config/NewJournal/]] [[GettingStarted]] [[$:/SiteTitle]] [[$:/SiteSubtitle]] +[sort[title]]\n\\end\n\\define allTheTranslatedTiddlerTitles()\n[all[tiddlers]prefix[$:/language/]] [all[tiddlers]prefix[$:/config/NewJournal/]] [[GettingStarted]is[tiddler]] [[$:/SiteTitle]is[tiddler]] [[$:/SiteSubtitle]is[tiddler]] +[sort[title]]\n\\end\n\\define allTheNotTranslatedTiddlerTitles()\n[all[tiddlers+shadows]!is[tiddler]prefix[$:/language/]] [all[tiddlers+shadows]!is[tiddler]prefix[$:/config/NewJournal/]] [[GettingStarted]!is[tiddler]] [[$:/SiteTitle]!is[tiddler]] [[$:/SiteSubtitle]!is[tiddler]] +[sort[title]]\n\\end\n\nNumber of translated tiddlers: &lt;$count filter=&lt;&lt;allTheTranslatedTiddlerTitles&gt;&gt;/&gt; of &lt;$count filter=&lt;&lt;allTheTranslatableTiddlerTitles&gt;&gt;/&gt;\n\n{{$:/core/ui/PageTemplate/pagecontrols}}\n\n&lt;&lt;tabs \&quot;[all[tiddlers+shadows]tag[$:/tags/TranslationGroup]sort[caption]]\&quot; \&quot;$:/plugins/tiddlywiki/translators/ui/group/Miscellaneous\&quot; \&quot;$:/state/translatorsTab\&quot; \&quot;tc-vertical\&quot;&gt;&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define allTheTranslatableTiddlerTitles()\n[all[tiddlers+shadows]prefix[$:/language/]] [all[tiddlers+shadows]prefix[$:/config/NewJournal/]] [[GettingStarted]] [[$:/SiteTitle]] [[$:/SiteSubtitle]] \n[[$:/core/readme]] +[sort[title]]\n\\end\n\\define allTheTranslatedTiddlerTitles()\n[all[tiddlers]prefix[$:/language/]] [all[tiddlers]prefix[$:/config/NewJournal/]] [[GettingStarted]is[tiddler]] [[$:/SiteTitle]is[tiddler]] [[$:/SiteSubtitle]is[tiddler]] \n[[$:/core/readme]is[tiddler]] +[sort[title]]\n\\end\n\\define allTheNotTranslatedTiddlerTitles()\n[all[tiddlers+shadows]!is[tiddler]prefix[$:/language/]] [all[tiddlers+shadows]!is[tiddler]prefix[$:/config/NewJournal/]] [[GettingStarted]!is[tiddler]] [[$:/SiteTitle]!is[tiddler]] [[$:/SiteSubtitle]!is[tiddler]] \n[[$:/core/readme]!is[tiddler]] +[sort[title]]\n\\end\n\nNumber of translated tiddlers: &lt;$count filter=&lt;&lt;allTheTranslatedTiddlerTitles&gt;&gt;/&gt; of &lt;$count filter=&lt;&lt;allTheTranslatableTiddlerTitles&gt;&gt;/&gt;\n\n{{$:/core/ui/PageTemplate/pagecontrols}}\n\n&lt;&lt;tabs \&quot;[all[tiddlers+shadows]tag[$:/tags/TranslationGroup]sort[caption]]\&quot; \&quot;$:/plugins/tiddlywiki/translators/ui/group/Miscellaneous\&quot; \&quot;$:/state/translatorsTab\&quot; \&quot;tc-vertical\&quot;&gt;&gt;\n&quot;
         },
         &quot;$:/plugins/tiddlywiki/translators/macros/translatableStringEditor&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/macros/translatableStringEditor&quot;,
@@ -18280,6 +18302,10 @@ Error message and password prompt
         &quot;$:/plugins/tiddlywiki/translators/templates/ControlPanel.multids&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/ControlPanel.multids&quot;,
             &quot;text&quot;: &quot;{{$:/language/ControlPanel/||$:/plugins/tiddlywiki/translators/templates/multids}}&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/translators/templates/CoreReadMe.tid&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/CoreReadMe.tid&quot;,
+            &quot;text&quot;: &quot;{{$:/core/readme||$:/plugins/tiddlywiki/translators/templates/tid}}&quot;
         },
         &quot;$:/plugins/tiddlywiki/translators/templates/Dates.multids&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/Dates.multids&quot;,
@@ -18307,7 +18333,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/tiddlywiki/translators/templates/Misc.multids&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/Misc.multids&quot;,
-            &quot;text&quot;: &quot;{{[all[tiddlers+shadows]prefix[$:/language/]]\n-[all[tiddlers+shadows]prefix[$:/language/Buttons/]]\n-[all[tiddlers+shadows]prefix[$:/language/ControlPanel/]]\n-[all[tiddlers+shadows]prefix[$:/language/Date/]]\n-[all[tiddlers+shadows]prefix[$:/language/Docs/]]\n-[all[tiddlers+shadows]prefix[$:/language/EditTemplate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Filters/]]\n-[all[tiddlers+shadows]prefix[$:/language/Help/]]\n-[all[tiddlers+shadows]prefix[$:/language/Import/]]\n-[all[tiddlers+shadows]prefix[$:/language/Modals/]]\n-[all[tiddlers+shadows]prefix[$:/language/Notifications/]]\n-[all[tiddlers+shadows]prefix[$:/language/RelativeDate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Search/]]\n-[all[tiddlers+shadows]prefix[$:/language/SideBar/]]\n-[all[tiddlers+shadows]prefix[$:/language/TiddlerInfo/]]\n+[sort[title]]||$:/plugins/tiddlywiki/translators/templates/filtered-multids}}&quot;
+            &quot;text&quot;: &quot;{{[all[tiddlers]prefix[$:/language/]]\n-[all[tiddlers]prefix[$:/language/Buttons/]]\n-[all[tiddlers]prefix[$:/language/ControlPanel/]]\n-[all[tiddlers]prefix[$:/language/Date/]]\n-[all[tiddlers]prefix[$:/language/Docs/]]\n-[all[tiddlers]prefix[$:/language/EditTemplate/]]\n-[all[tiddlers]prefix[$:/language/Filters/]]\n-[all[tiddlers]prefix[$:/language/Help/]]\n-[all[tiddlers]prefix[$:/language/Import/]]\n-[all[tiddlers]prefix[$:/language/Modals/]]\n-[all[tiddlers]prefix[$:/language/Notifications/]]\n-[all[tiddlers]prefix[$:/language/RelativeDate/]]\n-[all[tiddlers]prefix[$:/language/Search/]]\n-[all[tiddlers]prefix[$:/language/SideBar/]]\n-[all[tiddlers]prefix[$:/language/TiddlerInfo/]]\n+[sort[title]]||$:/plugins/tiddlywiki/translators/templates/filtered-multids}}&quot;
         },
         &quot;$:/plugins/tiddlywiki/translators/templates/ModuleTypes.multids&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/ModuleTypes.multids&quot;,
@@ -18380,7 +18406,7 @@ Error message and password prompt
         },
         &quot;$:/plugins/tiddlywiki/translators/templates/tid&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/tid&quot;,
-            &quot;text&quot;: &quot;\\define generateTid(title)\ntitle: $title$\n\n&lt;$transclude tiddler=\&quot;\&quot;\&quot;$title$\&quot;\&quot;\&quot;/&gt;\n\\end\n&lt;$macrocall $name=\&quot;generateTid\&quot; title=&lt;&lt;currentTiddler&gt;&gt;/&gt;&quot;
+            &quot;text&quot;: &quot;\\define generateTid(title)\ntitle: $title$\n\n&lt;$list filter=\&quot;\&quot;\&quot;[[$title$]is[tiddler]]\&quot;\&quot;\&quot;&gt;&lt;$transclude tiddler=\&quot;\&quot;\&quot;$title$\&quot;\&quot;\&quot;/&gt;&lt;/$list&gt;\n\\end\n&lt;$macrocall $name=\&quot;generateTid\&quot; title=&lt;&lt;currentTiddler&gt;&gt;/&gt;&quot;
         },
         &quot;$:/plugins/tiddlywiki/translators/templates/type-tid&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/templates/type-tid&quot;,
@@ -18452,7 +18478,7 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/ui/group/Miscellaneous&quot;,
             &quot;caption&quot;: &quot;Miscellaneous&quot;,
             &quot;tags&quot;: &quot;$:/tags/TranslationGroup&quot;,
-            &quot;text&quot;: &quot;\\define translatableTiddlerTitles()\n[all[tiddlers+shadows]prefix[$:/language/]]\n-[all[tiddlers+shadows]prefix[$:/language/Buttons/]]\n-[all[tiddlers+shadows]prefix[$:/language/ControlPanel/]]\n-[all[tiddlers+shadows]prefix[$:/language/Date/]]\n-[all[tiddlers+shadows]prefix[$:/language/Docs/]]\n-[all[tiddlers+shadows]prefix[$:/language/EditTemplate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Filters/]]\n-[all[tiddlers+shadows]prefix[$:/language/Help/]]\n-[all[tiddlers+shadows]prefix[$:/language/Import/]]\n-[all[tiddlers+shadows]prefix[$:/language/RelativeDate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Search/]]\n-[all[tiddlers+shadows]prefix[$:/language/SideBar/]]\n-[all[tiddlers+shadows]prefix[$:/language/TiddlerInfo/]]\n[all[tiddlers+shadows]prefix[$:/config/NewJournal/]]\n[[$:/SiteTitle]]\n[[$:/SiteSubtitle]]\n+[sort[title]]\n\\end\n\\define shortenTitle()\n[all[current]removeprefix[$:/language/]] [all[current]removeprefix[$:/config/]] [all[current]!prefix[$:/language/]!prefix[$:/config/]]\n\\end\n\n! Miscellaneous\n\nMiscellaneous translatable strings.\n\n&lt;&lt;translatableStringEditor&gt;&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define translatableTiddlerTitles()\n[all[tiddlers+shadows]prefix[$:/language/]]\n-[all[tiddlers+shadows]prefix[$:/language/Buttons/]]\n-[all[tiddlers+shadows]prefix[$:/language/ControlPanel/]]\n-[all[tiddlers+shadows]prefix[$:/language/Date/]]\n-[all[tiddlers+shadows]prefix[$:/language/Docs/]]\n-[all[tiddlers+shadows]prefix[$:/language/EditTemplate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Filters/]]\n-[all[tiddlers+shadows]prefix[$:/language/Help/]]\n-[all[tiddlers+shadows]prefix[$:/language/Import/]]\n-[all[tiddlers+shadows]prefix[$:/language/RelativeDate/]]\n-[all[tiddlers+shadows]prefix[$:/language/Search/]]\n-[all[tiddlers+shadows]prefix[$:/language/SideBar/]]\n-[all[tiddlers+shadows]prefix[$:/language/TiddlerInfo/]]\n[all[tiddlers+shadows]prefix[$:/config/NewJournal/]]\n[[$:/SiteTitle]]\n[[$:/SiteSubtitle]]\n[[$:/core/readme]]\n+[sort[title]]\n\\end\n\\define shortenTitle()\n[all[current]removeprefix[$:/language/]] [all[current]removeprefix[$:/config/]] [all[current]!prefix[$:/language/]!prefix[$:/config/]]\n\\end\n\n! Miscellaneous\n\nMiscellaneous translatable strings.\n\n&lt;&lt;translatableStringEditor&gt;&gt;\n&quot;
         },
         &quot;$:/plugins/tiddlywiki/translators/ui/group/Docs/ModuleTypes&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/translators/ui/group/Docs/ModuleTypes&quot;,
