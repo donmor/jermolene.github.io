@@ -2245,6 +2245,11 @@ Error message and password prompt
             &quot;description&quot;: &quot;Prepares external tiddlers for use&quot;,
             &quot;text&quot;: &quot;//Note that this command is experimental and may change or be replaced before being finalised//\n\nSets the specified field of a group of tiddlers to the result of wikifying a template tiddler with the `currentTiddler` variable set to the tiddler.\n\n```\n--setfield &lt;filter&gt; &lt;fieldname&gt; &lt;templatetitle&gt; &lt;rendertype&gt;\n```\n\nThe parameters are:\n\n* ''filter'' - filter identifying the tiddlers to be affected\n* ''fieldname'' - the field to modify (defaults to \&quot;text\&quot;)\n* ''templatetitle'' - the tiddler to wikify into the specified field. If blank or missing then the specified field is deleted\n* ''type'' - the text type to render (defaults to \&quot;text/plain\&quot;; \&quot;text/html\&quot; can be used to include HTML tags)\n\n&quot;
         },
+        &quot;$:/language/Help/unpackplugin&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/unpackplugin&quot;,
+            &quot;description&quot;: &quot;Unpack the payload tiddlers from a plugin&quot;,
+            &quot;text&quot;: &quot;Extract the payload tiddlers from a plugin, creating them as ordinary tiddlers:\n\n```\n--unpackplugin &lt;title&gt;\n```\n&quot;
+        },
         &quot;$:/language/Help/verbose&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/verbose&quot;,
             &quot;description&quot;: &quot;Triggers verbose output mode&quot;,
@@ -2795,6 +2800,12 @@ Error message and password prompt
         &quot;$:/core/modules/commands/setfield.js&quot;: {
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/setfield.js\ntype: application/javascript\nmodule-type: command\n\nCommand to modify selected tiddlers to set a field to the text of a template tiddler that has been wikified with the selected tiddler as the current tiddler.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;);\n\nexports.info = {\n\tname: \&quot;setfield\&quot;,\n\tsynchronous: true\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 4) {\n\t\treturn \&quot;Missing parameters\&quot;;\n\t}\n\tvar self = this,\n\t\twiki = this.commander.wiki,\n\t\tfilter = this.params[0],\n\t\tfieldname = this.params[1] || \&quot;text\&quot;,\n\t\ttemplatetitle = this.params[2],\n\t\trendertype = this.params[3] || \&quot;text/plain\&quot;,\n\t\ttiddlers = wiki.filterTiddlers(filter);\n\t$tw.utils.each(tiddlers,function(title) {\n\t\tvar parser = wiki.parseTiddler(templatetitle),\n\t\t\tnewFields = {},\n\t\t\ttiddler = wiki.getTiddler(title);\n\t\tif(parser) {\n\t\t\tvar widgetNode = wiki.makeWidget(parser,{variables: {currentTiddler: title}});\n\t\t\tvar container = $tw.fakeDocument.createElement(\&quot;div\&quot;);\n\t\t\twidgetNode.render(container,null);\n\t\t\tnewFields[fieldname] = rendertype === \&quot;text/html\&quot; ? container.innerHTML : container.textContent;\n\t\t} else {\n\t\t\tnewFields[fieldname] = undefined;\n\t\t}\n\t\twiki.addTiddler(new $tw.Tiddler(tiddler,newFields));\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/commands/setfield.js&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;command&quot;
+        },
+        &quot;$:/core/modules/commands/unpackplugin.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/unpackplugin.js\ntype: application/javascript\nmodule-type: command\n\nCommand to extract the shadow tiddlers from within a plugin\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.info = {\n\tname: \&quot;unpackplugin\&quot;,\n\tsynchronous: true\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 1) {\n\t\treturn \&quot;Missing plugin name\&quot;;\n\t}\n\tvar self = this,\n\t\ttitle = this.params[0],\n\t\tpluginData = this.commander.wiki.getTiddlerData(title);\n\tif(!pluginData) {\n\t\treturn \&quot;Plugin '\&quot; + title + \&quot;' not found\&quot;;\n\t}\n\t$tw.utils.each(pluginData.tiddlers,function(tiddler) {\n\t\tself.commander.wiki.addTiddler(new $tw.Tiddler(tiddler));\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;$:/core/modules/commands/unpackplugin.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;command&quot;
         },
@@ -10598,24 +10609,280 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div author="OGOSHI Masayuki, pekopeko1" core-version="&gt;=5.0.9" dependents="" description="Japanese (Japan)" name="ja-JP" plugin-type="language" title="$:/languages/ja-JP" type="application/json" version="5.1.5-prerelease">
+<div author="Makoto Hirohashi, OGOSHI Masayuki, pekopeko1" core-version="&gt;=5.0.9" dependents="" description="Japanese (Japan)" name="ja-JP" plugin-type="language" title="$:/languages/ja-JP" type="application/json" version="5.1.5-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
+        &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;,
+            &quot;text&quot;: &quot;詳細検索&quot;
+        },
+        &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;,
+            &quot;text&quot;: &quot;条件を付けて検索します&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;キャンセル&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Hint&quot;,
+            &quot;text&quot;: &quot;編集をキャンセルします&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Caption&quot;,
+            &quot;text&quot;: &quot;複製&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Hint&quot;,
+            &quot;text&quot;: &quot;tiddlerを複製します&quot;
+        },
+        &quot;$:/language/Buttons/Close/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Caption&quot;,
+            &quot;text&quot;: &quot;閉じる&quot;
+        },
+        &quot;$:/language/Buttons/Close/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerを閉じます&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Caption&quot;,
+            &quot;text&quot;: &quot;全て閉じる&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Hint&quot;,
+            &quot;text&quot;: &quot;全てのtiddlerを閉じます&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Caption&quot;,
+            &quot;text&quot;: &quot;他のtidderを閉じる&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Hint&quot;,
+            &quot;text&quot;: &quot;他のtidderを非表示にします&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Caption&quot;,
+            &quot;text&quot;: &quot;コントロールパネル&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Hint&quot;,
+            &quot;text&quot;: &quot;このWikiの設定画面を開きます&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;削除&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;tiddlerを削除します&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Caption&quot;,
+            &quot;text&quot;: &quot;編集&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerを編集します&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Caption&quot;,
+            &quot;text&quot;: &quot;暗号化&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;,
+            &quot;text&quot;: &quot;パスワードの解除&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;,
+            &quot;text&quot;: &quot;パスワードと暗号化を解除します&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Hint&quot;,
+            &quot;text&quot;: &quot;Wikiを保存するときのパスワードの設定/解除をします&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;,
+            &quot;text&quot;: &quot;パスワードの設定&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
+            &quot;text&quot;: &quot;パスワードを設定してwikiを暗号化します&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
+            &quot;text&quot;: &quot;フルスクリーン&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Hint&quot;,
+            &quot;text&quot;: &quot;フルスクリーンで表示、またはフルスクリーン表示を解除します&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;サイドバーを消す&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;サイドバーを非表示にします&quot;
+        },
+        &quot;$:/language/Buttons/Home/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Caption&quot;,
+            &quot;text&quot;: &quot;ホーム&quot;
+        },
+        &quot;$:/language/Buttons/Home/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Hint&quot;,
+            &quot;text&quot;: &quot;デフォルトtiddlerを表示します&quot;
+        },
+        &quot;$:/language/Buttons/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Caption&quot;,
+            &quot;text&quot;: &quot;インポート&quot;
+        },
+        &quot;$:/language/Buttons/Import/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Hint&quot;,
+            &quot;text&quot;: &quot;ファイルをインポートします&quot;
+        },
+        &quot;$:/language/Buttons/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Caption&quot;,
+            &quot;text&quot;: &quot;情報&quot;
+        },
+        &quot;$:/language/Buttons/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerの情報を表示します&quot;
+        },
+        &quot;$:/language/Buttons/Language/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Caption&quot;,
+            &quot;text&quot;: &quot;日本語&quot;
+        },
+        &quot;$:/language/Buttons/Language/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Hint&quot;,
+            &quot;text&quot;: &quot;メニューの言語を選択します&quot;
+        },
+        &quot;$:/language/Buttons/More/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Caption&quot;,
+            &quot;text&quot;: &quot;その他のコマンド&quot;
+        },
+        &quot;$:/language/Buttons/More/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Hint&quot;,
+            &quot;text&quot;: &quot;その他のコマンドを表示します&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Caption&quot;,
+            &quot;text&quot;: &quot;タグ付きtiddlerの作成&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerのタイトルのタグを付けた、新しいtidderを作ります&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Caption&quot;,
+            &quot;text&quot;: &quot;新しい日誌&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Hint&quot;,
+            &quot;text&quot;: &quot;新しい日誌（journal tiddler）を作ります&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Caption&quot;,
+            &quot;text&quot;: &quot;タグ付き日誌の作成&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerのタイトルのタグを付けた、新しい日誌（journal tiddler）を作ります&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;新しいtiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;新しいtiddlerを作ります&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Caption&quot;,
+            &quot;text&quot;: &quot;パーマリンク&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerへ直接リンクするアドレスを、ブラウザのアドレスバーに表示します&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Caption&quot;,
+            &quot;text&quot;: &quot;パーマビュー&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Hint&quot;,
+            &quot;text&quot;: &quot;表示している全てのtiddlerへのリンクをブラウザのアドレスバーに表示視します&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Caption&quot;,
+            &quot;text&quot;: &quot;再読み込み&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Hint&quot;,
+            &quot;text&quot;: &quot;ファイルを再読み込みします&quot;
+        },
+        &quot;$:/language/Buttons/Save/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Caption&quot;,
+            &quot;text&quot;: &quot;確定&quot;
+        },
+        &quot;$:/language/Buttons/Save/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Hint&quot;,
+            &quot;text&quot;: &quot;編集内容を確定します&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Caption&quot;,
+            &quot;text&quot;: &quot;保存&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Hint&quot;,
+            &quot;text&quot;: &quot;Wikiを保存します&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;サイドバーを表示する&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;サイドバーを表示します&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Caption&quot;,
+            &quot;text&quot;: &quot;tidder表示切替&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Hint&quot;,
+            &quot;text&quot;: &quot;tiddlerの表示方法を切り替えます&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Caption&quot;,
+            &quot;text&quot;: &quot;タグの管理&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Hint&quot;,
+            &quot;text&quot;: &quot;タグの管理画面を開きます&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Caption&quot;,
+            &quot;text&quot;: &quot;テーマ&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Hint&quot;,
+            &quot;text&quot;: &quot;表示のテーマを選択します&quot;
+        },
         &quot;$:/language/ControlPanel/Advanced/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Caption&quot;,
             &quot;text&quot;: &quot;詳細設定&quot;
         },
         &quot;$:/language/ControlPanel/Advanced/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Hint&quot;,
-            &quot;text&quot;: &quot;この TiddlyWiki の内部情報&quot;
+            &quot;text&quot;: &quot;このWikiのシステム情報です。&quot;
         },
         &quot;$:/language/ControlPanel/Appearance/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Caption&quot;,
-            &quot;text&quot;: &quot;表示形式&quot;
+            &quot;text&quot;: &quot;表示&quot;
         },
         &quot;$:/language/ControlPanel/Appearance/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Hint&quot;,
-            &quot;text&quot;: &quot;この TiddlyWiki の見え方を変更する各種方法です。&quot;
+            &quot;text&quot;: &quot;このWikiの表示方法の設定をします。&quot;
         },
         &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;,
@@ -10640,6 +10907,14 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;,
             &quot;text&quot;: &quot;現在の言語:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;,
+            &quot;text&quot;: &quot;日誌（journal tiddler）のタグ&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;,
+            &quot;text&quot;: &quot;日誌（journal tiddlers）のデフォルトのタイトル&quot;
         },
         &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;,
@@ -10677,6 +10952,30 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Version/Prompt&quot;,
             &quot;text&quot;: &quot;~TiddlyWiki バージョン:&quot;
         },
+        &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;,
+            &quot;text&quot;: &quot;エディタ&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;,
+            &quot;text&quot;: &quot;エディタ&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;,
+            &quot;text&quot;: &quot;tiddlerの種類と、それを編集するエディタの関係です。&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;,
+            &quot;text&quot;: &quot;tiddlerの種類&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Caption&quot;,
+            &quot;text&quot;: &quot;情報&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Hint&quot;,
+            &quot;text&quot;: &quot;このWikiについて&quot;
+        },
         &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;,
             &quot;text&quot;: &quot;ロード済みモジュール&quot;
@@ -10691,19 +10990,19 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;,
-            &quot;text&quot;: &quot;クローン&quot;
+            &quot;text&quot;: &quot;複製&quot;
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;,
-            &quot;text&quot;: &quot;このシャドウパレットを編集する前にクローンを作成することをお勧めします&quot;
-        },
-        &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;: {
-            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;,
-            &quot;text&quot;: &quot;このシャドウパレットは更新されました&quot;
+            &quot;text&quot;: &quot;このシャドウパレットを編集する前に複製を作成することをお勧めします。&quot;
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;,
             &quot;text&quot;: &quot;編集中&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;,
+            &quot;text&quot;: &quot;このシャドウパレットは更新されました。&quot;
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;,
@@ -10724,6 +11023,30 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Plugins/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Caption&quot;,
             &quot;text&quot;: &quot;プラグイン&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;,
+            &quot;text&quot;: &quot;無効&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;,
+            &quot;text&quot;: &quot;ページを再読込したときにプラグインを無効にする。&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;,
+            &quot;text&quot;: &quot;(無効)&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;,
+            &quot;text&quot;: &quot;無し&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;,
+            &quot;text&quot;: &quot;有効&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;,
+            &quot;text&quot;: &quot;ページを再読込したときにプラグインを有効にする。&quot;
         },
         &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;,
@@ -10757,6 +11080,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;,
             &quot;text&quot;: &quot;バックアップ&quot;
         },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;,
+            &quot;text&quot;: &quot;この設定は、 http://tiddlyspot.com または互換性のあるリモートサーバーへ保存する場合に使います。&quot;
+        },
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;,
             &quot;text&quot;: &quot;アップロードファイル名&quot;
@@ -10789,6 +11116,78 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Caption&quot;,
             &quot;text&quot;: &quot;自動保存&quot;
         },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;,
+            &quot;text&quot;: &quot;自動的に保存しない。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;,
+            &quot;text&quot;: &quot;自動的に保存する。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;,
+            &quot;text&quot;: &quot;自動的に保存するかどうかの設定&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Caption&quot;,
+            &quot;text&quot;: &quot;設定&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Hint&quot;,
+            &quot;text&quot;: &quot;TiddlyWikiの動作を設定します。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;,
+            &quot;text&quot;: &quot;ナビゲーションアドレスバー&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;,
+            &quot;text&quot;: &quot;ナビゲーションアドレスバーの動作:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;,
+            &quot;text&quot;: &quot;アドレスバーを変更しない。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;,
+            &quot;text&quot;: &quot;tiddlerをアドレスに含める。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;,
+            &quot;text&quot;: &quot;開くtiddlerと、現在開いているtiddlerをアドレスに含める。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;,
+            &quot;text&quot;: &quot;操作履歴&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;,
+            &quot;text&quot;: &quot;tiddlerを操作したときのブラウザの履歴の設定:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;,
+            &quot;text&quot;: &quot;履歴を残さない。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;,
+            &quot;text&quot;: &quot;履歴を残す。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;,
+            &quot;text&quot;: &quot;ボタンの表示&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;,
+            &quot;text&quot;: &quot;ツールバーのボタンの表示の設定:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;,
+            &quot;text&quot;: &quot;アイコンを表示する。&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;,
+            &quot;text&quot;: &quot;テキストを表示する。&quot;
+        },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
             &quot;text&quot;: &quot;表示スタイル&quot;
@@ -10813,13 +11212,45 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;,
             &quot;text&quot;: &quot;以下はこの TiddlyWiki で使用されているすべての tiddler フィールド の一覧です（システム tiddler も含みますが、隠し tiddler は含んでいません）。&quot;
         },
+        &quot;$:/language/ControlPanel/Toolbars/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Caption&quot;,
+            &quot;text&quot;: &quot;ツールバー&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;編集画面&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;編集画面で表示するボタンを選んでください。&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Hint&quot;,
+            &quot;text&quot;: &quot;ツールバーに表示するボタンを選んでください。&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;,
+            &quot;text&quot;: &quot;サイドバー&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;,
+            &quot;text&quot;: &quot;サイドバーに表示するボタンを選んでください。&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;閲覧画面&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;閲覧画面に表示するボタンを選んでください。&quot;
+        },
         &quot;$:/language/ControlPanel/Tools/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Caption&quot;,
             &quot;text&quot;: &quot;ツール&quot;
         },
         &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
-            &quot;text&quot;: &quot;Download full wiki&quot;
+            &quot;text&quot;: &quot;全てダウンロードする&quot;
         },
         &quot;$:/language/ControlPanel/Tools/Export/AllAsStaticHTML/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Export/AllAsStaticHTML/Caption&quot;,
@@ -10832,6 +11263,290 @@ Error message and password prompt
         &quot;$:/core/ja-JP/readme&quot;: {
             &quot;title&quot;: &quot;$:/core/ja-JP/readme&quot;,
             &quot;text&quot;: &quot;&lt;!-- Replace with translation of the readme for the core plugin --&gt;\n\n{{$:/core/readme}}\n&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/1&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/10&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/11&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/12&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/13&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/13&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/14&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/14&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/15&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/15&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/16&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/16&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/17&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/17&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/18&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/18&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/19&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/19&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/2&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/20&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/20&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/21&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/21&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/22&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/22&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/23&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/23&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/24&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/24&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/25&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/25&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/26&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/26&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/27&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/27&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/28&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/28&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/29&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/29&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/3&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/30&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/30&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/31&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/31&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/4&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/5&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/6&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/7&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/8&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/9&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/Long/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/0&quot;,
+            &quot;text&quot;: &quot;日曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/1&quot;,
+            &quot;text&quot;: &quot;月曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/2&quot;,
+            &quot;text&quot;: &quot;火曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/3&quot;,
+            &quot;text&quot;: &quot;水曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/4&quot;,
+            &quot;text&quot;: &quot;木曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/5&quot;,
+            &quot;text&quot;: &quot;金曜&quot;
+        },
+        &quot;$:/language/Date/Long/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/6&quot;,
+            &quot;text&quot;: &quot;土曜&quot;
+        },
+        &quot;$:/language/Date/Long/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/1&quot;,
+            &quot;text&quot;: &quot;睦月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/10&quot;,
+            &quot;text&quot;: &quot;神無月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/11&quot;,
+            &quot;text&quot;: &quot;霜月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/12&quot;,
+            &quot;text&quot;: &quot;師走&quot;
+        },
+        &quot;$:/language/Date/Long/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/2&quot;,
+            &quot;text&quot;: &quot;如月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/3&quot;,
+            &quot;text&quot;: &quot;弥生&quot;
+        },
+        &quot;$:/language/Date/Long/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/4&quot;,
+            &quot;text&quot;: &quot;卯月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/5&quot;,
+            &quot;text&quot;: &quot;皐月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/6&quot;,
+            &quot;text&quot;: &quot;水無月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/7&quot;,
+            &quot;text&quot;: &quot;文月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/8&quot;,
+            &quot;text&quot;: &quot;葉月&quot;
+        },
+        &quot;$:/language/Date/Long/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/9&quot;,
+            &quot;text&quot;: &quot;長月&quot;
+        },
+        &quot;$:/language/Date/Period/am&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/am&quot;,
+            &quot;text&quot;: &quot;午前&quot;
+        },
+        &quot;$:/language/Date/Period/pm&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/pm&quot;,
+            &quot;text&quot;: &quot;午後&quot;
+        },
+        &quot;$:/language/Date/Short/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/0&quot;,
+            &quot;text&quot;: &quot;日&quot;
+        },
+        &quot;$:/language/Date/Short/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/1&quot;,
+            &quot;text&quot;: &quot;月&quot;
+        },
+        &quot;$:/language/Date/Short/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/2&quot;,
+            &quot;text&quot;: &quot;火&quot;
+        },
+        &quot;$:/language/Date/Short/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/3&quot;,
+            &quot;text&quot;: &quot;水&quot;
+        },
+        &quot;$:/language/Date/Short/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/4&quot;,
+            &quot;text&quot;: &quot;木&quot;
+        },
+        &quot;$:/language/Date/Short/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/5&quot;,
+            &quot;text&quot;: &quot;金&quot;
+        },
+        &quot;$:/language/Date/Short/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/6&quot;,
+            &quot;text&quot;: &quot;土&quot;
+        },
+        &quot;$:/language/Date/Short/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/1&quot;,
+            &quot;text&quot;: &quot;１月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/10&quot;,
+            &quot;text&quot;: &quot;１０月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/11&quot;,
+            &quot;text&quot;: &quot;１１月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/12&quot;,
+            &quot;text&quot;: &quot;１２月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/2&quot;,
+            &quot;text&quot;: &quot;２月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/3&quot;,
+            &quot;text&quot;: &quot;３月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/4&quot;,
+            &quot;text&quot;: &quot;４月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/5&quot;,
+            &quot;text&quot;: &quot;５月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/6&quot;,
+            &quot;text&quot;: &quot;６月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/7&quot;,
+            &quot;text&quot;: &quot;７月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/8&quot;,
+            &quot;text&quot;: &quot;８月&quot;
+        },
+        &quot;$:/language/Date/Short/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/9&quot;,
+            &quot;text&quot;: &quot;９月&quot;
         },
         &quot;$:/language/RelativeDate/Future/Days&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
@@ -10987,7 +11702,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;,
-            &quot;text&quot;: &quot;Blockquote bar&quot;
+            &quot;text&quot;: &quot;引用線&quot;
         },
         &quot;$:/language/Docs/PaletteColours/code-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-background&quot;,
@@ -11000,6 +11715,10 @@ Error message and password prompt
         &quot;$:/language/Docs/PaletteColours/code-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-foreground&quot;,
             &quot;text&quot;: &quot;コードの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;,
+            &quot;text&quot;: &quot;未保存の表示&quot;
         },
         &quot;$:/language/Docs/PaletteColours/download-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/download-background&quot;,
@@ -11025,17 +11744,21 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;,
             &quot;text&quot;: &quot;ドロップダウンの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;,
-            &quot;text&quot;: &quot;選択状態のドロップダウンタブの背景&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;,
             &quot;text&quot;: &quot;ドロップダウンタブの背景&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;選択状態のドロップダウンタブの背景&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;,
             &quot;text&quot;: &quot;ドロップ領域の背景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background&quot;,
+            &quot;text&quot;: &quot;外部リンクの背景&quot;
         },
         &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;,
@@ -11045,9 +11768,9 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;,
             &quot;text&quot;: &quot;外部リンクの背景（既訪）&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/external-link-background&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background&quot;,
-            &quot;text&quot;: &quot;外部リンクの背景&quot;
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;,
+            &quot;text&quot;: &quot;外部リンクの前景&quot;
         },
         &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;,
@@ -11056,10 +11779,6 @@ Error message and password prompt
         &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;,
             &quot;text&quot;: &quot;外部リンクの前景（既訪）&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;,
-            &quot;text&quot;: &quot;外部リンクの前景&quot;
         },
         &quot;$:/language/Docs/PaletteColours/foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/foreground&quot;,
@@ -11133,97 +11852,97 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;,
             &quot;text&quot;: &quot;サイドバーボタンの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;,
-            &quot;text&quot;: &quot;サイドバーコントロールの前景（ホバー）&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;,
             &quot;text&quot;: &quot;サイドバーコントロールの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;,
-            &quot;text&quot;: &quot;サイドバー前景の影&quot;
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;サイドバーコントロールの前景（ホバー）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;,
             &quot;text&quot;: &quot;サイドバーの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;,
-            &quot;text&quot;: &quot;Sidebar muted foreground hover&quot;
+        &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;,
+            &quot;text&quot;: &quot;サイドバー前景の影&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;,
             &quot;text&quot;: &quot;Sidebar muted foreground&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;,
-            &quot;text&quot;: &quot;サイドバータブの背景（選択済）&quot;
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Sidebar muted foreground hover&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;,
             &quot;text&quot;: &quot;サイドバータブの背景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;,
-            &quot;text&quot;: &quot;サイドバータブの枠線（選択済）&quot;
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;サイドバータブの背景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;,
             &quot;text&quot;: &quot;サイドバータブの枠線&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;,
+            &quot;text&quot;: &quot;サイドバータブの枠線（選択済）&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;,
             &quot;text&quot;: &quot;サイドバータブの分割線&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;,
-            &quot;text&quot;: &quot;サイドバータブの前景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;,
             &quot;text&quot;: &quot;サイドバータブの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;,
-            &quot;text&quot;: &quot;サイドバーtiddlerリンクの前景（ホバー）&quot;
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;サイドバータブの前景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;,
             &quot;text&quot;: &quot;サイドバーtiddlerリンクの前景&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;サイドバーtiddlerリンクの前景（ホバー）&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;,
             &quot;text&quot;: &quot;固定アラート前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;,
-            &quot;text&quot;: &quot;タブの背景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background&quot;,
             &quot;text&quot;: &quot;タブの背景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;,
-            &quot;text&quot;: &quot;タブの枠線（選択済）&quot;
+        &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;,
+            &quot;text&quot;: &quot;タブの背景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border&quot;,
             &quot;text&quot;: &quot;タブの枠線&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;,
+            &quot;text&quot;: &quot;タブの枠線（選択済）&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/tab-divider&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-divider&quot;,
             &quot;text&quot;: &quot;タブの分割線&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;,
-            &quot;text&quot;: &quot;タブの前景（選択済）&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;,
             &quot;text&quot;: &quot;タブの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;タブの前景（選択済）&quot;
         },
         &quot;$:/language/Docs/PaletteColours/table-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-border&quot;,
@@ -11253,6 +11972,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-border&quot;,
             &quot;text&quot;: &quot;tiddlerの前景&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;,
+            &quot;text&quot;: &quot;tiddler部品の前景&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;,
             &quot;text&quot;: &quot;tiddler部品の前景（ホバー）&quot;
@@ -11261,21 +11984,17 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;,
             &quot;text&quot;: &quot;tiddler部品の前景（選択済）&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;,
-            &quot;text&quot;: &quot;tiddler部品の前景&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;,
             &quot;text&quot;: &quot;tiddlerエディタの背景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;,
-            &quot;text&quot;: &quot;tiddlerエディタの枠線イメージ&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;,
             &quot;text&quot;: &quot;tiddlerエディタの枠線&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;,
+            &quot;text&quot;: &quot;tiddlerエディタの枠線イメージ&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;,
@@ -11313,6 +12032,30 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-title-foreground&quot;,
             &quot;text&quot;: &quot;tiddlerタイトルの前景&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「キャンセル」ボタンの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「閉じる」ボタンの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「削除」ボタンの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「確定」ボタンの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「編集」ボタンの前景&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;,
+            &quot;text&quot;: &quot;ツールバー「情報」ボタンの前景&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;,
             &quot;text&quot;: &quot;ツールバー「新規Tiddler」ボタンの前景&quot;
@@ -11325,30 +12068,6 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-save-button&quot;,
             &quot;text&quot;: &quot;ツールバー「保存」ボタンの前景&quot;
         },
-        &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「情報」ボタンの前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「編集」ボタンの前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「閉じる」ボタンの前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「削除」ボタンの前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「キャンセル」ボタンの前景&quot;
-        },
-        &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;,
-            &quot;text&quot;: &quot;ツールバー「確定」ボタンの前景&quot;
-        },
         &quot;$:/language/Docs/PaletteColours/untagged-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/untagged-background&quot;,
             &quot;text&quot;: &quot;未タグ背景&quot;
@@ -11357,13 +12076,17 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/very-muted-foreground&quot;,
             &quot;text&quot;: &quot;Very muted foreground&quot;
         },
+        &quot;$:/language/EditTemplate/Body/External/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/External/Hint&quot;,
+            &quot;text&quot;: &quot;このtiddlerは外部のTiddlyWikiのファイルに保存されています。タグやフィールドの編集はできますが、実際の外部コンテンツを直接編集することはできません。&quot;
+        },
         &quot;$:/language/EditTemplate/Body/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Hint&quot;,
-            &quot;text&quot;: &quot;表示を整形したり画像や動的な要素を使いたい場合は [[wiki text|http://tiddlywiki.com/static/WikiText.html]] 書式を使用してください&quot;
+            &quot;text&quot;: &quot;表示を整形したり画像や動的な要素を使いたい場合は [[wiki text|http://tiddlywiki.com/static/WikiText.html]] 書式を使用してください。&quot;
         },
         &quot;$:/language/EditTemplate/Body/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Placeholder&quot;,
-            &quot;text&quot;: &quot;ここに tiddler の本文を入力してください&quot;
+            &quot;text&quot;: &quot;ここに tiddler の本文を入力してください。&quot;
         },
         &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;,
@@ -11389,6 +12112,14 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Value/Placeholder&quot;,
             &quot;text&quot;: &quot;フィールドの値&quot;
         },
+        &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;,
+            &quot;text&quot;: &quot;このshadow tiddlerは編集されたものです。このtiddlerを削除すると、ものとshaddow tiddlerが有効になります。&quot;
+        },
+        &quot;$:/language/EditTemplate/Shadow/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/Warning&quot;,
+            &quot;text&quot;: &quot;これはshadow tiddlerです。変更すると上書きされます。&quot;
+        },
         &quot;$:/language/EditTemplate/Tags/Add/Button&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Button&quot;,
             &quot;text&quot;: &quot;追加&quot;
@@ -11399,11 +12130,15 @@ Error message and password prompt
         },
         &quot;$:/language/EditTemplate/Type/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Placeholder&quot;,
-            &quot;text&quot;: &quot;種別&quot;
+            &quot;text&quot;: &quot;種類&quot;
         },
         &quot;$:/language/EditTemplate/Type/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Prompt&quot;,
-            &quot;text&quot;: &quot;Tiddlerの種別:&quot;
+            &quot;text&quot;: &quot;Tiddlerの種類:&quot;
+        },
+        &quot;$:/language/Docs/Fields/_canonical_uri&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/_canonical_uri&quot;,
+            &quot;text&quot;: &quot;外部画像tiddlerのURI&quot;
         },
         &quot;$:/language/Docs/Fields/bag&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/bag&quot;,
@@ -11421,10 +12156,6 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/Fields/component&quot;,
             &quot;text&quot;: &quot;[[アラート tiddler|AlertMechanism]] の原因となったコンポーネントの名前&quot;
         },
-        &quot;$:/language/Docs/Fields/current-tiddler&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/Fields/current-tiddler&quot;,
-            &quot;text&quot;: &quot;[[history list|HistoryMechanism]] のトップにある tiddler をキャッシュするために使用される&quot;
-        },
         &quot;$:/language/Docs/Fields/created&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/created&quot;,
             &quot;text&quot;: &quot;tiddler が作成された日付&quot;
@@ -11432,6 +12163,10 @@ Error message and password prompt
         &quot;$:/language/Docs/Fields/creator&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/creator&quot;,
             &quot;text&quot;: &quot;tiddler の作成者名&quot;
+        },
+        &quot;$:/language/Docs/Fields/current-tiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/current-tiddler&quot;,
+            &quot;text&quot;: &quot;[[history list|HistoryMechanism]] のトップにある tiddler をキャッシュするために使用される&quot;
         },
         &quot;$:/language/Docs/Fields/dependents&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/dependents&quot;,
@@ -11469,13 +12204,13 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
             &quot;text&quot;: &quot;そのtiddlerに紐付くtiddler名の順序付きリスト&quot;
         },
-        &quot;$:/language/Docs/Fields/list-before&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
-            &quot;text&quot;: &quot;このフィールドが設定されたtiddlerは、順序付きリストでこのフィールドに記載の名前のtiddlerの前に並ぶ。ただし空文字列が指定されていた場合は順序付きリストの先頭になる。&quot;
-        },
         &quot;$:/language/Docs/Fields/list-after&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
             &quot;text&quot;: &quot;このフィールドが設定されたtiddlerは、順序付きリストでこのフィールドに記載の名前のtiddlerの後ろに並ぶ。&quot;
+        },
+        &quot;$:/language/Docs/Fields/list-before&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
+            &quot;text&quot;: &quot;このフィールドが設定されたtiddlerは、順序付きリストでこのフィールドに記載の名前のtiddlerの前に並ぶ。ただし空文字列が指定されていた場合は順序付きリストの先頭になる。&quot;
         },
         &quot;$:/language/Docs/Fields/modified&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/modified&quot;,
@@ -11497,13 +12232,13 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/Fields/plugin-type&quot;,
             &quot;text&quot;: &quot;プラグインの種別&quot;
         },
-        &quot;$:/language/Docs/Fields/revision&quot;: {
-            &quot;title&quot;: &quot;$:/language/Docs/Fields/revision&quot;,
-            &quot;text&quot;: &quot;サーバー上の tiddler のリビジョン&quot;
-        },
         &quot;$:/language/Docs/Fields/released&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/released&quot;,
             &quot;text&quot;: &quot;TiddlyWiki のリリース日付&quot;
+        },
+        &quot;$:/language/Docs/Fields/revision&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/revision&quot;,
+            &quot;text&quot;: &quot;サーバー上の tiddler のリビジョン&quot;
         },
         &quot;$:/language/Docs/Fields/source&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/source&quot;,
@@ -11533,49 +12268,49 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/Fields/version&quot;,
             &quot;text&quot;: &quot;プラグインのバージョン情報&quot;
         },
-        &quot;$:/language/Filters/AllTiddlers&quot;: {
-            &quot;title&quot;: &quot;$:/language/Filters/AllTiddlers&quot;,
-            &quot;text&quot;: &quot;システム tiddler を除くすべての tiddler&quot;
-        },
-        &quot;$:/language/Filters/RecentTiddlers&quot;: {
-            &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
-            &quot;text&quot;: &quot;最近更新された tiddler&quot;
-        },
         &quot;$:/language/Filters/AllTags&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/AllTags&quot;,
             &quot;text&quot;: &quot;システムタグを除くすべてのタグ&quot;
         },
-        &quot;$:/language/Filters/Missing&quot;: {
-            &quot;title&quot;: &quot;$:/language/Filters/Missing&quot;,
-            &quot;text&quot;: &quot;未作成の tiddler&quot;
+        &quot;$:/language/Filters/AllTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/AllTiddlers&quot;,
+            &quot;text&quot;: &quot;システム tiddler を除くすべての tiddler&quot;
         },
         &quot;$:/language/Filters/Drafts&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/Drafts&quot;,
             &quot;text&quot;: &quot;ドラフト状態の tiddler&quot;
         },
+        &quot;$:/language/Filters/Missing&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Missing&quot;,
+            &quot;text&quot;: &quot;未作成の tiddler&quot;
+        },
         &quot;$:/language/Filters/Orphans&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/Orphans&quot;,
             &quot;text&quot;: &quot;孤立状態の tiddler&quot;
-        },
-        &quot;$:/language/Filters/SystemTiddlers&quot;: {
-            &quot;title&quot;: &quot;$:/language/Filters/SystemTiddlers&quot;,
-            &quot;text&quot;: &quot;システム tiddler&quot;
-        },
-        &quot;$:/language/Filters/ShadowTiddlers&quot;: {
-            &quot;title&quot;: &quot;$:/language/Filters/ShadowTiddlers&quot;,
-            &quot;text&quot;: &quot;隠し tiddler&quot;
         },
         &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
             &quot;text&quot;: &quot;上書きされている隠し tiddler&quot;
         },
+        &quot;$:/language/Filters/RecentTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
+            &quot;text&quot;: &quot;最近更新された tiddler&quot;
+        },
+        &quot;$:/language/Filters/ShadowTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/ShadowTiddlers&quot;,
+            &quot;text&quot;: &quot;隠し tiddler&quot;
+        },
         &quot;$:/language/Filters/SystemTags&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
             &quot;text&quot;: &quot;システムタグ&quot;
         },
+        &quot;$:/language/Filters/SystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SystemTiddlers&quot;,
+            &quot;text&quot;: &quot;システム tiddler&quot;
+        },
         &quot;GettingStarted&quot;: {
             &quot;title&quot;: &quot;GettingStarted&quot;,
-            &quot;text&quot;: &quot;TiddlyWiki にようこそ。これは個人で使える Web ノートです。\n\n作業を開始する前に保存機能が正しく使えるかどうかをご確認ください。 - 詳細は http://tiddlywiki.com/ の説明をご覧ください。\n\n以下のことができます:\n\n* サイドバーにある「＋」ボタンで新規の tiddler を作成できます\n* サイドバーにある「歯車」ボタンで [[コントロールパネル|$:/ControlPanel]] を開いてこの wiki に対する設定ができます\n** 「基本」タブのデフォルトtiddlerを変更することで、wikiを開くたびにこのメッセージが表示されることを抑制できます\n* 変更を保存するにはサイドバーの「ダウンロード」ボタンを押してください\n* 書式に関する詳細は [[WikiText|http://tiddlywiki.com/static/WikiText.html]] を参照してください\n&quot;
+            &quot;text&quot;: &quot;TiddlyWikiにようこそ。これは個人で使えるWeb ノートです。\n\n作業を開始する前に保存機能が正しく使えるかどうかをご確認ください。 - 詳細は http://tiddlywiki.com/ の説明をご覧ください。\n\nそれでは始めましょう:\n\n* サイドバーにある「＋」ボタンで新しいtiddlerを作成します。\n* サイドバーにある「歯車」ボタンで コントロールパネル を開いて、このWikiに対する設定ができます。\n** 「基本」タブのデフォルトtiddlerを変更することで、Wikiを開くたびにこのメッセージが表示されないようにできます。\n* 変更を保存するにはサイドバーの「ダウンロード」ボタンを押してください。\n* 書式に関する詳細は WikiText を参照してください。\n&quot;
         },
         &quot;$:/language/Help/default&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
@@ -11635,9 +12370,33 @@ Error message and password prompt
             &quot;description&quot;: &quot;Displays the version number of TiddlyWiki&quot;,
             &quot;text&quot;: &quot;TiddlyWiki のバージョン番号を表示する\n\n```\n--version\n```\n&quot;
         },
+        &quot;$:/language/Import/Listing/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;キャンセル&quot;
+        },
+        &quot;$:/language/Import/Listing/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Hint&quot;,
+            &quot;text&quot;: &quot;インポートの準備ができたtiddler:&quot;
+        },
+        &quot;$:/language/Import/Listing/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Import/Caption&quot;,
+            &quot;text&quot;: &quot;インポート&quot;
+        },
+        &quot;$:/language/Import/Listing/Status/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Status/Caption&quot;,
+            &quot;text&quot;: &quot;ステータス&quot;
+        },
+        &quot;$:/language/Import/Listing/Title/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Title/Caption&quot;,
+            &quot;text&quot;: &quot;タイトル&quot;
+        },
+        &quot;$:/language/BinaryWarning/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/BinaryWarning/Prompt&quot;,
+            &quot;text&quot;: &quot;このtiddlerにはバイナリデータが含まれています。&quot;
+        },
         &quot;$:/language/ClassicWarning/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ClassicWarning/Hint&quot;,
-            &quot;text&quot;: &quot;この tiddler はクラシックスタイルの TiddlyWiki フォーマットで書かれています。このフォーマットは TiddlyWiki バージョン 5 との完全な互換性はありません。詳しくは http://tiddlywiki.com/static/Upgrading.html を参照してください。&quot;
+            &quot;text&quot;: &quot;この tiddler はクラシックスタイルのTiddlyWikiフォーマットで書かれています。このフォーマットはTiddlyWiki5との完全な互換性はありません。詳しくは http://tiddlywiki.com/static/Upgrading.html を参照してください。&quot;
         },
         &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;,
@@ -11647,13 +12406,33 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/CloseAll/Button&quot;,
             &quot;text&quot;: &quot;すべて閉じる&quot;
         },
+        &quot;$:/language/ConfirmCancelTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmCancelTiddler&quot;,
+            &quot;text&quot;: &quot;本当にこのtiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; の編集内容を取り消しますか？&quot;
+        },
         &quot;$:/language/ConfirmDeleteTiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/ConfirmDeleteTiddler&quot;,
-            &quot;text&quot;: &quot;本当にこの tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; を削除しますか?&quot;
+            &quot;text&quot;: &quot;本当にこのtiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; を削除しますか?&quot;
+        },
+        &quot;$:/language/ConfirmEditShadowTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmEditShadowTiddler&quot;,
+            &quot;text&quot;: &quot;隠しtiddlerを編集します。将来のアップグレードで互換性がとれなくなるかもしれません。本当にこのtiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; を編集しますか？&quot;
         },
         &quot;$:/language/ConfirmOverwriteTiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/ConfirmOverwriteTiddler&quot;,
             &quot;text&quot;: &quot;本当にこの tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; を上書きしますか?&quot;
+        },
+        &quot;$:/language/DropMessage&quot;: {
+            &quot;title&quot;: &quot;$:/language/DropMessage&quot;,
+            &quot;text&quot;: &quot;ドロップしてください。（止めるには、キャンセルをクリックしてください。）&quot;
+        },
+        &quot;$:/language/Encryption/ConfirmClearPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/ConfirmClearPassword&quot;,
+            &quot;text&quot;: &quot;パスワードを削除すると暗号化も解除されますが、本当にパスワードを削除しますか？&quot;
+        },
+        &quot;$:/language/Encryption/PromptSetPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/PromptSetPassword&quot;,
+            &quot;text&quot;: &quot;パスワードを入力してください。&quot;
         },
         &quot;$:/language/InvalidFieldName&quot;: {
             &quot;title&quot;: &quot;$:/language/InvalidFieldName&quot;,
@@ -11683,6 +12462,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/TagManager/Tag/Heading&quot;,
             &quot;text&quot;: &quot;タグ&quot;
         },
+        &quot;$:/language/UnsavedChangesWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/UnsavedChangesWarning&quot;,
+            &quot;text&quot;: &quot;保存していない編集内容があります。&quot;
+        },
         &quot;$:/language/Modals/Download&quot;: {
             &quot;title&quot;: &quot;$:/language/Modals/Download&quot;,
             &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
@@ -11709,19 +12492,23 @@ Error message and password prompt
         },
         &quot;$:/language/Search/Advanced/Matches&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Advanced/Matches&quot;,
-            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件の一致&lt;/small&gt;//&quot;
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
         },
         &quot;$:/language/Search/Filter/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
-            &quot;text&quot;: &quot;フィルター&quot;
+            &quot;text&quot;: &quot;フィルタ&quot;
         },
         &quot;$:/language/Search/Filter/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Filter/Hint&quot;,
-            &quot;text&quot;: &quot;[[フィルタの書式|http://tiddlywiki.com/static/Filters.html]] を参照&quot;
+            &quot;text&quot;: &quot;[[フィルタ|http://tiddlywiki.com/static/Filters.html]]で検索します。 &quot;
+        },
+        &quot;$:/language/Search/Filter/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
         },
         &quot;$:/language/Search/Matches&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Matches&quot;,
-            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件の一致&lt;/small&gt;//&quot;
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
         },
         &quot;$:/language/Search/Shadows/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Shadows/Caption&quot;,
@@ -11729,7 +12516,23 @@ Error message and password prompt
         },
         &quot;$:/language/Search/Shadows/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Shadows/Hint&quot;,
-            &quot;text&quot;: &quot;隠し tiddler を検索&quot;
+            &quot;text&quot;: &quot;隠しtiddlerを検索します。&quot;
+        },
+        &quot;$:/language/Search/Shadows/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Standard/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Caption&quot;,
+            &quot;text&quot;: &quot;一般&quot;
+        },
+        &quot;$:/language/Search/Standard/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Hint&quot;,
+            &quot;text&quot;: &quot;一般のtiddlerを検索します。&quot;
+        },
+        &quot;$:/language/Search/Standard/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
         },
         &quot;$:/language/Search/System/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/System/Caption&quot;,
@@ -11737,11 +12540,19 @@ Error message and password prompt
         },
         &quot;$:/language/Search/System/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/System/Hint&quot;,
-            &quot;text&quot;: &quot;システム tiddler を検索&quot;
+            &quot;text&quot;: &quot;システムtiddlerを検索します。&quot;
+        },
+        &quot;$:/language/Search/System/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; 件一致&lt;/small&gt;//&quot;
         },
         &quot;$:/language/SideBar/All/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/All/Caption&quot;,
             &quot;text&quot;: &quot;全て&quot;
+        },
+        &quot;$:/language/SideBar/Contents/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Contents/Caption&quot;,
+            &quot;text&quot;: &quot;コンテンツ&quot;
         },
         &quot;$:/language/SideBar/Drafts/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Drafts/Caption&quot;,
@@ -11753,19 +12564,19 @@ Error message and password prompt
         },
         &quot;$:/language/SideBar/More/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/More/Caption&quot;,
-            &quot;text&quot;: &quot;さらに&quot;
+            &quot;text&quot;: &quot;詳しく&quot;
         },
         &quot;$:/language/SideBar/Open/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Open/Caption&quot;,
-            &quot;text&quot;: &quot;オープン中&quot;
+            &quot;text&quot;: &quot;表示中&quot;
         },
         &quot;$:/language/SideBar/Orphans/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Orphans/Caption&quot;,
-            &quot;text&quot;: &quot;孤立&quot;
+            &quot;text&quot;: &quot;被参照無し&quot;
         },
         &quot;$:/language/SideBar/Recent/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Recent/Caption&quot;,
-            &quot;text&quot;: &quot;最近&quot;
+            &quot;text&quot;: &quot;最近の更新&quot;
         },
         &quot;$:/language/SideBar/Shadows/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Shadows/Caption&quot;,
@@ -11781,7 +12592,7 @@ Error message and password prompt
         },
         &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;,
-            &quot;text&quot;: &quot;未タグ&quot;
+            &quot;text&quot;: &quot;タグ無し&quot;
         },
         &quot;$:/language/SideBar/Tools/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Tools/Caption&quot;,
@@ -11797,7 +12608,7 @@ Error message and password prompt
         },
         &quot;$:/SiteTitle&quot;: {
             &quot;title&quot;: &quot;$:/SiteTitle&quot;,
-            &quot;text&quot;: &quot;My ~TiddlyWiki&quot;
+            &quot;text&quot;: &quot;My TiddlyWiki&quot;
         },
         &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;,
@@ -11813,7 +12624,7 @@ Error message and password prompt
         },
         &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;,
-            &quot;text&quot;: &quot;このプラグインは次の隠し tiddler を含んでいます :&quot;
+            &quot;text&quot;: &quot;このプラグインは次の隠しtiddlerを含んでいます :&quot;
         },
         &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;,
@@ -11823,6 +12634,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/NotShadow/Hint&quot;,
             &quot;text&quot;: &quot;この tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; は隠し tiddler ではありません&quot;
         },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;,
+            &quot;text&quot;: &quot;通常の tiddler に上書きされています&quot;
+        },
         &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;,
             &quot;text&quot;: &quot;この tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; は隠し tiddler です&quot;
@@ -11830,10 +12645,6 @@ Error message and password prompt
         &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;,
             &quot;text&quot;: &quot;プラグイン &lt;$link to=&lt;&lt;pluginTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;pluginTiddler&gt;&gt;/&gt;&lt;/$link&gt; で定義されています&quot;
-        },
-        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;: {
-            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;,
-            &quot;text&quot;: &quot;通常の tiddler に上書きされています&quot;
         },
         &quot;$:/language/TiddlerInfo/Fields/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Fields/Caption&quot;,
@@ -11845,7 +12656,7 @@ Error message and password prompt
         },
         &quot;$:/language/TiddlerInfo/List/Empty&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/List/Empty&quot;,
-            &quot;text&quot;: &quot;リストを保持していません&quot;
+            &quot;text&quot;: &quot;リストはありません。&quot;
         },
         &quot;$:/language/TiddlerInfo/Listed/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Caption&quot;,
@@ -11853,15 +12664,15 @@ Error message and password prompt
         },
         &quot;$:/language/TiddlerInfo/Listed/Empty&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Empty&quot;,
-            &quot;text&quot;: &quot;このtiddlerを参照するリストはありません&quot;
+            &quot;text&quot;: &quot;このtiddlerを参照するリストはありません。&quot;
         },
         &quot;$:/language/TiddlerInfo/References/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Caption&quot;,
-            &quot;text&quot;: &quot;これを参照&quot;
+            &quot;text&quot;: &quot;参照&quot;
         },
         &quot;$:/language/TiddlerInfo/References/Empty&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Empty&quot;,
-            &quot;text&quot;: &quot;どこからも参照されていません&quot;
+            &quot;text&quot;: &quot;他のtiddlerから参照されていません。&quot;
         },
         &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;,
@@ -11869,7 +12680,11 @@ Error message and password prompt
         },
         &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;: {
             &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;,
-            &quot;text&quot;: &quot;この名でタグ付けされた tiddler はありません&quot;
+            &quot;text&quot;: &quot;この名でタグ付けされたtiddlerはありません。&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;ツール&quot;
         },
         &quot;$:/language/Docs/Types/application/json&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Types/application/json&quot;,
@@ -18619,13 +19434,29 @@ Error message and password prompt
 <div title="Extracting Translations">
 <pre>The [[Instructions for Translators]] yield a standalone TiddlyWiki HTML file that contains tiddlers corresponding to each translated string.
 
-The following command is used to generate the tiddler source files for the repository:
+! Extracting a new language plugin
 
-```
-tiddlywiki editions/translators/ --verbose --load &lt;path to HTML file&gt; --build output-files
-```
+Use this procedure if the language being submitted is not already present in the TiddlyWiki repository.
 
-The source files are generated in `editions/translators/output/language`. They should be copied to the appropriate `languages` directory, and an appropriate flag image placed in `icon.tid`.
+# Run the following command in the terminal to generate the tiddler source files for the repository:
+#* `tiddlywiki editions/translators/ --verbose --load &lt;path to HTML file&gt; --build output-files`
+#*&gt; The source files are generated in `editions/translators/output/language`
+# Create the new language folder `languages/xx-XX`
+# Copy the language files into the language folder
+# Create a `plugin.info` file for the translation
+# Create an appropriate flag image in `icon.tid`
+# Change the title of the [[$:/core/readme]] tiddler to `$:/core/xx-XX/readme`
+# Submit a pull request
+
+! Updating an existing language plugin
+
+Use this procedure for submissions of updates to language plugins that are already present in the TiddlyWiki repository.
+
+# Run the following command in the terminal to generate the tiddler source files for the repository:
+#* `tiddlywiki editions/translators/ --verbose --unpackplugin $:/languages/xx-XX --load &lt;path to HTML file&gt; --build output-files`
+#* substituting the appropriate language code for `xx-XX`
+# Copy the language files from the edition output folder to the appropriate language directory
+#* Take care not to copy any empty `.tid` files
 </pre>
 </div>
 <div title="HelloThere">
