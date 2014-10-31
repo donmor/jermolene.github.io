@@ -47,7 +47,7 @@ TimelineMacro
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 13 days ago
+</a> 16 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -61,6 +61,28 @@ TimelineMacro
 
 <div class='tc-tiddler-body'><p>The timeline macro produces a list of tiddlers in reverse chronological order of modification date that is grouped by the date of the day of modification.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>limit</td><td align='left'>The maximum number of tiddlers to list (see below)</td><td align='left'>100</td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>format</td><td align='left'>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat.html'>DateFormat</a> string for formatting the date</td><td align='left'>DDth MMM YYYY</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subfilter</td><td align='left'>A subfilter to include in the timeline filter (see below)</td><td align='center'></td></tr></tbody></table><p>The subfilter and limit parameters are spliced into the filter string like this:</p><pre><code>[!is[system]$subfilter$has[modified]!sort[modified]limit[$limit$]eachday[modified]]</code></pre><p>To restrict the timeline to a particular tag, the subfilter can be set to something like <code>tag[mytag]</code>:</p><pre><code>&lt;&lt;timeline limit:10 subfilter:&quot;tag[mytag]&quot;&gt;&gt;</code></pre><p>Note that the timeline macro does not truncate the entries for a particular day, instead always displaying all the tiddlers under each displayed day heading. This means that the limit parameter works in an unexpected way because it is possible for more than the specified number of tiddlers to be displayed.</p><h1 class=''>Examples</h1><pre><code>&lt;&lt;timeline limit:30 format:'DD/MM/YYYY'&gt;&gt;
 </code></pre><p>Renders as:</p><p><div class='tc-timeline'>
+
+<div class='tc-menu-list-item'>
+31/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='%2522TiddlyWiki%2520guide%2520FR%2522%2520by%2520Sylvain%2520Naudin.html'>
+&quot;TiddlyWiki guide FR&quot; by Sylvain Naudin
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+29/10/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='PluginMechanism.html'>
+PluginMechanism
+</a>
+</div>
+
+</div>
 
 <div class='tc-menu-list-item'>
 27/10/2014
