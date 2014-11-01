@@ -4929,7 +4929,7 @@ This is my work in progress version of TW5, incorporating various features and i
             &quot;title&quot;: &quot;$:/core/ui/SideBar/Tools&quot;,
             &quot;tags&quot;: &quot;$:/tags/SideBar&quot;,
             &quot;caption&quot;: &quot;{{$:/language/SideBar/Tools/Caption}}&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/\n\\define config-title()\n$:/config/PageControlButtons/Visibility/$(listItem)$\n\\end\n\n&lt;&lt;lingo Basics/Version/Prompt&gt;&gt; &lt;&lt;version&gt;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value=\&quot;yes\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value=\&quot;yes\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value=\&quot;\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$checkbox tiddler=&lt;&lt;config-title&gt;&gt; field=\&quot;text\&quot; checked=\&quot;show\&quot; unchecked=\&quot;hide\&quot; default=\&quot;show\&quot;/&gt; &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt; &lt;i class=\&quot;tc-muted\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/i&gt;\n\n&lt;/$list&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/\n\\define config-title()\n$:/config/PageControlButtons/Visibility/$(listItem)$\n\\end\n\n&lt;&lt;lingo Basics/Version/Prompt&gt;&gt; &lt;&lt;version&gt;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value=\&quot;yes\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value=\&quot;yes\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value=\&quot;\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;div style=\&quot;position:relative;\&quot;&gt;\n\n&lt;$checkbox tiddler=&lt;&lt;config-title&gt;&gt; field=\&quot;text\&quot; checked=\&quot;show\&quot; unchecked=\&quot;hide\&quot; default=\&quot;show\&quot;/&gt; &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt; &lt;i class=\&quot;tc-muted\&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/i&gt;\n\n&lt;/div&gt;\n\n&lt;/$list&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n&quot;
         },
         &quot;$:/core/ui/SideBarLists&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/SideBarLists&quot;,
@@ -10129,6 +10129,2231 @@ $src$
             &quot;title&quot;: &quot;$:/languages/de-DE/icon&quot;,
             &quot;type&quot;: &quot;image/svg+xml&quot;,
             &quot;text&quot;: &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot; standalone=\&quot;no\&quot;?&gt;\n&lt;!DOCTYPE svg PUBLIC \&quot;-//W3C//DTD SVG 1.1//EN\&quot;\n\t\&quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\&quot;&gt;\n&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;1000\&quot; height=\&quot;600\&quot; viewBox=\&quot;0 0 5 3\&quot;&gt;\n\t&lt;desc&gt;Flag of Germany&lt;/desc&gt;\n\t&lt;rect id=\&quot;black_stripe\&quot; width=\&quot;5\&quot; height=\&quot;3\&quot; y=\&quot;0\&quot; x=\&quot;0\&quot; fill=\&quot;#000\&quot;/&gt;\n\t&lt;rect id=\&quot;red_stripe\&quot; width=\&quot;5\&quot; height=\&quot;2\&quot; y=\&quot;1\&quot; x=\&quot;0\&quot; fill=\&quot;#D00\&quot;/&gt;\n\t&lt;rect id=\&quot;gold_stripe\&quot; width=\&quot;5\&quot; height=\&quot;1\&quot; y=\&quot;2\&quot; x=\&quot;0\&quot; fill=\&quot;#FFCE00\&quot;/&gt;\n&lt;/svg&gt;\n&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="Stratis Aravias@ΓΕΛ Σαμοθράκης" core-version="&gt;=5.0.0" dependents="" description="Ελληνικά (Ελλάδα)" name="el-GR" plugin-type="language" title="$:/languages/el-GR" type="application/json" version="5.1.5-prerelease">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;,
+            &quot;text&quot;: &quot;προηγμένη αναζήτηση&quot;
+        },
+        &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;,
+            &quot;text&quot;: &quot;Προηγμένη αναζήτηση&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;άκυρο&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Hint&quot;,
+            &quot;text&quot;: &quot;Ακυρώνει την τροποποίηση αυτού του tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Caption&quot;,
+            &quot;text&quot;: &quot;κλωνοποίησε&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Hint&quot;,
+            &quot;text&quot;: &quot;Κλωνοποίησε αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Close/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Caption&quot;,
+            &quot;text&quot;: &quot;κλείσε&quot;
+        },
+        &quot;$:/language/Buttons/Close/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Hint&quot;,
+            &quot;text&quot;: &quot;Κλείσε αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Caption&quot;,
+            &quot;text&quot;: &quot;κλείσε τα όλα&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Hint&quot;,
+            &quot;text&quot;: &quot;Κλείσε όλα τα tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Caption&quot;,
+            &quot;text&quot;: &quot;κλείσε τα υπόλοιπα&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Hint&quot;,
+            &quot;text&quot;: &quot;Κλείσε όλα τα υπόλοιπα tiddlers εκτός από αυτό&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Caption&quot;,
+            &quot;text&quot;: &quot;πίνακας ελέγχου&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Hint&quot;,
+            &quot;text&quot;: &quot;Άνοιξε τον πίνακα ελέγχου&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;διέγραψε&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;Διέγραψε αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Caption&quot;,
+            &quot;text&quot;: &quot;τροποποίησε&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Hint&quot;,
+            &quot;text&quot;: &quot;Τροποποίησε αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Caption&quot;,
+            &quot;text&quot;: &quot;κρυπτογράφησε&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Hint&quot;,
+            &quot;text&quot;: &quot;Όρισε ή απάλειψε το συνθηματικό για την αποθήκευση αυτού του wiki&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;,
+            &quot;text&quot;: &quot;Χωρίς συνθηματικό&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;,
+            &quot;text&quot;: &quot;Απάλειψε το συνθηματικό και αποθηκεύσε αυτό το  wiki χωρίς κρυπτογράφηση&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;,
+            &quot;text&quot;: &quot;όρισε συνθηματικό&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
+            &quot;text&quot;: &quot;Όρισε ένα συνθηματικό για να να αποθηκεύσεις αυτό το wiki κρυπτογραφημένο&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
+            &quot;text&quot;: &quot;πλήρη-οθόνη&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Hint&quot;,
+            &quot;text&quot;: &quot;Εναλλαγή κατάστασης πλήρους-οθόνης&quot;
+        },
+        &quot;$:/language/Buttons/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Caption&quot;,
+            &quot;text&quot;: &quot;εισαγωγή&quot;
+        },
+        &quot;$:/language/Buttons/Import/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Hint&quot;,
+            &quot;text&quot;: &quot;Εισαγωγή αρχείων&quot;
+        },
+        &quot;$:/language/Buttons/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Caption&quot;,
+            &quot;text&quot;: &quot;πληροφορίες&quot;
+        },
+        &quot;$:/language/Buttons/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Hint&quot;,
+            &quot;text&quot;: &quot;Δείξε πληροφορίες για αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Home/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Caption&quot;,
+            &quot;text&quot;: &quot;αρχική&quot;
+        },
+        &quot;$:/language/Buttons/Home/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Hint&quot;,
+            &quot;text&quot;: &quot;Ανοίγει τα τυπικά tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/Language/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Caption&quot;,
+            &quot;text&quot;: &quot;γλώσσα&quot;
+        },
+        &quot;$:/language/Buttons/Language/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Hint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε την γλώσσα για την διεπαφή του χρήστη&quot;
+        },
+        &quot;$:/language/Buttons/More/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Caption&quot;,
+            &quot;text&quot;: &quot;περισσότερα&quot;
+        },
+        &quot;$:/language/Buttons/More/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Hint&quot;,
+            &quot;text&quot;: &quot;Περισσότερες ενέργειες&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Caption&quot;,
+            &quot;text&quot;: &quot;νέο εδώ&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Hint&quot;,
+            &quot;text&quot;: &quot;Δημιούργησε ένα νέο tiddler που έχει ως ετικέτα του το τρέχον&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Caption&quot;,
+            &quot;text&quot;: &quot;νέο ημερολόγιο&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Hint&quot;,
+            &quot;text&quot;: &quot;Δημιούργησε ένα νέο ημερολογιακό tiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Caption&quot;,
+            &quot;text&quot;: &quot;νέο ημερολόγιο εδώ&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Hint&quot;,
+            &quot;text&quot;: &quot;Δημιούργησε ένα νέο ημερολογιακό tiddler με ετικέτα το παρόν&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;νέο tiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Δημιούργησε ένα νέο tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Caption&quot;,
+            &quot;text&quot;: &quot;μόνιμος σύνδεσμος&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Hint&quot;,
+            &quot;text&quot;: &quot;Θέσε στην γραμμή διεύθυνσης του προγράμματος πλοήγησης έναν μόνιμο σύνδεσμο για αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Caption&quot;,
+            &quot;text&quot;: &quot;μόνιμη όψη&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Hint&quot;,
+            &quot;text&quot;: &quot;Θέσε στην γραμμή διεύθυνσης του προγράμματος πλοήγησης έναν μόνιμο σύνδεσμο για όλα τα tiddlers σε αυτή την ιστορία&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Caption&quot;,
+            &quot;text&quot;: &quot;ανανέωση&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Hint&quot;,
+            &quot;text&quot;: &quot;Επαναφόρτωση του wiki&quot;
+        },
+        &quot;$:/language/Buttons/Save/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Caption&quot;,
+            &quot;text&quot;: &quot;αποθήκευση&quot;
+        },
+        &quot;$:/language/Buttons/Save/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Hint&quot;,
+            &quot;text&quot;: &quot;Αποθήκευσε αυτό το tiddler&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Caption&quot;,
+            &quot;text&quot;: &quot;αποθήκευση αλλαγών&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Hint&quot;,
+            &quot;text&quot;: &quot;Αποθήκευσε τις αλλαγές&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Caption&quot;,
+            &quot;text&quot;: &quot;ιστορική όψη&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Hint&quot;,
+            &quot;text&quot;: &quot;Επέλεξε την ιστορική οπτικοποίηση&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;απόκρυψη πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;Κρύψε την πλευρική γραμμή&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;εμφάνιση πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;Δείξε την πλευρική γραμμή&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Caption&quot;,
+            &quot;text&quot;: &quot;διαχειριστής ετικετών&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Hint&quot;,
+            &quot;text&quot;: &quot;Άνοιξε τον διαχειριστή ετικετών&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Caption&quot;,
+            &quot;text&quot;: &quot;θέμα&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Hint&quot;,
+            &quot;text&quot;: &quot;Διάλεξε το οπτικό θέμα&quot;
+        },
+        &quot;$:/language/ControlPanel/Advanced/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Caption&quot;,
+            &quot;text&quot;: &quot;Προηγμένα&quot;
+        },
+        &quot;$:/language/ControlPanel/Advanced/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Hint&quot;,
+            &quot;text&quot;: &quot;Εσωτερικές πληροφορίες σχετικά με αυτό το TiddlyWiki&quot;
+        },
+        &quot;$:/language/ControlPanel/Appearance/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Caption&quot;,
+            &quot;text&quot;: &quot;Εμφάνιση&quot;
+        },
+        &quot;$:/language/ControlPanel/Appearance/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Hint&quot;,
+            &quot;text&quot;: &quot;Τρόποι για να παραμετροποιήσετε την εμφάνιση του δικού σας TiddlyWiki.&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;,
+            &quot;text&quot;: &quot; Διάρκεια κίνησης:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Caption&quot;,
+            &quot;text&quot;: &quot;Βασικά&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;,
+            &quot;text&quot;: &quot;Χρησιμοποιήστε &amp;#91;&amp;#91;διπλές αγκύλες &amp;#93;&amp;#93; για τίτλους με κενά. Ή, μπορείτε να διαλέξετε τη &lt;$button set=\&quot;$:/DefaultTiddlers\&quot; setTo=\&quot;[list[$:/StoryList]]\&quot;&gt;διατήρηση της διάταξης της ιστορίας&lt;/$button&gt;&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Τυπικά tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε ποια  tiddlers θα εμφανίζονται κατά την έναρξη:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;,
+            &quot;text&quot;: &quot;Γεια σας! Τρέχουσα γλώσσα:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;,
+            &quot;text&quot;: &quot;Τίτλος των νέων ημερολογιακών tiddlers&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;,
+            &quot;text&quot;: &quot;Ετικέτες για νέα ημερολογιακά tiddlers&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Πλήθος σκιώδων  tiddlers που έχουν παρακαμφθεί:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Πλήθος σκιώδων tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Subtitle/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Subtitle/Prompt&quot;,
+            &quot;text&quot;: &quot;Υπότιτλος:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/SystemTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/SystemTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Πλήθος tiddlers συστήματος:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Tags/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Tags/Prompt&quot;,
+            &quot;text&quot;: &quot;Πλήθος ετικετών:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Tiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Tiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Πλήθος tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Title/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Title/Prompt&quot;,
+            &quot;text&quot;: &quot;Τίτλος αυτού του ~TiddlyWiki:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Username/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Username/Prompt&quot;,
+            &quot;text&quot;: &quot;Όνομα χρήστη για καταχώρηση τροποποιήσεων:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Version/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Version/Prompt&quot;,
+            &quot;text&quot;: &quot;~TiddlyWiki έκδοση:&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;,
+            &quot;text&quot;: &quot;Τύποι επεξεργαστών&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;,
+            &quot;text&quot;: &quot;Επεξεργαστής&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτά τα tiddlers καθορίζουν ποιος κειμενογράφος  θα χρησιμοποιηθεί για την επεξεργασία συγκεκριμένων τύπων tiddler.&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;,
+            &quot;text&quot;: &quot;Τύπος&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Caption&quot;,
+            &quot;text&quot;: &quot;Πληροφορίες&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Hint&quot;,
+            &quot;text&quot;: &quot;Πληροφορίες σχετικα με αυτό το TiddlyWiki&quot;
+        },
+        &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;,
+            &quot;text&quot;: &quot;Φορτωμένες μονάδες&quot;
+        },
+        &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτές είναι οι τρέχουσες φορτωμένες μονάδες tiddler που συνδέονται στα επιμέρους πηγαία tiddlers. Οι πλάγια γραμμένες μονάδες δεν έχουν πηγαίο tiddler, συνήθως επειδή αρχικοποιούνται κατά την διαδικασία εκκίνησης.&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Caption&quot;,
+            &quot;text&quot;: &quot;Παλέτα&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;,
+            &quot;text&quot;: &quot;κλωνοποίησε&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;,
+            &quot;text&quot;: &quot;Συνιστάτε να κλωνοποιήσετε αυτήν την σκιώδη παλέτα πριν την τροποποιήσετε&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;,
+            &quot;text&quot;: &quot;Αυτή η σκιώδη παλέτα έχει τροποποιηθεί&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;,
+            &quot;text&quot;: &quot;Επεξεργασία&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;,
+            &quot;text&quot;: &quot;επαναφορά&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/HideEditor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/HideEditor/Caption&quot;,
+            &quot;text&quot;: &quot;απόκρυψη επεξεργαστή&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Prompt&quot;,
+            &quot;text&quot;: &quot;Τρέχουσα παλέτα:&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/ShowEditor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/ShowEditor/Caption&quot;,
+            &quot;text&quot;: &quot;εμφάνισε επεξεργαστή&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Caption&quot;,
+            &quot;text&quot;: &quot;Πρόσθετα&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;,
+            &quot;text&quot;: &quot;απενεργοποίησε&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;,
+            &quot;text&quot;: &quot;Απενεργοποίησε αυτό το πρόσθετο όταν φορτωθεί ξανά η σελίδα&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;,
+            &quot;text&quot;: &quot;(απενεργοποιημένο)&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;,
+            &quot;text&quot;: &quot;Άδειο&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;,
+            &quot;text&quot;: &quot;ενεργοποίησε&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;,
+            &quot;text&quot;: &quot;Ενεργοποίησε αυτό το πρόσθετο όταν φορτωθεί ξανά η σελίδα&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;,
+            &quot;text&quot;: &quot;Γλώσσες&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Plugin/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Plugin/Prompt&quot;,
+            &quot;text&quot;: &quot;Πρόσθετα&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Theme/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Theme/Prompt&quot;,
+            &quot;text&quot;: &quot;Θέματα&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Caption&quot;,
+            &quot;text&quot;: &quot;Αποθήκευση&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Heading&quot;,
+            &quot;text&quot;: &quot;Αποθήκευση&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;,
+            &quot;text&quot;: &quot;Προηγμένες ρυθμίσεις&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;,
+            &quot;text&quot;: &quot;Φάκελος αντιγράφων ασφαλείας&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;,
+            &quot;text&quot;: &quot;Αντίγραφα ασφαλείας&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;,
+            &quot;text&quot;: &quot;Αυτές οι ρυθμίσεις χρησιμοποιούνται μόνο όταν γίνεται αποθήκευση στο http://tiddlyspot.com ή, σε έναν συμβατό απομακρυσμένο εξυπηρετητή&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;,
+            &quot;text&quot;: &quot;ανέβασμα αρχείου&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Heading&quot;,
+            &quot;text&quot;: &quot;~TiddlySpot&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Hint&quot;,
+            &quot;text&quot;: &quot;// Το τυπικό URL του εξυπηρετητή είναι το  `http://&lt;wikiname&gt;.tiddlyspot.com/store.cgi` και μπορεί να αλλαχθεί για να χρησιμοποιηθεί μια διαφορετική διεύθυνση εξυπηρετητή //&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Password&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Password&quot;,
+            &quot;text&quot;: &quot;Συνθηματικό&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/ServerURL&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/ServerURL&quot;,
+            &quot;text&quot;: &quot;URL Εξυπηρετητή&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/UploadDir&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/UploadDir&quot;,
+            &quot;text&quot;: &quot;Φάκελος ανεβάσματος&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/UserName&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/UserName&quot;,
+            &quot;text&quot;: &quot;Όνομα Wiki &quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Caption&quot;,
+            &quot;text&quot;: &quot;Αυτόματη αποθήκευση&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;,
+            &quot;text&quot;: &quot;Μην αποθηκεύσεις αυτόματα τις αλλαγές&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;,
+            &quot;text&quot;: &quot;Αυτόματα αποθήκευσε τις αλλαγές&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτόματη αποθήκευση αλλαγών κατά την επεξεργασία&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Caption&quot;,
+            &quot;text&quot;: &quot;Ρυθμίσεις&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτές οι ρυθμίσεις σας επιτρέπουν να παραμετροποιήσετε την συμπεριφορά του TiddlyWiki.&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;,
+            &quot;text&quot;: &quot;Γραμμή διεύθυνσης πλοήγησης&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;,
+            &quot;text&quot;: &quot;Η συμπεριφορά της γραμμής διεύθυνσης του προγράμματος πλοήγησης ιστοσελίδων όταν μεταβαίνετε σε κάποιο tiddler:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;,
+            &quot;text&quot;: &quot;Μην ενημερώνεις την γραμμή διευθύνσεων &quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;,
+            &quot;text&quot;: &quot;Συμπεριέλαβε το tiddler προορισμού&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;,
+            &quot;text&quot;: &quot;Συμπεριέλαβε το tiddler προορισμού και την τρέχουσα ακολουθία της ιστορίας&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;,
+            &quot;text&quot;: &quot;Ιστορικό πλοήγησης&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;,
+            &quot;text&quot;: &quot;Ενημέρωση του ιστορικού στο πρόγραμμα πλοήγησης όταν μεταβαίνουμε σε κάποιο tiddler:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;,
+            &quot;text&quot;: &quot;Μην ενημερώσεις το ιστορικό&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;,
+            &quot;text&quot;: &quot;Ενημέρωσε το ιστορικό&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;,
+            &quot;text&quot;: &quot;Κουμπιά γραμμής εργαλείων&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;,
+            &quot;text&quot;: &quot;Τυπική εμφάνιση κουμπιού γραμμής εργαλείων:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;,
+            &quot;text&quot;: &quot;Συμπεριέλαβε εικόνα&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;,
+            &quot;text&quot;: &quot;Συμπεριέλαβε κείμενο&quot;
+        },
+        &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
+            &quot;text&quot;: &quot;Ιστορική όψη&quot;
+        },
+        &quot;$:/language/ControlPanel/StoryView/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Prompt&quot;,
+            &quot;text&quot;: &quot;Τρέχουσα όψη:&quot;
+        },
+        &quot;$:/language/ControlPanel/Theme/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Theme/Caption&quot;,
+            &quot;text&quot;: &quot;Θέμα&quot;
+        },
+        &quot;$:/language/ControlPanel/Theme/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Theme/Prompt&quot;,
+            &quot;text&quot;: &quot;Τρέχον θέμα:&quot;
+        },
+        &quot;$:/language/ControlPanel/TiddlerFields/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Caption&quot;,
+            &quot;text&quot;: &quot;Πεδία Tiddler&quot;
+        },
+        &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτό είναι το πλήρες σύνολο από TiddlerFields που χρησιμοποιούνται σε αυτό το wiki (συμπεριλαμβανομένων των tiddlers συστήματος, αλλά εξαιρούνται τα σκιώδη tiddlers).&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Caption&quot;,
+            &quot;text&quot;: &quot;Γραμμές εργαλείων&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;Γραμμή τροποποιήσεων&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε ποια κουμπιά θα εμφανίζονται στα tiddlers που βρίσκονται σε κατάσταση τροποποίησης&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Hint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε ποια κουμπιά της γραμμής εργαλείων θα εμφανίζονται&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;,
+            &quot;text&quot;: &quot;Γραμμή εργαλείων σελίδας&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε ποια κουμπιά θα εμφανίζονται στην γραμμή εργαλείων της κεντρικής σελίδας&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;Εμφάνιση γραμμής εργαλείων&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;Επιλέξτε ποια κουμπιά θα εμφανίζονται για tiddlers σε κατάσταση προβολής&quot;
+        },
+        &quot;$:/language/ControlPanel/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;Εργαλεία&quot;
+        },
+        &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
+            &quot;text&quot;: &quot;Λήψη του πλήρους wiki&quot;
+        },
+        &quot;$:/language/ControlPanel/Tools/Export/AllAsStaticHTML/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Export/AllAsStaticHTML/Caption&quot;,
+            &quot;text&quot;: &quot;Λήψη όλων των tiddlers ως στατική HTML&quot;
+        },
+        &quot;$:/language/ControlPanel/Tools/Export/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Export/Heading&quot;,
+            &quot;text&quot;: &quot;Εξαγωγή&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/1&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/2&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/3&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/4&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/5&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/6&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/7&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/8&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/9&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/10&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/11&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/12&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/13&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/13&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/14&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/14&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/15&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/15&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/16&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/16&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/17&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/17&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/18&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/18&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/19&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/19&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/20&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/20&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/21&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/21&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/22&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/22&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/23&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/23&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/24&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/24&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/25&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/25&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/26&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/26&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/27&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/27&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/28&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/28&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/29&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/29&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/30&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/30&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/31&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/31&quot;,
+            &quot;text&quot;: &quot;η&quot;
+        },
+        &quot;$:/language/Date/Long/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/0&quot;,
+            &quot;text&quot;: &quot;Κυριακή&quot;
+        },
+        &quot;$:/language/Date/Long/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/1&quot;,
+            &quot;text&quot;: &quot;Δευτέρα&quot;
+        },
+        &quot;$:/language/Date/Long/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/2&quot;,
+            &quot;text&quot;: &quot;Τρίτη&quot;
+        },
+        &quot;$:/language/Date/Long/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/3&quot;,
+            &quot;text&quot;: &quot;Τετάρτη&quot;
+        },
+        &quot;$:/language/Date/Long/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/4&quot;,
+            &quot;text&quot;: &quot;Πέμπτη&quot;
+        },
+        &quot;$:/language/Date/Long/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/5&quot;,
+            &quot;text&quot;: &quot;Παρασκευή&quot;
+        },
+        &quot;$:/language/Date/Long/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/6&quot;,
+            &quot;text&quot;: &quot;Σάββατο&quot;
+        },
+        &quot;$:/language/Date/Long/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/1&quot;,
+            &quot;text&quot;: &quot;Ιανουαρίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/2&quot;,
+            &quot;text&quot;: &quot;Φεβρουαρίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/3&quot;,
+            &quot;text&quot;: &quot;Μαρτίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/4&quot;,
+            &quot;text&quot;: &quot;Απριλίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/5&quot;,
+            &quot;text&quot;: &quot;Μαΐου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/6&quot;,
+            &quot;text&quot;: &quot;Ιουνίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/7&quot;,
+            &quot;text&quot;: &quot;Ιουλίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/8&quot;,
+            &quot;text&quot;: &quot;Αυγούστου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/9&quot;,
+            &quot;text&quot;: &quot;Σεπτεμβρίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/10&quot;,
+            &quot;text&quot;: &quot;Οκτωβρίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/11&quot;,
+            &quot;text&quot;: &quot;Νοεμβρίου&quot;
+        },
+        &quot;$:/language/Date/Long/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/12&quot;,
+            &quot;text&quot;: &quot;Δεκεμβρίου&quot;
+        },
+        &quot;$:/language/Date/Period/am&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/am&quot;,
+            &quot;text&quot;: &quot;π.μ.&quot;
+        },
+        &quot;$:/language/Date/Period/pm&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/pm&quot;,
+            &quot;text&quot;: &quot;μ.μ.&quot;
+        },
+        &quot;$:/language/Date/Short/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/0&quot;,
+            &quot;text&quot;: &quot;Κυρ&quot;
+        },
+        &quot;$:/language/Date/Short/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/1&quot;,
+            &quot;text&quot;: &quot;Δευ&quot;
+        },
+        &quot;$:/language/Date/Short/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/2&quot;,
+            &quot;text&quot;: &quot;Τρι&quot;
+        },
+        &quot;$:/language/Date/Short/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/3&quot;,
+            &quot;text&quot;: &quot;Τετ&quot;
+        },
+        &quot;$:/language/Date/Short/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/4&quot;,
+            &quot;text&quot;: &quot;Πεμ&quot;
+        },
+        &quot;$:/language/Date/Short/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/5&quot;,
+            &quot;text&quot;: &quot;Παρ&quot;
+        },
+        &quot;$:/language/Date/Short/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/6&quot;,
+            &quot;text&quot;: &quot;Σαβ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/1&quot;,
+            &quot;text&quot;: &quot;Ιαν&quot;
+        },
+        &quot;$:/language/Date/Short/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/2&quot;,
+            &quot;text&quot;: &quot;Φεβ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/3&quot;,
+            &quot;text&quot;: &quot;Μαρ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/4&quot;,
+            &quot;text&quot;: &quot;Απρ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/5&quot;,
+            &quot;text&quot;: &quot;Μάη&quot;
+        },
+        &quot;$:/language/Date/Short/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/6&quot;,
+            &quot;text&quot;: &quot;Ιου&quot;
+        },
+        &quot;$:/language/Date/Short/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/7&quot;,
+            &quot;text&quot;: &quot;Ιουλ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/8&quot;,
+            &quot;text&quot;: &quot;Αυγ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/9&quot;,
+            &quot;text&quot;: &quot;Σεπ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/10&quot;,
+            &quot;text&quot;: &quot;Οκτ&quot;
+        },
+        &quot;$:/language/Date/Short/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/11&quot;,
+            &quot;text&quot;: &quot;Νοε&quot;
+        },
+        &quot;$:/language/Date/Short/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/12&quot;,
+            &quot;text&quot;: &quot;Δεκ&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Days&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; ημέρες από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Hours&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Hours&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; ώρες από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Minutes&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Minutes&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; λεπτά από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Months&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Months&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; μήνες από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Second&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Second&quot;,
+            &quot;text&quot;: &quot;1 δευτερόλεπτο από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Seconds&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Seconds&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; δευτερόλεπτα από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Years&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Years&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; έτη από τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Days&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Days&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; ημέρες μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Hours&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Hours&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; ώρες μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Minutes&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Minutes&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; λεπτά μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Months&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Months&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; μήνες μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Second&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Second&quot;,
+            &quot;text&quot;: &quot;1 δευτερόλεπτο μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Seconds&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Seconds&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; δευτερόλεπτα μέχρι τώρα&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Years&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Years&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; έτη μέχρι τώρα&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/animation&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/animation&quot;,
+            &quot;text&quot;: &quot;Κινούμενη εικόνα που μπορεί να χρησιμοποιηθεί με το το  RevealWidget.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/command&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/command&quot;,
+            &quot;text&quot;: &quot;Εντολές που μπορούν να εκτελεστούν εντός του  Node.js.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/config&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/config&quot;,
+            &quot;text&quot;: &quot;Δεδομένα προς εισαγωγή στο  `$tw.config`.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/filteroperator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/filteroperator&quot;,
+            &quot;text&quot;: &quot;Ιδιαίτεροι τελεστές ή μέθοδοι φιλτραρίσματος.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/global&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/global&quot;,
+            &quot;text&quot;: &quot;Καθολικά δεδομένα προς εισαγωγή στο  `$tw`.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/isfilteroperator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/isfilteroperator&quot;,
+            &quot;text&quot;: &quot;Τελεστέοι για τον τελεστή φιλτραρίσματος ''is''.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/macro&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/macro&quot;,
+            &quot;text&quot;: &quot;Ορισμοί JavaScript μακροεντολών.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/parser&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/parser&quot;,
+            &quot;text&quot;: &quot;Γραμματικοί αναλυτές (Parsers) για διάφορους τύπους περιεχομένων.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/saver&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/saver&quot;,
+            &quot;text&quot;: &quot;Μεθοδοι αποθήκευσης - διαχείριση διαφορετικών μεθόδων για την αποθήκευση αρχείων από το πρόγραμμα περιήγησης.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/startup&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/startup&quot;,
+            &quot;text&quot;: &quot;Λειτουργίες έναρξης.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/storyview&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/storyview&quot;,
+            &quot;text&quot;: &quot;Ιστορική όψη - παραμετροποίηση της κινούμενης εικόνας και της συμπεριφοράς των πρόσθετων λίστας&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlerdeserializer&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlerdeserializer&quot;,
+            &quot;text&quot;: &quot;Μετατρέπει διάφορους τύπους περιεχομένου σε tiddlers.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlerfield&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlerfield&quot;,
+            &quot;text&quot;: &quot;Καθορίζει την συμπεριφορά ενός μεμονωμένου  πεδίου ενός tiddler.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlermethod&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlermethod&quot;,
+            &quot;text&quot;: &quot;Προσθέτει μεθόδους στο  `$tw.Tiddler` πρότυπο.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/utils&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/utils&quot;,
+            &quot;text&quot;: &quot;Προσθέτει μεθόδους στο `$tw.utils`.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/utils-node&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/utils-node&quot;,
+            &quot;text&quot;: &quot;Προσθέτει εξειδικευμένες Node.js μεθόδους στο  `$tw.utils`.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/widget&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/widget&quot;,
+            &quot;text&quot;: &quot;Πρόσθετα που ενθυλακώνουν το DOM απεικονίζουν και ανανεώνουν.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/wikimethod&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/wikimethod&quot;,
+            &quot;text&quot;: &quot;Προσθέτει μεθόδους στο `$tw.Wiki`.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/wikirule&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/wikirule&quot;,
+            &quot;text&quot;: &quot;Μεμονωμένοι κανόνες γραμματικής ανάλυσης (parser rules) για το κύριο γραμματικό αναλυτή της WikiText  γλώσσας.&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο προειδοποίησης &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο προειδοποίησης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-highlight&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-highlight&quot;,
+            &quot;text&quot;: &quot;Επισήμανση προειδοποίησης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Βουβό προσκήνιο προειδοποίησης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/background&quot;,
+            &quot;text&quot;: &quot;Γενικό υπόβαθρο&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;,
+            &quot;text&quot;: &quot;Πλαίσιο Blockquote &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;,
+            &quot;text&quot;: &quot;Ένδειξη μη αποθηκευμένων αλλαγών&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο κώδικα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο κώδικα &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κώδικα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/download-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/download-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο κουμπιού μεταφόρτωσης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/download-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/download-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού μεταφόρτωσης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dragger-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dragger-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο Συρσίματος&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dragger-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dragger-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο Συρσίματος&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο Απόθεσης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο Απόθεσης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας Απόθεσης για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας Απόθεσης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο ζώνης ρίψης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο εξωτερικού δεσμού σε αιώρηση&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο εξωτερικού δεσμού που έγινε ήδη επίσκεψη&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο εξωτερικού δεσμού&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο εξωτερικού δεσμού σε αιώρηση&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο εξωτερικού δεσμού που έγινε ήδη επίσκεψη&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο εξωτερικού δεσμού&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/foreground&quot;,
+            &quot;text&quot;: &quot;Γενικό προσκήνιο&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο πλαισίου μηνύματος&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο πλαισίου μηνύματος&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο πλαισίου μηνύματος&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;,
+            &quot;text&quot;: &quot;Σκηνικό Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο υποσέλιδου Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο υποσέλιδου Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο κεφαλίδας Αποκλειστικό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο γενικό βουβό&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/notification-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/notification-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο ειδοποίησης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/notification-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/notification-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο ειδοποίησης&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/page-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/page-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο Σελίδας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/pre-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο μορφοποιημένου κώδικα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/pre-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο μορφοποιημένου κώδικα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/primary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/primary&quot;,
+            &quot;text&quot;: &quot;Γενικά στοιχειώδη&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο αντικειμένων ελέγχου πλευρικής γραμμής σε αιώρηση&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο αντικειμένων ελέγχου Πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;,
+            &quot;text&quot;: &quot;Σκιά προσκήνιου πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο σε αιώρηση για βουβή πλευρική γραμμή&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο βουβής πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας πλευρικής γραμμής για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;,
+            &quot;text&quot;: &quot;Περιθώριο καρτέλας πλευρικής γραμμής για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο καρτέλας πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;,
+            &quot;text&quot;: &quot;Διαχωριστής καρτελών πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο καρτέλας πλευρικής γραμμής για επιλεγμένες γραμμές&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο καρτέλας πλευρικής γραμμής&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο δεσμού  tiddler σε πλευρική γραμμή εν αιώρηση&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο  tiddler δεσμού σε πλευρική γραμμή&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο στατικής προειδοποίησης &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;,
+            &quot;text&quot;: &quot;Περιθώριο καρτέλας για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο καρτέλας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-divider&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-divider&quot;,
+            &quot;text&quot;: &quot;Διαχωριστής καρτελών&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο καρτέλας για επιλεγμένες καρτέλες&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο καρτέλας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο καρτέλας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-footer-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-footer-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο υπότιτλου σε πίνακα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-header-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-header-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο επικεφαλίδας πίνακα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tag-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tag-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο ετικέτας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tag-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tag-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο ετικέτας&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο Tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιών Tiddler σε αιώρηση&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο Tiddler κουμπιών για επιλεγμένα κουμπιά&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο Tiddler κουμπιών&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο επεξεργαστή Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;,
+            &quot;text&quot;: &quot;Εικόνα περιθωρίου επεξεργαστή Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο επεξεργαστή Tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο επεξεργαστή Tiddler για ζυγά πεδία&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο επεξεργαστή Tiddler για μονά πεδία&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο πάνελ πληροφοριών του Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-border&quot;,
+            &quot;text&quot;: &quot;Περιθώριο πάνελ πληροφοριών του Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο καρτέλας πάνελ πληροφοριών του Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο δεσμού Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-link-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο δεσμού Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-subtitle-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-subtitle-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο δευτερεύοντος τίτλου Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-title-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-title-foreground&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο τίτλου Tiddler &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού 'νέο tiddler'  &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-options-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-options-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο  κουμπιού 'επιλογές'&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-save-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-save-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού  'αποθήκευσης' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού  'πληροφορίες' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού  'επεξεργασία' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο  κουμπιού 'κλείσε' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιο κουμπιού  'διέγραψε' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;,
+            &quot;text&quot;: &quot; Προσκήνιο κουμπιού 'άκυρο'&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;,
+            &quot;text&quot;: &quot;Προσκήνιου κουμπιού  'ολοκλήρωση' &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/untagged-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/untagged-background&quot;,
+            &quot;text&quot;: &quot;Υπόβαθρο χαπιού χωρίς ετικέτα&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/very-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/very-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Πολύ βουβό προσκήνιο&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/External/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/External/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτό είναι ένα εξωτερικό tiddler αποθηκευμένο εκτός του κύριου TiddlyWiki αρχείου. Μπορείτε να τροποποιήσετε τις ετικέτες και τα πεδία αλλά δεν μπορείτε να τροποποιήσετε άμεσα το ίδιο το περιεχόμενο του&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Hint&quot;,
+            &quot;text&quot;: &quot;Χρησιμοποιήστε [[wiki text|http://tiddlywiki.com/static/WikiText.html]] για να προσθέσετε μορφοποιήσεις, εικόνες, και δυναμικά χαρακτηριστικά&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Placeholder&quot;,
+            &quot;text&quot;: &quot;Πληκτρολογήστε το κείμενο για αυτό το tiddler&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;,
+            &quot;text&quot;: &quot;απόκρυψη προεπισκόπισης&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;,
+            &quot;text&quot;: &quot;εμφάνιση προεπισκόπισης&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Button&quot;,
+            &quot;text&quot;: &quot;προσθήκη&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Name/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Name/Placeholder&quot;,
+            &quot;text&quot;: &quot;όνομα πεδίου&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Prompt&quot;,
+            &quot;text&quot;: &quot;Πρόσθεσε ένα νέο πεδίο:&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Value/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Value/Placeholder&quot;,
+            &quot;text&quot;: &quot;τιμή πεδίου&quot;
+        },
+        &quot;$:/language/EditTemplate/Shadow/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/Warning&quot;,
+            &quot;text&quot;: &quot;Αυτό είναι ένα σκιώδες tiddler. Οποιεσδήποτε αλλαγές θα παρακάμψουν την τυπική έκδοση&quot;
+        },
+        &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;,
+            &quot;text&quot;: &quot;Αυτό είναι ένα τροποποιημένο σκιώδες tiddler. Μπορείτε να ανακαλέσετε την τυπική έκδοση του διαγράφοντας αυτό το tiddler&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Add/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Button&quot;,
+            &quot;text&quot;: &quot;προσθήκη&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;,
+            &quot;text&quot;: &quot;όνομα ετικέτας&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Placeholder&quot;,
+            &quot;text&quot;: &quot;τύπος περιεχομένου&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Prompt&quot;,
+            &quot;text&quot;: &quot;Τύπος:&quot;
+        },
+        &quot;$:/language/Docs/Fields/_canonical_uri&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/_canonical_uri&quot;,
+            &quot;text&quot;: &quot;Το πλήρες URI ενός εξωτερικού tiddler εικόνας&quot;
+        },
+        &quot;$:/language/Docs/Fields/bag&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/bag&quot;,
+            &quot;text&quot;: &quot;Το όνομα της τσάντας από όπου το tiddler προέρχεται&quot;
+        },
+        &quot;$:/language/Docs/Fields/caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/caption&quot;,
+            &quot;text&quot;: &quot;Το κείμενο που θα εμφανίζεται σε μιά καρτέλα ή ένα κουμπί&quot;
+        },
+        &quot;$:/language/Docs/Fields/color&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/color&quot;,
+            &quot;text&quot;: &quot;Η CSS τιμή χρώματος που σχετίζεται με ένα tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/component&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/component&quot;,
+            &quot;text&quot;: &quot;Το όνομα του συστατικού που είναι υπεύθυνο για ένα [[tiddler προειδοποίησης|AlertMechanism]]&quot;
+        },
+        &quot;$:/language/Docs/Fields/current-tiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/current-tiddler&quot;,
+            &quot;text&quot;: &quot;Χρησιμοποιείται για την προσωρινή αποθήκευση του κορυφαίου tiddler σε μία [[ιστορική λίστα|HistoryMechanism]]&quot;
+        },
+        &quot;$:/language/Docs/Fields/created&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/created&quot;,
+            &quot;text&quot;: &quot;Η ημερομηνία που το tiddler δημιουργήθηκε&quot;
+        },
+        &quot;$:/language/Docs/Fields/creator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/creator&quot;,
+            &quot;text&quot;: &quot;Το όνομα του προσώπου που δημιούργησε το tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/dependents&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/dependents&quot;,
+            &quot;text&quot;: &quot;Για ένα πρόσθετο, λίστα με τους τίτλους από τα εξαρτώμενα πρόσθετα&quot;
+        },
+        &quot;$:/language/Docs/Fields/description&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/description&quot;,
+            &quot;text&quot;: &quot;Το κείμενο που περιγράφει ένα πρόσθετο, ή έναν αποκλειστικό διάλογο&quot;
+        },
+        &quot;$:/language/Docs/Fields/draft.of&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/draft.of&quot;,
+            &quot;text&quot;: &quot;Για πρόχειρα tiddlers, περιέχει τον τίτλο από το tiddler για το οποίο αυτό είναι μια πρόχειρη έκδοση&quot;
+        },
+        &quot;$:/language/Docs/Fields/draft.title&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/draft.title&quot;,
+            &quot;text&quot;: &quot;Για πρόχειρα tiddlers, περιέχει τον προτεινόμενο νέο τίτλο από το tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/footer&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/footer&quot;,
+            &quot;text&quot;: &quot;Το κείμενο του υποσέλιδου για έναν οδηγό&quot;
+        },
+        &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;,
+            &quot;text&quot;: &quot;Ένα προσωρινό πεδίο που χρησιμοποιείται στο  [[$:/core/templates/static.content]]&quot;
+        },
+        &quot;$:/language/Docs/Fields/icon&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/icon&quot;,
+            &quot;text&quot;: &quot;Ο τίτλος από το tiddler που περιέχει το εικονίδιο που σχετίζεται με ένα tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/library&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/library&quot;,
+            &quot;text&quot;: &quot;Αν οριστεί σε \&quot;yes\&quot; σημαίνει πως το tiddler θα πρέπει να αποθηκευτεί ως μια βιβλιοθήκη της JavaScript&quot;
+        },
+        &quot;$:/language/Docs/Fields/list&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
+            &quot;text&quot;: &quot;Μια διατεταγμένη λίστα από τίτλους tiddler που σχετίζεται με ένα tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/list-before&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
+            &quot;text&quot;: &quot;Αν οριστεί, ο τίτλος από ένα  tiddler όπου πριν από αυτό το παρόν tiddler πρέπει να προστεθεί στην διατεταγμένη λίστα των tiddler τίτλων, ή στην αρχή της λίστας αν αυτό το πεδίο είναι παρόν αλλά κενό&quot;
+        },
+        &quot;$:/language/Docs/Fields/list-after&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
+            &quot;text&quot;: &quot;Αν οριστεί, ο τίτλος από το tiddler μετά τον οποίο το παρόν tiddler θα πρέπει να προστεθεί στην διατεταγμένη λίστα  tiddler τίτλων&quot;
+        },
+        &quot;$:/language/Docs/Fields/modified&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/modified&quot;,
+            &quot;text&quot;: &quot;Η ημερομηνία και ώρα κατά την οποία ένα tiddler τροποποιήθηκε για τελευταία φορά&quot;
+        },
+        &quot;$:/language/Docs/Fields/modifier&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/modifier&quot;,
+            &quot;text&quot;: &quot;Ο τίτλος του  tiddler που σχετίζεται με το τελευταίο πρόσωπο που τροποποιησε το  tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/name&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/name&quot;,
+            &quot;text&quot;: &quot;Το ανθρωπίνως αναγνώσιμο όνομα που σχετίζεται με ένα tiddler πρόσθετου&quot;
+        },
+        &quot;$:/language/Docs/Fields/plugin-priority&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/plugin-priority&quot;,
+            &quot;text&quot;: &quot;Μια αριθμητική τιμή που καθορίζει την προτεραιότητα ενός tiddler πρόσθετου&quot;
+        },
+        &quot;$:/language/Docs/Fields/plugin-type&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/plugin-type&quot;,
+            &quot;text&quot;: &quot;Ο τύπος του πρόσθετου σε ένα tiddler πρόσθετου&quot;
+        },
+        &quot;$:/language/Docs/Fields/revision&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/revision&quot;,
+            &quot;text&quot;: &quot;Η αναθεώρηση από το tiddler που κρατείται στον εξυπηρετητή&quot;
+        },
+        &quot;$:/language/Docs/Fields/released&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/released&quot;,
+            &quot;text&quot;: &quot;Ημερομηνία μιας έκδοσης του TiddlyWiki&quot;
+        },
+        &quot;$:/language/Docs/Fields/source&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/source&quot;,
+            &quot;text&quot;: &quot;Το πηγαίο URL που σχετίζεται με ένα tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/subtitle&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/subtitle&quot;,
+            &quot;text&quot;: &quot;Το κείμενο στον υπότιτλο για έναν οδηγό&quot;
+        },
+        &quot;$:/language/Docs/Fields/tags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/tags&quot;,
+            &quot;text&quot;: &quot;Μια λίστα από ετικέτες που σχετίζονται με ένα tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/text&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/text&quot;,
+            &quot;text&quot;: &quot;Το κυρίως κείμενο ενός tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/title&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/title&quot;,
+            &quot;text&quot;: &quot;Το μοναδικό όνομα ενός tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/type&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/type&quot;,
+            &quot;text&quot;: &quot;Ο τύπος περιεχομένου ενός tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/version&quot;,
+            &quot;text&quot;: &quot;Πληροφορίες έκδοσης για ένα πρόσθετο&quot;
+        },
+        &quot;$:/language/Filters/AllTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/AllTiddlers&quot;,
+            &quot;text&quot;: &quot;Όλα, εκτός των tiddler συστήματος&quot;
+        },
+        &quot;$:/language/Filters/RecentTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
+            &quot;text&quot;: &quot;Πρόσφατα τροποποιημένα tiddlers&quot;
+        },
+        &quot;$:/language/Filters/AllTags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/AllTags&quot;,
+            &quot;text&quot;: &quot;Όλες οι ετικέτες, εκτός των ετικετών συστήματος&quot;
+        },
+        &quot;$:/language/Filters/Missing&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Missing&quot;,
+            &quot;text&quot;: &quot;tiddlers που λείπουν&quot;
+        },
+        &quot;$:/language/Filters/Drafts&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Drafts&quot;,
+            &quot;text&quot;: &quot;Πρόχειρα tiddlers&quot;
+        },
+        &quot;$:/language/Filters/Orphans&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Orphans&quot;,
+            &quot;text&quot;: &quot;Ορφανά tiddlers&quot;
+        },
+        &quot;$:/language/Filters/SystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SystemTiddlers&quot;,
+            &quot;text&quot;: &quot;tiddlers συστήματος&quot;
+        },
+        &quot;$:/language/Filters/ShadowTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/ShadowTiddlers&quot;,
+            &quot;text&quot;: &quot;σκιώδη tiddlers&quot;
+        },
+        &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
+            &quot;text&quot;: &quot;Σκιώδη  tiddlers που έχουν παρακαμφθεί&quot;
+        },
+        &quot;$:/language/Filters/SystemTags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
+            &quot;text&quot;: &quot;Ετικέτες συστήματος&quot;
+        },
+        &quot;GettingStarted&quot;: {
+            &quot;title&quot;: &quot;GettingStarted&quot;,
+            &quot;text&quot;: &quot;Καλώς ήρθατε στο TiddlyWiki, το μη-γραμμικό προσωπικό σημειωματάριο του ιστού.\n\nΓια να ξεκινήσετε, πρώτα επαληθεύστε ότι μπορείτε να αποθηκεύσετε τις αλλαγές σας με επιτυχία - δείτε στο http://tiddlywiki.com/ για περισσότερες οδηγίες.\n\nΈπειτα μπορείτε:\n\n* Δημιουργήσετε νέα tiddlers χρησιμοποιώντας το 'συν' κουμπί στην πλευρική γραμμή εργαλείων\n* Επισκεφτείτε τον [[πίνακα ελέγχου|$:/ControlPanel]] χρησιμοποιώντας το κουμπί 'γρανάζι' στην πλευρική γραμμή εργαλείων για να παραμετροποιήσετε το wiki σας\n** Να σταματήσετε την εμφάνιση αυτού του μηνύματος τροποποιώντας την επιλογή προκαθορισμένα tiddlers κάτω από την καρτέλα ''Βασικά'' \n* Αποθηκεύσετε τις αλλαγές χρησιμοποιώντας το κουμπί της 'αποθήκευσης' στην πλευρική γραμμή εργαλείων\n* Να μάθετε περισσότερα σχετικά με την γλώσσα [[WikiText|http://tiddlywiki.com/static/WikiText.html]]\n&quot;
+        },
+        &quot;$:/language/Help/build&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/build&quot;,
+            &quot;description&quot;: &quot;Automatically run configured commands&quot;,
+            &quot;text&quot;: &quot;Χτίζει τους προκαθορισμένους προορισμούς για το τρέχον wiki. Αν δεν έχει προκαθοριστεί προορισμός τότε όλοι οι διαθέσιμοι προορισμοί θα χτιστούν.\n\n```\n--build &lt;προορισμός&gt; [&lt;προορισμός&gt; ...]\n```\n\nΟι προορισμοί ορίζονται στο `tiddlywiki.info` αρχείο ενός  wiki φακέλου.\n\n&quot;
+        },
+        &quot;$:/language/Help/clearpassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/clearpassword&quot;,
+            &quot;description&quot;: &quot;Καθαρίζει το συνθηματικό για επόμενες λειτουργίες κρυπτογράφησης&quot;,
+            &quot;text&quot;: &quot;Αναιρεί το συνθηματικό για τις μεταγενέστερες υπολειτουργίες κρυπτογράφησης\n\n```\n--clearpassword\n```\n&quot;
+        },
+        &quot;$:/language/Help/default&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/default&quot;,
+            &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\nΧρήση: tiddlywiki [&lt;φάκελος wiki&gt;] [--&lt;εντολή&gt; [&lt;ορίσματα&gt;...]...]\n```\n\nΔιαθέσιμες εντολές:\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nΓια αναλυτική βοήθεια για κάποια εντολή:\n\n```\ntiddlywiki --help &lt;εντολή&gt;\n```\n&quot;
+        },
+        &quot;$:/language/Help/help&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/help&quot;,
+            &quot;description&quot;: &quot;Εμφανίζει κείμενο βοήθειας για τις εντολές του TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Εμφανίζει βοηθητικό κείμενο για μία εντολή:\n\n```\n--help [&lt;command&gt;]\n```\n\nΑν δεν οριστεί όνομα εντολής, τότε εμφανίζει μια λίστα με τις διαθέσιμες εντολές.\n&quot;
+        },
+        &quot;$:/language/Help/init&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/init&quot;,
+            &quot;description&quot;: &quot;Αρχικοποιεί έναν νέο wiki φάκελο&quot;,
+            &quot;text&quot;: &quot;Αρχικοποιεί έναν άδειο  [[Wiki Φάκελλο|WikiFolders]]  με ένα αντίγραφο της καθορισμένης έκδοσης.\n\n```\n--init &lt;έκδοση&gt; [&lt;έκδοση&gt; ...]\n```\n\nΓια παράδειγμα:\n\n```\ntiddlywiki ./MyWikiFolder --init empty\n```\n\nΠαρατηρήσεις:\n\n* Ο wiki φάκελος ή κατάλογος θα δημιουργηθεί αν αυτό είναι αναγκαίο\n* Η τυπική \&quot;έκδοση\&quot; είναι ''empty''\n* Η εντολή init θα αποτύχει αν ο wiki φάκελος δεν είναι κενός\n* Η εντολή init αφαιρεί οποιουσδήποτε `includeWikis` ορισμούς στις εκδόσεις του `tiddlywiki.info` αρχείου\n* Όταν καθορίζονται πολλαπλές εκδόσεις, οι εκδόσεις που αρχικοποιούνται μεταγενέστερα θα  αντικαταστήσουν τυχόν αρχεία που μοιράζονται με νεότερες εκδόσεις (έτσι, το τελικό `tiddlywiki.info` αρχείο θα αντιγραφεί από την τελευταία έκδοση)\n* `--help editions` επιστρέφει μια λίστα με τις διαθέσιμες εκδόσεις\n&quot;
+        },
+        &quot;$:/language/Help/load&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/load&quot;,
+            &quot;description&quot;: &quot;Φόρτωσε τα  tiddlers από ένα αρχείο&quot;,
+            &quot;text&quot;: &quot;Φορτώνει τα  tiddlers από  2.x.x TiddlyWiki αρχεία (`.html`), `.tiddler`, `.tid`, `.json` ή άλλα αρχεία\n\n```\n--load &lt;διαδρομή στο αρχείο&gt;\n```\n\nΗ φόρτωση  tiddlers από ένα κρυπτογραφημένο TiddlyWiki προαπαιτεί να έχετε πρώτα καθορίσει το συνθηματικό με την εντολή συνθηματικού.  Για παράδειγμα:\n\n```\ntiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html\n```\n\nΣημειώστε ότι το  TiddlyWiki δεν θα φορτώσει μια παλαιότερη έκδοση ενός ήδη φορτωμένου πρόσθετου.\n&quot;
+        },
+        &quot;$:/language/Help/makelibrary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/makelibrary&quot;,
+            &quot;description&quot;: &quot;Δημιουργεί το αναγκαίο από μια διαδικασία αναβάθμισης πρόσθετο βιβλιοθήκης&quot;,
+            &quot;text&quot;: &quot;Δημιουργεί το  `$:/UpgradeLibrary` tiddler για την διαδικασία αναβάθμισης.\n\nΗ βιβλιοθήκη αναβάθμισης είναι μορφοποιημένη ως ένα φυσιολογικό πρόσθετο tiddler το οποίο για την ιδιότητα type έχει τιμή `library`. Περιέχει ένα αντίγραφο κάθε ενός από τα πρόσθετα, θέματα και γλωσσικά πακέτα που είναι διαθέσιμα εντός του  TiddlyWiki5 αποθετηρίου.\n\nΑυτή η εντολή προορίζεται για εσωτερική χρήση. Αφορά μόνο χρήστες που δημιουργούν μια εξειδικευμένη διαδικασία αναβάθμισης.\n\n```\n--makelibrary &lt;τίτλος&gt;\n```\n\nΗ προκαθορισμένη τιμή για το όρισμα τίτλος είναι  `$:/UpgradeLibrary`.\n&quot;
+        },
+        &quot;$:/language/Help/notfound&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/notfound&quot;,
+            &quot;text&quot;: &quot;Δεν βρέθηκε αντίστοιχη καταχώριση στην βοήθεια&quot;
+        },
+        &quot;$:/language/Help/output&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/output&quot;,
+            &quot;description&quot;: &quot;Καθορίζει τον βασικό φάκελο εξόδου για μεταγενέστερες εντολές&quot;,
+            &quot;text&quot;: &quot;Καθορίζει τον βασικό φάκελο εξόδου για μεταγενέστερες εντολές. Ο προκαθορισμένος φάκελος εξόδου είναι  ο `output` υποφάκελος του φακέλου της έκδοσης.\n\n```\n--output &lt;διαδρομή προς φάκελο&gt;\n```\n\nΑν η προσδιορισμένη διαδρομή προς τον φάκελο είναι σχετική τότε εφαρμόζεται με βάση το τρέχον φάκελο εργασίας.\n&quot;
+        },
+        &quot;$:/language/Help/password&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/password&quot;,
+            &quot;description&quot;: &quot;Καθορίζει ένα συνθηματικό για μεταγενέστερες υπολειτουργίες κρυπτογράφησης&quot;,
+            &quot;text&quot;: &quot;Καθορίζει ένα συνθηματικό για τις μεταγενέστερες υπολειτουργίες κρυπτογράφησης\n\n```\n--password &lt;συνθηματικό&gt;\n```\n\n&quot;
+        },
+        &quot;$:/language/Help/rendertiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/rendertiddler&quot;,
+            &quot;description&quot;: &quot;Απεικονίζει ένα μεμονωμένο  tiddler με το καθορισμένο ContentType&quot;,
+            &quot;text&quot;: &quot;Απεικονίζει ένα μεμονωμένο  tiddler με το καθορισμένο ContentType, προκαθορισμένη τιμή είναι  `text/html` και το αποθηκεύει στο προκαθορισμένο όνομα αρχείου:\n\n```\n--rendertiddler &lt;τίτλος&gt; &lt;όνομα αρχείου&gt; [&lt;τύπος&gt;]\n```\n\nΤυπικά, το όνομα του αρχείου αναλύεται σχετικά ως προς τον υποφάκελο `output` του φακέλου της έκδοσης. Η εντολή  `--output`  μπορεί να χρησιμοποιηθεί για άμεση έξοδο σε ένα διαφορετικό φάκελο.\n\nΚάθε φάκελος που λείπει στο μονοπάτι  θα δημιουργηθεί αυτόματα.\n&quot;
+        },
+        &quot;$:/language/Help/rendertiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/rendertiddlers&quot;,
+            &quot;description&quot;: &quot;Απεικονίζει  tiddlers που ταιριάζουν σε ένα φίλτρο ενός συγκεκριμένου ContentType&quot;,
+            &quot;text&quot;: &quot;Απεικονίζει ένα σύνολο από tiddlers που ταιριάζουν σε ένα φίλτρο για να ξεχωρίσουν τα αρχεία ενός συγκεκριμένου ContentType (προκαθορισμένη τιμή  `text/html`) και κατάληξης (προκαθορισμένη τιμή `.html`).\n\n```\n--rendertiddlers &lt;φίλτρο&gt; &lt;πρότυπο&gt; &lt;διαδρομή στο αρχείο&gt; [&lt;τύπος&gt;] [&lt;κατάληξη&gt;]\n```\n\nΓια παράδειγμα:\n\n```\n--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain\n```\n\nΤυπικά, η διαδρομή στο αρχείο αναλύεται σχετικά με τον υποφάκελο `output` του φακέλου της έκδοσης. Η  `--output` εντολή μπορεί να χρησιμοποιηθεί για να ανακατευθύνει την έξοδο σε ένα διαφορετικό φάκελο.\n\nΤυχόν αρχεία στο φάκελο προορισμού διαγράφονται. Ο φάκελος προορισμού δημιουργείται αναδρομικά αν δεν υπάρχει.\n&quot;
+        },
+        &quot;$:/language/Help/savetiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savetiddler&quot;,
+            &quot;description&quot;: &quot;Αποθηκεύει ένα ακατέργαστο tiddler σε ένα αρχείο&quot;,
+            &quot;text&quot;: &quot;Αποθηκεύει ένα μεμονωμένο tiddler με μορφή ακατέργαστου κειμένου ή δυαδική στο καθορισμένο όνομα αρχείου. \n\n```\n--savetiddler &lt;τίτλος&gt; &lt;όνομα αρχείου&gt;\n```\n\nΤυπικά, το όνομα αρχείου αναλύεται σχετικά ως προς τον υποφάκελο  `output` του φακέλου τη έκδοσης. Η `--output` εντολή μπορεί να χρησιμοποιηθεί για να ανακατευθύνει την έξοδο σε ένα διαφορετικό φάκελο.\n\nΤυχόν φάκελοι που δεν υπάρχουν στην διαδρομή για το όνομα αρχείου θα δημιουργηθούν αυτόματα.\n&quot;
+        },
+        &quot;$:/language/Help/savetiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savetiddlers&quot;,
+            &quot;description&quot;: &quot;Αποθηκεύει μια ομάδα από ακατέργαστα  tiddlers σε ένα φάκελο&quot;,
+            &quot;text&quot;: &quot;Αποθηκεύει μια ομάδα από tiddlers σε μορφή ακατέργαστου κειμένου η δυαδική στο καθορισμένο φάκελο.\n\n```\n--savetiddlers &lt;φίλτρο&gt; &lt;διαδρομή στο φάκελο&gt;\n```\n\nΤυπικά, η διαδρομή αναλύεται σχετικά ως προς τον υποφάκελο `output` του φακέλου της έκδοσης. Η  `--output` εντολή μπορεί να χρησιμοποιηθεί για να ανακατευθύνει την έξοδο σε ένα διαφορετικό φάκελο.\n\nΤυχόν φάκελοι που λείπουν κατά την διαδρομή θα δημιουργηθούν αυτόματα.\n&quot;
+        },
+        &quot;$:/language/Help/server&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/server&quot;,
+            &quot;description&quot;: &quot;Παρέχει μια  HTTP διεπαφή εξυπηρετητή  στο TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Ο εξυπηρετητής που έχει υλοποιηθεί εντός του  TiddlyWiki5 είναι πολύ απλοϊκός. Αν και συμβατός με το TiddlyWeb δεν υποστηρίζει πολλά από τα χαρακτηριστικά που χρειάζονται για μια στιβαρή  χρήση στο διαδίκτυο.\n\nΣτην ρίζα, εξυπηρετεί με την απεικόνιση ενός συγκεκριμένου  tiddler. Εκτός ρίζας, εξυπηρετεί μεμονωμένα tiddlers που έχουν κωδικοποιηθεί σε JSON, και υποστηρίζει τις βασικές  HTTP λειτουργίες για  `GET`, `PUT` και `DELETE`.\n\n```\n--server &lt;port&gt; &lt;roottiddler&gt; &lt;rendertype&gt; &lt;servetype&gt; &lt;username&gt; &lt;password&gt; &lt;host&gt; &lt;pathprefix&gt;\n```\n\nΟι παράμετροι είναι:\n\n* ''port'' - Ο αριθμός της πόρτας την οποία θα εξυπηρετεί (τυπική τιμή είναι η  \&quot;8080\&quot;)\n* ''roottiddler'' - Το tiddler που εξυπηρετεί ως ρίζα (τυπική τιμή είναι το \&quot;$:/core/save/all\&quot;) \n* ''rendertype'' - Ο τύπος περιεχομένου ο οποίος θα χρησιμοποιηθεί για να απεικονιστεί το ριζικό tiddler  (τυπική τιμή είναι το  \&quot;text/plain\&quot;)\n* ''servetype'' - Ο τύπος περιεχομένου με τον οποίο το ριζικό  tiddler θα εξυπηρετηθεί  (τυπική τιμή είναι  \&quot;text/html\&quot;)\n* ''username'' - Το τυπικό όνομα χρήστη για υπογραφή των τροποποιήσεων\n* ''password'' - προαιρετικό συνθηματικό για βασική ταυτοποίηση χρήστη\n* ''host'' - προαιρετικό το όνομα του κεντρικού υπολογιστή για εξυπηρέτηση από αυτόν  (τυπική τιμή το  \&quot;127.0.0.1\&quot; γνωστό ως \&quot;localhost\&quot;)\n* ''pathprefix'' - προαιρετικό πρόθεμα για διαδρομές\n\nΑν καθοριστεί η παράμετρος συνθηματικού τότε το πρόγραμμα περιήγησης θα ενημερώσει τον χρήστη να εισάγει το όνομα χρήστη και συνθηματικό του.  Σημειώστε ότι το συνθηματικό θα μεταδοθεί ως απλό κείμενο οπότε η υλοποίηση αυτή δεν είναι κατάλληλη για γενική χρήση.\n\nΓια παράδειγμα:\n\n```\n--server 8080 $:/core/save/all text/plain text/html MyUserName passw0rd\n```\n\nΤο όνομα χρήστη και το συνθηματικό μπορούν να καθοριστούν ως κενά αλφαρηθμητικά αν χρειάζεστε να καθορίσετε το  όνομα του κεντρικού υπολογιστή, ή το πρόθεμα για διαδρομές  και δεν χρειάζεστε να καθορίσετε ένα συνθηματικό:\n\n```\n--server 8080 $:/core/save/all text/plain text/html \&quot;\&quot; \&quot;\&quot; 192.168.0.245\n```\n\nΓια να τρέξετε πολλαπλούς TiddlyWiki εξυπηρετητές την ίδια χρονική στιγμή θα χρειαστεί να ορίσετε για κάθε έναν διαφορετικό αριθμό πόρτας.\n&quot;
+        },
+        &quot;$:/language/Help/setfield&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/setfield&quot;,
+            &quot;description&quot;: &quot;Προετοιμάζει  εξωτερικά  tiddlers για χρήση&quot;,
+            &quot;text&quot;: &quot;//Σημειώστε ότι αυτή η εντολή είναι σε πειραματικό στάδιο και μπορεί να αλλάξει η να αντικατασταθεί πριν καν τελειοποιηθεί//\n\nΘέτει στο καθορισμένο πεδίο μιας ομάδας από  tiddlers το αποτέλεσμα του wikifying ενός προτύπου  tiddler με την  `currentTiddler` μεταβλητή να έχει τιμή το  tiddler.\n\n```\n--setfield &lt;φίλτρο&gt; &lt;όνομα πεδίου&gt; &lt;τίτλος προτύπου&gt; &lt;τύπος απεικόνισης&gt;\n```\n\nΟι παράμετροι είναι:\n\n* ''φίλτρο'' - Φίλτρο που καθορίζει τα  tiddlers που θα επηρεαστούν\n* ''όνομα πεδίου'' - το πεδίο που θα τροποποιηθεί (τυπική τιμή είναι το \&quot;text\&quot;)\n* ''τίτλος προτύπου'' - Το  tiddler για  βικιποίηση εντός του καθορισμένου πεδίου. Αν είναι κενό η λείπει τότε το καθορισμένο πεδίο διαγράφετε\n* ''τύπος απεικόνισης'' - Ο τύπος κειμένου για απεικόνιση (τυπική τιμή είναι το \&quot;text/plain\&quot;. Το \&quot;text/html\&quot; μπορεί να χρησιμοποιηθεί για να συμπεριλάβει και  HTML ετικέτες)\n\n&quot;
+        },
+        &quot;$:/language/Help/verbose&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/verbose&quot;,
+            &quot;description&quot;: &quot;Ενεργοποιεί την μακροσκελή κατάσταση εξόδου&quot;,
+            &quot;text&quot;: &quot;Ενεργοποιεί την μακροσκελή (φλύαρη) κατάσταση εξόδου, που είναι χρήσιμη για αποσφαλμάτωση\n\n```\n--verbose\n```\n&quot;
+        },
+        &quot;$:/language/Help/version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/version&quot;,
+            &quot;description&quot;: &quot;Εμφανίζει τον αριθμό έκδοσης του TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Εμφανίζει τον αριθμό έκδοσης του  TiddlyWiki.\n\n```\n--version\n```\n&quot;
+        },
+        &quot;$:/language/Import/Listing/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;Άκυρο&quot;
+        },
+        &quot;$:/language/Import/Listing/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτά τα tiddlers είναι έτοιμα για εισαγωγή:&quot;
+        },
+        &quot;$:/language/Import/Listing/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Import/Caption&quot;,
+            &quot;text&quot;: &quot;Εισαγωγή&quot;
+        },
+        &quot;$:/language/Import/Listing/Select/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Select/Caption&quot;,
+            &quot;text&quot;: &quot;Επιλογή&quot;
+        },
+        &quot;$:/language/Import/Listing/Status/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Status/Caption&quot;,
+            &quot;text&quot;: &quot;Κατάσταση&quot;
+        },
+        &quot;$:/language/Import/Listing/Title/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Title/Caption&quot;,
+            &quot;text&quot;: &quot;Τίτλος&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;,
+            &quot;text&quot;: &quot;Μπλοκαρισμένο ασύμβατο, ή παρωχημένο πρόσθετο&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Version&quot;,
+            &quot;text&quot;: &quot;Μπλοκαρισμένο πρόσθετο (επειδή το εισερχόμενο &lt;&lt;incoming&gt;&gt;  είναι παλαιότερο από το υπάρχον &lt;&lt;existing&gt;&gt;)&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Upgraded&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Upgraded&quot;,
+            &quot;text&quot;: &quot;Αναβαθμισμένο πρόσθετο από &lt;&lt;incoming&gt;&gt; σε &lt;&lt;upgraded&gt;&gt;&quot;
+        },
+        &quot;$:/language/Import/Upgrader/State/Suppressed&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/State/Suppressed&quot;,
+            &quot;text&quot;: &quot;Μπλοκαρισμένο προσωρινά tiddler κατάστασης&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,
+            &quot;text&quot;: &quot;Μπλοκαρισμένο tiddler συστήματος&quot;
+        },
+        &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;,
+            &quot;text&quot;: &quot;Μετα-εγκατεστημένη παραλλαγή θέματος από &lt;$text text=&lt;&lt;from&gt;&gt;/&gt;&quot;
+        },
+        &quot;$:/language/BinaryWarning/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/BinaryWarning/Prompt&quot;,
+            &quot;text&quot;: &quot;Αυτό το tiddler περιέχει δυαδικά δεδομένα&quot;
+        },
+        &quot;$:/language/ClassicWarning/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ClassicWarning/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτό το tiddler έχει γραφτεί με την TiddlyWiki κλασική μορφή κειμένου, που δεν είναι πλήρως συμβατή με αυτήν του TiddlyWiki 5ης έκδοσης. Δείτε στο  http://tiddlywiki.com/static/Upgrading.html για περισσότερες λεπτομέρειες. &quot;
+        },
+        &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;,
+            &quot;text&quot;: &quot;αναβάθμιση&quot;
+        },
+        &quot;$:/language/CloseAll/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/CloseAll/Button&quot;,
+            &quot;text&quot;: &quot;κλείστα όλα&quot;
+        },
+        &quot;$:/language/ConfirmCancelTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmCancelTiddler&quot;,
+            &quot;text&quot;: &quot;Θέλετε να απορριφθούν οι όποιες τροποποιήσεις έχετε κάνει για το tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+        },
+        &quot;$:/language/ConfirmDeleteTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmDeleteTiddler&quot;,
+            &quot;text&quot;: &quot;Θέλετε να διαγραφεί το tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+        },
+        &quot;$:/language/ConfirmOverwriteTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmOverwriteTiddler&quot;,
+            &quot;text&quot;: &quot;Θέλετε να αντικαταστήσετε το tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+        },
+        &quot;$:/language/ConfirmEditShadowTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmEditShadowTiddler&quot;,
+            &quot;text&quot;: &quot;Πρόκειται να τροποποιήσετε ένα Σκιώδη Tiddler. Οποιεσδήποτε τροποποιήσεις θα αντικαταστήσουν το τυπικό σύστημα και υπάρχει κίνδυνος να δυσκολευτείτε σε σε μελλοντική αναβάθμιση. Είστε σίγουροι ότι θέλετε να τροποποιήσετε το \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+        },
+        &quot;$:/language/DefaultNewTiddlerTitle&quot;: {
+            &quot;title&quot;: &quot;$:/language/DefaultNewTiddlerTitle&quot;,
+            &quot;text&quot;: &quot;Νέο tiddler&quot;
+        },
+        &quot;$:/language/DropMessage&quot;: {
+            &quot;title&quot;: &quot;$:/language/DropMessage&quot;,
+            &quot;text&quot;: &quot;Ρίχτε εδώ (ή πατήστε το πλήκτρο Esc για ακύρωση)&quot;
+        },
+        &quot;$:/language/Encryption/ConfirmClearPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/ConfirmClearPassword&quot;,
+            &quot;text&quot;: &quot;Θέλετε να καθαρίσετε το συνθηματικό; Αυτό θα έχει ως συνέπεια να μην κρυπτογραφητε το wiki όταν κάνετε αποθήκευση&quot;
+        },
+        &quot;$:/language/Encryption/PromptSetPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/PromptSetPassword&quot;,
+            &quot;text&quot;: &quot;Ορίστε το νέο συνθηματικό για αυτό το TiddlyWiki&quot;
+        },
+        &quot;$:/language/InvalidFieldName&quot;: {
+            &quot;title&quot;: &quot;$:/language/InvalidFieldName&quot;,
+            &quot;text&quot;: &quot;Μη έγκυροι χαρακτήρες στο όνομα πεδίου \&quot;&lt;$text text=&lt;&lt;fieldName&gt;&gt;/&gt;\&quot;. Τα ονόματα πεδίων μπορούν να περιέχουν μόνο πεζούς χαρακτήρες, ψηφία και τους χαρακτήρες κάτω παύλα (`_`), μείον (`-`) και τελεία (`.`)&quot;
+        },
+        &quot;$:/language/MissingTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/MissingTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Ανύπαρκτο tiddler \&quot;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\&quot; - κάντε κλικ {{$:/core/images/edit-button}} για να δημιουργηθεί&quot;
+        },
+        &quot;$:/language/RecentChanges/DateFormat&quot;: {
+            &quot;title&quot;: &quot;$:/language/RecentChanges/DateFormat&quot;,
+            &quot;text&quot;: &quot;DDth MMM YYYY&quot;
+        },
+        &quot;$:/language/SystemTiddler/Tooltip&quot;: {
+            &quot;title&quot;: &quot;$:/language/SystemTiddler/Tooltip&quot;,
+            &quot;text&quot;: &quot;Αυτό είναι ένα tiddler συστήματος&quot;
+        },
+        &quot;$:/language/TagManager/Colour/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Colour/Heading&quot;,
+            &quot;text&quot;: &quot;Χρώμα&quot;
+        },
+        &quot;$:/language/TagManager/Icon/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Icon/Heading&quot;,
+            &quot;text&quot;: &quot;Εικονίδιο&quot;
+        },
+        &quot;$:/language/TagManager/Tag/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Tag/Heading&quot;,
+            &quot;text&quot;: &quot;Ετικέτα&quot;
+        },
+        &quot;$:/language/UnsavedChangesWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/UnsavedChangesWarning&quot;,
+            &quot;text&quot;: &quot;Έχετε μη αποθηκευμένες αλλαγές στο TiddlyWiki&quot;
+        },
+        &quot;$:/language/Modals/Download&quot;: {
+            &quot;title&quot;: &quot;$:/language/Modals/Download&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;subtitle&quot;: &quot;Μεταφόρτωση αλλαγών&quot;,
+            &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Κλείσε&lt;/$button&gt;&quot;,
+            &quot;help&quot;: &quot;http://tiddlywiki.com/static/DownloadingChanges.html&quot;,
+            &quot;text&quot;: &quot;\nΤο πρόγραμμα πλοήγησης που χρησιμοποιείτε υποστηρίζει μόνο χειροκίνητη αποθήκευση.\n\nΓια να αποθηκεύσετε το τροποποιημένο σας wiki, κάντε δεξί κλικ στον δεσμό παρακάτω και επιλέξτε \&quot;Μεταφόρτωση αρχείου\&quot; ή \&quot;Αποθήκευση αρχείου\&quot;, και μετά επιλέξτε τον φάκελο και το όνομα του αρχείου.\n\n//Μπορείτε  να επιταχύνετε σημαντικά την διαδικασία κάνοντας κλικ στον δεσμό με το control πλήκτρο (Windows) ή με το options/alt πλήκτρο (Mac OS X). Δεν θα δείτε προειδοποιητικό μήνυμα για τον φάκελο, ή το όνομα αρχείου, αλλά το πρόγραμμα πλοήγησης πιθανότατα θα ορίσει ένα δικό του όνομα στο αρχείο-- το οποίο ίσως χρειαστεί να το μετονομάσετε προκειμένου να προσθέσετε την κατάληξη '.html' προκειμένου να το χρησιμοποιήσετε.//\n\nΣε έξυπνα κινητά που δεν επιτρέπεται η μεταφόρτωση αρχείων, μπορείτε αντί αυτού να ορίσετε σελιδοδείκτη στον δεσμό, και μετά να συγχρονίσετε τους σελιδοδείκτες σας σε έναν επιτραπέζιο υπολογιστή όπου εκεί μπορείτε να αποθηκεύσετε το wiki κανονικά.\n&quot;
+        },
+        &quot;$:/language/Modals/SaveInstructions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Modals/SaveInstructions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;subtitle&quot;: &quot;Αποθηκεύστε την εργασία σας&quot;,
+            &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Κλείσε&lt;/$button&gt;&quot;,
+            &quot;help&quot;: &quot;http://tiddlywiki.com/static/SavingChanges.html&quot;,
+            &quot;text&quot;: &quot;Οι αλλαγές σας σε αυτό το wiki χρειάζεται να αποθηκευτούν ως ένα  ~TiddlyWiki HTML αρχείο.\n\n!!! Προγράμματα πλοήγησης για επιτραπέζιους υπολογιστές\n\n# Διαλέξτε ''Αποθήκευση ως'' από το μενού  ''Αρχείο'' \n# Διαλέξτε ένα όνομα αρχείου καθώς και μια τοποθεσία\n#* Μερικά προγράμματα πλοήγησης χρειάζονται επιπρόσθετα να προσδιορίσετε την μορφή με την οποία θα αποθηκεύσετε το αρχείο ως ''Ιστοσελίδα πλήρης, HTML μόνο'' ή κάτι παρόμοιο\n# Κλείστε αυτήν την καρτέλα\n\n!!! Προγράμματα πλοήγησης για έξυπνα κινητά τηλέφωνα\n\n# Φτιάξτε έναν σελιδοδείκτη για αυτήν την σελίδα\n#* Αν έχετε iCloud, ή Google Sync εγκατάσταση τότε ο σελιδοδείκτης αυτόματα θα συγχρονιστεί με τον επιτραπέζιο υπολογιστή από όπου μπορείτε να τον ανοίξετε και να τον αποθηκεύσετε όπως παραπάνω\n# Κλείστε αυτήν την καρτέλα\n\n//Αν ανοίξετε τον σελιδοδείκτη ξανά σε ένα κινητό με Safari θα δείτε αυτό το μήνυμα πάλι. Αν θέλετε να προχωρήσετε και να χρησιμοποιήσετε το αρχείο απλώς πατήστε το ''κλείσε'' κουμπί παρακάτω//\n&quot;
+        },
+        &quot;$:/config/NewJournal/Title&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Title&quot;,
+            &quot;text&quot;: &quot;DDη MMM YYYY&quot;
+        },
+        &quot;$:/config/NewJournal/Tags&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Tags&quot;,
+            &quot;text&quot;: &quot;Journal&quot;
+        },
+        &quot;$:/language/Notifications/Save/Done&quot;: {
+            &quot;title&quot;: &quot;$:/language/Notifications/Save/Done&quot;,
+            &quot;text&quot;: &quot;Το wiki αποθηκεύτηκε&quot;
+        },
+        &quot;$:/language/Notifications/Save/Starting&quot;: {
+            &quot;title&quot;: &quot;$:/language/Notifications/Save/Starting&quot;,
+            &quot;text&quot;: &quot;Έναρξη αποθήκευσης του wiki&quot;
+        },
+        &quot;$:/language/Search/Filter/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
+            &quot;text&quot;: &quot;Φίλτρο&quot;
+        },
+        &quot;$:/language/Search/Filter/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Hint&quot;,
+            &quot;text&quot;: &quot;Αναζήτηση μέσω μιας [[έκφρασης φιλτραρίσματος|http://tiddlywiki.com/static/Filters.html]]&quot;
+        },
+        &quot;$:/language/Search/Filter/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;$count filter={{$:/temp/advancedsearch}}/&gt; βρέθηκαν&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;$count filter=\&quot;[!is[system]search{$:/temp/search}]\&quot;/&gt; βρέθηκαν&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Shadows/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Caption&quot;,
+            &quot;text&quot;: &quot;Σκιώδη&quot;
+        },
+        &quot;$:/language/Search/Shadows/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Hint&quot;,
+            &quot;text&quot;: &quot;Αναζήτηση για σκιώδη tiddlers&quot;
+        },
+        &quot;$:/language/Search/Shadows/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;$count filter=\&quot;[all[shadows]search{$:/temp/advancedsearch}]\&quot;/&gt; βρέθηκαν&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Standard/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Caption&quot;,
+            &quot;text&quot;: &quot;Τυπικά&quot;
+        },
+        &quot;$:/language/Search/Standard/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Hint&quot;,
+            &quot;text&quot;: &quot;Αναζήτηση για τυπικά tiddlers&quot;
+        },
+        &quot;$:/language/Search/Standard/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;$count filter=\&quot;[!is[system]search{$:/temp/advancedsearch}]\&quot;/&gt; βρέθηκαν&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/System/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Caption&quot;,
+            &quot;text&quot;: &quot;Συστήματος&quot;
+        },
+        &quot;$:/language/Search/System/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Hint&quot;,
+            &quot;text&quot;: &quot;Αναζήτηση για tiddlers συστήματος&quot;
+        },
+        &quot;$:/language/Search/System/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;$count filter=\&quot;[is[system]search{$:/temp/advancedsearch}]\&quot;/&gt; βρέθηκαν&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/SideBar/All/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/All/Caption&quot;,
+            &quot;text&quot;: &quot;Άπαντα&quot;
+        },
+        &quot;$:/language/SideBar/Contents/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Contents/Caption&quot;,
+            &quot;text&quot;: &quot;Περιεχόμενα&quot;
+        },
+        &quot;$:/language/SideBar/Drafts/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Drafts/Caption&quot;,
+            &quot;text&quot;: &quot;Πρόχειρα&quot;
+        },
+        &quot;$:/language/SideBar/Missing/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Missing/Caption&quot;,
+            &quot;text&quot;: &quot;Λείπουν&quot;
+        },
+        &quot;$:/language/SideBar/More/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/More/Caption&quot;,
+            &quot;text&quot;: &quot;Περισσότερα&quot;
+        },
+        &quot;$:/language/SideBar/Open/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Open/Caption&quot;,
+            &quot;text&quot;: &quot;Ανοιχτά&quot;
+        },
+        &quot;$:/language/SideBar/Orphans/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Orphans/Caption&quot;,
+            &quot;text&quot;: &quot;Ορφανά&quot;
+        },
+        &quot;$:/language/SideBar/Recent/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Recent/Caption&quot;,
+            &quot;text&quot;: &quot;Πρόσφατα&quot;
+        },
+        &quot;$:/language/SideBar/Shadows/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Shadows/Caption&quot;,
+            &quot;text&quot;: &quot;Σκιώδη&quot;
+        },
+        &quot;$:/language/SideBar/System/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/System/Caption&quot;,
+            &quot;text&quot;: &quot;Συστήματος&quot;
+        },
+        &quot;$:/language/SideBar/Tags/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tags/Caption&quot;,
+            &quot;text&quot;: &quot;Ετικέτες&quot;
+        },
+        &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;,
+            &quot;text&quot;: &quot;Χωρίς ετικέτα&quot;
+        },
+        &quot;$:/language/SideBar/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;Εργαλεία&quot;
+        },
+        &quot;$:/language/SideBar/Types/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Types/Caption&quot;,
+            &quot;text&quot;: &quot;Τύποι&quot;
+        },
+        &quot;$:/SiteSubtitle&quot;: {
+            &quot;title&quot;: &quot;$:/SiteSubtitle&quot;,
+            &quot;text&quot;: &quot;ένα μη-γραμμικό προσωπικό σημειωματάριο του ιστού&quot;
+        },
+        &quot;$:/SiteTitle&quot;: {
+            &quot;title&quot;: &quot;$:/SiteTitle&quot;,
+            &quot;text&quot;: &quot;Το δικό μου ~TiddlyWiki&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;,
+            &quot;text&quot;: &quot;Προηγμένα&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Empty/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Empty/Hint&quot;,
+            &quot;text&quot;: &quot;κανένα&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Heading&quot;,
+            &quot;text&quot;: &quot;Λεπτομέρειες πρόσθετου&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;,
+            &quot;text&quot;: &quot;Αυτό το πρόσθετο περιέχει τα παρακάτω σκιώδη tiddlers:&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;,
+            &quot;text&quot;: &quot;Κατάσταση Σκιώδους&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/NotShadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/NotShadow/Hint&quot;,
+            &quot;text&quot;: &quot;Το tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; δεν είναι σκιώδης tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;,
+            &quot;text&quot;: &quot;Το tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; είναι ένα σκιώδης tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;,
+            &quot;text&quot;: &quot;Έχει οριστεί στο πρόσθετο &lt;$link to=&lt;&lt;pluginTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;pluginTiddler&gt;&gt;/&gt;&lt;/$link&gt;&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;,
+            &quot;text&quot;: &quot;Έχει παρακαμφθεί από ένα κανονικό tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Fields/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Fields/Caption&quot;,
+            &quot;text&quot;: &quot;Πεδία&quot;
+        },
+        &quot;$:/language/TiddlerInfo/List/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/List/Caption&quot;,
+            &quot;text&quot;: &quot;Λίστα&quot;
+        },
+        &quot;$:/language/TiddlerInfo/List/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/List/Empty&quot;,
+            &quot;text&quot;: &quot;Αυτό το tiddler δεν περιέχει λίστα&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Listed/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Caption&quot;,
+            &quot;text&quot;: &quot;Αναφέρεται&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Listed/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Empty&quot;,
+            &quot;text&quot;: &quot;Αυτό το tiddler δεν εμφανίζεται σε λίστα οποιουδήποτε άλλου tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/References/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Caption&quot;,
+            &quot;text&quot;: &quot;Αναφορές&quot;
+        },
+        &quot;$:/language/TiddlerInfo/References/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Empty&quot;,
+            &quot;text&quot;: &quot;Δεν υπάρχουν δεσμοί από tiddlers σε αυτό&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;,
+            &quot;text&quot;: &quot;Ετικέτες&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;,
+            &quot;text&quot;: &quot;Δεν υπάρχουν tiddlers που να έχουν ετικέτα το παρόν&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;Εργαλεία&quot;
+        },
+        &quot;$:/language/Docs/Types/application/javascript&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/javascript&quot;,
+            &quot;description&quot;: &quot;JavaScript κώδικας&quot;,
+            &quot;name&quot;: &quot;application/javascript&quot;,
+            &quot;group&quot;: &quot;Προγραμματιστής&quot;
+        },
+        &quot;$:/language/Docs/Types/application/json&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/json&quot;,
+            &quot;description&quot;: &quot;JSON δεδομένα&quot;,
+            &quot;name&quot;: &quot;application/json&quot;,
+            &quot;group&quot;: &quot;Προγραμματιστής&quot;
+        },
+        &quot;$:/language/Docs/Types/application/x-tiddler-dictionary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/x-tiddler-dictionary&quot;,
+            &quot;description&quot;: &quot;Λεξικό δεδομένων&quot;,
+            &quot;name&quot;: &quot;application/x-tiddler-dictionary&quot;,
+            &quot;group&quot;: &quot;Προγραμματιστής&quot;
+        },
+        &quot;$:/language/Docs/Types/image/gif&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/gif&quot;,
+            &quot;description&quot;: &quot;Εικόνα GIF&quot;,
+            &quot;name&quot;: &quot;image/gif&quot;,
+            &quot;group&quot;: &quot;Εικόνα&quot;
+        },
+        &quot;$:/language/Docs/Types/image/jpeg&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/jpeg&quot;,
+            &quot;description&quot;: &quot;Εικόνα JPEG&quot;,
+            &quot;name&quot;: &quot;image/jpeg&quot;,
+            &quot;group&quot;: &quot;Εικόνα&quot;
+        },
+        &quot;$:/language/Docs/Types/image/png&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/png&quot;,
+            &quot;description&quot;: &quot;Εικόνα PNG&quot;,
+            &quot;name&quot;: &quot;image/png&quot;,
+            &quot;group&quot;: &quot;Εικόνα&quot;
+        },
+        &quot;$:/language/Docs/Types/image/svg+xml&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/svg+xml&quot;,
+            &quot;description&quot;: &quot;Εικόνα Δομημένων Διανυσματικών Γραφικών&quot;,
+            &quot;name&quot;: &quot;image/svg+xml&quot;,
+            &quot;group&quot;: &quot;Εικόνα&quot;
+        },
+        &quot;$:/language/Docs/Types/image/x-icon&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/x-icon&quot;,
+            &quot;description&quot;: &quot;Αρχείο Εικονιδίου μορφής ICO&quot;,
+            &quot;name&quot;: &quot;image/x-icon&quot;,
+            &quot;group&quot;: &quot;Εικόνα&quot;
+        },
+        &quot;$:/language/Docs/Types/text/css&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/css&quot;,
+            &quot;description&quot;: &quot;Στατικό stylesheet&quot;,
+            &quot;name&quot;: &quot;text/css&quot;,
+            &quot;group&quot;: &quot;Προγραμματιστής&quot;
+        },
+        &quot;$:/language/Docs/Types/text/html&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/html&quot;,
+            &quot;description&quot;: &quot;Γλώσσα HTML&quot;,
+            &quot;name&quot;: &quot;text/html&quot;,
+            &quot;group&quot;: &quot;Κείμενο&quot;
+        },
+        &quot;$:/language/Docs/Types/text/plain&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/plain&quot;,
+            &quot;description&quot;: &quot;Απλό κείμενο&quot;,
+            &quot;name&quot;: &quot;text/plain&quot;,
+            &quot;group&quot;: &quot;Κείμενο&quot;
+        },
+        &quot;$:/language/Docs/Types/text/vnd.tiddlywiki&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/vnd.tiddlywiki&quot;,
+            &quot;description&quot;: &quot;TiddlyWiki 5&quot;,
+            &quot;name&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;group&quot;: &quot;Κείμενο&quot;
+        },
+        &quot;$:/language/Docs/Types/text/x-tiddlywiki&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/x-tiddlywiki&quot;,
+            &quot;description&quot;: &quot;TiddlyWiki κλασικό&quot;,
+            &quot;name&quot;: &quot;text/x-tiddlywiki&quot;,
+            &quot;group&quot;: &quot;Κείμενο&quot;
+        },
+        &quot;$:/languages/el-GR/icon&quot;: {
+            &quot;title&quot;: &quot;$:/languages/el-GR/icon&quot;,
+            &quot;type&quot;: &quot;image/svg+xml&quot;,
+            &quot;text&quot;: &quot;&lt;svg width=\&quot;600\&quot; height=\&quot;400\&quot; viewBox=\&quot;0 0 27 18\&quot; xmlns=\&quot;http://www.w3.org/2000/svg\&quot;&gt;\n  &lt;desc&gt;Flag of Greece&lt;/desc&gt;\n  &lt;rect width=\&quot;27\&quot; height=\&quot;18\&quot; fill=\&quot;#0d5eaf\&quot;/&gt;\n  &lt;path fill=\&quot;none\&quot; stroke-width=\&quot;2\&quot; stroke=\&quot;white\&quot; d=\&quot;M5,0V11 M0,5H10 M10,3H27 M10,7H27 M0,11H27 M0,15H27\&quot;/&gt;\n&lt;/svg&gt;&quot;
         }
     }
 }</pre>
@@ -24780,7 +27005,7 @@ Note that tags containing spaces or non-alphanumeric characters will be converte
 <div created="20141020111002211" modified="20141020111002211" tags="Learning" title="How to put the last modification date in a banner" type="text/vnd.tiddlywiki">
 <pre>Here's how to display the last modification date of a wiki in a banner in the corner of the window:
 
-# Copy the plugin $:/plugins/tiddlywiki/github-fork-ribbon (labelled &quot;GitHub-style ribbon in pure CSS&quot;) to your TiddlyWiki
+# Copy the plugin [[$:/plugins/tiddlywiki/github-fork-ribbon]] to your TiddlyWiki
 # Save and reload your wiki
 # Create a new tiddler called [[$:/_MyRibbon]] tagged [[$:/tags/PageControls]] and containing:&lt;div&gt;
 
