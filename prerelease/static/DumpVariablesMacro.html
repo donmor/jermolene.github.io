@@ -17,11 +17,13 @@
 <p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros'><div class='tc-tiddler-title'>
 <h2 class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
-<span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='info' class='tc-btn-invisible' title='Show information for this tiddler'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
 
 
 </button>
-</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+<span class=' tc-reveal' hidden='true'></span>
+
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 
 </button>
@@ -47,15 +49,19 @@ DumpVariablesMacro
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 54 days ago
+</a> 59 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;'>
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
  Macros
 </button>
-
 <span class=' tc-reveal' hidden='true'></span>
+
+
 </span>
 </div>
 
@@ -120,24 +126,26 @@ background-image: -ms-linear-gradient();
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
-&lt;/div&gt;'></td></tr><tr class='oddRow'><td align='left'>toc</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc&quot;&gt;
-&lt;$list filter=&quot;[tag[]]&quot;&gt;
+&lt;/div&gt;'></td></tr><tr class='oddRow'><td align='left'>toc</td><td align='left'><input size='50' value='&lt;&lt;toc-body rootTag:&quot;&quot;&quot;&quot;&quot;&quot; tag:&quot;&quot;&quot;&quot;&quot;&quot; sort:&quot;&quot;&quot;&quot;&quot;&quot;&gt;&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-body</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc&quot;&gt;
+&lt;$list filter=&quot;&quot;&quot;[tag[]!has[draft.of]]&quot;&quot;&quot;&gt;
 &lt;li&gt;
 &lt;$list filter=&quot;[is[current]toc-link[no]]&quot; emptyMessage=&quot;&lt;$link&gt;&lt;$view field='caption'&gt;&lt;$view field='title'/&gt;&lt;/$view&gt;&lt;/$link&gt;&quot;&gt;
 &lt;$view field=&quot;caption&quot;&gt;
 &lt;$view field=&quot;title&quot;/&gt;
 &lt;/$view&gt;
 &lt;/$list&gt;
-&lt;$macrocall $name=&quot;toc&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
+&lt;$list filter=&quot;&quot;&quot;[all[current]] -[[]]&quot;&quot;&quot;&gt;
+&lt;$macrocall $name=&quot;toc-body&quot; rootTag=&quot;&quot;&quot;&quot;&quot;&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
+&lt;/$list&gt;
 &lt;/li&gt;
 &lt;/$list&gt;
-&lt;/ol&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-expandable</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc toc-expandable&quot;&gt;
-&lt;$list filter=&quot;[tag[]]&quot;&gt;
+&lt;/ol&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-expandable</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc toc-expandable&quot;&gt;
+&lt;$list filter=&quot;[tag[]!has[draft.of]]&quot;&gt;
 &lt;$list filter=&quot;[is[current]toc-link[no]]&quot; emptyMessage=&quot;&lt;&lt;toc-linked-expandable-body tag:'' sort:''&gt;&gt;&quot;&gt;
 &lt;&lt;toc-unlinked-expandable-body tag:&quot;&quot; sort:&quot;&quot;&gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
-&lt;/ol&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-linked-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
+&lt;/ol&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-linked-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
 &lt;li&gt;
 &lt;$link&gt;
 &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;toc-state&gt;&gt; text=&quot;open&quot;&gt;
@@ -158,7 +166,7 @@ background-image: -ms-linear-gradient();
 &lt;$macrocall $name=&quot;toc-expandable&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
-&lt;/$set&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-linked-selective-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
+&lt;/$set&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-linked-selective-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
 &lt;li&gt;
 &lt;$link&gt;
 &lt;$list filter=&quot;[all[current]tagging[]limit[1]]&quot; variable=&quot;ignore&quot; emptyMessage=&quot;&lt;$button class='tc-btn-invisible'&gt;{{$:/core/images/blank}}&lt;/$button&gt;&quot;&gt;
@@ -181,13 +189,13 @@ background-image: -ms-linear-gradient();
 &lt;$macrocall $name=&quot;toc-selective-expandable&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
-&lt;/$set&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-selective-expandable</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc toc-selective-expandable&quot;&gt;
-&lt;$list filter=&quot;[tag[]]&quot;&gt;
+&lt;/$set&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-selective-expandable</td><td align='left'><input size='50' value='&lt;ol class=&quot;tc-toc toc-selective-expandable&quot;&gt;
+&lt;$list filter=&quot;[tag[]!has[draft.of]]&quot;&gt;
 &lt;$list filter=&quot;[is[current]toc-link[no]]&quot; variable=&quot;ignore&quot; emptyMessage=&quot;&lt;&lt;toc-linked-selective-expandable-body tag:'' sort:''&gt;&gt;&quot;&gt;
 &lt;&lt;toc-unlinked-selective-expandable-body tag:&quot;&quot; sort:&quot;&quot;&gt;&gt;
 &lt;/$list&gt;
 &lt;/$list&gt;
-&lt;/ol&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-unlinked-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
+&lt;/ol&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-unlinked-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
 &lt;li&gt;
 &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;toc-state&gt;&gt; text=&quot;open&quot;&gt;
 &lt;$button set=&lt;&lt;toc-state&gt;&gt; setTo=&quot;open&quot; class=&quot;tc-btn-invisible&quot;&gt;
@@ -209,7 +217,7 @@ background-image: -ms-linear-gradient();
 &lt;$macrocall $name=&quot;toc-expandable&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
-&lt;/$set&gt;'></td></tr><tr class='oddRow'><td align='left'>toc-unlinked-selective-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
+&lt;/$set&gt;'></td></tr><tr class='evenRow'><td align='left'>toc-unlinked-selective-expandable-body</td><td align='left'><input size='50' value='&lt;$set name=&quot;toc-state&quot; value=&lt;&lt;qualify &quot;$:/state/toc/-DumpVariablesMacro&quot;&gt;&gt;&gt;
 &lt;li&gt;
 &lt;$list filter=&quot;[all[current]tagging[]limit[1]]&quot; variable=&quot;ignore&quot; emptyMessage=&quot;&lt;$button class='tc-btn-invisible'&gt;{{$:/core/images/blank}}&lt;/$button&gt; &lt;$view field='caption'&gt;&lt;$view field='title'/&gt;&lt;/$view&gt;&quot;&gt;
 &lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;toc-state&gt;&gt; text=&quot;open&quot;&gt;
@@ -233,15 +241,15 @@ background-image: -ms-linear-gradient();
 &lt;$macrocall $name=&quot;toc-selective-expandable&quot; tag=&lt;&lt;currentTiddler&gt;&gt; sort=&quot;&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/li&gt;
-&lt;/$set&gt;'></td></tr><tr class='evenRow'><td align='left'>transclusion</td><td align='left'><input size='50' value='{DumpVariablesMacro|DumpVariablesMacro|||}'></td></tr><tr class='oddRow'><td align='left'>transform-origin</td><td align='left'><input size='50' value='```
+&lt;/$set&gt;'></td></tr><tr class='oddRow'><td align='left'>transclusion</td><td align='left'><input size='50' value='{DumpVariablesMacro|DumpVariablesMacro|||}'></td></tr><tr class='evenRow'><td align='left'>transform-origin</td><td align='left'><input size='50' value='```
   -webkit-transform-origin: ;
      -moz-transform-origin: ;
           transform-origin: ;
-```'></td></tr><tr class='evenRow'><td align='left'>transition</td><td align='left'><input size='50' value='```
+```'></td></tr><tr class='oddRow'><td align='left'>transition</td><td align='left'><input size='50' value='```
   -webkit-transition: ;
      -moz-transition: ;
           transition: ;
-```'></td></tr><tr class='oddRow'><td align='left'>tv-config-toolbar-class</td><td align='left'><input size='50' value='tc-btn-invisible'></td></tr><tr class='evenRow'><td align='left'>tv-config-toolbar-icons</td><td align='left'><input size='50' value='no'></td></tr><tr class='oddRow'><td align='left'>tv-config-toolbar-text</td><td align='left'><input size='50' value='no'></td></tr><tr class='evenRow'><td align='left'>tv-wikilink-template</td><td align='left'><input size='50' value='$uri_doubleencoded$.html'></td></tr><tr class='oddRow'><td align='left'>wikitext-example</td><td align='left'><input size='50' value='```
+```'></td></tr><tr class='evenRow'><td align='left'>tv-config-toolbar-class</td><td align='left'><input size='50' value='tc-btn-invisible'></td></tr><tr class='oddRow'><td align='left'>tv-config-toolbar-icons</td><td align='left'><input size='50' value='no'></td></tr><tr class='evenRow'><td align='left'>tv-config-toolbar-text</td><td align='left'><input size='50' value='no'></td></tr><tr class='oddRow'><td align='left'>tv-wikilink-template</td><td align='left'><input size='50' value='$uri_doubleencoded$.html'></td></tr><tr class='evenRow'><td align='left'>wikitext-example</td><td align='left'><input size='50' value='```
 
 ```
 
@@ -254,7 +262,7 @@ In HTML:
 $$$text/vnd.tiddlywiki&gt;text/html
 
 $$$
-'></td></tr><tr class='evenRow'><td align='left'>wikitext-example-without-html</td><td align='left'><input size='50' value='```
+'></td></tr><tr class='oddRow'><td align='left'>wikitext-example-without-html</td><td align='left'><input size='50' value='```
 
 ```
 
