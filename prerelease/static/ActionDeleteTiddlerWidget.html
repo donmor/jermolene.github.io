@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.5-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.5-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets tc-tagged-ActionWidgets'><div class='tc-tiddler-title'>
+<h2 class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button>
+</span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span style='fill:;'>
+
+</span>
+
+
+
+<span class='tc-title'>
+ActionDeleteTiddlerWidget
+</span>
+
+</h2>
+
+<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 3 hours ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ ActionWidgets
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+<span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Widgets
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The <strong>action-deletetiddler</strong> widget is an <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>action widget</a> that deletes a tiddler. <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>ActionWidgets</a> are used within triggering widgets such as the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget.html'>ButtonWidget</a>.</p><p>There are several differences compared to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetMessage%253A%2520tm-delete-tiddler.html'>WidgetMessage: tm-delete-tiddler</a>:</p><ul><li>The user is not prompted to confirm the deletion</li><li>No automatic updating of the story list</li><li>No special handling of draft tiddlers</li></ul><h1 class=''>Content and Attributes</h1><p>The <strong>action-deletetiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>$tiddler</td><td align='left'>The title of the tiddler to be deleted (if not provided defaults to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable%253A%2520currentTiddler.html'>WidgetVariable: currentTiddler</a></td></tr></tbody></table><h1 class=''>Examples</h1><p>Here is an example of a button that deletes the tiddler <a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>HelloThere</a>. Note:</p><pre><code>&lt;$button&gt;
+&lt;$action-deletetiddler $tiddler=&quot;HelloThere&quot;/&gt;
+Go to Control Panel &quot;Appearance&quot; tab
+&lt;/$button&gt;</code></pre><p>Renders as:</p><p><button class=''>
+
+Go to Control Panel &quot;Appearance&quot; tab
+</button>
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
