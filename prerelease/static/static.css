@@ -1103,6 +1103,8 @@ pre > code {
   font-weight: normal;
 }.tc-tiddler-frame .tc-tiddler-controls {
 	float: right;
+	font-size: 2.35em;
+	line-height: 1.2em;
 }.tc-tiddler-controls .tc-drop-down {
 	font-size: 0.6em;
 }.tc-tiddler-controls button {
