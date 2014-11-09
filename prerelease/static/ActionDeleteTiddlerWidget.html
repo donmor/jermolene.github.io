@@ -15,6 +15,7 @@
 <section class="tc-story-river">
 
 <p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets tc-tagged-ActionWidgets'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
 
@@ -31,7 +32,6 @@
 
 </button></span>
 </span>
-<h2 class='tc-titlebar'>
 
 <span style='fill:;'>
 
@@ -39,17 +39,17 @@
 
 
 
-<span class='tc-title'>
+<h2 class='tc-title'>
 ActionDeleteTiddlerWidget
-</span>
-
 </h2>
+
+</div>
 
 <div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 39 hours ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -77,12 +77,19 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The <strong>action-deletetiddler</strong> widget is an <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>action widget</a> that deletes a tiddler. <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>ActionWidgets</a> are used within triggering widgets such as the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget.html'>ButtonWidget</a>.</p><p>There are several differences compared to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetMessage%253A%2520tm-delete-tiddler.html'>WidgetMessage: tm-delete-tiddler</a>:</p><ul><li>The user is not prompted to confirm the deletion</li><li>No automatic updating of the story list</li><li>No special handling of draft tiddlers</li></ul><h1 class=''>Content and Attributes</h1><p>The <strong>action-deletetiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>$tiddler</td><td align='left'>The title of the tiddler to be deleted (if not provided defaults to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable%253A%2520currentTiddler.html'>WidgetVariable: currentTiddler</a></td></tr></tbody></table><h1 class=''>Examples</h1><p>Here is an example of a button that deletes the tiddler <a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>HelloThere</a>. Note:</p><pre><code>&lt;$button&gt;
+<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The <strong>action-deletetiddler</strong> widget is an <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>action widget</a> that deletes tiddlers. <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>ActionWidgets</a> are used within triggering widgets such as the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget.html'>ButtonWidget</a>.</p><p>There are several differences compared to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetMessage%253A%2520tm-delete-tiddler.html'>WidgetMessage: tm-delete-tiddler</a>:</p><ul><li>The user is not prompted to confirm the deletion</li><li>No automatic updating of the story list</li><li>No special handling of draft tiddlers</li></ul><h1 class=''>Content and Attributes</h1><p>The <strong>action-deletetiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>$tiddler</td><td align='left'>Optional title of the tiddler to be deleted</td></tr><tr class='evenRow'><td align='left'>$filter</td><td align='left'>Optional filter identifying tiddlers to be deleted</td></tr></tbody></table><h1 class=''>Examples</h1><p>Here is an example of a button that deletes the tiddler <a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>HelloThere</a>:</p><pre><code>&lt;$button&gt;
 &lt;$action-deletetiddler $tiddler=&quot;HelloThere&quot;/&gt;
-Go to Control Panel &quot;Appearance&quot; tab
+Delete &quot;~HelloThere&quot;
 &lt;/$button&gt;</code></pre><p>Renders as:</p><p><button class=''>
 
-Go to Control Panel &quot;Appearance&quot; tab
+Delete &quot;HelloThere&quot;
+</button>
+</p><p>Here is an example of a button that deletes all tiddlers tagged <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TableOfContents.html'>TableOfContents</a>:</p><pre><code>&lt;$button&gt;
+&lt;$action-deletetiddler $filter=&quot;[tag[TableOfContents]]&quot;/&gt;
+Delete tiddlers tagged &quot;~TableOfContents&quot;
+&lt;/$button&gt;</code></pre><p>Renders as:</p><p><button class=''>
+
+Delete tiddlers tagged &quot;TableOfContents&quot;
 </button>
 </p></div>
 

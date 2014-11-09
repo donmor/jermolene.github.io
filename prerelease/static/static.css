@@ -1092,6 +1092,9 @@ pre > code {
 	margin: 0;
 }.tc-system-title-prefix {
 	color: #bbb;
+}.tc-titlebar h2 {
+	font-size: 1em;
+	display: inline;
 }.tc-titlebar img {
 	height: 1em;
 }.tc-subtitle {
@@ -1103,8 +1106,6 @@ pre > code {
   font-weight: normal;
 }.tc-tiddler-frame .tc-tiddler-controls {
 	float: right;
-	font-size: 2.35em;
-	line-height: 1.2em;
 }.tc-tiddler-controls .tc-drop-down {
 	font-size: 0.6em;
 }.tc-tiddler-controls button {
