@@ -13122,6 +13122,30 @@ Introduction
             &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
             &quot;text&quot;: &quot;设置加密保存此维基的密码&quot;
         },
+        &quot;$:/language/Buttons/ExportPage/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Caption&quot;,
+            &quot;text&quot;: &quot;导出所有条目&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Hint&quot;,
+            &quot;text&quot;: &quot;导出所有条目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;导出此条目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;导出此条目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;,
+            &quot;text&quot;: &quot;导出条目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
+            &quot;text&quot;: &quot;导出条目&quot;
+        },
         &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
             &quot;text&quot;: &quot;全屏幕&quot;
@@ -15280,6 +15304,30 @@ Introduction
         &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
             &quot;text&quot;: &quot;設定加密儲存此維基的密碼&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Caption&quot;,
+            &quot;text&quot;: &quot;導出所有條目&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Hint&quot;,
+            &quot;text&quot;: &quot;導出所有條目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;導出此條目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;導出此條目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;,
+            &quot;text&quot;: &quot;導出條目&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
+            &quot;text&quot;: &quot;導出條目&quot;
         },
         &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
@@ -18655,7 +18703,7 @@ Sometimes the master en-GB language tiddlers are updated with revised content or
 https://github.com/Jermolene/TiddlyWiki5/commits/master/core/language.atom
 </pre>
 </div>
-<div created="20140131221338016" modified="20140415114024493" tags="howto" title="How to create plugins in the browser" type="text/vnd.tiddlywiki">
+<div created="20140131221338016" modified="20141111122437656" tags="howto" title="How to create plugins in the browser" type="text/vnd.tiddlywiki">
 <pre>The recommended technique for building TiddlyWiki plugins involves running [[TiddlyWiki on Node.js]], but there is now an experimental technique for creating plugins directly in the browser.
 
 ! Overview
@@ -18711,7 +18759,11 @@ You should see a confirmation message, and then if you inspect the plugin tiddle
 
 Each time you save the plugin the last portion of the version number is automatically incremented. This will ensure that users with an older version of your plugin will be able to install the new version.
 
-!! 5. Repacking the plugin
+!! 5. Testing the plugin
+
+To test the plugin, first make sure that it has been packed. Then save changes and refresh the page in order to load the new plugin.
+
+!! 6. Repacking the plugin
 
 Once you've built the plugin for the first time you can omit the second parameter to `repackPlugin()` unless you are adding a new tiddler:
 
@@ -18719,7 +18771,7 @@ Once you've built the plugin for the first time you can omit the second paramete
 $tw.utils.repackPlugin(&quot;$:/plugins/yourname/pluginname&quot;)
 ```
 
-!! 6. Removing tiddlers from the plugin
+!! 7. Removing tiddlers from the plugin
 
 To remove tiddlers from the plugin specify their titles in the optional third parameter:
 
