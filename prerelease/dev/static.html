@@ -1008,9 +1008,11 @@ pre > code {
 	text-decoration: none;
 }.tc-page-controls img {
 	width: 1em;
-}.tc-page-controls svg {
+}.tc-page-controls svg,
+.tc-search svg {
 	fill: #aaaaaa;
-}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg {
+}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg,
+.tc-search button:hover svg, .tc-search a:hover svg {
 	fill: #000000;
 }.tc-menu-list-item {
 	white-space: nowrap;
@@ -1632,6 +1634,50 @@ pre > code {
 }.tc-table-of-contents li li li li {
 	font-size: 0.95em;
 	font-weight: 200;
+}.tc-tabbed-table-of-contents {
+	display: -webkit-flex;
+	display: flex;
+}.tc-tabbed-table-of-contents .tc-table-of-contents {
+	z-index: 100;
+	display: inline-block;
+	padding-left: 1em;
+	max-width: 50%;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+	background: #d8d8d8;
+	border-left: 1px solid #cccccc;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a,
+.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	display: block;
+	padding: 0.12em 1em 0.12em 0.25em;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a {
+	border-top: 1px solid #d8d8d8;
+	border-left: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a:hover {
+	text-decoration: none;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	background: #cccccc;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	background: #e5f8fd;
+	margin-right: -1px;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a:hover {
+	text-decoration: none;
+}.tc-tabbed-table-of-contents .tc-tabbed-table-of-contents-content {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	border: 1px solid #cccccc;
+	-webkit-flex: 1 0 50%;
+	flex: 1 0 50%;
 }/*
 ** Dirty indicator
 */body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg {
@@ -1702,6 +1748,8 @@ pre > code {
 
 <span class=' tc-reveal' hidden='true'></span>
 
+<span class=' tc-reveal' hidden='true'></span>
+
 <span class=' tc-reveal'>
 <button aria-label='control panel' class='tc-btn-invisible' title='Open control panel'>
 
@@ -1716,8 +1764,6 @@ pre > code {
 </button>
 
 </span>
-
-<span class=' tc-reveal' hidden='true'></span>
 
 <span class=' tc-reveal' hidden='true'></span>
 
@@ -1761,7 +1807,17 @@ pre > code {
 </div></p><div class='tc-sidebar-lists'><p><div class='tc-search'>
 <input type='search' value=''>
 <span class=' tc-reveal' hidden='true'></span>
-<span class=' tc-reveal'> <a aria-label='advanced search' class='tc-btn-invisible tc-tiddlylink tc-tiddlylink-shadow' href='static/%2524%253A%252FAdvancedSearch.html' title='Advanced search'>…</a>
+<span class=' tc-reveal'>
+<button aria-label='advanced search' class='tc-btn-invisible' title='Advanced search'>
+<svg class='tc-image-advanced-search-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
+    <g fill-rule='evenodd'>
+        <path d='M74.5651535,87.9848361 C66.9581537,93.0488876 57.8237115,96 48,96 C21.490332,96 0,74.509668 0,48 C0,21.490332 21.490332,0 48,0 C74.509668,0 96,21.490332 96,48 C96,57.8541369 93.0305793,67.0147285 87.9377231,74.6357895 L122.284919,108.982985 C125.978897,112.676963 125.973757,118.65366 122.284271,122.343146 C118.593975,126.033442 112.613238,126.032921 108.92411,122.343793 L74.5651535,87.9848361 Z M48,80 C65.673112,80 80,65.673112 80,48 C80,30.326888 65.673112,16 48,16 C30.326888,16 16,30.326888 16,48 C16,65.673112 30.326888,80 48,80 Z'></path>
+        <circle cx='48' cy='48' r='8'></circle>
+        <circle cx='28' cy='48' r='8'></circle>
+        <circle cx='68' cy='48' r='8'></circle>
+    </g>
+</svg>
+</button>
 </span>
 </div></p><div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p><div class='tc-tab-set '>
 <div class='tc-tab-buttons '>
@@ -1846,7 +1902,7 @@ HelloThere
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/.html'>
 
-</a> 53 days ago
+</a> 54 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -1949,9 +2005,9 @@ color:#333333;'>
 
 <section class='story-frontdrop'></section></section><div class='tc-alerts'></div><span class='tc-topbar tc-topbar-left'></span><span class='tc-topbar tc-topbar-right'><span class=' tc-reveal'>
 <button aria-label='hide sidebar' class='tc-btn-invisible' title='Hide sidebar'><svg class='tc-image-chevron-right tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
-    <g>
-        <path d='M97.7982405,98.1688105 L152.184015,43.4979042 C155.938662,39.7236635 155.938662,33.6043964 152.184015,29.8301557 C148.429583,26.0559364 142.342116,26.0559364 138.587684,29.8301557 L91.0000107,77.667222 L43.4123803,29.8301557 C39.6578195,26.0559364 33.5704813,26.0559364 29.8159206,29.8301557 C26.0613598,33.6043964 26.0613598,39.7236635 29.8159206,43.4979042 L84.2017595,98.1688105 C87.9563202,101.943051 94.0436798,101.943051 97.7982405,98.1688126 L97.7982405,98.1688105 Z' transform='translate(91.000000, 63.999491) rotate(-90.000000) translate(-91.000000, -63.999491) '></path>
-        <path d='M43.7982405,98.1688105 L98.1840153,43.4979042 C101.938662,39.7236635 101.938662,33.6043964 98.1840153,29.8301557 C94.4295828,26.0559364 88.3421164,26.0559364 84.5876838,29.8301557 L37.0000107,77.667222 L-10.5876197,29.8301557 C-14.3421805,26.0559364 -20.4295187,26.0559364 -24.1840794,29.8301557 C-27.9386402,33.6043964 -27.9386402,39.7236635 -24.1840794,43.4979042 L30.2017595,98.1688105 C33.9563202,101.943051 40.0436798,101.943051 43.7982405,98.1688126 L43.7982405,98.1688105 Z' transform='translate(37.000000, 63.999491) rotate(-90.000000) translate(-37.000000, -63.999491) '></path>
+    <g fill-rule='evenodd' transform='translate(-48.000000, -3.000000)'>
+        <path d='M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z' transform='translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) '></path>
+        <path d='M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z' transform='translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) '></path>
     </g>
 </svg></button>
 </span>
