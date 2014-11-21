@@ -45,7 +45,7 @@ DumpVariablesMacro
 
 </div>
 
-<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+<div class='tc-tiddler-info tc-popup-keep tc-reveal' hidden='true'></div>
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
@@ -75,7 +75,8 @@ background-image: -ms-linear-gradient();
   -webkit-box-shadow: ;
      -moz-box-shadow: ;
           box-shadow: ;
-``'></td></tr><tr class='oddRow'><td align='left'>color</td><td align='left'><input size='50' value='&lt;&lt;colour &gt;&gt;'></td></tr><tr class='evenRow'><td align='left'>colour</td><td align='left'><input size='50' value='&lt;$transclude tiddler={{$:/palette}} index=&quot;&quot;&gt;&lt;$transclude tiddler=&quot;$:/palettes/Vanilla&quot; index=&quot;&quot;/&gt;&lt;/$transclude&gt;'></td></tr><tr class='oddRow'><td align='left'>currentTiddler</td><td align='left'><input size='50' value='DumpVariablesMacro'></td></tr><tr class='evenRow'><td align='left'>datauri</td><td align='left'><input size='50' value='&lt;$macrocall $name=&quot;makedatauri&quot; type={{!!type}} text={{}}/&gt;'></td></tr><tr class='oddRow'><td align='left'>exportButton</td><td align='left'><input size='50' value='&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt; tooltip={{Hint}} aria-label={{Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
+``'></td></tr><tr class='oddRow'><td align='left'>color</td><td align='left'><input size='50' value='&lt;&lt;colour &gt;&gt;'></td></tr><tr class='evenRow'><td align='left'>colour</td><td align='left'><input size='50' value='&lt;$transclude tiddler={{$:/palette}} index=&quot;&quot;&gt;&lt;$transclude tiddler=&quot;$:/palettes/Vanilla&quot; index=&quot;&quot;/&gt;&lt;/$transclude&gt;'></td></tr><tr class='oddRow'><td align='left'>currentTiddler</td><td align='left'><input size='50' value='DumpVariablesMacro'></td></tr><tr class='evenRow'><td align='left'>datauri</td><td align='left'><input size='50' value='&lt;$macrocall $name=&quot;makedatauri&quot; type={{!!type}} text={{}}/&gt;'></td></tr><tr class='oddRow'><td align='left'>exportButton</td><td align='left'><input size='50' value='&lt;span class=&quot;tc-popup-keep&quot;&gt;
+&lt;$button popup=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt; tooltip={{Hint}} aria-label={{Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=&quot;tc-selected&quot;&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
 {{$:/core/images/export-button}}
 &lt;/$list&gt;
@@ -83,6 +84,7 @@ background-image: -ms-linear-gradient();
 &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{Caption}}/&gt;&lt;/span&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;
+&lt;/span&gt;
 &lt;$reveal state=&lt;&lt;qualify &quot;$:/state/popup/export&quot;&gt;&gt; type=&quot;popup&quot; position=&quot;below&quot; animate=&quot;yes&quot;&gt;
 &lt;div class=&quot;tc-drop-down&quot;&gt;
 &lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/Exporter]]&quot;&gt;

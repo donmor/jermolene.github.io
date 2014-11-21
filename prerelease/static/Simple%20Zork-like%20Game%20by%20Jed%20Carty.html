@@ -7,14 +7,14 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>TiddlyWiki/Dev — documentation for developers</title>
+<title>TiddlyWiki Pre-release — 5.1.5-prerelease</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></div></div>
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc'><div class='tc-tiddler-title'>
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Examples'><div class='tc-tiddler-title'>
 <div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
@@ -40,7 +40,7 @@
 
 
 <h2 class='tc-title'>
-Syncadaptor
+Simple Zork-like Game by Jed Carty
 </h2>
 
 </div>
@@ -49,7 +49,7 @@ Syncadaptor
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 4 months ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -57,7 +57,7 @@ Syncadaptor
 <button class='tc-btn-invisible tc-tag-label' style='background-color:;
 fill:#333333;
 color:#333333;'>
- doc
+ Examples
 </button>
 <span class=' tc-reveal' hidden='true'></span>
 
@@ -65,7 +65,8 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>A module with <code>module-type: syncadaptor</code> provides functionality to get a list of tiddlers (this list is provided as SkinnyTiddlers, which are normal tiddlers without the text field) and to load, save and delete single tiddlers. A syncadaptor can also provide functions to login and logout so that syncadaptor modules can be used to synchronize tiddlers with a remote server.</p><p>The syncer module only uses one syncadaptor and honours a special <a class='tc-tiddlylink tc-tiddlylink-resolves' href='System%2520Tiddlers.html'>system tiddler</a> <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fconfig%252FSyncFilter.html'>$:/config/SyncFilter</a> containing a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tags%2520and%2520Filter%2520Mechanism.html'>filter string</a>. Tiddlers matching this filter string are not synced with a syncadapter.</p></div>
+<div class='tc-tiddler-body'><p>A simple game built with <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a>, introduced in <a class='tc-tiddlylink-external' href='https://groups.google.com/d/topic/tiddlywiki/4aRpZht1vOs/discussion' target='_blank'>this post</a>.</p><p><a class='tc-tiddlylink-external' href='https://af05951e1a770128ed35f58212e0b42a2f5f3f5c.googledrive.com/host/0BzM-cR6_6xxWZkpSb1FFUkhMNGM' target='_blank'>https://af05951e1a770128ed35f58212e0b42a2f5f3f5c.googledrive.com/host/0BzM-cR6_6xxWZkpSb1FFUkhMNGM</a></p><blockquote class='tc-quote'><p>I decided to see if it was possible to make some sort of game using only the core tiddlywiki with no plugins or javascript. I made a very bare bones zork/interactive fiction type game. It is currently the simplest thing I could make and claim it was a game, but I may add on to it in the future. It uses the 5.1.5 prerelease because the action-setfield widget saved lots of work making macros.</p><p>One goal of this is to use nothing besides what is contained in the core tiddlywiki, so there is no javascript and no plugins.
+</p></blockquote></div>
 
 
 

@@ -45,11 +45,11 @@ TimelineMacro
 
 </div>
 
-<div class='tc-tiddler-info tc-popup tc-reveal' hidden='true'></div>
+<div class='tc-tiddler-info tc-popup-keep tc-reveal' hidden='true'></div>
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 11 days ago
+</a> 18 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -67,6 +67,28 @@ color:#333333;'>
 
 <div class='tc-tiddler-body'><p>The timeline macro produces a list of tiddlers in reverse chronological order of modification date that is grouped by the date of the day of modification.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>limit</td><td align='left'>The maximum number of tiddlers to list (see below)</td><td align='left'>100</td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>format</td><td align='left'>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat.html'>DateFormat</a> string for formatting the date</td><td align='left'>DDth MMM YYYY</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subfilter</td><td align='left'>A subfilter to include in the timeline filter (see below)</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>dateField</td><td align='left'>Optional name of date field to use</td><td align='left'>modified</td></tr></tbody></table><p>The subfilter and limit parameters are spliced into the filter string like this:</p><pre><code>[!is[system]$subfilter$has[modified]!sort[modified]limit[$limit$]eachday[modified]]</code></pre><p>To restrict the timeline to a particular tag, the subfilter can be set to something like <code>tag[mytag]</code>:</p><pre><code>&lt;&lt;timeline limit:10 subfilter:&quot;tag[mytag]&quot;&gt;&gt;</code></pre><p>Note that the timeline macro does not truncate the entries for a particular day, instead always displaying all the tiddlers under each displayed day heading. This means that the limit parameter works in an unexpected way because it is possible for more than the specified number of tiddlers to be displayed.</p><h1 class=''>Examples</h1><pre><code>&lt;&lt;timeline limit:30 format:'DD/MM/YYYY'&gt;&gt;
 </code></pre><p>Renders as:</p><p><div class='tc-timeline'>
+
+<div class='tc-menu-list-item'>
+21/11/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tiddlers.html'>
+Tiddlers
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+18/11/2014
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Simple%2520Zork-like%2520Game%2520by%2520Jed%2520Carty.html'>
+Simple Zork-like Game by Jed Carty
+</a>
+</div>
+
+</div>
 
 <div class='tc-menu-list-item'>
 14/11/2014
@@ -165,17 +187,6 @@ ActionSetFieldWidget
 <div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TimelineMacro.html'>
 TimelineMacro
-</a>
-</div>
-
-</div>
-
-<div class='tc-menu-list-item'>
-1/11/2014
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tiddlers.html'>
-Tiddlers
 </a>
 </div>
 
