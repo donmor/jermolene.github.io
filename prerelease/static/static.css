@@ -1094,6 +1094,8 @@ pre > code {
 	line-height: 1.2em;
 	color: #182955;
 	margin: 0;
+}.tc-tiddler-title-icon {
+	vertical-align: middle;
 }.tc-system-title-prefix {
 	color: #bbb;
 }.tc-titlebar h2 {
