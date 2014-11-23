@@ -27352,6 +27352,25 @@ Which renders the same as the &quot;Open&quot; sidebar tab, with the addition of
 &quot;&gt;&gt;
 </pre>
 </div>
+<div created="20141123094403948" modified="20141123094403948" tags="Learning" title="How to add a ribbon for GitHub contributions">
+<pre>When you edit a tiddler on http://tiddlywiki.com you will see a small ribbon inviting you to edit the source of the tiddler on GitHub.
+
+If you are using Node.js, you can replicate this feature for your own TiddlyWiki-based site as follows:
+
+# Make sure the following setting is included in the `tiddlywiki.info` file in your WikiFolder:
+#&gt; &lt;pre&gt;&lt;code&gt;	&quot;config&quot;: {
+		&quot;retain-original-tiddler-path&quot;: true
+	}&lt;/code&gt;&lt;/pre&gt;
+# Copy the tiddler [[$:/editions/tw5.com/EditTemplate/Sources]] to your wiki
+# Make the following changes:
+## Rename the tiddler to [[$:/ContributionBanner]]
+## Adjust the GitHub link URL from https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/ to point to your own GitHub repo
+## Make sure the wording of the text starting &quot;Can you help us improve this documentation?&quot; is appropriate for your visitors
+## Adjust the link to [[Improving TiddlyWiki Documentation]] to point to your own tiddler with instructions for the contribution procedure
+
+
+</pre>
+</div>
 <div created="20141001132300000" modified="20141001132300000" tags="Learning" title="How to apply custom styles by tag" type="text/vnd.tiddlywiki">
 <pre>You can apply custom styles to tiddlers that have a particular tag by defining a CSS class with the name `tc-tagged-&lt;Tag Name&gt;`.
 
@@ -31173,7 +31192,7 @@ The result is a &quot;secret&quot; URL that you can send to other people to enab
 * You can [[share a Dropbox link to your TiddlyWiki|Sharing a TiddlyWiki on Dropbox]]
 </pre>
 </div>
-<div created="20141118143636664" modified="20141118143636664" tags="Examples" title="Simple Zork-like Game by Jed Carty" url="https://af05951e1a770128ed35f58212e0b42a2f5f3f5c.googledrive.com/host/0BzM-cR6_6xxWZkpSb1FFUkhMNGM">
+<div created="20141118143636664" modified="20141118143636664" tags="Examples" title="Simple Zork-like Game by Jed Carty" url="http://zorklike.tiddlyspot.com">
 <pre>A simple game built with TiddlyWiki, introduced in [[this post|https://groups.google.com/d/topic/tiddlywiki/4aRpZht1vOs/discussion]].
 
 {{!!url}}
