@@ -1118,6 +1118,7 @@ pre > code {
 	font-size: 1em;
 }.tc-tiddler-controls button {
 	vertical-align: baseline;
+	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
 	height: 0.75em;
 	fill: #cccccc;
@@ -1392,7 +1393,7 @@ pre > code {
 	position: fixed;
 	top: 14px;
 	right: 42px;
-	z-index: 1000;
+	z-index: 1300;
 	max-width: 280px;
 	padding: 0 14px 0 14px;
 	background-color: #ffffdd;
