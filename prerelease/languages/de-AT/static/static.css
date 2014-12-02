@@ -1117,7 +1117,7 @@ pre > code {
 	font-size: 0.6em;
 }.tc-tiddler-controls .tc-drop-down .tc-drop-down {
 	font-size: 1em;
-}.tc-tiddler-controls button {
+}.tc-tiddler-controls > span > button {
 	vertical-align: baseline;
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
@@ -1265,7 +1265,7 @@ pre > code {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
-	min-width: 280px;
+	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
 	padding: 7px 0 7px 0;
@@ -1318,7 +1318,7 @@ pre > code {
 	position: relative;
 }.tc-block-dropdown {
 	position: absolute;
-	min-width: 280px;
+	min-width: 220px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
 	padding: 7px 0;
