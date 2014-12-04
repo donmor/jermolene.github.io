@@ -5090,7 +5090,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
             &quot;tags&quot;: &quot;$:/tags/PageControls&quot;,
             &quot;caption&quot;: &quot;{{$:/core/images/globe}} {{$:/language/Buttons/Language/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/Language/Hint}}&quot;,
-            &quot;text&quot;: &quot;\\define flag-title()\n$(languagePluginTitle)$/icon\n\\end\n&lt;span class=\&quot;tc-popup-keep\&quot;&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/language\&quot;&gt;&gt; tooltip={{$:/language/Buttons/Language/Hint}} aria-label={{$:/language/Buttons/Language/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=\&quot;tc-selected\&quot;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-image-button\&quot;&gt;\n&lt;$set name=\&quot;languagePluginTitle\&quot; value={{$:/language}}&gt;\n&lt;$image source=&lt;&lt;flag-title&gt;&gt;/&gt;\n&lt;/$set&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Language/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/span&gt;\n&lt;$reveal state=&lt;&lt;qualify \&quot;$:/state/popup/language\&quot;&gt;&gt; type=\&quot;popup\&quot; position=\&quot;below\&quot; animate=\&quot;yes\&quot;&gt;\n&lt;div class=\&quot;tc-drop-down tc-drop-down-language-chooser\&quot;&gt;\n&lt;$linkcatcher to=\&quot;$:/language\&quot;&gt;\n&lt;$list filter=\&quot;[[$:/languages/en-GB]] [plugin-type[language]sort[title]]\&quot;&gt;\n&lt;$link&gt;\n&lt;span class=\&quot;tc-drop-down-bullet\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/language\&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&amp;bull;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/language\&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&amp;nbsp;\n&lt;/$reveal&gt;\n&lt;/span&gt;\n&lt;span class=\&quot;tc-image-button\&quot;&gt;\n&lt;$set name=\&quot;languagePluginTitle\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;$transclude subtiddler=&lt;&lt;flag-title&gt;&gt;&gt;\n&lt;$list filter=\&quot;[all[current]field:title[$:/languages/en-GB]]\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/languages/en-GB/icon\&quot;/&gt;\n&lt;/$list&gt;\n&lt;/$transclude&gt;\n&lt;/$set&gt;\n&lt;/span&gt;\n&lt;$view field=\&quot;description\&quot;&gt;\n&lt;$view field=\&quot;name\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$view&gt;\n&lt;/$view&gt;\n&lt;/$link&gt;\n&lt;/$list&gt;\n&lt;/$linkcatcher&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;&quot;
+            &quot;text&quot;: &quot;\\define flag-title()\n$(languagePluginTitle)$/icon\n\\end\n&lt;span class=\&quot;tc-popup-keep\&quot;&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/language\&quot;&gt;&gt; tooltip={{$:/language/Buttons/Language/Hint}} aria-label={{$:/language/Buttons/Language/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt; selectedClass=\&quot;tc-selected\&quot;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-image-button\&quot;&gt;\n&lt;$set name=\&quot;languagePluginTitle\&quot; value={{$:/language}}&gt;\n&lt;$image source=&lt;&lt;flag-title&gt;&gt;/&gt;\n&lt;/$set&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;&lt;$text text={{$:/language/Buttons/Language/Caption}}/&gt;&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n&lt;/span&gt;\n&lt;$reveal state=&lt;&lt;qualify \&quot;$:/state/popup/language\&quot;&gt;&gt; type=\&quot;popup\&quot; position=\&quot;below\&quot; animate=\&quot;yes\&quot;&gt;\n&lt;div class=\&quot;tc-drop-down tc-drop-down-language-chooser\&quot;&gt;\n&lt;$linkcatcher to=\&quot;$:/language\&quot;&gt;\n&lt;$list filter=\&quot;[[$:/languages/en-GB]] [plugin-type[language]sort[description]]\&quot;&gt;\n&lt;$link&gt;\n&lt;span class=\&quot;tc-drop-down-bullet\&quot;&gt;\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/language\&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&amp;bull;\n&lt;/$reveal&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/language\&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&amp;nbsp;\n&lt;/$reveal&gt;\n&lt;/span&gt;\n&lt;span class=\&quot;tc-image-button\&quot;&gt;\n&lt;$set name=\&quot;languagePluginTitle\&quot; value=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;$transclude subtiddler=&lt;&lt;flag-title&gt;&gt;&gt;\n&lt;$list filter=\&quot;[all[current]field:title[$:/languages/en-GB]]\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/languages/en-GB/icon\&quot;/&gt;\n&lt;/$list&gt;\n&lt;/$transclude&gt;\n&lt;/$set&gt;\n&lt;/span&gt;\n&lt;$view field=\&quot;description\&quot;&gt;\n&lt;$view field=\&quot;name\&quot;&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$view&gt;\n&lt;/$view&gt;\n&lt;/$link&gt;\n&lt;/$list&gt;\n&lt;/$linkcatcher&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;&quot;
         },
         &quot;$:/core/ui/Buttons/more-page-actions&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/Buttons/more-page-actions&quot;,
@@ -10665,7 +10665,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="Stratis Aravias@ΓΕΛ Σαμοθράκης" core-version="&gt;=5.0.0" dependents="" description="Greek (Greece))" name="el-GR" plugin-type="language" title="$:/languages/el-GR" type="application/json" version="5.1.6-prerelease">
+<div author="Stratis Aravias@ΓΕΛ Σαμοθράκης" core-version="&gt;=5.0.0" dependents="" description="Greek (Greece)" name="el-GR" plugin-type="language" title="$:/languages/el-GR" type="application/json" version="5.1.6-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
@@ -18200,6 +18200,2323 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
             &quot;title&quot;: &quot;$:/languages/ja-JP/icon&quot;,
             &quot;type&quot;: &quot;image/svg+xml&quot;,
             &quot;text&quot;: &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\n&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;900\&quot; height=\&quot;600\&quot;&gt;\n&lt;rect fill=\&quot;#a0a0a0\&quot; height=\&quot;600\&quot; width=\&quot;900\&quot;/&gt;\n&lt;rect fill=\&quot;#fff\&quot; x=\&quot;6\&quot; y=\&quot;6\&quot; width=\&quot;888\&quot; height=\&quot;588\&quot;/&gt;\n&lt;circle fill=\&quot;#be0026\&quot; cx=\&quot;450\&quot; cy=\&quot;300\&quot; r=\&quot;180\&quot;/&gt;\n&lt;/svg&gt;&quot;
+        }
+    }
+}</pre>
+</div>
+<div author="gernert" core-version="&gt;=5.1.5" dependents="" description="Dutch (The Netherlands)" name="nl-NL" plugin-type="language" title="$:/languages/nl-NL" type="application/json" version="5.1.6-prerelease">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;,
+            &quot;text&quot;: &quot;geavanceerd zoeken&quot;
+        },
+        &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/AdvancedSearch/Hint&quot;,
+            &quot;text&quot;: &quot;Geavanceerd zoeken&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;annuleer&quot;
+        },
+        &quot;$:/language/Buttons/Cancel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Cancel/Hint&quot;,
+            &quot;text&quot;: &quot;Annuleer wijzigingen&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Caption&quot;,
+            &quot;text&quot;: &quot;kloon&quot;
+        },
+        &quot;$:/language/Buttons/Clone/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Clone/Hint&quot;,
+            &quot;text&quot;: &quot;Kloon deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Close/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Caption&quot;,
+            &quot;text&quot;: &quot;sluit&quot;
+        },
+        &quot;$:/language/Buttons/Close/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Close/Hint&quot;,
+            &quot;text&quot;: &quot;Sluit deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Caption&quot;,
+            &quot;text&quot;: &quot;sluit alle&quot;
+        },
+        &quot;$:/language/Buttons/CloseAll/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseAll/Hint&quot;,
+            &quot;text&quot;: &quot;Sluit alle tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Caption&quot;,
+            &quot;text&quot;: &quot;sluit andere&quot;
+        },
+        &quot;$:/language/Buttons/CloseOthers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/CloseOthers/Hint&quot;,
+            &quot;text&quot;: &quot;Sluit alle andere tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Caption&quot;,
+            &quot;text&quot;: &quot;bedieningspaneel&quot;
+        },
+        &quot;$:/language/Buttons/ControlPanel/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ControlPanel/Hint&quot;,
+            &quot;text&quot;: &quot;Open bedieningspaneel&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;verwijder&quot;
+        },
+        &quot;$:/language/Buttons/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;Verwijder deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Caption&quot;,
+            &quot;text&quot;: &quot;wijzig&quot;
+        },
+        &quot;$:/language/Buttons/Edit/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Edit/Hint&quot;,
+            &quot;text&quot;: &quot;Wijzig deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Caption&quot;,
+            &quot;text&quot;: &quot;versleuteling&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Caption&quot;,
+            &quot;text&quot;: &quot;verwijder wachtwoord&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/ClearPassword/Hint&quot;,
+            &quot;text&quot;: &quot;Verwijder het wachtwoord en sla de wiki onversleuteld op&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/Hint&quot;,
+            &quot;text&quot;: &quot;Vul in / verwijder een wachtwoord om deze wiki op te slaan&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Caption&quot;,
+            &quot;text&quot;: &quot;vul wachtwoord in&quot;
+        },
+        &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
+            &quot;text&quot;: &quot;Vul een wachtwoord in om deze wiki versleuteld op te slaan&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Caption&quot;,
+            &quot;text&quot;: &quot;exporteer alle&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Hint&quot;,
+            &quot;text&quot;: &quot;Exporteer alle tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;exporteer tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Exporteer tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;,
+            &quot;text&quot;: &quot;exporteer tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
+            &quot;text&quot;: &quot;Exporteer tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
+            &quot;text&quot;: &quot;volledig scherm&quot;
+        },
+        &quot;$:/language/Buttons/FullScreen/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Hint&quot;,
+            &quot;text&quot;: &quot;Start of verlaat 'volledig scherm'&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;verberg zijpaneel&quot;
+        },
+        &quot;$:/language/Buttons/HideSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/HideSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;Verberg zijpaneel&quot;
+        },
+        &quot;$:/language/Buttons/Home/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Caption&quot;,
+            &quot;text&quot;: &quot;home&quot;
+        },
+        &quot;$:/language/Buttons/Home/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Home/Hint&quot;,
+            &quot;text&quot;: &quot;Open de standaard tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Caption&quot;,
+            &quot;text&quot;: &quot;importeer&quot;
+        },
+        &quot;$:/language/Buttons/Import/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Import/Hint&quot;,
+            &quot;text&quot;: &quot;Importeer bestanden&quot;
+        },
+        &quot;$:/language/Buttons/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Caption&quot;,
+            &quot;text&quot;: &quot;info&quot;
+        },
+        &quot;$:/language/Buttons/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Info/Hint&quot;,
+            &quot;text&quot;: &quot;Toon informatie over deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Language/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Caption&quot;,
+            &quot;text&quot;: &quot;taal&quot;
+        },
+        &quot;$:/language/Buttons/Language/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Language/Hint&quot;,
+            &quot;text&quot;: &quot;Kies de taal voor de gebruikersomgeving&quot;
+        },
+        &quot;$:/language/Buttons/More/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Caption&quot;,
+            &quot;text&quot;: &quot;meer&quot;
+        },
+        &quot;$:/language/Buttons/More/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/More/Hint&quot;,
+            &quot;text&quot;: &quot;Meer mogelijkheden&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Caption&quot;,
+            &quot;text&quot;: &quot;nieuw hier&quot;
+        },
+        &quot;$:/language/Buttons/NewHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewHere/Hint&quot;,
+            &quot;text&quot;: &quot;Maak een nieuwe tiddler gelabeld met deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Caption&quot;,
+            &quot;text&quot;: &quot;nieuw journaal&quot;
+        },
+        &quot;$:/language/Buttons/NewJournal/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournal/Hint&quot;,
+            &quot;text&quot;: &quot;Maak een nieuwe journaaltiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Caption&quot;,
+            &quot;text&quot;: &quot;nieuw journaal hier&quot;
+        },
+        &quot;$:/language/Buttons/NewJournalHere/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewJournalHere/Hint&quot;,
+            &quot;text&quot;: &quot;Maak een nieuwe journaaltiddler gelabeld met deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;nieuwe tiddler&quot;
+        },
+        &quot;$:/language/Buttons/NewTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/NewTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Maak een nieuwe tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Caption&quot;,
+            &quot;text&quot;: &quot;permalink&quot;
+        },
+        &quot;$:/language/Buttons/Permalink/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permalink/Hint&quot;,
+            &quot;text&quot;: &quot;Zet browseradres als directe link naar deze tiddler&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Caption&quot;,
+            &quot;text&quot;: &quot;permaview&quot;
+        },
+        &quot;$:/language/Buttons/Permaview/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Permaview/Hint&quot;,
+            &quot;text&quot;: &quot;Zet browseradres als directe link naar alle open tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Caption&quot;,
+            &quot;text&quot;: &quot;ververs&quot;
+        },
+        &quot;$:/language/Buttons/Refresh/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Refresh/Hint&quot;,
+            &quot;text&quot;: &quot;Ververs deze wiki&quot;
+        },
+        &quot;$:/language/Buttons/Save/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Caption&quot;,
+            &quot;text&quot;: &quot;opslaan&quot;
+        },
+        &quot;$:/language/Buttons/Save/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Save/Hint&quot;,
+            &quot;text&quot;: &quot;Sla deze tiddler op&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Caption&quot;,
+            &quot;text&quot;: &quot;opslaan&quot;
+        },
+        &quot;$:/language/Buttons/SaveWiki/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/SaveWiki/Hint&quot;,
+            &quot;text&quot;: &quot;Sla wijzigingen op&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Caption&quot;,
+            &quot;text&quot;: &quot;toon zijpaneel&quot;
+        },
+        &quot;$:/language/Buttons/ShowSideBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ShowSideBar/Hint&quot;,
+            &quot;text&quot;: &quot;Toon zijpaneel&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Caption&quot;,
+            &quot;text&quot;: &quot;story view&quot;
+        },
+        &quot;$:/language/Buttons/StoryView/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/StoryView/Hint&quot;,
+            &quot;text&quot;: &quot;Kies de 'story' weergave&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Caption&quot;,
+            &quot;text&quot;: &quot;labelmanager&quot;
+        },
+        &quot;$:/language/Buttons/TagManager/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/TagManager/Hint&quot;,
+            &quot;text&quot;: &quot;Open labelmanager&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Caption&quot;,
+            &quot;text&quot;: &quot;thema&quot;
+        },
+        &quot;$:/language/Buttons/Theme/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Theme/Hint&quot;,
+            &quot;text&quot;: &quot;Kies het thema&quot;
+        },
+        &quot;$:/language/ControlPanel/Advanced/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Caption&quot;,
+            &quot;text&quot;: &quot;Geavanceerd&quot;
+        },
+        &quot;$:/language/ControlPanel/Advanced/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Advanced/Hint&quot;,
+            &quot;text&quot;: &quot;Interne informatie over deze TiddlyWiki&quot;
+        },
+        &quot;$:/language/ControlPanel/Appearance/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Caption&quot;,
+            &quot;text&quot;: &quot;Uiterlijk&quot;
+        },
+        &quot;$:/language/ControlPanel/Appearance/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Appearance/Hint&quot;,
+            &quot;text&quot;: &quot;Manieren om het uiterlijk van je TiddlyWiki aan te passen&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/AnimDuration/Prompt&quot;,
+            &quot;text&quot;: &quot;Duur van de animatie:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Caption&quot;,
+            &quot;text&quot;: &quot;Standaard&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;,
+            &quot;text&quot;: &quot;Gebruik &amp;#91;&amp;#91;dubbele rechte haken&amp;#93;&amp;#93; voor titels met spaties. Of je kan &lt;$button set=\&quot;$:/DefaultTiddlers\&quot; setTo=\&quot;[list[$:/StoryList]]\&quot;&gt; kiezen voor behoud van open tiddlers&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Standaard tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint&quot;,
+            &quot;text&quot;: &quot;Kies welke tiddlers bij opstarten getoond worden:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Language/Prompt&quot;,
+            &quot;text&quot;: &quot;Hallo! Huidige taal:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;,
+            &quot;text&quot;: &quot;Labels voor nieuwe journaaltiddlers&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;,
+            &quot;text&quot;: &quot;Titel voor nieuwe journaaltiddlers&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Aantal overschreven schaduwtiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Aantal schaduwtiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Subtitle/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Subtitle/Prompt&quot;,
+            &quot;text&quot;: &quot;Ondertitel:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/SystemTiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/SystemTiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Aantal systeem tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Tags/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Tags/Prompt&quot;,
+            &quot;text&quot;: &quot;Aantal labels:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Tiddlers/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Tiddlers/Prompt&quot;,
+            &quot;text&quot;: &quot;Aantal tiddlers:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Title/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Title/Prompt&quot;,
+            &quot;text&quot;: &quot;Titel van deze ~TiddlyWiki:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Username/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Username/Prompt&quot;,
+            &quot;text&quot;: &quot;Gebruikersnaam voor wijzigingen:&quot;
+        },
+        &quot;$:/language/ControlPanel/Basics/Version/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Version/Prompt&quot;,
+            &quot;text&quot;: &quot;~TiddlyWiki versie:&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;,
+            &quot;text&quot;: &quot;Editor types&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;,
+            &quot;text&quot;: &quot;Editor&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Hint&quot;,
+            &quot;text&quot;: &quot;Deze tiddlers bepalen welke editor wordt gebruikt voor specifieke tiddler types&quot;
+        },
+        &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Type/Caption&quot;,
+            &quot;text&quot;: &quot;Type&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Caption&quot;,
+            &quot;text&quot;: &quot;Info&quot;
+        },
+        &quot;$:/language/ControlPanel/Info/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Info/Hint&quot;,
+            &quot;text&quot;: &quot;Informatie over deze TiddlyWiki&quot;
+        },
+        &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Caption&quot;,
+            &quot;text&quot;: &quot;Geladen modules&quot;
+        },
+        &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;,
+            &quot;text&quot;: &quot;Dit zijn de nu geladen tiddler modules gekoppeld aan hun brontiddlers. Alle cursieve modules hebben geen brontiddler, gewoonlijk omdat ze tijdens het bootproces gemaakt werden.&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Caption&quot;,
+            &quot;text&quot;: &quot;Palet&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Caption&quot;,
+            &quot;text&quot;: &quot;kloon&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;,
+            &quot;text&quot;: &quot;Het wordt aanbevolen dit schaduwpalet te klonen alvorens het te wijzigen.&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;,
+            &quot;text&quot;: &quot;Wijzigen&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt/Modified&quot;,
+            &quot;text&quot;: &quot;Dit schaduwpalet is gewijzigd&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Reset/Caption&quot;,
+            &quot;text&quot;: &quot;reset&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/HideEditor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/HideEditor/Caption&quot;,
+            &quot;text&quot;: &quot;verberg editor&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Prompt&quot;,
+            &quot;text&quot;: &quot;Huidig palet:&quot;
+        },
+        &quot;$:/language/ControlPanel/Palette/ShowEditor/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/ShowEditor/Caption&quot;,
+            &quot;text&quot;: &quot;toon editor&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Caption&quot;,
+            &quot;text&quot;: &quot;Plugins&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Caption&quot;,
+            &quot;text&quot;: &quot;schakel uit&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disable/Hint&quot;,
+            &quot;text&quot;: &quot;Schakel deze plugin uit na verversen van deze pagina&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Disabled/Status&quot;,
+            &quot;text&quot;: &quot;(uitgeschakeld)&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Empty/Hint&quot;,
+            &quot;text&quot;: &quot;Niets&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Caption&quot;,
+            &quot;text&quot;: &quot;activeer&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Enable/Hint&quot;,
+            &quot;text&quot;: &quot;Activeer deze plugin bij verversen van deze pagina&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Language/Prompt&quot;,
+            &quot;text&quot;: &quot;Talen&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Plugin/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Plugin/Prompt&quot;,
+            &quot;text&quot;: &quot;Plugins&quot;
+        },
+        &quot;$:/language/ControlPanel/Plugins/Theme/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Theme/Prompt&quot;,
+            &quot;text&quot;: &quot;Thema's&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Caption&quot;,
+            &quot;text&quot;: &quot;Opslaan&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Heading&quot;,
+            &quot;text&quot;: &quot;Opslaan&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;,
+            &quot;text&quot;: &quot;Geavanceerde instellingen&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/BackupDir&quot;,
+            &quot;text&quot;: &quot;Backup Folder&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;,
+            &quot;text&quot;: &quot;Backups&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;,
+            &quot;text&quot;: &quot;Deze instellingen worden alleen gebruikt bij http://tiddlyspot.com of een vergelijkbare server&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Filename&quot;,
+            &quot;text&quot;: &quot;\&quot;Upload\&quot; bestandsnaam&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Heading&quot;,
+            &quot;text&quot;: &quot;~TiddlySpot&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Hint&quot;,
+            &quot;text&quot;: &quot;//De standaard server URL is `http://&lt;wikiname&gt;.tiddlyspot.com/store.cgi` en kan gewijzigd worden in een speciaal serveradres//&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Password&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Password&quot;,
+            &quot;text&quot;: &quot;Wachtwoord&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/ServerURL&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/ServerURL&quot;,
+            &quot;text&quot;: &quot;Server URL&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/UploadDir&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/UploadDir&quot;,
+            &quot;text&quot;: &quot;Upload folder&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/UserName&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/UserName&quot;,
+            &quot;text&quot;: &quot;Wiki naam&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Caption&quot;,
+            &quot;text&quot;: &quot;Automatisch opslaan&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Disabled/Description&quot;,
+            &quot;text&quot;: &quot;Sla veranderingen niet automatisch op&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Enabled/Description&quot;,
+            &quot;text&quot;: &quot;Sla veranderingen automatisch op&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;,
+            &quot;text&quot;: &quot;Sla veranderingen tijdens wijzigen automatisch op&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Caption&quot;,
+            &quot;text&quot;: &quot;Instellingen&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Hint&quot;,
+            &quot;text&quot;: &quot;Met deze instellingen kun je het gedrag van TiddlyWiki veranderen.&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Caption&quot;,
+            &quot;text&quot;: &quot;Navigatie adresbalk&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Hint&quot;,
+            &quot;text&quot;: &quot;Gedrag van het browseradres bij navigeren naar een tiddler:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/No/Description&quot;,
+            &quot;text&quot;: &quot;Verander het browseradres niet&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permalink/Description&quot;,
+            &quot;text&quot;: &quot;Voeg de doel tiddler toe&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationAddressBar/Permaview/Description&quot;,
+            &quot;text&quot;: &quot;Voeg alle open tiddlers toe&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Caption&quot;,
+            &quot;text&quot;: &quot;Navigeer geschiedenis&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Hint&quot;,
+            &quot;text&quot;: &quot;Update browser history when navigating to a tiddler:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/No/Description&quot;,
+            &quot;text&quot;: &quot;Werk de browsergeschiedenis niet bij&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/NavigationHistory/Yes/Description&quot;,
+            &quot;text&quot;: &quot;Werk de browsergeschiedenis bij &quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Caption&quot;,
+            &quot;text&quot;: &quot;Knoppen van knoppenbalk&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Hint&quot;,
+            &quot;text&quot;: &quot;Uiterlijk van standaard knop in knoppenbalk:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Icons/Description&quot;,
+            &quot;text&quot;: &quot;Met pictogram (icon)&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;,
+            &quot;text&quot;: &quot;Met tekst&quot;
+        },
+        &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
+            &quot;text&quot;: &quot;Story view&quot;
+        },
+        &quot;$:/language/ControlPanel/StoryView/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Prompt&quot;,
+            &quot;text&quot;: &quot;Huidige view:&quot;
+        },
+        &quot;$:/language/ControlPanel/Theme/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Theme/Caption&quot;,
+            &quot;text&quot;: &quot;Thema&quot;
+        },
+        &quot;$:/language/ControlPanel/Theme/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Theme/Prompt&quot;,
+            &quot;text&quot;: &quot;Huidig thema:&quot;
+        },
+        &quot;$:/language/ControlPanel/TiddlerFields/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Caption&quot;,
+            &quot;text&quot;: &quot;Tiddler velden&quot;
+        },
+        &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;,
+            &quot;text&quot;: &quot;Dit is de complete reeks Tiddlervelden in gebruik bij deze wiki (inclusief systeemtiddlers maar exclusief schaduwtiddlers).&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Caption&quot;,
+            &quot;text&quot;: &quot;Knoppenbalken&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;Wijzig knoppenbalk&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;Kies welke knoppen getoond worden voor tiddlers in wijzigmode&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Hint&quot;,
+            &quot;text&quot;: &quot;Kies welke knoppen getoond worden&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Caption&quot;,
+            &quot;text&quot;: &quot;Pagina-knoppenbalk&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;,
+            &quot;text&quot;: &quot;Kies welke knoppen getoond worden op de knoppenbalk van de pagina-knoppenbalk&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Caption&quot;,
+            &quot;text&quot;: &quot;Knoppenbalk bij weergave&quot;
+        },
+        &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;,
+            &quot;text&quot;: &quot;Kies welke knoppen zichtbaar zijn bij weergave&quot;
+        },
+        &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
+            &quot;text&quot;: &quot;Download complete wiki (inclusief documentatie)&quot;
+        },
+        &quot;$:/core/readme&quot;: {
+            &quot;title&quot;: &quot;$:/core/readme&quot;,
+            &quot;text&quot;: &quot;Deze plugin bevat TiddlyWiki's core componenten, bestaande uit:\n* JavaScript code modules\n* Pictogrammen (icons)\n* Sjabloon nodig om TiddlyWiki's gebruikersomgeving te maken\n* British English (en-GB) vertalingen van de vertaalbare teksten door de core gebruikt\n&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/1&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/10&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/11&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/12&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/13&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/13&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/14&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/14&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/15&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/15&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/16&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/16&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/17&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/17&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/18&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/18&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/19&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/19&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/2&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/20&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/20&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/21&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/21&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/22&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/22&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/23&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/23&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/24&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/24&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/25&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/25&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/26&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/26&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/27&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/27&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/28&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/28&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/29&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/29&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/3&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/30&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/30&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/31&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/31&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/4&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/5&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/6&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/7&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/8&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/DaySuffix/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/DaySuffix/9&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/language/Date/Long/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/0&quot;,
+            &quot;text&quot;: &quot;zondag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/1&quot;,
+            &quot;text&quot;: &quot;maandag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/2&quot;,
+            &quot;text&quot;: &quot;dinsdag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/3&quot;,
+            &quot;text&quot;: &quot;woensdag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/4&quot;,
+            &quot;text&quot;: &quot;donderdag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/5&quot;,
+            &quot;text&quot;: &quot;vrijdag&quot;
+        },
+        &quot;$:/language/Date/Long/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Day/6&quot;,
+            &quot;text&quot;: &quot;zaterdag&quot;
+        },
+        &quot;$:/language/Date/Long/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/1&quot;,
+            &quot;text&quot;: &quot;januari&quot;
+        },
+        &quot;$:/language/Date/Long/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/10&quot;,
+            &quot;text&quot;: &quot;oktober&quot;
+        },
+        &quot;$:/language/Date/Long/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/11&quot;,
+            &quot;text&quot;: &quot;november&quot;
+        },
+        &quot;$:/language/Date/Long/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/12&quot;,
+            &quot;text&quot;: &quot;december&quot;
+        },
+        &quot;$:/language/Date/Long/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/2&quot;,
+            &quot;text&quot;: &quot;februari&quot;
+        },
+        &quot;$:/language/Date/Long/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/3&quot;,
+            &quot;text&quot;: &quot;maart&quot;
+        },
+        &quot;$:/language/Date/Long/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/4&quot;,
+            &quot;text&quot;: &quot;april&quot;
+        },
+        &quot;$:/language/Date/Long/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/5&quot;,
+            &quot;text&quot;: &quot;mei&quot;
+        },
+        &quot;$:/language/Date/Long/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/6&quot;,
+            &quot;text&quot;: &quot;juni&quot;
+        },
+        &quot;$:/language/Date/Long/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/7&quot;,
+            &quot;text&quot;: &quot;juli&quot;
+        },
+        &quot;$:/language/Date/Long/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/8&quot;,
+            &quot;text&quot;: &quot;augustus&quot;
+        },
+        &quot;$:/language/Date/Long/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Long/Month/9&quot;,
+            &quot;text&quot;: &quot;september&quot;
+        },
+        &quot;$:/language/Date/Period/am&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/am&quot;,
+            &quot;text&quot;: &quot;am&quot;
+        },
+        &quot;$:/language/Date/Period/pm&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/pm&quot;,
+            &quot;text&quot;: &quot;pm&quot;
+        },
+        &quot;$:/language/Date/Short/Day/0&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/0&quot;,
+            &quot;text&quot;: &quot;zo&quot;
+        },
+        &quot;$:/language/Date/Short/Day/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/1&quot;,
+            &quot;text&quot;: &quot;ma&quot;
+        },
+        &quot;$:/language/Date/Short/Day/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/2&quot;,
+            &quot;text&quot;: &quot;di&quot;
+        },
+        &quot;$:/language/Date/Short/Day/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/3&quot;,
+            &quot;text&quot;: &quot;wo&quot;
+        },
+        &quot;$:/language/Date/Short/Day/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/4&quot;,
+            &quot;text&quot;: &quot;do&quot;
+        },
+        &quot;$:/language/Date/Short/Day/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/5&quot;,
+            &quot;text&quot;: &quot;vr&quot;
+        },
+        &quot;$:/language/Date/Short/Day/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Day/6&quot;,
+            &quot;text&quot;: &quot;za&quot;
+        },
+        &quot;$:/language/Date/Short/Month/1&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/1&quot;,
+            &quot;text&quot;: &quot;jan&quot;
+        },
+        &quot;$:/language/Date/Short/Month/10&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/10&quot;,
+            &quot;text&quot;: &quot;okt&quot;
+        },
+        &quot;$:/language/Date/Short/Month/11&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/11&quot;,
+            &quot;text&quot;: &quot;nov&quot;
+        },
+        &quot;$:/language/Date/Short/Month/12&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/12&quot;,
+            &quot;text&quot;: &quot;dec&quot;
+        },
+        &quot;$:/language/Date/Short/Month/2&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/2&quot;,
+            &quot;text&quot;: &quot;feb&quot;
+        },
+        &quot;$:/language/Date/Short/Month/3&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/3&quot;,
+            &quot;text&quot;: &quot;mrt&quot;
+        },
+        &quot;$:/language/Date/Short/Month/4&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/4&quot;,
+            &quot;text&quot;: &quot;apr&quot;
+        },
+        &quot;$:/language/Date/Short/Month/5&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/5&quot;,
+            &quot;text&quot;: &quot;mei&quot;
+        },
+        &quot;$:/language/Date/Short/Month/6&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/6&quot;,
+            &quot;text&quot;: &quot;jun&quot;
+        },
+        &quot;$:/language/Date/Short/Month/7&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/7&quot;,
+            &quot;text&quot;: &quot;jul&quot;
+        },
+        &quot;$:/language/Date/Short/Month/8&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/8&quot;,
+            &quot;text&quot;: &quot;aug&quot;
+        },
+        &quot;$:/language/Date/Short/Month/9&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Short/Month/9&quot;,
+            &quot;text&quot;: &quot;sep&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Days&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; dagen vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Hours&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Hours&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; uren vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Minutes&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Minutes&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; minuten vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Months&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Months&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; maanden vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Second&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Second&quot;,
+            &quot;text&quot;: &quot;1 seconde vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Seconds&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Seconds&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; seconden vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Future/Years&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Years&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; jaren vanaf nu&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Days&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Days&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; dagen geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Hours&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Hours&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; uren geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Minutes&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Minutes&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; minuten geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Months&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Months&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; maanden geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Second&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Second&quot;,
+            &quot;text&quot;: &quot;1 seconde geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Seconds&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Seconds&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; seconden geleden&quot;
+        },
+        &quot;$:/language/RelativeDate/Past/Years&quot;: {
+            &quot;title&quot;: &quot;$:/language/RelativeDate/Past/Years&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;period&gt;&gt; jaren geleden&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/animation&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/animation&quot;,
+            &quot;text&quot;: &quot;Animaties die door de RevealWidget gebruikt kunnen worden.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/command&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/command&quot;,
+            &quot;text&quot;: &quot;Commando's die onder Node.js gebruikt kunnen worden.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/config&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/config&quot;,
+            &quot;text&quot;: &quot;Data die aan `$tw.config` moet worden toegevoegd.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/filteroperator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/filteroperator&quot;,
+            &quot;text&quot;: &quot;Individuele methodes voor filter operator.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/global&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/global&quot;,
+            &quot;text&quot;: &quot;Globale data die aan `$tw.config` moet worden toegevoegd.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/isfilteroperator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/isfilteroperator&quot;,
+            &quot;text&quot;: &quot;Operands voor de ''is'' filter operator.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/macro&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/macro&quot;,
+            &quot;text&quot;: &quot;JavaScript macro definities.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/parser&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/parser&quot;,
+            &quot;text&quot;: &quot;Parsers voor verschillende inhoudstypes.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/saver&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/saver&quot;,
+            &quot;text&quot;: &quot;\&quot;Savers\&quot; gebruiken verschillende methodes voor het opslaan van bestanden vanuit de browser.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/startup&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/startup&quot;,
+            &quot;text&quot;: &quot;Startup functies.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/storyview&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/storyview&quot;,
+            &quot;text&quot;: &quot;Story views past de animatie en het gedrag van 'list' widgets aan.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlerdeserializer&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlerdeserializer&quot;,
+            &quot;text&quot;: &quot;Zet verschillende inhoudstypes in tiddlers om.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlerfield&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlerfield&quot;,
+            &quot;text&quot;: &quot;Bepaalt het gedrag van een individueel tiddlerveld.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/tiddlermethod&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/tiddlermethod&quot;,
+            &quot;text&quot;: &quot;Voegt methodes aan het `$tw.Tiddler` prototype toe.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/upgrader&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/upgrader&quot;,
+            &quot;text&quot;: &quot;Past upgradeverwerking toe op tiddlers gedurende een upgrade/import.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/utils&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/utils&quot;,
+            &quot;text&quot;: &quot;Voegt methodes aan `$tw.utils` toe.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/utils-node&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/utils-node&quot;,
+            &quot;text&quot;: &quot;Voegt Node.js-specifieke methodes aan `$tw.utils` toe.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/widget&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/widget&quot;,
+            &quot;text&quot;: &quot;Widgets omvatten DOM rendering (tonen) en verversing.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/wikimethod&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/wikimethod&quot;,
+            &quot;text&quot;: &quot;Voegt methodes aan `$tw.Wiki` toe.&quot;
+        },
+        &quot;$:/language/Docs/ModuleTypes/wikirule&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/wikirule&quot;,
+            &quot;text&quot;: &quot;Individuele parser regels voor the hoofd WikiText parser.&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond alarm&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-border&quot;,
+            &quot;text&quot;: &quot;Rand alarm&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-highlight&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-highlight&quot;,
+            &quot;text&quot;: &quot;Geaccentueerd alarm &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/alert-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Gedimde voorgrond alarm&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/background&quot;,
+            &quot;text&quot;: &quot;Algemene achtergrond&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;,
+            &quot;text&quot;: &quot;Citaatbalk&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond code&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-border&quot;,
+            &quot;text&quot;: &quot;Rand code&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/code-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond code&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dirty-indicator&quot;,
+            &quot;text&quot;: &quot;Indicator voor niet opgeslagen wijzigingen&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/download-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/download-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond downloadknop&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/download-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/download-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond downloadknop&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dragger-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dragger-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond \&quot;dragger\&quot;&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dragger-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dragger-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond \&quot;dragger\&quot;&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond dropdown&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;,
+            &quot;text&quot;: &quot;Rand dropdown&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond dropdown tab&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Achtergrond dropdown tab voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond \&quot;dropzone\&quot;&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond externe link&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;,
+            &quot;text&quot;: &quot;Achtergrond mouseover externe link &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;,
+            &quot;text&quot;: &quot;Achtergrond bezochte externe link&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond externe link&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Voorgrond mouseover externe link &quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;,
+            &quot;text&quot;: &quot;Voorgrond bezochte externe link&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond algemeen&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond berichtenpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-border&quot;,
+            &quot;text&quot;: &quot;Rand berichtenpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/message-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond berichtenpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;,
+            &quot;text&quot;: &quot;Gedimde achtergrond bij modale dialoog&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond modale dialoog&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-border&quot;,
+            &quot;text&quot;: &quot;Rand van modale dialoog&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond van modale voettekst&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;,
+            &quot;text&quot;: &quot;Rand van modale voettekst&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;,
+            &quot;text&quot;: &quot;Rand van modale koptekst&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond algemeen gedimd&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/notification-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/notification-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond melding&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/notification-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/notification-border&quot;,
+            &quot;text&quot;: &quot;Rand melding&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/page-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/page-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond pagina&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/pre-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond gepreformatteerde code&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/pre-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-border&quot;,
+            &quot;text&quot;: &quot;Rand gepreformatteerde code&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/primary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/primary&quot;,
+            &quot;text&quot;: &quot;Primaire kleur&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond zijpaneelknop&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond knoppen zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Voorgrond mouseover knoppen zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground-shadow&quot;,
+            &quot;text&quot;: &quot;Voorgrond schaduw zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond gedimd zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Voorgrond gedimd mouseover zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tab zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Achtergrond tab zijpaneel voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;,
+            &quot;text&quot;: &quot;Rand tab zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;,
+            &quot;text&quot;: &quot;Rand tab zijpaneel voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;,
+            &quot;text&quot;: &quot;Zijpaneel tabscheider&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tab zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Voorgrond tab zijpaneel voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tiddler link zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Voorgrond mouseover tiddler link zijpaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond statische alarmmelding&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tab&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;,
+            &quot;text&quot;: &quot;Achtergrond tab voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border&quot;,
+            &quot;text&quot;: &quot;Rand tab&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;,
+            &quot;text&quot;: &quot;Rand tab voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-divider&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-divider&quot;,
+            &quot;text&quot;: &quot;Tabscheider&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tab&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Voorgrond tab voor geselecteerde tabs&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-border&quot;,
+            &quot;text&quot;: &quot;Rand tabel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-footer-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-footer-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tabel voettekst&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/table-header-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-header-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tabelkop&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tag-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tag-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond label&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tag-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tag-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond label&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-border&quot;,
+            &quot;text&quot;: &quot;Rand tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond knoppen tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Voorgrond mouseover knoppen tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;,
+            &quot;text&quot;: &quot;Voorgrond geselecteerde knoppen tiddler&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddlereditor&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;,
+            &quot;text&quot;: &quot;Rand tiddlereditor&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;,
+            &quot;text&quot;: &quot;Rand tiddler editor afbeelding&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddler editor voor even velden&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddler editor voor oneven velden&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddler infopaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-border&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-border&quot;,
+            &quot;text&quot;: &quot;Rand tiddler infopaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tab tiddler-infopaneel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond tiddlerlink&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-link-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-link-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tiddlerlink&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-subtitle-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-subtitle-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tiddlerondertitel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/tiddler-title-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-title-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond tiddlertitel&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-cancel-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'annuleer' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-close-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'sluit' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-delete-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'verwijder' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-done-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'opslaan' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-edit-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'wijzig' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-info-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'info' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-new-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'nieuwe tiddler' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-options-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-options-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'opties' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/toolbar-save-button&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/toolbar-save-button&quot;,
+            &quot;text&quot;: &quot;Voorgrond 'opslaan wiki' knop (knoppenbalk)&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/untagged-background&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/untagged-background&quot;,
+            &quot;text&quot;: &quot;Achtergrond label \&quot;niet gelabeld\&quot;&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/very-muted-foreground&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/very-muted-foreground&quot;,
+            &quot;text&quot;: &quot;Voorgrond zeer gedimd&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/External/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/External/Hint&quot;,
+            &quot;text&quot;: &quot;Dit is een externe tiddler die niet in de TiddlyWiki opgeslagen is. Je kan labels en velden wijzigen maar de tekst zelf niet.&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Hint&quot;,
+            &quot;text&quot;: &quot;Gebruik [[wiki text|http://tiddlywiki.com/static/WikiText.html]] om het formaat aan te passen en plaatjes e.d. toe te voegen&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Placeholder&quot;,
+            &quot;text&quot;: &quot;Typ de tekst voor deze tiddler&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Hide&quot;,
+            &quot;text&quot;: &quot;verberg voorbeeld&quot;
+        },
+        &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;,
+            &quot;text&quot;: &quot;toon voorbeeld&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;,
+            &quot;text&quot;: &quot;verwijder veld&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;,
+            &quot;text&quot;: &quot;Verwijder veld&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Button&quot;,
+            &quot;text&quot;: &quot;voeg toe&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Name/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Name/Placeholder&quot;,
+            &quot;text&quot;: &quot;veldnaam&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Prompt&quot;,
+            &quot;text&quot;: &quot;Voeg een nieuw veld toe:&quot;
+        },
+        &quot;$:/language/EditTemplate/Fields/Add/Value/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Value/Placeholder&quot;,
+            &quot;text&quot;: &quot;veldwaarde&quot;
+        },
+        &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/OverriddenWarning&quot;,
+            &quot;text&quot;: &quot;Dit is een aangepaste schaduwtiddler. Door deze tiddler te verwijderen wordt de standaard schaduwtiddler weer actief&quot;
+        },
+        &quot;$:/language/EditTemplate/Shadow/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Shadow/Warning&quot;,
+            &quot;text&quot;: &quot;Dit is een schaduwtiddler. Elke verandering overschrijft de standaardversie&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Add/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Button&quot;,
+            &quot;text&quot;: &quot;voeg toe&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;,
+            &quot;text&quot;: &quot;labelnaam&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;labellijst&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Toon labellijst&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;verwijder inhoudstype&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;Verwijder inhoudstype&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;lijst van inhoudstypes&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Toon lijst van inhoudstypes&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Placeholder&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Placeholder&quot;,
+            &quot;text&quot;: &quot;inhoudstype&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Prompt&quot;,
+            &quot;text&quot;: &quot;Type:&quot;
+        },
+        &quot;$:/language/Docs/Fields/_canonical_uri&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/_canonical_uri&quot;,
+            &quot;text&quot;: &quot;De volledige URI van een externe afbeeldingstiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/bag&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/bag&quot;,
+            &quot;text&quot;: &quot;De naam van de \&quot;bag\&quot; waaruit de tiddler kwam&quot;
+        },
+        &quot;$:/language/Docs/Fields/caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/caption&quot;,
+            &quot;text&quot;: &quot;Tekst die op een tab of een knop getoond wordt&quot;
+        },
+        &quot;$:/language/Docs/Fields/color&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/color&quot;,
+            &quot;text&quot;: &quot;De CSS-waarde van een kleur gekoppeld aan een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/component&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/component&quot;,
+            &quot;text&quot;: &quot;De naam van de component die een [[alarmtiddler|AlertMechanism]] veroorzaakt&quot;
+        },
+        &quot;$:/language/Docs/Fields/created&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/created&quot;,
+            &quot;text&quot;: &quot;De aanmaakdatum van een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/creator&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/creator&quot;,
+            &quot;text&quot;: &quot;De naam van de maker van de tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/current-tiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/current-tiddler&quot;,
+            &quot;text&quot;: &quot;Gebruikt om de tiddler bovenaan bij te houden in een [[geschiedenislijst|HistoryMechanism]]&quot;
+        },
+        &quot;$:/language/Docs/Fields/dependents&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/dependents&quot;,
+            &quot;text&quot;: &quot;De lijst van plugintitels waarvan een plugin afhankelijk is&quot;
+        },
+        &quot;$:/language/Docs/Fields/description&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/description&quot;,
+            &quot;text&quot;: &quot;De beschrijvende tekst voor een plugin of een modale dialoog&quot;
+        },
+        &quot;$:/language/Docs/Fields/draft.of&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/draft.of&quot;,
+            &quot;text&quot;: &quot;Voor concepttiddlers; bevat de titel van de te maken tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/draft.title&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/draft.title&quot;,
+            &quot;text&quot;: &quot;Voor concepttiddlers; bevat de voorgestelde titel van de tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/footer&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/footer&quot;,
+            &quot;text&quot;: &quot;De voettekst van een wizard&quot;
+        },
+        &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against&quot;,
+            &quot;text&quot;: &quot;Een tijdelijk opslagveld dat in [[$:/core/templates/static.content]] gebruikt wordt&quot;
+        },
+        &quot;$:/language/Docs/Fields/icon&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/icon&quot;,
+            &quot;text&quot;: &quot;De titel van de pictogramtiddler die met deze tiddler gekoppeld is&quot;
+        },
+        &quot;$:/language/Docs/Fields/library&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/library&quot;,
+            &quot;text&quot;: &quot;Als \&quot;yes\&quot; ingevuld is, dient de tiddler als JavaScript-bibliotheek opgeslagen te worden&quot;
+        },
+        &quot;$:/language/Docs/Fields/list&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
+            &quot;text&quot;: &quot;Een geordende lijst van tiddlertitels gekoppeld met een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/list-after&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
+            &quot;text&quot;: &quot;Indien ingevuld, de titel van de tiddler waarna deze tiddler toegevoegd moet worden in de reeks tiddlertitels&quot;
+        },
+        &quot;$:/language/Docs/Fields/list-before&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
+            &quot;text&quot;: &quot;Indien ingevuld, de titel van de tiddler waarvoor deze tiddler toegevoegd moet worden in de reeks tiddlertitels, of aan het begin van de reeks als dit veld wel aanwezig maar leeg is&quot;
+        },
+        &quot;$:/language/Docs/Fields/modified&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/modified&quot;,
+            &quot;text&quot;: &quot;De datum en tijd waarop de tiddler voor het laatst werd gewijzigd&quot;
+        },
+        &quot;$:/language/Docs/Fields/modifier&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/modifier&quot;,
+            &quot;text&quot;: &quot;De persoon die voor het laatst de tiddler gewijzigd heeft&quot;
+        },
+        &quot;$:/language/Docs/Fields/name&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/name&quot;,
+            &quot;text&quot;: &quot;De leesbare naam gekoppeld aan een plugin tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/plugin-priority&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/plugin-priority&quot;,
+            &quot;text&quot;: &quot;Een numerieke waard die de prioriteit van een plugintiddler aangeeft&quot;
+        },
+        &quot;$:/language/Docs/Fields/plugin-type&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/plugin-type&quot;,
+            &quot;text&quot;: &quot;Het type van een plugin in een plugin tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/released&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/released&quot;,
+            &quot;text&quot;: &quot;Datum van een TiddlyWiki versie&quot;
+        },
+        &quot;$:/language/Docs/Fields/revision&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/revision&quot;,
+            &quot;text&quot;: &quot;De versie van de tiddler op de server&quot;
+        },
+        &quot;$:/language/Docs/Fields/source&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/source&quot;,
+            &quot;text&quot;: &quot;De URL gekoppeld aan de tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/subtitle&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/subtitle&quot;,
+            &quot;text&quot;: &quot;De tekst van de ondertitel van een wizard&quot;
+        },
+        &quot;$:/language/Docs/Fields/tags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/tags&quot;,
+            &quot;text&quot;: &quot;Een lijst van labels gekoppeld met een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/text&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/text&quot;,
+            &quot;text&quot;: &quot;De tekst van een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/title&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/title&quot;,
+            &quot;text&quot;: &quot;De unieke naam van een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/type&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/type&quot;,
+            &quot;text&quot;: &quot;Inhoudstype van een tiddler&quot;
+        },
+        &quot;$:/language/Docs/Fields/version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/version&quot;,
+            &quot;text&quot;: &quot;Versieinformatie van een plugin&quot;
+        },
+        &quot;$:/language/Filters/AllTags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/AllTags&quot;,
+            &quot;text&quot;: &quot;Alle labels behalve systeemlabels&quot;
+        },
+        &quot;$:/language/Filters/AllTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/AllTiddlers&quot;,
+            &quot;text&quot;: &quot;Alle tiddlers behalve systeemtiddlers&quot;
+        },
+        &quot;$:/language/Filters/Drafts&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Drafts&quot;,
+            &quot;text&quot;: &quot;Concepttiddlers&quot;
+        },
+        &quot;$:/language/Filters/Missing&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Missing&quot;,
+            &quot;text&quot;: &quot;Ontbrekende tiddlers&quot;
+        },
+        &quot;$:/language/Filters/Orphans&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/Orphans&quot;,
+            &quot;text&quot;: &quot;Weestiddlers&quot;
+        },
+        &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
+            &quot;text&quot;: &quot;Overschreven schaduwtiddlers&quot;
+        },
+        &quot;$:/language/Filters/RecentSystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentSystemTiddlers&quot;,
+            &quot;text&quot;: &quot;Onlangs gewijzigde tiddlers inclusief systeemtiddlers&quot;
+        },
+        &quot;$:/language/Filters/RecentTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
+            &quot;text&quot;: &quot;Onlangs gewijzigde tiddlers&quot;
+        },
+        &quot;$:/language/Filters/ShadowTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/ShadowTiddlers&quot;,
+            &quot;text&quot;: &quot;Schaduwtiddlers&quot;
+        },
+        &quot;$:/language/Filters/SystemTags&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
+            &quot;text&quot;: &quot;Systeemlabels&quot;
+        },
+        &quot;$:/language/Filters/SystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SystemTiddlers&quot;,
+            &quot;text&quot;: &quot;Systeemtiddlers&quot;
+        },
+        &quot;GettingStarted&quot;: {
+            &quot;title&quot;: &quot;GettingStarted&quot;,
+            &quot;text&quot;: &quot;Welkom bij TiddlyWiki, het non-lineaire persoonlijke webnotitieboek.\n\nControleer eerst of je veranderingen op kan slaan - zie http://tiddlywiki.com/ voor gedetailleerde instructies.\n\nDaarna kan je:\n\n* Nieuwe tiddlers aanmaken door op de 'plus'-knop \n    \n        \n    \n\n in het zijpaneel te klikken\n* Het bedieningspaneel openen om je wiki te aan te passen. Klik daartoe op het 'tandwieltje' \n    \n        \n    \n\n in het zijpaneel\n** Voorkom verschijnen van deze mededeling door de standaard tiddlers onder de Standaard tab aan te passen\n* Sla wijzigingen op door op de 'sla op' knop \n    \n        \n    \n\n in het zijpaneel te klikken\n* Leer meer over Wikitekst\n&quot;
+        },
+        &quot;$:/language/Help/build&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/build&quot;,
+            &quot;description&quot;: &quot;Doorloop automatisch de geconfigureerde commando's&quot;,
+            &quot;text&quot;: &quot;Compileert de gespecificeerde 'build targets' voor de actuele wiki. Worden geen 'build targets' gespecificeerd dan worden alle beschikbare 'targets' gecompileerd.\n\n```\n--build &lt;target&gt; [&lt;target&gt; ...]\n```\n\n'Build targets' worden gedefinieerd in het `tiddlywiki.info` bestand van een wiki folder.\n\n&quot;
+        },
+        &quot;$:/language/Help/clearpassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/clearpassword&quot;,
+            &quot;description&quot;: &quot;Verwijder het wachtwoord voor volgende versleutelingsoperaties&quot;,
+            &quot;text&quot;: &quot;Verwijder het wachtwoord voor volgende versleutelingsoperaties\n\n```\n--clearpassword\n```\n&quot;
+        },
+        &quot;$:/language/Help/default&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/default&quot;,
+            &quot;description&quot;: &quot;&quot;,
+            &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\nusage: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\nBeschikbare commando's:\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nOm gedetaillerde hulp over een commando te krijgen:\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
+        },
+        &quot;$:/language/Help/editions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
+            &quot;description&quot;: &quot;Geeft een lijst van de beschikbare edities van TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Geeft een lijst van namen en beschrijvingen van de beschikbare edities. Je kan een nieuwe wiki van een gespecificeerde editie maken met het `--init` commando.\n\n```\n--editions\n```\n&quot;
+        },
+        &quot;$:/language/Help/help&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/help&quot;,
+            &quot;description&quot;: &quot;Toont hulp voor een TiddlyWiki commando&quot;,
+            &quot;text&quot;: &quot;Toont hulptekst voor een commando:\n\n```\n--help [&lt;command&gt;]\n```\n\nwordt de commandonaam weggelaten dan wordt een lijst van beschikbare commando's getoond.\n&quot;
+        },
+        &quot;$:/language/Help/init&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/init&quot;,
+            &quot;description&quot;: &quot;Initialiseer een nieuwe wiki folder&quot;,
+            &quot;text&quot;: &quot;Initialiseer een lege [[WikiFolder|WikiFolders]] met een kopie van de gespecificeerde editie.\n\n```\n--init &lt;edition&gt; [&lt;edition&gt; ...]\n```\n\nB.v.:\n\n```\ntiddlywiki ./MyWikiFolder --init empty\n```\n\nN.B.:\n\n* De wiki folder wordt zonodig aangemaakt\n* De \&quot;editie\&quot; is standaard \&quot;empty\&quot;\n* Het init commando werkt niet als de wiki folder niet leeg is\n* Het init commando verwijdert alle `includeWikis` definities in het edition's `tiddlywiki.info` bestand\n* Als meerdere edities gespecificeerd worden zullen edities die later geïnitialiseerd worden all bestanden overschrijven die gedeeld worden met eerdere edities (dus het `tiddlywiki.info` bestand wordt gekopieerd van de laatste editie)\n* `--editions` geeft een lijst met beschikbare edities&quot;
+        },
+        &quot;$:/language/Help/load&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/load&quot;,
+            &quot;description&quot;: &quot;Laadt tiddlers van bestand&quot;,
+            &quot;text&quot;: &quot;Laadt tiddlers van 2.x.x TiddlyWiki bestanden (`.html`), `.tiddler`, `.tid`, `.json` of andere bestanden\n\n```\n--load &lt;filepath&gt;\n```\n\nOm tiddlers van een versleuteld TiddlyWiki bestand te laden dien je eerst het wachtwoord met het wachtwoordcommando te geven, b.v.:\n\n```\ntiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html\n```\n\nN.B.: TiddlyWiki zal geen plugin laden die ouder is dan de al aanwezige plugin.&quot;
+        },
+        &quot;$:/language/Help/makelibrary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/makelibrary&quot;,
+            &quot;description&quot;: &quot;Maak bibliotheekplugin is vereist voor het upgradeproces&quot;,
+            &quot;text&quot;: &quot;Maak de `$:/UpgradeLibrary` tiddler voor het upgradeproces.\n\nDe upgradebibliotheek is opgemaakt als een normale plugin tiddler van het plugintype `library`. Het bevat een kopie van iedere plugin, thema of taalpakket dat in de TiddlyWiki5 opslagruimte beschikbaar is.\n\nDit commando is bedoeld voor intern gebruik; het is alleen relevant voor gebruikers die een eigen upgradeprocedure maken.\n\n```\n--makelibrary &lt;title&gt;\n```\n\nHet titelargument is standaard `$:/UpgradeLibrary`.\n&quot;
+        },
+        &quot;$:/language/Help/notfound&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/notfound&quot;,
+            &quot;description&quot;: &quot;&quot;,
+            &quot;text&quot;: &quot;Geen hulp&quot;
+        },
+        &quot;$:/language/Help/output&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/output&quot;,
+            &quot;description&quot;: &quot;Stelt de basis output folder voor volgende commando's in&quot;,
+            &quot;text&quot;: &quot;Stelt de basis output folder voor volgende commando's in. De standaard outputfolder is de `output` subfolder van de editiefolder.\n\n```\n--output &lt;pathname&gt;\n```\n\nAls de gespecificeerde padnaam relatief is zal die relatief zijn t.o.v. de werkfolder. B.v. `--output .` stelt de outputfolder in als huidige werkfolder.\n\n&quot;
+        },
+        &quot;$:/language/Help/password&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/password&quot;,
+            &quot;description&quot;: &quot;Vul een wachtwoord in voor volgende versleuteloperarties&quot;,
+            &quot;text&quot;: &quot;Vul een wachtwoord in voor volgende versleuteloperarties\n\n```\n--password &lt;password&gt;\n```\n\n&quot;
+        },
+        &quot;$:/language/Help/rendertiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/rendertiddler&quot;,
+            &quot;description&quot;: &quot;Render (toon) een individuele tiddler als een gegeven inhoudstype&quot;,
+            &quot;text&quot;: &quot;Render (toon) een individuele tiddler als een gegeven inhoudstype (standaard `text/html`) en sla deze op met de gegeven bestandsnaam:\n\n```\n--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;]\n```\n\nStandaard is de bestandsnaam relatief t.o.v. de `output` subfolder van de editiefolder.\n\nOntbrekende folders in het pad worden automatisch aangemaakt.&quot;
+        },
+        &quot;$:/language/Help/rendertiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/rendertiddlers&quot;,
+            &quot;description&quot;: &quot;Render (toon) een reeks tiddlers die aan een filter voldoen tot separate tiddlers van een gegeven inhoudstype&quot;,
+            &quot;text&quot;: &quot;Render (toon) een reeks tiddlers die aan een filter voldoen tot separate tiddlers van een gegeven inhoudstype (standaard `text/html`) en extensie (standaard `.html`).\n\n```\n--rendertiddlers &lt;filter&gt; &lt;template&gt; &lt;pathname&gt; [&lt;type&gt;] [&lt;extension&gt;]\n```\n\nB.v.:\n\n```\n--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain\n```\n\nStandaard is de padnaam relatief t.o.v. de `output` subfolder van de editiefolder. Het `--output` commando kan worden gebruikt om de output naar een andere folder te sturen.\n\nAlle bestanden in de doelfolder worden verwijderd. De doelfolder wordt recursief aangemaakt als hij ontbreekt.\n&quot;
+        },
+        &quot;$:/language/Help/savetiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savetiddler&quot;,
+            &quot;description&quot;: &quot;Slaat een ruwe tiddler op in een bestand&quot;,
+            &quot;text&quot;: &quot;Slaat een individuele tiddler op in ruwe tekst of binair formaat met de gegeven bestandsnaam.\n\n```\n--savetiddler &lt;title&gt; &lt;filename&gt;\n```\n\nStandaard is de bestandsnaam relatief t.o.v. de `output` subfolder van de editiefolder. Het `--output` commando kan worden gebruikt om de output naar een andere folder te sturen.\n\nOntbrekende folders in het pad worden automatisch aangemaakt.\n&quot;
+        },
+        &quot;$:/language/Help/savetiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savetiddlers&quot;,
+            &quot;description&quot;: &quot;Slaat een groep ruwe tiddlers op een folder.&quot;,
+            &quot;text&quot;: &quot;Slaat een groep tiddlers op in ruwe tekst of binair formaat in de gegeven folder.\n\n```\n--savetiddlers &lt;filter&gt; &lt;pathname&gt;\n```\n\nStandaard is de padnaam relatief t.o.v. de `output` subfolder van de editiefolder. Het `--output` commando kan worden gebruikt om de output naar een andere folder te sturen.\n\nOntbrekende folders in het pad worden automatisch aangemaakt.\n&quot;
+        },
+        &quot;$:/language/Help/server&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/server&quot;,
+            &quot;description&quot;: &quot;Geeft een HTTP serverinterface aan TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;TiddlyWiki5 bevat een simpele server. Hoewel deze server compatibel is met TiddlyWeb, ontbreken zaken voor robuust internetgebruik.\n\nDe server kan specifieke tiddlers in het gegeven formaat tonen. Daarnaast kunnen tiddlers in JSON-formaat uitgeleverd worden.\nDe ondersteunde HTTP-functies zijn: `GET`, `PUT` en `DELETE`.\n\n```\n--server &lt;port&gt; &lt;roottiddler&gt; &lt;rendertype&gt; &lt;servetype&gt; &lt;username&gt; &lt;password&gt; &lt;host&gt; &lt;pathprefix&gt;\n```\n\nDe parameters zijn:\n\n* ''port'' - poortnummer voor communicatie (standaard \&quot;8080\&quot;)\n* ''roottiddler'' - de tiddler die als basistiddler gebruikt wordt (standaard \&quot;$:/core/save/all\&quot;) \n* ''rendertype'' - het inhoudstype waarmee de basistiddler getoond wordt (standaard \&quot;text/plain\&quot;)\n* ''servetype'' - het inhoudstype waarmee de basistiddler uitgeleverd wordt (standaard \&quot;text/html\&quot;)\n* ''username'' - de standaard gebruikersnaam waarmee wijzigingen gesigneerd worden\n* ''password'' - optioneel wachtwoord voor simpele verificatie\n* ''host'' - optionele hostnaam waarmee uitgeleverd wordt (standaard \&quot;127.0.0.1\&quot; oftewel \&quot;localhost\&quot;)\n* ''pathprefix'' - optioneel voorvoegsel voor paden\n\nAls een wachtwoord gegeven wordt zal de browser om gebruikersnaam en wachtwoord vragen. N.B. het wachtwoord wordt als platte tekst verzonden en dit is dus niet geschikt voor algemeen internetgebruik.\n\nB.v.:\n\n```\n--server 8080 $:/core/save/all text/plain text/html MyUserName passw0rd\n```\n\nDe gebruikersnaam en het wachtwoord kunnen als lege \&quot;strings\&quot; (\&quot;\&quot;) gespecificeerd worden als je \&quot;hostname\&quot; of \&quot;pathprefix\&quot; wil geven zonder wachtwoord:\n\n```\n--server 8080 $:/core/save/all text/plain text/html \&quot;\&quot; \&quot;\&quot; 192.168.0.245\n```\n\nOm meerdere TiddlyWiki servers tegelijkertijd te gebruiken dien je elke server op een aparte poort te zetten.\n&quot;
+        },
+        &quot;$:/language/Help/setfield&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/setfield&quot;,
+            &quot;description&quot;: &quot;Maakt externe tiddlers voor gebruik gereed&quot;,
+            &quot;text&quot;: &quot;//N.B. Dit commando is experimenteel en kan veranderen of vervangen worden//\n\nZet het gespecificeerde veld van een groep tiddlers via een filter. Een sjabloon wordt \&quot;gewikificeerd\&quot; (wikified) en het resultaat aan het veld toegekend. De `currentTiddler` variabele wordt aan de respectievelijke tiddler toegekend.\n\n```\n--setfield &lt;filter&gt; &lt;fieldname&gt; &lt;templatetitle&gt; &lt;rendertype&gt;\n```\n\nDe parameters zijn:\n\n* ''filter'' - filter dat de tiddlers selecteert\n* ''fieldname'' - het betreffende veld (standaard \&quot;text\&quot;)\n* ''templatetitle'' - de tiddler die in het betreffende veld gewikificeerd moet worden. In geval van een leeg of ontbrekend veld wordt het veld verwijderd\n* ''type'' - het teksttype om te renderen (tonen) - standaard \&quot;text/plain\&quot;; \&quot;text/html\&quot; kan worden gebruikt om HTML-elementen te kunnen gebruiken\n\n&quot;
+        },
+        &quot;$:/language/Help/unpackplugin&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/unpackplugin&quot;,
+            &quot;description&quot;: &quot;Extraheer de payload tiddlers van een plugin&quot;,
+            &quot;text&quot;: &quot;Extraheer de payload tiddlers van een plugin en maak er gewone tiddlers van:\n\n```\n--unpackplugin &lt;title&gt;\n```\n&quot;
+        },
+        &quot;$:/language/Help/verbose&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/verbose&quot;,
+            &quot;description&quot;: &quot;Activeert extra tekstoutput&quot;,
+            &quot;text&quot;: &quot;Activeert extra tekstoutput, zinvol voor debuggen\n\n```\n--verbose\n```\n&quot;
+        },
+        &quot;$:/language/Help/version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/version&quot;,
+            &quot;description&quot;: &quot;Toont het versienummer van TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Toont het versienummer van TiddlyWiki\n\n```\n--version\n```\n&quot;
+        },
+        &quot;$:/language/Import/Listing/Cancel/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Cancel/Caption&quot;,
+            &quot;text&quot;: &quot;Annuleer&quot;
+        },
+        &quot;$:/language/Import/Listing/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Hint&quot;,
+            &quot;text&quot;: &quot;Deze tiddlers staan klaar voor import:&quot;
+        },
+        &quot;$:/language/Import/Listing/Import/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Import/Caption&quot;,
+            &quot;text&quot;: &quot;Import&quot;
+        },
+        &quot;$:/language/Import/Listing/Select/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Select/Caption&quot;,
+            &quot;text&quot;: &quot;Selecteer&quot;
+        },
+        &quot;$:/language/Import/Listing/Status/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Status/Caption&quot;,
+            &quot;text&quot;: &quot;Status&quot;
+        },
+        &quot;$:/language/Import/Listing/Title/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Listing/Title/Caption&quot;,
+            &quot;text&quot;: &quot;Titel&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Incompatible&quot;,
+            &quot;text&quot;: &quot;Geblokkeerde plugin (incompatibel of verouderd)&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Version&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Suppressed/Version&quot;,
+            &quot;text&quot;: &quot;Geblokkeerde plugin (te importeren &lt;&lt;incoming&gt;&gt;  ouder dan bestaande &lt;&lt;existing&gt;&gt;)&quot;
+        },
+        &quot;$:/language/Import/Upgrader/Plugins/Upgraded&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/Plugins/Upgraded&quot;,
+            &quot;text&quot;: &quot;Plugin opgewaardeerd van &lt;&lt;incoming&gt;&gt; naar &lt;&lt;upgraded&gt;&gt;&quot;
+        },
+        &quot;$:/language/Import/Upgrader/State/Suppressed&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/State/Suppressed&quot;,
+            &quot;text&quot;: &quot;Geblokkeerde tijdelijke statustiddler&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,
+            &quot;text&quot;: &quot;Geblokkeerde systeemtiddler&quot;
+        },
+        &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;,
+            &quot;text&quot;: &quot;Gemigreerde thema aanpassing van &lt;$text text=&lt;&lt;from&gt;&gt;/&gt;&quot;
+        },
+        &quot;$:/language/BinaryWarning/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/BinaryWarning/Prompt&quot;,
+            &quot;text&quot;: &quot;Deze tiddler bevat binaire data&quot;
+        },
+        &quot;$:/language/ClassicWarning/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ClassicWarning/Hint&quot;,
+            &quot;text&quot;: &quot;Deze tiddler is in TiddlyWiki Classic wiki tekstformaat geschreven dat niet geheel compatibel is met TiddlyWiki versie 5. Zie http://tiddlywiki.com/static/Upgrading.html voor meer details.&quot;
+        },
+        &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ClassicWarning/Upgrade/Caption&quot;,
+            &quot;text&quot;: &quot;upgrade&quot;
+        },
+        &quot;$:/language/CloseAll/Button&quot;: {
+            &quot;title&quot;: &quot;$:/language/CloseAll/Button&quot;,
+            &quot;text&quot;: &quot;sluit alle&quot;
+        },
+        &quot;$:/language/ConfirmCancelTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmCancelTiddler&quot;,
+            &quot;text&quot;: &quot;Wil je gemaakte veranderingen aan de tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; annuleren?&quot;
+        },
+        &quot;$:/language/ConfirmDeleteTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmDeleteTiddler&quot;,
+            &quot;text&quot;: &quot;Wil je de tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; verwijderen?&quot;
+        },
+        &quot;$:/language/ConfirmEditShadowTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmEditShadowTiddler&quot;,
+            &quot;text&quot;: &quot;Je staat op het punt een schaduwtiddler te wijzigen. Toekomstige automatische veranderingen (upgrades) zijn dan niet mogelijk. Wil je \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; wijzigen?&quot;
+        },
+        &quot;$:/language/ConfirmOverwriteTiddler&quot;: {
+            &quot;title&quot;: &quot;$:/language/ConfirmOverwriteTiddler&quot;,
+            &quot;text&quot;: &quot;Wil je de tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot; overschrijven?&quot;
+        },
+        &quot;$:/language/DefaultNewTiddlerTitle&quot;: {
+            &quot;title&quot;: &quot;$:/language/DefaultNewTiddlerTitle&quot;,
+            &quot;text&quot;: &quot;Nieuwe tiddler&quot;
+        },
+        &quot;$:/language/DropMessage&quot;: {
+            &quot;title&quot;: &quot;$:/language/DropMessage&quot;,
+            &quot;text&quot;: &quot;\&quot;Drop\&quot; hier (of klik escape om te annuleren)&quot;
+        },
+        &quot;$:/language/Encryption/ConfirmClearPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/ConfirmClearPassword&quot;,
+            &quot;text&quot;: &quot;Wil je het wachtwoord verwijderen? Dan wordt de wiki onversleuteld opgeslagen.&quot;
+        },
+        &quot;$:/language/Encryption/PromptSetPassword&quot;: {
+            &quot;title&quot;: &quot;$:/language/Encryption/PromptSetPassword&quot;,
+            &quot;text&quot;: &quot;Stel een nieuw wachtwoord in voor deze TiddlyWiki&quot;
+        },
+        &quot;$:/language/Exporters/CsvFile&quot;: {
+            &quot;title&quot;: &quot;$:/language/Exporters/CsvFile&quot;,
+            &quot;text&quot;: &quot;CSV tiddlers bestand&quot;
+        },
+        &quot;$:/language/Exporters/JsonFile&quot;: {
+            &quot;title&quot;: &quot;$:/language/Exporters/JsonFile&quot;,
+            &quot;text&quot;: &quot;JSON tiddlers bestand&quot;
+        },
+        &quot;$:/language/Exporters/StaticRiver&quot;: {
+            &quot;title&quot;: &quot;$:/language/Exporters/StaticRiver&quot;,
+            &quot;text&quot;: &quot;Serie tiddlers als statisch HTML bestand&quot;
+        },
+        &quot;$:/language/Exporters/TidFile&quot;: {
+            &quot;title&quot;: &quot;$:/language/Exporters/TidFile&quot;,
+            &quot;text&quot;: &quot;Enkele tiddler \&quot;.tid\&quot; bestand&quot;
+        },
+        &quot;$:/language/InvalidFieldName&quot;: {
+            &quot;title&quot;: &quot;$:/language/InvalidFieldName&quot;,
+            &quot;text&quot;: &quot;Illegale lettertekens in veldnaam \&quot;&lt;$text text=&lt;&lt;fieldName&gt;&gt;/&gt;\&quot;. Velden kunnen alleen kleine letters, cijfers en de lettertekens liggend streepje (`_`), koppelteken (`-`) en punt (`.`)&quot;
+        },
+        &quot;$:/language/MissingTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/MissingTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Ontbrekende tiddler \&quot;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\&quot; - klik {{$:/core/images/edit-button}} om aan te maken&quot;
+        },
+        &quot;$:/language/RecentChanges/DateFormat&quot;: {
+            &quot;title&quot;: &quot;$:/language/RecentChanges/DateFormat&quot;,
+            &quot;text&quot;: &quot;DD MMM YYYY&quot;
+        },
+        &quot;$:/language/SystemTiddler/Tooltip&quot;: {
+            &quot;title&quot;: &quot;$:/language/SystemTiddler/Tooltip&quot;,
+            &quot;text&quot;: &quot;Dit is een systeem tiddler&quot;
+        },
+        &quot;$:/language/TagManager/Colour/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Colour/Heading&quot;,
+            &quot;text&quot;: &quot;Kleur&quot;
+        },
+        &quot;$:/language/TagManager/Icon/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Icon/Heading&quot;,
+            &quot;text&quot;: &quot;Pictogram (icon)&quot;
+        },
+        &quot;$:/language/TagManager/Info/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Info/Heading&quot;,
+            &quot;text&quot;: &quot;Info&quot;
+        },
+        &quot;$:/language/TagManager/Tag/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TagManager/Tag/Heading&quot;,
+            &quot;text&quot;: &quot;Label&quot;
+        },
+        &quot;$:/language/UnsavedChangesWarning&quot;: {
+            &quot;title&quot;: &quot;$:/language/UnsavedChangesWarning&quot;,
+            &quot;text&quot;: &quot;Er zijn niet-opgeslagen veranderingen in TiddlyWiki&quot;
+        },
+        &quot;$:/language/Modals/Download&quot;: {
+            &quot;title&quot;: &quot;$:/language/Modals/Download&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;subtitle&quot;: &quot;Download changes&quot;,
+            &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Close&lt;/$button&gt;&quot;,
+            &quot;help&quot;: &quot;http://tiddlywiki.com/static/DownloadingChanges.html&quot;,
+            &quot;text&quot;: &quot;Je browser ondersteunt alleen handmatig opslaan.\n\nOm je gewijzigde wiki op te slaan klik rechts op de downloadlink hieronder en kies \&quot;Bestand downloaden\&quot; of \&quot;Doel opslaan als\&quot; en kies dan een folder en bestandsnaam.\n\n//Je kan het iets versnellen door op de link te klikken met de control toets (Windows) of de opties/alt toets (Mac OS X) ingedrukt. Er wordt dan niet om folder- of bestandsnaam gevraagd, maar de browser zal een niet herkenbare naam geven - je dient het bestand te hernoemen met een `.html` extensie alvorens je iets zinnigs met het bestand kan doen.//\n\nBij smartphones die downloaden niet ondersteunen, kan je een bladwijzer van de link maken en dan je favorieten synchroniseren met een desktop-PC waarop de wiki normaal opgeslagen kan worden.\n&quot;
+        },
+        &quot;$:/language/Modals/SaveInstructions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Modals/SaveInstructions&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;subtitle&quot;: &quot;Save your work&quot;,
+            &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Close&lt;/$button&gt;&quot;,
+            &quot;help&quot;: &quot;http://tiddlywiki.com/static/SavingChanges.html&quot;,
+            &quot;text&quot;: &quot;Je veranderingen aan deze wiki dienen als een ~TiddlyWiki HTML bestand opgeslagen te worden.\n\n!!! Desktop browsers\n\n# Kies ''Opslaan As'' van het ''Bestand'' menu\n# Kies een bestandsnaam en locatie\n#* Bij sommige browsers moet het formaat expliciet opgegeven worden als  ''Webpage, alleen HTML'' o.i.d.\n# Sluit de browsertab\n\n!!! Smartphone browsers\n\n# Maak een favoriet naar deze pagina\n#* Bij gebruik van iCloud of Google Sync worden favorieten automatisch met de desktop-PC gesynchroniseerd en kan je  te werk gaan als boven beschreven\n# Sluit de browsertab\n\n//Wordt de favoriet in mobile Safari geopend dan zie je de melding weer. Klik ''sluit'' om verder te gaan//\n&quot;
+        },
+        &quot;$:/config/NewJournal/Tags&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Tags&quot;,
+            &quot;text&quot;: &quot;Journaal&quot;
+        },
+        &quot;$:/config/NewJournal/Title&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Title&quot;,
+            &quot;text&quot;: &quot;YYYY MMM DD&quot;
+        },
+        &quot;$:/language/Notifications/Save/Done&quot;: {
+            &quot;title&quot;: &quot;$:/language/Notifications/Save/Done&quot;,
+            &quot;text&quot;: &quot;Wiki opgeslagen&quot;
+        },
+        &quot;$:/language/Notifications/Save/Starting&quot;: {
+            &quot;title&quot;: &quot;$:/language/Notifications/Save/Starting&quot;,
+            &quot;text&quot;: &quot;Begonnen met wiki op te slaan&quot;
+        },
+        &quot;$:/language/Search/DefaultResults/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/DefaultResults/Caption&quot;,
+            &quot;text&quot;: &quot;Lijst&quot;
+        },
+        &quot;$:/language/Search/Filter/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Caption&quot;,
+            &quot;text&quot;: &quot;Filter&quot;
+        },
+        &quot;$:/language/Search/Filter/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Hint&quot;,
+            &quot;text&quot;: &quot;Zoek via een [[filter expression|http://tiddlywiki.com/static/Filters.html]]&quot;
+        },
+        &quot;$:/language/Search/Filter/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Filter/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; resultaten&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; resultaten&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Shadows/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Caption&quot;,
+            &quot;text&quot;: &quot;Schaduwen&quot;
+        },
+        &quot;$:/language/Search/Shadows/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Hint&quot;,
+            &quot;text&quot;: &quot;Zoek schaduwtiddlers&quot;
+        },
+        &quot;$:/language/Search/Shadows/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Shadows/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; resultaten&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/Standard/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Caption&quot;,
+            &quot;text&quot;: &quot;Standaard&quot;
+        },
+        &quot;$:/language/Search/Standard/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Hint&quot;,
+            &quot;text&quot;: &quot;Zoek standaard tiddlers&quot;
+        },
+        &quot;$:/language/Search/Standard/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/Standard/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; resultaten&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/Search/System/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Caption&quot;,
+            &quot;text&quot;: &quot;Systeem&quot;
+        },
+        &quot;$:/language/Search/System/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Hint&quot;,
+            &quot;text&quot;: &quot;Zoek systeemtiddlers&quot;
+        },
+        &quot;$:/language/Search/System/Matches&quot;: {
+            &quot;title&quot;: &quot;$:/language/Search/System/Matches&quot;,
+            &quot;text&quot;: &quot;//&lt;small&gt;&lt;&lt;resultCount&gt;&gt; resultaten&lt;/small&gt;//&quot;
+        },
+        &quot;$:/language/SideBar/All/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/All/Caption&quot;,
+            &quot;text&quot;: &quot;Alle&quot;
+        },
+        &quot;$:/language/SideBar/Contents/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Contents/Caption&quot;,
+            &quot;text&quot;: &quot;Inhoud&quot;
+        },
+        &quot;$:/language/SideBar/Drafts/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Drafts/Caption&quot;,
+            &quot;text&quot;: &quot;Concepten&quot;
+        },
+        &quot;$:/language/SideBar/Missing/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Missing/Caption&quot;,
+            &quot;text&quot;: &quot;Ontbrekend&quot;
+        },
+        &quot;$:/language/SideBar/More/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/More/Caption&quot;,
+            &quot;text&quot;: &quot;Meer&quot;
+        },
+        &quot;$:/language/SideBar/Open/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Open/Caption&quot;,
+            &quot;text&quot;: &quot;Open&quot;
+        },
+        &quot;$:/language/SideBar/Orphans/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Orphans/Caption&quot;,
+            &quot;text&quot;: &quot;Verweesd&quot;
+        },
+        &quot;$:/language/SideBar/Recent/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Recent/Caption&quot;,
+            &quot;text&quot;: &quot;Recent&quot;
+        },
+        &quot;$:/language/SideBar/Shadows/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Shadows/Caption&quot;,
+            &quot;text&quot;: &quot;Schaduw&quot;
+        },
+        &quot;$:/language/SideBar/System/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/System/Caption&quot;,
+            &quot;text&quot;: &quot;Systeem&quot;
+        },
+        &quot;$:/language/SideBar/Tags/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tags/Caption&quot;,
+            &quot;text&quot;: &quot;Labels&quot;
+        },
+        &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tags/Untagged/Caption&quot;,
+            &quot;text&quot;: &quot;niet gelabeld&quot;
+        },
+        &quot;$:/language/SideBar/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;Gereedschap&quot;
+        },
+        &quot;$:/language/SideBar/Types/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Types/Caption&quot;,
+            &quot;text&quot;: &quot;Types&quot;
+        },
+        &quot;$:/SiteSubtitle&quot;: {
+            &quot;title&quot;: &quot;$:/SiteSubtitle&quot;,
+            &quot;text&quot;: &quot;een niet-lineair persoonlijk webnotitieboek&quot;
+        },
+        &quot;$:/SiteTitle&quot;: {
+            &quot;title&quot;: &quot;$:/SiteTitle&quot;,
+            &quot;text&quot;: &quot;Mijn TiddlyWiki&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/Caption&quot;,
+            &quot;text&quot;: &quot;Geavanceerd&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Empty/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Empty/Hint&quot;,
+            &quot;text&quot;: &quot;niets&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Heading&quot;,
+            &quot;text&quot;: &quot;Plugin details&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/PluginInfo/Hint&quot;,
+            &quot;text&quot;: &quot;Deze plugin bevat de volgende schaduwtiddlers:&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Heading&quot;,
+            &quot;text&quot;: &quot;Schaduwstatus&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/NotShadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/NotShadow/Hint&quot;,
+            &quot;text&quot;: &quot;De tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; is geen schaduwtiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/OverriddenShadow/Hint&quot;,
+            &quot;text&quot;: &quot;Overschreven door een gewone tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Hint&quot;,
+            &quot;text&quot;: &quot;De tiddler &lt;$link to=&lt;&lt;infoTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;infoTiddler&gt;&gt;/&gt;&lt;/$link&gt; is een schaduwtiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Advanced/ShadowInfo/Shadow/Source&quot;,
+            &quot;text&quot;: &quot;Gedefinieerd in de plugin &lt;$link to=&lt;&lt;pluginTiddler&gt;&gt;&gt;&lt;$text text=&lt;&lt;pluginTiddler&gt;&gt;/&gt;&lt;/$link&gt;&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Fields/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Fields/Caption&quot;,
+            &quot;text&quot;: &quot;Velden&quot;
+        },
+        &quot;$:/language/TiddlerInfo/List/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/List/Caption&quot;,
+            &quot;text&quot;: &quot;Lijst&quot;
+        },
+        &quot;$:/language/TiddlerInfo/List/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/List/Empty&quot;,
+            &quot;text&quot;: &quot;Deze tiddler heeft geen lijst&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Listed/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Caption&quot;,
+            &quot;text&quot;: &quot;Genoemd&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Listed/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Listed/Empty&quot;,
+            &quot;text&quot;: &quot;Deze tiddler wordt niet door andere tiddlers genoemd&quot;
+        },
+        &quot;$:/language/TiddlerInfo/References/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Caption&quot;,
+            &quot;text&quot;: &quot;Referenties&quot;
+        },
+        &quot;$:/language/TiddlerInfo/References/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/References/Empty&quot;,
+            &quot;text&quot;: &quot;Er zijn geen tiddlers aan deze tiddler gelinkt&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Caption&quot;,
+            &quot;text&quot;: &quot;Gelabeld&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tagging/Empty&quot;,
+            &quot;text&quot;: &quot;Er zijn geen tiddlers gelabeld met deze tiddler&quot;
+        },
+        &quot;$:/language/TiddlerInfo/Tools/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/TiddlerInfo/Tools/Caption&quot;,
+            &quot;text&quot;: &quot;Gereedschap&quot;
+        },
+        &quot;$:/language/Docs/Types/application/javascript&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/javascript&quot;,
+            &quot;description&quot;: &quot;JavaScript code&quot;,
+            &quot;name&quot;: &quot;application/javascript&quot;,
+            &quot;group&quot;: &quot;Ontwikkelaar&quot;
+        },
+        &quot;$:/language/Docs/Types/application/json&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/json&quot;,
+            &quot;description&quot;: &quot;JSON data&quot;,
+            &quot;name&quot;: &quot;application/json&quot;,
+            &quot;group&quot;: &quot;Ontwikkelaar&quot;
+        },
+        &quot;$:/language/Docs/Types/application/x-tiddler-dictionary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/application/x-tiddler-dictionary&quot;,
+            &quot;description&quot;: &quot;Data dictionary&quot;,
+            &quot;name&quot;: &quot;application/x-tiddler-dictionary&quot;,
+            &quot;group&quot;: &quot;Ontwikkelaar&quot;
+        },
+        &quot;$:/language/Docs/Types/image/gif&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/gif&quot;,
+            &quot;description&quot;: &quot;GIF afbeelding&quot;,
+            &quot;name&quot;: &quot;image/gif&quot;,
+            &quot;group&quot;: &quot;Afbeelding&quot;
+        },
+        &quot;$:/language/Docs/Types/image/jpeg&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/jpeg&quot;,
+            &quot;description&quot;: &quot;JPEG afbeelding&quot;,
+            &quot;name&quot;: &quot;image/jpeg&quot;,
+            &quot;group&quot;: &quot;Afbeelding&quot;
+        },
+        &quot;$:/language/Docs/Types/image/png&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/png&quot;,
+            &quot;description&quot;: &quot;PNG afbeelding&quot;,
+            &quot;name&quot;: &quot;image/png&quot;,
+            &quot;group&quot;: &quot;Afbeelding&quot;
+        },
+        &quot;$:/language/Docs/Types/image/svg+xml&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/svg+xml&quot;,
+            &quot;description&quot;: &quot;Structured Vector Graphics afbeelding&quot;,
+            &quot;name&quot;: &quot;image/svg+xml&quot;,
+            &quot;group&quot;: &quot;Afbeelding&quot;
+        },
+        &quot;$:/language/Docs/Types/image/x-icon&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/image/x-icon&quot;,
+            &quot;description&quot;: &quot;ICO pictogram (icon)&quot;,
+            &quot;name&quot;: &quot;image/x-icon&quot;,
+            &quot;group&quot;: &quot;Afbeelding&quot;
+        },
+        &quot;$:/language/Docs/Types/text/css&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/css&quot;,
+            &quot;description&quot;: &quot;Statisch stijlblad&quot;,
+            &quot;name&quot;: &quot;text/css&quot;,
+            &quot;group&quot;: &quot;Ontwikkelaar&quot;
+        },
+        &quot;$:/language/Docs/Types/text/html&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/html&quot;,
+            &quot;description&quot;: &quot;HTML opmaak&quot;,
+            &quot;name&quot;: &quot;text/html&quot;,
+            &quot;group&quot;: &quot;Tekst&quot;
+        },
+        &quot;$:/language/Docs/Types/text/plain&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/plain&quot;,
+            &quot;description&quot;: &quot;Platte text&quot;,
+            &quot;name&quot;: &quot;text/plain&quot;,
+            &quot;group&quot;: &quot;Tekst&quot;
+        },
+        &quot;$:/language/Docs/Types/text/vnd.tiddlywiki&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/vnd.tiddlywiki&quot;,
+            &quot;description&quot;: &quot;TiddlyWiki 5&quot;,
+            &quot;name&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;group&quot;: &quot;Tekst&quot;
+        },
+        &quot;$:/language/Docs/Types/text/x-tiddlywiki&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Types/text/x-tiddlywiki&quot;,
+            &quot;description&quot;: &quot;TiddlyWiki Classic&quot;,
+            &quot;name&quot;: &quot;text/x-tiddlywiki&quot;,
+            &quot;group&quot;: &quot;Tekst&quot;
+        },
+        &quot;$:/languages/nl-NL/icon&quot;: {
+            &quot;title&quot;: &quot;$:/languages/nl-NL/icon&quot;,
+            &quot;type&quot;: &quot;image/svg+xml&quot;,
+            &quot;text&quot;: &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\n&lt;svg xmlns=\&quot;http://www.w3.org/2000/svg\&quot; width=\&quot;900\&quot; height=\&quot;600\&quot; viewBox=\&quot;0 0 9 6\&quot;&gt;\n&lt;rect fill=\&quot;#21468B\&quot;\twidth=\&quot;9\&quot; height=\&quot;6\&quot;/&gt;\n&lt;rect fill=\&quot;#FFF\&quot; width=\&quot;9\&quot; height=\&quot;4\&quot;/&gt;\n&lt;rect fill=\&quot;#AE1C28\&quot;\twidth=\&quot;9\&quot; height=\&quot;2\&quot;/&gt;\n&lt;/svg&gt;&quot;
         }
     }
 }</pre>
