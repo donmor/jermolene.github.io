@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.6-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.6-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Transclusion'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+TransclusionAsTemplateUsage
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='Erwan.html'>
+Erwan
+</a> 72 minutes ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Transclusion
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+<div class='tc-tiddler-body'><h1 class=''>Problem</h1><p>In <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TransclusionBasicUsage.html'>TransclusionBasicUsage</a> we have seen how to include the content of a tiddler A into a tiddler B. Now suppose that tiddler A contains:</p><pre><code>@@background-color:yellow;
+Hello, my title is {{!!title}}
+@@</code></pre><p>This makes tiddler A display its title with a yellow background (see <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Styles%2520and%2520Classes%2520in%2520WikiText.html'>Styles and Classes in WikiText</a> to learn about CSS style). Imagine that you want to display the title in the same way in tiddler B. But you don't want to copy/paste the style instructions, because you might want to change the background colour later and you want to keep it consistent among tiddlers. This looks like a typical case of transclusion, so let's try to transclude tiddler A in tiddler B the usual way with <code>{{A}}</code>. You should see the following content in tiddler B:</p><blockquote class='tc-quote'><p style='background-color:yellow;'>Hello, my title is A
+</p></blockquote><p>The style is applied as expected, but the title is wrong: we want <code>{{!!title}}</code> to refer to the target tiddler B, and not the source tiddler A. </p><h1 class=''>Solution</h1><p>Thankfully <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a> provides a way to do exactly that, using <strong>templates</strong>. In this case, the source tiddler A is called the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TemplateTiddlers.html'>TemplateTiddler</a>, and it is <em>applied</em> to tiddler B using the notation <code>{{||A}}</code>. The difference is that any <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReference.html'>TextReference</a> which does not refer explicitly  to a specific tiddler is applied to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>current tiddler</a>, that is, the target tiddler. As a result, tiddler B now looks as expected:</p><blockquote class='tc-quote'><p style='background-color:yellow;'>Hello, my title is B
+</p></blockquote><h1 class=''>Usage</h1><p>Transcluding via a template is like applying a mask: assuming that the source tiddler contains generic references (like eye holes in a mask), these will be replaced with the target tiddlers values (like the eyes of the person who wears the mask).</p><p>A template can be applied to any tiddler, not necessarily the current one. This is achieved using the full notation <code>{{&lt;target&gt;||&lt;template&gt;}}</code>. The default <code>&lt;target&gt;</code> is the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>current tiddler</a> (this is what we used in the above example). </p><h1 class=''>Examples</h1><h2 class=''>A predefined template to render tags nicely</h2><p>You can apply the system template <code>$:/core/ui/TagTemplate</code> to a tag in order to see it as a tag pill with a drop-down menu:</p><pre><code>{{Transclusion||$:/core/ui/TagTemplate}}</code></pre><p>is rendered as <span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Transclusion
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</p><h2 class=''>An exercise</h2><p>Create three tiddlers A, B and C with the following content:</p><h3 class=''>in A:</h3><pre><code> Hello, my name is {{!!title}} and the last time I was modified is {{!!modified}}</code></pre><h3 class=''>in B:</h3><pre><code>{{||A}}</code></pre><h3 class=''>in C: </h3><pre><code>{{B}}</code></pre><ol><li>Can you make C print <em>&quot;Hello, my name is C ...&quot;</em> without referring to A directly? </li><li>Can you make C print <em>&quot;Hello, my name is A ...&quot;</em> without modifying C?</li></ol><p><button class=''>Show the answers</button></p><div class=' tc-reveal' hidden='true'></div><p>See also <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion%2520in%2520WikiText.html'>Transclusion in WikiText</a>, <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReference.html'>TextReference</a>, <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>CurrentTiddler</a> and <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TemplateTiddlers.html'>TemplateTiddlers</a>.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
