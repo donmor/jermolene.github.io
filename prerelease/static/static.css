@@ -1014,6 +1014,7 @@ pre > code {
 }@media (max-width: 960px) {.tc-sidebar-header {
 		padding: 14px;
 		min-height: 32px;
+		margin-top: 0px;
 	}.tc-story-river {
 		position: relative;
 		padding: 0;
