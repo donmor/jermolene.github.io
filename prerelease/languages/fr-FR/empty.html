@@ -5346,9 +5346,12 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
             &quot;text&quot;: &quot;\\define tag(tag)\n{{$tag$||$:/core/ui/TagTemplate}}\n\\end\n&quot;
         },
         &quot;$:/core/macros/timeline&quot;: {
-            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;created&quot;: &quot;20141212105914482&quot;,
+            &quot;modified&quot;: &quot;20141212110330815&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;text&quot;: &quot;\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
+            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define timeline-title()\n&lt;!-- Override this macro with a global macro \n     of the same name if you need to change \n     how titles are displayed on the timeline \n     --&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n\\end\n\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;&lt;timeline-title&gt;&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
         },
         &quot;$:/core/macros/toc&quot;: {
             &quot;title&quot;: &quot;$:/core/macros/toc&quot;,
@@ -5976,7 +5979,7 @@ $src$
 <div title="$:/green_favicon.ico" type="image/x-icon">
 <pre>AAABAAIAEBAAAAEAIAAoBQAAJgAAACAgAAABACAAKBQAAE4FAAAoAAAAEAAAACAAAAABACAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEHPcCtK13KPS9dy1UzXc/NM13PzS9dy1UrXco9Bz3ArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKqoqBkvXcZRj3YT9cuGO/5Loqf/K9NX/Vdp6/07adf+M56P/1PXe/s7y1dMqqioGAAAAAAAAAAAAAAAAKqoqBkzXcr1j3oT/6Pru/9j24P/k+er/d+GU/07adf9O2nX/6Pnt//f9+P9X2nv/TNdyvSqqKgYAAAAAAAAAAEvXcZRO2nX/t+/F/9T23P/9/v3/juam/07adf9O2nX/Ttp1/9z35P/K9NX/Ttp1/07adf9L13GUAAAAAEHPcCtM2XT9Ttp1/4znpP///////////6fsuP9R2nf/Yd2C/2PehP/1/fj/1vbf/1Dadv9O2nX/TNl0/UHPcCtK13KPTtp1/07adf9O2nX/2/fi///////8/vz//v7+///////////////////////Y9uD/Xd1//07adf9K13KPS9dy1U7adf9O2nX/at+J//f9+P///////////////////////////////////////////8301v+W6az/S9dy1UzXc/OF5J7/p+y4/8bz0v///////////////////////////////////////////////////////////4DhmvbD8s76ru2//5bprP+m7Lj/4vjn//////////////////P89f/z/PX/+f36/+378f////////////////+w7sH5luit5E7adf9O2nX/Ttp1/1Dadv9y4Y//eeKV/2PehP9O2nX/Ttp1/07adf9j3oT/////////////////x/LU8JDnqKtO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/9f23/+D5J3/Z9+I/6vrvrtBz3ArTNl0/U7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/0zZdP1Bz3ArAAAAAEvXcZRO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9L13GUAAAAAAAAAAAqqioGTNdyvU7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9M13K9KqoqBgAAAAAAAAAAAAAAACqqKgZL13GUTNl0/U7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/0zZdP1L13GUKqoqBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEHPcCtK13KPS9dy1UzXc/NM13PzS9dy1UrXco9Bz3ArAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAIAAAAEAAAAABACAAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACqqKgZH129HS9dylUzWcr9M2HPZTNdz80zXc/NM2HPZTNZyv0vXcpVH129HKqoqBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/JahhK13GWS9hz8U7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9L2HPxStdxlj/JahgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSRSAdM2XOCTNdy9E7adf9O2nX/Ttp1/07adf9n34j/mumv/5fprf9T2nj/Ttp1/07adf9O2nX/Ttp1/07adf+F5J7/6/ru/fz9/P34/Ph2AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/yWoYS9hyx07adf9U2nn/puu4/7nwyP984pf/lums//v+/P///////////3Lhjv9O2nX/Ttp1/07adf+n7Lj/6vrv//v++///////4fjm/2LdhMw/yWoYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQs1pLkzYcuNO2nX/UNp2/8/12P///////////+j57f///////f79/8Ty0P+H5p//Ttp1/07adf9O2nX/Ttp1/9D12/////////////////904ZH/Ttp1/0zYcuNE0WstAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/JahhM2HLjTtp1/07adf+g6rT//////9f24P+M56T/9fz3//////+N56X/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/zfTW////////////3/jm/07adf9O2nX/Ttp1/0zYcuM/yWoYAAAAAAAAAAAAAAAAAAAAAAAAAAAkkUgHS9hyx07adf9O2nX/Wdx8//X89///////heSe//n9+v//////1/bf/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf+/8cz///////////+m7Lj/Ttp1/07adf9O2nX/Ttp1/0vYcsckkUgHAAAAAAAAAAAAAAAAAAAAAEzZc4JO2nX/Ttp1/07adf+K5aL////////////N9Nb////////////E8tD/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/7Duwf///////////4fmoP9O2nX/Ttp1/07adf9O2nX/Ttp1/0zZc4IAAAAAAAAAAAAAAAA/yWoYTNdy9E7adf9O2nX/Ttp1/1zbf//x+/T///////7+/v///////////+T46f9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/2Pbg////////////fOKX/07adf9O2nX/Ttp1/07adf9O2nX/TNdy9D/JahgAAAAAAAAAAErXcZZO2nX/Ttp1/07adf9O2nX/Ttp1/5LoqP///////////////////////////2bfh/9T2nj/ad+I/3Xhkf9+45n/duGS/3rilv/////////////////O9Nf/Wdx8/07adf9O2nX/Ttp1/07adf9O2nX/StdxlgAAAAAqqioGS9hz8U7adf9O2nX/Ttp1/07adf9O2nX/UNp2/+D45v//////////////////////9Pz2//7+/v/////////////////////////////////////////////////q+u//fOKX/07adf9O2nX/Ttp1/07adf9L2HPxKqoqBkfXb0dO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/juam///////////////////////////////////////////////////////////////////////////////////////9/v3/l+mt/07adf9O2nX/Ttp1/07adf9H129HS9dylU7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/1vbfv/g+Ob////////////////////////////////////////////////////////////////////////////////////////////5/fr/Xd1//1bae/9O2nX/Ttp1/0vXcpVM1nK/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/ufDI///////////////////////////////////////////////////////////////////////////////////////////////////////q+u///v7+/7Pvw/9O2nX/TNZyv0zYc9lO2nX/Ttp1/07adf9Q2nb/Wtx9/1Dadv/f+Ob//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////47mpv9M2HPZTNdz81rcff+m7Lj/3/jm//3+/f//////+v37//v+/P//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////4fjm/0vYcvJu4Iz17Prw//7+/v/m+ev/0/Xb/9X23f/u+/L/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////XdqA9Or67vnL9Nb/Zt+H/07adf9O2nX/Ttp1/07adf9a3H3/l+mt//T89v/////////////////////////////////t+/H/2fbg/+H45//t+vD/+f36//P89v/X9uD/3/jm//////////////////////////////////////924JPg6vrt9VLaeP9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Wdx8/43npf+v7sD/t+/F/63tvf+M56T/Y96E/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf+N56X//////////////////////////////////////3vhlszH89TQTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/2rfif//////////////////////////////////////l+its+D35bJO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1//H78///////0vXb/57qsf964pb/jual/8nz1f/j+uiz+fv5gUvYc/FO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/m+qv/9j24P9Z3Hz/Ttp1/07adf9O2nX/S9hz8ePz4y4AAAAAStdxlk7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9K13GWAAAAAAAAAAA/yWoYTNdy9E7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/TNdy9D/JahgAAAAAAAAAAAAAAABM2XOCTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9M2XOCAAAAAAAAAAAAAAAAAAAAACSRSAdL2HLHTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/S9hyxySRSAcAAAAAAAAAAAAAAAAAAAAAAAAAAD/JahhM2HLjTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/0zYcuM/yWoYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAELNaS5M2HLjTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9M2HLjRNFrLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/JahhL2HLHTtp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/S9hyxz/JahgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACSRSAdM2XOCTNdy9E7adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/TNdy9EzZc4IkkUgHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/yWoYStdxlkvYc/FO2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/Ttp1/07adf9O2nX/S9hz8UrXcZY/yWoYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKqoqBkfXb0dL13KVTNZyv0zYc9lM13PzTNdz80zYc9lM1nK/S9dylUfXb0cqqioGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</pre>
 </div>
-<div current-tiddler="HelloThere" modified="20141212102836697" title="$:/HistoryList" type="application/json">
+<div current-tiddler="HelloThere" modified="20141212120616911" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -6098,6 +6101,30 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
             &quot;text&quot;: &quot;Angiv et password for gemme denne wiki med encryption&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Caption&quot;,
+            &quot;text&quot;: &quot;eksport alle&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport alle tiddlere&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;eksport tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;,
+            &quot;text&quot;: &quot;eksport tiddlere&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport tiddlere&quot;
         },
         &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
@@ -6581,7 +6608,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
-            &quot;text&quot;: &quot;HistorieVisning&quot;
+            &quot;text&quot;: &quot;Historie visning&quot;
         },
         &quot;$:/language/ControlPanel/StoryView/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Prompt&quot;,
@@ -6638,6 +6665,10 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
             &quot;text&quot;: &quot;Hent fuld wiki&quot;
+        },
+        &quot;$:/core/readme&quot;: {
+            &quot;title&quot;: &quot;$:/core/readme&quot;,
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/language/Date/DaySuffix/1&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/DaySuffix/1&quot;,
@@ -6925,7 +6956,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/RelativeDate/Future/Days&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
-            &quot;text&quot;: &quot;for &lt;&lt;period&gt;&gt; days from now&quot;
+            &quot;text&quot;: &quot;om &lt;&lt;period&gt;&gt; dage&quot;
         },
         &quot;$:/language/RelativeDate/Future/Hours&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Hours&quot;,
@@ -7457,7 +7488,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/EditTemplate/Body/External/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/External/Hint&quot;,
-            &quot;text&quot;: &quot;Dette er en ekstern tiddler lagret udenfor hoved TiddlyWiki filen.Du kan redigere tags og felter men kan ikke direkte redigereselve  indholdet&quot;
+            &quot;text&quot;: &quot;Dette er en ekstern tiddler lagret udenfor hoved TiddlyWiki filen.Du kan redigere tags og felter men kan ikke direkte redigere selve  indholdet&quot;
         },
         &quot;$:/language/EditTemplate/Body/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Hint&quot;,
@@ -7474,6 +7505,14 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;,
             &quot;text&quot;: &quot;vis forhåndsvisning&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;,
+            &quot;text&quot;: &quot;fjern felt&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;,
+            &quot;text&quot;: &quot;Fjern felt&quot;
         },
         &quot;$:/language/EditTemplate/Fields/Add/Button&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Button&quot;,
@@ -7506,6 +7545,30 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;,
             &quot;text&quot;: &quot;tag navn&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;tag liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Vis tag liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;slet indholds type&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;Slet indholds type&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;indholds type liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Vis indholds type liste&quot;
         },
         &quot;$:/language/EditTemplate/Type/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Placeholder&quot;,
@@ -7577,7 +7640,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/Docs/Fields/library&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/library&quot;,
-            &quot;text&quot;: &quot;Hvis sat til  \&quot;ja\&quot; indikeres at en stiddler bør gemmes som et  JavaScript library&quot;
+            &quot;text&quot;: &quot;Hvis sat til  \&quot;ja\&quot; indikeres at en tiddler bør gemmes som et  JavaScript library&quot;
         },
         &quot;$:/language/Docs/Fields/list&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
@@ -7585,7 +7648,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/Docs/Fields/list-after&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
-            &quot;text&quot;: &quot;Hvis sat, titlen på den tiddler efter hvilken denne tiddler skal indsættes i denrdnede liste over tiddler titler.&quot;
+            &quot;text&quot;: &quot;Hvis sat, titlen på den tiddler efter hvilken denne tiddler skal indsættes i den ordnede liste over tiddler titler.&quot;
         },
         &quot;$:/language/Docs/Fields/list-before&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
@@ -7671,6 +7734,10 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
             &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
             &quot;text&quot;: &quot;Overskrevne skygge tiddlere&quot;
         },
+        &quot;$:/language/Filters/RecentSystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentSystemTiddlers&quot;,
+            &quot;text&quot;: &quot;Nyligt ændrede tiddlere, inklusiv system tiddlere&quot;
+        },
         &quot;$:/language/Filters/RecentTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
             &quot;text&quot;: &quot;Nyligt ændrede tiddlere&quot;
@@ -7705,6 +7772,11 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;description&quot;: &quot;&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\nusage: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\nMulige kommandoer:\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nFor at få detaljeret hjælp til en kommando:\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
+        },
+        &quot;$:/language/Help/editions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
+            &quot;description&quot;: &quot;Lister mulige udgaver  af TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Lister navn og beskrivelse af de mulige udgaver. Du kan oprette en ny  wiki af en specificeret udgave med `--init` command.\n\n```\n--editions\n```\n&quot;
         },
         &quot;$:/language/Help/help&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/help&quot;,
@@ -7771,6 +7843,11 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
             &quot;description&quot;: &quot;Forbereder eksterne tiddlere til brug&quot;,
             &quot;text&quot;: &quot;//Bemærk at denne kommando er eksperimentel og kan ændres eller erstattes før den bliver endelig//\n\nSætter det angivne felt i en gruppe af tiddlere med resulterende wikificering af en template tiddler med den `currentTiddler` variable sat til den  tiddler.\n\n```\n--setfield &lt;filter&gt; &lt;fieldname&gt; &lt;templatetitle&gt; &lt;rendertype&gt;\n```\n\nParametrene er:\n\n* ''filter'' - filter der identificerer de tiddlere der påvirkes\n* ''fieldname'' - feltet der ændres (standard til \&quot;text\&quot;)\n* ''templatetitle'' - tiddleren der wikificeres til det angivne felt. Hvis tom eller manglende slettes det specificerede felt\n* ''type'' - text type til renderingr (standard til \&quot;text/plain\&quot;; \&quot;text/html\&quot; kan bruges for at inkludere HTML tags)\n\n&quot;
         },
+        &quot;$:/language/Help/unpackplugin&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/unpackplugin&quot;,
+            &quot;description&quot;: &quot;Udtrækker payload tiddlere fra et plugin&quot;,
+            &quot;text&quot;: &quot;Udtrækker payload tiddlere fra et plugin, i det de oprettes som ordinære tiddlere:\n\n```\n--unpackplugin &lt;title&gt;\n```\n&quot;
+        },
         &quot;$:/language/Help/verbose&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/verbose&quot;,
             &quot;description&quot;: &quot;Udløser udførlig udskrift modus&quot;,
@@ -7819,7 +7896,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         },
         &quot;$:/language/Import/Upgrader/State/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/State/Suppressed&quot;,
-            &quot;text&quot;: &quot;Blokret temporær status tiddler&quot;
+            &quot;text&quot;: &quot;Blokeret temporær status tiddler&quot;
         },
         &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,

@@ -5693,9 +5693,12 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
             &quot;text&quot;: &quot;\\define tag(tag)\n{{$tag$||$:/core/ui/TagTemplate}}\n\\end\n&quot;
         },
         &quot;$:/core/macros/timeline&quot;: {
-            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;created&quot;: &quot;20141212105914482&quot;,
+            &quot;modified&quot;: &quot;20141212110330815&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;text&quot;: &quot;\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
+            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define timeline-title()\n&lt;!-- Override this macro with a global macro \n     of the same name if you need to change \n     how titles are displayed on the timeline \n     --&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n\\end\n\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;&lt;timeline-title&gt;&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
         },
         &quot;$:/core/macros/toc&quot;: {
             &quot;title&quot;: &quot;$:/core/macros/toc&quot;,
@@ -6094,6 +6097,30 @@ $src$
         &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Encryption/SetPassword/Hint&quot;,
             &quot;text&quot;: &quot;Angiv et password for gemme denne wiki med encryption&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Caption&quot;,
+            &quot;text&quot;: &quot;eksport alle&quot;
+        },
+        &quot;$:/language/Buttons/ExportPage/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportPage/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport alle tiddlere&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Caption&quot;,
+            &quot;text&quot;: &quot;eksport tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddler/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddler/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport tiddler&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Caption&quot;,
+            &quot;text&quot;: &quot;eksport tiddlere&quot;
+        },
+        &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
+            &quot;text&quot;: &quot;Eksport tiddlere&quot;
         },
         &quot;$:/language/Buttons/FullScreen/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FullScreen/Caption&quot;,
@@ -6577,7 +6604,7 @@ $src$
         },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
-            &quot;text&quot;: &quot;HistorieVisning&quot;
+            &quot;text&quot;: &quot;Historie visning&quot;
         },
         &quot;$:/language/ControlPanel/StoryView/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Prompt&quot;,
@@ -6634,6 +6661,10 @@ $src$
         &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
             &quot;text&quot;: &quot;Hent fuld wiki&quot;
+        },
+        &quot;$:/core/readme&quot;: {
+            &quot;title&quot;: &quot;$:/core/readme&quot;,
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/language/Date/DaySuffix/1&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/DaySuffix/1&quot;,
@@ -6921,7 +6952,7 @@ $src$
         },
         &quot;$:/language/RelativeDate/Future/Days&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
-            &quot;text&quot;: &quot;for &lt;&lt;period&gt;&gt; days from now&quot;
+            &quot;text&quot;: &quot;om &lt;&lt;period&gt;&gt; dage&quot;
         },
         &quot;$:/language/RelativeDate/Future/Hours&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Hours&quot;,
@@ -7453,7 +7484,7 @@ $src$
         },
         &quot;$:/language/EditTemplate/Body/External/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/External/Hint&quot;,
-            &quot;text&quot;: &quot;Dette er en ekstern tiddler lagret udenfor hoved TiddlyWiki filen.Du kan redigere tags og felter men kan ikke direkte redigereselve  indholdet&quot;
+            &quot;text&quot;: &quot;Dette er en ekstern tiddler lagret udenfor hoved TiddlyWiki filen.Du kan redigere tags og felter men kan ikke direkte redigere selve  indholdet&quot;
         },
         &quot;$:/language/EditTemplate/Body/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Hint&quot;,
@@ -7470,6 +7501,14 @@ $src$
         &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Body/Preview/Button/Show&quot;,
             &quot;text&quot;: &quot;vis forhåndsvisning&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Caption&quot;,
+            &quot;text&quot;: &quot;fjern felt&quot;
+        },
+        &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Field/Remove/Hint&quot;,
+            &quot;text&quot;: &quot;Fjern felt&quot;
         },
         &quot;$:/language/EditTemplate/Fields/Add/Button&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Fields/Add/Button&quot;,
@@ -7502,6 +7541,30 @@ $src$
         &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Add/Placeholder&quot;,
             &quot;text&quot;: &quot;tag navn&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;tag liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Tags/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Vis tag liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Caption&quot;,
+            &quot;text&quot;: &quot;slet indholds type&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Delete/Hint&quot;,
+            &quot;text&quot;: &quot;Slet indholds type&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;,
+            &quot;text&quot;: &quot;indholds type liste&quot;
+        },
+        &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Hint&quot;,
+            &quot;text&quot;: &quot;Vis indholds type liste&quot;
         },
         &quot;$:/language/EditTemplate/Type/Placeholder&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Placeholder&quot;,
@@ -7573,7 +7636,7 @@ $src$
         },
         &quot;$:/language/Docs/Fields/library&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/library&quot;,
-            &quot;text&quot;: &quot;Hvis sat til  \&quot;ja\&quot; indikeres at en stiddler bør gemmes som et  JavaScript library&quot;
+            &quot;text&quot;: &quot;Hvis sat til  \&quot;ja\&quot; indikeres at en tiddler bør gemmes som et  JavaScript library&quot;
         },
         &quot;$:/language/Docs/Fields/list&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
@@ -7581,7 +7644,7 @@ $src$
         },
         &quot;$:/language/Docs/Fields/list-after&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
-            &quot;text&quot;: &quot;Hvis sat, titlen på den tiddler efter hvilken denne tiddler skal indsættes i denrdnede liste over tiddler titler.&quot;
+            &quot;text&quot;: &quot;Hvis sat, titlen på den tiddler efter hvilken denne tiddler skal indsættes i den ordnede liste over tiddler titler.&quot;
         },
         &quot;$:/language/Docs/Fields/list-before&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
@@ -7667,6 +7730,10 @@ $src$
             &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
             &quot;text&quot;: &quot;Overskrevne skygge tiddlere&quot;
         },
+        &quot;$:/language/Filters/RecentSystemTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/RecentSystemTiddlers&quot;,
+            &quot;text&quot;: &quot;Nyligt ændrede tiddlere, inklusiv system tiddlere&quot;
+        },
         &quot;$:/language/Filters/RecentTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/RecentTiddlers&quot;,
             &quot;text&quot;: &quot;Nyligt ændrede tiddlere&quot;
@@ -7701,6 +7768,11 @@ $src$
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;description&quot;: &quot;&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\nusage: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\nMulige kommandoer:\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nFor at få detaljeret hjælp til en kommando:\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
+        },
+        &quot;$:/language/Help/editions&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
+            &quot;description&quot;: &quot;Lister mulige udgaver  af TiddlyWiki&quot;,
+            &quot;text&quot;: &quot;Lister navn og beskrivelse af de mulige udgaver. Du kan oprette en ny  wiki af en specificeret udgave med `--init` command.\n\n```\n--editions\n```\n&quot;
         },
         &quot;$:/language/Help/help&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/help&quot;,
@@ -7767,6 +7839,11 @@ $src$
             &quot;description&quot;: &quot;Forbereder eksterne tiddlere til brug&quot;,
             &quot;text&quot;: &quot;//Bemærk at denne kommando er eksperimentel og kan ændres eller erstattes før den bliver endelig//\n\nSætter det angivne felt i en gruppe af tiddlere med resulterende wikificering af en template tiddler med den `currentTiddler` variable sat til den  tiddler.\n\n```\n--setfield &lt;filter&gt; &lt;fieldname&gt; &lt;templatetitle&gt; &lt;rendertype&gt;\n```\n\nParametrene er:\n\n* ''filter'' - filter der identificerer de tiddlere der påvirkes\n* ''fieldname'' - feltet der ændres (standard til \&quot;text\&quot;)\n* ''templatetitle'' - tiddleren der wikificeres til det angivne felt. Hvis tom eller manglende slettes det specificerede felt\n* ''type'' - text type til renderingr (standard til \&quot;text/plain\&quot;; \&quot;text/html\&quot; kan bruges for at inkludere HTML tags)\n\n&quot;
         },
+        &quot;$:/language/Help/unpackplugin&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/unpackplugin&quot;,
+            &quot;description&quot;: &quot;Udtrækker payload tiddlere fra et plugin&quot;,
+            &quot;text&quot;: &quot;Udtrækker payload tiddlere fra et plugin, i det de oprettes som ordinære tiddlere:\n\n```\n--unpackplugin &lt;title&gt;\n```\n&quot;
+        },
         &quot;$:/language/Help/verbose&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/verbose&quot;,
             &quot;description&quot;: &quot;Udløser udførlig udskrift modus&quot;,
@@ -7815,7 +7892,7 @@ $src$
         },
         &quot;$:/language/Import/Upgrader/State/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/State/Suppressed&quot;,
-            &quot;text&quot;: &quot;Blokret temporær status tiddler&quot;
+            &quot;text&quot;: &quot;Blokeret temporær status tiddler&quot;
         },
         &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,

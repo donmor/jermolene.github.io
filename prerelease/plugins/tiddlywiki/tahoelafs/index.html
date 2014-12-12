@@ -5238,9 +5238,12 @@ Error message and password prompt
             &quot;text&quot;: &quot;\\define tag(tag)\n{{$tag$||$:/core/ui/TagTemplate}}\n\\end\n&quot;
         },
         &quot;$:/core/macros/timeline&quot;: {
-            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;created&quot;: &quot;20141212105914482&quot;,
+            &quot;modified&quot;: &quot;20141212110330815&quot;,
             &quot;tags&quot;: &quot;$:/tags/Macro&quot;,
-            &quot;text&quot;: &quot;\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
+            &quot;title&quot;: &quot;$:/core/macros/timeline&quot;,
+            &quot;type&quot;: &quot;text/vnd.tiddlywiki&quot;,
+            &quot;text&quot;: &quot;\\define timeline-title()\n&lt;!-- Override this macro with a global macro \n     of the same name if you need to change \n     how titles are displayed on the timeline \n     --&gt;\n&lt;$view field=\&quot;title\&quot;/&gt;\n\\end\n\\define timeline(limit:\&quot;100\&quot;,format:\&quot;DDth MMM YYYY\&quot;,subfilter:\&quot;\&quot;,dateField:\&quot;modified\&quot;)\n&lt;div class=\&quot;tc-timeline\&quot;&gt;\n&lt;$list filter=\&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-item\&quot;&gt;\n&lt;$view field=\&quot;$dateField$\&quot; format=\&quot;date\&quot; template=\&quot;$format$\&quot;/&gt;\n&lt;$list filter=\&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]\&quot;&gt;\n&lt;div class=\&quot;tc-menu-list-subitem\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;&lt;timeline-title&gt;&gt;\n&lt;/$link&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\\end\n&quot;
         },
         &quot;$:/core/macros/toc&quot;: {
             &quot;title&quot;: &quot;$:/core/macros/toc&quot;,
