@@ -844,7 +844,8 @@ pre > code {
 	height: 600px;
 }/*
 ** Links
-*/a.tc-tiddlylink {
+*/button.tc-tiddlylink,
+a.tc-tiddlylink {
 	text-decoration: none;
 	font-weight: normal;
 	color: #5778d8;
@@ -853,7 +854,8 @@ pre > code {
 	color: #937e59;
 }.tc-sidebar-lists a.tc-tiddlylink:hover {
 	color: #8e7a56;
-}a.tc-tiddlylink:hover {
+}button.tc-tiddlylink:hover,
+a.tc-tiddlylink:hover {
 	text-decoration: underline;
 }a.tc-tiddlylink-resolves {
 }a.tc-tiddlylink-shadow {
