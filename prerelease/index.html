@@ -5658,7 +5658,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/snippets/download-wiki-button&quot;: {
             &quot;title&quot;: &quot;$:/snippets/download-wiki-button&quot;,
-            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Tools/Download/\n&lt;$button message=\&quot;tm-download-file\&quot; param=\&quot;$:/core/save/all\&quot; class=\&quot;tc-btn-big-green\&quot;&gt;&lt;&lt;lingo Full/Caption&gt;&gt; {{$:/core/images/save-button}}&lt;/$button&gt;&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Tools/Download/\n&lt;$button class=\&quot;tc-btn-big-green\&quot;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-download-file\&quot; $param=\&quot;$:/core/save/all\&quot; filename=\&quot;index.html\&quot;/&gt;\n&lt;&lt;lingo Full/Caption&gt;&gt; {{$:/core/images/save-button}}\n&lt;/$button&gt;&quot;
         },
         &quot;$:/language&quot;: {
             &quot;title&quot;: &quot;$:/language&quot;,
@@ -5912,7 +5912,10 @@ Version &lt;&lt;version&gt;&gt;
 </pre>
 </div>
 <div title="$:/editions/tw5.com/snippets/download-empty-button">
-<pre>&lt;$button message=&quot;tm-download-file&quot; param=&quot;$:/editions/tw5.com/download-empty&quot; class=&quot;tc-btn-big-green&quot;&gt;Download Empty {{$:/core/images/save-button}}&lt;/$button&gt;</pre>
+<pre>&lt;$button class=&quot;tc-btn-big-green&quot;&gt;
+&lt;$action-sendmessage $message=&quot;tm-download-file&quot; $param=&quot;$:/editions/tw5.com/download-empty&quot; filename=&quot;empty.html&quot;/&gt;
+Download Empty {{$:/core/images/save-button}}
+&lt;/$button&gt;</pre>
 </div>
 <div tags="$:/tags/Macro" title="$:/editions/tw5.com/style-guide-macros">
 <pre>\define style-guide(good,bad)
