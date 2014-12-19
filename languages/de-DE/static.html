@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.5" />
+<meta name="tiddlywiki-version" content="5.1.6" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title>Mein TiddlyWiki
@@ -821,7 +821,8 @@ pre > code {
 	height: 600px;
 }/*
 ** Links
-*/a.tc-tiddlylink {
+*/button.tc-tiddlylink,
+a.tc-tiddlylink {
 	text-decoration: none;
 	font-weight: normal;
 	color: #5778d8;
@@ -830,7 +831,8 @@ pre > code {
 	color: #999999;
 }.tc-sidebar-lists a.tc-tiddlylink:hover {
 	color: #444444;
-}a.tc-tiddlylink:hover {
+}button.tc-tiddlylink:hover,
+a.tc-tiddlylink:hover {
 	text-decoration: underline;
 }a.tc-tiddlylink-resolves {
 }a.tc-tiddlylink-shadow {
@@ -1029,6 +1031,7 @@ pre > code {
 }@media (max-width: 960px) {.tc-sidebar-header {
 		padding: 14px;
 		min-height: 32px;
+		margin-top: 0px;
 	}.tc-story-river {
 		position: relative;
 		padding: 0;
@@ -1132,7 +1135,7 @@ pre > code {
 	font-size: 0.6em;
 }.tc-tiddler-controls .tc-drop-down .tc-drop-down {
 	font-size: 1em;
-}.tc-tiddler-controls button {
+}.tc-tiddler-controls > span > button {
 	vertical-align: baseline;
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
@@ -1280,7 +1283,7 @@ pre > code {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
-	min-width: 280px;
+	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
 	padding: 7px 0 7px 0;
@@ -1333,7 +1336,7 @@ pre > code {
 	position: relative;
 }.tc-block-dropdown {
 	position: absolute;
-	min-width: 280px;
+	min-width: 220px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
 	padding: 7px 0;
@@ -1856,7 +1859,7 @@ font-weight:bold;
 <span class=' tc-reveal' hidden='true'></span>
 
 <span class=' tc-reveal'>
-<div class='github-fork-ribbon-wrapper right' style='true'><div class='github-fork-ribbon' style='background-color:#DF4848;'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki%2520Speichern.html'>5.1.5</a></div></div>
+<div class='github-fork-ribbon-wrapper right' style='true'><div class='github-fork-ribbon' style='background-color:#DF4848;'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki%2520Speichern.html'>5.1.6</a></div></div>
 
 
 </span>
@@ -1915,8 +1918,7 @@ Mehr
 
 
 
-</button>
-<span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='Bearbeiten' class='tc-btn-invisible' title='Bearbeite diesen Tiddler'>
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='Bearbeiten' class='tc-btn-invisible' title='Bearbeite diesen Tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
     <g fill-rule='evenodd'>
@@ -1956,7 +1958,7 @@ Willkommen!
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/pmario.html'>
 pmario
-</a> vor 2 Monaten
+</a> vor 3 Monaten
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
