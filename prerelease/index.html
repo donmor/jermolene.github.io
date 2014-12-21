@@ -4092,7 +4092,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
             &quot;module-type&quot;: &quot;tiddlermethod&quot;
         },
         &quot;$:/core/modules/upgraders/plugins.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/upgraders/plugins.js\ntype: application/javascript\nmodule-type: upgrader\n\nUpgrader module that checks that plugins are newer than any already installed version\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar UPGRADE_LIBRARY_TITLE = \&quot;$:/UpgradeLibrary\&quot;;\n\nvar BLOCKED_PLUGINS = {\n\t\&quot;$:/plugins/tiddlywiki/fullscreen\&quot;: {\n\t\tversions: [\&quot;*\&quot;]\n\t}\n};\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {},\n\t\tupgradeLibrary,\n\t\tgetLibraryTiddler = function(title) {\n\t\t\tif(!upgradeLibrary) {\n\t\t\t\tupgradeLibrary = wiki.getTiddlerData(UPGRADE_LIBRARY_TITLE,{});\n\t\t\t\tupgradeLibrary.tiddlers = upgradeLibrary.tiddlers || {};\n\t\t\t}\n\t\t\treturn upgradeLibrary.tiddlers[title];\n\t\t};\n\n\t// Go through all the incoming tiddlers\n\t$tw.utils.each(titles,function(title) {\n\t\tvar incomingTiddler = tiddlers[title];\n\t\t// Check if we're dealing with a plugin\n\t\tif(incomingTiddler &amp;&amp; incomingTiddler[\&quot;plugin-type\&quot;] &amp;&amp; incomingTiddler.version) {\n\t\t\t// Upgrade the incoming plugin if we've got a newer version in the upgrade library\n\t\t\tvar libraryTiddler = getLibraryTiddler(title);\n\t\t\tif(libraryTiddler &amp;&amp; libraryTiddler[\&quot;plugin-type\&quot;] &amp;&amp; libraryTiddler.version) {\n\t\t\t\tif($tw.utils.checkVersions(libraryTiddler.version,incomingTiddler.version)) {\n\t\t\t\t\ttiddlers[title] = libraryTiddler;\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Upgraded\&quot;,{variables: {incoming: incomingTiddler.version, upgraded: libraryTiddler.version}});\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t\t// Suppress the incoming plugin if it is older than the currently installed one\n\t\t\tvar existingTiddler = wiki.getTiddler(title);\n\t\t\tif(existingTiddler &amp;&amp; existingTiddler.hasField(\&quot;plugin-type\&quot;) &amp;&amp; existingTiddler.hasField(\&quot;version\&quot;)) {\n\t\t\t\t// Reject the incoming plugin by blanking all its fields\n\t\t\t\tif($tw.utils.checkVersions(existingTiddler.fields.version,incomingTiddler.version)) {\n\t\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Suppressed/Version\&quot;,{variables: {incoming: incomingTiddler.version, existing: existingTiddler.fields.version}});\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif(incomingTiddler &amp;&amp; incomingTiddler[\&quot;plugin-type\&quot;]) {\n\t\t\t// Check whether the plugin is on the blocked list\n\t\t\tvar blockInfo = BLOCKED_PLUGINS[title];\n\t\t\tif(blockInfo) {\n\t\t\t\tif(blockInfo.versions.indexOf(\&quot;*\&quot;) !== -1 || (incomingTiddler.version &amp;&amp; blockInfo.versions.indexOf(incomingTiddler.version) !== -1)) {\n\t\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Suppressed/Incompatible\&quot;);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/upgraders/plugins.js\ntype: application/javascript\nmodule-type: upgrader\n\nUpgrader module that checks that plugins are newer than any already installed version\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar UPGRADE_LIBRARY_TITLE = \&quot;$:/UpgradeLibrary\&quot;;\n\nvar BLOCKED_PLUGINS = {\n\t\&quot;$:/themes/tiddlywiki/stickytitles\&quot;: {\n\t\tversions: [\&quot;*\&quot;]\n\t},\n\t\&quot;$:/plugins/tiddlywiki/fullscreen\&quot;: {\n\t\tversions: [\&quot;*\&quot;]\n\t}\n};\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {},\n\t\tupgradeLibrary,\n\t\tgetLibraryTiddler = function(title) {\n\t\t\tif(!upgradeLibrary) {\n\t\t\t\tupgradeLibrary = wiki.getTiddlerData(UPGRADE_LIBRARY_TITLE,{});\n\t\t\t\tupgradeLibrary.tiddlers = upgradeLibrary.tiddlers || {};\n\t\t\t}\n\t\t\treturn upgradeLibrary.tiddlers[title];\n\t\t};\n\n\t// Go through all the incoming tiddlers\n\t$tw.utils.each(titles,function(title) {\n\t\tvar incomingTiddler = tiddlers[title];\n\t\t// Check if we're dealing with a plugin\n\t\tif(incomingTiddler &amp;&amp; incomingTiddler[\&quot;plugin-type\&quot;] &amp;&amp; incomingTiddler.version) {\n\t\t\t// Upgrade the incoming plugin if we've got a newer version in the upgrade library\n\t\t\tvar libraryTiddler = getLibraryTiddler(title);\n\t\t\tif(libraryTiddler &amp;&amp; libraryTiddler[\&quot;plugin-type\&quot;] &amp;&amp; libraryTiddler.version) {\n\t\t\t\tif($tw.utils.checkVersions(libraryTiddler.version,incomingTiddler.version)) {\n\t\t\t\t\ttiddlers[title] = libraryTiddler;\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Upgraded\&quot;,{variables: {incoming: incomingTiddler.version, upgraded: libraryTiddler.version}});\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t\t// Suppress the incoming plugin if it is older than the currently installed one\n\t\t\tvar existingTiddler = wiki.getTiddler(title);\n\t\t\tif(existingTiddler &amp;&amp; existingTiddler.hasField(\&quot;plugin-type\&quot;) &amp;&amp; existingTiddler.hasField(\&quot;version\&quot;)) {\n\t\t\t\t// Reject the incoming plugin by blanking all its fields\n\t\t\t\tif($tw.utils.checkVersions(existingTiddler.fields.version,incomingTiddler.version)) {\n\t\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Suppressed/Version\&quot;,{variables: {incoming: incomingTiddler.version, existing: existingTiddler.fields.version}});\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif(incomingTiddler &amp;&amp; incomingTiddler[\&quot;plugin-type\&quot;]) {\n\t\t\t// Check whether the plugin is on the blocked list\n\t\t\tvar blockInfo = BLOCKED_PLUGINS[title];\n\t\t\tif(blockInfo) {\n\t\t\t\tif(blockInfo.versions.indexOf(\&quot;*\&quot;) !== -1 || (incomingTiddler.version &amp;&amp; blockInfo.versions.indexOf(incomingTiddler.version) !== -1)) {\n\t\t\t\t\ttiddlers[title] = Object.create(null);\n\t\t\t\t\tmessages[title] = $tw.language.getString(\&quot;Import/Upgrader/Plugins/Suppressed/Incompatible\&quot;);\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n};\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/upgraders/plugins.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;upgrader&quot;
@@ -4682,6 +4682,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/AdvancedSearch&quot;: {
             &quot;title&quot;: &quot;$:/AdvancedSearch&quot;,
+            &quot;icon&quot;: &quot;$:/core/images/advanced-search-button&quot;,
             &quot;text&quot;: &quot;&lt;div class=\&quot;tc-advanced-search\&quot;&gt;\n&lt;&lt;tabs \&quot;[all[shadows+tiddlers]tag[$:/tags/AdvancedSearch]!has[draft.of]]\&quot; \&quot;$:/core/ui/AdvancedSearch/System\&quot;&gt;&gt;\n&lt;/div&gt;\n&quot;
         },
         &quot;$:/core/ui/AlertTemplate&quot;: {
@@ -4820,6 +4821,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/ControlPanel&quot;: {
             &quot;title&quot;: &quot;$:/ControlPanel&quot;,
+            &quot;icon&quot;: &quot;$:/core/images/options-button&quot;,
             &quot;text&quot;: &quot;&lt;div class=\&quot;tc-control-panel\&quot;&gt;\n&lt;&lt;tabs \&quot;[all[shadows+tiddlers]tag[$:/tags/ControlPanel]!has[draft.of]]\&quot; \&quot;$:/core/ui/ControlPanel/Info\&quot;&gt;&gt;\n&lt;/div&gt;\n&quot;
         },
         &quot;$:/core/ui/DefaultSearchResultList&quot;: {
@@ -5225,6 +5227,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/TagManager&quot;: {
             &quot;title&quot;: &quot;$:/TagManager&quot;,
+            &quot;icon&quot;: &quot;$:/core/images/tag-button&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/TagManager/\n\\define iconEditorTab(type)\n&lt;$list filter=\&quot;[all[shadows+tiddlers]is[image]] [all[shadows+tiddlers]tag[$:/tags/Image]] -[type[application/pdf]] +[sort[title]] +[$type$is[system]]\&quot;&gt;\n&lt;$link to={{!!title}}&gt;\n&lt;$transclude/&gt; &lt;$view field=\&quot;title\&quot;/&gt;\n&lt;/$link&gt;\n&lt;/$list&gt;\n\\end\n\\define iconEditor(title)\n&lt;div class=\&quot;tc-drop-down-wrapper\&quot;&gt;\n&lt;$button popup=&lt;&lt;qualify \&quot;$:/state/popup/icon/$title$\&quot;&gt;&gt; class=\&quot;tc-btn-invisible tc-btn-dropdown\&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;\n&lt;$reveal state=&lt;&lt;qualify \&quot;$:/state/popup/icon/$title$\&quot;&gt;&gt; type=\&quot;popup\&quot; position=\&quot;belowleft\&quot; text=\&quot;\&quot; default=\&quot;\&quot;&gt;\n&lt;div class=\&quot;tc-drop-down\&quot;&gt;\n&lt;$linkcatcher to=\&quot;$title$!!icon\&quot;&gt;\n&lt;&lt;iconEditorTab type:\&quot;!\&quot;&gt;&gt;\n&lt;hr/&gt;\n&lt;&lt;iconEditorTab type:\&quot;\&quot;&gt;&gt;\n&lt;/$linkcatcher&gt;\n&lt;/div&gt;\n&lt;/$reveal&gt;\n&lt;/div&gt;\n\\end\n\\define qualifyTitle(title)\n$title$$(currentTiddler)$\n\\end\n\\define toggleButton(state)\n&lt;$reveal state=\&quot;$state$\&quot; type=\&quot;match\&quot; text=\&quot;closed\&quot; default=\&quot;closed\&quot;&gt;\n&lt;$button set=\&quot;$state$\&quot; setTo=\&quot;open\&quot; class=\&quot;tc-btn-invisible tc-btn-dropdown\&quot; selectedClass=\&quot;tc-selected\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n&lt;$reveal state=\&quot;$state$\&quot; type=\&quot;match\&quot; text=\&quot;open\&quot; default=\&quot;closed\&quot;&gt;\n&lt;$button set=\&quot;$state$\&quot; setTo=\&quot;closed\&quot; class=\&quot;tc-btn-invisible tc-btn-dropdown\&quot; selectedClass=\&quot;tc-selected\&quot;&gt;\n{{$:/core/images/info-button}}\n&lt;/$button&gt;\n&lt;/$reveal&gt;\n\\end\n&lt;table class=\&quot;tc-tag-manager-table\&quot;&gt;\n&lt;tbody&gt;\n&lt;tr&gt;\n&lt;th&gt;&lt;&lt;lingo Colour/Heading&gt;&gt;&lt;/th&gt;\n&lt;th class=\&quot;tc-tag-manager-tag\&quot;&gt;&lt;&lt;lingo Tag/Heading&gt;&gt;&lt;/th&gt;\n&lt;th&gt;&lt;&lt;lingo Icon/Heading&gt;&gt;&lt;/th&gt;\n&lt;th&gt;&lt;&lt;lingo Info/Heading&gt;&gt;&lt;/th&gt;\n&lt;/tr&gt;\n&lt;$list filter=\&quot;[tags[]!is[system]sort[title]]\&quot;&gt;\n&lt;tr&gt;\n&lt;td&gt;&lt;$edit-text field=\&quot;color\&quot; tag=\&quot;input\&quot; type=\&quot;color\&quot;/&gt;&lt;/td&gt;\n&lt;td&gt;&lt;$transclude tiddler=\&quot;$:/core/ui/TagTemplate\&quot;/&gt;&lt;/td&gt;\n&lt;td&gt;\n&lt;$macrocall $name=\&quot;iconEditor\&quot; title={{!!title}}/&gt;\n&lt;/td&gt;\n&lt;td&gt;\n&lt;$macrocall $name=\&quot;toggleButton\&quot; state=&lt;&lt;qualifyTitle \&quot;$:/state/tag-manager/\&quot;&gt;&gt; /&gt; \n&lt;/td&gt;\n&lt;/tr&gt;\n&lt;tr&gt;\n&lt;td&gt;&lt;/td&gt;\n&lt;td&gt;\n&lt;$reveal state=&lt;&lt;qualifyTitle \&quot;$:/state/tag-manager/\&quot;&gt;&gt; type=\&quot;match\&quot; text=\&quot;open\&quot; default=\&quot;\&quot;&gt;\n&lt;table&gt;\n&lt;tbody&gt;\n&lt;tr&gt;&lt;td&gt;&lt;&lt;lingo Colour/Heading&gt;&gt;&lt;/td&gt;&lt;td&gt;&lt;$edit-text field=\&quot;color\&quot; tag=\&quot;input\&quot; type=\&quot;text\&quot; size=\&quot;9\&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;\n&lt;tr&gt;&lt;td&gt;&lt;&lt;lingo Icon/Heading&gt;&gt;&lt;/td&gt;&lt;td&gt;&lt;$edit-text field=\&quot;icon\&quot; tag=\&quot;input\&quot; size=\&quot;45\&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&lt;/$reveal&gt;\n&lt;/td&gt;\n&lt;td&gt;&lt;/td&gt;\n&lt;td&gt;&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/$list&gt;\n&lt;/tbody&gt;\n&lt;/table&gt;\n&quot;
         },
         &quot;$:/core/ui/TagTemplate&quot;: {
@@ -27261,17 +27264,6 @@ $src$
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Experimental theme with titles that stick to the top of the window" name="Sticky Titles" plugin-type="theme" title="$:/themes/tiddlywiki/stickytitles" type="application/json" version="5.1.8-prerelease">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/themes/tiddlywiki/stickytitles/styles.tid&quot;: {
-            &quot;title&quot;: &quot;$:/themes/tiddlywiki/stickytitles/styles.tid&quot;,
-            &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-tiddler-title {\n  position: -webkit-sticky;\n  position: -moz-sticky;\n  position: -o-sticky;\n  position: -ms-sticky;\n  position: sticky;\n  top: 0px;\n  background: &lt;&lt;colour tiddler-background&gt;&gt;;\n  z-index: 500;\n}\n&quot;
-        }
-    }
-}</pre>
-</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="A basic default theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.8-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -33724,10 +33716,10 @@ Retaining the content when hidden can give poor performance since the hidden con
 
 Here's a simple example of showing and hiding content with buttons:
 
-&lt;&lt;wikitext-example-without-html '&lt;$button set=&quot;$:/SampleRevealState1&quot; setTo=&quot;show&quot;&gt;Show me&lt;/$button&gt;
-&lt;$button set=&quot;$:/SampleRevealState1&quot; setTo=&quot;hide&quot;&gt;Hide me&lt;/$button&gt;
+&lt;&lt;wikitext-example-without-html '&lt;$button set=&quot;$:/state/SampleReveal1&quot; setTo=&quot;show&quot;&gt;Show me&lt;/$button&gt;
+&lt;$button set=&quot;$:/state/SampleReveal1&quot; setTo=&quot;hide&quot;&gt;Hide me&lt;/$button&gt;
 
-&lt;$reveal type=&quot;match&quot; state=&quot;$:/SampleRevealState1&quot; text=&quot;show&quot;&gt;
+&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/SampleReveal1&quot; text=&quot;show&quot;&gt;
 
 ! This is the revealed content
 And this is some text
@@ -33738,14 +33730,14 @@ And this is some text
 
 A slider appears as a single button that can be used to toggle the display of the contained content.
 
-&lt;&lt;wikitext-example-without-html '&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/SampleRevealState2&quot; text=&quot;show&quot;&gt;
+&lt;&lt;wikitext-example-without-html '&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/SampleReveal2&quot; text=&quot;show&quot;&gt;
 
-&lt;$button set=&quot;$:/SampleRevealState2&quot; setTo=&quot;show&quot;&gt;Show me&lt;/$button&gt;
+&lt;$button set=&quot;$:/state/SampleReveal2&quot; setTo=&quot;show&quot;&gt;Show me&lt;/$button&gt;
 
 &lt;/$reveal&gt;
-&lt;$reveal type=&quot;match&quot; state=&quot;$:/SampleRevealState2&quot; text=&quot;show&quot;&gt;
+&lt;$reveal type=&quot;match&quot; state=&quot;$:/state/SampleReveal2&quot; text=&quot;show&quot;&gt;
 
-&lt;$button set=&quot;$:/SampleRevealState2&quot; setTo=&quot;hide&quot;&gt;Hide me&lt;/$button&gt;
+&lt;$button set=&quot;$:/state/SampleReveal2&quot; setTo=&quot;hide&quot;&gt;Hide me&lt;/$button&gt;
 
 ! This is the revealed content
 And this is some text
