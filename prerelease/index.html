@@ -14624,7 +14624,7 @@ $src$
         },
         &quot;GettingStarted&quot;: {
             &quot;title&quot;: &quot;GettingStarted&quot;,
-            &quot;text&quot;: &quot;Bienvenue sur TiddlyWiki, un carnet de notes non linéaire pour le Web.\n\nCommencez par vérifier que vos modifications peuvent être sauvegardées\ncorrectement — reportez-vous aux instructions détaillées sur http://tiddlywiki.com/.\n\nEnsuite, essayez de :\n\n* Créer de nouveaux tiddlers à l'aide du bouton « plus » de la barre latérale\n* Visiter le [[panneau de contrôle|$:/ControlPanel]] à l'aide du bouton « engrenage » de la barre latérale, afin de personnaliser votre wiki\n** Faire en sorte que ce message n'apparaisse plus en changeant les tiddlers affichés par défaut depuis l'onglet //Fondamentaux//\n* Sauvegarder vos modifications à l'aide du bouton « Télécharger » de la barre latérale\n* En savoir plus sur [[WikiText|http://tiddlywiki.com/static/WikiText.html]]\n&quot;
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Basics/\nBienvenue sur ~TiddlyWiki et parmi la communauté ~TiddlyWiki.\n\nCommencez par vérifier que vos modifications peuvent être sauvegardées\ncorrectement — reportez-vous aux [[instructions détaillées|http://tiddlywiki.com/languages/fr-FR/index.html#Saving]] sur http://tiddlywiki.com/.\n\n!! Personnalisez ce ~TiddlyWiki\n\n|&lt;$link to=\&quot;$:/SiteTitle\&quot;&gt;&lt;&lt;lingo Title/Prompt&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/SiteTitle\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;$link to=\&quot;$:/SiteSubtitle\&quot;&gt;&lt;&lt;lingo Subtitle/Prompt&gt;&gt;&lt;/$link&gt; |&lt;$edit-text tiddler=\&quot;$:/SiteSubtitle\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;$link to=\&quot;$:/DefaultTiddlers\&quot;&gt;&lt;&lt;lingo DefaultTiddlers/Prompt&gt;&gt;&lt;/$link&gt; |&lt;&lt;lingo DefaultTiddlers/TopHint&gt;&gt;&lt;br&gt; &lt;$edit-text tag=\&quot;textarea\&quot; tiddler=\&quot;$:/DefaultTiddlers\&quot;/&gt;&lt;br&gt;//&lt;&lt;lingo DefaultTiddlers/BottomHint&gt;&gt;// |\n\nRendez-vous dans le [[panneau de contrôle|$:/ControlPanel]] pour plus d'options.\n&quot;
         },
         &quot;$:/language/Help/build&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/build&quot;,
@@ -27649,7 +27649,7 @@ Alert tiddlers should have the following fields:
 
 Small audio files can be embedded directly within TiddlyWiki. Embedding isn't suitable for large files (over a few hundred kilobytes) because it increases the size of the TiddlyWiki file.
 
-For example, the tiddler [[TiddlyWiki.mp3]] contains an MP3 recording of the word &quot;TiddlyWiki&quot;. Viewing the tiddler directly should show an audio player that allows playback.
+For example, the tiddler [[TiddlyWiki.mp3]] contains an MP3 recording of the word &quot;TiddlyWiki&quot;. If you visit that tiddler, you should see an audio player that will play back the recording.
 
 You can also transclude audio files. For example:
 
@@ -27657,7 +27657,7 @@ You can also transclude audio files. For example:
 
 ! External Audio
 
-External audio tiddlers use the ''_canonical_uri'' field to point to an external audio file/stream, and have a block ''text'' field. This reduces their size considerably, and still allows for playback.
+External audio tiddlers use the ''_canonical_uri'' field to point to an external audio file/stream, and have their ''text'' field blocked. This reduces their size considerably, but still allows for playback.
 
 For example, the tiddler [[Caruso - Ave Maria]] points to an online audio recording hosted on http://archive.org:
 
@@ -27889,7 +27889,7 @@ The content of the `&lt;$button&gt;` widget is displayed within the button.
 ''Tip:'' Set ''class'' to `tc-btn-invisble tc-tiddlylink` to have a button look like an internal link.</pre>
 </div>
 <div created="20130828185300000" modified="20130828185300000" tags="Definitions" title="CamelCase">
-<pre>CamelCase is formed by taking a phrase, capitalising each initial letter and smashing them together to form a portmanteau word. Most wikis use CamelCase to signal phrases that should be automatically linked.
+<pre>CamelCase is formed by taking a phrase, capitalising the initial letter of each word, and smashing the words together to form a portmanteau word. Most wikis use CamelCase to signal phrases that should automatically become links.
 </pre>
 </div>
 <div _canonical_uri="https://archive.org/download/Caruso_part1/Caruso-AveMaria.mp3" title="Caruso - Ave Maria" type="audio/mp3">
@@ -28302,7 +28302,7 @@ The variable `exportFilter` contains a filter defining which tiddlers should be 
 <div created="20140904140300000" modified="20141010093319359" tags="[[Working with TiddlyWiki]]" title="Creating and editing tiddlers" type="text/vnd.tiddlywiki">
 <pre>! Creating tiddlers
 
-You create a tiddler either by clicking the {{$:/core/images/new-button}} button in the sidebar, or by clicking on a link to a missing tiddler (links to missing tiddlers will appear in [[blue italic text]]).
+You create a tiddler either by clicking the {{$:/core/images/new-button}} button in the sidebar, or by clicking on a link to a missing tiddler. Links to missing tiddlers are shown in [[blue italics]].
 
 See also:
 
@@ -28310,25 +28310,25 @@ See also:
 
 ! Editing tiddlers
 
-You can edit an existing tiddler by clicking the {{$:/core/images/edit-button}} button at the top right of the tiddler.
+To edit an existing tiddler, click the {{$:/core/images/edit-button}} button at the top right of the tiddler.
 
-! The ~EditTemplate
+!! Draft mode
 
-Creating new tiddlers and editing existing tiddlers both open up the ~EditTemplate. This is your control panel for modifying the tiddler in different ways. The ~EditTemplate has several areas:
+When you create a new tiddler or edit an existing one, the tiddler will go into draft mode. This presents a control panel for modifying the tiddler in various ways. It has several parts, from top to bottom:
 
-*''The title editor'' Use this to edit the title of the tiddler
-*''The tag editor'' Use this to add or remove tags to the tiddler. Type a tag name and either select a tag from the dropdown list or finish typing to create a new tag. Then click the 'add' button to add it to the tiddler. Delete tags from a tiddler by clicking the 'x' on the tag pill
-*''The text editor'' Use this to add content to the tiddler. You can also use the preview button to preview changes to the tiddler text
-*''The type editor'' Use this when you have a specific type of content that needs to be displayed in a different way, such as an image. See ContentType for a list of possible content types. The default is text/vnd.tiddlywiki)
-*''The field editor'' Use this to add fields to the tiddler. For example, you can use a [[list field|ListField]] to display the order of tiddlers tagged with the current tiddler's title in ways that are not alphabetical
+*''The title field'' - Use this to change the title of the tiddler
+*''The tag selector'' - Use this to add or remove tags. As you type a tag name in the box, a dropdown list will show you any existing tags that match. You can pick from this list or create a completely new tag. Then click the ''add'' button to add the tag to the tiddler. Each tag is shown as a coloured pill. Clikc the &quot;×&quot; on a pill to remove that tag
+*''The text area'' - Use this to edit the main content of the tiddler. Click the ''show preview'' button to see what your changes will look like
+*''The type selector'' - Use this when a tiddler needs to be displayed in a special way, such as an image. See ContentType for a list of the options. The default is `text/vnd.tiddlywiki`, which means the tiddler contains WikiText
+*''The field selector'' - Use this to add or remove fields on the tiddler. For example, if you are editing a tiddler that's being used to tag other tiddlers, you can add a [[''list'' field|ListField]] to change the order in which those tiddlers will be listed
 
 ! Save, cancel or delete
 
-When you are finished editing, select the desired button at the top of the ~EditTemplate:
+When you have finished editing, click a button at the top right of the tiddler:
 
-*The 'done' button ({{$:/core/images/done-button}}) saves your changes and returns to view mode.
-*The 'cancel' button ({{$:/core/images/cancel-button}}) cancels the changes and returns to view mode.
-*The 'delete' button ({{$:/core/images/delete-button}}) deletes the entire tiddler.
+*The ''save'' button ({{$:/core/images/done-button}}) saves your changes and leaves draft mode.
+*The ''cancel'' button ({{$:/core/images/cancel-button}}) discards your changes (after asking you to confirm) and leaves draft mode.
+*The ''delete'' button ({{$:/core/images/delete-button}}) deletes the entire tiddler (after asking you to confirm).
 </pre>
 </div>
 <div created="20141010093214683" modified="20141125123700243" tags="[[Working with TiddlyWiki]]" title="Creating journal tiddlers" type="text/vnd.tiddlywiki">
@@ -28336,35 +28336,32 @@ When you are finished editing, select the desired button at the top of the ~Edit
 
 Journal tiddlers are tiddlers that use a date and/or time as their title. They are typically used as a quick way to record time-stamped information.
 
-Additional tags on a journal tiddler can be used to link it to other tiddlers, helping to establish the relationships between items of information.
+You can use additional tags on a journal tiddler to link it to other tiddlers, helping to establish the relationships between items of information.
 
-For example, a journal tiddler called &quot;10th October 2014&quot; might be used to record thoughts and information captured on that particular day. The tags &quot;Shopping&quot; and &quot;London&quot; might be used to indicate that the entry concerns shopping in London.
+For example, you might use a journal tiddler called ''10th October 2014'' to record thoughts and information captured on that particular day. The tags ''Shopping'' and ''London'' might be used to indicate that the entry concerns shopping in London.
 
 ! Creating a journal tiddler
 
-The easiest way to create a journal tiddler is to use the ''new journal'' button in the tools tab of the sidebar. If you find yourself often using the button then click the checkbox to display the button in the page control toolbar where it is more easily accessible.
+The easiest way to create a journal tiddler is to use the ''new journal'' button in the ''Tools'' tab of the sidebar. If you find yourself often using the button, click the checkbox next to it to make the button available just above the search box.
 
-The new journal button creates the journal tiddler as a blank tiddler with the tag &quot;Journal&quot; and a title derived from todays date. If there is already an existing journal tiddler then it is opened for editing.
+The ''new journal'' button creates a journal entry as a blank tiddler with the tag ''Journal'' and a title derived from today's date. If a journal tiddler with that title already exists, then this is opened for editing.
 
 ! Creating a tagged journal tiddler
 
-A common sequence of actions is creating (or re-opening) todays journal and adding a tag for the current tiddler. This can be done with the ''new journal here'' button in the tiddler toolbar (you can find this button in the tools tab of the tiddler info panel).
+A common sequence of actions is to create (or reopen) today's journal entry and tag it with the title of another tiddler. This can be done with the ''new journal here'' button in the other tiddler's toolbar. You can find this button in the ''Tools'' tab of the tiddler's InfoPanel.
 
-For example, one might be reviewing a tiddler called &quot;Oxford Street&quot; and realise that it is relevant for planning the shopping trip. Clicking the ''new journal here'' button on the &quot;Oxford Street&quot; tiddler will bring up a journal tagged with &quot;Oxford Street&quot;.
+For example, you might be reviewing a tiddler called ''Oxford Street'' and realise that it's relevant for planning your shopping trip. Click the ''new journal here'' button on the ''Oxford Street'' tiddler to bring up a journal entry tagged with ''Oxford Street''.
 
 ! Customising journal tiddlers
 
-Visit the control panel Info/Basics tab to configure new journal creation:
+To configure how new journal entries are created, visit the ''Basics'' tab under ''Info'' in the [[control panel|$:/ControlPanel]]:
 
-* &quot;Title of new journal tiddlers&quot; specifies the naming of journal tiddlers as a [[date format string|DateFormat]]. The default setting of &quot;DDth MMM YYYY&quot; causes new journals to have titles of the form &quot;10th October 2014&quot;
-* &quot;Tags for new journal tiddlers&quot; specifies one or more optional tags that are automatically applied to new journal tiddlers. Multiple tags should be separated with spaces. Tags containing spaces should be surrounded by double square brackes. For example: `Journal [[Multi-word tag]]`
+* &quot;Title of new journal tiddlers&quot; specifies how these tiddlers should be named, as a [[date format string|DateFormat]]. The default setting of `DDth MMM YYYY` causes new entries to have titles of the form &quot;10th October 2014&quot;
+* &quot;Tags for new journal tiddlers&quot; specifies tags that will automatically appear on new journal entries. Type a space between each tag and the next. If any of the tags //contains// a space, place double square brackets around it. For example: `Journal [[Summer vacation]]`
 
-One useful hint is to use a title format such as `YYYY-0MM-0DD at 0hhh0mm'0ss''` which causes the time (including seconds) to be included in the journal title. This means that a new, separate journal tiddler will be created each time the button is clicked.
+Hint: if you want to create a separate journal tiddler whenever you click ''new journal'' (even if you do this several times in the same day), you can include the clock time in the title format. Specify something like `YYYY-0MM-0DD at 0hhh0mm'0ss''` as the date format.
 
-Another useful trick is to include the string `$(currentTiddler)$` in the journal title format string which causes the title of the current tiddler to be included. This means that a separate journal tiddler will be created each time &quot;new journal here&quot; is used on a different tiddler.
-
-
-
+Another useful trick is to include `$(currentTiddler)$` somewhere in the title format. This means that if you click ''new journal here'' on several different tiddlers, the title of each of those tiddlers will form part of the name of the resulting journal entries.
 </pre>
 </div>
 <div created="20140214215718317" modified="20140919161514318" tags="Learning" title="Creating SubStories" type="text/vnd.tiddlywiki">
@@ -28666,7 +28663,7 @@ Technical abbreviations should be in upper case and omit periods:
 * ''Titles'' of tiddlers should usually be typed as links
 * ''Tag names'' should usually be typed as links
 * ''Field names'' should be typed in bold: e.g. ''title'', ''tags'', ''caption''
-* ''Tab names'' should be typed in bold: e.g. 
+* ''Tab names'' should be typed in bold: e.g. ''Open'', ''Appearance''
 
 !! Headings
 
@@ -28976,7 +28973,7 @@ External images are used in the browser. They can be created by the Node.js conf
 
 ! What is an External Image
 
-An external image is an ordinary image tiddler that has a ''_canonical_uri'' field containing the URI of the image. The URI can be absoluate or relative to the HTML document. If the canonical URI is provided then the ''text'' field of the tiddler is ignored and so should be omitted.
+An external image is an ordinary image tiddler that has a ''_canonical_uri'' field containing the URI of the image. The URI can be absolute or relative to the HTML document. If the canonical URI is provided then the ''text'' field of the tiddler is ignored and so should be omitted.
 
 ! Manually Creating External Images
 
@@ -29850,19 +29847,19 @@ At its simplest, WikiText lets you use familiar word-processing features like bo
 The ''quick'' brown ~~flea~~ fox //jumps// over the `lazy` dog
 ```
 
-Displays as:
+… displays as:
 
 The ''quick'' brown ~~flea~~ fox //jumps// over the `lazy` dog
 
 ! Working with Tiddlers
 
-WikiText allows you to link to tiddlers using double square brackets, or taking advantage of the automatic linking of CamelCase words:
+In WikiText, you can link to tiddlers using double square brackets, or by taking advantage of the automatic linking of CamelCase words:
 
 ```
 This is a link to HelloThere, and one to [[History of TiddlyWiki]]
 ```
 
-Displays as:
+… displays as:
 
 This is a link to HelloThere, and one to [[History of TiddlyWiki]]
 
@@ -29870,7 +29867,7 @@ This is a link to HelloThere, and one to [[History of TiddlyWiki]]
 
 Macros let you package repetitive fragments of WikiText so that you can easily reuse them.
 
-For example, here is the definition of a macro that generates a YouTube video URL from its unique identifier:
+For example, here is the definition of a macro that generates a ~YouTube video URL from its unique identifier:
 
 ```
 \define youtube(video)
@@ -31651,21 +31648,20 @@ In the format column:
 </pre>
 </div>
 <div created="20140908092600000" modified="20141010184954582" tags="[[Working with TiddlyWiki]]" title="Navigating between open tiddlers" type="text/vnd.tiddlywiki">
-<pre>In the default 'classic' storyview mode, open tiddlers are displayed in a vertical column called the 'story river.' There are a number of ways you can navigate the story river - that is, how you can jump back and forth between the open tiddlers.
+<pre>In the default &quot;classic&quot; storyview mode, open tiddlers are displayed in a vertical column called the &quot;story river&quot;. There are a number of ways you can navigate the story river - that is, how you can jump back and forth between the open tiddlers.
 
-* One obvious way is to ''scroll the page up and down'' using the story river scrollbar to the right.
+* The best approach is to ''use the Open tab'' in the sidebar to click on the open tiddler to which you wish to navigate.
+
+** The ''Open'' tab contains a list of all the open tiddlers. You can click on any tiddler in the list to jump to it, or click the &quot;×&quot; next to a tiddler link to close it. There is also a handy ''close all'' button at the bottom of the list of open tiddlers.
+
+* Another way is to simply ''scroll the page up and down'' using the story river scrollbar to the right.
 
 ** Note that when both the story river and the sidebar extend below the visible screen, there will be //two// scrollbars. The outer or far-right scrollbar controls the story river. The inner scrollbar controls the sidebar.
 
-* One clunky way that many new users attempt is to ''close tiddlers one by one'' until they get to the tiddler they are looking for. 
-
+* A clunky approach that many new users try is to ''close tiddlers one by one'' until they get to the tiddler they are looking for. 
 ** Closing any tiddler at the top or in the middle of the story river will cause all the tiddlers below it to slide up the river. The tiddler immediately below the tiddler you closed will slide up to take its place.
 
 ** Closing the bottom tiddler will close it and the bottom of the tiddler above it will come into view.
-
-* The best approach is to ''use the open tab'' in the sidebar to click on the open tiddler to which you wish to navigate.
-
-** The 'Open' tab contains a list of all the open tiddlers. You can click on any tiddler in the list to jump to it, or click the 'x' next to a tiddler link to close it. There is also a handy 'close all' button at the bottom of the list of open tiddlers.
 </pre>
 </div>
 <div caption="navigator" created="20131024141900000" modified="20140226194810214" tags="Widgets" title="NavigatorWidget" type="text/vnd.tiddlywiki">
@@ -34465,7 +34461,7 @@ Unusually, TiddlyWiki is also a SingleFileApplication.
 * Create a modal wizard (also known as a lightbox) - see SampleWizard
 * Create a slideshow presentation
 * Set up an entire local or online knowledgebase, with a central ~TiddlyWiki file linking to other ~TiddlyWiki files (http://recursos.giffmex.org is a Spanish online example of this)
-* Set up a data visualization using tiddlers as data (see the visualizations at http://tiddlywiki.com/plugins/tiddlywiki/d3/index.html)
+* Set up a data visualisation using tiddlers as data (see the visualisations at http://tiddlywiki.com/plugins/tiddlywiki/d3/index.html)
 </pre>
 </div>
 <div created="20140502142900000" modified="20140502142900000" tags="Mechanisms" title="StartupMechanism" type="text/vnd.tiddlywiki">
@@ -34908,12 +34904,12 @@ Here are some examples of the tabs macro:
 
 Tagging tiddlers gives you numerous additional ways to view, navigate and organise your information:
 
-* The coloured tag pills on a tagged tiddler gives you links to all the other tiddlers with the same tag, as well as to the tiddler representing the tag itself.
-* The tagging tab in the tiddler info panel (accessed by clicking the {{$:/core/images/info-button}} button) gives you links to all the tiddlers tagged with the title of the current tiddler.
+* The coloured tag pills on a tagged tiddler give you links to all the other tiddlers with the same tag, as well as to the tiddler representing the tag itself.
+* The ''Tagging'' tab in the tiddler info panel (accessed by clicking the {{$:/core/images/info-button}} button) gives you links to all the tiddlers tagged with the title of the current tiddler.
 
-* You can use the tags tab in the 'More' sidebar tab to view all your tags and access your tagged tiddlers.
+* You can use the tags tab in the ''More'' sidebar tab to view all your tags and access your tagged tiddlers.
 
-* You can use [[filters|Filters]] to create lists of tiddlers based on tags, then display whichever combination of tiddler fields you wish. For example, you can create a list that shows both the title and the text of all tiddlers tagged 'Glossary.' Such lists can be formatted however you wish: for example: bulleted, numbered, or comma-separated.
+* You can use [[filters|Filters]] to create lists of tiddlers based on tags, then display whichever combination of tiddler fields you wish. For example, you can create a list that shows both the title and the text of all tiddlers tagged ''Glossary''. Such lists can be formatted however you wish: for example: bulleted, numbered, or comma-separated.
 
 * System tags can be used to customise the layout of tiddlers and the entire ~TiddlyWiki page. See [[Page and tiddler layout customisation]] for instructions.
 
@@ -34921,18 +34917,18 @@ There are two more things you can do with tags:
 
 ! Assign colours and icons to a tag
 
-You can use the [[tag manager|$:/TagManager]], found in the 'Tags' tab of the 'More' sidebar tab, to assign background colours and/or icons to a tag.
+You can use the [[tag manager|$:/TagManager]], found in the ''Tags'' tab of the ''More'' sidebar tab, to assign background colours and/or icons to a tag.
 
 * Colours can be assigned to a tag either by specifying the CSS colour value in the upper window in the colour column, or choosing a colour from the dropdown colour picker provided.
 * Icons can be assigned to a tag by clicking the {{$:/core/images/down-arrow}} button in the icon column and choosing one of the icons listed.
 
 ! Use list fields to adjust the ordering of tag lists
 
-* If you want to create a list of tagged tiddlers with a [[filter|Filters]], but want the tiddlers to be listed in a special order rather than the default alphabetical order, you can create a field called 'list' in the tag tiddler, and add the titles of the tiddlers to the field in the order you wish. ~TiddlyWiki will order lists of tagged tiddlers in the following order of priority:
+* If you want to create a list of tagged tiddlers with a [[filter|Filters]], but want the tiddlers to be listed in a special order rather than the default alphabetical order, you can create a field called ''list'' in the tag tiddler, and add the titles of the tiddlers to the field in the order you wish. ~TiddlyWiki will order lists of tagged tiddlers in the following order of priority:
 ** First, any tiddlers that are listed in the ListField of the tag tiddler are placed into a new list in the same order
 ** Second, any unplaced tiddlers that have the field ''list-before'' are placed before the tiddler specified in the field
 *** (if the ''list-before'' field is empty then the unplaced tiddler is placed at the start of the list)
-** Third, if any unplaced tiddlers have the field ''list-after'' then they placed immediately after the tiddler specified in the field
+** Third, if any unplaced tiddlers have the field ''list-after'' then they are placed immediately after the tiddler specified in the field
 ** Finally, any remaining unplaced tiddlers are placed at the end of the list
 </pre>
 </div>
@@ -35002,7 +34998,7 @@ See [[Transclusion with Templates]] for details.
 # With ~TiddlyWiki you can organise your notes your way, not their way. Your notes conform to your way of thinking rather than being forced into a hierarchical straightjacket of notebooks and tabs.
 # ~TiddlyWiki's nonlinear approach will actually make you think about your information in new and helpful ways.
 # Finding your notes in ~TiddlyWiki is lightning fast
-# There are many ways to customize and adapt every aspect of ~TiddlyWiki
+# There are many ways to customise and adapt every aspect of ~TiddlyWiki
 # ~TiddlyWiki is free and is compatible with all platforms. Any web browser will open it. You don't need to purchase an expensive program or pay a subscription fee to use it.
 # ~TiddlyWiki files promote the free sharing of information. There are many ways you can share your information from ~TiddlyWiki.
 # With ~TiddlyWiki, your information is yours, and you store it where you want to - on your device, on a USB stick, in Dropbox, on your server.
@@ -35101,7 +35097,7 @@ Backup your data!
 
 TiddlyWiki is a very flexible, customisable system that puts you firmly in charge of your own data. Every care is taken in TiddlyWiki's development to ensure that it is a safe place to preserve your most valuable data but the ultimate responsibility to reduce the risk of data loss falls to users.
 
-The best way to make sure that your data is safe is to practice a rigorous system of backups:
+The best way to make sure that your data is safe is to practise a rigorous system of backups:
 
 * Consider using services like Dropbox to continuously back up your personal data to the cloud. (Dropbox [[has a neat feature|https://www.dropbox.com/help/11]] whereby they keep track of previous versions of files)
 * Retain backups before upgrading to a new version of TiddlyWiki
@@ -36038,7 +36034,7 @@ When upgrading, please remember the [[The First Rule of Using TiddlyWiki]]:
 
 This process will work on most desktop browsers. Note that none of your personal data leaves your browser with this process.
 
-# Locate your TiddlyWiki file in the file system (ie using Windows Explorer, the Finder on Mac OS X, or your file manager on Linux)
+# Locate your TiddlyWiki file in the file system (i.e. using Windows Explorer, the Finder on Mac OS X, or your file manager on Linux)
 # Visit http://tiddlywiki.com/upgrade.html in your browser
 
 # Drag your old TiddlyWiki HTML file into the browser window
@@ -36107,53 +36103,53 @@ There are two steps to running the wiki at a custom path like `http://127.0.0.1:
 </pre>
 </div>
 <div created="20140908093600000" modified="20141010184816361" tags="[[Working with TiddlyWiki]]" title="Using links to navigate between tiddlers" type="text/vnd.tiddlywiki">
-<pre>You can use internal hyperlinks (links between tiddlers, normally displayed in blue text) to navigate between your tiddlers. Clicking on a link to any tiddler will take you to that tiddler. If the tiddler is closed, it will be opened. The wonderful thing about ~Tiddlywiki is that it has made links to tiddlers as accessible as possible. There are links everywhere! Here are the key places where you can find links to tiddlers in ~TiddlyWiki:
+<pre>You can use links (normally displayed as blue text) to navigate from one tiddler to another. Clicking on a link to any tiddler will take you to that tiddler. If the tiddler is closed, it will be opened. The wonderful thing about ~TiddlyWiki is that it makes links to tiddlers as accessible as possible. There are links everywhere! Here are the key places where you can find links to tiddlers in ~TiddlyWiki:
 
-* You can ''create a link'' to a tiddler, whether it exists yet or not, in the body of any tiddler. See [[Linking in WikiText]] to see the various, easy ways to create links between tiddlers.
+* You can ''create a link'' to a tiddler, whether it exists yet or not, in the body of any tiddler. See [[Linking in WikiText]] to see the various easy ways to create links between tiddlers.
 
-* Each ''tag pill'' found in your tiddler (such as the 'Working with ~TiddlyWiki' tag pill under the title of this tiddler) contains a link to that tag tiddler, as well a lists of all the tiddlers tagged with that tag. This allows you to go to any of those tiddlers.
+* Each ''tag pill'' in your tiddler (such as the ''Working with ~TiddlyWiki'' tag pill below the title of this tiddler) contains a link to that tag's tiddler, as well as lists of all the tiddlers that carry that tag. This lets you go to any of those tiddlers.
 
-* The ''~TiddlerInfo section'' of each tiddler, accessed by clicking the {{$:/core/images/info-button}} button at the top of the tiddler, gives you access to four additional lists of tiddlers related to your tiddler:
+* The ''InfoPanel'' of each tiddler - accessed by clicking the {{$:/core/images/info-button}} button in the {{$:/core/images/down-arrow}} dropdown list at the top of the tiddler - gives you access to four tabs containing additional lists of related tiddlers:
 
-** The ''References'' tab lists all the tiddlers that contain links back to the current tiddler.
+** The ''References'' tab lists all the tiddlers that link //to// the current tiddler.
 
-** The ''Tagging'' tab lists all the tiddlers which are tagged with the current tiddler's title.
+** The ''Tagging'' tab lists all the tiddlers that have been tagged with the current tiddler's title.
 
-** The ''List'' tab lists all the  tiddlers or potential tiddlers contained in the list field of the current tiddler. See [[ListField]] for more on list fields.
+** The ''List'' tab lists all the tiddlers (or potential tiddlers) mentioned in the [[list field|ListField]] of the current tiddler.
 
-** The ''Listed'' tab lists all the tiddlers which contain the current tiddler in their list fields.
+** The ''Listed'' tab lists all the tiddlers that mention the current tiddler in //their// list fields.
 
 * The ''sidebar tabs'' contain numerous lists of links to tiddlers:
 
-** The ''Open'' tab lists all currently open tiddlers.
+** The ''Open'' tab lists all the tiddlers that are currently open, i.e. visible somewhere on the page.
 
 ** The ''Recent'' tab lists the 100 most recently modified tiddlers, beginning with the most recently modified.
 
-** The ''More'' tab contains eight additional lists of tiddlers:
+** The ''More'' tab offers eight additional lists of tiddlers:
 
-*** ''All'' lists all tiddlers, ordered alphabetically.
+*** ''All'' lists all tiddlers in alphabetical order.
 
 *** ''Tags'' lists all the tags. You can click on the pill for any tag to access a list of the tiddlers tagged with that tag.
 
-*** ''Missing'' lists all the hyperlinks found in tiddler text for which no tiddler currently exists. This is helpful for finding tiddlers you at some point expected to create, but never got around to creating.
+*** ''Missing'' lists any tiddlers that don't yet exist, but have been linked to from other tiddlers. This is helpful for finding tiddlers you planned to create, but never got around to.
 
-*** ''Drafts'' lists all unfinished tiddlers still in edit mode. A tiddler draft is considered a separate tiddler by ~TiddlyWiki until it is closed, so if you edit a tiddler entitled &quot;Australia,&quot; there will then be two tiddlers, 'Australia' and 'Draft of &quot;Australia.&quot;' When you save or cancel your changes to close the draft, it will apply those changes to the 'Australia' tiddler. So treat the Drafts tab as a way of finding any unfinished drafts you started.
+*** ''Drafts'' lists any tiddlers that are currently in draft mode. ~TiddlyWiki considers a tiddler's draft to be a separate tiddler for as long as you are editing it, so while you're editing a tiddler entitled ''Australia'', there will be two tiddlers, ''Australia'' and ''Draft of 'Australia&amp;apos;''. When you close the draft by saving your changes to it, those changes will be applied to the ''Australia'' tiddler. So treat the ''Drafts'' tab as a way of finding any unfinished drafts you started.
 
-*** ''Orphans'' lists all the tiddlers which are not related to any other tiddler by links, tags or lists. This is a helpful aid to editing your file - it shows you the tiddlers that need to be integrated more carefully with the other tiddlers.
+*** ''Orphans'' lists all the tiddlers that are not connected to any other tiddler by links, tags or lists. This is a helpful aid to editing your file - it shows you which tiddlers need to be integrated more carefully with the others.
 
-*** ''Types'' lists tiddlers by special content types, such as images.
+*** ''Types'' lists any tiddlers with special content, such as images or audio.
 
-*** ''System'' lists all SystemTiddlers. 
+*** ''System'' lists all of the SystemTiddlers.
 
-*** ''Shadows'' lists all ShadowTiddlers.
+*** ''Shadows'' lists all of the ShadowTiddlers.
 
-* ''Search results'' are lists of tiddlers that match the text you enter into the search window.
+* ''Search results'' are a list of the tiddlers that contain the text you type in the search box.
 
 * Finally, you can create your own custom lists of tiddlers by various methods:
 
-** You can transclude a [[filter|Filters]] (see [[Transclusion in WikiText]]). For example, adding `{{{ [tag[mountain]] }}}` to a tiddler will insert a list of all tiddlers tagged with 'mountain'.
+** You can transclude a [[filter|Filters]] (see [[Transclusion in WikiText]]). For example, adding `{{{ [tag[mountain]] }}}` to a tiddler will insert a list of all tiddlers tagged with ''mountain''.
 
-** You can use the ListWidget. This is more complicated than transcluding a [[filter|Filters]], but in return allows you more flexibility in designing and displaying the list exactly as you want it to appear.
+** You can use the ListWidget. This is more complicated than transcluding a [[filter|Filters]], but in return it allows you more flexibility in designing and displaying the list exactly as you want it to appear.
 </pre>
 </div>
 <div created="20140305091244145" modified="20140912141203664" tags="[[Customise TiddlyWiki]]" title="Using Stylesheets" type="text/vnd.tiddlywiki">
