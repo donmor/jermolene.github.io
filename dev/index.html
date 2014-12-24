@@ -17892,17 +17892,6 @@ body .tc-password-wrapper input {
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Experimental theme with titles that stick to the top of the window" name="Sticky Titles" plugin-type="theme" title="$:/themes/tiddlywiki/stickytitles" type="application/json" version="5.1.7">
-<pre>{
-    &quot;tiddlers&quot;: {
-        &quot;$:/themes/tiddlywiki/stickytitles/styles.tid&quot;: {
-            &quot;title&quot;: &quot;$:/themes/tiddlywiki/stickytitles/styles.tid&quot;,
-            &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-tiddler-title {\n  position: -webkit-sticky;\n  position: -moz-sticky;\n  position: -o-sticky;\n  position: -ms-sticky;\n  position: sticky;\n  top: 0px;\n  background: &lt;&lt;colour tiddler-background&gt;&gt;;\n  z-index: 500;\n}\n&quot;
-        }
-    }
-}</pre>
-</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="A basic default theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.7">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -18639,8 +18628,9 @@ Now when a tiddler is changed and these changes are written to the store, the sy
 	&lt;pre&gt;testText&lt;/pre&gt;
 &lt;/div&gt;
 ```
-The Div-Area has the same attributes like the standard tillder fields, listed in  (\prettyref{list:TiddlerFields}), all attributes which are not in this list are parsed as a custom field. The only required attribute is the name attribute, all other attributes are optional.\\
-With a activated encryption the data is stored in a special Div-Area called &quot;encryptedStoreArea&quot;. TiddlyWiki uses the Standford [[JavaScript Crypto Libary|http://bitwiseshiftleft.github.io/sjcl/]]. The encrypted Tiddlers are saved in a JSON string within this Div-Area.</pre>
+The Div-Area has the same attributes like the standard tillder fields, listed in  [[TiddlerFields|http://tiddlywiki.com/#TiddlerFields]], all attributes which are not in this list are parsed as a custom field. The only required attribute is the name attribute, all other attributes are optional.\\
+With a activated encryption the data is stored in a special Div-Area called &quot;encryptedStoreArea&quot;. TiddlyWiki uses the Standford [[JavaScript Crypto Libary|http://bitwiseshiftleft.github.io/sjcl/]]. The encrypted Tiddlers are saved in a JSON string within this Div-Area.
+</pre>
 </div>
 <div chapter.of="Microkernel Architecture" created="20140709111543896" modified="20140715083802104" sub.num="2" tags="doc new [[Microkernel Architecture]]" title="Datamodel">
 <pre>The micro-kernel creates a TiddlyWiki specific data-structure called tiddler. Here you have to separate the different definition of tiddlers. In the architectural view a tiddler is a JavaScript object holding some data. In the overall concept a tiddler is similar to a wiki page in a normal wiki application like wikipedia. In this section we describe the architectural view of a tiddler. The listing below shows the JSON representation of a tiddler object. During the runtime of the TiddlyWiki everything is saved an object like this. Without any plug-in the architecture is not able to persist any kind of data. All the data is stored in a store. This store is a JavaScript object. This store is constructed like a Map with a bunch of key value pairs. Every tiddler has its name as the key in the map and the JavaScript-Object as the value. The tiddler concept is the main data-model within TiddlyWiki, everything from data up to plug-ins is stored as a tiddler.
@@ -18746,7 +18736,7 @@ Create the file plugin.info with content:
 
 !! 4. Create the files for your plugin
 
-For example files see the plugins in the ~TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See TiddlerFiles for details of the supported tiddler file formats.
+For example files see the plugins in the ~TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See [[TiddlerFiles|http://tiddlywiki.com/#TiddlerFiles]] for details of the supported tiddler file formats.
 
 !!5. Build your files into a ~TiddlyWiki
 
@@ -18893,7 +18883,7 @@ $tw.hooks.addHook(&quot;th-opening-default-tiddlers-list&quot;,function(list) {
 <div created="20140217173715829" modified="20141022145259278" tags="howto" title="How to create a translation for TiddlyWiki" type="text/vnd.tiddlywiki">
 <pre>! Prerequisites
 
-* [[TiddlyWiki on Node.js]]
+* [[TiddlyWiki on Node.js|http://tiddlywiki.com/#TiddlyWiki%20on%20Node.js]]
 * A GitHub account to submit the translation to tiddlywiki.com
 
 ! Setting Up
@@ -18926,7 +18916,7 @@ Content of `plugin.info` for Joe Bloggs' Welsh translation:
 }
 ```
 
-MultiTiddlerFiles make it possible to pack the text of several tiddlers in a single text file, simplifying some editing tasks.
+[[MultiTiddlerFiles|http://tiddlywiki.com/#MultiTiddlerFiles]] make it possible to pack the text of several tiddlers in a single text file, simplifying some editing tasks.
 
 ! Handling Updates
 
@@ -18936,14 +18926,14 @@ https://github.com/Jermolene/TiddlyWiki5/commits/master/core/language.atom
 </pre>
 </div>
 <div created="20140131221338016" modified="20141111122437656" tags="howto" title="How to create plugins in the browser" type="text/vnd.tiddlywiki">
-<pre>The recommended technique for building TiddlyWiki plugins involves running [[TiddlyWiki on Node.js]], but there is now an experimental technique for creating plugins directly in the browser.
+<pre>The recommended technique for building TiddlyWiki plugins involves running [[TiddlyWiki on Node.js|http://tiddlywiki.com/#TiddlyWiki%20on%20Node.js]], but there is now an experimental technique for creating plugins directly in the browser.
 
 ! Overview
 
 Loading a plugin in the browser has several consequences:
 
 * The original plugin tiddler itself is unchanged
-* The payload tiddlers are set up as individual ShadowTiddlers
+* The payload tiddlers are set up as individual [[ShadowTiddlers|http://tiddlywiki.com/#ShadowTiddlers]]
 
 To make a modified copy of a plugin, one edits the constituent shadow tiddlers (doing this actually overrides the shadow tiddler with a new non-shadow tiddler containing the modified content). The repacking process retrieves the current value of all the shadow tiddlers included in the plugin, and then bundles the new values back into the original plugin tiddler.
 
@@ -19062,7 +19052,7 @@ The aim of this documentation is to overview the idea behind the TiddlyWiki appl
 {{Section Overview}}</pre>
 </div>
 <div created="20131211222303769" modified="20140424130146763" tags="dev" title="JavaScript Macros" type="text/vnd.tiddlywiki">
-<pre>Macros can be implemented as JavaScript modules as well as via the [[wikitext syntax|Macros in WikiText]].
+<pre>Macros can be implemented as JavaScript modules as well as via the [[wikitext syntax|http://tiddlywiki.com/#Macros%20in%20WikiText]].
 
 ! Overview
 
@@ -19852,7 +19842,7 @@ Publishes the `TiddlyWiki5` repo to npm.
 <pre>With [[Messages]] a widget is able to put some kind of events into the TiddlyWiki application which is one part of the dynamic behaviour of widgets.
 The other part is selective updating.
 Widgets are often dependant on tiddler states.
-The ~ListWidget for example can be configured to list all tiddlers which are tagged with &quot;important&quot;.
+The [[ListWidget|http://tiddlywiki.com/#ListWidget]] for example can be configured to list all tiddlers which are tagged with &quot;important&quot;.
 Now, when such a tiddler is changed and it's &quot;important&quot; tag is removed, this change should reflect in the ~ListWidget.
 To allow widgets to react on such changes, each widget can provide a function ``refresh(changedTiddlers)``.
 The [[RootWidget|RootWidget and Rendering Startup]] is registered to the wiki store, using the [[Event Mechanism]]. When an change event occurs it starts to call the refresh function of its children with a list of the changed tiddlers.
@@ -20212,7 +20202,7 @@ TiddlyWiki tries to overcome these restrictions and the resulting disadvantages 
 &lt;/$list&gt;</pre>
 </div>
 <div created="20130825162100000" modified="20140614120823657" tags="dev" title="TiddlyWiki Architecture" type="text/vnd.tiddlywiki">
-<pre>The heart of TiddlyWiki is an extensible representation transformation engine for text and images. Given the text of a tiddler and its associated ContentType, the engine can produce a rendering of the tiddler in a new ContentType. Furthermore, it can efficiently selectively update the rendering to track any changes in the tiddler or its dependents.
+<pre>The heart of TiddlyWiki is an extensible representation transformation engine for text and images. Given the text of a tiddler and its associated [[ContentType|http://tiddlywiki.com/#ContentType]], the engine can produce a rendering of the tiddler in a new [[ContentType|http://tiddlywiki.com/#ContentType]]. Furthermore, it can efficiently selectively update the rendering to track any changes in the tiddler or its dependents.
 
 ! Overview
 
@@ -20248,7 +20238,7 @@ $tw.wiki.makeTiddlerIterator($tw.wiki.getTiddlersWithTag('timeline')
 });
 ```
 
-Data which should not be visible to end users under normal operation (eg. internal components, plugins, persisted state for GUI widgets) is stored in [[system tiddlers|SystemTiddlers]] organised via a set of [[namespaces|Naming of System Tiddlers]].
+Data which should not be visible to end users under normal operation (eg. internal components, plugins, persisted state for GUI widgets) is stored in [[system tiddlers|http://tiddlywiki.com/#SystemTiddlers]] organised via a set of [[namespaces|http://tiddlywiki.com/#Naming%20of%20System%20Tiddlers]].
 
 The similarity between filesystem paths and system tiddler names is intentional and will be used to provide a hierarchical browsing interface in a future TiddlyWiki release.
 
@@ -20259,7 +20249,7 @@ TiddlyWiki's view layer has a //lot// in common with desktop widget toolkits and
 !! Role of the DOM
 Because TiddlyWiki may re-render content, plugins should treat the DOM as write-only.
 
-In other words, any state you store in the DOM could vanish at any instant and you need to use TiddlyWiki's internal [[StateMechanism]] instead.
+In other words, any state you store in the DOM could vanish at any instant and you need to use TiddlyWiki's internal [[StateMechanism|http://tiddlywiki.com/#StateMechanism]] instead.
 
 In a desktop application, the base widget class defines a method such as `paint(canvas)` which is called in response to `expose` events or &quot;data has changed&quot; messages.
 
@@ -20273,7 +20263,7 @@ While TiddlyWiki's extended [[WikiText]] is similar in design to HTML templating
 
 In this respect, it's closer to a glue language like Qt Quick or Python with Javascript filling the &quot;create new components&quot; role of C/C++ in widget toolkits like Qt and GTK+.
 
-To familiarise yourself with this, read [[Widgets in WikiText]] and [[Introduction to Filters]]. then examine the internals for a tiddler like [[TaskManagementExample]].
+To familiarise yourself with this, read [[Widgets in WikiText|http://tiddlywiki.com/#Widgets%20in%20WikiText]] and [[Introduction to Filters|http://tiddlywiki.com/#Introduction%20to%20Filters]]. then examine the internals for a tiddler like [[TaskManagementExample|http://tiddlywiki.com/#TaskManagementExample]].
 </pre>
 </div>
 <div _canonical_uri="./images/TiddlyWiki%2520Architecture.svg" modified="20140614120823657" tags="picture external-image" title="TiddlyWiki Architecture.svg" type="image/svg+xml">
@@ -20381,7 +20371,7 @@ From a technical perspective, TiddlyWiki is a fairly classic MVC architecture, w
 </pre>
 </div>
 <div created="20140101174035140" modified="20140101175304016" title="TiddlyWiki on node-webkit" type="text/vnd.tiddlywiki">
-<pre>[[node-webkit]] allows TiddlyWiki to be set up as a native application for Windows, Mac OS X or Linux.
+<pre>[[node-webkit|http://tiddlywiki.com/#node-webkit]] allows TiddlyWiki to be set up as a native application for Windows, Mac OS X or Linux.
 
 ! Setting up
 
@@ -20406,7 +20396,7 @@ MP3 audio and H264 video are not supported without special steps [[described on 
 
 ! Setting up npm
 
-[[Installing TiddlyWiki5]] with NPM downloads a snapshot release of TiddlyWIki5. To use a development copy of the TiddlyWiki5 repository instead of the copy installed by [[NPM]], use this command within the root of the TiddlyWiki5 repo:
+[[Installing TiddlyWiki5|http://tiddlywiki.com/#Installing%20TiddlyWiki%20on%20Node.js]] with NPM downloads a snapshot release of TiddlyWiki5. To use a development copy of the TiddlyWiki5 repository instead of the copy installed by [[NPM]], use this command within the root of the TiddlyWiki5 repo:
 
 ```bash
 npm link
@@ -20456,13 +20446,13 @@ As described in #10 in [[this article by npm's author|http://blog.izs.me/post/16
 *** [[Saver]]
 *** [[Syncadaptor]]
 ** [[UI and Rendering Pipeline]]
-*** [[Wikitext]]
+*** [[WikiText]]
 *** [[Parser]]
 *** [[Widgets]]
 **** [[Messages]]
 **** [[Selective Update]]
 *** [[Transclusion and TextReference]]
-*** [[RooTiddlyWikiidget and Rendering Startup]]
+*** [[RootWidget and Rendering Startup]]
 *** [[Navigator Widget]]
 *** [[Draft Mechanism]]
 

@@ -45,7 +45,7 @@ Developing plugins using Node.js and GitHub
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 58 days ago
+</a> 2 months ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -78,7 +78,7 @@ mkdir pluginname
 	&quot;core-version&quot;: &quot;&gt;=5.0.8&quot;,
 	&quot;source&quot;: &quot;https://github.com/yourgithub/pluginname&quot;,
 	&quot;plugin-type&quot;: &quot;plugin&quot;
-}</code></pre><h2 class=''>4. Create the files for your plugin</h2><p>For example files see the plugins in the TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See <a class='tc-tiddlylink tc-tiddlylink-missing' href='TiddlerFiles.html'>TiddlerFiles</a> for details of the supported tiddler file formats.</p><h2 class=''>5. Build your files into a TiddlyWiki</h2><p>Modify <code>editions/tw5.com/tiddlywiki.info</code> to include a reference to your plugin directory,  i.e. find <code>&quot;plugins&quot;: [ </code> and add <code>&quot;yourname/pluginname&quot;</code>.</p><p>From the TW5 directory issue the command</p><pre><code>node ./tiddlywiki.js editions/tw5.com --build index</code></pre><p>The resultant file (index.html) will be placed in the <code>editions/tw5.com/output</code> directory of the TW5 repo.</p><h2 class=''>6. Save your work on GitHub</h2><p>From <code>plugins/yourname/pluginname/</code> issue commands to:</p><h3 class=''>1. Add all files</h3><pre><code>git add -A</code></pre><h3 class=''>2. Commit to your local repository</h3><pre><code>git commit -am &quot;something meaningful about this check in&quot;</code></pre><h3 class=''>3. Copy local changes to github</h3><pre><code>git push</code></pre></div>
+}</code></pre><h2 class=''>4. Create the files for your plugin</h2><p>For example files see the plugins in the TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/#TiddlerFiles' target='_blank'>TiddlerFiles</a> for details of the supported tiddler file formats.</p><h2 class=''>5. Build your files into a TiddlyWiki</h2><p>Modify <code>editions/tw5.com/tiddlywiki.info</code> to include a reference to your plugin directory,  i.e. find <code>&quot;plugins&quot;: [ </code> and add <code>&quot;yourname/pluginname&quot;</code>.</p><p>From the TW5 directory issue the command</p><pre><code>node ./tiddlywiki.js editions/tw5.com --build index</code></pre><p>The resultant file (index.html) will be placed in the <code>editions/tw5.com/output</code> directory of the TW5 repo.</p><h2 class=''>6. Save your work on GitHub</h2><p>From <code>plugins/yourname/pluginname/</code> issue commands to:</p><h3 class=''>1. Add all files</h3><pre><code>git add -A</code></pre><h3 class=''>2. Commit to your local repository</h3><pre><code>git commit -am &quot;something meaningful about this check in&quot;</code></pre><h3 class=''>3. Copy local changes to github</h3><pre><code>git push</code></pre></div>
 
 
 
