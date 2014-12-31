@@ -45,7 +45,7 @@ DataTiddlers
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 15 months ago
+</a> 16 months ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -61,9 +61,9 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>Data tiddlers provide a way to access blocks of <a class='tc-tiddlylink tc-tiddlylink-missing' href='JSON.html'>JSON</a> data within the <code>text</code> field of a tiddler.</p><p><em>The implementation of data tiddlers is preliminary, with some intentional limitations.</em></p><h1 class=''>Data tiddler format</h1><p>A native data tiddler must have:</p><ul><li>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a> field <code>type</code> set to <code>application/json</code></li><li>Valid JSON data in the <code>text</code> field </li></ul><p>For example, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='%2524%253A%252FHistoryList.html'>history list</a> tiddler is a data tiddler.</p><p>Other tiddler types with alternative formats can also be parsed to yield a block of data that behaves like a data tiddler.</p><h2 class=''>Tiddler dictionary format</h2><p>The tiddler dictionary format is an alternative syntax for data tiddlers:</p><ul><li>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a> field <code>type</code> is set to <code>application/x-tiddler-dictionary</code></li><li>The <code>text</code> field consists of one or more lines of the form <code>&lt;name&gt;:&lt;value&gt;</code></li></ul><p>For example, palettes such as the <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fpalettes%252FVanilla.html'>default Vanilla palette</a> are tiddler dictionaries.</p><h1 class=''>Accessing data within data tiddlers</h1><p>Currently, it is only possible to access the top level properties of the data using <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReference.html'>TextReference</a> syntax.</p><p>For example, given a <code>application/json</code> tiddler containing:</p><pre><code>{&quot;a&quot;:&quot;one&quot;,&quot;b&quot;:&quot;two&quot;,&quot;c&quot;:&quot;three&quot;}</code></pre><p>Or the equivalent tiddler dictionary of type <code>application/x-tiddler-dictionary</code>:</p><pre><code>a:one
-b:two
-c:three</code></pre><p>With either of those definitions <code>{{TiddlerTitle##b}}</code> would have the value <code>two</code>.
+<div class='tc-tiddler-body'><p>A data tiddler is a miniature database contained within a tiddler.</p><p>There are two standard formats:</p><ul><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='DictionaryTiddlers.html'>DictionaryTiddlers</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='JSONTiddlers.html'>JSONTiddlers</a></li></ul><p>Other formats of tiddler can also be parsed to yield blocks of data that behave like data tiddlers.</p><p>Use a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReference.html'>TextReference</a> to look up a value by its name. For example, if a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DictionaryTiddlers.html'>DictionaryTiddler</a> called <code>MonthDays</code> contains:</p><pre><code>oct:31
+nov:30
+dec:31</code></pre><p>... then <code>{{MonthDays##nov}}</code> will resolve to the value <code>30</code>.</p><p>The same is true if <code>MonthDays</code> is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='JSONTiddlers.html'>JSONTiddler</a> with the following content:</p><pre><code>{&quot;oct&quot;:31,&quot;nov&quot;:30,&quot;dec&quot;:31}</code></pre><p>Note: <em>It is currently only possible to retrieve data from the immediate properties of the root object of a JSONTiddler.</em>
 </p></div>
 
 
