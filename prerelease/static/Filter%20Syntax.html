@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Filters'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+Filter Syntax
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 6 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Filters
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+<div class='tc-tiddler-body'><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filters.html'>Filter expressions</a> follow a grammar that is presented here, using <a class='tc-tiddlylink tc-tiddlylink-resolves' href='RailroadDiagrams.html'>RailroadDiagrams</a>, for those who find formal syntax descriptions helpful. However, you can write your own filter expressions without needing to understand this tiddler.</p><hr><dl><dt>filter</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><p>A sequence of runs is evaluated from left to right, as follows:</p><table><tbody><tr class='evenRow'><th align='left'>Sequence</th><th align='left'>Interpretation</th></tr><tr class='oddRow'><td align='left'><code>run1 run2</code></td><td align='left'>union of the sets, i.e. the tiddlers in <em>either</em> run1 <em>or</em> run2</td></tr><tr class='evenRow'><td align='left'><code>run1 -run2</code></td><td align='left'>difference of the sets, i.e. run1 but excluding any tiddlers in run2</td></tr><tr class='oddRow'><td align='left'><code>run1 +run2</code></td><td align='left'>run2 takes run1 as its input</td></tr></tbody></table><p>The first run takes <code>[all[tiddlers]]</code> as its input, i.e. the set of all non-missing tiddlers.</p><hr><dl><dt>run</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>The last three options are short for <code>[title[text]]</code></li><li>A run evaluates each of its steps and returns the intersection of the results</li></ul><hr><dl><dt>step</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A step returns a set of tiddlers, in the form of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TitleList.html'>TitleList</a></li></ul><hr><dl><dt>operator</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>Keywords are reserved names (<code><a class='tc-tiddlylink tc-tiddlylink-resolves' href='FilterOperator%253A%2520is.html'>is</a></code>, <code><a class='tc-tiddlylink tc-tiddlylink-resolves' href='FilterOperator%253A%2520has.html'>has</a></code>, <code><a class='tc-tiddlylink tc-tiddlylink-resolves' href='FilterOperator%253A%2520tag.html'>tag</a></code>, etc) of specific filtering functions</li><li>A fieldname on its own implies the keyword <code>field</code></li><li>An entirely omitted operator defaults to <code>title</code></li></ul><hr><dl><dt>parameter</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li><code>[</code>...<code>]</code> encloses a literal parameter</li><li><code>{</code>...<code>}</code> encloses a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReference.html'>TextReference</a> parameter</li><li><code>&lt;</code>...<code>&gt;</code> encloses a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>variable</a> parameter</li></ul><hr><dl><dt>whitespace</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A match for the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='JavaScript.html'>JavaScript</a> regular expression <code>\s+</code></li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

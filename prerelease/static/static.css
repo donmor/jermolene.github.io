@@ -146,6 +146,30 @@ Error message and password prompt
 }
 
 
+svg.railroad-diagram {
+    background-color: hsl(30,20%,95%);
+}
+svg.railroad-diagram path {
+    stroke-width: 3;
+    stroke: black;
+    fill: rgba(0,0,0,0);
+}
+svg.railroad-diagram text {
+    font: bold 14px monospace;
+    text-anchor: middle;
+}
+svg.railroad-diagram text.label {
+    text-anchor: start;
+}
+svg.railroad-diagram text.comment {
+    font: italic 12px monospace;
+}
+svg.railroad-diagram rect {
+    stroke-width: 3;
+    stroke: black;
+    fill: hsl(120,100%,90%);
+}
+
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-title {

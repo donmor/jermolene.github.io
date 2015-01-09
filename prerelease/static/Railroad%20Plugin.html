@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Plugins'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+Railroad Plugin
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 3 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Plugins
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+<div class='tc-tiddler-body'><p>This plugin provides a <code>&lt;$railroad&gt;</code> widget for generating railroad syntax diagrams as SVG images. It is based on <a class='tc-tiddlylink-external' href='https://github.com/tabatkins/railroad-diagrams' target='_blank'>a library by Tab Atkins</a>, and has been extended to allow components of a diagram to function as links.</p><p>The content of the <code>&lt;$railroad&gt;</code> widget is ignored.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>text</td><td align='left'>Text in a special syntax that defines the diagram's layout</td></tr><tr class='evenRow'><td align='left'>mode</td><td align='left'>If set to <code>debug</code>, the diagram will display its internal tree structure. The default mode is <code>svg</code></td></tr></tbody></table><p>The entire <code>text</code> can be transcluded from another tiddler:</p><pre><code>&lt;$railroad tiddler={{diagram}}&gt;</code></pre><p>Alternatively, the diagram syntax allows specific parts of the <code>text</code> to be transcluded from other tiddlers.</p><p>The railroad widget uses a special <strong>diagram syntax</strong> to construct the components defined below.</p><p><code>x</code> and <code>y</code> here stand for any component.</p><p>Names (as opposed to quoted strings) are available when a value starts with a letter and contains only letters, digits, underscores, dots and hyphens.</p><hr><dl><dt>sequence</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A sequence of components</li><li>The <code>&lt;-</code> and <code>-&gt;</code> delimiters allow you to force a single component to be treated as a sequence. This is occasionally useful for spacing a diagram out</li></ul><hr><dl><dt>optional</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A component that can be omitted</li><li>The colon makes <code>x</code> appear straight ahead</li></ul><hr><dl><dt>repeated</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A list of one or more <code>x</code></li><li>The <code>+</code> suffix adds <code>y</code> as a separator between each <code>x</code> and the next</li></ul><hr><dl><dt>optional repeated</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>An optional list of <code>x</code>, i.e. a list of zero or more <code>x</code></li></ul><hr><dl><dt>choice</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A set of alternatives</li><li>The colon indicates which branch appears straight ahead. By default, it's the first branch</li></ul><hr><dl><dt>string / terminal</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A literal or terminal component</li><li>This follows the normal TiddlyWiki rules for quoted strings</li></ul><hr><dl><dt>nonterminal</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A nonterminal component, i.e. the name of another diagram</li></ul><hr><dl><dt>comment</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A comment</li></ul><hr><dl><dt>dummy</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>The absence of a component</li></ul><hr><dl><dt>link</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>A link to the tiddler title or URI given by the string or name</li></ul><hr><dl><dt>transclusion</dt><dd><div class='tc-error'>TypeError: Cannot read property 'length' of undefined</div></dd></dl><ul><li>Treats the content of another tiddler as diagram syntax and transcludes it into the current diagram</li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
