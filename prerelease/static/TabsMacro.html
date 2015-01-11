@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
 <meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
@@ -61,7 +64,26 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>The tabs macro displays a list of tiddlers as a tab control. The user can switch between tabs by clicking on them. The tabs are labelled with the title of the corresponding tiddler, unless there is a <code>caption</code> field present in which case it is used instead.</p><p>By default the tab control arranges the tabs horizontally with the content underneath. You can also choose to have the tabs arranged vertically by passing the class <code>tc-vertical</code>.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>tabsList</td><td align='left'>Filter giving the tiddlers to be displayed</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>default</td><td align='left'>Name of the tiddler containing the default tab</td><td align='center'></td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>state</td><td align='left'>String to distinguish multiple tabs within the same tiddler (use of the system tiddler prefix is recommended)</td><td align='left'><strong>$:/state/tab</strong></td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>class</td><td align='left'>Additional CSS classes for the three wrapper DIVs that make up the tabs (multiple classes can be separated with spaces)</td><td align='center'></td></tr><tr class='oddRow'><td align='left'>5th</td><td align='left'>template</td><td align='left'>Optional template through which to render the tab content</td><td align='center'></td></tr></tbody></table><p>Within the template the title of the current tab is available in the widget variable <strong>currentTab</strong>. The <strong>currentTiddler</strong> variable is not affected by the tabs macro.</p><h1 class=''>Examples</h1><p>Here are some examples of the tabs macro:</p><pre><code>&lt;&lt;tabs &quot;SampleTabOne SampleTabTwo SampleTabThree SampleTabFour&quot; &quot;SampleTabThree&quot; &quot;$:/state/tab1&quot;&gt;&gt;
+<div class='tc-tiddler-body'><p>The tabs macro displays a list of tiddlers as a tab control. The user can switch between tabs by clicking on them. The tabs are labelled with the title of the corresponding tiddler, unless there is a <code>caption</code> field present in which case it is used instead.</p><p>By default the tab control arranges the tabs horizontally with the content underneath. You can also choose to have the tabs arranged vertically by passing the class <code>tc-vertical</code>.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>tabsList</td><td align='left'>Filter giving the tiddlers to be displayed</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>default</td><td align='left'>Name of the tiddler containing the default tab</td><td align='center'></td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>state</td><td align='left'>String to distinguish multiple tabs within the same tiddler (use of the system tiddler prefix is recommended)</td><td><strong><a class='tc-tiddlylink tc-tiddlylink-missing' href='%2524%253A%252Fstate%252Ftab''.html'>$:/state/tab''</a> |
+|4th |class |Additional CSS classes for the three wrapper DIVs that make up the tabs (multiple classes can be separated with spaces) | |
+|5th |template |Optional template through which to render the tab content | |
+
+Within the template the title of the current tab is available in the widget variable </strong>currentTab<strong>. The </strong>currentTiddler<strong> variable is not affected by the tabs macro.
+
+! Examples
+
+Here are some examples of the tabs macro:
+
+<code>`
+&lt;&lt;tabs &quot;SampleTabOne SampleTabTwo SampleTabThree SampleTabFour&quot; &quot;SampleTabThree&quot; &quot;$:/state/tab1&quot;&gt;&gt;
+
+&lt;&lt;tabs &quot;[tag[sampletab]]&quot; &quot;SampleTabTwo&quot; &quot;$:/state/tab2&quot; &quot;tc-vertical&quot;&gt;&gt;
+</code><code>
+
+&lt;&lt;tabs &quot;SampleTabOne SampleTabTwo SampleTabThree SampleTabFour&quot; &quot;SampleTabThree&quot; &quot;$:/state/tab1&quot;&gt;&gt;
+
+&lt;&lt;tabs &quot;[tag[sampletab]]&quot; &quot;SampleTabTwo&quot; &quot;$:/state/tab2&quot; &quot;tc-vertical&quot;&gt;&gt;
+//Exercise//: how would you make sure that the second tab list is correctly sorted? Hint : read [[Tagging]] until the end.</code></strong></td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>class</td><td align='left'>Additional CSS classes for the three wrapper DIVs that make up the tabs (multiple classes can be separated with spaces)</td><td align='center'></td></tr><tr class='oddRow'><td align='left'>5th</td><td align='left'>template</td><td align='left'>Optional template through which to render the tab content</td><td align='center'></td></tr></tbody></table><p>Within the template the title of the current tab is available in the widget variable ''currentTab''. The ''currentTiddler'' variable is not affected by the tabs macro.</p><h1 class=''>Examples</h1><p>Here are some examples of the tabs macro:</p><pre><code>&lt;&lt;tabs &quot;SampleTabOne SampleTabTwo SampleTabThree SampleTabFour&quot; &quot;SampleTabThree&quot; &quot;$:/state/tab1&quot;&gt;&gt;
 
 &lt;&lt;tabs &quot;[tag[sampletab]]&quot; &quot;SampleTabTwo&quot; &quot;$:/state/tab2&quot; &quot;tc-vertical&quot;&gt;&gt;</code></pre><p><div class='tc-tab-set '>
 <div class='tc-tab-buttons '>
@@ -123,7 +145,7 @@ SampleTabTwo
 </div><div class='tc-tab-divider tc-vertical'></div><div class='tc-tab-content tc-vertical'>
 <div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p>This is the second of our sample tabs.</p></div>
 </div>
-</div></p><p><em>Exercise</em>: how would you make sure that the second tab list is correctly sorted? Hint : read <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tagging.html'>Tagging</a> until the end.</p></div>
+</div></p><p>//Exercise//: how would you make sure that the second tab list is correctly sorted? Hint : read [[Tagging]] until the end.</p></div>
 
 
 

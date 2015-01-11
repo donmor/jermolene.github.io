@@ -4,6 +4,9 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
 <meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
@@ -61,7 +64,10 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>By default, when running <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki%2520on%2520Node.js.html'>TiddlyWiki on Node.js</a>, the server exposes the wiki at the URI formed from the protocol, host and port - for example, <code>http://127.0.0.1:8080/</code>.</p><p>There are two steps to running the wiki at a custom path like <code>http://127.0.0.1:8080/path/to/my/wiki/</code>:</p><ol><li>Configure the server by passing <code>/path/to/my/wiki</code> as the <strong>pathprefix</strong> argument of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ServerCommand.html'>ServerCommand</a></li><li>Configure the client by creating a tiddler called <strong>$:/config/tiddlyweb/host</strong> that contains <code>$protocol$//$host$/path/to/my/wiki/</code></li></ol></div>
+<div class='tc-tiddler-body'><p>By default, when running <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki%2520on%2520Node.js.html'>TiddlyWiki on Node.js</a>, the server exposes the wiki at the URI formed from the protocol, host and port - for example, <code>http://127.0.0.1:8080/</code>.</p><p>There are two steps to running the wiki at a custom path like <code>http://127.0.0.1:8080/path/to/my/wiki/</code>:</p><ol><li>Configure the server by passing <code>/path/to/my/wiki</code> as the <strong>pathprefix</strong> argument of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ServerCommand.html'>ServerCommand</a></li><li>Configure the client by creating a tiddler called <strong><a class='tc-tiddlylink tc-tiddlylink-missing' href='%2524%253A%252Fconfig%252Ftiddlyweb%252Fhost''.html'>$:/config/tiddlyweb/host''</a> that contains <code>$protocol$//$host$/path/to/my/wiki/</code>
+
+
+</strong></li></ol></div>
 
 
 
