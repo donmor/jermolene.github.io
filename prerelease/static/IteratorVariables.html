@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-ListWidget tc-tagged-Variables'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+IteratorVariables
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 5 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ ListWidget
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+<span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Variables
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+<div class='tc-tiddler-body'><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> exposes the following iterator variables during list processing:</p><dl><dt><code>&lt;&lt;iterator&gt;&gt;</code></dt><dd>set to the current index, e.g. <code>1</code> </dd><dt><code>&lt;&lt;iterator-even&gt;&gt;</code></dt><dd>set to <code>true</code> for an even index, otherwise <code>false</code></dd><dt><code>&lt;&lt;iterator-last&gt;&gt;</code></dt><dd>set to <code>true</code> for last index, otherwise <code>false</code></dd></dl><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> allows to declare an <code>iterator</code> attribute through which you can declare a custom iterator variable prefix:</p><pre><code>&lt;$list filter=&quot;[tag[foo]]&quot; iterator=&quot;my-foo&quot;&gt;
+...
+&lt;/$list&gt;</code></pre><h2 class=''>Using Iterator Variables</h2><p>You can use iterator variables with the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='RevealWidget.html'>RevealWidget</a> to conditionally render output depending on the current index...</p><p><strong>only show for item at index 1, i.e. the first item</strong></p><pre><code>&lt;$reveal type=match default=1 text=&lt;&lt;my-foo&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;</code></pre><p><strong>show for all except first index</strong></p><pre><code>&lt;$reveal type=nomatch default=1 text=&lt;&lt;my-foo&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;</code></pre><p><strong>only show at even indexes</strong></p><pre><code>&lt;$reveal type=match default=true text=&lt;&lt;my-foo-even&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;</code></pre><p><strong>only show at uneven indexes</strong></p><pre><code>&lt;$reveal type=nomatch default=true text=&lt;&lt;my-foo-even&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;</code></pre><p><strong>only show for last index</strong></p><pre><code>&lt;$reveal type=match default=true text=&lt;&lt;my-foo-last&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;</code></pre><h2 class=''>Live Example</h2><pre><code>&lt;dl&gt;
+&lt;$list filter=&quot;one two three&quot; iterator=foo&gt;
+&lt;dt&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/dt&gt;
+&lt;dd&gt;`&lt;&lt;foo&gt;&gt;` = &lt;&lt;foo&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-even&gt;&gt;` = &lt;&lt;foo-even&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-last&gt;&gt;` = &lt;&lt;foo-last&gt;&gt;&lt;/dd&gt;
+&lt;/$list&gt;
+&lt;/dl&gt;</code></pre><p>Displays as:</p><blockquote class='tc-quote'><p><dl>
+
+<dt>one</dt>
+<dd><code>&lt;&lt;foo&gt;&gt;</code> = 1</dd>
+<dd><code>&lt;&lt;foo-even&gt;&gt;</code> = false</dd>
+<dd><code>&lt;&lt;foo-last&gt;&gt;</code> = false</dd>
+
+<dt>two</dt>
+<dd><code>&lt;&lt;foo&gt;&gt;</code> = 2</dd>
+<dd><code>&lt;&lt;foo-even&gt;&gt;</code> = true</dd>
+<dd><code>&lt;&lt;foo-last&gt;&gt;</code> = false</dd>
+
+<dt>three</dt>
+<dd><code>&lt;&lt;foo&gt;&gt;</code> = 3</dd>
+<dd><code>&lt;&lt;foo-even&gt;&gt;</code> = false</dd>
+<dd><code>&lt;&lt;foo-last&gt;&gt;</code> = true</dd>
+
+</dl>
+</p></blockquote></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

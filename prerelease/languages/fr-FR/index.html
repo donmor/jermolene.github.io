@@ -35581,6 +35581,94 @@ On peut trouver le ~TiddlyWiki utilisé pour produire cette vidéo ici&lt;&lt;dp
 http://tiddlywiki.com/editions/introduction/
 </pre>
 </div>
+<div created="20150106180000000" modified="20150106180000000" tags="ListWidget Variables" title="IteratorVariables">
+<pre>The ListWidget exposes the following iterator variables during list processing:
+
+; `&lt;&lt;iterator&gt;&gt;`
+: set to the current index, e.g. `1` 
+; `&lt;&lt;iterator-even&gt;&gt;`
+: set to `true` for an even index, otherwise `false`
+; `&lt;&lt;iterator-last&gt;&gt;`
+: set to `true` for last index, otherwise `false`
+
+The ListWidget allows to declare an `iterator` attribute through which you can declare a custom iterator variable prefix:
+
+```
+&lt;$list filter=&quot;[tag[foo]]&quot; iterator=&quot;my-foo&quot;&gt;
+...
+&lt;/$list&gt;
+```
+
+!!Using Iterator Variables
+
+You can use iterator variables with the RevealWidget to conditionally render output depending on the current index...
+
+''only show for item at index 1, i.e. the first item''
+
+```
+&lt;$reveal type=match default=1 text=&lt;&lt;my-foo&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;
+```
+
+''show for all except first index''
+
+```
+&lt;$reveal type=nomatch default=1 text=&lt;&lt;my-foo&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;
+```
+
+''only show at even indexes''
+
+```
+&lt;$reveal type=match default=true text=&lt;&lt;my-foo-even&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;
+```
+
+''only show at uneven indexes''
+
+```
+&lt;$reveal type=nomatch default=true text=&lt;&lt;my-foo-even&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;
+```
+
+''only show for last index''
+
+```
+&lt;$reveal type=match default=true text=&lt;&lt;my-foo-last&gt;&gt;&gt;
+...
+&lt;/$reveal&gt;
+```
+
+!! Live Example
+
+```
+&lt;dl&gt;
+&lt;$list filter=&quot;one two three&quot; iterator=foo&gt;
+&lt;dt&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/dt&gt;
+&lt;dd&gt;`&lt;&lt;foo&gt;&gt;` = &lt;&lt;foo&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-even&gt;&gt;` = &lt;&lt;foo-even&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-last&gt;&gt;` = &lt;&lt;foo-last&gt;&gt;&lt;/dd&gt;
+&lt;/$list&gt;
+&lt;/dl&gt;
+```
+
+Displays as:
+
+&lt;&lt;&lt;
+&lt;dl&gt;
+&lt;$list filter=&quot;one two three&quot; iterator=foo&gt;
+&lt;dt&gt;&lt;&lt;currentTiddler&gt;&gt;&lt;/dt&gt;
+&lt;dd&gt;`&lt;&lt;foo&gt;&gt;` = &lt;&lt;foo&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-even&gt;&gt;` = &lt;&lt;foo-even&gt;&gt;&lt;/dd&gt;
+&lt;dd&gt;`&lt;&lt;foo-last&gt;&gt;` = &lt;&lt;foo-last&gt;&gt;&lt;/dd&gt;
+&lt;/$list&gt;
+&lt;/dl&gt;
+&lt;&lt;&lt;</pre>
+</div>
 <div created="20130825142100000" modified="20140927110559779" tags="Definitions" title="JavaScript" type="text/vnd.tiddlywiki">
 <pre>~JavaScript est un langage de programmation introduit initialement sur les navigateurs comme une façon de scripter des pages web. Il était considéré au début comme un jouet pas très bien conçu, mais avec les années, il finit par être reconnu comme un langage puissant en tant que tel, et est très largement adopté dans les navigateurs et au-delà.
 
