@@ -1754,6 +1754,45 @@ a.tc-tiddlylink:hover {
 }
 
 
+.doc-def {
+	font-style: normal;
+	font-weight: bold;
+}.doc-em {
+	font-style: italic;
+	font-variant: small-caps;
+	text-decoration: none;
+}.doc-strong {
+	color: #881122;
+	font-style: normal;
+	font-weight: bold;
+}.doc-foreign {
+	font-style: italic;
+}.doc-ph {
+	border: none;
+	color: #333333;
+	font-style: italic;
+}.doc-button,
+.doc-tab,
+.doc-tag,
+.doc-tiddler,
+.doc-field,
+.doc-field-value,
+.doc-var,
+.doc-widget {
+	background: #ffffff;
+	border: none;
+	color: #888888;
+	font-weight: bold;
+	padding: 0;
+}.doc-button svg {
+	height: 1em;
+}.doc-key {
+	color: #888888;
+	font-weight: bold;
+}.doc-clink code {
+	color: #5778d8;
+}
+
 @media (min-width: 600px) {.tc-link-info {
 		display: -webkit-flex;
 		display: -ms-flexbox;
