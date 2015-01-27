@@ -69,11 +69,11 @@ color:#333333;'>
 # Item two</code></pre><p>And a tiddler &quot;B&quot; with this content:</p><pre><code># Item one - a
 # Item one - b</code></pre><p>The result will be something like this:</p><ol><li>Item one</li><li># Item one - a # Item one - b</li><li>Item two</li></ol><p>This can be fixed by amending tiddler &quot;A&quot;:</p><pre><code># Item one
 #&lt;$transclude tiddler=&quot;B&quot; mode=&quot;block&quot;/&gt;
-# Item two</code></pre><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-missing' href='SubTiddler.html'>SubTiddler</a> Access</h1><p>The transclude widget allows access to the individual tiddlers stored within a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Plugins.html'>plugin</a>.</p><p>The following example will transclude the core version of the tiddler <a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='%2524%253A%252FDefaultTiddlers.html'>$:/DefaultTiddlers</a> even if it has been overridden:</p><pre><code>
+# Item two</code></pre><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-missing' href='SubTiddler.html'>SubTiddler</a> Access</h1><p>The transclude widget allows access to the individual tiddlers stored within a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Plugins.html'>plugin</a>.</p><p>The following example will transclude the core version of the tiddler <a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='%2524%253A%252FDefaultTiddlers.html'>$:/DefaultTiddlers</a> even if it has been overridden:</p><div class='doc-example'><pre><code>
 &lt;$transclude tiddler=&quot;$:/core&quot; subtiddler=&quot;$:/DefaultTiddlers&quot;/&gt;
 
-</code></pre><p>Renders as:</p><p><a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='GettingStarted.html'>GettingStarted</a>
-</p></div>
+</code></pre><p>That renders as:</p><p><a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='GettingStarted.html'>GettingStarted</a>
+</p></div></div>
 
 
 

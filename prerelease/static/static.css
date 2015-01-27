@@ -1767,31 +1767,82 @@ a.tc-tiddlylink:hover {
 	font-weight: bold;
 }.doc-foreign {
 	font-style: italic;
-}.doc-ph {
+}.doc-place {
+	background-color: #ffffff;
 	border: none;
-	color: #333333;
-	font-style: italic;
+	color: #888888;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
 }.doc-button,
 .doc-tab,
 .doc-tag,
 .doc-tiddler,
 .doc-field,
-.doc-field-value,
+.doc-value,
+.doc-operator,
 .doc-var,
-.doc-widget {
-	background: #ffffff;
+.doc-widget,
+.doc-attr {
+	background-color: #ffffff;
 	border: none;
 	color: #888888;
 	font-weight: bold;
 	padding: 0;
+}a .doc-place,
+a .doc-button,
+a .doc-tab,
+a .doc-tag,
+a .doc-tiddler,
+a .doc-field,
+a .doc-value,
+a .doc-operator,
+a .doc-var,
+a .doc-widget,
+a .doc-attr {
+	color: #5778d8;
 }.doc-button svg {
+	height: 1em;
+}td svg {
 	height: 1em;
 }.doc-key {
 	color: #888888;
 	font-weight: bold;
 }.doc-clink code {
 	color: #5778d8;
+}.doc-preamble {
+	border: 2px solid #e1e1e8;
+	color: #888888;
+	font-size: 90%;
+	margin-left: 0;
+	padding: 0.5em 0.7em;
+}.doc-note dt {
+	color: #888888;
 }
+.doc-note dd {
+	border-left: 2px solid #e1e1e8;
+	padding-left: 0.6em;
+}.doc-example {
+	margin: 1em 0;
+	padding: 0.8em 0;
+}
+.doc-example:hover {
+	background-color: #f7f7f9;
+}
+.doc-example ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0.2em;
+}.doc-table th, .doc-table tr {
+	vertical-align: top;
+}
+.doc-table th a {
+	font-weight: bold;
+}tr.doc-table-subheading {
+	height: 2em;
+	vertical-align: middle;
+}
+
 
 @media (min-width: 600px) {.tc-link-info {
 		display: -webkit-flex;

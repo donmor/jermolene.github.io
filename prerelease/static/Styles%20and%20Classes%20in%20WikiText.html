@@ -64,21 +64,21 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>You can use this construction to cause the wrapped content to be assigned specified CSS classes or styles:</p><pre><code>@@.myStyle
+<div class='tc-tiddler-body'><p>You can use this construction to cause the wrapped content to be assigned specified CSS classes or styles:</p><div class='doc-example'><pre><code>@@.myStyle
 * List One
 * List Two
 @@
-</code></pre><p>Renders as:</p><ul class='myStyle'><li>List One</li><li>List Two</li></ul><p>In HTML:</p><pre>&lt;ul class='myStyle'&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre><p>Similar syntax is used to assign styles. For example:</p><pre><code>@@background-color:red;
+</code></pre><p>That renders as:</p><ul class='myStyle'><li>List One</li><li>List Two</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul class='myStyle'&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Similar syntax is used to assign styles. For example:</p><div class='doc-example'><pre><code>@@background-color:red;
 * List One
 * List Two
 @@
-</code></pre><p>Renders as:</p><ul style='background-color:red;'><li>List One</li><li>List Two</li></ul><p>In HTML:</p><pre>&lt;ul style='background-color:red;'&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre><p>Multiple styles and classes can be mixed. For example:</p><pre><code>@@.tc-tiddler-frame
+</code></pre><p>That renders as:</p><ul style='background-color:red;'><li>List One</li><li>List Two</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul style='background-color:red;'&gt;&lt;li&gt;List One&lt;/li&gt;&lt;li&gt;List Two&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Multiple styles and classes can be mixed. For example:</p><div class='doc-example'><pre><code>@@.tc-tiddler-frame
 @@width:400px;
 Some text
 @@
-</code></pre><p>Renders as:</p><p class='tc-tiddler-frame' style='width:400px;'>Some text
-</p><p>In HTML:</p><pre>&lt;p class='tc-tiddler-frame' style='width:400px;'&gt;Some text
-&lt;/p&gt;</pre></div>
+</code></pre><p>That renders as:</p><p class='tc-tiddler-frame' style='width:400px;'>Some text
+</p><p>... and the underlying HTML is:</p><pre>&lt;p class='tc-tiddler-frame' style='width:400px;'&gt;Some text
+&lt;/p&gt;</pre></div></div>
 
 
 

@@ -48,7 +48,7 @@ Variables in WikiText
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 19 days ago
+</a> 9 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -71,7 +71,7 @@ bar
 
 </p></blockquote><p><strong>a variable is a macro</strong></p><p>Below, the <code>\define</code> pragma at the beginning of a tiddler <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros%2520in%2520WikiText.html'>defines the macro</a> <code>&lt;&lt;tags&gt;&gt;</code>, valid in the scope of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>CurrentTiddler</a>, returning the value of the standard <code>tags</code> field.</p><pre><code>\define tags() {{!!tags}}
 
-&lt;&lt;tags&gt;&gt;</code></pre><blockquote class='tc-quote'><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText.html'>WikiText</a></p></blockquote><p><strong>using a filter variable to get all incoming links</strong></p><p>Using the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='FilterOperator%253A%2520backlinks.html'>backlinks</a> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='FilterOperators.html'>filter operator</a> to get all tiddlers linking to this one...</p><pre><code>&lt;&lt;list-links filter:&quot;[&lt;currentTiddler&gt;backlinks[]]&quot;&gt;&gt;</code></pre><blockquote class='tc-quote'><p><ul class=''>
+&lt;&lt;tags&gt;&gt;</code></pre><blockquote class='tc-quote'><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText.html'>WikiText</a></p></blockquote><p><strong>using a filter variable to get all incoming links</strong></p><p>Using the  <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Operators.html'>filter operator</a> to get all tiddlers linking to this one...</p><pre><code>&lt;&lt;list-links filter:&quot;[&lt;currentTiddler&gt;backlinks[]]&quot;&gt;&gt;</code></pre><blockquote class='tc-quote'><p><ul class=''>
 
 <li>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>
