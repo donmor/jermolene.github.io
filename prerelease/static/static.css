@@ -58,6 +58,158 @@ Error message and password prompt
 	width: 100%;
 }
 
+@media (min-width: 600px) {.tc-link-info {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}.tc-link-info-item {
+		max-width: 24em;
+		margin-right: 10px;
+	}}.tc-double-spaced-list {
+	padding-bottom:.5em;padding-top:.5em;
+}.tc-link-info-item {
+	display: inline-block;
+	border: none;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	background: #ddeeff;
+	font-size: 0.8em;
+	line-height: 1.2;
+}.tc-link-info-item h1 {
+	font-weight: 500;
+	font-size: 16px;	
+}.tc-scrollable-demo {
+	border: 1px solid #cfd6e6;
+	background-color: #ecf2ff;
+	padding: 1em;
+	height: 400px;
+}.tc-improvement-banner {
+	font-size: 0.7em;
+	background: #fcc;
+	padding-left: 5px;
+	margin-top: 6px;
+	margin-bottom: 12px;
+	
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+          box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+
+}@media (max-width: 960px) {
+	
+	.tc-improvement-banner {
+	}}@media (min-width: 960px) {.tc-improvement-banner {
+		margin-right: -53px;
+		margin-left: -53px;
+	}.tc-improvement-banner:before {
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		content: " ";
+		margin-left: -5px;
+		margin-top: -10px;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-right: 5px solid #C07E7E;
+		border-bottom: 5px solid #C07E7E;
+	}}.tc-improvement-banner svg {
+	width: 1em;
+	height: 1em;
+}
+
+
+.doc-def {
+	font-style: normal;
+	font-weight: bold;
+}.doc-em {
+	font-style: italic;
+	font-variant: small-caps;
+	text-decoration: none;
+}.doc-strong {
+	color: #881122;
+	font-style: normal;
+	font-weight: bold;
+}.doc-foreign {
+	font-style: italic;
+}.doc-place {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
+}.doc-button,
+.doc-tab,
+.doc-tag,
+.doc-tiddler,
+.doc-field,
+.doc-value,
+.doc-operator,
+.doc-var,
+.doc-widget,
+.doc-attr {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-weight: bold;
+	padding: 0;
+}a .doc-place,
+a .doc-button,
+a .doc-tab,
+a .doc-tag,
+a .doc-tiddler,
+a .doc-field,
+a .doc-value,
+a .doc-operator,
+a .doc-var,
+a .doc-widget,
+a .doc-attr {
+	color: #5778d8;
+}.doc-button svg {
+	height: 1em;
+}td svg {
+	height: 1em;
+}.doc-key {
+	color: #888888;
+	font-weight: bold;
+}.doc-clink code {
+	color: #5778d8;
+}.doc-preamble {
+	border: 2px solid #e1e1e8;
+	color: #888888;
+	font-size: 90%;
+	margin-left: 0;
+	padding: 0.5em 0.7em;
+}.doc-note dt {
+	color: #888888;
+}
+.doc-note dd {
+	border-left: 2px solid #e1e1e8;
+	padding-left: 0.6em;
+}.doc-example {
+	margin: 1em 0;
+	padding: 0.8em 0;
+}
+.doc-example:hover {
+	background-color: #f7f7f9;
+}
+.doc-example ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0.2em;
+}.doc-table th, .doc-table tr {
+	vertical-align: top;
+}
+.doc-table th a {
+	font-weight: bold;
+}tr.doc-table-subheading {
+	height: 2em;
+	vertical-align: middle;
+}
+
+
 /* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
   /* The right and left lasses determine the side we attach our banner to */
@@ -146,28 +298,37 @@ Error message and password prompt
 }
 
 
+/* CSS modified for TiddlyWiki */
 svg.railroad-diagram {
-    background-color: hsl(30,20%,95%);
+	background-color: hsl(30,20%,98%);
+	border-radius: 5px;
+}
+svg.railroad-diagram:hover {
+	background-color: hsl(30,20%,96%);
+}
+svg.railroad-diagram path,
+svg.railroad-diagram rect {
+	stroke-width: 2;
+	stroke: #333;
 }
 svg.railroad-diagram path {
-    stroke-width: 3;
-    stroke: black;
-    fill: rgba(0,0,0,0);
-}
-svg.railroad-diagram text {
-    font: bold 14px monospace;
-    text-anchor: middle;
-}
-svg.railroad-diagram text.label {
-    text-anchor: start;
-}
-svg.railroad-diagram text.comment {
-    font: italic 12px monospace;
+	fill: rgba(0,0,0,0);
 }
 svg.railroad-diagram rect {
-    stroke-width: 3;
-    stroke: black;
-    fill: hsl(120,100%,90%);
+	fill: hsl(120,100%,90%);
+}
+svg.railroad-diagram text {
+	font: 14px monospace;
+	text-anchor: middle;
+}
+svg.railroad-diagram text.label {
+	text-anchor: start;
+}
+svg.railroad-diagram text.comment {
+	font: italic 12px monospace;
+}
+svg.railroad-diagram path.arrow {
+    stroke-width: 2;
 }
 
 .tc-sidebar-header {
@@ -906,7 +1067,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "Drop here (or click escape to cancel)";
+	content: "Drop here (or use the 'Escape' key to cancel)";
 }/*
 ** Buttons
 */button svg, button img {
@@ -1751,158 +1912,6 @@ a.tc-tiddlylink:hover {
 */.tc-error {
 	background: #f00;
 	color: #fff;
-}
-
-
-.doc-def {
-	font-style: normal;
-	font-weight: bold;
-}.doc-em {
-	font-style: italic;
-	font-variant: small-caps;
-	text-decoration: none;
-}.doc-strong {
-	color: #881122;
-	font-style: normal;
-	font-weight: bold;
-}.doc-foreign {
-	font-style: italic;
-}.doc-place {
-	background-color: #ffffff;
-	border: none;
-	color: #888888;
-	font-style: normal;
-	font-weight: bold;
-	text-transform: uppercase;
-}.doc-button,
-.doc-tab,
-.doc-tag,
-.doc-tiddler,
-.doc-field,
-.doc-value,
-.doc-operator,
-.doc-var,
-.doc-widget,
-.doc-attr {
-	background-color: #ffffff;
-	border: none;
-	color: #888888;
-	font-weight: bold;
-	padding: 0;
-}a .doc-place,
-a .doc-button,
-a .doc-tab,
-a .doc-tag,
-a .doc-tiddler,
-a .doc-field,
-a .doc-value,
-a .doc-operator,
-a .doc-var,
-a .doc-widget,
-a .doc-attr {
-	color: #5778d8;
-}.doc-button svg {
-	height: 1em;
-}td svg {
-	height: 1em;
-}.doc-key {
-	color: #888888;
-	font-weight: bold;
-}.doc-clink code {
-	color: #5778d8;
-}.doc-preamble {
-	border: 2px solid #e1e1e8;
-	color: #888888;
-	font-size: 90%;
-	margin-left: 0;
-	padding: 0.5em 0.7em;
-}.doc-note dt {
-	color: #888888;
-}
-.doc-note dd {
-	border-left: 2px solid #e1e1e8;
-	padding-left: 0.6em;
-}.doc-example {
-	margin: 1em 0;
-	padding: 0.8em 0;
-}
-.doc-example:hover {
-	background-color: #f7f7f9;
-}
-.doc-example ul {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	margin-top: 0.2em;
-}.doc-table th, .doc-table tr {
-	vertical-align: top;
-}
-.doc-table th a {
-	font-weight: bold;
-}tr.doc-table-subheading {
-	height: 2em;
-	vertical-align: middle;
-}
-
-
-@media (min-width: 600px) {.tc-link-info {
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-	}.tc-link-info-item {
-		max-width: 24em;
-		margin-right: 10px;
-	}}.tc-double-spaced-list {
-	padding-bottom:.5em;padding-top:.5em;
-}.tc-link-info-item {
-	display: inline-block;
-	border: none;
-	padding: 5px 10px;
-	margin-bottom: 10px;
-	background: #ddeeff;
-	font-size: 0.8em;
-	line-height: 1.2;
-}.tc-link-info-item h1 {
-	font-weight: 500;
-	font-size: 16px;	
-}.tc-scrollable-demo {
-	border: 1px solid #cfd6e6;
-	background-color: #ecf2ff;
-	padding: 1em;
-	height: 400px;
-}.tc-improvement-banner {
-	font-size: 0.7em;
-	background: #fcc;
-	padding-left: 5px;
-	margin-top: 6px;
-	margin-bottom: 12px;
-	
-  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-          box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-
-}@media (max-width: 960px) {
-	
-	.tc-improvement-banner {
-	}}@media (min-width: 960px) {.tc-improvement-banner {
-		margin-right: -53px;
-		margin-left: -53px;
-	}.tc-improvement-banner:before {
-		display: block;
-		position: absolute;
-		width: 0;
-		height: 0;
-		content: " ";
-		margin-left: -5px;
-		margin-top: -10px;
-		border-top: 5px solid transparent;
-		border-left: 5px solid transparent;
-		border-right: 5px solid #C07E7E;
-		border-bottom: 5px solid #C07E7E;
-	}}.tc-improvement-banner svg {
-	width: 1em;
-	height: 1em;
 }
 
 

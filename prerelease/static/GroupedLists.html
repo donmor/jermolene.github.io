@@ -48,7 +48,7 @@ GroupedLists
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 20 days ago
+</a> 31 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -64,7 +64,7 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class=''>Types Tab</h2><p>For the <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html'>Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>&lt;$list filter=&quot;[!is[system]has[type]each[type]sort[type]] -[type[text/vnd.tiddlywiki]]&quot;&gt;
+<div class='tc-tiddler-body'><p>The following sidebar tabs give examples of grouped lists created by nesting.</p><h2 class=''>Types Tab</h2><p>For the <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html'>Types</a> tab, the outer list filter as shown below selects each discrete value found in the <code>type</code> field. The inner list filter selects all the (non-system) tiddlers with that type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
 &lt;$view field=&quot;type&quot;/&gt;
 &lt;$list filter=&quot;[type{!!type}!is[system]sort[title]]&quot;&gt;

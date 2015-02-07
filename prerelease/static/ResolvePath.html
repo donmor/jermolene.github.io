@@ -17,7 +17,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros'><div class='tc-tiddler-title'>
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   '><div class='tc-tiddler-title'>
 <div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
@@ -39,7 +39,7 @@
 
 
 <h2 class='tc-title'>
-MakeDataUriMacro
+ResolvePath
 </h2>
 
 </div>
@@ -48,25 +48,11 @@ MakeDataUriMacro
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 13 months ago
+</a> 3 days ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class='tc-tags-wrapper'></div>
 
-
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
-fill:#333333;
-color:#333333;'>
- Macros
-</button>
-<span class=' tc-reveal' hidden='true'></span>
-
-
-</span>
-</div>
-
-<div class='tc-tiddler-body'><p>The makedatauri macro constructs a data URI from a block of text and an associated <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a>. It is commonly used within stylesheets to generate an inline image or font.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>text</td><td align='left'>Text to be converted to a data URI</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>type</td><td align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a> of text</td><td align='center'></td></tr></tbody></table><h1 class=''>Examples</h1><p>A trivial example to show how the macro works:</p><pre><code>&lt;&lt;makedatauri &quot;HelloThere&quot; &quot;text/plain&quot;&gt;&gt;</code></pre><p><a class='tc-tiddlylink-external' href='data:text/plain,HelloThere' target='_blank'>data:text/plain,HelloThere</a></p><p>A user-defined macro such as this would typically be used within a stylesheet:</p><pre><code>\define datauri(title)
-&lt;$macrocall $name=&quot;makedatauri&quot; type={{$title$!!type}} text={{$title$}}/&gt;
-\end</code></pre><p>Then one can write CSS rules like this:</p><pre><code>background: url(&lt;&lt;datauri &quot;$:/themes/tiddlywiki/starlight/ltbg.jpg&quot;&gt;&gt;);</code></pre></div>
+<div class='tc-tiddler-body'><p>The <strong>resolvepath</strong> macro constructs a url for a relative source path with respect to an absolute root path, trailing filenames being cut-off.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>source</td><td>the relative path to be appended</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>root</td><td align='left'>the absolute path to be appended to</td><td align='center'></td></tr></tbody></table><h1 class=''>Examples</h1><p>A trivial example to show how the macro works:</p><pre><code>&lt;&lt;resolvepath &quot;./backup&quot; &quot;http://mysite.com/store.php&quot;&gt;&gt;</code></pre><p><a class='tc-tiddlylink-external' href='http://mysite.com/backup' target='_blank'>http://mysite.com/backup</a></p></div>
 
 
 

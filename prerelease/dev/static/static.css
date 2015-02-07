@@ -58,6 +58,8 @@ Error message and password prompt
 	width: 100%;
 }
 
+
+
 /* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
   /* The right and left lasses determine the side we attach our banner to */
@@ -960,7 +962,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "Drop here (or click escape to cancel)";
+	content: "Drop here (or use the 'Escape' key to cancel)";
 }/*
 ** Buttons
 */button svg, button img {
@@ -1806,7 +1808,5 @@ a.tc-tiddlylink:hover {
 	background: #f00;
 	color: #fff;
 }
-
-
 
 

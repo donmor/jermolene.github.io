@@ -48,7 +48,7 @@ TimelineMacro
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 2 months ago
+</a> 3 months ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -66,6 +66,162 @@ color:#333333;'>
 
 <div class='tc-tiddler-body'><p>The timeline macro produces a list of tiddlers in reverse chronological order of modification date that is grouped by the date of the day of modification.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>limit</td><td align='left'>The maximum number of tiddlers to list (see below)</td><td align='left'>100</td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>format</td><td align='left'>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat.html'>DateFormat</a> string for formatting the date</td><td align='left'>DDth MMM YYYY</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subfilter</td><td align='left'>A subfilter to include in the timeline filter (see below)</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>dateField</td><td align='left'>Optional name of date field to use</td><td align='left'>modified</td></tr></tbody></table><p>The subfilter and limit parameters are spliced into the filter string like this:</p><pre><code>[!is[system]$subfilter$has[modified]!sort[modified]limit[$limit$]eachday[modified]]</code></pre><p>To restrict the timeline to a particular tag, the subfilter can be set to something like <code>tag[mytag]</code>:</p><pre><code>&lt;&lt;timeline limit:10 subfilter:&quot;tag[mytag]&quot;&gt;&gt;</code></pre><p>Note that the timeline macro does not truncate the entries for a particular day, instead always displaying all the tiddlers under each displayed day heading. This means that the limit parameter works in an unexpected way because it is possible for more than the specified number of tiddlers to be displayed.</p><h1 class=''>Examples</h1><div class='doc-example'><pre><code>&lt;&lt;timeline limit:30 format:'DD/MM/YYYY'&gt;&gt;
 </code></pre><p>That renders as:</p><p><div class='tc-timeline'>
+
+<div class='tc-menu-list-item'>
+6/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='%2522TW5-TeXZilla%2522%2520plugin%2520by%2520Joe%2520Renes.html'>
+
+&quot;TW5-TeXZilla&quot; plugin by Joe Renes
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+5/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='CheckboxWidget.html'>
+
+CheckboxWidget
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+3/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ResolvePath.html'>
+
+ResolvePath
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+29/1/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Selection%2520Constructors.html'>
+
+Selection Constructors
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='title%2520Operator.html'>
+
+title Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Run.html'>
+
+Filter Run
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='moduletypes%2520Operator.html'>
+
+moduletypes Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='list%2520Operator.html'>
+
+list Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Operators.html'>
+
+Filter Operators
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='editions%2520Operator.html'>
+
+editions Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='commands%2520Operator.html'>
+
+commands Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='all%2520Operator.html'>
+
+all Operator
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+28/1/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='GettingStarted.html'>
+
+GettingStarted
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionWidgets.html'>
+
+ActionWidgets
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+27/1/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='each%2520Operator.html'>
+
+each Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='eachday%2520Operator.html'>
+
+eachday Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tagging.html'>
+
+Tagging
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Order%2520of%2520Tagged%2520Tiddlers.html'>
+
+Order of Tagged Tiddlers
+</a>
+</div>
+
+</div>
 
 <div class='tc-menu-list-item'>
 26/1/2015
@@ -119,13 +275,6 @@ Filter Whitespace
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='sameday%2520Operator.html'>
 
 sameday Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='eachday%2520Operator.html'>
-
-eachday Operator
 </a>
 </div>
 
@@ -291,23 +440,9 @@ listed Operator
 </div>
 
 <div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='list%2520Operator.html'>
-
-list Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Creating%2520journal%2520tiddlers.html'>
 
 Creating journal tiddlers
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tagging.html'>
-
-Tagging
 </a>
 </div>
 
@@ -322,13 +457,6 @@ ListField
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>
 
 Title Selection
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Order%2520of%2520Tagged%2520Tiddlers.html'>
-
-Order of Tagged Tiddlers
 </a>
 </div>
 
@@ -368,13 +496,6 @@ backlinks Operator
 </div>
 
 <div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='all%2520Operator.html'>
-
-all Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='plugintiddlers%2520Operator.html'>
 
 plugintiddlers Operator
@@ -396,23 +517,9 @@ bf Operator
 </div>
 
 <div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Operators.html'>
-
-Filter Operators
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='untagged%2520Operator.html'>
 
 untagged Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='title%2520Operator.html'>
-
-title Operator
 </a>
 </div>
 
@@ -455,20 +562,6 @@ Filter Parameter
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Step.html'>
 
 Filter Step
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Run.html'>
-
-Filter Run
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Absolute%2520Operators.html'>
-
-Absolute Operators
 </a>
 </div>
 
@@ -585,13 +678,6 @@ previous Operator
 </div>
 
 <div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='moduletypes%2520Operator.html'>
-
-moduletypes Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='modules%2520Operator.html'>
 
 modules Operator
@@ -613,13 +699,6 @@ editiondescription Operator
 </div>
 
 <div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='each%2520Operator.html'>
-
-each Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='before%2520Operator.html'>
 
 before Operator
@@ -630,20 +709,6 @@ before Operator
 <a class='tc-tiddlylink tc-tiddlylink-resolves' href='first%2520Operator.html'>
 
 first Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='commands%2520Operator.html'>
-
-commands Operator
-</a>
-</div>
-
-<div class='tc-menu-list-subitem'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='editions%2520Operator.html'>
-
-editions Operator
 </a>
 </div>
 
