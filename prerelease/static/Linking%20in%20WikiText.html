@@ -64,6 +64,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>A key capability of <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText.html'>WikiText</a> is the ability to make links to other tiddlers or to external websites.</p><h1 class=''>Manual Links</h1><p>Link to a tiddler by title:</p><pre><code>[[Tiddler Title]]</code></pre><p>To link to a tiddler and specify the text of the link:</p><pre><code>[[Displayed Link Title|Tiddler Title]]</code></pre><h1 class=''>CamelCase Links</h1><p>For tiddler titles that match the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CamelCase.html'>CamelCase</a> rules, just typing the title without double square brackets will automatically create a link.</p><p>You can suppress a link from being recognised by preceding it with <code>~</code>. For example:</p><div class='doc-example'><pre><code>* ~HelloThere is not a link
 * ~http://google.com/ is not a link</code></pre><p>That renders as:</p><ul><li>HelloThere is not a link</li><li>http://google.com/ is not a link</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;HelloThere is not a link&lt;/li&gt;&lt;li&gt;http://google.com/ is not a link&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class=''>External Links</h1><p>To link to an external website, type the full URL of the site:</p><pre><code>http://tiddlywiki.com/
 

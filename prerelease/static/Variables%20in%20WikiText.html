@@ -48,7 +48,7 @@ Variables in WikiText
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 20 days ago
+</a> 21 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -63,6 +63,13 @@ color:#333333;'>
 
 </span>
 </div>
+
+
+
+
+
+
+
 
 <div class='tc-tiddler-body'><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>Variables</a> contain values. They are available within the scope of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets.html'>widget</a> in which they are defined, as well as all child widgets in the widget tree.</p><h2 class=''>Defining Variables</h2><p>Variables are defined by...</p><dl><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros%2520in%2520WikiText.html'>Macros</a></dt><dd>in fact, variables are macro shorthands (see example below)</dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='SetWidget.html'>SetWidget</a></dt><dd>sets a variable to a value</dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a></dt><dd>sets list-item and iterator variabes</dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a></dt><dd>in the core and core templates</dd></dl><h2 class=''>Using Variables</h2><p>Variables are used...</p><dl><dt>via shorthand</dt><dd><code>&lt;&lt;variableName&gt;&gt;</code></dd><dt>via variable substitution within <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros.html'>macros</a></dt><dd><code>$(variableName)$</code></dd><dt>as parameters to <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filters.html'>filter steps</a></dt><dd><code>[operator&lt;variableName&gt;]</code></dd><dt>in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets.html'>widgets</a></dt><dd>internally, or as widget attributes</dd><dd><code>&lt;$edit tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;</code></dd></dl><h2 class=''>Examples</h2><p><strong>defining a variable via <a class='tc-tiddlylink tc-tiddlylink-resolves' href='SetWidget.html'>SetWidget</a></strong></p><pre><code>&lt;$set name=foo value=bar&gt;
 &lt;&lt;foo&gt;&gt;

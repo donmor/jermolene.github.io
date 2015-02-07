@@ -48,7 +48,7 @@ get Operator
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 13 days ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -76,15 +76,64 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p><table class='doc-table'>
+
+
+
+
+<table class='doc-table before-tiddler-body'>
+
+
+
 <tr><th align='left'>purpose</th><td>select all values of a field in the input titles</td></tr>
+
+
+
+
+
 <tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Syntax.html'>input</a></th><td>a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection of titles</a></td></tr>
 
 
-<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>f</code> = the name of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFields.html'>field</a></td></tr>
-<tr><th align='left'>output</th><td>the values of field <code class='doc-place'>f</code> in each of the input titles</td></tr>
 
-</table></p><p>Each input title is processed in turn. If the corresponding tiddler contains field <code class='doc-place'>f</code>, and the value of this field is not empty, then its value is appended to the output.</p><p>Unlike most other <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Operators.html'>Filter Operators</a>, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection</a> output by <code class='doc-operator'>get</code> can contain duplicates. To avoid duplicates, use <code>each[f]get[f]</code>.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='get%2520Operator%2520(Examples).html'>Examples</a></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>F</code> = the name of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFields.html'>field</a></td></tr>
+
+
+
+
+
+
+<tr><th align='left'>output</th><td>the values of field <code class='doc-place'>F</code> in each of the input titles</td></tr>
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+<div class='tc-tiddler-body'><p>Each input title is processed in turn. If the corresponding tiddler contains field <code class='doc-place'>F</code>, and the value of this field is not empty, then its value is appended to the output.</p><p>Unlike most other <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Operators.html'>Filter Operators</a>, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection</a> output by <code class='doc-operator'>get</code> can contain duplicates. To avoid duplicates, use <code>each[F]get[F]</code>.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='get%2520Operator%2520(Examples).html'>Examples</a></p></div>
 
 
 

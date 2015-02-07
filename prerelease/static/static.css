@@ -139,7 +139,6 @@ Error message and password prompt
 	color: #888888;
 	font-style: normal;
 	font-weight: bold;
-	text-transform: uppercase;
 }.doc-button,
 .doc-tab,
 .doc-tag,
@@ -207,6 +206,8 @@ a .doc-attr {
 }tr.doc-table-subheading {
 	height: 2em;
 	vertical-align: middle;
+}.doc-table.before-tiddler-body {
+	margin-top: 2em;
 }
 
 

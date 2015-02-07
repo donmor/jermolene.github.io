@@ -64,6 +64,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>Action widgets are a special type of widget that perform an action such as sending a message, navigating to a tiddler, or changing the value of a tiddler. They are used in association with other widgets that trigger those actions (for example, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget.html'>ButtonWidget</a>).</p><p>Action widgets are invisible. They need not be immediate children of their triggering widget, but they must be descendents of it. The actions are performed in sequence. For example, here is a button that triggers two actions of sending different messages:</p><pre><code>&lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-home&quot;/&gt;
 &lt;$action-sendmessage $message=&quot;tm-full-screen&quot;/&gt;

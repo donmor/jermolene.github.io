@@ -48,7 +48,7 @@ splitbefore Operator
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 11 days ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -76,15 +76,64 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p><table class='doc-table'>
+
+
+
+
+<table class='doc-table before-tiddler-body'>
+
+
+
 <tr><th align='left'>purpose</th><td>select a delimited prefix from each input title</td></tr>
+
+
+
+
+
 <tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Syntax.html'>input</a></th><td>a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection of titles</a></td></tr>
 
 
-<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>s</code> = a string of characters marking the end of the prefix</td></tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>S</code> = a string of characters marking the end of the prefix</td></tr>
+
+
+
+
+
+
 <tr><th align='left'>output</th><td>the prefix, up to and including <code class='doc-place'>S</code>, of each input title</td></tr>
 
-</table></p><p>Each input title is processed in turn.</p><ul><li>A title that contains <code class='doc-place'>s</code> contributes everything up to and including <code class='doc-place'>s</code>.</li><li>A title that doesn't contain <code class='doc-place'>s</code> simply contributes itself to the output.</li></ul><p>Contributions are <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Dominant%2520Append.html'>dominantly appended</a> to the output.</p><p>The <span class='doc-clink'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TableOfContentsMacro.html'><code>toc</code></a></span> macros use this operator with <code>/</code> as the parameter.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='splitbefore%2520Operator%2520(Examples).html'>Examples</a></p></div>
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+<div class='tc-tiddler-body'><p>Each input title is processed in turn.</p><ul><li>A title that contains <code class='doc-place'>S</code> contributes everything up to and including <code class='doc-place'>S</code>.</li><li>A title that doesn't contain <code class='doc-place'>S</code> simply contributes itself to the output.</li></ul><p>Contributions are <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Dominant%2520Append.html'>dominantly appended</a> to the output.</p><p>The <span class='doc-clink'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TableOfContentsMacro.html'><code>toc</code></a></span> macros use this operator with <code>/</code> as the parameter.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='splitbefore%2520Operator%2520(Examples).html'>Examples</a></p></div>
 
 
 

@@ -76,6 +76,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> exposes the following iterator variables during list processing:</p><dl><dt><code>&lt;&lt;iterator&gt;&gt;</code></dt><dd>set to the current index, e.g. <code>1</code> </dd><dt><code>&lt;&lt;iterator-even&gt;&gt;</code></dt><dd>set to <code>true</code> for an even index, otherwise <code>false</code></dd><dt><code>&lt;&lt;iterator-last&gt;&gt;</code></dt><dd>set to <code>true</code> for last index, otherwise <code>false</code></dd></dl><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> allows to declare an <code>iterator</code> attribute through which you can declare a custom iterator variable prefix:</p><pre><code>&lt;$list filter=&quot;[tag[foo]]&quot; iterator=&quot;my-foo&quot;&gt;
 ...
 &lt;/$list&gt;</code></pre><h2 class=''>Using Iterator Variables</h2><p>You can use iterator variables with the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='RevealWidget.html'>RevealWidget</a> to conditionally render output depending on the current index...</p><p><strong>only show for item at index 1, i.e. the first item</strong></p><pre><code>&lt;$reveal type=match default=1 text=&lt;&lt;my-foo&gt;&gt;&gt;

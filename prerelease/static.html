@@ -155,7 +155,6 @@ Error message and password prompt
 	color: #888888;
 	font-style: normal;
 	font-weight: bold;
-	text-transform: uppercase;
 }.doc-button,
 .doc-tab,
 .doc-tag,
@@ -223,6 +222,8 @@ a .doc-attr {
 }tr.doc-table-subheading {
 	height: 2em;
 	vertical-align: middle;
+}.doc-table.before-tiddler-body {
+	margin-top: 2em;
 }
 
 
@@ -1964,7 +1965,6 @@ a.tc-tiddlylink:hover {
 </svg>
 
 
-
 </button>
 </span>
 
@@ -1982,7 +1982,6 @@ a.tc-tiddlylink:hover {
         <path d='M110.48779,76.0002544 C109.354214,80.4045063 107.611262,84.5641217 105.354171,88.3838625 L105.354171,88.3838625 L112.07833,95.1080219 C115.20107,98.2307613 115.210098,103.299824 112.089164,106.420759 L106.420504,112.089418 C103.301049,115.208874 98.2346851,115.205502 95.1077675,112.078585 L88.3836082,105.354425 C84.5638673,107.611516 80.4042519,109.354468 76,110.488045 L76,110.488045 L76,119.993281 C76,124.409501 72.4220153,128.000254 68.0083475,128.000254 L59.9916525,128.000254 C55.5800761,128.000254 52,124.41541 52,119.993281 L52,110.488045 C47.5957481,109.354468 43.4361327,107.611516 39.6163918,105.354425 L32.8922325,112.078585 C29.7694931,115.201324 24.7004301,115.210353 21.5794957,112.089418 L15.9108363,106.420759 C12.7913807,103.301303 12.7947522,98.2349395 15.9216697,95.1080219 L22.6458291,88.3838625 C20.3887383,84.5641217 18.6457859,80.4045063 17.5122098,76.0002544 L8.00697327,76.0002544 C3.59075293,76.0002544 2.19088375e-16,72.4222697 4.89347582e-16,68.0086019 L9.80228577e-16,59.9919069 C1.25035972e-15,55.5803305 3.58484404,52.0002544 8.00697327,52.0002544 L17.5122098,52.0002544 C18.6457859,47.5960025 20.3887383,43.4363871 22.6458291,39.6166462 L15.9216697,32.8924868 C12.7989304,29.7697475 12.7899019,24.7006845 15.9108363,21.5797501 L21.5794957,15.9110907 C24.6989513,12.7916351 29.7653149,12.7950065 32.8922325,15.9219241 L39.6163918,22.6460835 C43.4361327,20.3889927 47.5957481,18.6460403 52,17.5124642 L52,8.00722764 C52,3.5910073 55.5779847,0.000254375069 59.9916525,0.000254375069 L68.0083475,0.000254375069 C72.4199239,0.000254375069 76,3.58509841 76,8.00722764 L76,17.5124642 C80.4042519,18.6460403 84.5638673,20.3889927 88.3836082,22.6460835 L95.1077675,15.9219241 C98.2305069,12.7991848 103.29957,12.7901562 106.420504,15.9110907 L112.089164,21.5797501 C115.208619,24.6992057 115.205248,29.7655693 112.07833,32.8924868 L105.354171,39.6166462 L105.354171,39.6166462 C107.611262,43.4363871 109.354214,47.5960025 110.48779,52.0002544 L119.993027,52.0002544 C124.409247,52.0002544 128,55.5782391 128,59.9919069 L128,68.0086019 C128,72.4201783 124.415156,76.0002544 119.993027,76.0002544 L110.48779,76.0002544 L110.48779,76.0002544 Z M64,96.0002544 C81.673112,96.0002544 96,81.6733664 96,64.0002544 C96,46.3271424 81.673112,32.0002544 64,32.0002544 C46.326888,32.0002544 32,46.3271424 32,64.0002544 C32,81.6733664 46.326888,96.0002544 64,96.0002544 Z'></path>
     </g>
 </svg>
-
 
 
 </button>
@@ -2011,7 +2010,6 @@ a.tc-tiddlylink:hover {
         <path d='M120.78304,34.329058 C125.424287,43.1924006 128.049406,53.2778608 128.049406,63.9764502 C128.049406,99.3226742 99.3956295,127.97645 64.0494055,127.97645 C28.7031816,127.97645 0.0494055385,99.3226742 0.0494055385,63.9764502 C0.0494055385,28.6302262 28.7031816,-0.0235498012 64.0494055,-0.0235498012 C82.8568763,-0.0235498012 99.769563,8.08898558 111.479045,21.0056358 L114.159581,18.3250998 C117.289194,15.1954866 122.356036,15.1939641 125.480231,18.3181584 C128.598068,21.4359957 128.601317,26.5107804 125.473289,29.6388083 L120.78304,34.329058 Z M108.72451,46.3875877 C110.870571,51.8341374 112.049406,57.767628 112.049406,63.9764502 C112.049406,90.4861182 90.5590735,111.97645 64.0494055,111.97645 C37.5397375,111.97645 16.0494055,90.4861182 16.0494055,63.9764502 C16.0494055,37.4667822 37.5397375,15.9764502 64.0494055,15.9764502 C78.438886,15.9764502 91.3495036,22.308215 100.147097,32.3375836 L58.9411255,73.5435552 L41.975581,56.5780107 C38.8486152,53.4510448 33.7746915,53.4551552 30.6568542,56.5729924 C27.5326599,59.6971868 27.5372202,64.7670668 30.6618725,67.8917192 L53.279253,90.5090997 C54.8435723,92.073419 56.8951519,92.8541315 58.9380216,92.8558261 C60.987971,92.8559239 63.0389578,92.0731398 64.6049211,90.5071765 L108.72451,46.3875877 Z'></path>
     </g>
 </svg>
-
 
 
 </span>
@@ -2086,7 +2084,6 @@ More
 </svg>
 
 
-
 </button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2095,7 +2092,6 @@ More
         <path d='M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z'></path>
     </g>
 </svg>
-
 
 
 </button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
@@ -2131,6 +2127,13 @@ TiddlyWiki Pre-release
 </div>
 <div class='tc-tags-wrapper'></div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>This is a pre-release build of <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.</p><p>It is provided for testing purposes. Please don't try to use it for anything important – you should use the latest official release from <a class='tc-tiddlylink-external' href='http://tiddlywiki.com' target='_blank'>http://tiddlywiki.com</a>.</p><p>Try out the experimental system tiddler browser:</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FExplore.html'>$:/core/ui/MoreSideBar/Explore</a>
 </p></div>
 
@@ -2148,7 +2151,6 @@ TiddlyWiki Pre-release
 </svg>
 
 
-
 </button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2157,7 +2159,6 @@ TiddlyWiki Pre-release
         <path d='M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z'></path>
     </g>
 </svg>
-
 
 
 </button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
@@ -2205,6 +2206,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p><em><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.7...v5.1.8' target='_blank'>See GitHub for detailed change history of this release</a></em></p><p>This release includes many improvements to the documentation for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>. Many thanks to everyone who has helped out, but especially to our prodigious new contributor Astrid Elocson.</p><h2 class=''>Translation Improvements</h2><ul><li>Improvements to French, Chinese and Japanese translations</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/5d947ed582fb9d68c01d82a334ab75498a8724ef' target='_blank'>Added</a> Spanish translation</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/cb8caf6a01aeeac480bf28661888961657b0dbd8' target='_blank'>Added</a> Czech translation</li></ul><h2 class=''>Usability Improvements</h2><ul><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/pull/1353' target='_blank'>Improved</a> behaviour of the tag dropdown in the edit template</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/ea6e60e66983ee1184f09c5796ef6c8bceae703a' target='_blank'>Added</a> automatic focusing of the search box at startup</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/4f3cb8b9aebfc4f65f40c96ef99730887d746b41' target='_blank'>Introduced</a> the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/Railroad%2520Plugin.html'>Railroad Plugin</a> by Astrid Elocson (see it in action in the new <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/Filter%2520Syntax.html'>Filter Syntax</a> documentation)</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/230066eeae9ace8336612e02c78f8cdaa3f717e4' target='_blank'>Migrated</a> functionality of &quot;Sticky Titles&quot; theme into &quot;Vanilla&quot;/&quot;Snow White&quot;. This means that tiddler titles will stick to the top of the window during scrolling on browsers that support <code>position: sticky</code> (such as Safari and Firefox)</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/8cb7090c40489c81e8c5dfb8cbbdee2c60998c3e' target='_blank'>Added</a> icons to <a class='tc-tiddlylink tc-tiddlylink-shadow' href='static/%2524%253A%252FAdvancedSearch.html'>$:/AdvancedSearch</a>, <a class='tc-tiddlylink tc-tiddlylink-shadow' href='static/%2524%253A%252FControlPanel.html'>$:/ControlPanel</a> and <a class='tc-tiddlylink tc-tiddlylink-shadow' href='static/%2524%253A%252FTagManager.html'>$:/TagManager</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/b9129d77e99970579074bdb4f9c2ef4b77b812c6' target='_blank'>Changed</a> wording of tiddler &quot;save&quot; button to &quot;store&quot;</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/issues/1103' target='_blank'>Added</a> automatic linking of system tiddlers such as <a class='tc-tiddlylink tc-tiddlylink-shadow' href='static/%2524%253A%252FControlPanel.html'>$:/ControlPanel</a></li></ul><h2 class=''>Hackability Improvements</h2><ul><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/a1ca53fa9bab218719b582bd553a578a477666c9' target='_blank'>Added</a> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/IteratorVariables.html'>IteratorVariables</a> to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/ListWidget.html'>ListWidget</a></li></ul><h2 class=''>Bug Fixes</h2><ul><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/pull/1249' target='_blank'>Fixed</a> version number compatibility checks for plugins</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/1adfe20508116da0ee4b5c9e72ea9742f24b60c9' target='_blank'>Fixed</a> problem with repeatedly cancelling a draft</li></ul><h2 class=''>Node.js Changes</h2><p><em>These changes are only relevant to people using <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a> under Node.js</em></p><ul><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/cc85368fd48f1e5878018a4e00b6c17d436e67a9' target='_blank'>Fixed</a> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/Highlight%2520Plugin.html'>Highlight Plugin</a> to work when generating static files under Node.js</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/commit/c296f14210545374124df5d4ae9ffb402ed73561' target='_blank'>Fixed</a> problem with case-insensitive filing systems (eg Windows)</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/pull/1354' target='_blank'>Added</a> mobile metadata to static page templates</li><li><a class='tc-tiddlylink-external' href='https://github.com/Jermolene/TiddlyWiki5/pull/1352' target='_blank'>Added</a> added &quot;noclean&quot; parameter to <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/RenderTiddlersCommand.html'>RenderTiddlersCommand</a></li></ul><h2 class=''>Changes affecting plugin authors</h2><ul><li></li></ul><h2 class=''>Contributors</h2><p><a class='tc-tiddlylink-external' href='https://github.com/Jermolene' target='_blank'>@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>:</p><ul><li><a class='tc-tiddlylink-external' href='https://github.com/aelocson' target='_blank'>@aelocson</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/Arlen22' target='_blank'>@Arlen22</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/BramChen' target='_blank'>@BramChen</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/Drakor' target='_blank'>@Drakor</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/dpdannemiller' target='_blank'>@dpdannemiller</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/evgeniy-gryaznov' target='_blank'>@evgeniy-gryaznov</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/felixhayashi' target='_blank'>@felixhayashi</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/gernert' target='_blank'>@gernert</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/Infurnoape' target='_blank'>@Infurnoape</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/Jc-L' target='_blank'>@Jc-L</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/tobibeer' target='_blank'>@tobibeer</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/twMat' target='_blank'>@twMat</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/welford' target='_blank'>@welford</a></li><li><a class='tc-tiddlylink-external' href='https://github.com/xcazin' target='_blank'>@xcazin</a></li></ul></div>
 
 
@@ -2221,7 +2229,6 @@ color:#333333;'>
 </svg>
 
 
-
 </button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2230,7 +2237,6 @@ color:#333333;'>
         <path d='M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z'></path>
     </g>
 </svg>
-
 
 
 </button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
@@ -2277,6 +2283,13 @@ color:#333333;'>
 
 </span>
 </div>
+
+
+
+
+
+
+
 
 <div class='tc-tiddler-body'><p>Welcome to TiddlyWiki, a versatile note-taking web application you can download for free, store wherever you like and customise however you wish. Use it to capture, organise and share your notes in ways that word processors and other note-taking tools cannot.</p><p><button class='tc-btn-big-green' style='background:red;'>
 <svg class='tc-image-video tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2342,7 +2355,6 @@ What happened to the original TiddlyWiki?
 </svg>
 
 
-
 </button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2351,7 +2363,6 @@ What happened to the original TiddlyWiki?
         <path d='M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z'></path>
     </g>
 </svg>
-
 
 
 </button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
@@ -2399,6 +2410,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>Instructions for getting started using <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a> on the different platforms and configurations that it supports.</p><p>
 <div class='tc-tab-set tc-vertical'>
 <div class='tc-tab-buttons tc-vertical'>
@@ -2442,7 +2460,6 @@ Download full wiki <svg class='tc-image-save-button tc-image-button' height='22p
         <path d='M120.78304,34.329058 C125.424287,43.1924006 128.049406,53.2778608 128.049406,63.9764502 C128.049406,99.3226742 99.3956295,127.97645 64.0494055,127.97645 C28.7031816,127.97645 0.0494055385,99.3226742 0.0494055385,63.9764502 C0.0494055385,28.6302262 28.7031816,-0.0235498012 64.0494055,-0.0235498012 C82.8568763,-0.0235498012 99.769563,8.08898558 111.479045,21.0056358 L114.159581,18.3250998 C117.289194,15.1954866 122.356036,15.1939641 125.480231,18.3181584 C128.598068,21.4359957 128.601317,26.5107804 125.473289,29.6388083 L120.78304,34.329058 Z M108.72451,46.3875877 C110.870571,51.8341374 112.049406,57.767628 112.049406,63.9764502 C112.049406,90.4861182 90.5590735,111.97645 64.0494055,111.97645 C37.5397375,111.97645 16.0494055,90.4861182 16.0494055,63.9764502 C16.0494055,37.4667822 37.5397375,15.9764502 64.0494055,15.9764502 C78.438886,15.9764502 91.3495036,22.308215 100.147097,32.3375836 L58.9411255,73.5435552 L41.975581,56.5780107 C38.8486152,53.4510448 33.7746915,53.4551552 30.6568542,56.5729924 C27.5326599,59.6971868 27.5372202,64.7670668 30.6618725,67.8917192 L53.279253,90.5090997 C54.8435723,92.073419 56.8951519,92.8541315 58.9380216,92.8558261 C60.987971,92.8559239 63.0389578,92.0731398 64.6049211,90.5071765 L108.72451,46.3875877 Z'></path>
     </g>
 </svg>
-
 </button></p><p>If the button doesn't work save this link:</p><p><a download='index.html' href='http://tiddlywiki.com/index.html'>http://tiddlywiki.com/index.html</a></p><p>Your browser may ask you to accept the download before it begins
 </p></blockquote></div>
 
@@ -2460,7 +2477,6 @@ Download full wiki <svg class='tc-image-save-button tc-image-button' height='22p
 </svg>
 
 
-
 </button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
 
 <svg class='tc-image-edit-button tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
@@ -2469,7 +2485,6 @@ Download full wiki <svg class='tc-image-save-button tc-image-button' height='22p
         <path d='M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z'></path>
     </g>
 </svg>
-
 
 
 </button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
@@ -2517,6 +2532,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>Here we gather the latest and most useful material from the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a> community.</p><p><div class='tc-tab-set '>
 <div class='tc-tab-buttons '>
 
@@ -2563,7 +2585,7 @@ Meetups
 </button>
 
 </div><div class='tc-tab-divider '></div><div class='tc-tab-content '>
-<div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p>The latest news, articles, resources and examples.</p><div class='tc-link-info'><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TW5-TeXZilla%2522%2520plugin%2520by%2520Joe%2520Renes.html'>&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class='tc-subtitle'>Posted 17 hours ago</div></p><p>An alternative <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> plugin for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>. It supports a wider set of <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> commands than <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/KaTeX%2520Plugin.html'>KaTeX</a>, though not as extensive as <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a></p><p><a class='tc-tiddlylink-external' href='http://tw5-texzilla.tiddlyspot.com' target='_blank'>http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class='tc-quote'><p>This plugin provides <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> support in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>, using the <a class='tc-tiddlylink-external' href='https://github.com/fred-wang/TeXZilla' target='_blank'>TeXZilla</a> latex parser to generate <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a>.</p><p>Only Firefox and Safari support <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a> to convert <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
+<div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p>The latest news, articles, resources and examples.</p><div class='tc-link-info'><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TW5-TeXZilla%2522%2520plugin%2520by%2520Joe%2520Renes.html'>&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class='tc-subtitle'>Posted 22 hours ago</div></p><p>An alternative <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> plugin for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>. It supports a wider set of <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> commands than <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/KaTeX%2520Plugin.html'>KaTeX</a>, though not as extensive as <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a></p><p><a class='tc-tiddlylink-external' href='http://tw5-texzilla.tiddlyspot.com' target='_blank'>http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class='tc-quote'><p>This plugin provides <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> support in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>, using the <a class='tc-tiddlylink-external' href='https://github.com/fred-wang/TeXZilla' target='_blank'>TeXZilla</a> latex parser to generate <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a>.</p><p>Only Firefox and Safari support <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a> to convert <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522Dull%2520Roar%2522%2520by%2520Jim%2520Lehmer.html'>&quot;Dull Roar&quot; by Jim Lehmer</a></h1><p><div class='tc-subtitle'>Posted 35 days ago</div></p><p>A collection of hints and tips from Jim Lehmer, published as a static blog generated by <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.</p><p><a class='tc-tiddlylink-external' href='http://dullroar.com/tiddlywiki5.html' target='_blank'>http://dullroar.com/tiddlywiki5.html</a></p><blockquote class='tc-quote'><p>There is a decent write-up on generating static pages using Tiddlywiki on the main TW site. However, there are a few nuances not mentioned on that page, so here are a few of my notes on how I generate the pages for this site.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522GSD5%2522%2520by%2520Roma%2520Hicks.html'>&quot;GSD5&quot; by Roma Hicks</a></h1><p><div class='tc-subtitle'>Posted 38 days ago</div></p><p>An adaptation of the <a class='tc-tiddlylink-external' href='http://mgsd.tiddlyspot.com/' target='_blank'>TiddlyWiki powered GTD® system formerly known as MonkeyGTD</a> for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a> version 5.</p><p><a class='tc-tiddlylink-external' href='http://gsd5.tiddlyspot.com/' target='_blank'>http://gsd5.tiddlyspot.com/</a></p><blockquote class='tc-quote'><p>GSD5 is a Getting-Thing-Done tool for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a> based off the mGSD classic <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522Heeg.ru%2522%2520by%2520sini-Kit.html'>&quot;Heeg.ru&quot; by sini-Kit</a></h1><p><div class='tc-subtitle'>Posted 53 days ago</div></p><p>A guide in Russian to creating an online shop with <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>. No serverside code is needed, instead orders are handled by Disqus.</p><p><a class='tc-tiddlylink-external' href='http://heeg.ru/' target='_blank'>http://heeg.ru/</a></p></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TiddlyWiki%2522%2520by%2520Sander%2520de%2520Boer.html'>&quot;TiddlyWiki&quot; by Sander de Boer</a></h1><p><div class='tc-subtitle'>Posted 2 months ago</div></p><p>Dutch blog post about <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a></p><p><a class='tc-tiddlylink-external' href='https://breinbout.wordpress.com/2014/11/26/tiddlywiki/' target='_blank'>https://breinbout.wordpress.com/2014/11/26/tiddlywiki/</a></p><blockquote class='tc-quote'><p>I'm allergic to websites that are highly dependent on <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a>. I think that <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> has many useful applications to add functionality to a site, but content needs to be visible if <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> is switched off. I use the <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/NoScript.html'>NoScript</a> extension for Firefox and surf with pleasure over the Internet without spontaneous things happen that I do not give permission. I love <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> on a short leash. More crazier maybe I'm so excited about <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.

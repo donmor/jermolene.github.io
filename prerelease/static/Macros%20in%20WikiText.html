@@ -64,6 +64,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><h1 class=''>Defining Macros</h1><p>Macros are snippets of text that can be inserted with a concise shortcut.</p><p>Multi-line macros are defined like this:</p><pre><code>\define mysamplemacro(name:&quot;Bugs Bunny&quot;,address:&quot;Rabbit Hole Hill&quot;)
 Hi, I'm $name$ and I live in $address$
 \end</code></pre><h2 class=''>Parameter Substitution</h2><p>The first line of the definition specifies the macro name and any parameters. Parameters are named and can optionally have default values that are used if the parameter isn't specified at the time of calling. The body of the macro definition follows, terminated with <code>\end</code> on a line by itself.</p><p>The text of the macro can reference parameters using the <code>$name$</code> syntax. The value of the parameter is substituted at the time the macro is invoked.</p><h2 class=''>Variable Substitution</h2><p>The values of named variables can also be substituted into the text of a macro using the syntax <code>$(variable)$</code>. For example:</p><pre><code>\define mysamplemacro2()

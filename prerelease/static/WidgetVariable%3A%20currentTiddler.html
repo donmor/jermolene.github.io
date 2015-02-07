@@ -48,7 +48,7 @@ WidgetVariable: currentTiddler
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 30 days ago
+</a> 31 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -63,6 +63,13 @@ color:#333333;'>
 
 </span>
 </div>
+
+
+
+
+
+
+
 
 <div class='tc-tiddler-body'><p>The <strong>currentTiddler</strong> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>variable</a> contains the title of the current tiddler. </p><h2 class=''>Usage</h2><p>Various <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets.html'>Widgets</a> and <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros.html'>Macros</a> are by default applied with respect to the tiddler referenced via <strong>currentTiddler</strong>. Within the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> or <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TemplateTiddlers.html'>TemplateTiddlers</a> you are thus often not required to specify the tiddler title.</p><p>The following two examples are thus equivalent...</p><ul><li><code>&lt;$view field=title/&gt;</code></li><li><code>&lt;$view field=title tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;</code></li></ul><dl><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget.html'>TranscludeWidget</a></dt><dd>when <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion.html'>transcluding</a> a tiddler, <strong>currentTiddler</strong> is set to the tiddler being transcluded,</dd><dd>e.g. when using the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion%2520in%2520WikiText.html'>WikiText shorthand</a>: <code>{{||TemplateTiddlerTitle}}</code></dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a></dt><dd>overrides the <strong>currentTiddler</strong> variable with the currently iterated list-item,</dd><dd>unless a custom <code>variable</code> attribute is specified</dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerWidget.html'>TiddlerWidget</a></dt><dd>sets the <strong>currentTiddler</strong> variable for its inner scope</dd></dl><h2 class=''>Example</h2><pre><code>&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; field=title/&gt;</code></pre><blockquote class='tc-quote'><p>WidgetVariable: currentTiddler
 </p></blockquote><h2 class=''>Other Standard Variables</h2><ul><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable%253A%2520storyTiddler.html'>WidgetVariable: storyTiddler</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable%253A%2520transclusion.html'>WidgetVariable: transclusion</a></li></ul></div>

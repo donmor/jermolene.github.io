@@ -64,6 +64,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><p>The list macro is a family of macros that produce a list of tiddlers.</p><p>There are several variants of the macro:</p><ul><li><code>&lt;&lt;list-links&gt;&gt;</code> produces a list of links to tiddlers that match a filter expression. If the tiddler has a <em>caption</em> field, it is displayed in lieu of the <em>title</em> field.</li></ul><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>filter</td><td align='left'>Filter expression</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>type</td><td align='left'>HTML tag to be used for the list wrapper</td><td align='left'>&quot;ul&quot;</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subtype</td><td align='left'>HTML tag to be used for list entries</td><td align='left'>&quot;li&quot;</td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>class</td><td align='left'>An optional CSS class to be applied to the list wrapper element (eg <code>&lt;ul class=&quot;three-columns&quot;&gt;</code>)</td><td align='center'></td></tr></tbody></table><h1 class=''>Examples</h1><div class='doc-example'><pre><code>&lt;&lt;list-links filter:&quot;[tag[HelloThere]]&quot;&gt;&gt;
 </code></pre><p>That renders as:</p><p><ul class=''>
 

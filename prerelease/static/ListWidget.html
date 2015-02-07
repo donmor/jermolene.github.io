@@ -64,6 +64,13 @@ color:#333333;'>
 </span>
 </div>
 
+
+
+
+
+
+
+
 <div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The list widget displays a sequence of tiddlers matching a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filters.html'>filter</a>. It is vital for a various use-cases, e.g.:</p><ul><li>Displaying custom lists, e.g. &quot;all tiddlers tagged <strong>task</strong> not tagged <strong>done</strong>&quot;</li><li>Listing the tags of a tiddler</li><li>Displaying lists of links, like in the sidebar</li><li>Handling the main story river</li></ul><h1 class=''>Examples</h1><p><strong>plain list</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot;/&gt;</code></pre><p>Displays as:</p><blockquote class='tc-quote'><div><a class='tc-tiddlylink tc-tiddlylink-resolves' href='GroupedLists.html'>GroupedLists</a></div><div><a class='tc-tiddlylink tc-tiddlylink-resolves' href='IteratorVariables.html'>IteratorVariables</a></div></blockquote><p><strong>custom item output</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot;&gt;
 &lt;&lt;currentTiddler&gt;&gt;
 {{||$:/core/ui/ViewTemplate/tags}}

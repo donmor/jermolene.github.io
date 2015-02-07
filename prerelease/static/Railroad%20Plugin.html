@@ -48,7 +48,7 @@ Railroad Plugin
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 32 days ago
+</a> 33 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -63,6 +63,13 @@ color:#333333;'>
 
 </span>
 </div>
+
+
+
+
+
+
+
 
 <div class='tc-tiddler-body'><p>This plugin provides a <code>&lt;$railroad&gt;</code> widget for generating railroad diagrams as SVG images.</p><p>Alternatively, the <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fplugins%252Ftiddlywiki%252Frailroad%252Fsyntax.html'>diagram notation</a> can be stored in a dedicated tiddler with its <code>type</code> field set to <code>text/vnd.tiddlywiki.railroad</code>, and that tiddler can simply be transcluded to wherever it is needed.</p><p>The plugin is based on <a class='tc-tiddlylink-external' href='https://github.com/tabatkins/railroad-diagrams' target='_blank'>a library by Tab Atkins</a>, and has been extended to make it more flexible, including allowing components of a diagram to function as links or be transcluded from other tiddlers.</p><p>The content of the <code>&lt;$railroad&gt;</code> widget is ignored.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>text</td><td align='left'>Text in a special notation that defines the diagram's layout</td><td align='left'>–</td></tr><tr class='evenRow'><td align='left'>arrow</td><td align='left'>If set to <code>no</code>, repeat paths do not have an arrow on them</td><td align='left'><code>yes</code></td></tr><tr class='oddRow'><td align='left'>start</td><td align='left'>Style of the startpoint: <code>single</code>, <code>double</code>, <code>none</code></td><td align='left'><code>single</code></td></tr><tr class='evenRow'><td align='left'>end</td><td align='left'>Style of the endpoint: <code>single</code>, <code>double</code>, <code>none</code></td><td align='left'><code>single</code></td></tr><tr class='oddRow'><td align='left'>debug</td><td align='left'>If set to <code>yes</code>, the diagram displays its parse tree</td><td align='left'><code>no</code></td></tr></tbody></table><p>These options can also be specified via pragmas in the diagram notation, or globally via a dictionary tiddler called <code>$:/config/railroad</code>:</p><pre><code>arrow: yes
 start: single

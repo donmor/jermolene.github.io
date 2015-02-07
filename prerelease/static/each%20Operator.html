@@ -48,7 +48,7 @@ each Operator
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 10 days ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -76,15 +76,64 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p><table class='doc-table'>
+
+
+
+
+<table class='doc-table before-tiddler-body'>
+
+
+
 <tr><th align='left'>purpose</th><td>select one of each group of input titles by field</td></tr>
+
+
+
+
+
 <tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Syntax.html'>input</a></th><td>a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection of titles</a></td></tr>
 
-<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Step.html'>suffix</a></th><td>optionally, <code>list</code></td></tr>
-<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>f</code> = the name of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFields.html'>field</a>, defaulting to <code class='doc-field'>title</code></td></tr>
-<tr><th align='left'>output</th><td>a selection containing the first input title encountered for each distinct value of field <code class='doc-place'>f</code></td></tr>
 
-</table></p><p>Each input title is processed in turn. The value of field <code class='doc-place'>f</code> in the corresponding tiddler is examined.</p><dl><dt>each</dt><dd>As long as the field's value has not been encountered before, the title is appended to the output.</dd><dt>each:list</dt><dd>The value is treated as a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520List.html'>title list</a>. Each title in the list considered in turn. If it has not been encountered before, it is appended to the output.</dd></dl><p>If a tiddler doesn't contain field <code class='doc-place'>f</code>, it is treated as if the field's value was empty.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='each%2520Operator%2520(Examples).html'>Examples</a></p></div>
+
+
+
+
+
+
+
+
+
+
+<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Step.html'>suffix</a></th><td>optionally, <code>list</code></td></tr>
+
+
+
+
+
+
+
+<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>F</code> = the name of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFields.html'>field</a>, defaulting to <code class='doc-field'>title</code></td></tr>
+
+
+
+
+
+
+<tr><th align='left'>output</th><td>a selection containing the first input title encountered for each distinct value of field <code class='doc-place'>F</code></td></tr>
+
+
+
+
+
+
+
+
+
+</table>
+
+
+
+
+<div class='tc-tiddler-body'><p>Each input title is processed in turn. The value of field <code class='doc-place'>F</code> in the corresponding tiddler is examined.</p><dl><dt>each</dt><dd>As long as the field's value has not been encountered before, the title is appended to the output.</dd><dt>each:list</dt><dd>The value is treated as a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520List.html'>title list</a>. Each title in the list considered in turn. If it has not been encountered before, it is appended to the output.</dd></dl><p>If a tiddler doesn't contain field <code class='doc-place'>F</code>, it is treated as if the field's value was empty.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='each%2520Operator%2520(Examples).html'>Examples</a></p></div>
 
 
 

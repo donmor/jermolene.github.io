@@ -48,7 +48,7 @@ is Operator
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 13 days ago
+</a> 3 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -88,15 +88,64 @@ color:#333333;'>
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p><table class='doc-table'>
+
+
+
+
+<table class='doc-table before-tiddler-body'>
+
+
+
 <tr><th align='left'>purpose</th><td>filter the input by fundamental category</td></tr>
+
+
+
+
+
 <tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Syntax.html'>input</a></th><td>a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection of titles</a></td></tr>
 
 
-<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>c</code> = a category – see below</td></tr>
-<tr><th align='left'>output</th><td>those input tiddlers that belong to category <code class='doc-place'>c</code></td></tr>
-<tr><th align='left'><code>!</code> output</th><td>those input tiddlers that do <em class='doc-em'>not</em> belong to category <code class='doc-place'>c</code></td></tr>
-</table></p><p>The parameter <code class='doc-place'>c</code> is one of the following fundamental categories:</p><table><tbody><tr class='evenRow'><th align='left'>Category</th><th align='left'>Matches any tiddler that...</th></tr><tr class='oddRow'><td align='left' valign='top'><code>current</code></td><td align='left'>is the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>current tiddler</a></td></tr><tr class='evenRow'><td align='left' valign='top'><code>image</code></td><td align='left'>has an image <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a></td></tr><tr class='oddRow'><td align='left' valign='top'><code>missing</code></td><td align='left'>does not exist (other than possibly as a non-shadow tiddler), regardless of whether there are any links it</td></tr><tr class='evenRow'><td align='left' valign='top'><code>orphan</code></td><td align='left'>has no <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Hard%2520and%2520Soft%2520Links.html'>hard links</a> to it</td></tr><tr class='oddRow'><td align='left' valign='top'><code>shadow</code></td><td align='left'>is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ShadowTiddlers.html'>shadow tiddler</a>, regardless of whether it has been overridden with a non-shadow tiddler</td></tr><tr class='evenRow'><td align='left' valign='top'><code>system</code></td><td align='left'>is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='SystemTiddlers.html'>system tiddler</a>, i.e. its title starts with <code>$:/</code></td></tr><tr class='oddRow'><td align='left' valign='top'><code>tag</code></td><td align='left'>is in use as a tag</td></tr><tr class='evenRow'><td align='left' valign='top'><code>tiddler</code></td><td align='left'>exists as a non-shadow tiddler</td></tr></tbody></table><p>If <code class='doc-place'>c</code> is anything else, the output is an error message.</p><p><code>!is[tiddler]</code> is a synonym for <code>is[missing]</code>, and vice versa.</p><p>When <code class='doc-operator'>is[missing]</code> is the first operator in a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Run.html'>run</a>, its output is always empty. And when <code class='doc-operator'>is[shadow]</code> comes first, it outputs only those shadow tiddlers that have been overridden. This is because the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Expression.html'>initial input to a run</a> contains only <em class='doc-em'>non</em>-shadow tiddlers.</p><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='all%2520Operator.html'><code class='doc-operator'>all</code></a> operator is similar, but its scope is the whole wiki.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='is%2520Operator%2520(Examples).html'>Examples</a></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr><th align='left'><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Parameter.html'>parameter</a></th><td><code class='doc-place'>C</code> = a category</td></tr>
+
+
+
+
+
+
+<tr><th align='left'>output</th><td>those input tiddlers that belong to category <code class='doc-place'>C</code></td></tr>
+
+
+
+
+
+<tr><th align='left'><code>!</code> output</th><td>those input tiddlers that do <em class='doc-em'>not</em> belong to category <code class='doc-place'>C</code></td></tr>
+
+
+
+</table>
+
+
+
+
+<div class='tc-tiddler-body'><p>The parameter <code class='doc-place'>C</code> is one of the following fundamental categories:</p><table><tbody><tr class='evenRow'><th align='left'>Category</th><th align='left'>Matches any tiddler that...</th></tr><tr class='oddRow'><td align='left' valign='top'><code>current</code></td><td align='left'>is the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>current tiddler</a></td></tr><tr class='evenRow'><td align='left' valign='top'><code>image</code></td><td align='left'>has an image <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ContentType.html'>ContentType</a></td></tr><tr class='oddRow'><td align='left' valign='top'><code>missing</code></td><td align='left'>does not exist (other than possibly as a non-shadow tiddler), regardless of whether there are any links it</td></tr><tr class='evenRow'><td align='left' valign='top'><code>orphan</code></td><td align='left'>has no <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Hard%2520and%2520Soft%2520Links.html'>hard links</a> to it</td></tr><tr class='oddRow'><td align='left' valign='top'><code>shadow</code></td><td align='left'>is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ShadowTiddlers.html'>shadow tiddler</a>, regardless of whether it has been overridden with a non-shadow tiddler</td></tr><tr class='evenRow'><td align='left' valign='top'><code>system</code></td><td align='left'>is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='SystemTiddlers.html'>system tiddler</a>, i.e. its title starts with <code>$:/</code></td></tr><tr class='oddRow'><td align='left' valign='top'><code>tag</code></td><td align='left'>is in use as a tag</td></tr><tr class='evenRow'><td align='left' valign='top'><code>tiddler</code></td><td align='left'>exists as a non-shadow tiddler</td></tr></tbody></table><p>If <code class='doc-place'>C</code> is anything else, the output is an error message.</p><p><code>!is[tiddler]</code> is a synonym for <code>is[missing]</code>, and vice versa.</p><p>When <code class='doc-operator'>is[missing]</code> is the first operator in a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Run.html'>run</a>, its output is always empty. And when <code class='doc-operator'>is[shadow]</code> comes first, it outputs only those shadow tiddlers that have been overridden. This is because the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter%2520Expression.html'>initial input to a run</a> contains only <em class='doc-em'>non</em>-shadow tiddlers.</p><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='all%2520Operator.html'><code class='doc-operator'>all</code></a> operator is similar, but its scope is the whole wiki.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='is%2520Operator%2520(Examples).html'>Examples</a></p></div>
 
 
 
