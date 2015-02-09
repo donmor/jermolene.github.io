@@ -884,6 +884,17 @@ a.tc-tiddlylink:hover {
 	text-align: center;
 	content: "Hierher ziehen (oder Escape um abzubrechen)";
 }/*
+** Plugin reload warning
+*/.tc-plugin-reload-warning {
+	z-index: 1000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #ffe476;
+	text-align: center;
+}/*
 ** Buttons
 */button svg, button img {
 	vertical-align: middle;
