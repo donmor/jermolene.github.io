@@ -1,0 +1,576 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="application-name" content="TiddlyWiki Plugin Library" />
+<meta name="application-version" content="v0.0.0" />
+<meta name="copyright" content="Copyright 2015 Jeremy Ruston" />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Plugin Library</title>
+<script>
+var assetList = [
+    {
+        "title": "$:/plugins/tiddlywiki/browser-sniff",
+        "description": "Browser sniffing for TiddlyWiki",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/cecily",
+        "description": "Zoomable User Interface for TiddlyWiki",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/classictools",
+        "description": "Tools for working with classic TiddlyWiki documents",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/codemirror",
+        "description": "Codemirror plugin",
+        "author": "JeremyRuston",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/d3",
+        "description": "d3.js plugin for TiddlyWiki5",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/filesystem",
+        "description": "File system synchronisation",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/github-fork-ribbon",
+        "description": "GitHub-style ribbon in pure CSS",
+        "author": "Simon Whitaker, adapted for TiddlyWiki by JeremyRuston",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/googleanalytics",
+        "description": "Google Analytics plugin for TiddlyWiki5",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/highlight",
+        "description": "Highlight.js plugin for TiddlyWiki5",
+        "author": "JoaoBolila",
+        "list": "license",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/jasmine",
+        "description": "Jasmine test framework plugin for TiddlyWiki5",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/katex",
+        "description": "Mathematics typesetting plugin wrapping KaTeX",
+        "author": "JeremyRuston",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/markdown",
+        "description": "Markdown plugin wrapping markdown-js",
+        "author": "JeremyRuston",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/nodewebkitsaver",
+        "description": "Native saving for node-webkit",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/pluginlibrary",
+        "description": "Plugin for building the TiddlyWiki Plugin Library",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/railroad",
+        "description": "Plugin for generating SVG railroad diagrams",
+        "author": "Astrid Elocson",
+        "plugin-type": "plugin",
+        "list": "readme syntax example",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/tahoelafs",
+        "description": "Support for saving changes to Tahoe-LAFS",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/tiddlyweb",
+        "description": "TiddlyWeb and TiddlySpace components",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/translators",
+        "description": "Tools to help translators of TiddlyWiki",
+        "author": "JeremyRuston",
+        "list": "readme",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/tw2parser",
+        "description": "TiddlyWiki Classic-compatible wikitext parser",
+        "authors": "JeremyRuston, JeffreyWilkinson",
+        "core-version": ">=5.0.15",
+        "plugin-type": "plugin",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/upgrade",
+        "description": "User interface for upgrading TiddlyWiki documents",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/centralised",
+        "name": "Centralised",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "Experimental theme with a centred text column",
+        "dependents": "$:/themes/tiddlywiki/snowwhite",
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/readonly",
+        "name": "ReadOnly",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "Theme for removing editing features",
+        "dependents": "$:/themes/tiddlywiki/snowwhite",
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/seamless",
+        "name": "Seamless",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "Borderless tiddlers",
+        "dependents": "$:/themes/tiddlywiki/vanilla",
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/snowwhite",
+        "name": "Snow White",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "A clean theme that emphasises individual tiddlers",
+        "dependents": "$:/themes/tiddlywiki/vanilla",
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/starlight",
+        "name": "Starlight",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "An alternate theme",
+        "dependents": "$:/themes/tiddlywiki/snowwhite",
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/vanilla",
+        "name": "Vanilla",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "A basic default theme",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/cs-CZ",
+        "name": "cs-CZ",
+        "plugin-type": "language",
+        "description": "Česky (Czech Republic)",
+        "author": "Zdeněk Jašek",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/da-DK",
+        "name": "da-DK",
+        "plugin-type": "language",
+        "description": "Danish (Denmark)",
+        "author": "Birthe C",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/de-AT",
+        "name": "de-AT",
+        "plugin-type": "language",
+        "description": "Deutsch (Österreich)",
+        "author": "MarioPietsch aka pmario",
+        "core-version": ">=5.0.0",
+        "dependents": "$:/languages/de-DE",
+        "plugin-priority": 110,
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/de-CH",
+        "name": "de-CH",
+        "plugin-type": "language",
+        "description": "Deutsch (Schweiz)",
+        "author": "MarioPietsch aka pmario",
+        "core-version": ">=5.0.0",
+        "dependents": "$:/languages/de-DE",
+        "plugin-priority": 110,
+        "version": "5.1.8-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/de-DE",
+        "name": "de-DE",
+        "plugin-type": "language",
+        "description": "Deutsch (Deutschland)",
+        "author": "MarioPietsch aka pmario",
+        "core-version": ">=5.0.0",
+        "plugin-priority": 100,
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/el-GR",
+        "name": "el-GR",
+        "plugin-type": "language",
+        "description": "Greek (Greece)",
+        "author": "Stratis Aravias@ΓΕΛ Σαμοθράκης",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/es-ES",
+        "name": "es-ES",
+        "plugin-type": "language",
+        "description": "España (Spain)",
+        "author": "Pau Deluca",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/fr-FR",
+        "name": "fr-FR",
+        "plugin-type": "language",
+        "description": "Français (France)",
+        "author": "xcazin",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/hi-IN",
+        "name": "hi-IN",
+        "plugin-type": "language",
+        "description": "Hindi (India)",
+        "author": "Atul Grover",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/ia-IA",
+        "name": "ia-IA",
+        "plugin-type": "language",
+        "description": "Interlingua (Interlingua)",
+        "author": "Thomas Breinstrup",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/it-IT",
+        "name": "it-IT",
+        "plugin-type": "language",
+        "description": "Italian (Italy)",
+        "author": "MaurizioPollio",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/ja-JP",
+        "name": "ja-JP",
+        "plugin-type": "language",
+        "description": "Japanese (Japan)",
+        "author": "Makoto Hirohashi, OGOSHI Masayuki, pekopeko1",
+        "core-version": ">=5.1.4",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/nl-NL",
+        "name": "nl-NL",
+        "plugin-type": "language",
+        "description": "Dutch (The Netherlands)",
+        "author": "gernert",
+        "core-version": ">=5.1.5",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/pa-IN",
+        "name": "pa-IN",
+        "plugin-type": "language",
+        "description": "Punjabi (India)",
+        "author": "Atul Grover",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/pt-PT",
+        "name": "pt-PT",
+        "plugin-type": "language",
+        "description": "Portuguese (Portugal)",
+        "author": "Duarte Farrajota Ramos",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/ru-RU",
+        "name": "ru-RU",
+        "plugin-type": "language",
+        "description": "Russian (Russia)",
+        "author": "AndreyYankin aka andrey013",
+        "core-version": ">=5.0.0",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/zh-Hans",
+        "name": "zh-Hans",
+        "plugin-type": "language",
+        "description": "Chinese (Simplified)",
+        "author": "BramChen",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/languages/zh-Hant",
+        "name": "zh-Hant",
+        "plugin-type": "language",
+        "description": "Chinese (Traditional)",
+        "author": "BramChen",
+        "core-version": ">=5.0.8",
+        "version": "5.1.8-prerelease",
+        "dependents": "",
+        "type": "application/json"
+    }
+];
+
+/*\
+title: $:/plugins/tiddlywiki/pluginlibrary/libraryserver.js
+type: application/javascript
+module-type: library
+
+A simple HTTP-over-window.postMessage implementation of a standard TiddlyWeb-compatible server. It uses real HTTP to load the individual tiddler JSON files.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+// Listen for window messages
+window.addEventListener("message",function listener(event){
+	console.log("plugin library: Received message from",event.origin);
+	console.log("plugin library: Message content",event.data);
+	switch(event.data.verb) {
+		case "GET":
+			if(event.data.url === "recipes/default/tiddlers.json") {
+				// Route for recipes/default/tiddlers.json
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "200",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "application/json",
+					body: JSON.stringify(assetList,null,4)
+				},"*");
+			} else if(event.data.url.indexOf("recipes/default/tiddlers/") === 0) {
+				var url = "recipes/default/tiddlers/" + encodeURIComponent(removePrefix(event.data.url,"recipes/default/tiddlers/"));
+				// Route for recipes/default/tiddlers/<uri-encoded-tiddler-title>.json
+				httpGet(url,function(err,responseText) {
+					if(err) {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "404",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "text/plain",
+							body: "Not found"
+						},"*");
+					} else {
+						event.source.postMessage({
+							verb: "GET-RESPONSE",
+							status: "200",
+							cookies: event.data.cookies,
+							url: event.data.url,
+							type: "application/json",
+							body: responseText
+						},"*");
+					}
+				});
+			} else {
+				event.source.postMessage({
+					verb: "GET-RESPONSE",
+					status: "404",
+					cookies: event.data.cookies,
+					url: event.data.url,
+					type: "text/plain",
+					body: "Not found"
+				},"*");
+			}
+			break;
+	}
+},false);
+
+// Helper to remove string prefixes
+function removePrefix(string,prefix) {
+	if(string.indexOf(prefix) === 0) {
+		return string.substr(prefix.length);
+	} else {
+		return string;
+	}
+}
+
+// Helper for HTTP GET
+function httpGet(url,callback) {
+	var http = new XMLHttpRequest();
+	http.open("GET",url,true);
+	http.onreadystatechange = function() {
+		if(http.readyState == 4 && http.status == 200) {
+			callback(null,http.responseText);
+		}
+	};
+	http.send();
+}
+
+})();
+
+</script>
+</head>
+<body><h1>HelloThere</h1><p>This is the TiddlyWiki plugin library. It is not intended to be opened directly in the browser.</p><p>See <a href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a> for details of how to install plugins.</p></body>
+</html>
