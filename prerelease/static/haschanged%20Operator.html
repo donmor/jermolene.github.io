@@ -48,7 +48,7 @@ haschanged Operator
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 24 hours ago
+</a> 2 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -84,7 +84,7 @@ color:#333333;'>
 
 
 
-<tr><th align='left'>purpose</th><td>returns input titles where the corresponding tiddlers have changed since startup</td></tr>
+<tr><th align='left'>purpose</th><td>filter the input by tiddler modification status</td></tr>
 
 
 
@@ -118,13 +118,13 @@ color:#333333;'>
 
 
 
-<tr><th align='left'>output</th><td>those input tiddlers that have not changed since startup</td></tr>
+<tr><th align='left'>output</th><td>those input tiddlers that have been modified during this session</td></tr>
 
 
 
 
 
-<tr><th align='left'><code>!</code> output</th><td>those input tiddlers that have changed since startup</td></tr>
+<tr><th align='left'><code>!</code> output</th><td>those input tiddlers that have <em class='doc-em'>not</em> been modified during this session</td></tr>
 
 
 
@@ -133,7 +133,7 @@ color:#333333;'>
 
 
 
-<div class='tc-tiddler-body'><p>Each input title is processed in turn, and is returned if any of its fields have changed since startup (or, with negation, if it has not changed).</p><p><a class='tc-tiddlylink tc-tiddlylink-missing' href='haschanged%2520Operator%2520(Examples).html'>Examples</a></p></div>
+<div class='tc-tiddler-body'><p>A tiddler is deemed to have been modified if it has been written back to the wiki since the start of the current TiddlyWiki session. If you edit a tiddler and immediately store it again without making any changes, that is enough to mark it as modified.</p><p><a class='tc-tiddlylink tc-tiddlylink-missing' href='haschanged%2520Operator%2520(Examples).html'>Examples</a></p></div>
 
 
 
