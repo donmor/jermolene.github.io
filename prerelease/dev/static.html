@@ -262,9 +262,9 @@ Error message and password prompt
 }@media screen {
 	.tc-tiddler-frame {
 		
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 
 	}
 }@media (max-width: 960px) {
@@ -836,7 +836,9 @@ th {
 ** Basic element styles
 */html {
 	font-family: "Georgia", serif;
-	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */	
+	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }html:-webkit-full-screen {
 	background-color: #f4d7a3;
 }body.tc-body {
@@ -1847,7 +1849,7 @@ a.tc-tiddlylink:hover {
 <body class="tc-body">
 <p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></div></div>
 </p>
-<div class='tc-page-container tc-page-view-stacked tc-language-en-GB'><div class='tc-dropzone'><span class='tc-topbar tc-topbar-left'></span><span class='tc-topbar tc-topbar-right'><span class=' tc-reveal'>
+<div class='tc-page-container tc-page-view-classic tc-language-en-GB'><div class='tc-dropzone'><span class='tc-topbar tc-topbar-left'></span><span class='tc-topbar tc-topbar-right'><span class=' tc-reveal'>
 <button aria-label='hide sidebar' class='tc-btn-invisible' title='Hide sidebar'><svg class='tc-image-chevron-right tc-image-button' height='22pt' viewBox='0 0 128 128' width='22pt'>
     <g fill-rule='evenodd' transform='translate(-48.000000, -3.000000)'>
         <path d='M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z' transform='translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) '></path>
@@ -1976,7 +1978,7 @@ More
 </p></div><div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal' hidden='true'></div>
 </div>
 </div></p></div></div>
-</div></div></div></div><section class='tc-story-river'><section class='story-backdrop'></section><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents tc-tiddlylink tc-tiddlylink-resolves' href='static/HelloThere.html' tabindex='1'><div class='tc-tiddler-title'>
+</div></div></div></div><section class='tc-story-river'><section class='story-backdrop'></section><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents'><div class='tc-tiddler-title'>
 <div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
@@ -2047,7 +2049,7 @@ color:#4e432f;'>
 
 </div>
 
-<div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc tc-tiddlylink tc-tiddlylink-resolves' href='static/Introduction.html' tabindex='1'><div class='tc-tiddler-title'>
+<div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc'><div class='tc-tiddler-title'>
 <div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
@@ -2096,7 +2098,7 @@ Introduction
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/.html'>
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 

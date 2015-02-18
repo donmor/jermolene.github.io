@@ -166,9 +166,9 @@ Error message and password prompt
 }@media screen {
 	.tc-tiddler-frame {
 		
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+     -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 
 	}
 }@media (max-width: 960px) {
@@ -740,7 +740,9 @@ th {
 ** Basic element styles
 */html {
 	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */	
+	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }html:-webkit-full-screen {
 	background-color: #ececec;
 }body.tc-body {
