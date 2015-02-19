@@ -5983,6 +5983,14 @@ It looks like this browser doesn't run JavaScript. You can use one of these stat
 <pre>\define treenode-inner(prefix)
 &lt;$reveal type=&quot;nomatch&quot; text=&quot;&quot; default=&quot;&quot;&quot;$(chunk)$&quot;&quot;&quot;&gt;
 &lt;li&gt;
+&lt;$list filter=&quot;&quot;&quot;[all[shadows+tiddlers]prefix[$prefix$$(chunk)$]] -[[$prefix$$(chunk)$]] +[limit[1]]&quot;&quot;&quot; emptyMessage=&quot;&quot;&quot;&lt;button class=&quot;tc-btn-invisible&quot; disabled&gt;{{$:/core/images/blank}}&lt;/button&gt;&quot;&quot;&quot;&gt;
+&lt;$reveal type=&quot;nomatch&quot; state=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; text=&quot;show&quot;&gt;
+&lt;$button set=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; setTo=&quot;show&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;$reveal type=&quot;match&quot; state=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; text=&quot;show&quot;&gt;
+&lt;$button set=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; setTo=&quot;hide&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;
+&lt;/$reveal&gt;
+&lt;/$list&gt;
 &lt;$list filter=&quot;&quot;&quot;[[$prefix$$(chunk)$]is[shadow]] [[$prefix$$(chunk)$]is[tiddler]] +[limit[1]]&quot;&quot;&quot; emptyMessage=&quot;&quot;&quot;&lt;$text text=&quot;$prefix$$(chunk)$&quot;/&gt;&quot;&quot;&quot;&gt;
 &lt;$link&gt;
 &lt;$view field=&quot;title&quot;/&gt;
@@ -5990,11 +5998,7 @@ It looks like this browser doesn't run JavaScript. You can use one of these stat
 &lt;/$list&gt;
 &lt;$list filter=&quot;&quot;&quot;[all[shadows+tiddlers]prefix[$prefix$$(chunk)$]] -[[$prefix$$(chunk)$]] +[limit[1]]&quot;&quot;&quot;&gt;
 (&lt;$count filter=&quot;&quot;&quot;[all[shadows+tiddlers]prefix[$prefix$$(chunk)$]] -[[$prefix$$(chunk)$]]&quot;&quot;&quot;/&gt;)
-&lt;$reveal type=&quot;nomatch&quot; state=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; text=&quot;show&quot;&gt;
-&lt;$button set=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; setTo=&quot;show&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;
-&lt;/$reveal&gt;
 &lt;$reveal type=&quot;match&quot; state=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; text=&quot;show&quot;&gt;
-&lt;$button set=&quot;&quot;&quot;$:/state/tree/$prefix$$(chunk)$&quot;&quot;&quot; setTo=&quot;hide&quot; class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/chevron-down}}&lt;/$button&gt;
 &lt;$macrocall $name=&quot;treenode&quot; prefix=&quot;&quot;&quot;$prefix$$(chunk)$&quot;&quot;&quot;/&gt;
 &lt;/$reveal&gt;
 &lt;/$list&gt;
@@ -6010,8 +6014,9 @@ It looks like this browser doesn't run JavaScript. You can use one of these stat
 &lt;/ol&gt;
 \end
 
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;treenode &quot;$:/&quot;&gt;&gt;
-
+&lt;/div&gt;
 </pre>
 </div>
 <div title="$:/CurvedText">
