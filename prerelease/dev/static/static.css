@@ -265,7 +265,8 @@ Error message and password prompt
      -moz-transition: fill 150ms ease-in-out;
           transition: fill 150ms ease-in-out;
 
-}.tc-tiddler-controls button.tc-selected svg {
+}.tc-tiddler-controls button.tc-selected svg,
+.tc-page-controls button.tc-selected svg  {
 	
   -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
      -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
@@ -1232,7 +1233,8 @@ a.tc-tiddlylink:hover {
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
 	height: 0.75em;
 	fill: #9eaeb4;
-}.tc-tiddler-controls button.tc-selected svg {
+}.tc-tiddler-controls button.tc-selected svg,
+.tc-page-controls button.tc-selected svg  {
 	fill: #444444;
 }.tc-tiddler-controls button.tc-btn-invisible:hover svg {
 	fill: #888888;
