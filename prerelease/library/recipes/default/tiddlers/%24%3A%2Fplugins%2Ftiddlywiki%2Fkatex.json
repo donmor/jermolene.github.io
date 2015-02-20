@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/tiddlywiki/katex",
-    "description": "Mathematics typesetting plugin wrapping KaTeX",
+    "description": "KaTeX: mathematical typography",
     "author": "JeremyRuston",
     "version": "5.1.8-prerelease",
     "plugin-type": "plugin",

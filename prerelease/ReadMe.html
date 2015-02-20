@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   '><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+ReadMe
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 5 months ago
+</div>
+<div class='tc-tags-wrapper'></div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p>Welcome to <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a>, a non-linear personal web notebook that anyone can use and keep forever, independently of any corporation.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> is a complete interactive wiki in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='JavaScript'>JavaScript</a>. It can be used as a single HTML file in the browser or as a powerful Node.js application. It is highly customisable: the entire user interface is itself implemented in hackable <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText'>WikiText</a>.</p><p>Learn more and see it in action at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></p><p>Developer documentation is in progress at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></p><h1 class=''>Installing <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> on Node.js</h1><ol><li>Install <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Node.js'>Node.js</a> from <a class='tc-tiddlylink-external' href='http://nodejs.org' target='_blank'>http://nodejs.org</a></li><li>Open a command line terminal and type:<blockquote><p><code>npm install -g tiddlywiki</code></p><p>If it fails with an error you may need to re-run the command as an administrator:</p><p><code>npm install -g tiddlywiki</code> (Windows)</p><p><code>sudo npm install -g tiddlywiki</code> (Mac/Linux)</p></blockquote></li><li>Check <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> is installed by typing:<blockquote><p><code>tiddlywiki --version</code></p></blockquote></li><li>In response, you should see <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> report its current version (eg <code>&lt;&lt;version&gt;&gt;</code>; you may also see other debugging information reported)</li><li>Try it out:<ol><li><code>tiddlywiki mynewwiki --init server</code> to create a folder for a new wiki that includes server-related components</li><li><code>tiddlywiki mynewwiki --server</code> to start <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a></li><li>Visit <a class='tc-tiddlylink-external' href='http://127.0.0.1:8080/' target='_blank'>http://127.0.0.1:8080/</a> in your browser</li><li>Try editing and creating tiddlers</li></ol></li></ol><p>The <code>-g</code> flag causes <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> to be installed globally. Without it, <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> will only be available in the directory where you installed it.
+</p><h1 class=''>Using <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> on Node.js</h1><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki5'>TiddlyWiki5</a> can be used on the command line to perform an extensive set of operations based on <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWikiFolders'>TiddlyWikiFolders</a>, <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFiles'>TiddlerFiles</a> and <a class='tc-tiddlylink tc-tiddlylink-missing' href='TiddlyWikiFiles'>TiddlyWikiFiles</a>.</p><p>For example, the following command loads the tiddlers from a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> HTML file and then saves one of them in static HTML:</p><pre><code>tiddlywiki --verbose --load mywiki.html --rendertiddler ReadMe ./readme.html</code></pre><p>Running <code>tiddlywiki</code> from the command line boots the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> kernel, loads the core plugins and establishes an empty wiki store. It then sequentially processes the command line arguments from left to right. The arguments are separated with spaces.</p><p>The first argument is the optional path to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWikiFolders'>TiddlyWikiFolder</a> to be loaded. If not present, then the current directory is used.</p><p>The commands and their individual arguments follow, each command being identified by the prefix <code>--</code>.</p><pre><code>tiddlywiki [&lt;wikipath&gt;] [--&lt;command&gt; [&lt;arg&gt;[,&lt;arg&gt;]]]</code></pre><p>The available commands are:</p><p><ul class=''>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='BuildCommand'>
+build
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ClearPasswordCommand'>
+clearpassword
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='EditionsCommand'>
+editions
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelpCommand'>
+help
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='InitCommand'>
+init
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='LoadCommand'>
+load
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='MakeLibraryCommand'>
+makelibrary
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='OutputCommand'>
+output
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='PasswordCommand'>
+password
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='RenderTiddlerCommand'>
+rendertiddler
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='RenderTiddlersCommand'>
+rendertiddlers
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='SaveTiddlerCommand'>
+savetiddler
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='SaveTiddlersCommand'>
+savetiddlers
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ServerCommand'>
+server
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='SetFieldCommand'>
+setfield
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='UnpackPluginCommand'>
+unpackplugin
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='VerboseCommand'>
+verbose
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='VersionCommand'>
+version
+</a>
+</li>
+
+</ul></p><h1 class=''>Upgrading <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> on Node.js</h1><p>If you&#39;ve installed <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki on Node.js'>TiddlyWiki on Node.js</a> on the usual way, when a new version is released you can upgrade it with this command:</p><pre><code>npm update -g tiddlywiki</code></pre><p>On Mac or Linux you&#39;ll need to add <strong>sudo</strong> like this:</p><pre><code>sudo npm update -g tiddlywiki</code></pre><h1 class=''>Also see</h1><p><ul class=''>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Building TiddlyWikiClassic'>
+
+Building TiddlyWikiClassic
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Environment Variables on Node.js'>
+
+Environment Variables on Node.js
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Generating Static Sites with TiddlyWiki'>
+
+Generating Static Sites with TiddlyWiki
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='How to build a TiddlyWiki5 from individual tiddlers'>
+
+How to build a TiddlyWiki5 from individual tiddlers
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='MultiTiddlerFiles'>
+
+MultiTiddlerFiles
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Scripts for TiddlyWiki on Node.js'>
+
+Scripts for TiddlyWiki on Node.js
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFiles'>
+
+TiddlerFiles
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWikiFolders'>
+
+TiddlyWikiFolders
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Using a custom path prefix with the client-server edition'>
+
+Using a custom path prefix with the client-server edition
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Using TiddlyWiki for GitHub project documentation'>
+
+Using TiddlyWiki for GitHub project documentation
+
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Working with the TiddlyWiki5 repository'>
+
+Working with the TiddlyWiki5 repository
+
+</a>
+</li>
+
+</ul></p><p><em>This readme file was automatically generated by <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a></em></p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

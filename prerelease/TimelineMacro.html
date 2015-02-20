@@ -1,0 +1,556 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+TimelineMacro
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 3 months ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Macros
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p>The timeline macro produces a list of tiddlers in reverse chronological order of modification date that is grouped by the date of the day of modification.</p><h1 class=''>Parameters</h1><table><tbody><tr class='evenRow'><th align='left'>Position</th><th align='left'>Name</th><th align='left'>Description</th><th align='left'>Default</th></tr><tr class='oddRow'><td align='left'>1st</td><td align='left'>limit</td><td align='left'>The maximum number of tiddlers to list (see below)</td><td align='left'>100</td></tr><tr class='evenRow'><td align='left'>2nd</td><td align='left'>format</td><td align='left'>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat'>DateFormat</a> string for formatting the date</td><td align='left'>DDth MMM YYYY</td></tr><tr class='oddRow'><td align='left'>3rd</td><td align='left'>subfilter</td><td align='left'>A subfilter to include in the timeline filter (see below)</td><td align='center'></td></tr><tr class='evenRow'><td align='left'>4th</td><td align='left'>dateField</td><td align='left'>Optional name of date field to use</td><td align='left'>modified</td></tr></tbody></table><p>The subfilter and limit parameters are spliced into the filter string like this:</p><pre><code>[!is[system]$subfilter$has[modified]!sort[modified]limit[$limit$]eachday[modified]]</code></pre><p>To restrict the timeline to a particular tag, the subfilter can be set to something like <code>tag[mytag]</code>:</p><pre><code>&lt;&lt;timeline limit:10 subfilter:&quot;tag[mytag]&quot;&gt;&gt;</code></pre><p>Note that the timeline macro does not truncate the entries for a particular day, instead always displaying all the tiddlers under each displayed day heading. This means that the limit parameter works in an unexpected way because it is possible for more than the specified number of tiddlers to be displayed.</p><h1 class=''>Examples</h1><div class='doc-example'><pre><code>&lt;&lt;timeline limit:30 format:&#39;DD/MM/YYYY&#39;&gt;&gt;
+</code></pre><p>That renders as:</p><p><div class='tc-timeline'>
+
+<div class='tc-menu-list-item'>
+16/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerFiles'>
+
+TiddlerFiles
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+10/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='eachday Operator'>
+
+eachday Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='is Operator'>
+
+is Operator
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+8/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='haschanged Operator'>
+
+haschanged Operator
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+7/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HistoryMechanism'>
+
+HistoryMechanism
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+6/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='&quot;TW5-TeXZilla&quot; plugin by Joe Renes'>
+
+&quot;TW5-TeXZilla&quot; plugin by Joe Renes
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+5/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='CheckboxWidget'>
+
+CheckboxWidget
+</a>
+</div>
+
+</div>
+
+<div class='tc-menu-list-item'>
+3/2/2015
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='suffix Operator'>
+
+suffix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='prefix Operator'>
+
+prefix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='list Operator'>
+
+list Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='splitbefore Operator'>
+
+splitbefore Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='nth Operator'>
+
+nth Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='last Operator'>
+
+last Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='first Operator'>
+
+first Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='butlast Operator'>
+
+butlast Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='before Operator'>
+
+before Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='tag Operator'>
+
+tag Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='has Operator'>
+
+has Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='untagged Operator'>
+
+untagged Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='title Operator'>
+
+title Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='tags Operator'>
+
+tags Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='tagging Operator'>
+
+tagging Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='storyviews Operator'>
+
+storyviews Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='sortcs Operator'>
+
+sortcs Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='sort Operator'>
+
+sort Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='shadowsource Operator'>
+
+shadowsource Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='search Operator'>
+
+search Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='sameday Operator'>
+
+sameday Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='reverse Operator'>
+
+reverse Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='rest Operator'>
+
+rest Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='removesuffix Operator'>
+
+removesuffix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='removeprefix Operator'>
+
+removeprefix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='regexp Operator'>
+
+regexp Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='previous Operator'>
+
+previous Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='plugintiddlers Operator'>
+
+plugintiddlers Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='nsortcs Operator'>
+
+nsortcs Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='nsort Operator'>
+
+nsort Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='next Operator'>
+
+next Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='moduletypes Operator'>
+
+moduletypes Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='modules Operator'>
+
+modules Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='listed Operator'>
+
+listed Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='links Operator'>
+
+links Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='limit Operator'>
+
+limit Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='indexes Operator'>
+
+indexes Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='get Operator'>
+
+get Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='fields Operator'>
+
+fields Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='field Operator'>
+
+field Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='editions Operator'>
+
+editions Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='editiondescription Operator'>
+
+editiondescription Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='each Operator'>
+
+each Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='commands Operator'>
+
+commands Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='bf Operator'>
+
+bf Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='butfirst Operator'>
+
+butfirst Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filter Operators'>
+
+Filter Operators
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='backlinks Operator'>
+
+backlinks Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='all Operator'>
+
+all Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='addsuffix Operator'>
+
+addsuffix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='after Operator'>
+
+after Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='addprefix Operator'>
+
+addprefix Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ResolvePath'>
+
+ResolvePath
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='getindex Operator'>
+
+getindex Operator
+</a>
+</div>
+
+<div class='tc-menu-list-subitem'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='getindex Operator (Examples)'>
+
+getindex Operator (Examples)
+</a>
+</div>
+
+</div>
+
+</div></p></div></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

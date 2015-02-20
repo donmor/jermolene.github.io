@@ -48,7 +48,7 @@ WidgetVariable: transclusion
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 43 days ago
+</a> 44 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -72,7 +72,7 @@ color:#333333;'>
 
 
 <div class='tc-tiddler-body'><p>The <strong>transclusion</strong> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>variable</a> is automatically set by the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget.html'>TranscludeWidget</a> to contain a string identifying the position of the current node within the widget tree.</p><p>With the <strong>transclusion</strong> variable, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='QualifyMacro.html'>QualifyMacro</a> identifies the stack of transcluded tiddlers.</p><p>In the sidebar, the <strong>transclusion</strong> variable is set to:<br>
-<code>{|$:/core/ui/PageTemplate/sidebar|||}</code></p><p>When the tiddler &quot;<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>HelloThere</a>&quot; is displayed in the story river <strong>transclusion</strong> is set to:<br> <code>{HelloThere|HelloThere|||}</code></p><p>Each nested level of transclusion appends another curly bracketed list of symbols.</p><h2 class=''>Example</h2><p><strong>identifying if we're in the sidebar or not</strong></p><pre><code>\define mymacro()
+<code>{|$:/core/ui/PageTemplate/sidebar|||}</code></p><p>When the tiddler &quot;<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere.html'>HelloThere</a>&quot; is displayed in the story river <strong>transclusion</strong> is set to:<br> <code>{HelloThere|HelloThere|||}</code></p><p>Each nested level of transclusion appends another curly bracketed list of symbols.</p><h2 class=''>Example</h2><p><strong>identifying if we&#39;re in the sidebar or not</strong></p><pre><code>\define mymacro()
 We are
 &lt;$list
 filter=&quot;[&lt;transclusion&gt;prefix[{|$:/core/ui/PageTemplate/sidebar|||}]]&quot;

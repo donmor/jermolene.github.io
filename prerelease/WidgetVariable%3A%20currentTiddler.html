@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Variables'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+WidgetVariable: currentTiddler
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 44 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Variables
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p>The <strong>currentTiddler</strong> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables'>variable</a> contains the title of the current tiddler. </p><h2 class=''>Usage</h2><p>Various <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets'>Widgets</a> and <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros'>Macros</a> are by default applied with respect to the tiddler referenced via <strong>currentTiddler</strong>. Within the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget'>ListWidget</a> or <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TemplateTiddlers'>TemplateTiddlers</a> you are thus often not required to specify the tiddler title.</p><p>The following two examples are thus equivalent...</p><ul><li><code>&lt;$view field=title/&gt;</code></li><li><code>&lt;$view field=title tiddler=&lt;&lt;currentTiddler&gt;&gt;/&gt;</code></li></ul><dl><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget'>TranscludeWidget</a></dt><dd>when <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion'>transcluding</a> a tiddler, <strong>currentTiddler</strong> is set to the tiddler being transcluded,</dd><dd>e.g. when using the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion in WikiText'>WikiText shorthand</a>: <code>{{||TemplateTiddlerTitle}}</code></dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget'>ListWidget</a></dt><dd>overrides the <strong>currentTiddler</strong> variable with the currently iterated list-item,</dd><dd>unless a custom <code>variable</code> attribute is specified</dd><dt><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlerWidget'>TiddlerWidget</a></dt><dd>sets the <strong>currentTiddler</strong> variable for its inner scope</dd></dl><h2 class=''>Example</h2><pre><code>&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; field=title/&gt;</code></pre><blockquote class='tc-quote'><p>WidgetVariable: currentTiddler
+</p></blockquote><h2 class=''>Other Standard Variables</h2><ul><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable: storyTiddler'>WidgetVariable: storyTiddler</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable: transclusion'>WidgetVariable: transclusion</a></li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

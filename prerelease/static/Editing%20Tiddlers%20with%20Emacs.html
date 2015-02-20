@@ -77,8 +77,8 @@ color:#333333;'>
   (dired &quot;~/Dropbox/wiki/tiddlers/&quot;))</code></pre><pre><code>(defun browse-wiki ()
   &quot;Opens TiddlyWiki in the browser.&quot;
   (interactive)
-  (browse-url &quot;127.0.0.1:8080/&quot;))</code></pre><p>This latter function may require specifying a browser:</p><pre><code>(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program &quot;chromium&quot;)</code></pre><p>You can bind either of these functions with the global-set-key function:</p><pre><code>(global-set-key (kbd &quot;C-c w&quot;) 'open-wiki)</code></pre><p>At the moment, these are not integrated into tid-mode.
+  (browse-url &quot;127.0.0.1:8080/&quot;))</code></pre><p>This latter function may require specifying a browser:</p><pre><code>(setq browse-url-browser-function &#39;browse-url-generic
+      browse-url-generic-program &quot;chromium&quot;)</code></pre><p>You can bind either of these functions with the global-set-key function:</p><pre><code>(global-set-key (kbd &quot;C-c w&quot;) &#39;open-wiki)</code></pre><p>At the moment, these are not integrated into tid-mode.
 </p></div>
 
 

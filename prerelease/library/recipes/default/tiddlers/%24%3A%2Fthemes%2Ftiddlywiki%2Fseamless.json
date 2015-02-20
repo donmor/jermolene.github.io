@@ -4,7 +4,7 @@
     "author": "JeremyRuston",
     "core-version": ">=5.0.0",
     "plugin-type": "theme",
-    "description": "Borderless tiddlers",
+    "description": "Removes borders from tiddlers",
     "dependents": "$:/themes/tiddlywiki/vanilla",
     "version": "5.1.8-prerelease",
     "type": "application/json",

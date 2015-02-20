@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+ActionWidgets
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 23 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Widgets
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p>Action widgets are a special type of widget that perform an action such as sending a message, navigating to a tiddler, or changing the value of a tiddler. They are used in association with other widgets that trigger those actions (for example, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ButtonWidget'>ButtonWidget</a>).</p><p>Action widgets are invisible. They need not be immediate children of their triggering widget, but they must be descendents of it. The actions are performed in sequence. For example, here is a button that triggers two actions of sending different messages:</p><pre><code>&lt;$button&gt;
+&lt;$action-sendmessage $message=&quot;tm-home&quot;/&gt;
+&lt;$action-sendmessage $message=&quot;tm-full-screen&quot;/&gt;
+Click me!
+&lt;/$button&gt;</code></pre><p>The following action widgets are provided:</p><p><ul class=''>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionDeleteFieldWidget'>
+action-deletefield
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionDeleteTiddlerWidget'>
+action-deletetiddler
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionNavigateWidget'>
+action-navigate
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionSendMessageWidget'>
+action-sendmessage
+</a>
+</li>
+
+<li>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='ActionSetFieldWidget'>
+action-setfield
+</a>
+</li>
+
+</ul></p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

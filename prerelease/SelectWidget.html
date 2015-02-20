@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+SelectWidget
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 2 months ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Widgets
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The select widget displays a popup menu based on a <a class='tc-tiddlylink-external' href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select' target='_blank'>HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
+Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index. If the tiddler value changes the menu is automatically updated to reflect the new value.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class='doc-example'><pre><code>&lt;$select tiddler=&lt;&lt;qualify &#39;select-demo&#39;&gt;&gt; default=&#39;HelloThere&#39;&gt;
+&lt;$list filter=&#39;[all[shadows+tiddlers]tags[]sort[title]]&#39;&gt;
+&lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field=&#39;title&#39;/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value='HelloThere'>
+
+<option value='$:/tags/AdvancedSearch'>$:/tags/AdvancedSearch</option>
+
+<option value='$:/tags/ControlPanel'>$:/tags/ControlPanel</option>
+
+<option value='$:/tags/ControlPanel/Advanced'>$:/tags/ControlPanel/Advanced</option>
+
+<option value='$:/tags/ControlPanel/Appearance'>$:/tags/ControlPanel/Appearance</option>
+
+<option value='$:/tags/ControlPanel/Info'>$:/tags/ControlPanel/Info</option>
+
+<option value='$:/tags/ControlPanel/Plugins'>$:/tags/ControlPanel/Plugins</option>
+
+<option value='$:/tags/ControlPanel/Settings'>$:/tags/ControlPanel/Settings</option>
+
+<option value='$:/tags/ControlPanel/Toolbars'>$:/tags/ControlPanel/Toolbars</option>
+
+<option value='$:/tags/EditTemplate'>$:/tags/EditTemplate</option>
+
+<option value='$:/tags/EditToolbar'>$:/tags/EditToolbar</option>
+
+<option value='$:/tags/Exporter'>$:/tags/Exporter</option>
+
+<option value='$:/tags/Filter'>$:/tags/Filter</option>
+
+<option value='$:/tags/Image'>$:/tags/Image</option>
+
+<option value='$:/tags/Macro'>$:/tags/Macro</option>
+
+<option value='$:/tags/MoreSideBar'>$:/tags/MoreSideBar</option>
+
+<option value='$:/tags/PageControls'>$:/tags/PageControls</option>
+
+<option value='$:/tags/PageTemplate'>$:/tags/PageTemplate</option>
+
+<option value='$:/tags/Palette'>$:/tags/Palette</option>
+
+<option value='$:/tags/PluginLibrary'>$:/tags/PluginLibrary</option>
+
+<option value='$:/tags/SearchResults'>$:/tags/SearchResults</option>
+
+<option value='$:/tags/SideBar'>$:/tags/SideBar</option>
+
+<option value='$:/tags/Stylesheet'>$:/tags/Stylesheet</option>
+
+<option value='$:/tags/TiddlerInfo'>$:/tags/TiddlerInfo</option>
+
+<option value='$:/tags/TiddlerInfo/Advanced'>$:/tags/TiddlerInfo/Advanced</option>
+
+<option value='$:/tags/TopRightBar'>$:/tags/TopRightBar</option>
+
+<option value='$:/tags/ViewTemplate'>$:/tags/ViewTemplate</option>
+
+<option value='$:/tags/ViewToolbar'>$:/tags/ViewToolbar</option>
+
+<option value='About'>About</option>
+
+<option value='ActionWidgets'>ActionWidgets</option>
+
+<option value='addprefix Operator'>addprefix Operator</option>
+
+<option value='addsuffix Operator'>addsuffix Operator</option>
+
+<option value='after Operator'>after Operator</option>
+
+<option value='all Operator'>all Operator</option>
+
+<option value='AlphaReleaseNotes'>AlphaReleaseNotes</option>
+
+<option value='Articles'>Articles</option>
+
+<option value='backlinks Operator'>backlinks Operator</option>
+
+<option value='before Operator'>before Operator</option>
+
+<option value='BetaReleaseNotes'>BetaReleaseNotes</option>
+
+<option value='butlast Operator'>butlast Operator</option>
+
+<option value='Commands'>Commands</option>
+
+<option value='commands Operator'>commands Operator</option>
+
+<option value='Common Operators'>Common Operators</option>
+
+<option value='Community'>Community</option>
+
+<option value='Concepts'>Concepts</option>
+
+<option value='Contents'>Contents</option>
+
+<option value='Customise TiddlyWiki'>Customise TiddlyWiki</option>
+
+<option value='Date Operators'>Date Operators</option>
+
+<option value='Definitions'>Definitions</option>
+
+<option value='documenting'>documenting</option>
+
+<option value='done'>done</option>
+
+<option value='each Operator'>each Operator</option>
+
+<option value='eachday Operator'>eachday Operator</option>
+
+<option value='Editions'>Editions</option>
+
+<option value='Examples'>Examples</option>
+
+<option value='Features'>Features</option>
+
+<option value='field Operator'>field Operator</option>
+
+<option value='Field Operators'>Field Operators</option>
+
+<option value='Fields'>Fields</option>
+
+<option value='fields Operator'>fields Operator</option>
+
+<option value='Filter Operators'>Filter Operators</option>
+
+<option value='Filter Syntax'>Filter Syntax</option>
+
+<option value='Filters'>Filters</option>
+
+<option value='First'>First</option>
+
+<option value='first Operator'>first Operator</option>
+
+<option value='get Operator'>get Operator</option>
+
+<option value='getindex Operator'>getindex Operator</option>
+
+<option value='Group Operators'>Group Operators</option>
+
+<option value='has Operator'>has Operator</option>
+
+<option value='HelloThere'>HelloThere</option>
+
+<option value='Hosting your TiddlyWiki on the web'>Hosting your TiddlyWiki on the web</option>
+
+<option value='Improving TiddlyWiki Documentation'>Improving TiddlyWiki Documentation</option>
+
+<option value='indexes Operator'>indexes Operator</option>
+
+<option value='is Operator'>is Operator</option>
+
+<option value='Languages'>Languages</option>
+
+<option value='last Operator'>last Operator</option>
+
+<option value='Learning'>Learning</option>
+
+<option value='limit Operator'>limit Operator</option>
+
+<option value='links Operator'>links Operator</option>
+
+<option value='list Operator'>list Operator</option>
+
+<option value='listed Operator'>listed Operator</option>
+
+<option value='ListWidget'>ListWidget</option>
+
+<option value='Macros'>Macros</option>
+
+<option value='Mechanisms'>Mechanisms</option>
+
+<option value='Meetups'>Meetups</option>
+
+<option value='Messages'>Messages</option>
+
+<option value='modules Operator'>modules Operator</option>
+
+<option value='moduletypes Operator'>moduletypes Operator</option>
+
+<option value='navigator-message'>navigator-message</option>
+
+<option value='Negatable Operators'>Negatable Operators</option>
+
+<option value='next Operator'>next Operator</option>
+
+<option value='nsort Operator'>nsort Operator</option>
+
+<option value='nsortcs Operator'>nsortcs Operator</option>
+
+<option value='nth Operator'>nth Operator</option>
+
+<option value='Operator Examples'>Operator Examples</option>
+
+<option value='Order Operators'>Order Operators</option>
+
+<option value='picture'>picture</option>
+
+<option value='Plugins'>Plugins</option>
+
+<option value='plugintiddlers Operator'>plugintiddlers Operator</option>
+
+<option value='prefix Operator'>prefix Operator</option>
+
+<option value='previous Operator'>previous Operator</option>
+
+<option value='Reference'>Reference</option>
+
+<option value='regexp Operator'>regexp Operator</option>
+
+<option value='Release 5.0.11-beta'>Release 5.0.11-beta</option>
+
+<option value='Release 5.0.8-beta'>Release 5.0.8-beta</option>
+
+<option value='Release 5.0.9-beta'>Release 5.0.9-beta</option>
+
+<option value='ReleaseNotes'>ReleaseNotes</option>
+
+<option value='Releases'>Releases</option>
+
+<option value='removeprefix Operator'>removeprefix Operator</option>
+
+<option value='removesuffix Operator'>removesuffix Operator</option>
+
+<option value='Resources'>Resources</option>
+
+<option value='rest Operator'>rest Operator</option>
+
+<option value='reverse Operator'>reverse Operator</option>
+
+<option value='sameday Operator'>sameday Operator</option>
+
+<option value='sampletab'>sampletab</option>
+
+<option value='sampletag1'>sampletag1</option>
+
+<option value='sampletag2'>sampletag2</option>
+
+<option value='Saving'>Saving</option>
+
+<option value='Saving on InternetExplorer'>Saving on InternetExplorer</option>
+
+<option value='Saving with TiddlyFox'>Saving with TiddlyFox</option>
+
+<option value='search Operator'>search Operator</option>
+
+<option value='Second'>Second</option>
+
+<option value='SecondThree'>SecondThree</option>
+
+<option value='Selection Constructors'>Selection Constructors</option>
+
+<option value='shadowsource Operator'>shadowsource Operator</option>
+
+<option value='sort Operator'>sort Operator</option>
+
+<option value='sortcs Operator'>sortcs Operator</option>
+
+<option value='Special Operators'>Special Operators</option>
+
+<option value='splitbefore Operator'>splitbefore Operator</option>
+
+<option value='storyviews Operator'>storyviews Operator</option>
+
+<option value='String Operators'>String Operators</option>
+
+<option value='suffix Operator'>suffix Operator</option>
+
+<option value='SystemTiddlers'>SystemTiddlers</option>
+
+<option value='table-of-contents-example'>table-of-contents-example</option>
+
+<option value='TableOfContents'>TableOfContents</option>
+
+<option value='tag Operator'>tag Operator</option>
+
+<option value='Tag Operators'>Tag Operators</option>
+
+<option value='tagging Operator'>tagging Operator</option>
+
+<option value='TagMacro'>TagMacro</option>
+
+<option value='tags Operator'>tags Operator</option>
+
+<option value='task'>task</option>
+
+<option value='Third'>Third</option>
+
+<option value='TiddlyDesktop'>TiddlyDesktop</option>
+
+<option value='TiddlyWiki on Node.js'>TiddlyWiki on Node.js</option>
+
+<option value='title Operator'>title Operator</option>
+
+<option value='Transclusion in WikiText'>Transclusion in WikiText</option>
+
+<option value='Tutorials'>Tutorials</option>
+
+<option value='untagged Operator'>untagged Operator</option>
+
+<option value='Variables'>Variables</option>
+
+<option value='Videos'>Videos</option>
+
+<option value='Widgets'>Widgets</option>
+
+<option value='WikiText'>WikiText</option>
+
+<option value='Working with the TiddlyWiki5 repository'>Working with the TiddlyWiki5 repository</option>
+
+<option value='Working with TiddlyWiki'>Working with TiddlyWiki</option>
+
+</select>
+</p></div><p>The <a class='tc-tiddlylink tc-tiddlylink-missing' href='select-demo-896909202'>state tiddler</a> currently contains:</p><input value=''><p>See the text change as you switch entries in the select widget. Try changing the value of the state tiddler and see the select widget change. Notice how the select widget only displays an entry if there is a precise match with the tiddler text.</p><h1 class=''>Content and Attributes</h1><p>The content of the <code>&lt;$select&gt;</code> widget should be one or more HTML <code>&lt;option&gt;</code> or <code>&lt;optiongroup&gt;</code> elements that provide the available values.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>tiddler</td><td align='left'>The title of the tiddler containing the value to be displayed/modified by the select widget (defaults to the current tiddler)</td></tr><tr class='evenRow'><td align='left'>field</td><td align='left'>The field name for the value in the current tiddler (defaults to &quot;text&quot;)</td></tr><tr class='oddRow'><td align='left'>index</td><td align='left'>The index of a property in a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DataTiddlers'>DataTiddler</a> (takes precedence over the field attribute)</td></tr><tr class='evenRow'><td align='left'>class</td><td align='left'>CSS classes to be assigned to the HTML select element</td></tr><tr class='oddRow'><td align='left'>default</td><td align='left'>Default value to be used if the tiddler, field or index specifies a missing value</td></tr></tbody></table><h1 class=''>Examples</h1><h2 class=''>Simple Lists</h2><p>This example sets the title of the current wiki <a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='$:/SiteTitle'>$:/SiteTitle</a> to one of a list of book titles:</p><div class='doc-example'><pre><code>&lt;$select tiddler=&#39;$:/SiteTitle&#39;&gt;
+&lt;option&gt;A Tale of Two Cities&lt;/option&gt;
+&lt;option&gt;A New Kind of Science&lt;/option&gt;
+&lt;option&gt;The Dice Man&lt;/option&gt;
+&lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value='TiddlyWiki Pre-release'>
+<option>A Tale of Two Cities</option>
+<option>A New Kind of Science</option>
+<option>The Dice Man</option>
+</select>
+</p></div><h2 class=''>Value lists</h2><p>In this example the <code>value</code> attribute has been used to specify the text that should be used as the value of the entry instead of the display text.</p><div class='doc-example'><pre><code>&lt;$select tiddler=&#39;$:/SiteTitle&#39;&gt;
+&lt;option value=&#39;cities&#39;&gt;A Tale of Two Cities&lt;/option&gt;
+&lt;option value=&#39;science&#39;&gt;A New Kind of Science&lt;/option&gt;
+&lt;option value=&#39;dice&#39;&gt;The Dice Man&lt;/option&gt;
+&lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value='TiddlyWiki Pre-release'>
+<option value='cities'>A Tale of Two Cities</option>
+<option value='science'>A New Kind of Science</option>
+<option value='dice'>The Dice Man</option>
+</select>
+</p></div><h2 class=''>Option Groups</h2><p>Entries in the list can be grouped together with the <code>&lt;optgroup&gt;</code> element</p><div class='doc-example'><pre><code>&lt;$select tiddler=&#39;$:/SiteTitle&#39;&gt;
+&lt;optgroup label=&#39;Fiction&#39;&gt;
+&lt;option value=&#39;cities&#39;&gt;A Tale of Two Cities&lt;/option&gt;
+&lt;option value=&#39;dice&#39;&gt;The Dice Man&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&#39;Non-fiction&#39;&gt;
+&lt;option value=&#39;science&#39;&gt;A New Kind of Science&lt;/option&gt;
+&lt;option value=&#39;recursive&#39;&gt;The Recursive Universe&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value='TiddlyWiki Pre-release'>
+<optgroup label='Fiction'>
+<option value='cities'>A Tale of Two Cities</option>
+<option value='dice'>The Dice Man</option>
+</optgroup>
+<optgroup label='Non-fiction'>
+<option value='science'>A New Kind of Science</option>
+<option value='recursive'>The Recursive Universe</option>
+</optgroup>
+</select>
+</p></div><h2 class=''>Generated Lists</h2><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget'>ListWidget</a> can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged <strong><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TableOfContents'>TableOfContents</a></strong> with a transclusion to display the text of the selected one.</p><div class='doc-example'><pre><code>&lt;$select tiddler=&#39;$:/generated-list-demo-state&#39;&gt;
+&lt;$list filter=&#39;[tag[TableOfContents]]&#39;&gt;
+&lt;option&gt;&lt;$view field=&#39;title&#39;/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;
+&lt;$tiddler tiddler={{$:/generated-list-demo-state}}&gt;
+&lt;$transclude mode=&#39;block&#39;/&gt;
+&lt;/$tiddler&gt;</code></pre><p>That renders as:</p><p><select>
+
+<option>HelloThere</option>
+
+<option>Working with TiddlyWiki</option>
+
+<option>Learning</option>
+
+<option>Customise TiddlyWiki</option>
+
+<option>Features</option>
+
+<option>Languages</option>
+
+<option>Editions</option>
+
+<option>Plugins</option>
+
+<option>Reference</option>
+
+<option>Community</option>
+
+<option>About</option>
+
+</select>
+
+
+
+</p></div><h2 class=''>Nested Lists</h2><p>This example uses a nested pair of list widgets. The outer one generates the <code>&lt;optgroup&gt;</code> elements, and the inner one generates <code>&lt;option&gt;</code> elements:</p><div class='doc-example'><pre><code>&lt;$select tiddler=&#39;$:/generated-list-demo-nestedstate&#39; field=&#39;type&#39; default=&#39;text/vnd.tiddlywiki&#39;&gt;
+&lt;$list filter=&#39;[all[shadows+tiddlers]prefix[$:/language/Docs/Types/]each[group]sort[group]]&#39;&gt;
+&lt;optgroup label={{!!group}}&gt;
+&lt;$list filter=&#39;[all[shadows+tiddlers]prefix[$:/language/Docs/Types/]group{!!group}] +[sort[description]]&#39;&gt;
+&lt;option value={{!!name}}&gt;&lt;$view field=&#39;description&#39;&gt;&lt;$view field=&#39;title&#39;/&gt;&lt;/$view&gt; (&lt;$view field=&#39;name&#39;/&gt;)&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/optgroup&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value='text/vnd.tiddlywiki'>
+
+<optgroup label='Developer'>
+
+<option value='application/x-tiddler-dictionary'>Data dictionary (application/x-tiddler-dictionary)</option>
+
+<option value='application/javascript'>JavaScript code (application/javascript)</option>
+
+<option value='application/json'>JSON data (application/json)</option>
+
+<option value='text/css'>Static stylesheet (text/css)</option>
+
+</optgroup>
+
+<optgroup label='Image'>
+
+<option value='image/gif'>GIF image (image/gif)</option>
+
+<option value='image/x-icon'>ICO format icon file (image/x-icon)</option>
+
+<option value='image/jpeg'>JPEG image (image/jpeg)</option>
+
+<option value='image/png'>PNG image (image/png)</option>
+
+<option value='image/svg+xml'>Structured Vector Graphics image (image/svg+xml)</option>
+
+</optgroup>
+
+<optgroup label='Text'>
+
+<option value='text/html'>HTML markup (text/html)</option>
+
+<option value='text/plain'>Plain text (text/plain)</option>
+
+<option value='text/vnd.tiddlywiki'>TiddlyWiki 5 (text/vnd.tiddlywiki)</option>
+
+<option value='text/x-tiddlywiki'>TiddlyWiki Classic (text/x-tiddlywiki)</option>
+
+</optgroup>
+
+</select>
+</p></div></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

@@ -77,18 +77,18 @@ written in English
 &lt;&lt;&lt;
 </code></pre><p>That renders as:</p><blockquote class='tc-quote'><p>This is a block quoted paragraph
 written in English
-</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class='tc-quote'&gt;&lt;p&gt;This is a block quoted paragraph
+</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&#39;tc-quote&#39;&gt;&lt;p&gt;This is a block quoted paragraph
 written in English
 &lt;/p&gt;&lt;/blockquote&gt;</pre></div><h2 class=''>Citation</h2><p>A citation can be added to the quote like this:</p><div class='doc-example'><pre><code>&lt;&lt;&lt;
 Computers are like a bicycle for our minds
 &lt;&lt;&lt; Steve Jobs
 </code></pre><p>That renders as:</p><blockquote class='tc-quote'><p>Computers are like a bicycle for our minds
-</p><cite>Steve Jobs</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class='tc-quote'&gt;&lt;p&gt;Computers are like a bicycle for our minds
+</p><cite>Steve Jobs</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&#39;tc-quote&#39;&gt;&lt;p&gt;Computers are like a bicycle for our minds
 &lt;/p&gt;&lt;cite&gt;Steve Jobs&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h2 class=''>CSS Classes</h2><p>CSS classes can be added to a block quote:</p><div class='doc-example'><pre><code>&lt;&lt;&lt;.myClass.another-class
 Operating systems are like a brick wall for our minds
 &lt;&lt;&lt; Nobody
 </code></pre><p>That renders as:</p><blockquote class='tc-quote myClass another-class'><p>Operating systems are like a brick wall for our minds
-</p><cite>Nobody</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class='tc-quote myClass another-class'&gt;&lt;p&gt;Operating systems are like a brick wall for our minds
+</p><cite>Nobody</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&#39;tc-quote myClass another-class&#39;&gt;&lt;p&gt;Operating systems are like a brick wall for our minds
 &lt;/p&gt;&lt;cite&gt;Nobody&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h1 class=''>Single-line Block Quotes</h1><p>The single-line syntax for block quotes is actually an extension of the syntax for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Lists%2520in%2520WikiText.html'>Lists in WikiText</a>. For example:</p><div class='doc-example'><pre><code>&gt; Quoted text
 &gt; Another line of quoted text
 </code></pre><p>That renders as:</p><blockquote><p>Quoted text</p><p>Another line of quoted text</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote&gt;&lt;p&gt;Quoted text&lt;/p&gt;&lt;p&gt;Another line of quoted text&lt;/p&gt;&lt;/blockquote&gt;</pre></div><p>You can also nest quotes like this:</p><pre><code>&gt; A top quote

@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/tiddlywiki/markdown",
-    "description": "Markdown plugin wrapping markdown-js",
+    "description": "Markdown parser",
     "author": "JeremyRuston",
     "version": "5.1.8-prerelease",
     "plugin-type": "plugin",

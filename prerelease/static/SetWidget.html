@@ -75,7 +75,7 @@ color:#333333;'>
 &lt;$text text=&lt;&lt;myVariable&gt;&gt;/&gt;
 &lt;/$set&gt;</code></pre><p>Both the name and value attributes can be transcluded. For example:</p><pre><code>&lt;$set name=&lt;&lt;anotherVariable&gt;&gt; value={{template!!text}}&gt;
 &lt;$text text=&lt;&lt;myVariable&gt;&gt;/&gt;
-&lt;/$set&gt;</code></pre><h2 class=''>Conditional Variable Assignment</h2><p>This form of the set variable widget chooses one of two specified values according to whether a filter evaluates to an empty list. Here's an example that sets a variable according to whether the current tiddler is called &quot;myMagicTitle&quot;:</p><pre><code>&lt;$set name=&quot;myVariable&quot; filter=&quot;[all[current]field:title[myMagicTitle]]&quot; value=&quot;It's magic&quot; emptyValue=&quot;It's not magic&quot;&gt;
+&lt;/$set&gt;</code></pre><h2 class=''>Conditional Variable Assignment</h2><p>This form of the set variable widget chooses one of two specified values according to whether a filter evaluates to an empty list. Here&#39;s an example that sets a variable according to whether the current tiddler is called &quot;myMagicTitle&quot;:</p><pre><code>&lt;$set name=&quot;myVariable&quot; filter=&quot;[all[current]field:title[myMagicTitle]]&quot; value=&quot;It&#39;s magic&quot; emptyValue=&quot;It&#39;s not magic&quot;&gt;
 &lt;$text text=&lt;&lt;myVariable&gt;&gt;/&gt;
 &lt;/$set&gt;</code></pre><h2 class=''>Filtered List Variable Assignment</h2><p>This form of the set variable widget evaluates the filter and assigns the result to the variable as a space-separated list (using double square brackets for titles containing spaces).</p><pre><code>&lt;$set name=&quot;myVariable&quot; filter=&quot;[tag[Introduction]]&quot;&gt;
 &lt;$text text=&lt;&lt;myVariable&gt;&gt;/&gt;

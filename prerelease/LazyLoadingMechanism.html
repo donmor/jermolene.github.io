@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Mechanisms'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+LazyLoadingMechanism
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 12 months ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:#9fa3cb;
+fill:#333333;
+color:#333333;'>
+ Mechanisms
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a> currently only implements <a class='tc-tiddlylink tc-tiddlylink-resolves' href='LazyLoading'>LazyLoading</a> when it is running in the browser talking to a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWeb'>TiddlyWeb</a>-compatible server.</p><p>In the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki in the Sky for TiddlyWeb'>configuration for TiddlyWeb</a>, the browser first requests a &quot;skinny&quot; version of each tiddler (consisting of all the fields apart from the text field). Subsequently, an attempt to read those skinny tiddlers with <code>wiki.getTiddler()</code> returns just the skinny fields, but an attempt to read one using <code>wiki.getTiddlerText()</code> will trigger an asynchronous load of the full tiddler text, which in turn triggers a refresh cycle, updating the display to reflect the newly loaded tiddler. Widgets that loop through all tiddlers are fine; it&#39;s only if they trigger <code>wiki.getTiddlerText()</code> for a tiddler that it will get loaded.</p><p>Lazy loading can also be used with <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki'>TiddlyWiki</a>&#39;s own server. The core provides a template that enables images to be lazily loaded while other tiddlers are packaged into the initial HTML file in the usual way.</p><p>The browser-based search built into <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki5'>TiddlyWiki5</a> will only search the text of tiddlers that have been fully loaded. The expectation is that when lazy loading is used in a client-server configuration, then it is the server that really needs to handle search operations, because it is only the server that can &quot;see&quot; the text of all tiddlers. So, the plan is to integrate the built in search with <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWeb'>TiddlyWeb</a>&#39;s search API. The simplest approach is that any local search triggers an asynchronous server side search. The results of the search would be asynchronously loaded such that they would dynamically appear in the local search results.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

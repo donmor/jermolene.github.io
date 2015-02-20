@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
+</head>
+<body class="tc-body">
+<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Variables'><div class='tc-tiddler-title'>
+<div class='tc-titlebar'>
+<span class='tc-tiddler-controls'>
+<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+
+
+</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+
+
+</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+
+
+</button></span>
+</span>
+
+<span class='tc-tiddler-title-icon' style='fill:;'>
+
+</span>
+
+
+
+<h2 class='tc-title'>
+WidgetVariable: transclusion
+</h2>
+
+</div>
+
+<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
+</div><div class='tc-subtitle'>
+<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+
+</a> 44 days ago
+</div>
+<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+
+
+<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+fill:#333333;
+color:#333333;'>
+ Variables
+</button>
+<span class=' tc-reveal' hidden='true'></span>
+
+
+</span>
+</div>
+
+
+
+
+
+
+
+
+<div class='tc-tiddler-body'><p>The <strong>transclusion</strong> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables'>variable</a> is automatically set by the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TranscludeWidget'>TranscludeWidget</a> to contain a string identifying the position of the current node within the widget tree.</p><p>With the <strong>transclusion</strong> variable, the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='QualifyMacro'>QualifyMacro</a> identifies the stack of transcluded tiddlers.</p><p>In the sidebar, the <strong>transclusion</strong> variable is set to:<br>
+<code>{|$:/core/ui/PageTemplate/sidebar|||}</code></p><p>When the tiddler &quot;<a class='tc-tiddlylink tc-tiddlylink-resolves' href='HelloThere'>HelloThere</a>&quot; is displayed in the story river <strong>transclusion</strong> is set to:<br> <code>{HelloThere|HelloThere|||}</code></p><p>Each nested level of transclusion appends another curly bracketed list of symbols.</p><h2 class=''>Example</h2><p><strong>identifying if we&#39;re in the sidebar or not</strong></p><pre><code>\define mymacro()
+We are
+&lt;$list
+filter=&quot;[&lt;transclusion&gt;prefix[{|$:/core/ui/PageTemplate/sidebar|||}]]&quot;
+emptyMessage=&quot;in the story river.&quot;&gt;
+in the sidebar.
+&lt;/$list&gt;
+\end
+
+&lt;&lt;mymacro&gt;&gt;</code></pre><p>Result in a story tiddler:</p><blockquote class='tc-quote'><p>We are in the story river.
+</p></blockquote><p>Result in the sidebar:</p><blockquote class='tc-quote'><p>We are in the sidebar.
+</p></blockquote></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

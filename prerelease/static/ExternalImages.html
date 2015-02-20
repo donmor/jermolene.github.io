@@ -89,12 +89,12 @@ color:#333333;'>
 --rendertiddler $:/core/save/all externalimages.html text/plain</code></pre><h2 class=''>Saving Separate Image Files</h2><p>The following <code>--savetiddlers</code> command can be used to save the images of a wiki into an <strong>images</strong> subfolder:</p><pre><code>--savetiddlers [is[image]] images</code></pre><h2 class=''>Externalising Image Tiddlers</h2><p>Two <code>--setfield</code> commands are used: the first sets the <strong>_canonical_uri</strong> field to a URI derived from the title of the tiddler, and the second clears the text field.</p><pre><code>--setfield [is[image]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain
 --setfield [is[image]] text &quot;&quot; text/plain</code></pre><p>The template tiddler <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Fcore%252Ftemplates%252Fcanonical-uri-external-image.html'>$:/core/templates/canonical-uri-external-image</a> contains:</p><pre>&lt;!--
 
-This template is used to assign the ''_canonical_uri'' field to external images.
+This template is used to assign the &#39;&#39;_canonical_uri&#39;&#39; field to external images.
 
 Change the `./images/` part to a different base URI. The URI can be relative or absolute.
 
 --&gt;
-./images/&lt;$view field=&quot;title&quot; format=&quot;doubleurlencoded&quot;/&gt;</pre><p>Note that these operations modify the tiddlers in the wiki store and so may affect the operation of subsequent commands.</p><h1 class=''>Using External Images</h1><p>You can't edit an external image directly in the browser except by changing the URI field to point to a different image.
+./images/&lt;$view field=&quot;title&quot; format=&quot;doubleurlencoded&quot;/&gt;</pre><p>Note that these operations modify the tiddlers in the wiki store and so may affect the operation of subsequent commands.</p><h1 class=''>Using External Images</h1><p>You can&#39;t edit an external image directly in the browser except by changing the URI field to point to a different image.
 </p></div>
 
 
