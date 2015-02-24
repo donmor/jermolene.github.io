@@ -148,7 +148,8 @@ Error message and password prompt
 .doc-operator,
 .doc-var,
 .doc-widget,
-.doc-attr {
+.doc-attr,
+.doc-param {
 	background-color: #ffffff;
 	border: none;
 	color: #888888;
@@ -198,6 +199,24 @@ a .doc-attr {
 	margin-bottom: 0;
 	padding-bottom: 0;
 	margin-top: 0.2em;
+}
+.doc-example pre:first-child {
+	margin-top: 0;
+}
+.doc-example-result {
+	border-left: 5px solid #bbb;
+	border-right: 5px solid #bbb;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 10px;
+}
+.doc-example-result ul {
+	margin-left: 0;
+	padding-left: 10px;
+}
+.doc-example-result ol {
+	margin-left: 0;
+	padding-left: 20px;
 }.doc-table th, .doc-table tr {
 	vertical-align: top;
 }
@@ -406,9 +425,9 @@ svg.railroad-diagram path.arrow {
 }@media screen {
 	.tc-tiddler-frame {
 		
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
 	}
 }@media (max-width: 960px) {
@@ -1118,12 +1137,7 @@ a.tc-tiddlylink:hover {
 }.tc-dropzone.tc-dragover:before {
 	z-index: 10000;
 	display: block;
-	position: absolute;
-	position: -webkit-sticky;
-	position: -moz-sticky;
-	position: -o-sticky;
-	position: -ms-sticky;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;

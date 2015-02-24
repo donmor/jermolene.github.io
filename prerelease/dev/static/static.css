@@ -248,9 +248,9 @@ Error message and password prompt
 }@media screen {
 	.tc-tiddler-frame {
 		
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 
 	}
 }@media (max-width: 960px) {
@@ -960,12 +960,7 @@ a.tc-tiddlylink:hover {
 }.tc-dropzone.tc-dragover:before {
 	z-index: 10000;
 	display: block;
-	position: absolute;
-	position: -webkit-sticky;
-	position: -moz-sticky;
-	position: -o-sticky;
-	position: -ms-sticky;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;

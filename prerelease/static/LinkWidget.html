@@ -48,7 +48,7 @@ LinkWidget
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 5 months ago
+</a> 30 hours ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -71,7 +71,7 @@ color:#333333;'>
 
 
 
-<div class='tc-tiddler-body'><p>The <code>link</code> widget generates links to tiddlers. (Use the HTML <code>&lt;a&gt;</code> element to generate external links).</p><h1 class=''>Content and Attributes</h1><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>to</td><td align='left'>The title of the target tiddler for the link (defaults to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>CurrentTiddler</a>)</td></tr><tr class='evenRow'><td align='left'>aria-label</td><td align='left'>Optional <a class='tc-tiddlylink tc-tiddlylink-missing' href='Accessibility.html'>Accessibility</a> label</td></tr><tr class='oddRow'><td align='left'>tooltip</td><td align='left'>Optional tooltip <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText.html'>WikiText</a></td></tr></tbody></table><p>The content of the link widget is rendered within the <code>&lt;a&gt;</code> tag.</p><p>The default value of the tooltip attribute is <code>&lt;&lt;tv-wikilink-tooltip&gt;&gt;</code>.</p><p>This means that you can control the text of a link tooltip in several ways:</p><pre><code>&lt;$link to=&quot;HelloThere&quot; tooltip=&quot;Custom tooltip&quot;&gt;Link 1&lt;/$link&gt;
+<div class='tc-tiddler-body'><p>The <code>link</code> widget generates links to tiddlers. (Use the HTML <code>&lt;a&gt;</code> element to generate external links).</p><h1 class=''>Content and Attributes</h1><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>to</td><td align='left'>The title of the target tiddler for the link (defaults to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Current%2520Tiddler.html'>current tiddler</a>)</td></tr><tr class='evenRow'><td align='left'>aria-label</td><td align='left'>Optional <a class='tc-tiddlylink tc-tiddlylink-missing' href='Accessibility.html'>Accessibility</a> label</td></tr><tr class='oddRow'><td align='left'>tooltip</td><td align='left'>Optional tooltip <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WikiText.html'>WikiText</a></td></tr><tr class='evenRow'><td align='left'>tabindex</td><td align='left'>Optional numeric <a class='tc-tiddlylink-external' href='https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex' target='_blank'>tabindex</a></td></tr><tr class='oddRow'><td align='left'>draggable</td><td align='left'>&quot;yes&quot; to enable the link to be draggable (defaults to &quot;yes&quot;)</td></tr><tr class='evenRow'><td align='left'>tag</td><td align='left'>Optional tag to override the default &quot;a&quot; element</td></tr></tbody></table><p>The content of the link widget is rendered within the <code>&lt;a&gt;</code> tag.</p><p>The default value of the tooltip attribute is <code>&lt;&lt;tv-wikilink-tooltip&gt;&gt;</code>.</p><p>This means that you can control the text of a link tooltip in several ways:</p><pre><code>&lt;$link to=&quot;HelloThere&quot; tooltip=&quot;Custom tooltip&quot;&gt;Link 1&lt;/$link&gt;
 
 &lt;$set name=&quot;tv-wikilink-tooltip&quot; value=&quot;I&#39;m a link to {{!!title}}&quot;&gt;
 &lt;$link to=&quot;HelloThere&quot;&gt;Link 2&lt;/$link&gt;
