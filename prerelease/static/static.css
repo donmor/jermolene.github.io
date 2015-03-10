@@ -227,6 +227,22 @@ a .doc-attr {
 	vertical-align: middle;
 }.doc-table.before-tiddler-body {
 	margin-top: 2em;
+}.doc-icon-block {
+	border-left: 2px solid #e1e1e8;
+	margin-left: 3em;
+	padding-left: 0.6em;
+	position: relative;
+}
+.doc-block-icon {
+	position: absolute;
+	left: -3em;
+	top: 0.2em;
+}
+.doc-block-icon .tc-image-tip {
+	fill: #5778d8;
+}
+.doc-block-icon .tc-image-warning {
+	fill: #881122;
 }
 
 
