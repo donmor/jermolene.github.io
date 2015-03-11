@@ -74,194 +74,6 @@ Error message and password prompt
 </div>
 <style type="text/css">
 
-@media (min-width: 600px) {.tc-link-info {
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-	}.tc-link-info-item {
-		max-width: 24em;
-		margin-right: 10px;
-	}}.tc-double-spaced-list {
-	padding-bottom:.5em;padding-top:.5em;
-}.tc-link-info-item {
-	display: inline-block;
-	border: none;
-	padding: 5px 10px;
-	margin-bottom: 10px;
-	background: #ddeeff;
-	font-size: 0.8em;
-	line-height: 1.2;
-}.tc-link-info-item h1 {
-	font-weight: 500;
-	font-size: 16px;	
-}.tc-scrollable-demo {
-	border: 1px solid #cfd6e6;
-	background-color: #ecf2ff;
-	padding: 1em;
-	height: 400px;
-}.tc-improvement-banner {
-	font-size: 0.7em;
-	background: #fcc;
-	padding-left: 5px;
-	margin-top: 6px;
-	margin-bottom: 12px;
-	
-  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-          box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
-
-}@media (max-width: 960px) {
-	
-	.tc-improvement-banner {
-	}}@media (min-width: 960px) {.tc-improvement-banner {
-		margin-right: -53px;
-		margin-left: -53px;
-	}.tc-improvement-banner:before {
-		display: block;
-		position: absolute;
-		width: 0;
-		height: 0;
-		content: " ";
-		margin-left: -5px;
-		margin-top: -10px;
-		border-top: 5px solid transparent;
-		border-left: 5px solid transparent;
-		border-right: 5px solid #C07E7E;
-		border-bottom: 5px solid #C07E7E;
-	}}.tc-improvement-banner svg {
-	width: 1em;
-	height: 1em;
-}
-
-
-.doc-def {
-	font-style: normal;
-	font-weight: bold;
-}.doc-em {
-	font-style: italic;
-	font-variant: small-caps;
-	text-decoration: none;
-}.doc-strong {
-	color: #881122;
-	font-style: normal;
-	font-weight: bold;
-}.doc-foreign {
-	font-style: italic;
-}.doc-place {
-	background-color: #ffffff;
-	border: none;
-	color: #888888;
-	font-style: normal;
-	font-weight: bold;
-}.doc-button,
-.doc-tab,
-.doc-tag,
-.doc-tiddler,
-.doc-field,
-.doc-value,
-.doc-operator,
-.doc-var,
-.doc-widget,
-.doc-attr,
-.doc-param {
-	background-color: #ffffff;
-	border: none;
-	color: #888888;
-	font-weight: bold;
-	padding: 0;
-}a .doc-place,
-a .doc-button,
-a .doc-tab,
-a .doc-tag,
-a .doc-tiddler,
-a .doc-field,
-a .doc-value,
-a .doc-operator,
-a .doc-var,
-a .doc-widget,
-a .doc-attr {
-	color: #5778d8;
-}.doc-button svg {
-	height: 1em;
-}td svg {
-	height: 1em;
-}.doc-key {
-	color: #888888;
-	font-weight: bold;
-}.doc-clink code {
-	color: #5778d8;
-}.doc-preamble {
-	border: 2px solid #e1e1e8;
-	color: #888888;
-	font-size: 90%;
-	margin-left: 0;
-	padding: 0.5em 0.7em;
-}.doc-note dt {
-	color: #888888;
-}
-.doc-note dd {
-	border-left: 2px solid #e1e1e8;
-	padding-left: 0.6em;
-}.doc-example {
-	margin: 1em 0;
-	padding: 0.8em 0;
-}
-.doc-example:hover {
-	background-color: #f7f7f9;
-}
-.doc-example ul {
-	margin-bottom: 0;
-	padding-bottom: 0;
-	margin-top: 0.2em;
-}
-.doc-example pre:first-child {
-	margin-top: 0;
-}
-.doc-example-result {
-	border-left: 5px solid #bbb;
-	border-right: 5px solid #bbb;
-	margin-left: 0;
-	margin-right: 0;
-	padding: 0 10px;
-}
-.doc-example-result ul {
-	margin-left: 0;
-	padding-left: 10px;
-}
-.doc-example-result ol {
-	margin-left: 0;
-	padding-left: 20px;
-}.doc-table th, .doc-table tr {
-	vertical-align: top;
-}
-.doc-table th a {
-	font-weight: bold;
-}tr.doc-table-subheading {
-	height: 2em;
-	vertical-align: middle;
-}.doc-table.before-tiddler-body {
-	margin-top: 2em;
-}.doc-icon-block {
-	border-left: 2px solid #e1e1e8;
-	margin-left: 3em;
-	padding-left: 0.6em;
-	position: relative;
-}
-.doc-block-icon {
-	position: absolute;
-	left: -3em;
-	top: 0.2em;
-}
-.doc-block-icon .tc-image-tip {
-	fill: #5778d8;
-}
-.doc-block-icon .tc-image-warning {
-	fill: #881122;
-}
-
-
 /* Left will inherit from right (so we don't need to duplicate code */
 .github-fork-ribbon {
   /* The right and left lasses determine the side we attach our banner to */
@@ -1031,7 +843,7 @@ th {
 }/*
 ** Basic element styles
 */html {
-	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", "DejaVu Sans", sans-serif;
 	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -1059,6 +871,7 @@ th {
 	border: 1px solid #cccccc;
 	padding: 0 3px 2px;
 	border-radius: 3px;
+	font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
 }code {
 	color: #dd1144;
 	background-color: #f7f7f9;
@@ -1066,6 +879,7 @@ th {
     white-space: pre-wrap;
 	padding: 0 3px 2px;
 	border-radius: 3px;
+	font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
 }blockquote {
 	border-left: 5px solid #bbb;
 	margin-left: 25px;
@@ -1832,7 +1646,7 @@ a.tc-tiddlylink:hover {
 	color: #b99e2f;
 	font-weight: bold;
 }.tc-alert-highlight {
-	color: #881122;	
+	color: #881122;
 }.tc-static-alert {
 	position: relative;
 }.tc-static-alert-inner {
@@ -1866,7 +1680,7 @@ a.tc-tiddlylink:hover {
 	fill: #333333;
 }.tc-plugin-info-chunk {
 	display: inline-block;
-	vertical-align: middle;	
+	vertical-align: middle;
 }a.tc-plugin-info img, a.tc-plugin-info svg {
 	width: 2em;
 	height: 2em;
@@ -2035,6 +1849,194 @@ a.tc-tiddlylink:hover {
 }
 
 
+.doc-def {
+	font-style: normal;
+	font-weight: bold;
+}.doc-em {
+	font-style: italic;
+	font-variant: small-caps;
+	text-decoration: none;
+}.doc-strong {
+	color: #881122;
+	font-style: normal;
+	font-weight: bold;
+}.doc-foreign {
+	font-style: italic;
+}.doc-place {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-style: normal;
+	font-weight: bold;
+}.doc-button,
+.doc-tab,
+.doc-tag,
+.doc-tiddler,
+.doc-field,
+.doc-value,
+.doc-operator,
+.doc-var,
+.doc-widget,
+.doc-attr,
+.doc-param {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-weight: bold;
+	padding: 0;
+}a .doc-place,
+a .doc-button,
+a .doc-tab,
+a .doc-tag,
+a .doc-tiddler,
+a .doc-field,
+a .doc-value,
+a .doc-operator,
+a .doc-var,
+a .doc-widget,
+a .doc-attr {
+	color: #5778d8;
+}.doc-button svg {
+	height: 1em;
+}td svg {
+	height: 1em;
+}.doc-key {
+	color: #888888;
+	font-weight: bold;
+}.doc-clink code {
+	color: #5778d8;
+}.doc-preamble {
+	border: 2px solid #e1e1e8;
+	color: #888888;
+	font-size: 90%;
+	margin-left: 0;
+	padding: 0.5em 0.7em;
+}.doc-note dt {
+	color: #888888;
+}
+.doc-note dd {
+	border-left: 2px solid #e1e1e8;
+	padding-left: 0.6em;
+}.doc-example {
+	margin: 1em 0;
+	padding: 0.8em 0;
+}
+.doc-example:hover {
+	background-color: #f7f7f9;
+}
+.doc-example ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0.2em;
+}
+.doc-example pre:first-child {
+	margin-top: 0;
+}
+.doc-example-result {
+	border-left: 5px solid #bbb;
+	border-right: 5px solid #bbb;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 10px;
+}
+.doc-example-result ul {
+	margin-left: 0;
+	padding-left: 10px;
+}
+.doc-example-result ol {
+	margin-left: 0;
+	padding-left: 20px;
+}.doc-table th, .doc-table tr {
+	vertical-align: top;
+}
+.doc-table th a {
+	font-weight: bold;
+}tr.doc-table-subheading {
+	height: 2em;
+	vertical-align: middle;
+}.doc-table.before-tiddler-body {
+	margin-top: 2em;
+}.doc-icon-block {
+	border-left: 2px solid #e1e1e8;
+	margin-left: 3em;
+	padding-left: 0.6em;
+	position: relative;
+}
+.doc-block-icon {
+	position: absolute;
+	left: -3em;
+	top: 0.2em;
+}
+.doc-block-icon .tc-image-tip {
+	fill: #5778d8;
+}
+.doc-block-icon .tc-image-warning {
+	fill: #881122;
+}
+
+
+@media (min-width: 600px) {.tc-link-info {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}.tc-link-info-item {
+		max-width: 24em;
+		margin-right: 10px;
+	}}.tc-double-spaced-list {
+	padding-bottom:.5em;padding-top:.5em;
+}.tc-link-info-item {
+	display: inline-block;
+	border: none;
+	padding: 5px 10px;
+	margin-bottom: 10px;
+	background: #ddeeff;
+	font-size: 0.8em;
+	line-height: 1.2;
+}.tc-link-info-item h1 {
+	font-weight: 500;
+	font-size: 16px;	
+}.tc-scrollable-demo {
+	border: 1px solid #cfd6e6;
+	background-color: #ecf2ff;
+	padding: 1em;
+	height: 400px;
+}.tc-improvement-banner {
+	font-size: 0.7em;
+	background: #fcc;
+	padding-left: 5px;
+	margin-top: 6px;
+	margin-bottom: 12px;
+	
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+          box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+
+}@media (max-width: 960px) {
+	
+	.tc-improvement-banner {
+	}}@media (min-width: 960px) {.tc-improvement-banner {
+		margin-right: -53px;
+		margin-left: -53px;
+	}.tc-improvement-banner:before {
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		content: " ";
+		margin-left: -5px;
+		margin-top: -10px;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-right: 5px solid #C07E7E;
+		border-bottom: 5px solid #C07E7E;
+	}}.tc-improvement-banner svg {
+	width: 1em;
+	height: 1em;
+}
+
+
 
 </style>
 </head>
@@ -2125,17 +2127,6 @@ a.tc-tiddlylink:hover {
 <span class=' tc-reveal' hidden='true'></span>
 
 <span class=' tc-reveal'>
-<div class='github-fork-ribbon-wrapper right'>
-<div class='github-fork-ribbon' style='background-color:#DF4848;'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/Releases.html'>
-Version 5.1.8-prerelease
-</a>
-</div>
-</div>
-
-</span>
-
-<span class=' tc-reveal'>
 <span class=' tc-reveal' hidden='true'></span>
 <span class=' tc-reveal'>
 <button aria-label='help' class='tc-btn-invisible' title='Show help panel'>
@@ -2149,6 +2140,17 @@ Version 5.1.8-prerelease
 
 </button>
 </span>
+
+</span>
+
+<span class=' tc-reveal'>
+<div class='github-fork-ribbon-wrapper right'>
+<div class='github-fork-ribbon' style='background-color:#DF4848;'>
+<a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/Releases.html'>
+Version 5.1.8-prerelease
+</a>
+</div>
+</div>
 
 </span>
 
@@ -2311,7 +2313,7 @@ Release 5.1.8
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/.html'>
 
-</a> 58 days ago
+</a> 59 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -2515,7 +2517,7 @@ GettingStarted
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/.html'>
 
-</a> 41 days ago
+</a> 42 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -2706,7 +2708,7 @@ Meetups
 </button>
 
 </div><div class='tc-tab-divider '></div><div class='tc-tab-content '>
-<div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p>The latest news, articles, resources and examples.</p><div class='tc-link-info'><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TW5-TeXZilla%2522%2520plugin%2520by%2520Joe%2520Renes.html'>&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class='tc-subtitle'>Posted 32 days ago</div></p><p>An alternative <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> plugin for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>. It supports a wider set of <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> commands than <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/KaTeX%2520Plugin.html'>KaTeX</a>, though not as extensive as <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a></p><p><a class='tc-tiddlylink-external' href='http://tw5-texzilla.tiddlyspot.com' target='_blank'>http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class='tc-quote'><p>This plugin provides <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> support in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>, using the <a class='tc-tiddlylink-external' href='https://github.com/fred-wang/TeXZilla' target='_blank'>TeXZilla</a> latex parser to generate <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a>.</p><p>Only Firefox and Safari support <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> at the moment, so the plugin is only useful if you&#39;re using one of these browsers. It might be possible to combine this plugin with <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a> to convert <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven&#39;t tried this.
+<div class=' tc-reveal' hidden='true'></div><div class=' tc-reveal'><p>The latest news, articles, resources and examples.</p><div class='tc-link-info'><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TW5-TeXZilla%2522%2520plugin%2520by%2520Joe%2520Renes.html'>&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class='tc-subtitle'>Posted 33 days ago</div></p><p>An alternative <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> plugin for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>. It supports a wider set of <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> commands than <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/KaTeX%2520Plugin.html'>KaTeX</a>, though not as extensive as <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a></p><p><a class='tc-tiddlylink-external' href='http://tw5-texzilla.tiddlyspot.com' target='_blank'>http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class='tc-quote'><p>This plugin provides <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/LaTeX.html'>LaTeX</a> support in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a>, using the <a class='tc-tiddlylink-external' href='https://github.com/fred-wang/TeXZilla' target='_blank'>TeXZilla</a> latex parser to generate <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a>.</p><p>Only Firefox and Safari support <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> at the moment, so the plugin is only useful if you&#39;re using one of these browsers. It might be possible to combine this plugin with <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/MathJax.html'>MathJax</a> to convert <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/MathML.html'>MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven&#39;t tried this.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522Dull%2520Roar%2522%2520by%2520Jim%2520Lehmer.html'>&quot;Dull Roar&quot; by Jim Lehmer</a></h1><p><div class='tc-subtitle'>Posted 2 months ago</div></p><p>A collection of hints and tips from Jim Lehmer, published as a static blog generated by <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.</p><p><a class='tc-tiddlylink-external' href='http://dullroar.com/tiddlywiki5.html' target='_blank'>http://dullroar.com/tiddlywiki5.html</a></p><blockquote class='tc-quote'><p>There is a decent write-up on generating static pages using Tiddlywiki on the main TW site. However, there are a few nuances not mentioned on that page, so here are a few of my notes on how I generate the pages for this site.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522GSD5%2522%2520by%2520Roma%2520Hicks.html'>&quot;GSD5&quot; by Roma Hicks</a></h1><p><div class='tc-subtitle'>Posted 2 months ago</div></p><p>An adaptation of the <a class='tc-tiddlylink-external' href='http://mgsd.tiddlyspot.com/' target='_blank'>TiddlyWiki powered GTD® system formerly known as MonkeyGTD</a> for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a> version 5.</p><p><a class='tc-tiddlylink-external' href='http://gsd5.tiddlyspot.com/' target='_blank'>http://gsd5.tiddlyspot.com/</a></p><blockquote class='tc-quote'><p>GSD5 is a Getting-Thing-Done tool for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki5.html'>TiddlyWiki5</a> based off the mGSD classic <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.
 </p></blockquote></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522Heeg.ru%2522%2520by%2520sini-Kit.html'>&quot;Heeg.ru&quot; by sini-Kit</a></h1><p><div class='tc-subtitle'>Posted 2 months ago</div></p><p>A guide in Russian to creating an online shop with <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>. No serverside code is needed, instead orders are handled by Disqus.</p><p><a class='tc-tiddlylink-external' href='http://heeg.ru/' target='_blank'>http://heeg.ru/</a></p></div><div class='tc-link-info-item'><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/%2522TiddlyWiki%2522%2520by%2520Sander%2520de%2520Boer.html'>&quot;TiddlyWiki&quot; by Sander de Boer</a></h1><p><div class='tc-subtitle'>Posted 3 months ago</div></p><p>Dutch blog post about <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a></p><p><a class='tc-tiddlylink-external' href='https://breinbout.wordpress.com/2014/11/26/tiddlywiki/' target='_blank'>https://breinbout.wordpress.com/2014/11/26/tiddlywiki/</a></p><blockquote class='tc-quote'><p>I&#39;m allergic to websites that are highly dependent on <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a>. I think that <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> has many useful applications to add functionality to a site, but content needs to be visible if <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> is switched off. I use the <a class='tc-tiddlylink tc-tiddlylink-missing' href='static/NoScript.html'>NoScript</a> extension for Firefox and surf with pleasure over the Internet without spontaneous things happen that I do not give permission. I love <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/JavaScript.html'>JavaScript</a> on a short leash. More crazier maybe I&#39;m so excited about <a class='tc-tiddlylink tc-tiddlylink-resolves' href='static/TiddlyWiki.html'>TiddlyWiki</a>.
