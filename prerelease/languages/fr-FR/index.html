@@ -4320,7 +4320,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
             &quot;module-type&quot;: &quot;utils-node&quot;
         },
         &quot;$:/core/modules/utils/logger.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/logger.js\ntype: application/javascript\nmodule-type: utils\n\nA basic logging implementation\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar ALERT_TAG = \&quot;$:/tags/Alert\&quot;;\n\n/*\nMake a new logger\n*/\nfunction Logger(componentName) {\n\tthis.componentName = componentName || \&quot;\&quot;;\n}\n\n/*\nLog a message\n*/\nLogger.prototype.log = function(/* args */) {\n\tif(console !== undefined &amp;&amp; console.log !== undefined) {\n\t\treturn Function.apply.call(console.log, console, [this.componentName + \&quot;:\&quot;].concat(Array.prototype.slice.call(arguments,0)));\n\t}\n};\n\n/*\nAlert a message\n*/\nLogger.prototype.alert = function(/* args */) {\n\t// Prepare the text of the alert\n\tvar text = Array.prototype.join.call(arguments,\&quot; \&quot;);\n\t// Check if there is an existing alert with the same text and the same component\n\tvar existingAlerts = $tw.wiki.getTiddlersWithTag(ALERT_TAG),\n\t\talertFields,\n\t\texistingCount,\n\t\tself = this;\n\t$tw.utils.each(existingAlerts,function(title) {\n\t\tvar tiddler = $tw.wiki.getTiddler(title);\n\t\tif(tiddler.fields.text === text &amp;&amp; tiddler.fields.component === self.componentName &amp;&amp; tiddler.fields.modified &amp;&amp; (!alertFields || tiddler.fields.modified &lt; alertFields.modified)) {\n\t\t\t\talertFields = $tw.utils.extend({},tiddler.fields);\n\t\t}\n\t});\n\tif(alertFields) {\n\t\texistingCount = alertFields.count || 1;\n\t} else {\n\t\talertFields = {\n\t\t\ttitle: $tw.wiki.generateNewTitle(\&quot;$:/temp/alerts/alert\&quot;,{prefix: \&quot;\&quot;}),\n\t\t\ttext: text,\n\t\t\ttags: [ALERT_TAG],\n\t\t\tcomponent: this.componentName\n\t\t};\n\t\texistingCount = 0;\n\t}\n\talertFields.modified = new Date();\n\tif(++existingCount &gt; 1) {\n\t\talertFields.count = existingCount;\n\t} else {\n\t\talertFields.count = undefined;\n\t}\n\t$tw.wiki.addTiddler(new $tw.Tiddler(alertFields));\n\t// Log it too\n\tthis.log.apply(this,Array.prototype.slice.call(arguments,0));\n};\n\nexports.Logger = Logger;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/logger.js\ntype: application/javascript\nmodule-type: utils\n\nA basic logging implementation\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar ALERT_TAG = \&quot;$:/tags/Alert\&quot;;\n\n/*\nMake a new logger\n*/\nfunction Logger(componentName) {\n\tthis.componentName = componentName || \&quot;\&quot;;\n}\n\n/*\nLog a message\n*/\nLogger.prototype.log = function(/* args */) {\n\tif(console !== undefined &amp;&amp; console.log !== undefined) {\n\t\treturn Function.apply.call(console.log, console, [this.componentName + \&quot;:\&quot;].concat(Array.prototype.slice.call(arguments,0)));\n\t}\n};\n\n/*\nAlert a message\n*/\nLogger.prototype.alert = function(/* args */) {\n\t// Prepare the text of the alert\n\tvar text = Array.prototype.join.call(arguments,\&quot; \&quot;);\n\t// Create alert tiddlers in the browser\n\tif($tw.browser) {\n\t\t// Check if there is an existing alert with the same text and the same component\n\t\tvar existingAlerts = $tw.wiki.getTiddlersWithTag(ALERT_TAG),\n\t\t\talertFields,\n\t\t\texistingCount,\n\t\t\tself = this;\n\t\t$tw.utils.each(existingAlerts,function(title) {\n\t\t\tvar tiddler = $tw.wiki.getTiddler(title);\n\t\t\tif(tiddler.fields.text === text &amp;&amp; tiddler.fields.component === self.componentName &amp;&amp; tiddler.fields.modified &amp;&amp; (!alertFields || tiddler.fields.modified &lt; alertFields.modified)) {\n\t\t\t\t\talertFields = $tw.utils.extend({},tiddler.fields);\n\t\t\t}\n\t\t});\n\t\tif(alertFields) {\n\t\t\texistingCount = alertFields.count || 1;\n\t\t} else {\n\t\t\talertFields = {\n\t\t\t\ttitle: $tw.wiki.generateNewTitle(\&quot;$:/temp/alerts/alert\&quot;,{prefix: \&quot;\&quot;}),\n\t\t\t\ttext: text,\n\t\t\t\ttags: [ALERT_TAG],\n\t\t\t\tcomponent: this.componentName\n\t\t\t};\n\t\t\texistingCount = 0;\n\t\t}\n\t\talertFields.modified = new Date();\n\t\tif(++existingCount &gt; 1) {\n\t\t\talertFields.count = existingCount;\n\t\t} else {\n\t\t\talertFields.count = undefined;\n\t\t}\n\t\t$tw.wiki.addTiddler(new $tw.Tiddler(alertFields));\n\t\t// Log the alert as well\n\t\tthis.log.apply(this,Array.prototype.slice.call(arguments,0));\n\t} else {\n\t\t// Print an orange message to the console if not in the browser\n\t\tconsole.error(\&quot;\\x1b[1;33m\&quot; + text + \&quot;\\x1b[0m\&quot;);\n\t}\n};\n\nexports.Logger = Logger;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/utils/logger.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;utils&quot;
@@ -9475,7 +9475,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
         &quot;$:/themes/tiddlywiki/snowwhite/base&quot;: {
             &quot;title&quot;: &quot;$:/themes/tiddlywiki/snowwhite/base&quot;,
             &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-sidebar-header {\n\ttext-shadow: 0 1px 0 &lt;&lt;colour sidebar-foreground-shadow&gt;&gt;;\n}\n\n.tc-tiddler-title {\n/********************************\n\tposition: -webkit-sticky;\n\tposition: -moz-sticky;\n\tposition: -o-sticky;\n\tposition: -ms-sticky;\n\tposition: sticky;\n********************************/\n\ttop: 0px;\n\tbackground: &lt;&lt;colour tiddler-background&gt;&gt;;\n\tz-index: 500;\n}\n\n.tc-tiddler-info {\n\t&lt;&lt;box-shadow \&quot;inset 1px 2px 3px rgba(0,0,0,0.1)\&quot;&gt;&gt;\n}\n\n@media screen {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow \&quot;1px 1px 5px rgba(0, 0, 0, 0.3)\&quot;&gt;&gt;\n\t}\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow none&gt;&gt;\n\t}\n}\n\n.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {\n\t&lt;&lt;transition \&quot;fill 150ms ease-in-out\&quot;&gt;&gt;\n}\n\n.tc-tiddler-controls button.tc-selected svg,\n.tc-page-controls button.tc-selected svg  {\n\t&lt;&lt;filter \&quot;drop-shadow(0px -1px 2px rgba(0,0,0,0.25))\&quot;&gt;&gt;\n}\n\n.tc-tiddler-frame input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 8px rgba(0, 0, 0, 0.15)\&quot;&gt;&gt;\n}\n\n.tc-edit-tags {\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 8px rgba(0, 0, 0, 0.15)\&quot;&gt;&gt;\n}\n\n.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \&quot;none\&quot;&gt;&gt;\n\tborder: none;\n\toutline: none;\n}\n\ncanvas.tc-edit-bitmapeditor  {\n\t&lt;&lt;box-shadow \&quot;2px 2px 5px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-drop-down {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \&quot;2px 2px 10px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-block-dropdown {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \&quot;2px 2px 10px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-modal-displayed {\n\t&lt;&lt;filter \&quot;blur(4px)\&quot;&gt;&gt;\n}\n\n.tc-modal {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.3)\&quot;&gt;&gt;\n}\n\n.tc-modal-footer {\n\tborder-radius: 0 0 6px 6px;\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 0 #fff\&quot;&gt;&gt;;\n}\n\n\n.tc-alert {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.6)\&quot;&gt;&gt;\n}\n\n.tc-notification {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.3)\&quot;&gt;&gt;\n\ttext-shadow: 0 1px 0 rgba(255,255,255, 0.8);\n}\n\n.tc-sidebar-lists .tc-tab-divider {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(216,216,216) 0%, rgb(236,236,236) 250px\&quot;&gt;&gt;\n}\n\n.tc-more-sidebar .tc-tab-buttons button {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(236,236,236) 0%, rgb(224,224,224) 100%\&quot;&gt;&gt;\n}\n\n.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(236,236,236) 0%, rgb(248,248,248) 100%\&quot;&gt;&gt;\n}\n\n.tc-message-box img {\n\t&lt;&lt;box-shadow \&quot;1px 1px 3px rgba(0,0,0,0.5)\&quot;&gt;&gt;\n}\n\n.tc-plugin-info {\n\t&lt;&lt;box-shadow \&quot;2px 2px 4px rgba(0,0,0,0.2)\&quot;&gt;&gt;\n}\n&quot;
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-sidebar-header {\n\ttext-shadow: 0 1px 0 &lt;&lt;colour sidebar-foreground-shadow&gt;&gt;;\n}\n\n.tc-tiddler-title {\n\tposition: -webkit-sticky;\n\tposition: -moz-sticky;\n\tposition: -o-sticky;\n\tposition: -ms-sticky;\n\tposition: sticky;\n\ttop: 0px;\n\tbackground: &lt;&lt;colour tiddler-background&gt;&gt;;\n\tz-index: 500;\n}\n\n.tc-tiddler-info {\n\t&lt;&lt;box-shadow \&quot;inset 1px 2px 3px rgba(0,0,0,0.1)\&quot;&gt;&gt;\n}\n\n@media screen {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow \&quot;1px 1px 5px rgba(0, 0, 0, 0.3)\&quot;&gt;&gt;\n\t}\n}\n\n@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow none&gt;&gt;\n\t}\n}\n\n.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {\n\t&lt;&lt;transition \&quot;fill 150ms ease-in-out\&quot;&gt;&gt;\n}\n\n.tc-tiddler-controls button.tc-selected svg,\n.tc-page-controls button.tc-selected svg  {\n\t&lt;&lt;filter \&quot;drop-shadow(0px -1px 2px rgba(0,0,0,0.25))\&quot;&gt;&gt;\n}\n\n.tc-tiddler-frame input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 8px rgba(0, 0, 0, 0.15)\&quot;&gt;&gt;\n}\n\n.tc-edit-tags {\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 8px rgba(0, 0, 0, 0.15)\&quot;&gt;&gt;\n}\n\n.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \&quot;none\&quot;&gt;&gt;\n\tborder: none;\n\toutline: none;\n}\n\ncanvas.tc-edit-bitmapeditor  {\n\t&lt;&lt;box-shadow \&quot;2px 2px 5px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-drop-down {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \&quot;2px 2px 10px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-block-dropdown {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \&quot;2px 2px 10px rgba(0, 0, 0, 0.5)\&quot;&gt;&gt;\n}\n\n.tc-modal-displayed {\n\t&lt;&lt;filter \&quot;blur(4px)\&quot;&gt;&gt;\n}\n\n.tc-modal {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.3)\&quot;&gt;&gt;\n}\n\n.tc-modal-footer {\n\tborder-radius: 0 0 6px 6px;\n\t&lt;&lt;box-shadow \&quot;inset 0 1px 0 #fff\&quot;&gt;&gt;;\n}\n\n\n.tc-alert {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.6)\&quot;&gt;&gt;\n}\n\n.tc-notification {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \&quot;0 3px 7px rgba(0,0,0,0.3)\&quot;&gt;&gt;\n\ttext-shadow: 0 1px 0 rgba(255,255,255, 0.8);\n}\n\n.tc-sidebar-lists .tc-tab-divider {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(216,216,216) 0%, rgb(236,236,236) 250px\&quot;&gt;&gt;\n}\n\n.tc-more-sidebar .tc-tab-buttons button {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(236,236,236) 0%, rgb(224,224,224) 100%\&quot;&gt;&gt;\n}\n\n.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {\n\t&lt;&lt;background-linear-gradient \&quot;left, rgb(236,236,236) 0%, rgb(248,248,248) 100%\&quot;&gt;&gt;\n}\n\n.tc-message-box img {\n\t&lt;&lt;box-shadow \&quot;1px 1px 3px rgba(0,0,0,0.5)\&quot;&gt;&gt;\n}\n\n.tc-plugin-info {\n\t&lt;&lt;box-shadow \&quot;2px 2px 4px rgba(0,0,0,0.2)\&quot;&gt;&gt;\n}\n&quot;
         }
     }
 }</pre>
@@ -15133,7 +15133,7 @@ TiddlyWiki a pour ambition de proposer une algèbre pour les tiddlers&lt;&lt;dp&
 
 Tiddlers within plugins behave something like shadow tiddlers in classic TiddlyWiki: they can be freely overwritten by creating a tiddler with the same title, but deleting that tiddler restores the underlying tiddler value from the plugin.
 
-Plugins have a `plugin-type` field that may be:
+Plugins have a `plugin-type` field that may be (see the table below):
 
 * `plugin` //(default)// - a plain plugin
 * `theme` - a theme plugin (see ThemeMechanism)
@@ -15156,7 +15156,7 @@ Plugins are stored as tiddlers with the following fields:
 |version |Version string (must conform to SemanticVersioning convention) |
 |source |Source URL of plugin |
 |type |Must be &#39;&#39;application/json&#39;&#39; |
-|plugin-type |Can be &#39;&#39;plugin&#39;&#39; (default) or &#39;&#39;theme&#39;&#39; |
+|plugin-type |Can be &#39;&#39;plugin&#39;&#39; (default), &#39;&#39;language&#39;&#39; or &#39;&#39;theme&#39;&#39; |
 |text |JSON encoding of the list of tiddlers comprising the plugin |
 |list |Names of exposed plugin information tiddlers (see below) |
 |name |Name of the theme (only for themes) |
@@ -15245,7 +15245,7 @@ Thus, plugins can provide language-specific versions of each information tiddler
 Note that information tiddlers should not reference other tiddlers within the plugin. This is because plugins containing themes or languages are dynamically switched in and out as they are selected, and so their information tiddlers  may not be available for viewing. The control panel uses the &#39;subtiddler&#39; attribute of the TranscludeWidget to access these tiddlers, which works independently of the plugin switching mechanism.
 </pre>
 </div>
-<div created="20140910215514237" modified="20140910215514237" tags="Concepts TableOfContents" title="Plugins" type="text/vnd.tiddlywiki">
+<div created="20140910215514237" modified="20150313101514237" tags="Concepts TableOfContents" title="Plugins" type="text/vnd.tiddlywiki">
 <pre>! Available Plugins
 
 The following plugins are distributed on tiddlywiki.com as part of the main TiddlyWiki distribution.
@@ -15262,24 +15262,38 @@ Plugins can contain JavaScript modules, style sheets, and templates to extend th
 
 See the PluginMechanism discussion for more details about how plugins are implemented internally.
 
-! How to install a plugin
+! Installing a plugin from the plugin library
 
 # Create a backup of your current TiddlyWiki HTML file ([[just in case|The First Rule of Using TiddlyWiki]])
 # Open your TiddlyWiki in a browser
-# In another browser window, find a link to the plugin, e.g. [[$:/plugins/tiddlywiki/example]]. You will typically find links to plugins on the home page of the plugin (for example, http://tiddlywiki.com/plugins/tiddlywiki/katex/)
+# Open the [[$:/ControlPanel]] and click on the &#39;&#39;Plugins&#39;&#39; tab and then the &#39;&#39;Add&#39;&#39; tab
+# Click &#39;&#39;open plugin library&#39;&#39; to open the official plugin library
+# When the library listing is loaded:
+## Use the dropdown to select between &#39;&#39;plugins&#39;&#39;, &#39;&#39;themes&#39;&#39; and &#39;&#39;languages&#39;&#39;
+## Use the &#39;&#39;search&#39;&#39; box to search the plugin details
+# Click the &#39;&#39;install&#39;&#39; button to install a plugin
+# Save your TiddlyWiki
+# &#39;&#39;Refresh the page so that TiddlyWiki loads the new plugin&#39;&#39;
+# The plugin should now be available for use
+
+! Manually installing a plugin
+
+# Create a backup of your current TiddlyWiki HTML file ([[just in case|The First Rule of Using TiddlyWiki]])
+# Open your TiddlyWiki in a browser
+# In another browser window, find a link to the plugin, e.g. [[$:/plugins/tiddlywiki/example]]. You will typically find these links on the home page of the plugin (for example, http://tiddlywiki.com/plugins/tiddlywiki/katex/)
 # Drag the link [[$:/plugins/tiddlywiki/example]] to the browser window containing your TiddlyWiki
 # Save your TiddlyWiki
-# &#39;&#39;Refresh the window to automatically create the shadow tiddlers that are provided by the plugin in order for it to work correctly&#39;&#39;
+# &#39;&#39;Refresh the page so that TiddlyWiki loads the new plugin&#39;&#39;
 # The plugin should now be available for use
 
 ! How to uninstall / delete a plugin
 
 # Create a backup of your current TiddlyWiki HTML file ([[just in case|The First Rule of Using TiddlyWiki]])
-# Open the controlpanel and go to the plugin tab
+# Open the [[$:/ControlPanel]] and go to the &#39;&#39;Plugins&#39;&#39; tab
 # Click on the plugin you want to delete to open its tiddler
-# Click the edit-mode icon then delete the tiddler
+# Click the edit icon and then delete the tiddler
 # Save your TiddlyWiki
-# &#39;&#39;Refresh the window to automatically delete the shadow tiddlers created by the plugin&#39;&#39;
+# &#39;&#39;Refresh the window so that TiddlyWiki completely removes the plugin&#39;&#39;
 # The plugin should now be deleted
 </pre>
 </div>

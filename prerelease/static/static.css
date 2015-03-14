@@ -234,13 +234,11 @@ svg.railroad-diagram path.arrow {
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-title {
-/********************************
 	position: -webkit-sticky;
 	position: -moz-sticky;
 	position: -o-sticky;
 	position: -ms-sticky;
 	position: sticky;
-********************************/
 	top: 0px;
 	background: #ffffff;
 	z-index: 500;
