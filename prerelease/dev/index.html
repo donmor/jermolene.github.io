@@ -5249,7 +5249,7 @@ Error message and password prompt
         &quot;$:/config/OfficialPluginLibrary&quot;: {
             &quot;title&quot;: &quot;$:/config/OfficialPluginLibrary&quot;,
             &quot;tags&quot;: &quot;$:/tags/PluginLibrary&quot;,
-            &quot;url&quot;: &quot;http://tiddlywiki.com/library/index.html&quot;,
+            &quot;url&quot;: &quot;http://tiddlywiki.com/library/v5.1.8/index.html&quot;,
             &quot;caption&quot;: &quot;{{$:/language/OfficialPluginLibrary}}&quot;,
             &quot;text&quot;: &quot;The official ~TiddlyWiki plugin library at tiddlywiki.com. Plugins, themes and language packs are maintained by the core team.\n&quot;
         },
@@ -19808,6 +19808,10 @@ DownloadSaver.prototype.save = function(text,method,callback) {
 # Run `../build.jermolene.github.io/github-push.sh` to push the new files to GitHub
 # Run `../build.jermolene.github.io/tiddlyspace-upload.sh &lt;username&gt; &lt;password&gt;` to upload the release to TiddlySpace
 # Tweet the release with the text &quot;TiddlyWiki v5.x.x released to http://tiddlywiki.com #newtiddlywikirelease&quot;
+
+# Preparation for the next release:
+## Adjust version number in [[$:/config/OfficialPluginLibrary]]
+## Adjust version number in https://github.com/Jermolene/build.jermolene.github.io in `bld.sh` and `make-library-bld.sh`
 </pre>
 </div>
 <div title="Releasing new content for TiddlyWiki">
