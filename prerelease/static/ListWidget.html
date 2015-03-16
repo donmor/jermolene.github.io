@@ -17,7 +17,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets tc-tiddlylink tc-tiddlylink-resolves' tabindex='1'><div class='tc-tiddler-title'>
+<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets'><div class='tc-tiddler-title'>
 <div class='tc-titlebar'>
 <span class='tc-tiddler-controls'>
 <span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
@@ -48,7 +48,7 @@ ListWidget
 </div><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 19 days ago
+</a> 21 days ago
 </div>
 <div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
 
@@ -94,7 +94,7 @@ color:#333333;'>
 </p></blockquote><p><strong>custom item template</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot; template=&quot;$:/core/ui/ViewTemplate/subtitle&quot;/&gt;</code></pre><p>Displays as:</p><blockquote class='tc-quote'><div class='tc-subtitle'>
 <a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
 
-</a> 20 days ago
+</a> 22 days ago
 </div>
 </blockquote><h2 class=''>Grouped Lists</h2><p>See <a class='tc-tiddlylink tc-tiddlylink-missing' href='NestedLists.html'>NestedLists</a> for how to generate nested and grouped lists using the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a>.</p><h1 class=''>Content and Attributes</h1><p>The content of the <code>&lt;$list&gt;</code> widget is an optional template to use for rendering each tiddler in the list. Alternatively, the template can be specified as a tiddler title in the <code>template</code> attribute. As a fallback, the default template just displays the tiddler title.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>filter</td><td align='left'>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filters.html'>tiddler filter</a> to display</td></tr><tr class='evenRow'><td align='left'>template</td><td align='left'>The title of a template tiddler for transcluding each tiddler in the list. When no template is specified, the body of the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a> serves as the item template. With no body, a simple link to the tiddler is returned.</td></tr><tr class='oddRow'><td align='left'>editTemplate</td><td align='left'>An alternative template to use for <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DraftMechanism.html'>DraftTiddlers</a> in edit mode</td></tr><tr class='evenRow'><td align='left'>variable</td><td align='left'>The name for a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>variable</a> in which the title of each listed tiddler is stored. Defaults to <strong>currentTiddler</strong></td></tr><tr class='oddRow'><td align='left'>emptyMessage</td><td align='left'>Message to be displayed when the list is empty</td></tr><tr class='evenRow'><td align='left'>storyview</td><td align='left'>Optional name of module responsible for animating/processing the list</td></tr><tr class='oddRow'><td align='left'>history</td><td align='left'>The title of the tiddler containing the navigation history</td></tr></tbody></table><h2 class=''>Edit mode</h2><p>The <code>&lt;$list&gt;</code> widget can optionally render draft tiddlers through a different template to handle editing, see <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DraftMechanism.html'>DraftMechanism</a>.</p><h2 class=''><code>storyview</code> attribute</h2><p>The <code>storyview</code> attribute specifies the name of an optional module that can animate changes to the list (including navigation). The core ships with the following storyview modules:</p><ul><li><code>classic</code>: renders the list as an ordered sequence of tiddlers</li><li><code>zoomin</code>: just renders the current tiddler from the list, with a zoom animation for navigating between tiddlers</li><li><code>pop</code>: shrinks items in and out of place</li></ul><p>In order for the storyviews to animate correctly each entry in the list should be a single block mode DOM element.</p><h2 class=''>History and navigation</h2><p>The optional <code>history</code> attribute specifies the name of a tiddler that is used to track the current tiddler for navigation purposes. When the history tiddler changes the list view responds by telling the listview to handle navigating to the new tiddler. See <a class='tc-tiddlylink tc-tiddlylink-resolves' href='HistoryMechanism.html'>HistoryMechanism</a> for details.</p></div>
 
