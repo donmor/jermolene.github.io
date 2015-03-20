@@ -14,12 +14,12 @@ var assetList = [
         "description": "Browser sniffing",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
-        "list": "readme",
+        "list": "readme usage",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin adds a number of `$:/info/` tiddlers containing information about the current browser.\n\n! Information Tiddlers\n\n|!Title |!Description |\n|[[$:/info/browser/is/android]] |Running on Android? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/bada]] |Running on Bada? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/blackberry]] |Running on ~BlackBerry? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/chrome]] |Running on Chrome? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/firefox]] |Running on Firefox? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/firefoxos]] |Running on Firefox OS? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/gecko]] |Running on Gecko? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/ios]] |Running on iOS (ie an iPhone, iPad or iPod)? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/ipad]] |Running on iPad? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/iphone]] |Running on iPhone? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/ipod]] |Running on iPod? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/opera]] |Running on Opera? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/phantomjs]] |Running on ~PhantomJS? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/safari]] |Running on Safari? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/sailfish]] |Running on Sailfish? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/seamonkey]] |Running on Sea Monkey? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/silk]] |Running on Amazon's Silk? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/tizen]] |Running on Tizen? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/webkit]] |Running on ~WebKit? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/webos]] |Running on ~WebOS? (\"yes\" or \"no\")  |\n|[[$:/info/browser/is/windowsphone]] |Running on Windows Phone? (\"yes\" or \"no\")  |\n|[[$:/info/browser/name]] |Platform name (see below) |\n|[[$:/info/browser/version]] |Browser version |\n\nThe browser information is obtained with [[Bowser, a browser detector library from Dustin Diaz|https://github.com/ded/bowser/]]. Possible browser names include:\n\n* ''\"Amazon Silk\"''\n* ''\"Android\"''\n* ''\"Bada\"''\n* ''\"~BlackBerry\"''\n* ''\"Chrome\"''\n* ''\"Firefox\"''\n* ''\"Internet Explorer\"''\n* ''\"iOS\"''\n* ''\"Opera\"''\n* ''\"~PhantomJS\"''\n* ''\"Safari\"''\n* ''\"Sailfish\"''\n* ''\"~SeaMonkey\"''\n* ''\"~TiddlyDesktop\"''\n* ''\"Tizen\"''\n* ''\"~WebOS\"''\n* ''\"Windows Phone\"''\n\nNote that Bowser returns \"iPhone\", \"iPad\" and \"iPod\" as distinct values for the name of the current browser. TiddlyWiki converts all three distinct values into \"iOS\" before copying to [[$:/info/browser/name]].\n"
+        "readme": "This plugin adds a number of `$:/info/` tiddlers containing information about the current browser.\n\nIt allows you to create content that is presented in a way that is responsive to different browsers.\n\nFor example, http://tiddlywiki.com uses this plugin to present the user with the best options for getting started depending on their browser.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/browser-sniff]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/cecily",
@@ -31,71 +31,77 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a new story visualisation that displays individual tiddlers as resizable tiles on an infinite canvas.\n\nCecily is based on an earlier plugin for TiddlyWiki Classic: http://jermolene.com/cecily\n\nCecily is currently in the early stages of development with little functionality yet implemented.\n"
+        "readme": "This experimental plugin provides a new story visualisation that displays individual tiddlers as resizable tiles on an infinite canvas.\n\nCecily is based on an earlier plugin for TiddlyWiki Classic: http://jermolene.com/cecily\n\nCecily is currently in the early stages of development with little functionality yet implemented.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/cecily]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/classictools",
         "description": "TiddlyWiki Classic manipulation tools",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
-        "version": "5.1.8-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/codemirror",
-        "description": "CodeMirror: text editor",
-        "author": "JeremyRuston",
         "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "The CodeMirror plugin brings many features:\n\n* Code colouring for many languages (see [[the official documentation here|http://codemirror.net/mode/index.html]])\n* Auto closing brackets and tags\n* Folding brackets, comments, and tags\n* Auto-completion \n\n! Setting ~CodeMirror Content Types\n\nYou can determine which tiddler content types are edited by the ~CodeMirror widget by creating or modifying special tiddlers whose prefix is comprised of the string `$:/config/EditorTypeMappings/` concatenated with the content type. The text of that tiddler gives the editor type to be used (eg, ''text'', ''bitmap'', ''codemirror'').\n\nThe current editor type mappings are shown in [[$:/ControlPanel]] under the \"Advanced\" tab.\n\n! ~CodeMirror Configuration\n\nYou can configure the ~CodeMirror plugin by creating a tiddler called [[$:/config/CodeMirror]] containing a JSON configuration object. The configuration tiddler must have its type field set to `application/json` to take effect.\n\nSee http://codemirror.net/ for details of available configuration options.\n\nFor example:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/dialog/dialog.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/search/searchcursor.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js\",\n      \"$:/plugins/tiddlywiki/codemirror/keymap/vim.js\",\n      \"$:/plugins/tiddlywiki/codemirror/keymap/emacs.js\"\n  ],\n  \"configuration\": {\n      \"keyMap\": \"vim\",\n      \"matchBrackets\":true,\n      \"showCursorWhenSelecting\": true\n  }\n}\n```\n\n!! Basic working configuration\n\n# Create a tiddler called `$:/config/CodeMirror`\n\n# The type of the tiddler has to be set to `application/json`\n\n# The text of the tiddler is the following: \n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js\"\n  ],\n  \"configuration\": {\n      \"matchBrackets\":true,\n      \"showCursorWhenSelecting\": true\n  }\n}\n\n```\n\n# You should see line numbers when editing a tiddler\n# When editing a tiddler, no matter what the type of the tiddler is set to, you should see matching brackets being highlighted whenever the cursor is next to one of them\n# If you edit a tiddler with the type `application/javascript` or `application/json` you should see the code being syntax highlighted\n\n!! Add HTML syntax highlighting\n\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[https://raw.githubusercontent.com/codemirror/CodeMirror/master/mode/xml/xml.js]]\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js\"\n  ],\n  \"configuration\": {\n      \"showCursorWhenSelecting\": true,\n      \"matchBrackets\":true\n  }\n}\n```\n# Edit a tiddler with the type `text/html` and write some html code. You should see your code being coloured\n\n!! Add a non-existing language mode\n\nHere's an example of adding a new language mode - in this case, the language C.\n\n\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/mode/clike/clike.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[https://raw.githubusercontent.com/codemirror/CodeMirror/master/mode/clike/clike.js]]\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/mode/clike/clike.js\"\n  ],\n  \"configuration\": {\n      \"showCursorWhenSelecting\": true\n  }\n}\n```\n\n# Add the correct ~EditorTypeMappings tiddler\n## Find the matching MIME type. If you go on the [[CodeMirror documentation for language modes|http://codemirror.net/mode/index.html]] you can see the [[documentation for the c-like mode|http://codemirror.net/mode/clike/index.html]]. In this documentation, at the end you will be told the MIME types defined. Here it's ''text/x-csrc''\n## Add the tiddler: `$:/config/EditorTypeMappings/text/x-csrc` and fill the text field with : ''codemirror''\n\nIf you edit a tiddler with the type `text/x-csrc` and write some code in C, you should see your text being coloured.\n\n!! Add matching tags\n\n# Add XML and HTML colouring\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/edit/matchtags.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[http://codemirror.net/addon/edit/matchtags.js]]\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/matchtags.js\",\n      \"$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js\"\n  ],\n  \"configuration\": {\n      \"showCursorWhenSelecting\": true,\n      \"matchTags\": {\"bothTags\": true},\n    \"extraKeys\": {\"Ctrl-J\": \"toMatchingTag\"}\n  }\n}\n```\n\nEdit a tiddler that has the type :`text/htm` and write this code:\n\n```\n<html>\n      <div id=\"click here and press CTRL+J\">\n      <ul>\n        <li>\n        </li>\n      </ul>\n   </div>\n</html>\n```\n\nIf you click on a tag and press CTRL+J, your cursor will select the matching tag. Supposedly, it should highlight the pair when clicking a tag. However, that part doesn't work.\n\n!! Adding closing tags\n\n# Add the xml mode (see \"Add XML and HTML colouring\")\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/edit/closetags.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[http://codemirror.net/addon/edit/closetag.js]]\n\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/closetags.js\"\n  ],\n  \"configuration\": {\n      \"showCursorWhenSelecting\": true,\n      \"autoCloseTags\":true\n  }\n}\n```\n\nIf you edit a tiddler with the type`text/html` and write:\n\n```\n<html>\n```\n\nThen the closing tag ''</html>'' should automatically appear.\n\n!! Add closing brackets\n\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/edit/closebrackets.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[http://codemirror.net/addon/edit/closebrackets.js]]\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/edit/closebrackets.js\"\n  ],\n\n  \"configuration\": {\n\n      \"showCursorWhenSelecting\": true,\n      \"matchBrackets\":true,\n      \"autoCloseBrackets\":true\n  }\n}\n```\n\n# If you try to edit any tiddler and write `if(` you should see the bracket closing itself automatically (you will get \"if()\"). It works with (), [], and {}\n# If you try and edit a tiddler with the type `application/javascript`, it will auto-close `()`,`[]`,`{}`,`''` and `\"\"`\n\n!! Adding folding tags\n\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/fold/foldcode.js`\n## Add a field `module-type` and set it to ''library''\n## Set the field `type` to ''application/javascript''\n## Set the text field of the tiddler with the javascript code from this link : [[http://codemirror.net/addon/fold/foldcode.js]]\n# Repeat the above process for the following tiddlers, but replace the code with the one from the given link:\n## Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/fold/xml-fold.js`, the code can be found here [[https://raw.githubusercontent.com/codemirror/CodeMirror/master/addon/fold/xml-fold.js]]\n## Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/fold/foldgutter.js`, the code can be found here [[http://codemirror.net/addon/fold/foldgutter.js]]\n# Create a tiddler `$:/plugins/tiddlywiki/codemirror/addon/fold/foldgutter.css`\n## Add the tag `$:/tags/Stylesheet`\n## Set the text field of the tiddler with the css code from this link : [[http://codemirror.net/addon/fold/foldgutter.css]]\n# Set the text field of the tiddler `$:/config/CodeMirror` to:\n\n```\n{\n  \"require\": [\n      \"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js\",\n      \"$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/fold/foldcode.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/fold/xml-fold.js\",\n      \"$:/plugins/tiddlywiki/codemirror/addon/fold/foldgutter.js\"\n  ],\n  \"configuration\": {\n      \"showCursorWhenSelecting\": true,\n      \"matchTags\": {\"bothTags\": true},\n      \"foldGutter\": true,\n      \"gutters\": [\"CodeMirror-linenumbers\", \"CodeMirror-foldgutter\"]\n  }\n}\n```\n\nNow if you type the below code in a tiddler with the type `text/html`:\n\n```\n<html>\n   <div>\n      <ul>\n\n      </ul>\n   </div>\n</html>\n```\n\nYou should see little arrows just next to the line numbers. Clicking on it will have the effect to fold the code (or unfold it).\n"
+        "readme": "This plugin provides facilities for working with TiddlyWiki Classic. It is used in the build process for TiddlyWiki Classic.\n\nThe additional features are:\n\n* A ''tiddlerdeserializer'' module for reading TiddlyWiki Classic `.recipe` files\n* Templates for building TiddlyWiki Classic.\n\nSee https://github.com/TiddlyWiki/tiddlywiki.com for more details.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/classictools]]\n"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/codemirror",
+        "description": "CodeMirror: text editor",
+        "author": "JeremyRuston",
+        "list": "readme usage",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides an enhanced text editor component based on [[CodeMirror|http://codemirror.net]]. It provides several advantages over the default browser text editor:\n\n* Code colouring for many languages (see [[the official documentation here|http://codemirror.net/mode/index.html]])\n* Auto closing brackets and tags\n* Folding brackets, comments, and tags\n* Auto-completion\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/codemirror]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/d3",
         "description": "D3: data visualisation",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
+        "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "The D3 plugin is a proof-of-concept demo of integration with the D3.js data visualisation framework (http://d3js.org).\n\nIt is not currently in a state where it can be used for anything useful.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/d3]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/filesystem",
         "description": "Local filesystem syncadaptor",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
-        "version": "5.1.8-prerelease",
-        "plugin-type": "plugin",
-        "dependents": "",
-        "type": "application/json"
-    },
-    {
-        "title": "$:/plugins/tiddlywiki/github-fork-ribbon",
-        "description": "Corner ribbon",
-        "author": "Simon Whitaker, adapted for TiddlyWiki by JeremyRuston",
         "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This stylesheet is adapted from work by Simon Whitaker:\n\nhttps://github.com/simonwhitaker/github-fork-ribbon-css/\n\n\n```\n<!-- TOP RIGHT RIBBON: START COPYING HERE -->\n<div class=\"github-fork-ribbon-wrapper right\"><div class=\"github-fork-ribbon\"><a href=\"https://github.com/simonwhitaker/github-fork-ribbon-css\">Fork me on ~GitHub</a></div>\n</div>\n<!-- TOP RIGHT RIBBON: END COPYING HERE -->\n\n<!-- TOP LEFT RIBBON: START COPYING HERE -->\n<div class=\"github-fork-ribbon-wrapper left\"><div class=\"github-fork-ribbon\"><a href=\"https://github.com/simonwhitaker/github-fork-ribbon-css\">Fork me on ~GitHub</a></div>\n</div>\n<!-- TOP LEFT RIBBON: END COPYING HERE -->\n\n\n<!-- BOTTOM RIGHT RIBBON: START COPYING HERE -->\n<div class=\"github-fork-ribbon-wrapper right-bottom\"><div class=\"github-fork-ribbon\"><a href=\"https://github.com/simonwhitaker/github-fork-ribbon-css\">Fork me on ~GitHub</a></div>\n</div>\n<!-- BOTTOM RIGHT RIBBON: END COPYING HERE -->\n\n<!-- BOTTOM LEFT RIBBON: START COPYING HERE -->\n<div class=\"github-fork-ribbon-wrapper left-bottom\"><div class=\"github-fork-ribbon\"><a href=\"https://github.com/simonwhitaker/github-fork-ribbon-css\">Fork me on ~GitHub</a></div>\n</div>\n<!-- BOTTOM LEFT RIBBON: END COPYING HERE -->\n```\n"
+        "readme": "The filesystem plugin is used under Node.js to synchronise tiddler changes back to the file system. It is inert when used in the browser.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/filesystem]]\n"
+    },
+    {
+        "title": "$:/plugins/tiddlywiki/github-fork-ribbon",
+        "description": "Corner ribbon",
+        "author": "Simon Whitaker, adapted for TiddlyWiki by JeremyRuston",
+        "list": "readme usage",
+        "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides a diagonal ribbon across the corner of the window. It resembles the design used by ~GitHub for their \"Fork me on ~GitHub\" ribbons.\n\nThe ribbon can be positioned over any corner, and can incorporate user defined text, colours and a link.\n\nThe CSS stylesheet is adapted from work by Simon Whitaker:\n\nhttps://github.com/simonwhitaker/github-fork-ribbon-css/\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/github-fork-ribbon]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/googleanalytics",
         "description": "Google Analytics: website statistics",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
-        "list": "readme",
+        "list": "readme usage",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document. These instructions assume you are using TiddlySpot to publish your wiki.\n\n# Go to the Google Analytics website: http://www.google.com/analytics/\n# Click the ''Access Google Analytics'' button and follow instructions to set up your account\n# Enter the name of your TiddlySpot domain, for example \"mysite.tiddlyspot.com\" \n# You will be given your own Tracking ID for this domain\n# Go to http://tiddlywiki.com -- open the More/System tab and drag the links to these three tiddlers across to a local copy of your site:\n#* [[$:/GoogleAnalyticsDomain]]\n#* [[$:/GoogleAnalyticsAccount]]\n#* [[$:/plugins/tiddlywiki/googleanalytics]]\n# Edit the first two of these tiddlers to reflect your Domain and Tracking ID\n# Upload the new version to TiddlySpot or other web host\n# Return to your Google Analytics page to check that your site is being tracked\n"
+        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/googleanalytics]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/help",
@@ -107,56 +113,66 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides an overlay help panel at the bottom right of the window.\n"
+        "readme": "This plugin provides an overlay help panel at the bottom right of the window.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/help]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/highlight",
         "description": "Highlight.js: syntax highlighting",
         "author": "JoaoBolila",
-        "list": "license",
+        "core-version": ">=5.0.0",
+        "list": "readme usage license",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This plugin provides syntax highlighting of code blocks using [[highlight.js|https://github.com/isagalaev/highlight.js]] from Ivan Sagalaev.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/highlight]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/katex",
         "description": "KaTeX: mathematical typography",
         "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme usage",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This is a TiddlyWiki plugin for mathematical typesetting based on [[KaTeX from Khan Academy|http://khan.github.io/KaTeX/]].\n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/katex]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/markdown",
         "description": "Markdown parser",
         "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme usage",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This is a TiddlyWiki plugin for parsing Markdown text, based on the [[markdown-js|https://github.com/evilstreak/markdown-js]] project from Dominic Baggott. \n\nIt is completely self-contained, and doesn't need an Internet connection in order to work. It works both in the browser and under Node.js.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/markdown]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/nodewebkitsaver",
         "description": "NW.js saver",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
+        "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This plugin provides a ''saver'' module for saving changes when using TiddlyWiki directly under NW.js (previously known as node-webkit).\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/nodewebkitsaver]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/railroad",
         "description": "Railroad diagram generator",
         "author": "AstridElocson",
         "plugin-type": "plugin",
-        "list": "readme syntax example",
+        "list": "readme usage syntax example",
         "version": "5.1.8-prerelease",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a `<$railroad>` widget for generating railroad diagrams as SVG images.\n\nAlternatively, the [[diagram notation|$:/plugins/tiddlywiki/railroad/syntax]] can be stored in a dedicated tiddler with its `type` field set to `text/vnd.tiddlywiki.railroad`, and that tiddler can simply be transcluded to wherever it is needed.\n\nThe plugin is based on [[a library by Tab Atkins|https://github.com/tabatkins/railroad-diagrams]], and has been extended to make it more flexible, including allowing components of a diagram to function as links or be transcluded from other tiddlers.\n\nThe content of the `<$railroad>` widget is ignored.\n\n|!Attribute |!Description |!Default |\n|text |Text in a special notation that defines the diagram's layout |-- |\n|arrow |If set to `no`, repeat paths do not have an arrow on them |`yes` |\n|start |Style of the startpoint: `single`, `double`, `none` |`single` |\n|end |Style of the endpoint: `single`, `double`, `none` |`single` |\n|debug |If set to `yes`, the diagram displays its parse tree |`no` |\n\nThese options can also be specified via pragmas in the diagram notation, or globally via a dictionary tiddler called `$:/config/railroad`:\n\n```\narrow: yes\nstart: single\nend: single\ndebug: no\n```\n"
+        "readme": "This plugin provides a `<$railroad>` widget for generating railroad diagrams as SVG images.\n\nAlternatively, the [[diagram notation|$:/plugins/tiddlywiki/railroad/syntax]] can be stored in a dedicated tiddler with its `type` field set to `text/vnd.tiddlywiki.railroad`, and that tiddler can simply be transcluded to wherever it is needed.\n\nThe plugin is based on [[a library by Tab Atkins|https://github.com/tabatkins/railroad-diagrams]], and has been extended to make it more flexible, including allowing components of a diagram to function as links or be transcluded from other tiddlers.\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/stacked-view",
@@ -168,37 +184,43 @@ var assetList = [
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently incomplete.\n"
+        "readme": "This plugin provides a new story visualisation that displays individual tiddlers as a stack of cards. It is currently experimental and incomplete.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/stacked-view]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/tahoelafs",
         "description": "Tahoe-LAFS saver",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
+        "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This plugin provides a ''saver'' module for saving changes under the [[Tahoe Least Authority File System|https://tahoe-lafs.org/]].\n\nAt this point it is largely for experimentation by @zooko.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tahoelafs]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/tiddlyweb",
         "description": "TiddlyWeb and TiddlySpace components",
         "author": "JeremyRuston",
         "core-version": ">=5.0.0",
+        "list": "readme",
         "version": "5.1.8-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This plugin runs in the browser to synchronise tiddler changes to and from a TiddlyWeb-compatible server (including TiddlyWiki 5 itself). It is inert when run under Node.js.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tiddlyweb]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/tw2parser",
         "description": "TiddlyWiki Classic parser",
         "authors": "JeremyRuston, JeffreyWilkinson",
         "core-version": ">=5.0.15",
-        "plugin-type": "plugin",
+        "list": "readme",
         "version": "5.1.8-prerelease",
+        "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This experimental plugin provides support for parsing and rendering tiddlers written in TiddlyWiki Classic format (`text/x-tiddlywiki`).\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/tw2parser]]\n"
     },
     {
         "title": "$:/themes/tiddlywiki/centralised",

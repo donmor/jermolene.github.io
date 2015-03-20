@@ -163,6 +163,7 @@ Error message and password prompt
 	background: #ffffff;
 	padding: 1em;
 	margin: 0.5em;
+	z-index: 1000;
 }dl.tc-help-cheatsheet {
 	overflow: hidden;
 }dl.tc-help-cheatsheet .red {
@@ -871,6 +872,8 @@ th {
 	margin-top: 6px;
 }.tc-muted {
 	color: #bbb;
+}svg.tc-image-button {
+	padding: 0px 1px 1px 0px;
 }/*
 Markdown likes putting code elements inside pre elements
 */
