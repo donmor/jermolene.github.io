@@ -166,15 +166,6 @@ Error message and password prompt
 
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
-}.tc-tiddler-title {
-	position: -webkit-sticky;
-	position: -moz-sticky;
-	position: -o-sticky;
-	position: -ms-sticky;
-	position: sticky;
-	top: 0px;
-	background: #ffffff;
-	z-index: 500;
 }.tc-tiddler-info {
 	
   -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
@@ -1102,7 +1093,8 @@ a.tc-tiddlylink:hover {
 	margin-bottom: 28px;
 	background-color: #ffffff;
 	border: 1px solid #ffffff;
-}.tc-tiddler-info {
+}
+.tc-tiddler-info {
 	padding: 14px 42px 14px 42px;
 	background-color: #f8f8f8;
 	border-top: 1px solid #dddddd;
@@ -1779,6 +1771,23 @@ a.tc-tiddlylink:hover {
 	background: white;
 	cursor: pointer;
 	display: inline-block;
+}/*
+** YouTube macros
+*/.tc-youtube-wrapper {
+	position: relative;
+	display: inline-block;
+}.tc-youtube-thumbnail {
+}.tc-youtube-play-symbol svg,
+.tc-youtube-play-symbol img {
+	width: 3em;
+	height: 3em;
+	fill: red;
+}.tc-youtube-play-symbol {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -1.5em;
+	margin-top: -1.5em;
 }/*
 ** Errors
 */.tc-error {
