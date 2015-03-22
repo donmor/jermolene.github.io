@@ -13,64 +13,64 @@
 <title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros tc-tagged-Core%20Macros'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros tc-tagged-Core%20Macros"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 tabs Macro
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 26 days ago
+</a> 28 days ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  Core Macros
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
-<span class='tc-tag-list-item'>
+<span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  Macros
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -83,7 +83,7 @@ color:#333333;'>
 
 
 
-<div class='tc-tiddler-body'><p>The <dfn class='doc-def'>tabs</dfn> <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros.html'>macro</a> presents a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Title%2520Selection.html'>selection of tiddlers</a> as a set of tabs that the user can switch between.</p><p>The tabs display the <code class='doc-field'>caption</code> field of a tiddler if it has one, or the tiddler&#39;s title otherwise.</p><p>By default the tabs are arranged horizontally above the content. To get vertical tabs, set the <code class='doc-param'>class</code> parameter to <code class='doc-value'>tc-vertical</code>.</p><h2 class=''>Parameters</h2><dl><dt>tabsList</dt><dd>A <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Filters.html'>filter</a> selecting which tiddlers to include</dd><dt>default</dt><dd>The title of the tiddler whose tab is to be selected by default</dd><dt>state</dt><dd>The prefix for the title of a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='StateMechanism.html'>state tiddler</a> for noting the currently selected tab, defaulting to <code>$:/state/tab</code>. It is recommended that this be a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='SystemTiddlers.html'>system tiddler</a></dd><dt>class</dt><dd>Additional <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Cascading%2520Style%2520Sheets.html'>CSS</a> classes for the generated <code>div</code> elements. Multiple classes can be separated with spaces</dd><dt>template</dt><dd>Optionally, the title of a tiddler to use as a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TemplateTiddlers.html'>template</a> for transcluding the content of the selected tab</dd></dl><p>Within the template, the title of the selected tab is available in the <code class='doc-var'>currentTab</code> variable.</p><p>The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='currentTiddler%2520Variable.html'><code class='doc-var'>currentTiddler</code></a> variable is not affected by the <code class='doc-var'>tabs</code> macro.</p><p><a class='tc-tiddlylink tc-tiddlylink-resolves' href='tabs%2520Macro%2520(Examples).html'>Examples</a></p></div>
+<div class="tc-tiddler-body"><p>The <dfn class="doc-def">tabs</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> presents a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of tiddlers</a> as a set of tabs that the user can switch between.</p><p>The tabs display the <code class="doc-field">caption</code> field of a tiddler if it has one, or the tiddler's title otherwise.</p><p>By default the tabs are arranged horizontally above the content. To get vertical tabs, set the <code class="doc-param">class</code> parameter to <code class="doc-value">tc-vertical</code>.</p><h2 class="">Parameters</h2><dl><dt>tabsList</dt><dd>A <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a> selecting which tiddlers to include</dd><dt>default</dt><dd>The title of the tiddler whose tab is to be selected by default</dd><dt>state</dt><dd>The prefix for the title of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="StateMechanism.html">state tiddler</a> for noting the currently selected tab, defaulting to <code>$:/state/tab</code>. It is recommended that this be a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTiddlers.html">system tiddler</a></dd><dt>class</dt><dd>Additional <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Cascading%2520Style%2520Sheets.html">CSS</a> classes for the generated <code>div</code> elements. Multiple classes can be separated with spaces</dd><dt>template</dt><dd>Optionally, the title of a tiddler to use as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">template</a> for transcluding the content of the selected tab</dd></dl><p>Within the template, the title of the selected tab is available in the <code class="doc-var">currentTab</code> variable.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="currentTiddler%2520Variable.html"><code class="doc-var">currentTiddler</code></a> variable is not affected by the <code class="doc-var">tabs</code> macro.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="tabs%2520Macro%2520(Examples).html">Examples</a></p></div>
 
 
 

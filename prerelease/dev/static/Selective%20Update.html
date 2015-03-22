@@ -13,68 +13,68 @@
 <title>TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 Selective Update
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 8 months ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#4e432f;
-color:#4e432f;'>
+color:#4e432f;">
  doc
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>With <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Messages.html'>Messages</a> a widget is able to put some kind of events into the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a> application which is one part of the dynamic behaviour of widgets.
+<div class="tc-tiddler-body"><p>With <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">Messages</a> a widget is able to put some kind of events into the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> application which is one part of the dynamic behaviour of widgets.
 The other part is selective updating.
 Widgets are often dependant on tiddler states.
-The <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/#ListWidget' target='_blank'>ListWidget</a> for example can be configured to list all tiddlers which are tagged with &quot;important&quot;.
-Now, when such a tiddler is changed and it&#39;s &quot;important&quot; tag is removed, this change should reflect in the ListWidget.
+The <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/#ListWidget" target="_blank">ListWidget</a> for example can be configured to list all tiddlers which are tagged with &quot;important&quot;.
+Now, when such a tiddler is changed and it's &quot;important&quot; tag is removed, this change should reflect in the ListWidget.
 To allow widgets to react on such changes, each widget can provide a function <code>refresh(changedTiddlers)</code>.
-The <a class='tc-tiddlylink tc-tiddlylink-resolves' href='RootWidget%2520and%2520Rendering%2520Startup.html'>RootWidget</a> is registered to the wiki store, using the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Event%2520Mechanism.html'>Event Mechanism</a>. When an change event occurs it starts to call the refresh function of its children with a list of the changed tiddlers.
+The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RootWidget%2520and%2520Rendering%2520Startup.html">RootWidget</a> is registered to the wiki store, using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a>. When an change event occurs it starts to call the refresh function of its children with a list of the changed tiddlers.
 Each widget can then decide if it has to change or re-render its DOM representation and call the refresh function of its own children.
-This way every time a tiddler or the wiki store itself changes, each widget can instantly react on these changes or ignore them.</p><p>Another way of updating are text reference attributes (text references explained in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transclusion%2520and%2520TextReference.html'>Transclusion and TextReference</a>):</p><pre class='js hljs'><code>{type: <span class="hljs-string">"indirect"</span>, textReference: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">textReference</span>&gt;</span>}</span></code></pre><p>When a widget got a attribute which is a text reference and the refresh function is called, it can check if the text reference references a changed tiddler and update accordingly.</p><p>Nearly every state of the UI is stored in tiddlers. A search mechanism for example would use a EditTextWidget which shows an text input field for the search string and a <a class='tc-tiddlylink tc-tiddlylink-missing' href='ListWidget.html'>ListWidget</a> to show the results.
-The EditTextWidget is bound to a tiddler <a class='tc-tiddlylink tc-tiddlylink-shadow' href='%2524%253A%252Ftemp%252Fsearch.html'>$:/temp/search</a>. Meaning when editing the text in the input field the tiddlers content is changed to this text. On the other hand when the tiddler changes the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='RootWidget%2520and%2520Rendering%2520Startup.html'>RootWidget</a> is notified. It then starts calling its childrens refresh methods. Eventually the refresh method of the EditTextWidget is called and it can re-render itself if necessary.
-This way <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a> can re-use an already existing data structure which is not only convenient because we don&#39;t need to introduce an additional structure but tiddlers managed in the wiki store are already a pretty powerful data structure, supporting an <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Event%2520Mechanism.html'>Event Mechanism</a> (so we don&#39;t need an additional observer pattern), <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Caching.html'>Caching</a>, Metadata by additional tiddler fields and a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Tags%2520and%2520Filter%2520Mechanism.html'>way to obtain specific tiddlers</a>.
+This way every time a tiddler or the wiki store itself changes, each widget can instantly react on these changes or ignore them.</p><p>Another way of updating are text reference attributes (text references explained in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520and%2520TextReference.html">Transclusion and TextReference</a>):</p><pre class="js hljs"><code>{type: <span class="hljs-string">"indirect"</span>, textReference: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">textReference</span>&gt;</span>}</span></code></pre><p>When a widget got a attribute which is a text reference and the refresh function is called, it can check if the text reference references a changed tiddler and update accordingly.</p><p>Nearly every state of the UI is stored in tiddlers. A search mechanism for example would use a EditTextWidget which shows an text input field for the search string and a <a class="tc-tiddlylink tc-tiddlylink-missing" href="ListWidget.html">ListWidget</a> to show the results.
+The EditTextWidget is bound to a tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftemp%252Fsearch.html">$:/temp/search</a>. Meaning when editing the text in the input field the tiddlers content is changed to this text. On the other hand when the tiddler changes the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RootWidget%2520and%2520Rendering%2520Startup.html">RootWidget</a> is notified. It then starts calling its childrens refresh methods. Eventually the refresh method of the EditTextWidget is called and it can re-render itself if necessary.
+This way <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> can re-use an already existing data structure which is not only convenient because we don't need to introduce an additional structure but tiddlers managed in the wiki store are already a pretty powerful data structure, supporting an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a> (so we don't need an additional observer pattern), <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Caching.html">Caching</a>, Metadata by additional tiddler fields and a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Tags%2520and%2520Filter%2520Mechanism.html">way to obtain specific tiddlers</a>.
 </p></div>
 
 

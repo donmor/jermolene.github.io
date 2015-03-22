@@ -15,62 +15,62 @@
 </title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/languages/de-AT' target='_blank'>http://tiddlywiki.com/languages/de-AT</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/de-AT" target="_blank">http://tiddlywiki.com/languages/de-AT</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='mehr' class='tc-btn-invisible' title='Weitere Aktionen'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="mehr" class="tc-btn-invisible" title="Weitere Aktionen">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='Bearbeiten' class='tc-btn-invisible' title='Bearbeite diesen Tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Bearbeiten" class="tc-btn-invisible" title="Bearbeite diesen Tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='Schließen' class='tc-btn-invisible' title='Schließe diesen Tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Schließen" class="tc-btn-invisible" title="Schließe diesen Tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 Transklusion in WikiText
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='pmario.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="pmario.html">
 pmario
 </a> vor 5 Monaten
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  WikiText
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>Sie können mit dem <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Transklusion.html'>Transklusions Mechanismus</a> den Inhalt eines Tiddlers in einen anderen Tiddler einbinden:</p><ul><li><code>{{MeinTiddler}}</code> transkludiert einen einzelnen Tiddler.</li><li><code>{{MeinTiddler||VorlageTitel}}</code> zeigt den Tiddler mit Hilfe eines <a class='tc-tiddlylink tc-tiddlylink-missing' href='VorlagenTiddlers.html'>VorlagenTiddlers</a> an.</li><li><code>{{||VorlageTitel}}</code> benutzt einen Vorlagen Tiddler, ohne die interne Variable &quot;<a class='tc-tiddlylink tc-tiddlylink-missing' href='WidgetVariable%253A%2520currentTiddler.html'>current tiddler</a>&quot; zu verändern.</li></ul><p>Statt den Tiddler Titel direkt anzugeben kann eine sogenannte <a class='tc-tiddlylink tc-tiddlylink-resolves' href='TextReferenz.html'>TextReferenz</a> verwendet werden:</p><ul><li><code>{{MeinTiddler!!feldName}}</code> transkludiert den Inhalt eines Tiddler Feldes.</li><li><code>{{!!feldName}}</code> transkludiert das Feld des Tiddlers, der in der &quot;current tiddler&quot; Variable definiert ist.</li><li><code>{{MyTiddler##index}}</code> transkludiert ein spezifisches Feld aus einem so genannten: <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DataTiddlers.html'>DataTiddlers</a></li><li><code>{{##index}}</code> transkludiert das angegebene Feld des &quot;current <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DataTiddlers.html'>DataTiddlers</a>&quot;</li></ul><p>Eine ähnliche Syntax kann verwendet werden, um eine Liste von Tiddlern mit einem Filter einzubinden:</p><pre><code>{{{ [tag[tagName]] }}}
-{{{ [tag[tagName]] ||VorlageTitel}}}</code></pre><h2 class=''>Beispiel Transklusion</h2><p><ul class=''>
+<div class="tc-tiddler-body"><p>Sie können mit dem <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transklusion.html">Transklusions Mechanismus</a> den Inhalt eines Tiddlers in einen anderen Tiddler einbinden:</p><ul><li><code>{{MeinTiddler}}</code> transkludiert einen einzelnen Tiddler.</li><li><code>{{MeinTiddler||VorlageTitel}}</code> zeigt den Tiddler mit Hilfe eines <a class="tc-tiddlylink tc-tiddlylink-missing" href="VorlagenTiddlers.html">VorlagenTiddlers</a> an.</li><li><code>{{||VorlageTitel}}</code> benutzt einen Vorlagen Tiddler, ohne die interne Variable &quot;<a class="tc-tiddlylink tc-tiddlylink-missing" href="WidgetVariable%253A%2520currentTiddler.html">current tiddler</a>&quot; zu verändern.</li></ul><p>Statt den Tiddler Titel direkt anzugeben kann eine sogenannte <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReferenz.html">TextReferenz</a> verwendet werden:</p><ul><li><code>{{MeinTiddler!!feldName}}</code> transkludiert den Inhalt eines Tiddler Feldes.</li><li><code>{{!!feldName}}</code> transkludiert das Feld des Tiddlers, der in der &quot;current tiddler&quot; Variable definiert ist.</li><li><code>{{MyTiddler##index}}</code> transkludiert ein spezifisches Feld aus einem so genannten: <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddlers</a></li><li><code>{{##index}}</code> transkludiert das angegebene Feld des &quot;current <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddlers</a>&quot;</li></ul><p>Eine ähnliche Syntax kann verwendet werden, um eine Liste von Tiddlern mit einem Filter einzubinden:</p><pre><code>{{{ [tag[tagName]] }}}
+{{{ [tag[tagName]] ||VorlageTitel}}}</code></pre><h2 class="">Beispiel Transklusion</h2><p><ul class="">
 
 <li>
-<a class='tc-tiddlylink tc-tiddlylink-resolves' href='Ideensammlung.html'>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Ideensammlung.html">
 
 Ideensammlung
 

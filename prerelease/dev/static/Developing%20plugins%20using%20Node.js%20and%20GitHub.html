@@ -13,67 +13,67 @@
 <title>TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-howto'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-howto"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 Developing plugins using Node.js and GitHub
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 4 months ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#4e432f;
-color:#4e432f;'>
+color:#4e432f;">
  howto
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>The most practical way to develop plugins is to use Node.js with the tiddlywiki5 repository to build your plugins, and to use GitHub to manage you files.</p><h1 class=''>Step by step</h1><h2 class=''>1. Installation</h2><p>First read  <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/static/PluginMechanism.html' target='_blank'>http://tiddlywiki.com/static/PluginMechanism.html</a>.</p><p>Install Git from <a class='tc-tiddlylink-external' href='http://git-scm.com/downloads' target='_blank'>http://git-scm.com/downloads</a></p><p>Install Node.js from <a class='tc-tiddlylink-external' href='http://nodejs.org/' target='_blank'>http://nodejs.org/</a></p><h2 class=''>2. Create a new blank repository on GitHub</h2><p>Hint: GitHub repositories cannot be grouped together into directories, so it is only possible to group by using a naming scheme, e.g. use &#39;TW5-&#39; as a name prefix with tiddlywiki5 projects to group them together.</p><p>Go to <a class='tc-tiddlylink-external' href='https://github.com/' target='_blank'>https://github.com/</a> and create new a repository &#39;pluginname&#39; - choose to add a readme file.</p><h2 class=''>3. Setup a working environment</h2><p>Choose a location in your file system (eg TW5) for your plugin project; issue commands to:</p><h3 class=''>1. Create the directory</h3><pre class='bash hljs'><code>mkdir TW5
-</code></pre><h3 class=''>2. Make a local read-only copy of the TiddlyWiki5 repository</h3><pre class='bash hljs'><code>git <span class="hljs-built_in">clone</span> https://github.com/Jermolene/TiddlyWiki5.git TW5
-</code></pre><h3 class=''>3. Make a directory for your plugin</h3><pre class='bash hljs'><code><span class="hljs-built_in">cd</span> TW5
+<div class="tc-tiddler-body"><p>The most practical way to develop plugins is to use Node.js with the tiddlywiki5 repository to build your plugins, and to use GitHub to manage you files.</p><h1 class="">Step by step</h1><h2 class="">1. Installation</h2><p>First read  <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/static/PluginMechanism.html" target="_blank">http://tiddlywiki.com/static/PluginMechanism.html</a>.</p><p>Install Git from <a class="tc-tiddlylink-external" href="http://git-scm.com/downloads" target="_blank">http://git-scm.com/downloads</a></p><p>Install Node.js from <a class="tc-tiddlylink-external" href="http://nodejs.org/" target="_blank">http://nodejs.org/</a></p><h2 class="">2. Create a new blank repository on GitHub</h2><p>Hint: GitHub repositories cannot be grouped together into directories, so it is only possible to group by using a naming scheme, e.g. use 'TW5-' as a name prefix with tiddlywiki5 projects to group them together.</p><p>Go to <a class="tc-tiddlylink-external" href="https://github.com/" target="_blank">https://github.com/</a> and create new a repository 'pluginname' - choose to add a readme file.</p><h2 class="">3. Setup a working environment</h2><p>Choose a location in your file system (eg TW5) for your plugin project; issue commands to:</p><h3 class="">1. Create the directory</h3><pre class="bash hljs"><code>mkdir TW5
+</code></pre><h3 class="">2. Make a local read-only copy of the TiddlyWiki5 repository</h3><pre class="bash hljs"><code>git <span class="hljs-built_in">clone</span> https://github.com/Jermolene/TiddlyWiki5.git TW5
+</code></pre><h3 class="">3. Make a directory for your plugin</h3><pre class="bash hljs"><code><span class="hljs-built_in">cd</span> TW5
 <span class="hljs-built_in">cd</span> plugins
 mkdir yourname
 <span class="hljs-built_in">cd</span> yourname
 mkdir pluginname
-</code></pre><h3 class=''>4. Make a local copy of your plugin repository</h3><pre class='bash hljs'><code>git <span class="hljs-built_in">clone</span> https://github.com/yourgithub/pluginname.git pluginname
-</code></pre><h3 class=''>5. Go to your files</h3><pre class='bash hljs'><code><span class="hljs-built_in">cd</span> pluginname
-</code></pre><p>Create the file plugin.info with content:</p><pre class='js hljs'><code>{
+</code></pre><h3 class="">4. Make a local copy of your plugin repository</h3><pre class="bash hljs"><code>git <span class="hljs-built_in">clone</span> https://github.com/yourgithub/pluginname.git pluginname
+</code></pre><h3 class="">5. Go to your files</h3><pre class="bash hljs"><code><span class="hljs-built_in">cd</span> pluginname
+</code></pre><p>Create the file plugin.info with content:</p><pre class="js hljs"><code>{
     <span class="hljs-string">"title"</span>: <span class="hljs-string">"$:/plugins/yourgithub/pluginname"</span>,
     <span class="hljs-string">"description"</span>: <span class="hljs-string">"summary of the plugin's purpose"</span>,
     <span class="hljs-string">"author"</span>: <span class="hljs-string">"yourname"</span>,
@@ -81,7 +81,7 @@ mkdir pluginname
     <span class="hljs-string">"core-version"</span>: <span class="hljs-string">"&gt;=5.0.8"</span>,
     <span class="hljs-string">"source"</span>: <span class="hljs-string">"https://github.com/yourgithub/pluginname"</span>,
     <span class="hljs-string">"plugin-type"</span>: <span class="hljs-string">"plugin"</span>
-}</code></pre><h2 class=''>4. Create the files for your plugin</h2><p>For example files see the plugins in the TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/#TiddlerFiles' target='_blank'>TiddlerFiles</a> for details of the supported tiddler file formats.</p><h2 class=''>5. Build your files into a TiddlyWiki</h2><p>Modify <code>editions/tw5.com/tiddlywiki.info</code> to include a reference to your plugin directory,  i.e. find <code>&quot;plugins&quot;: [ </code> and add <code>&quot;yourname/pluginname&quot;</code>.</p><p>From the TW5 directory issue the command</p><pre class='bash hljs'><code>node ./tiddlywiki.js editions/tw5.com --build index</code></pre><p>The resultant file (index.html) will be placed in the <code>editions/tw5.com/output</code> directory of the TW5 repo.</p><h2 class=''>6. Save your work on GitHub</h2><p>From <code>plugins/yourname/pluginname/</code> issue commands to:</p><h3 class=''>1. Add all files</h3><pre class='bash hljs'><code>git add -A</code></pre><h3 class=''>2. Commit to your local repository</h3><pre class='bash hljs'><code>git commit -am <span class="hljs-string">"something meaningful about this check in"</span></code></pre><h3 class=''>3. Copy local changes to github</h3><pre class='bash hljs'><code>git push</code></pre></div>
+}</code></pre><h2 class="">4. Create the files for your plugin</h2><p>For example files see the plugins in the TiddlyWiki5 repository i.e. those located at plugins/tiddlywiki/. See <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/#TiddlerFiles" target="_blank">TiddlerFiles</a> for details of the supported tiddler file formats.</p><h2 class="">5. Build your files into a TiddlyWiki</h2><p>Modify <code>editions/tw5.com/tiddlywiki.info</code> to include a reference to your plugin directory,  i.e. find <code>&quot;plugins&quot;: [ </code> and add <code>&quot;yourname/pluginname&quot;</code>.</p><p>From the TW5 directory issue the command</p><pre class="bash hljs"><code>node ./tiddlywiki.js editions/tw5.com --build index</code></pre><p>The resultant file (index.html) will be placed in the <code>editions/tw5.com/output</code> directory of the TW5 repo.</p><h2 class="">6. Save your work on GitHub</h2><p>From <code>plugins/yourname/pluginname/</code> issue commands to:</p><h3 class="">1. Add all files</h3><pre class="bash hljs"><code>git add -A</code></pre><h3 class="">2. Commit to your local repository</h3><pre class="bash hljs"><code>git commit -am <span class="hljs-string">"something meaningful about this check in"</span></code></pre><h3 class="">3. Copy local changes to github</h3><pre class="bash hljs"><code>git push</code></pre></div>
 
 
 

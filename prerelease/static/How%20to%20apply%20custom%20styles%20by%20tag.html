@@ -13,52 +13,52 @@
 <title>TiddlyWiki Pre-release — 5.1.8-prerelease</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 How to apply custom styles by tag
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 5 months ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  Learning
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
@@ -71,7 +71,7 @@ color:#333333;'>
 
 
 
-<div class='tc-tiddler-body'><p>You can apply custom styles to tiddlers that have a particular tag by defining a CSS class with the name <code>tc-tagged-&lt;Tag Name&gt;</code>.</p><p>For example, to make tiddlers tagged &quot;<a class='tc-tiddlylink tc-tiddlylink-missing' href='NightReader.html'>NightReader</a>&quot; appear in a special colour scheme suitable for night-time reading, <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Using%2520Stylesheets.html'>create a stylesheet</a> defining the class <code>tc-tagged-NightReader</code> like this:</p><pre><code>.tc-tagged-NightReader {
+<div class="tc-tiddler-body"><p>You can apply custom styles to tiddlers that have a particular tag by defining a CSS class with the name <code>tc-tagged-&lt;Tag Name&gt;</code>.</p><p>For example, to make tiddlers tagged &quot;<a class="tc-tiddlylink tc-tiddlylink-missing" href="NightReader.html">NightReader</a>&quot; appear in a special colour scheme suitable for night-time reading, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Using%2520Stylesheets.html">create a stylesheet</a> defining the class <code>tc-tagged-NightReader</code> like this:</p><pre><code>.tc-tagged-NightReader {
 	background-color:black;
 	color: orange;
 	padding: 35px 35px;
@@ -79,7 +79,7 @@ color:#333333;'>
 
 .tc-tagged-NightReader .tc-tiddler-body {
 	font-size: 1.5em;
-}</code></pre><p>The <code>tc-tagged-NightReader</code> class is applied to the entire tiddler and not just the tiddler text. If you want to target a smaller portion of the tiddler you can qualify the CSS selector, as is done here with <code>.tc-tagged-NightReader .tc-tiddler-body</code>.</p><p>Note that tags containing spaces or non-alphanumeric characters will be converted using URI encoding, making the generated CSS classname hard to predict. For example:</p><table><tbody><tr class='evenRow'><th align='left'>Tag</th><th align='left'>Generated Class Name</th></tr><tr class='oddRow'><td align='left'><code>$:/mytag</code></td><td align='left'><code>tc-tagged-%24%3A%2Fmytag</code></td></tr><tr class='evenRow'><td align='left'><code>one two</code></td><td align='left'><code>tc-tagged-one%20two</code></td></tr><tr class='oddRow'><td align='left'><code>£35.23</code></td><td align='left'><code>tc-tagged-%C2%A335.23</code></td></tr></tbody></table></div>
+}</code></pre><p>The <code>tc-tagged-NightReader</code> class is applied to the entire tiddler and not just the tiddler text. If you want to target a smaller portion of the tiddler you can qualify the CSS selector, as is done here with <code>.tc-tagged-NightReader .tc-tiddler-body</code>.</p><p>Note that tags containing spaces or non-alphanumeric characters will be converted using URI encoding, making the generated CSS classname hard to predict. For example:</p><table><tbody><tr class="evenRow"><th align="left">Tag</th><th align="left">Generated Class Name</th></tr><tr class="oddRow"><td align="left"><code>$:/mytag</code></td><td align="left"><code>tc-tagged-%24%3A%2Fmytag</code></td></tr><tr class="evenRow"><td align="left"><code>one two</code></td><td align="left"><code>tc-tagged-one%20two</code></td></tr><tr class="oddRow"><td align="left"><code>£35.23</code></td><td align="left"><code>tc-tagged-%C2%A335.23</code></td></tr></tbody></table></div>
 
 
 
