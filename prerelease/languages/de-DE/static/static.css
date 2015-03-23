@@ -1761,6 +1761,7 @@ a.tc-tiddlylink:hover {
 	border: 1px solid #bbb;
 	border-radius: 3px;
 	margin: 2px;
+	vertical-align: top;
 }.tc-thumbnail-right-wrapper {
 	float:right;
 	margin: 0.5em 0 0.5em 0.5em;
