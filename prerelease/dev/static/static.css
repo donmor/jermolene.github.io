@@ -994,6 +994,12 @@ a.tc-tiddlylink:hover {
 	border: none;
 	font-size: 1.2em;
 	line-height: 1.4em;
+	text-decoration: none;
+}.tc-btn-big-green svg,
+.tc-btn-big-green img {
+	height: 1em;
+	width: 1em;
+	vertical-align: middle;
 }.tc-sidebar-lists input {
 	color: #4e432f;
 }.tc-sidebar-lists button {
@@ -1832,13 +1838,11 @@ a.tc-tiddlylink:hover {
 	cursor: pointer;
 	display: inline-block;
 }/*
-** YouTube macros
+** Thumbnail macros
 */.tc-thumbnail-wrapper {
 	position: relative;
 	display: inline-block;
-	border: 1px solid #bbb;
-	border-radius: 3px;
-	margin: 2px;
+	margin: 0;
 	vertical-align: top;
 }.tc-thumbnail-right-wrapper {
 	float:right;
@@ -1858,7 +1862,6 @@ a.tc-tiddlylink:hover {
 	opacity: 0.8;
 }.tc-thumbnail-background {
 	position: absolute;
-	border-radius: 2px;
 }.tc-thumbnail-icon svg,
 .tc-thumbnail-icon img {
 	width: 3em;
@@ -1891,8 +1894,6 @@ a.tc-tiddlylink:hover {
 	width: 100%;
 	filter: alpha(opacity=0.9);
 	opacity: 0.9;
-	border-bottom-left-radius: 2px;
-	border-bottom-right-radius: 2px;
 	line-height: 1.4;
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-caption {
 	filter: alpha(opacity=1);
