@@ -926,6 +926,7 @@ a.tc-tiddlylink:hover {
 	padding: 0;
 	margin: 0;
 }.tc-btn-big-green {
+	display: inline-block;
 	padding: 8px;
 	margin: 4px 8px 4px 8px;
 	background: #34c734;
@@ -937,8 +938,8 @@ a.tc-tiddlylink:hover {
 	text-decoration: none;
 }.tc-btn-big-green svg,
 .tc-btn-big-green img {
-	height: 1em;
-	width: 1em;
+	height: 2em;
+	width: 2em;
 	vertical-align: middle;
 }.tc-sidebar-lists input {
 	color: #333333;
@@ -1782,7 +1783,7 @@ a.tc-tiddlylink:hover {
 */.tc-thumbnail-wrapper {
 	position: relative;
 	display: inline-block;
-	margin: 0;
+	margin: 2px;
 	vertical-align: top;
 }.tc-thumbnail-right-wrapper {
 	float:right;
@@ -1821,10 +1822,13 @@ a.tc-tiddlylink:hover {
 
 }.tc-thumbnail-icon {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-left: -1.5em;
-	margin-top: -1.5em;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }.tc-thumbnail-caption {
 	position: absolute;
 	background-color: #777;
