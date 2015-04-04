@@ -275,6 +275,24 @@ Objectives of the project are, in no particular order:
 &lt;&lt;&lt;
 </pre>
 </div>
+<div created="20150403104015626" modified="20150403104206017" tags="Articles" title="&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson" type="text/vnd.tiddlywiki" url="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x">
+<pre>Detailed description of setting up [[TiddlyWiki on Node.js]] on OS X.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:
+
+* All the data is in a Dropbox folder (so it can be automatically synced between machines)
+* It must support Markdown syntax
+
+After looking at the options, I settled on TiddlyWiki. I've used &quot;classic TiddlyWiki&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of TiddlyWiki includes support for running it as a real HTTP server, so you can use it just like an online wiki.
+
+But it took me a couple of hours to figure out how to set that up. The TiddlyWiki documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
+&lt;&lt;&lt;
+
+</pre>
+</div>
 <div created="20130907085406905" modified="20130907084548184" tags="Tutorials" title="&quot;Shining Ark Using TiddlyWiki&quot; by Helu" url="http://helugame.wordpress.com/2013/09/07/shining-ark-7-using-tiddlywiki/">
 <pre>A gamers guide to using TiddlyWiki.
 
@@ -9626,6 +9644,16 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
 &lt;&lt;list-links &quot;[tag[About]]&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20150403110817298" modified="20150403111020017" tags="Resources" title="Ace Editor Plugin by Joerg Plewe" type="text/vnd.tiddlywiki" url="http://innoq.tiddlyspot.com">
+<pre>A plugin to integrate the [[Ace editor|https://github.com/ajaxorg/ace]] into TiddlyWiki.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+Being quite new to TW5 development I tried my best to draft a SyncAdaptor to store tiddlers in IndexedDb. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+&lt;&lt;&lt;
+</pre>
+</div>
 <div created="20140129204112515" fr-title="Remerciements" modified="20141115225702483" tags="About" title="Acknowledgements" type="text/vnd.tiddlywiki">
 <pre>&lt;&lt;tw&gt;&gt; n'aurait pas été possible sans le soutien constant de la [[Communauté|Community]]. Son attention et ses retours ont permis de comprendre ce qui était attendu de cet outil, et sa passion pour le projet m'a appris que le jeu en valait la chandelle.
 
@@ -13073,6 +13101,16 @@ Mario Pietsch a créé pour vous ces tutoriels vidéos&lt;&lt;dp&gt;&gt;
 &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/axFCk9KsMFc&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
 </pre>
 </div>
+<div created="20150403110356105" modified="20150403110758877" tags="Resources" title="IndexedDB Plugin by Andreas Abeck" type="text/vnd.tiddlywiki" url="http://tw5-dev.cibm.de">
+<pre>A plugin that allows changes to be synchronised with the IndexedDB database that is built-in to most browsers.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+Being quite new to TW5 development I tried my best to draft a SyncAdaptor to store tiddlers in IndexedDb. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+&lt;&lt;&lt;
+</pre>
+</div>
 <div caption="indexes" created="20140410103123179" modified="20150203185150000" op-input="a [[selection of titles|Title Selection]]" op-output="all the property names or indices contained in the input data tiddlers" op-parameter="none" op-purpose="select all data properties of the input titles" tags="[[Filter Operators]]" title="indexes Operator" type="text/vnd.tiddlywiki">
 <pre>Each input title is processed in turn, and is ignored if it does not denote a [[data tiddler|DataTiddlers]]. The list of property names is retrieved from the data tiddler (in no particular order) and then [[dominantly appended|Dominant Append]] to the operator's output.
 
@@ -13762,21 +13800,37 @@ You can suppress a link from being recognised by preceding it with `~`. For exam
 
 ! External Links
 
-To link to an external website, type the full URL of the site:
+To link to an external [[resource|https://en.wikipedia.org/wiki/Web_resource]] such as a website or a file, type its //full// [[URL|https://en.wikipedia.org/wiki/URL]], including the [[URI scheme|https://en.wikipedia.org/wiki/URI_scheme]] such as a protocol (e.g. `http://`, `file://`) or `mailto`:
 
 ```
 http://tiddlywiki.com/
 
 [[TW5|http://tiddlywiki.com/]]
+
+[[Mail me|mailto:me@where.net]]
 ```
 
-For this syntax to work, the URL has to be recognisable as an URL, including a protocol such as `http://` or `file://`. You can force an external link with the extended syntax:
+For this syntax to work, the URL has to be recognisable as a URL.  Otherwise, it is treated as a tiddler title.  As a result, in case you want to link to a resource locatable using a relative path, use the extended syntax:
+
+```
+[ext[Open file|index.html]]
+
+[ext[Open file|./index.html]]
+
+[ext[Open file|../README.md]]
+```
+
+The extended syntax still works with full URLs, although in that case it is not necessary:
 
 ```
 [ext[http://tiddlywiki.com]]
 
-[ext[caption for link|http://tiddlywiki.com]]
+[ext[TW5|http://tiddlywiki.com]]
+```
 
+You can also use the extended syntax to force an external link:
+
+```
 [ext[Donate|bitcoin:1aabbdd....?amount=0.001]]
 ```
 
@@ -15220,6 +15274,16 @@ When TiddlyWiki starts up it processes permalinks according to the following ste
 # If the ''target'' is specified then navigate to it, otherwise navigate to the first tiddler in the ''story list''
 </pre>
 </div>
+<div created="20150403104722092" modified="20150403105247619" tags="Examples" title="PESpot Lesson Planner by Patrick Detzner" type="text/vnd.tiddlywiki" url="http://pespot.tiddlyspot.com">
+<pre>A system for lesson planning built with TiddlyWiki.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
+&lt;&lt;&lt;
+</pre>
+</div>
 <div created="20131128075743966" fr-title="Philosophie des tiddlers" modified="20141203144108401" tags="Learning" title="Philosophy of Tiddlers" type="text/vnd.tiddlywiki">
 <pre>Lorsqu'on enregistre et organise des informations, on se donne pour objectif de pouvoir les réutiliser plus tard. La valeur d'une information conservée est directement proportionnelle à la facilité avec laquelle on peut la réutiliser.
 
@@ -15576,6 +15640,18 @@ The railroad diagrams in ~TiddlyWiki's documentation are generated with the [[Ra
 <pre>{{$:/plugins/tiddlywiki/railroad/readme}}
 
 {{$:/plugins/tiddlywiki/railroad/syntax}}</pre>
+</div>
+<div created="20150403104230499" modified="20150403104650559" tags="Resources" title="rboue's plugins for TiddlyWiki" type="text/vnd.tiddlywiki" url="http://rboue.tiddlyspot.com">
+<pre>Featuring plugins that integrate [[SocialCalc|https://dmzwik01.collaborate.ag/help-en/SocialCalc]] and [[Three.js|http://threejs.org/]] into TiddlyWiki.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+I developed some plugins related to engineering tasks.
+
+After using them for personal projects I'm glad to share with TiddlyWiki community.
+&lt;&lt;&lt;
+</pre>
 </div>
 <div created="20131129094758194" modified="20141012191051894" title="ReadMe" type="text/vnd.tiddlywiki">
 <pre>\define tv-wikilink-template() http://tiddlywiki.com/static/$uri_doubleencoded$.html
@@ -20344,7 +20420,7 @@ There are two steps to running the wiki at a custom path like `http://127.0.0.1:
 <div created="20140305091244145" modified="20150221175658000" tags="[[Customise TiddlyWiki]]" title="Using Stylesheets" type="text/vnd.tiddlywiki">
 <pre>The first steps to changing the appearance of TiddlyWiki are to choose and apply one of the available themes, or to modify the [[colour palette|ColourPalettes]].
 
-In addition, custom [[CSS stylesheets|http://www.w3schools.com/css]] can be can defined by tagging a tiddler `$:/tags/Stylesheet`. Try creating a custom stylesheet now with the following content in order to change the page background colour to red:
+In addition, custom [[CSS stylesheets|http://www.w3schools.com/css]] can be defined by tagging a tiddler `$:/tags/Stylesheet`. Try creating a custom stylesheet now with the following content in order to change the page background colour to red:
 
 ```
 html body.tc-body {
