@@ -1500,12 +1500,18 @@ a.tc-tiddlylink:hover {
 	}.tc-modal-body {
 		overflow-y: auto;
 		max-height: 400px;
+		max-height: 60vh;
 	}
 }@media (min-width: 55em) {
 	.tc-modal {
-		position: relative;
+		position: fixed;
+		top: 2em;
+		left: 25%;
 		width: 50%;
-		margin: 30px auto;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
 	}
 }.tc-modal-header {
 	padding: 9px 15px;
@@ -1659,6 +1665,7 @@ a.tc-tiddlylink:hover {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
 	position: absolute;
+	z-index: 100;
 }/*
 ** Control panel
 */.tc-control-panel td {
@@ -2793,7 +2800,7 @@ color:#333333;">
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 5 months ago
+</a> 6 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -2983,7 +2990,7 @@ color:#333333;">
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 3 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -3046,7 +3053,7 @@ color:#333333;">
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 18 months ago
+</a> 19 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4068,7 +4075,7 @@ color:#333333;">
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 58 days ago
+</a> 2 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4487,7 +4494,7 @@ Ace Editor Plugin by Joerg Plewe
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 3 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4612,7 +4619,7 @@ ActionDeleteFieldWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4707,7 +4714,7 @@ ActionDeleteTiddlerWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 4 months ago
+</a> 5 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4795,7 +4802,7 @@ ActionNavigateWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4878,7 +4885,7 @@ ActionSendMessageWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 4 months ago
+</a> 5 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -4963,7 +4970,7 @@ ActionSetFieldWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -6008,7 +6015,7 @@ all Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -6471,7 +6478,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>Here are some recent articles written about TiddlyWiki. Submit new articles via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#TiddlyWiki%20Groups">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
+<div class="tc-tiddler-body"><p>Here are some recent articles written about TiddlyWiki. Submit new articles via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#TiddlyWiki%20Groups">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TiddlyWiki%22%20by%20Sander%20de%20Boer">&quot;TiddlyWiki&quot; by Sander de Boer</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>Dutch blog post about <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a></p><p><a class="tc-tiddlylink-external" href="https://breinbout.wordpress.com/2014/11/26/tiddlywiki/" target="_blank">https://breinbout.wordpress.com/2014/11/26/tiddlywiki/</a></p><blockquote class="tc-quote"><p>I'm allergic to websites that are highly dependent on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#JavaScript">JavaScript</a>. I think that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#JavaScript">JavaScript</a> has many useful applications to add functionality to a site, but content needs to be visible if <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#JavaScript">JavaScript</a> is switched off. I use the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#NoScript">NoScript</a> extension for Firefox and surf with pleasure over the Internet without spontaneous things happen that I do not give permission. I love <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#JavaScript">JavaScript</a> on a short leash. More crazier maybe I'm so excited about <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.
 </p></blockquote><p>(Translation from Dutch by Google Translate)
 </p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Notizen%20mit%20TiddlyWiki%20system%C3%BCbergreifend%20nutzen%22%20by%20Michael%20Sonntag">&quot;Notizen mit TiddlyWiki systemübergreifend nutzen&quot; by Michael Sonntag</a></h1><p><div class="tc-subtitle">Posted 6 months ago</div></p><p>A quick guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> (written in German)</p><p><a class="tc-tiddlylink-external" href="http://michaelsonntag.net/notizen-mit-tiddlywiki-systemuebergreifend-nutzen" target="_blank">http://michaelsonntag.net/notizen-mit-tiddlywiki-systemuebergreifend-nutzen</a></p><blockquote class="tc-quote"><p>Those using multiple different computer platforms (if only PC and Android) knows for certain: You would like to sync notes across computers and thereby be independent of any apps or services. I am concerned at any rate so and so I am constantly looking for the perfect solution.</p><p>With <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> I found it mostly. As the name suggests, it <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> is a Wikisystem. In contrast to all other wikis, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> is a single HTML file that runs in the browser and thus can be used on all modern operating systems. And because there is only one file, it can be very easily via the well-known cloud services (Dropbox, Google Drive, ownCloud) or synchronized with FTP or used on a USB stick.
@@ -6884,7 +6891,7 @@ Base64
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -7165,7 +7172,7 @@ Beginners Guide
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -7517,7 +7524,7 @@ Block Quotes in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 15 months ago
+</a> 16 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -8399,7 +8406,7 @@ ButtonWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 5 months ago
+</a> 6 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -8574,7 +8581,7 @@ Cascading Style Sheets
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -8637,7 +8644,7 @@ changecount Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -8711,7 +8718,7 @@ changecount Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -8875,7 +8882,7 @@ CheckboxWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -9265,7 +9272,7 @@ colour Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -9339,7 +9346,7 @@ colour Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -9478,7 +9485,7 @@ ColourPalettes
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -9542,7 +9549,7 @@ Comma-Separated Values
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -10078,12 +10085,12 @@ Meetups
 </button>
 
 </div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 58 days ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Dull%20Roar%22%20by%20Jim%20Lehmer">&quot;Dull Roar&quot; by Jim Lehmer</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of hints and tips from Jim Lehmer, published as a static blog generated by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://dullroar.com/tiddlywiki5.html" target="_blank">http://dullroar.com/tiddlywiki5.html</a></p><blockquote class="tc-quote"><p>There is a decent write-up on generating static pages using Tiddlywiki on the main TW site. However, there are a few nuances not mentioned on that page, so here are a few of my notes on how I generate the pages for this site.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22GSD5%22%20by%20Roma%20Hicks">&quot;GSD5&quot; by Roma Hicks</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An adaptation of the <a class="tc-tiddlylink-external" href="http://mgsd.tiddlyspot.com/" target="_blank">TiddlyWiki powered GTD® system formerly known as MonkeyGTD</a> for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> version 5.</p><p><a class="tc-tiddlylink-external" href="http://gsd5.tiddlyspot.com/" target="_blank">http://gsd5.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>GSD5 is a Getting-Thing-Done tool for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a> based off the mGSD classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.
 </p></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
@@ -10679,7 +10686,7 @@ Contents
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -10729,7 +10736,7 @@ ContentType
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -10791,7 +10798,7 @@ contrastcolour Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -11107,7 +11114,7 @@ Core Macros
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -11283,7 +11290,7 @@ Core Variables
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -11780,7 +11787,7 @@ csvtiddlers Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -11854,7 +11861,7 @@ Current Tiddler
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -11917,7 +11924,7 @@ currentTiddler Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -11991,7 +11998,7 @@ currentTiddler Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -12430,7 +12437,7 @@ Data URI
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -12558,7 +12565,7 @@ datauri Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -12632,7 +12639,7 @@ datauri Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -13642,7 +13649,7 @@ Document Object Model
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -13705,7 +13712,7 @@ Documentation Macros
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -13791,7 +13798,7 @@ color:#333333;">
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">6</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">9</tspan>
                 </text>
             </g>
         </g>
@@ -13882,7 +13889,7 @@ color:#333333;">
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">6</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">9</tspan>
                 </text>
             </g>
         </g>
@@ -14262,7 +14269,7 @@ dumpvariables Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -14336,7 +14343,7 @@ dumpvariables Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -14647,7 +14654,7 @@ eachday Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 54 days ago
+</a> 58 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -14868,7 +14875,7 @@ EditBitmapWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -15426,7 +15433,7 @@ EditTextWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -15488,7 +15495,7 @@ EditWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -15999,7 +16006,7 @@ Example Table of Contents: Expandable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -16075,7 +16082,7 @@ Example Table of Contents: Selectively Expandable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -16151,7 +16158,7 @@ Example Table of Contents: Simple
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -16227,7 +16234,7 @@ Example Table of Contents: Sorted Expandable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -16303,7 +16310,7 @@ Example Table of Contents: Tabbed External
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -16660,7 +16667,7 @@ Example Table of Contents: Tabbed Internal
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -17054,9 +17061,9 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>This collection showcases inspiring and interesting examples of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> being used in the wild.</p><p>Submit new entries to this collection via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Forums">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
+<div class="tc-tiddler-body"><p>This collection showcases inspiring and interesting examples of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> being used in the wild.</p><p>Submit new entries to this collection via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Forums">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Simple%20Zork-like%20Game%20by%20Jed%20Carty">Simple Zork-like Game by Jed Carty</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>A simple game built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>, introduced in <a class="tc-tiddlylink-external" href="https://groups.google.com/d/topic/tiddlywiki/4aRpZht1vOs/discussion" target="_blank">this post</a>.</p><p><a class="tc-tiddlylink-external" href="http://zorklike.tiddlyspot.com" target="_blank">http://zorklike.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I decided to see if it was possible to make some sort of game using only the core tiddlywiki with no plugins or javascript. I made a very bare bones zork/interactive fiction type game. It is currently the simplest thing I could make and claim it was a game, but I may add on to it in the future. It uses the 5.1.5 prerelease because the action-setfield widget saved lots of work making macros.</p><p>One goal of this is to use nothing besides what is contained in the core tiddlywiki, so there is no javascript and no plugins.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22PETTIL%20-%20Forth%20for%20the%20Commodore%20PET%22%20by%20Charlie%20Hitselberger">&quot;PETTIL - Forth for the Commodore PET&quot; by Charlie Hitselberger</a></h1><p><div class="tc-subtitle">Posted 8 months ago</div></p><p>A fast Forth interpreter for the <a class="tc-tiddlylink-external" href="http://en.wikipedia.org/wiki/Commodore_PET" target="_blank">Commodore PET</a>, written in 6502 assembly language. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> containing program documentation is automatically generated from the source code: see <a class="tc-tiddlylink-external" href="https://github.com/chitselb/pettil" target="_blank">https://github.com/chitselb/pettil</a>.</p><p><a class="tc-tiddlylink-external" href="http://chitselb.com/files/tiddlypettil.html" target="_blank">http://chitselb.com/files/tiddlypettil.html</a></p><blockquote class="tc-quote"><p>Objectives of the project are, in no particular order:</p><ul><li>make a Forth that runs on my Commodore PET 2001</li><li>have fun</li><li>improve my &quot;6502 assembly golf&quot; skills</li><li>find other people who are interested in this project</li></ul></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Obadiah%20TOC">Obadiah TOC</a></h1><p><div class="tc-subtitle">Posted 15 months ago</div></p><p>An introduction to the biblical book of Obadiah by Dave Gifford using the table of contents macro and various custom tweaks to TiddlyWiki: custom new here buttons, <a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html#%24%3A%2F_aa%2FViewTemplate%2FNoteList" target="_blank">this custom viewtemplate addition</a> to add notes or images within any tiddler, and a tiddler transcluding all the content, in order to facilitate printing (<a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html#An%20introduction%20to%20Obadiah" target="_blank">this tiddler</a>).</p><p><a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html" target="_blank">http://giffmex.org/experiments/obadiah.html</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22A%20Thesis%20Notebook%22%20by%20Alberto%20Molina">&quot;A Thesis Notebook&quot; by Alberto Molina</a></h1><p><div class="tc-subtitle">Posted 2 years ago</div></p><p>A thesis notebook based on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://tesis.tiddlyspot.com/" target="_blank">http://tesis.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>This is an example of a thesis notebook powered by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> 5.0.8-beta.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> is a great piece of software created by Jeremy Ruston. It allows you, among other things, to take notes, organize ideas, store information, and display all your stuff the way you want. It is an incredibly flexible tool you can adapt to fit almost all your needs.</p><p>This <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> has been customized to serve as a philosophy notebook centered around authors, books and papers, concepts and theories, and personal notes. I use it along with Zotero, which is a dedicated bibliography software. Both are free, open source projects. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> can be downloaded at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22PETTIL%20-%20Forth%20for%20the%20Commodore%20PET%22%20by%20Charlie%20Hitselberger">&quot;PETTIL - Forth for the Commodore PET&quot; by Charlie Hitselberger</a></h1><p><div class="tc-subtitle">Posted 8 months ago</div></p><p>A fast Forth interpreter for the <a class="tc-tiddlylink-external" href="http://en.wikipedia.org/wiki/Commodore_PET" target="_blank">Commodore PET</a>, written in 6502 assembly language. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> containing program documentation is automatically generated from the source code: see <a class="tc-tiddlylink-external" href="https://github.com/chitselb/pettil" target="_blank">https://github.com/chitselb/pettil</a>.</p><p><a class="tc-tiddlylink-external" href="http://chitselb.com/files/tiddlypettil.html" target="_blank">http://chitselb.com/files/tiddlypettil.html</a></p><blockquote class="tc-quote"><p>Objectives of the project are, in no particular order:</p><ul><li>make a Forth that runs on my Commodore PET 2001</li><li>have fun</li><li>improve my &quot;6502 assembly golf&quot; skills</li><li>find other people who are interested in this project</li></ul></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Obadiah%20TOC">Obadiah TOC</a></h1><p><div class="tc-subtitle">Posted 16 months ago</div></p><p>An introduction to the biblical book of Obadiah by Dave Gifford using the table of contents macro and various custom tweaks to TiddlyWiki: custom new here buttons, <a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html#%24%3A%2F_aa%2FViewTemplate%2FNoteList" target="_blank">this custom viewtemplate addition</a> to add notes or images within any tiddler, and a tiddler transcluding all the content, in order to facilitate printing (<a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html#An%20introduction%20to%20Obadiah" target="_blank">this tiddler</a>).</p><p><a class="tc-tiddlylink-external" href="http://giffmex.org/experiments/obadiah.html" target="_blank">http://giffmex.org/experiments/obadiah.html</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22A%20Thesis%20Notebook%22%20by%20Alberto%20Molina">&quot;A Thesis Notebook&quot; by Alberto Molina</a></h1><p><div class="tc-subtitle">Posted 2 years ago</div></p><p>A thesis notebook based on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://tesis.tiddlyspot.com/" target="_blank">http://tesis.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>This is an example of a thesis notebook powered by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> 5.0.8-beta.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> is a great piece of software created by Jeremy Ruston. It allows you, among other things, to take notes, organize ideas, store information, and display all your stuff the way you want. It is an incredibly flexible tool you can adapt to fit almost all your needs.</p><p>This <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> has been customized to serve as a philosophy notebook centered around authors, books and papers, concepts and theories, and personal notes. I use it along with Zotero, which is a dedicated bibliography software. Both are free, open source projects. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> can be downloaded at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>.
 </p></blockquote></div></div></div>
 
 
@@ -17695,7 +17702,7 @@ FieldManglerWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -17975,7 +17982,7 @@ FieldsWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -18450,7 +18457,7 @@ Filter Parameter
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 45 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -18806,7 +18813,7 @@ Filters
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -18880,7 +18887,7 @@ First
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -19170,7 +19177,7 @@ FirstOne
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -19232,7 +19239,7 @@ FirstThree
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -19294,7 +19301,7 @@ FirstTwo
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -19547,7 +19554,7 @@ Fourth
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -19659,7 +19666,7 @@ Full Edition
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 27 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -20431,7 +20438,7 @@ GettingStarted
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -20901,7 +20908,7 @@ GettingStarted - Safari
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -21112,7 +21119,7 @@ GroupedLists
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -21157,7 +21164,7 @@ color:#333333;">
 &lt;$list filter=&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]&quot;&gt;
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
 &lt;$view field=&quot;$dateField$&quot; format=&quot;date&quot; template=&quot;$format$&quot;/&gt;
-&lt;$list filter=&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
+&lt;$list filter=&quot;[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
 &lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
 &lt;$link to={{!!title}}&gt;
 &lt;&lt;timeline-title&gt;&gt;
@@ -21270,7 +21277,7 @@ Hard and Soft Links
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 38 days ago
+</a> 42 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -21646,7 +21653,7 @@ haschanged Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 56 days ago
+</a> 59 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -21836,7 +21843,7 @@ HelloThere
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 14 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -22013,7 +22020,7 @@ HelloThumbnail - Beginners
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -22448,7 +22455,7 @@ HelpingTiddlyWiki
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 26 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -22635,7 +22642,7 @@ HistoryMechanism
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 58 days ago
+</a> 2 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -22829,7 +22836,7 @@ How to add a new tab to the sidebar
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -23177,7 +23184,7 @@ HyperText Markup Language
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -23494,7 +23501,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">6</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">9</tspan>
                 </text>
             </g>
         </g>
@@ -24007,7 +24014,7 @@ IndexedDB Plugin by Andreas Abeck
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 3 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -24486,7 +24493,7 @@ Installing TiddlyWiki on Node.js
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -24686,7 +24693,7 @@ Introduction to filter notation
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -24901,7 +24908,7 @@ is Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -25245,7 +25252,7 @@ JavaScript Object Notation
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -25432,7 +25439,7 @@ JSONTiddlers
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -25495,7 +25502,7 @@ jsontiddlers Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -26181,12 +26188,12 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 58 days ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
+<div class="tc-tiddler-body"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#PESpot%20Lesson%20Planner%20by%20Patrick%20Detzner">PESpot Lesson Planner by Patrick Detzner</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A system for lesson planning built with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://pespot.tiddlyspot.com" target="_blank">http://pespot.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I built a program to help enter and store lesson plan information and then facilitate/automate some of the tedious work involved in creating the actual lesson plan document.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Setting%20Up%20a%20Personal%20TiddlyWiki%20Server%20on%20OS%20X%22%20by%20Kris%20Johnson">&quot;Setting Up a Personal TiddlyWiki Server on OS X&quot; by Kris Johnson</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Detailed description of setting up <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki%20on%20Node.js">TiddlyWiki on Node.js</a> on OS X.</p><p><a class="tc-tiddlylink-external" href="http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x" target="_blank">http://undefinedvalue.com/2015/04/02/setting-personal-tiddlywiki-server-os-x</a></p><blockquote class="tc-quote"><p>For a new job, I decided to set up a personal wiki to keep notes. I wanted to keep it simple, meeting these requirements:</p><ul><li>All the data is in a Dropbox folder (so it can be automatically synced between machines)</li><li>It must support Markdown syntax</li></ul><p>After looking at the options, I settled on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. I've used &quot;classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>&quot; before, and liked its simplicity, but I was always a little annoyed with the weird steps you have to go through to save changes. The new version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> includes support for running it as a real HTTP server, so you can use it just like an online wiki.</p><p>But it took me a couple of hours to figure out how to set that up. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> documentation is not clear (&quot;not clear&quot; is a euphemistic way of saying &quot;terrible&quot;). So, I've written up these instructions in the hope it will spare somebody else all the frustration I had.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Dull%20Roar%22%20by%20Jim%20Lehmer">&quot;Dull Roar&quot; by Jim Lehmer</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of hints and tips from Jim Lehmer, published as a static blog generated by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://dullroar.com/tiddlywiki5.html" target="_blank">http://dullroar.com/tiddlywiki5.html</a></p><blockquote class="tc-quote"><p>There is a decent write-up on generating static pages using Tiddlywiki on the main TW site. However, there are a few nuances not mentioned on that page, so here are a few of my notes on how I generate the pages for this site.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22GSD5%22%20by%20Roma%20Hicks">&quot;GSD5&quot; by Roma Hicks</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An adaptation of the <a class="tc-tiddlylink-external" href="http://mgsd.tiddlyspot.com/" target="_blank">TiddlyWiki powered GTD® system formerly known as MonkeyGTD</a> for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> version 5.</p><p><a class="tc-tiddlylink-external" href="http://gsd5.tiddlyspot.com/" target="_blank">http://gsd5.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>GSD5 is a Getting-Thing-Done tool for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a> based off the mGSD classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.
 </p></blockquote></div></div></div>
@@ -26290,7 +26297,7 @@ LazyLoadingMechanism
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 13 months ago
+</a> 14 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -26796,7 +26803,7 @@ lingo Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -26870,7 +26877,7 @@ lingo Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -26968,7 +26975,7 @@ LinkCatcherWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 months ago
+</a> 12 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -27321,7 +27328,7 @@ LinkWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -27392,7 +27399,7 @@ list Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -27634,7 +27641,7 @@ list-links Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -27708,7 +27715,7 @@ list-links Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28184,7 +28191,7 @@ ListWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 42 days ago
+</a> 45 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28230,7 +28237,7 @@ color:#333333;">
 </p></blockquote><p><strong>custom item template</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot; template=&quot;$:/core/ui/ViewTemplate/subtitle&quot;/&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 </blockquote><h2 class="">Grouped Lists</h2><p>See <a class="tc-tiddlylink tc-tiddlylink-missing" href="#NestedLists">NestedLists</a> for how to generate nested and grouped lists using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ListWidget">ListWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$list&gt;</code> widget is an optional template to use for rendering each tiddler in the list. Alternatively, the template can be specified as a tiddler title in the <code>template</code> attribute. As a fallback, the default template just displays the tiddler title.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">filter</td><td align="left">The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Filters">tiddler filter</a> to display</td></tr><tr class="evenRow"><td align="left">template</td><td align="left">The title of a template tiddler for transcluding each tiddler in the list. When no template is specified, the body of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ListWidget">ListWidget</a> serves as the item template. With no body, a simple link to the tiddler is returned.</td></tr><tr class="oddRow"><td align="left">editTemplate</td><td align="left">An alternative template to use for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#DraftMechanism">DraftTiddlers</a> in edit mode</td></tr><tr class="evenRow"><td align="left">variable</td><td align="left">The name for a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Variables">variable</a> in which the title of each listed tiddler is stored. Defaults to <strong>currentTiddler</strong></td></tr><tr class="oddRow"><td align="left">emptyMessage</td><td align="left">Message to be displayed when the list is empty</td></tr><tr class="evenRow"><td align="left">storyview</td><td align="left">Optional name of module responsible for animating/processing the list</td></tr><tr class="oddRow"><td align="left">history</td><td align="left">The title of the tiddler containing the navigation history</td></tr></tbody></table><h2 class="">Edit mode</h2><p>The <code>&lt;$list&gt;</code> widget can optionally render draft tiddlers through a different template to handle editing, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#DraftMechanism">DraftMechanism</a>.</p><h2 class=""><code>storyview</code> attribute</h2><p>The <code>storyview</code> attribute specifies the name of an optional module that can animate changes to the list (including navigation). The core ships with the following storyview modules:</p><ul><li><code>classic</code>: renders the list as an ordered sequence of tiddlers</li><li><code>zoomin</code>: just renders the current tiddler from the list, with a zoom animation for navigating between tiddlers</li><li><code>pop</code>: shrinks items in and out of place</li></ul><p>In order for the storyviews to animate correctly each entry in the list should be a single block mode DOM element.</p><h2 class="">History and navigation</h2><p>The optional <code>history</code> attribute specifies the name of a tiddler that is used to track the current tiddler for navigation purposes. When the history tiddler changes the list view responds by telling the listview to handle navigating to the new tiddler. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#HistoryMechanism">HistoryMechanism</a> for details.</p></div>
 
@@ -28334,7 +28341,7 @@ Macro Call Syntax
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28396,7 +28403,7 @@ Macro Calls in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28459,7 +28466,7 @@ Macro Calls in WikiText (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28622,7 +28629,7 @@ Macro Definition Syntax
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28684,7 +28691,7 @@ Macro Definitions in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28772,7 +28779,7 @@ Macro Syntax
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28918,7 +28925,7 @@ Macros
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -28993,7 +29000,7 @@ Macros in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -29118,7 +29125,7 @@ makedatauri Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -29192,7 +29199,7 @@ makedatauri Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -31091,7 +31098,7 @@ namespace Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -31729,7 +31736,7 @@ node-webkit
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 26 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -31992,7 +31999,7 @@ now Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -32066,7 +32073,7 @@ now Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -32881,7 +32888,7 @@ NW.js
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 26 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -32943,7 +32950,7 @@ Obadiah TOC
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 15 months ago
+</a> 16 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -33678,7 +33685,7 @@ Percent Encoding
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -33741,7 +33748,7 @@ Performance
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 days ago
+</a> 10 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -33764,7 +33771,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> ships with defaults that are designed to get the best out of modern devices from smartphones to desktop computers. If you need to work on older, less powerful devices, or work with large amounts of content, there are a few steps you can take to improve performance.</p><ul><li><strong>Avoid the &quot;Recent&quot; tab</strong>. It is computationally slow to generate and update in response to tiddler changes.</li><li><strong>Use the &quot;Vanilla&quot; theme</strong>. The default &quot;Snow White&quot; theme includes visual effects like shadows and transparency that can be slow to render on older devices</li><li><strong>Avoid large tiddlers</strong>. Large bitmaps can significantly slow <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>'s performance. For example, an image taken with a modern smartphone will often be 5MB or more. Use <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ExternalImages">ExternalImages</a> whenever possible</li><li><strong>Don't have too many tiddlers open at once</strong>. Every tiddler you have open will require processing to keep it up to date as the store changes (for example, while you type into a draft tiddler). It is particularly easy when using zoomin story view to end up with dozens of tiddlers listed in the <strong>Open</strong> tab in the sidebar. Get into the habit of periodically closing all open tiddlers with the <strong>close all</strong> button</li></ul></div>
+<div class="tc-tiddler-body"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> ships with defaults that are designed to get the best out of modern devices from smartphones to desktop computers. If you need to work on older, less powerful devices, or work with large amounts of content, there are a few steps you can take to improve performance.</p><ul><li><strong>Avoid the &quot;Recent&quot; tab</strong>. It is computationally slow to generate and update in response to tiddler changes.</li><li><strong>Use the &quot;Vanilla&quot; theme</strong>. The default &quot;Snow White&quot; theme includes visual effects like shadows, transparency and blurring that can be slow to render on older devices</li><li><strong>Avoid large tiddlers</strong>. Large bitmaps can significantly slow <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>'s performance. For example, an image taken with a modern smartphone will often be 5MB or more. Use <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ExternalImages">ExternalImages</a> whenever possible</li><li><strong>Don't have too many tiddlers open at once</strong>. Every tiddler you have open will require processing to keep it up to date as the store changes (for example, while you type into a draft tiddler). It is particularly easy when using zoomin story view to end up with dozens of tiddlers listed in the <strong>Open</strong> tab in the sidebar. Get into the habit of periodically closing all open tiddlers with the <strong>close all</strong> button</li></ul></div>
 
 
 
@@ -33927,7 +33934,7 @@ PESpot Lesson Planner by Patrick Detzner
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 3 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -34131,7 +34138,7 @@ Plugins
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 24 days ago
+</a> 27 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -34597,7 +34604,7 @@ Pragma
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -35202,7 +35209,7 @@ qualify Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -35447,7 +35454,7 @@ RadioWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -35563,7 +35570,7 @@ Railroad Plugin
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 2 months ago
+</a> 3 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -35626,7 +35633,7 @@ rboue's plugins for TiddlyWiki
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 3 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -35940,7 +35947,7 @@ ReadMeBinFolder
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -37201,7 +37208,7 @@ Release 5.0.1-alpha
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 15 months ago
+</a> 16 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37325,7 +37332,7 @@ Release 5.0.11-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37513,7 +37520,7 @@ Release 5.0.14-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37575,7 +37582,7 @@ Release 5.0.15-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37637,7 +37644,7 @@ Release 5.0.16-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37699,7 +37706,7 @@ Release 5.0.17-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -37761,7 +37768,7 @@ Release 5.0.18-beta
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -38507,7 +38514,7 @@ Release 5.1.3
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -38631,7 +38638,7 @@ Release 5.1.5
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -38693,7 +38700,7 @@ Release 5.1.6
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -39776,7 +39783,7 @@ resolvepath Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -39850,7 +39857,7 @@ resolvepath Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -40025,10 +40032,10 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>These are sites with resources created by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Community">Community</a> help you get the best out of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>: plugins, macros and more. Submit new entries via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#TiddlyWiki%20Groups">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 3 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 58 days ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
+<div class="tc-tiddler-body"><p>These are sites with resources created by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Community">Community</a> help you get the best out of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>: plugins, macros and more. Submit new entries via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#GitHub">GitHub</a>, Twitter or by posting in the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#TiddlyWiki%20Groups">TiddlyWiki Groups</a>.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Ace%20Editor%20Plugin%20by%20Joerg%20Plewe">Ace Editor Plugin by Joerg Plewe</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin to integrate the <a class="tc-tiddlylink-external" href="https://github.com/ajaxorg/ace" target="_blank">Ace editor</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://innoq.tiddlyspot.com" target="_blank">http://innoq.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#IndexedDB%20Plugin%20by%20Andreas%20Abeck">IndexedDB Plugin by Andreas Abeck</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>A plugin that allows changes to be synchronised with the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDB">IndexedDB</a> database that is built-in to most browsers.</p><p><a class="tc-tiddlylink-external" href="http://tw5-dev.cibm.de" target="_blank">http://tw5-dev.cibm.de</a></p><blockquote class="tc-quote"><p>Being quite new to TW5 development I tried my best to draft a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#SyncAdaptor">SyncAdaptor</a> to store tiddlers in <a class="tc-tiddlylink tc-tiddlylink-missing" href="#IndexedDb">IndexedDb</a>. This is quite useful if an application / plugin installation is not possible (we have quite some restrictions at work...).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#rboue's%20plugins%20for%20TiddlyWiki">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 6 days ago</div></p><p>Featuring plugins that integrate <a class="tc-tiddlylink-external" href="https://dmzwik01.collaborate.ag/help-en/SocialCalc" target="_blank">SocialCalc</a> and <a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> community.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5-TeXZilla%22%20plugin%20by%20Joe%20Renes">&quot;TW5-TeXZilla&quot; plugin by Joe Renes</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>An alternative <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> plugin for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>. It supports a wider set of <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> commands than <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#KaTeX%20Plugin">KaTeX</a>, though not as extensive as <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a></p><p><a class="tc-tiddlylink-external" href="http://tw5-texzilla.tiddlyspot.com" target="_blank">http://tw5-texzilla.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>This plugin provides <a class="tc-tiddlylink tc-tiddlylink-missing" href="#LaTeX">LaTeX</a> support in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a>, using the <a class="tc-tiddlylink-external" href="https://github.com/fred-wang/TeXZilla" target="_blank">TeXZilla</a> latex parser to generate <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a>.</p><p>Only Firefox and Safari support <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> at the moment, so the plugin is only useful if you're using one of these browsers. It might be possible to combine this plugin with <a class="tc-tiddlylink tc-tiddlylink-missing" href="#MathJax">MathJax</a> to convert <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#MathML">MathML</a> to something that other browsers can understand, e.g. HTML+CSS, but I haven't tried this.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Dull%20Roar%22%20by%20Jim%20Lehmer">&quot;Dull Roar&quot; by Jim Lehmer</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of hints and tips from Jim Lehmer, published as a static blog generated by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://dullroar.com/tiddlywiki5.html" target="_blank">http://dullroar.com/tiddlywiki5.html</a></p><blockquote class="tc-quote"><p>There is a decent write-up on generating static pages using Tiddlywiki on the main TW site. However, there are a few nuances not mentioned on that page, so here are a few of my notes on how I generate the pages for this site.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22GSD5%22%20by%20Roma%20Hicks">&quot;GSD5&quot; by Roma Hicks</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An adaptation of the <a class="tc-tiddlylink-external" href="http://mgsd.tiddlyspot.com/" target="_blank">TiddlyWiki powered GTD® system formerly known as MonkeyGTD</a> for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> version 5.</p><p><a class="tc-tiddlylink-external" href="http://gsd5.tiddlyspot.com/" target="_blank">http://gsd5.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>GSD5 is a Getting-Thing-Done tool for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki5">TiddlyWiki5</a> based off the mGSD classic <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Heeg.ru%22%20by%20sini-Kit">&quot;Heeg.ru&quot; by sini-Kit</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A guide in Russian to creating an online shop with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. No serverside code is needed, instead orders are handled by Disqus.</p><p><a class="tc-tiddlylink-external" href="http://heeg.ru/" target="_blank">http://heeg.ru/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyMap%20Plugin%20by%20Felix%20K%C3%BCppers">TiddlyMap Plugin by Felix Küppers</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An interactive network visualisation plugin based on <a class="tc-tiddlylink-external" href="http://visjs.org" target="_blank">Vis.js</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://bit.ly/tiddlymap" target="_blank">http://bit.ly/tiddlymap</a>.</p><blockquote class="tc-quote"><p>TiddlyMap is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> plugin that allows you to link your wiki-topics (tiddlers) in order to create clickable graphs. By creating relations between your topics you can easily do the following:</p><ul><li>Create mindmaps and quickly manifest your ideas in tiddlers (wiki entries).</li><li>Create task-dependency graphs to organize and describe your tasks.</li><li>Visualize your topic structures to get an immediate grasp of topics and relations.</li></ul><p>In general you may create, visualize and describe any network-structure you have in mind.
@@ -40320,7 +40327,7 @@ RevealWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 27 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -41119,7 +41126,7 @@ SampleTabFour
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -41910,7 +41917,7 @@ SaveTiddlersCommand
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 9 months ago
+</a> 10 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -42446,7 +42453,7 @@ Saving on TiddlySpot
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 5 months ago
+</a> 6 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46565,7 +46572,7 @@ Second
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46627,7 +46634,7 @@ SecondOne
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46689,7 +46696,7 @@ SecondThree
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46751,7 +46758,7 @@ SecondThreeOne
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46813,7 +46820,7 @@ SecondThreeThree
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46875,7 +46882,7 @@ SecondThreeTwo
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -46937,7 +46944,7 @@ SecondTwo
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -47694,7 +47701,7 @@ SetFieldCommand
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 9 months ago
+</a> 10 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -47881,7 +47888,7 @@ SetWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -49195,7 +49202,7 @@ splitbefore Operator
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -49477,7 +49484,7 @@ StateMechanism
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -49542,7 +49549,7 @@ storyTiddler Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -49616,7 +49623,7 @@ storyTiddler Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -50052,7 +50059,7 @@ Stylesheet Macros
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -50407,7 +50414,7 @@ SystemTags
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -51237,7 +51244,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>System tiddlers are any tiddler whose title starts with <code>$:/</code>; such tiddlers are automatically hidden from most operations. They don't show up in lists or search results, but linking to one directly works in the usual way.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> models everything as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Tiddlers">tiddlers</a>, including its internal components and configuration. Thus, even an apparently empty <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> actually contains dozens of tiddlers that are necessary to enable it function correctly. Using system tiddlers prevents them from confusing casual users.</p><p>The current system tiddlers are:</p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2F_tw5.com-styles">$:/_tw5.com-styles</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fboot.css">$:/boot/boot.css</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fboot.js">$:/boot/boot.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fbootprefix.js">$:/boot/bootprefix.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fconfig%2FOfficialPluginLibrary">$:/config/OfficialPluginLibrary</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fconfig%2FOriginalTiddlerPaths">$:/config/OriginalTiddlerPaths</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FContributionBanner">$:/ContributionBanner</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fcore">$:/core</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fcore%2Ftemplates%2Fstatic.content">$:/core/templates/static.content</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fcore%2Fui%2FMoreSideBar%2FExplore">$:/core/ui/MoreSideBar/Explore</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FCurvedText">$:/CurvedText</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FDefaultTiddlers">$:/DefaultTiddlers</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdoc-macros">$:/editions/tw5.com/doc-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdoc-styles">$:/editions/tw5.com/doc-styles</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdownload-empty">$:/editions/tw5.com/download-empty</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fif-macro.js">$:/editions/tw5.com/if-macro.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fqualify-transcluded">$:/editions/tw5.com/macro-examples/qualify-transcluded</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fsay-hi">$:/editions/tw5.com/macro-examples/say-hi</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fsay-hi-using-variables">$:/editions/tw5.com/macro-examples/say-hi-using-variables</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftags-of-current-tiddler">$:/editions/tw5.com/macro-examples/tags-of-current-tiddler</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftv-get-export-image-link">$:/editions/tw5.com/macro-examples/tv-get-export-image-link</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftv-wikilink-tooltip">$:/editions/tw5.com/macro-examples/tv-wikilink-tooltip</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Foperator-macros">$:/editions/tw5.com/operator-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Foperator-template">$:/editions/tw5.com/operator-template</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Frailroad%2Fmacro-parameter-value">$:/editions/tw5.com/railroad/macro-parameter-value</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fsnippets%2Fdownload-empty-button">$:/editions/tw5.com/snippets/download-empty-button</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fstyle-guide-macros">$:/editions/tw5.com/style-guide-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2FTiddlerInfo%2FSources">$:/editions/tw5.com/TiddlerInfo/Sources</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fvariable-macros">$:/editions/tw5.com/variable-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fwikitext-macros">$:/editions/tw5.com/wikitext-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ffavicon.ico">$:/favicon.ico</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FGoogleAnalyticsAccount">$:/GoogleAnalyticsAccount</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FGoogleAnalyticsDomain">$:/GoogleAnalyticsDomain</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fgreen_favicon.ico">$:/green_favicon.ico</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FHistoryList">$:/HistoryList</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FisEncrypted">$:/isEncrypted</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Flanguage">$:/language</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Flibrary%2Fsjcl.js">$:/library/sjcl.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fbrowser-sniff">$:/plugins/tiddlywiki/browser-sniff</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fgithub-fork-ribbon">$:/plugins/tiddlywiki/github-fork-ribbon</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fgoogleanalytics">$:/plugins/tiddlywiki/googleanalytics</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fhelp">$:/plugins/tiddlywiki/help</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fnodewebkitsaver">$:/plugins/tiddlywiki/nodewebkitsaver</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Frailroad">$:/plugins/tiddlywiki/railroad</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fstacked-view">$:/plugins/tiddlywiki/stacked-view</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FSiteSubtitle">$:/SiteSubtitle</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FSiteTitle">$:/SiteTitle</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fstate%2Ftab%2Fsidebar--1835078512">$:/state/tab/sidebar--1835078512</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FStaticBanner">$:/StaticBanner</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FStoryList">$:/StoryList</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FSVGExampleRadius">$:/SVGExampleRadius</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ftemp%2Finfo-plugin">$:/temp/info-plugin</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ftheme">$:/theme</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fcentralised">$:/themes/tiddlywiki/centralised</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Freadonly">$:/themes/tiddlywiki/readonly</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fseamless">$:/themes/tiddlywiki/seamless</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fsnowwhite">$:/themes/tiddlywiki/snowwhite</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fstarlight">$:/themes/tiddlywiki/starlight</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla">$:/themes/tiddlywiki/vanilla</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fview">$:/view</a></div></div>
+<div class="tc-tiddler-body"><p>System tiddlers are any tiddler whose title starts with <code>$:/</code>; such tiddlers are automatically hidden from most operations. They don't show up in lists or search results, but linking to one directly works in the usual way.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> models everything as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Tiddlers">tiddlers</a>, including its internal components and configuration. Thus, even an apparently empty <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> actually contains dozens of tiddlers that are necessary to enable it function correctly. Using system tiddlers prevents them from confusing casual users.</p><p>The current system tiddlers are:</p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2F_tw5.com-styles">$:/_tw5.com-styles</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fboot.css">$:/boot/boot.css</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fboot.js">$:/boot/boot.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fboot%2Fbootprefix.js">$:/boot/bootprefix.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fconfig%2FLocalPluginLibrary">$:/config/LocalPluginLibrary</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fconfig%2FOfficialPluginLibrary">$:/config/OfficialPluginLibrary</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fconfig%2FOriginalTiddlerPaths">$:/config/OriginalTiddlerPaths</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FContributionBanner">$:/ContributionBanner</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fcore">$:/core</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fcore%2Ftemplates%2Fstatic.content">$:/core/templates/static.content</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fcore%2Fui%2FMoreSideBar%2FExplore">$:/core/ui/MoreSideBar/Explore</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FCurvedText">$:/CurvedText</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FDefaultTiddlers">$:/DefaultTiddlers</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdoc-macros">$:/editions/tw5.com/doc-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdoc-styles">$:/editions/tw5.com/doc-styles</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fdownload-empty">$:/editions/tw5.com/download-empty</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fif-macro.js">$:/editions/tw5.com/if-macro.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fqualify-transcluded">$:/editions/tw5.com/macro-examples/qualify-transcluded</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fsay-hi">$:/editions/tw5.com/macro-examples/say-hi</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Fsay-hi-using-variables">$:/editions/tw5.com/macro-examples/say-hi-using-variables</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftags-of-current-tiddler">$:/editions/tw5.com/macro-examples/tags-of-current-tiddler</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftv-get-export-image-link">$:/editions/tw5.com/macro-examples/tv-get-export-image-link</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fmacro-examples%2Ftv-wikilink-tooltip">$:/editions/tw5.com/macro-examples/tv-wikilink-tooltip</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Foperator-macros">$:/editions/tw5.com/operator-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Foperator-template">$:/editions/tw5.com/operator-template</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Frailroad%2Fmacro-parameter-value">$:/editions/tw5.com/railroad/macro-parameter-value</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fsnippets%2Fdownload-empty-button">$:/editions/tw5.com/snippets/download-empty-button</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fstyle-guide-macros">$:/editions/tw5.com/style-guide-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2FTiddlerInfo%2FSources">$:/editions/tw5.com/TiddlerInfo/Sources</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fvariable-macros">$:/editions/tw5.com/variable-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Feditions%2Ftw5.com%2Fwikitext-macros">$:/editions/tw5.com/wikitext-macros</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ffavicon.ico">$:/favicon.ico</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FGoogleAnalyticsAccount">$:/GoogleAnalyticsAccount</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FGoogleAnalyticsDomain">$:/GoogleAnalyticsDomain</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fgreen_favicon.ico">$:/green_favicon.ico</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FHistoryList">$:/HistoryList</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FisEncrypted">$:/isEncrypted</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Flanguage">$:/language</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Flibrary%2Fsjcl.js">$:/library/sjcl.js</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fbrowser-sniff">$:/plugins/tiddlywiki/browser-sniff</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fgithub-fork-ribbon">$:/plugins/tiddlywiki/github-fork-ribbon</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fgoogleanalytics">$:/plugins/tiddlywiki/googleanalytics</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fhelp">$:/plugins/tiddlywiki/help</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fnodewebkitsaver">$:/plugins/tiddlywiki/nodewebkitsaver</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Frailroad">$:/plugins/tiddlywiki/railroad</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fplugins%2Ftiddlywiki%2Fstacked-view">$:/plugins/tiddlywiki/stacked-view</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FSiteSubtitle">$:/SiteSubtitle</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2FSiteTitle">$:/SiteTitle</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fstate%2Ftab%2Fsidebar--1835078512">$:/state/tab/sidebar--1835078512</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FStaticBanner">$:/StaticBanner</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FStoryList">$:/StoryList</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2FSVGExampleRadius">$:/SVGExampleRadius</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ftemp%2Finfo-plugin">$:/temp/info-plugin</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Ftheme">$:/theme</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fcentralised">$:/themes/tiddlywiki/centralised</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Freadonly">$:/themes/tiddlywiki/readonly</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fseamless">$:/themes/tiddlywiki/seamless</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fsnowwhite">$:/themes/tiddlywiki/snowwhite</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fstarlight">$:/themes/tiddlywiki/starlight</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%24%3A%2Fthemes%2Ftiddlywiki%2Fvanilla">$:/themes/tiddlywiki/vanilla</a></div><div><a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="#%24%3A%2Fview">$:/view</a></div></div>
 
 
 
@@ -51326,7 +51333,7 @@ Table-of-Contents Macros
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -51401,7 +51408,7 @@ Table-of-Contents Macros (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -52004,7 +52011,7 @@ tabs Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -52078,7 +52085,7 @@ tabs Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -52188,7 +52195,7 @@ tag Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -52262,7 +52269,7 @@ tag Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -53396,7 +53403,7 @@ TemplateTiddlers
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -53776,7 +53783,7 @@ Third
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -53838,7 +53845,7 @@ ThirdOne
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -53900,7 +53907,7 @@ ThirdThree
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -53962,7 +53969,7 @@ ThirdTwo
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -54024,7 +54031,7 @@ thumbnail Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -54098,7 +54105,7 @@ thumbnail Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 15 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -54568,7 +54575,7 @@ TiddlerFiles
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 48 days ago
+</a> 52 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -54785,7 +54792,7 @@ TiddlerWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -54915,7 +54922,7 @@ TiddlyDesktop
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 26 days ago
+</a> 30 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -55327,7 +55334,7 @@ TiddlyWiki
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 11 days ago
+</a> 14 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -56024,7 +56031,7 @@ TiddlyWikiClassic
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 14 months ago
+</a> 15 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -56188,7 +56195,7 @@ timeline Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -56262,7 +56269,7 @@ timeline Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -56933,7 +56940,7 @@ Transclusion and Substitution
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
@@ -57046,7 +57053,7 @@ Transclusion in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57111,7 +57118,7 @@ transclusion Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57191,7 +57198,7 @@ transclusion Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57283,7 +57290,7 @@ Transclusion with Templates
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57536,7 +57543,7 @@ Tutorials
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57559,7 +57566,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>Here are some webpages with tips and tutorials related to TiddlyWiki </p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Microblogging%20con%20Tiddlywiki%22%20by%20Juan">&quot;Microblogging con Tiddlywiki&quot; by Juan</a></h1><p><div class="tc-subtitle">Posted 5 months ago</div></p><p>A Spanish guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on Android.</p><p><a class="tc-tiddlylink-external" href="http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/" target="_blank">http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/</a></p><blockquote class="tc-quote"><p>Tiddlywiki software is prodigious based on javascript which is capable of holding a notepad that can be edited with Internet Explorer or function as a full blog, contained in a single file.
+<div class="tc-tiddler-body"><p>Here are some webpages with tips and tutorials related to TiddlyWiki </p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Microblogging%20con%20Tiddlywiki%22%20by%20Juan">&quot;Microblogging con Tiddlywiki&quot; by Juan</a></h1><p><div class="tc-subtitle">Posted 6 months ago</div></p><p>A Spanish guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on Android.</p><p><a class="tc-tiddlylink-external" href="http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/" target="_blank">http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/</a></p><blockquote class="tc-quote"><p>Tiddlywiki software is prodigious based on javascript which is capable of holding a notepad that can be edited with Internet Explorer or function as a full blog, contained in a single file.
 </p></blockquote><p><em>Translation by Google Translate</em>
 </p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Un%20wiki%20sur%20votre%20BiblioBox%20avec%20TiddlyWiki%22%20from%20A%20Penguin%20in%20Redmond">&quot;Un wiki sur votre BiblioBox avec TiddlyWiki&quot; from A Penguin in Redmond</a></h1><p><div class="tc-subtitle">Posted 8 months ago</div></p><p>A guide (in French) to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on the <a class="tc-tiddlylink-external" href="http://bibliobox.net/" target="_blank">BiblioBox</a>, a variation of the <a class="tc-tiddlylink-external" href="http://daviddarts.com/piratebox/" target="_blank">PirateBox</a> mobile communication and file sharing system.</p><p><a class="tc-tiddlylink-external" href="http://bibliobox.net/blog/post/2014/07/16/un-wiki-sur-votre-bibliobox-avec-tiddlywiki" target="_blank">http://bibliobox.net/blog/post/2014/07/16/un-wiki-sur-votre-bibliobox-avec-tiddlywiki</a></p><blockquote class="tc-quote"><p>I've known <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> since its beginning in 2004. For personal or professional needs, I used it regularly for notepad staff in 2007 and 2012. But I admit I ignored the tool during the past two years. And then I said yesterday: but why not put <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on a <a class="tc-tiddlylink tc-tiddlylink-missing" href="#BiblioBox">BiblioBox</a>? Because it is a single HTML file with javascript. In addition I knew the existence of a server version for saving online amendments.
 </p></blockquote><p><em>Hand optimised from a translation by Google Translate</em>
@@ -57568,7 +57575,7 @@ color:#333333;">
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22TW5%20Tribal%20Knowledge%22%20from%20Scott%20Kingery">&quot;TW5 Tribal Knowledge&quot; from Scott Kingery</a></h1><p><div class="tc-subtitle">Posted 12 months ago</div></p><p>Tips and guides for using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://dl.dropboxusercontent.com/u/118970/wiki/tw5tribalknowledge.html" target="_blank">http://dl.dropboxusercontent.com/u/118970/wiki/tw5tribalknowledge.html</a></p><blockquote class="tc-quote"><p>I never used Node.js until a couple weeks ago when I wanted to try a TW5 installation on Node and expand my knowledge a bit. I figured someone else may be in the same boat so I wrote it all down
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Install%20and%20run%20TiddlyWiki%20on%20a%20CentOS%206%20VPS%20using%20Nginx%22%20from%20RoseHosting">&quot;Install and run TiddlyWiki on a CentOS 6 VPS using Nginx&quot; from RoseHosting</a></h1><p><div class="tc-subtitle">Posted 12 months ago</div></p><p>A step by step guide to running <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on a CentOS Virtual Private Server.</p><p><a class="tc-tiddlylink-external" href="http://www.rosehosting.com/blog/install-and-run-tiddlywiki-on-a-centoos-6-vps-using-nginx/" target="_blank">http://www.rosehosting.com/blog/install-and-run-tiddlywiki-on-a-centoos-6-vps-using-nginx/</a></p><blockquote class="tc-quote"><p>In this tutorial we will guide you through the steps of installing and running <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> on a CentOS 6 VPS.</p><p>We will also install and configure Nginx as a reverse proxy, so you can run <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> behind Nginx.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Creating%20a%20baby%20journal%20with%20TiddlyWiki%205%22%20from%20A%20Penguin%20in%20Redmond">&quot;Creating a baby journal with TiddlyWiki 5&quot; from A Penguin in Redmond</a></h1><p><div class="tc-subtitle">Posted 13 months ago</div></p><p>A guide to creating a baby journal with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://a-penguin-in-redmond.blogspot.co.uk/2014/02/creating-baby-journal-with-tiddlywiki-5.html" target="_blank">http://a-penguin-in-redmond.blogspot.co.uk/2014/02/creating-baby-journal-with-tiddlywiki-5.html</a></p><blockquote class="tc-quote"><p>Keeping a journal about your baby is fun. It allows you to keep track of those events in your baby's life and development that are most important to you, and to tell them in your own words. [...]</p><p>There are plenty of online services that can help to keep such a diary, but you need to have an internet connection to access them, and you have to trust them to keep your data safe.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99TiddlyWiki%22%20by%20Moongift">&quot;デザイン刷新。次の25年を目指すTiddlyWiki&quot; by Moongift</a></h1><p><div class="tc-subtitle">Posted 16 months ago</div></p><p>An introduction to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> in Japanese.</p><p><a class="tc-tiddlylink-external" href="http://www.moongift.jp/2013/11/tiddlywiki5-%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99tiddlywiki-2/" target="_blank">http://www.moongift.jp/2013/11/tiddlywiki5-%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99tiddlywiki-2/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Shining%20Ark%20Using%20TiddlyWiki%22%20by%20Helu">&quot;Shining Ark Using TiddlyWiki&quot; by Helu</a></h1><p><div class="tc-subtitle">Posted 18 months ago</div></p><p>A gamers guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://helugame.wordpress.com/2013/09/07/shining-ark-7-using-tiddlywiki/" target="_blank">http://helugame.wordpress.com/2013/09/07/shining-ark-7-using-tiddlywiki/</a></p><blockquote class="tc-quote"><p>I’ve been using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> for this game mainly to record the monsters’ locations and the items that they drop. This is so that when I need a certain item to upgrade/create weapons, I can quickly look it up; which monsters drop it and which quests have those monsters.</p><p>As I play the game, as I encounter new information, I just input them into my Shining Ark <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. It’s like I’m building a wiki from scratch. The reason why I don’t just use online wikis is that 1) it’s too easy to get spoiled and 2) sometimes online wikis provide too much information (who cares about the non-gameplay related descriptions that can be found in the game, etc).
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99TiddlyWiki%22%20by%20Moongift">&quot;デザイン刷新。次の25年を目指すTiddlyWiki&quot; by Moongift</a></h1><p><div class="tc-subtitle">Posted 16 months ago</div></p><p>An introduction to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> in Japanese.</p><p><a class="tc-tiddlylink-external" href="http://www.moongift.jp/2013/11/tiddlywiki5-%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99tiddlywiki-2/" target="_blank">http://www.moongift.jp/2013/11/tiddlywiki5-%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%88%B7%E6%96%B0%E3%80%82%E6%AC%A1%E3%81%AE25%E5%B9%B4%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99tiddlywiki-2/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#%22Shining%20Ark%20Using%20TiddlyWiki%22%20by%20Helu">&quot;Shining Ark Using TiddlyWiki&quot; by Helu</a></h1><p><div class="tc-subtitle">Posted 19 months ago</div></p><p>A gamers guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://helugame.wordpress.com/2013/09/07/shining-ark-7-using-tiddlywiki/" target="_blank">http://helugame.wordpress.com/2013/09/07/shining-ark-7-using-tiddlywiki/</a></p><blockquote class="tc-quote"><p>I’ve been using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> for this game mainly to record the monsters’ locations and the items that they drop. This is so that when I need a certain item to upgrade/create weapons, I can quickly look it up; which monsters drop it and which quests have those monsters.</p><p>As I play the game, as I encounter new information, I just input them into my Shining Ark <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a>. It’s like I’m building a wiki from scratch. The reason why I don’t just use online wikis is that 1) it’s too easy to get spoiled and 2) sometimes online wikis provide too much information (who cares about the non-gameplay related descriptions that can be found in the game, etc).
 </p></blockquote></div></div></div>
 
 
@@ -57608,7 +57615,7 @@ tv-auto-open-on-import Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57695,7 +57702,7 @@ tv-config-toolbar-class Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57781,7 +57788,7 @@ tv-config-toolbar-class Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57891,7 +57898,7 @@ tv-config-toolbar-icons Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -57978,7 +57985,7 @@ tv-config-toolbar-icons Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58084,7 +58091,7 @@ tv-config-toolbar-text Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58171,7 +58178,7 @@ tv-config-toolbar-text Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58275,7 +58282,7 @@ tv-get-export-image-link Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58452,7 +58459,7 @@ tv-get-export-link Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58543,7 +58550,7 @@ tv-get-export-path Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58630,7 +58637,7 @@ tv-wikilink-template Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58721,7 +58728,7 @@ tv-wikilink-tooltip Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58807,7 +58814,7 @@ tv-wikilink-tooltip Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58900,7 +58907,7 @@ tv-wikilinks Variable
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -58986,7 +58993,7 @@ tv-wikilinks Variable (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -59721,7 +59728,7 @@ Upgrading
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 5 months ago
+</a> 6 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -59860,7 +59867,7 @@ URI
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60050,7 +60057,7 @@ Using Stylesheets
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 47 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60424,7 +60431,7 @@ Variables
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60499,7 +60506,7 @@ Variables in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60665,7 +60672,7 @@ version Macro
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60739,7 +60746,7 @@ version Macro (Examples)
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -60999,7 +61006,7 @@ ViewWidget
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 44 days ago
+</a> 48 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -61178,7 +61185,7 @@ WidgetMessage: tm-add-field
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -61241,7 +61248,7 @@ WidgetMessage: tm-add-tag
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -62130,7 +62137,7 @@ WidgetMessage: tm-import-tiddlers
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 37 days ago
+</a> 40 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -62329,7 +62336,7 @@ WidgetMessage: tm-modal
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 4 months ago
+</a> 5 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -62467,7 +62474,7 @@ WidgetMessage: tm-new-tiddler
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 4 months ago
+</a> 5 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -62810,7 +62817,7 @@ WidgetMessage: tm-remove-field
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -62873,7 +62880,7 @@ WidgetMessage: tm-remove-tag
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 6 months ago
+</a> 7 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -63200,7 +63207,7 @@ Widgets
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
 
-</a> 45 days ago
+</a> 49 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 

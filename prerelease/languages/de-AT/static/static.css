@@ -1401,12 +1401,18 @@ a.tc-tiddlylink:hover {
 	}.tc-modal-body {
 		overflow-y: auto;
 		max-height: 400px;
+		max-height: 60vh;
 	}
 }@media (min-width: 55em) {
 	.tc-modal {
-		position: relative;
+		position: fixed;
+		top: 2em;
+		left: 25%;
 		width: 50%;
-		margin: 30px auto;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
 	}
 }.tc-modal-header {
 	padding: 9px 15px;
@@ -1560,6 +1566,7 @@ a.tc-tiddlylink:hover {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
 	position: absolute;
+	z-index: 100;
 }/*
 ** Control panel
 */.tc-control-panel td {

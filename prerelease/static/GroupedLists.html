@@ -48,7 +48,7 @@ GroupedLists
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 43 days ago
+</a> 46 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -93,7 +93,7 @@ color:#333333;">
 &lt;$list filter=&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]&quot;&gt;
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
 &lt;$view field=&quot;$dateField$&quot; format=&quot;date&quot; template=&quot;$format$&quot;/&gt;
-&lt;$list filter=&quot;[sameday{!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
+&lt;$list filter=&quot;[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
 &lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
 &lt;$link to={{!!title}}&gt;
 &lt;&lt;timeline-title&gt;&gt;
