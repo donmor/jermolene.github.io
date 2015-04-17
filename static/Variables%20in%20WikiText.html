@@ -3,67 +3,117 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.7" />
+<meta name="tiddlywiki-version" content="5.1.8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 Variables in WikiText
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2 months ago
+</a> 54 days ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  WikiText
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><h1 class=''>Defining Variables</h1><p>Variables contains values defined by <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets.html'>Widgets</a>.
-Variables are available within the widget that defines them, and the child widgets in the widget tree.</p><p>Variables are defined by:</p><ul><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='TiddlyWiki.html'>TiddlyWiki</a> core and viewtemplate</li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='SetWidget.html'>SetWidget</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='ListWidget.html'>ListWidget</a></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Macros%2520in%2520WikiText.html'>Macro definition</a></li></ul><h1 class=''>Using Variables</h1><p>Variables are used in:</p><ul><li>Variable substitution <code>$(name)$</code></li><li>Concise shortcut  <code>&lt;&lt;name&gt;&gt;</code></li><li><a class='tc-tiddlylink tc-tiddlylink-resolves' href='Introduction%2520to%2520Filters.html'>Filter expression</a> <code>[operator&lt;variable-operand&gt;]</code></li><li>Some default behaviors of <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Widgets.html'>Widgets</a></li></ul><p>See also <a class='tc-tiddlylink tc-tiddlylink-resolves' href='WidgetVariable%253A%2520currentTiddler.html'>currentTiddler</a> variable, built-in <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Variables.html'>variables</a> and <a class='tc-tiddlylink tc-tiddlylink-missing' href='Confusion%2520between%2520Transclusion%2520and%2520Substitution.html'>Confusion between Transclusion and Substitution</a>.
-</p></div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body"><p>See also the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">introduction to the concept of variables</a>.</p><p>To transclude the value of a variable, use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Calls%2520in%2520WikiText.html">macro call syntax</a> with no parameters. You can also use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html"><code class="doc-widget">$macrocall</code></a> widget.</p><p>A <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> snippet can contain <code>$(name$)</code> as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">placeholder</a> for which the value of the variable of that name will be substituted.</p><p>A variable's value can be used as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">filter parameter</a>, or as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget attribute</a>. The latter supports macro parameters.</p><h2 class="">Example: defining a variable</h2><p><div class="doc-example">
+<span class=" tc-reveal">
+	<pre><code>&lt;$set name=animal value=zebra&gt;
+&lt;&lt;animal&gt;&gt;
+&lt;/$set&gt;</code></pre>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p><h2 class="">Example: defining a macro</h2><p>The <code>\define</code> pragma below <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">defines a macro</a> called <code class="doc-var">tags</code>. The macro returns the value of the tiddler's <code class="doc-field">tags</code> field, and can be accessed from anywhere else in the same tiddler (or in any tiddler that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">imports</a> it).</p><p>
+<pre><code>\define tags-of-current-tiddler() {{!!tags}}
+</code></pre>
+<div class="doc-example">
+<span class=" tc-reveal">
+	<pre><code>The tags are: &lt;&lt;tags-of-current-tiddler&gt;&gt;</code></pre>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div>
+</p><h2 class="">Example: using a variable as a filter parameter</h2><p>This example uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="backlinks%2520Operator.html"><code class="doc-operator">backlinks</code></a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operator</a> to list all tiddlers that link to this one.</p><p><div class="doc-example">
+<span class=" tc-reveal">
+	<pre><code>&lt;&lt;list-links filter:&quot;[&lt;currentTiddler&gt;backlinks[]]&quot;&gt;&gt;</code></pre>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal">
+	<dl>
+	<dd><button class="">Try it</button></dd>
+	</dl>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+</div></p></div>
 
 
 

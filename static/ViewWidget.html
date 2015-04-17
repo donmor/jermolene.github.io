@@ -3,69 +3,79 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.7" />
+<meta name="tiddlywiki-version" content="5.1.8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/' target='_blank'>http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 ViewWidget
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2 months ago
+</a> 56 days ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
-color:#333333;'>
+color:#333333;">
  Widgets
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><h1 class=''>Introduction</h1><p>The view widget displays the contents of a tiddler field in a specified format.</p><h1 class=''>Content and Attributes</h1><p>The content of the <code>&lt;$view&gt;</code> widget is displayed if the field or property is missing or empty.</p><table><tbody><tr class='evenRow'><th align='left'>Attribute</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'>tiddler</td><td align='left'>The title of the tiddler (defaults to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='CurrentTiddler.html'>CurrentTiddler</a>)</td></tr><tr class='evenRow'><td align='left'>field</td><td align='left'>The name of the field to view (defaults to &quot;text&quot;)</td></tr><tr class='oddRow'><td align='left'>index</td><td align='left'>The name of the index to view</td></tr><tr class='evenRow'><td align='left'>format</td><td align='left'>The format for displaying the field (see below)</td></tr><tr class='oddRow'><td align='left'>template</td><td align='left'>The optional template used with certain formats</td></tr><tr class='evenRow'><td align='left'>subtiddler</td><td align='left'>Optional <a class='tc-tiddlylink tc-tiddlylink-missing' href='SubTiddler.html'>SubTiddler</a> title when the target tiddler is a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Plugins.html'>plugin</a> (see below)</td></tr></tbody></table><h2 class=''>Formats</h2><p>The following formats can be specified in the <code>format</code> attribute:</p><table><tbody><tr class='evenRow'><th align='left'>Format</th><th align='left'>Description</th></tr><tr class='oddRow'><td align='left'><strong>text</strong></td><td align='left'>Plain text</td></tr><tr class='evenRow'><td align='left'><strong>htmlwikified</strong></td><td align='left'>The field is wikified and the resulting HTML returned as plain text</td></tr><tr class='oddRow'><td align='left'><strong>htmlencoded</strong></td><td align='left'>The field is displayed with HTML encoding issues</td></tr><tr class='evenRow'><td align='left'><strong>date</strong></td><td align='left'>The field is interpreted as a UTC date and displayed according to the <a class='tc-tiddlylink tc-tiddlylink-resolves' href='DateFormat.html'>DateFormat</a> specified in the <code>template</code> attribute</td></tr><tr class='oddRow'><td align='left'><strong>relativedate</strong></td><td align='left'>The field is interpreted as a UTC date and displayed as the interval from the present instant</td></tr><tr class='evenRow'><td align='left'><strong>stripcomments</strong></td><td align='left'>The field is interpreted as <a class='tc-tiddlylink tc-tiddlylink-resolves' href='JavaScript.html'>JavaScript</a> source code and any lines beginning <code>\\#</code> are stripped</td></tr><tr class='oddRow'><td align='left'><strong>jsencoded</strong></td><td align='left'>The field is displayed as a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='JavaScript.html'>JavaScript</a> encoded string</td></tr></tbody></table><h1 class=''><a class='tc-tiddlylink tc-tiddlylink-missing' href='SubTiddler.html'>SubTiddler</a> Access</h1><p>The view widget allows access to the individual tiddlers stored within a <a class='tc-tiddlylink tc-tiddlylink-resolves' href='Plugins.html'>plugin</a>.</p><p>The following example will view the core version of the tiddler <a class='tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves' href='%2524%253A%252FDefaultTiddlers.html'>$:/DefaultTiddlers</a> even if it has been overridden:</p><pre><code>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body"><h1 class="">Introduction</h1><p>The view widget displays the contents of a tiddler field in a specified format.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$view&gt;</code> widget is displayed if the field or property is missing or empty.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">The title of the tiddler (defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>)</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The name of the field to view (defaults to &quot;text&quot;)</td></tr><tr class="oddRow"><td align="left">index</td><td align="left">The name of the index to view</td></tr><tr class="evenRow"><td align="left">format</td><td align="left">The format for displaying the field (see below)</td></tr><tr class="oddRow"><td align="left">template</td><td align="left">Optional template string used with certain formats such as dates</td></tr><tr class="evenRow"><td align="left">subtiddler</td><td align="left">Optional <a class="tc-tiddlylink tc-tiddlylink-missing" href="SubTiddler.html">SubTiddler</a> title when the target tiddler is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Plugins.html">plugin</a> (see below)</td></tr></tbody></table><h2 class="">Formats</h2><p>The following formats can be specified in the <code>format</code> attribute:</p><table><tbody><tr class="evenRow"><th align="left">Format</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><strong>text</strong></td><td align="left">Plain text</td></tr><tr class="evenRow"><td align="left"><strong>htmlwikified</strong></td><td align="left">The field is wikified and the resulting HTML returned as plain text</td></tr><tr class="oddRow"><td align="left"><strong>htmlencoded</strong></td><td align="left">The field is displayed with HTML encoding issues</td></tr><tr class="evenRow"><td align="left"><strong>date</strong></td><td align="left">The field is interpreted as a UTC date and displayed according to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">DateFormat</a> specified in the <code>template</code> attribute</td></tr><tr class="oddRow"><td align="left"><strong>relativedate</strong></td><td align="left">The field is interpreted as a UTC date and displayed as the interval from the present instant</td></tr><tr class="evenRow"><td align="left"><strong>stripcomments</strong></td><td align="left">The field is interpreted as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> source code and any lines beginning <code>\\#</code> are stripped</td></tr><tr class="oddRow"><td align="left"><strong>jsencoded</strong></td><td align="left">The field is displayed as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> encoded string</td></tr></tbody></table><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" href="SubTiddler.html">SubTiddler</a> Access</h1><p>The view widget allows access to the individual tiddlers stored within a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Plugins.html">plugin</a>.</p><p>The following example will view the core version of the tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FDefaultTiddlers.html">$:/DefaultTiddlers</a> even if it has been overridden:</p><div class="doc-example"><pre><code>
 &lt;$view tiddler=&quot;$:/core&quot; subtiddler=&quot;$:/DefaultTiddlers&quot;/&gt;
 
-</code></pre><p>Renders as:</p>GettingStarted
-</div>
+</code></pre><p>That renders as:</p>GettingStarted
+</div></div>
 
 
 

@@ -3,76 +3,79 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.7" />
+<meta name="tiddlywiki-version" content="5.1.8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class='tc-static-alert'><div class='tc-static-alert-inner'>This page is part of a static HTML representation of the TiddlyWiki at <a class='tc-tiddlylink-external' href='http://tiddlywiki.com/dev/' target='_blank'>http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class='tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc'><div class='tc-tiddler-title'>
-<div class='tc-titlebar'>
-<span class='tc-tiddler-controls'>
-<span class=' tc-reveal'><button aria-label='more' class='tc-btn-invisible' title='More actions'>
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=' tc-reveal' hidden='true'></span></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='edit' class='tc-btn-invisible' title='Edit this tiddler'>
+</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal' hidden='true'></span><span class=' tc-reveal'><button aria-label='close' class='tc-btn-invisible' title='Close this tiddler'>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span>
 </span>
 
-<span class='tc-tiddler-title-icon' style='fill:;'>
+<span class="tc-tiddler-title-icon" style="fill:;">
 
 </span>
 
 
 
-<h2 class='tc-title'>
+<h2 class="tc-title">
 Startup Process
 </h2>
 
 </div>
 
-<div class='tc-tiddler-info tc-popup-handle tc-reveal' hidden='true'></div>
-</div><div class='tc-subtitle'>
-<a class='tc-tiddlylink tc-tiddlylink-missing' href='.html'>
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 5 months ago
+</a> 9 months ago
 </div>
-<div class='tc-tags-wrapper'><span class='tc-tag-list-item'>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class='tc-btn-invisible tc-tag-label' style='background-color:;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#4e432f;
-color:#4e432f;'>
+color:#4e432f;">
  doc
 </button>
-<span class=' tc-reveal' hidden='true'></span>
+<span class=" tc-reveal" hidden="true"></span>
 
 
 </span>
 </div>
 
-<div class='tc-tiddler-body'><p>Modules with <code>module-type: startup</code> have to export a  function named <code>startup</code> and may export a name property to identify this module. The startup function will be executed by the boot kernel at the end of the boot process.</p><pre><code>// From boot.js:
-// Gather up any startup modules
-$tw.boot.remainingStartupModules = []; // Array of startup modules
-$tw.modules.forEachModuleOfType(&quot;startup&quot;,function(title,module) {
-	if(module.startup) {
-		$tw.boot.remainingStartupModules.push(module);
-	}
+<div class="tc-tiddler-body"><p>Modules with <code>module-type: startup</code> have to export a  function named <code>startup</code> and may export a name property to identify this module. The startup function will be executed by the boot kernel at the end of the boot process.</p><pre class="js hljs"><code><span class="hljs-comment">// From boot.js:</span>
+<span class="hljs-comment">// Gather up any startup modules</span>
+$tw.boot.remainingStartupModules = []; <span class="hljs-comment">// Array of startup modules</span>
+$tw.modules.forEachModuleOfType(<span class="hljs-string">"startup"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(title,module)</span> </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">module</span>.startup) {
+        $tw.boot.remainingStartupModules.push(<span class="hljs-built_in">module</span>);
+    }
 });
-// Keep track of the startup tasks that have been executed
-$tw.boot.executedStartupModules = Object.create(null);
+<span class="hljs-comment">// Keep track of the startup tasks that have been executed</span>
+$tw.boot.executedStartupModules = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
 $tw.boot.disabledStartupModules = $tw.boot.disabledStartupModules || [];
-// Repeatedly execute the next eligible task
+<span class="hljs-comment">// Repeatedly execute the next eligible task</span>
 $tw.boot.executeNextStartupTask();</code></pre><p><code>executeNextStartupTask()</code> will execute the remaining startup modules in <code>remainingStartupModules</code>. A startup module can export the variables <code>before</code> and/or <code>after</code>, each containing an array of names of other startup modules. <code>executeNextStartupTask()</code> will use this information to execute the modules in the correct order.</p><p>Startup modules can be marked as synchronous by exporting <code>synchronous = true</code>. If synchronous is set to false, the startup function is executed with an callback function as the first argument. The startup function has to call this function to allow subsequent startup modules to get executed. This is necessary when the startup function itself uses asynchronous calls.</p></div>
 
 
