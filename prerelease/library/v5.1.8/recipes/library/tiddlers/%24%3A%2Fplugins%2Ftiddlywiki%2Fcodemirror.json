@@ -3,7 +3,7 @@
     "description": "CodeMirror: text editor",
     "author": "JeremyRuston",
     "list": "readme usage",
-    "version": "5.1.8-prerelease",
+    "version": "5.1.9-prerelease",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",

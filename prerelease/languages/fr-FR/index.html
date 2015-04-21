@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="application-name" content="TiddlyWiki" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.8-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.9-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -641,7 +641,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
 &lt;/div&gt;
 </pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/Acknowledgements&quot;: {
@@ -4465,7 +4465,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
             &quot;module-type&quot;: &quot;widget&quot;
         },
         &quot;$:/core/modules/widgets/button.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/button.js\ntype: application/javascript\nmodule-type: widget\n\nButton widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar ButtonWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nButtonWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nButtonWidget.prototype.render = function(parent,nextSibling) {\n\tvar self = this;\n\t// Remember parent\n\tthis.parentDomNode = parent;\n\t// Compute attributes and execute state\n\tthis.computeAttributes();\n\tthis.execute();\n\t// Create element\n\tvar domNode = this.document.createElement(\&quot;button\&quot;);\n\t// Assign classes\n\tvar classes = this[\&quot;class\&quot;].split(\&quot; \&quot;) || [],\n\t\tisPoppedUp = this.popup &amp;&amp; this.isPoppedUp();\n\tif(this.selectedClass) {\n\t\tif(this.set &amp;&amp; this.setTo &amp;&amp; this.isSelected()) {\n\t\t\t$tw.utils.pushTop(classes,this.selectedClass.split(\&quot; \&quot;));\n\t\t}\n\t\tif(isPoppedUp) {\n\t\t\t$tw.utils.pushTop(classes,this.selectedClass.split(\&quot; \&quot;));\n\t\t}\n\t}\n\tif(isPoppedUp) {\n\t\t$tw.utils.pushTop(classes,\&quot;tc-popup-handle\&quot;);\n\t}\n\tdomNode.className = classes.join(\&quot; \&quot;);\n\t// Assign other attributes\n\tif(this.style) {\n\t\tdomNode.setAttribute(\&quot;style\&quot;,this.style);\n\t}\n\tif(this.tooltip) {\n\t\tdomNode.setAttribute(\&quot;title\&quot;,this.tooltip);\n\t}\n\tif(this[\&quot;aria-label\&quot;]) {\n\t\tdomNode.setAttribute(\&quot;aria-label\&quot;,this[\&quot;aria-label\&quot;]);\n\t}\n\t// Add a click event handler\n\tdomNode.addEventListener(\&quot;click\&quot;,function (event) {\n\t\tvar handled = false;\n\t\tif(self.invokeActions(this,event)) {\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.to) {\n\t\t\tself.navigateTo(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.message) {\n\t\t\tself.dispatchMessage(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.popup) {\n\t\t\tself.triggerPopup(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.set) {\n\t\t\tself.setTiddler();\n\t\t\thandled = true;\n\t\t}\n\t\tif(handled) {\n\t\t\tevent.preventDefault();\n\t\t\tevent.stopPropagation();\n\t\t}\n\t\treturn handled;\n\t},false);\n\t// Insert element\n\tparent.insertBefore(domNode,nextSibling);\n\tthis.renderChildren(domNode,null);\n\tthis.domNodes.push(domNode);\n};\n\n/*\nWe don't allow actions to propagate because we trigger actions ourselves\n*/\nButtonWidget.prototype.allowActionPropagation = function() {\n\treturn false;\n};\n\nButtonWidget.prototype.getBoundingClientRect = function() {\n\treturn this.domNodes[0].getBoundingClientRect();\n}\n\nButtonWidget.prototype.isSelected = function() {\n\tvar tiddler = this.wiki.getTiddler(this.set);\n\treturn tiddler ? tiddler.fields.text === this.setTo : this.defaultSetValue === this.setTo;\n};\n\nButtonWidget.prototype.isPoppedUp = function() {\n\tvar tiddler = this.wiki.getTiddler(this.popup);\n\tvar result = tiddler &amp;&amp; tiddler.fields.text ? $tw.popup.readPopupState(tiddler.fields.text) : false;\n\treturn result;\n};\n\nButtonWidget.prototype.navigateTo = function(event) {\n\tvar bounds = this.getBoundingClientRect();\n\tthis.dispatchEvent({\n\t\ttype: \&quot;tm-navigate\&quot;,\n\t\tnavigateTo: this.to,\n\t\tnavigateFromTitle: this.getVariable(\&quot;storyTiddler\&quot;),\n\t\tnavigateFromNode: this,\n\t\tnavigateFromClientRect: { top: bounds.top, left: bounds.left, width: bounds.width, right: bounds.right, bottom: bounds.bottom, height: bounds.height\n\t\t},\n\t\tnavigateSuppressNavigation: event.metaKey || event.ctrlKey || (event.button === 1)\n\t});\n};\n\nButtonWidget.prototype.dispatchMessage = function(event) {\n\tthis.dispatchEvent({type: this.message, param: this.param, tiddlerTitle: this.getVariable(\&quot;currentTiddler\&quot;)});\n};\n\nButtonWidget.prototype.triggerPopup = function(event) {\n\t$tw.popup.triggerPopup({\n\t\tdomNode: this.domNodes[0],\n\t\ttitle: this.popup,\n\t\twiki: this.wiki\n\t});\n};\n\nButtonWidget.prototype.setTiddler = function() {\n\tthis.wiki.setTextReference(this.set,this.setTo,this.getVariable(\&quot;currentTiddler\&quot;));\n};\n\n/*\nCompute the internal state of the widget\n*/\nButtonWidget.prototype.execute = function() {\n\t// Get attributes\n\tthis.to = this.getAttribute(\&quot;to\&quot;);\n\tthis.message = this.getAttribute(\&quot;message\&quot;);\n\tthis.param = this.getAttribute(\&quot;param\&quot;);\n\tthis.set = this.getAttribute(\&quot;set\&quot;);\n\tthis.setTo = this.getAttribute(\&quot;setTo\&quot;);\n\tthis.popup = this.getAttribute(\&quot;popup\&quot;);\n\tthis.hover = this.getAttribute(\&quot;hover\&quot;);\n\tthis[\&quot;class\&quot;] = this.getAttribute(\&quot;class\&quot;,\&quot;\&quot;);\n\tthis[\&quot;aria-label\&quot;] = this.getAttribute(\&quot;aria-label\&quot;);\n\tthis.tooltip = this.getAttribute(\&quot;tooltip\&quot;);\n\tthis.style = this.getAttribute(\&quot;style\&quot;);\n\tthis.selectedClass = this.getAttribute(\&quot;selectedClass\&quot;);\n\tthis.defaultSetValue = this.getAttribute(\&quot;default\&quot;);\n\t// Make child widgets\n\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nButtonWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.to || changedAttributes.message || changedAttributes.param || changedAttributes.set || changedAttributes.setTo || changedAttributes.popup || changedAttributes.hover || changedAttributes[\&quot;class\&quot;] || changedAttributes.selectedClass || changedAttributes.style || (this.set &amp;&amp; changedTiddlers[this.set]) || (this.popup &amp;&amp; changedTiddlers[this.popup])) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n\treturn this.refreshChildren(changedTiddlers);\n};\n\nexports.button = ButtonWidget;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/button.js\ntype: application/javascript\nmodule-type: widget\n\nButton widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar ButtonWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n};\n\n/*\nInherit from the base widget class\n*/\nButtonWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nButtonWidget.prototype.render = function(parent,nextSibling) {\n\tvar self = this;\n\t// Remember parent\n\tthis.parentDomNode = parent;\n\t// Compute attributes and execute state\n\tthis.computeAttributes();\n\tthis.execute();\n\t// Create element\n\tvar tag = \&quot;button\&quot;;\n\tif(this.buttonTag &amp;&amp; $tw.config.htmlUnsafeElements.indexOf(this.buttonTag) === -1) {\n\t\ttag = this.buttonTag;\n\t}\n\tvar domNode = this.document.createElement(tag);\n\t// Assign classes\n\tvar classes = this[\&quot;class\&quot;].split(\&quot; \&quot;) || [],\n\t\tisPoppedUp = this.popup &amp;&amp; this.isPoppedUp();\n\tif(this.selectedClass) {\n\t\tif(this.set &amp;&amp; this.setTo &amp;&amp; this.isSelected()) {\n\t\t\t$tw.utils.pushTop(classes,this.selectedClass.split(\&quot; \&quot;));\n\t\t}\n\t\tif(isPoppedUp) {\n\t\t\t$tw.utils.pushTop(classes,this.selectedClass.split(\&quot; \&quot;));\n\t\t}\n\t}\n\tif(isPoppedUp) {\n\t\t$tw.utils.pushTop(classes,\&quot;tc-popup-handle\&quot;);\n\t}\n\tdomNode.className = classes.join(\&quot; \&quot;);\n\t// Assign other attributes\n\tif(this.style) {\n\t\tdomNode.setAttribute(\&quot;style\&quot;,this.style);\n\t}\n\tif(this.tooltip) {\n\t\tdomNode.setAttribute(\&quot;title\&quot;,this.tooltip);\n\t}\n\tif(this[\&quot;aria-label\&quot;]) {\n\t\tdomNode.setAttribute(\&quot;aria-label\&quot;,this[\&quot;aria-label\&quot;]);\n\t}\n\t// Add a click event handler\n\tdomNode.addEventListener(\&quot;click\&quot;,function (event) {\n\t\tvar handled = false;\n\t\tif(self.invokeActions(this,event)) {\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.to) {\n\t\t\tself.navigateTo(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.message) {\n\t\t\tself.dispatchMessage(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.popup) {\n\t\t\tself.triggerPopup(event);\n\t\t\thandled = true;\n\t\t}\n\t\tif(self.set) {\n\t\t\tself.setTiddler();\n\t\t\thandled = true;\n\t\t}\n\t\tif(handled) {\n\t\t\tevent.preventDefault();\n\t\t\tevent.stopPropagation();\n\t\t}\n\t\treturn handled;\n\t},false);\n\t// Insert element\n\tparent.insertBefore(domNode,nextSibling);\n\tthis.renderChildren(domNode,null);\n\tthis.domNodes.push(domNode);\n};\n\n/*\nWe don't allow actions to propagate because we trigger actions ourselves\n*/\nButtonWidget.prototype.allowActionPropagation = function() {\n\treturn false;\n};\n\nButtonWidget.prototype.getBoundingClientRect = function() {\n\treturn this.domNodes[0].getBoundingClientRect();\n}\n\nButtonWidget.prototype.isSelected = function() {\n\tvar tiddler = this.wiki.getTiddler(this.set);\n\treturn tiddler ? tiddler.fields.text === this.setTo : this.defaultSetValue === this.setTo;\n};\n\nButtonWidget.prototype.isPoppedUp = function() {\n\tvar tiddler = this.wiki.getTiddler(this.popup);\n\tvar result = tiddler &amp;&amp; tiddler.fields.text ? $tw.popup.readPopupState(tiddler.fields.text) : false;\n\treturn result;\n};\n\nButtonWidget.prototype.navigateTo = function(event) {\n\tvar bounds = this.getBoundingClientRect();\n\tthis.dispatchEvent({\n\t\ttype: \&quot;tm-navigate\&quot;,\n\t\tnavigateTo: this.to,\n\t\tnavigateFromTitle: this.getVariable(\&quot;storyTiddler\&quot;),\n\t\tnavigateFromNode: this,\n\t\tnavigateFromClientRect: { top: bounds.top, left: bounds.left, width: bounds.width, right: bounds.right, bottom: bounds.bottom, height: bounds.height\n\t\t},\n\t\tnavigateSuppressNavigation: event.metaKey || event.ctrlKey || (event.button === 1)\n\t});\n};\n\nButtonWidget.prototype.dispatchMessage = function(event) {\n\tthis.dispatchEvent({type: this.message, param: this.param, tiddlerTitle: this.getVariable(\&quot;currentTiddler\&quot;)});\n};\n\nButtonWidget.prototype.triggerPopup = function(event) {\n\t$tw.popup.triggerPopup({\n\t\tdomNode: this.domNodes[0],\n\t\ttitle: this.popup,\n\t\twiki: this.wiki\n\t});\n};\n\nButtonWidget.prototype.setTiddler = function() {\n\tthis.wiki.setTextReference(this.set,this.setTo,this.getVariable(\&quot;currentTiddler\&quot;));\n};\n\n/*\nCompute the internal state of the widget\n*/\nButtonWidget.prototype.execute = function() {\n\t// Get attributes\n\tthis.to = this.getAttribute(\&quot;to\&quot;);\n\tthis.message = this.getAttribute(\&quot;message\&quot;);\n\tthis.param = this.getAttribute(\&quot;param\&quot;);\n\tthis.set = this.getAttribute(\&quot;set\&quot;);\n\tthis.setTo = this.getAttribute(\&quot;setTo\&quot;);\n\tthis.popup = this.getAttribute(\&quot;popup\&quot;);\n\tthis.hover = this.getAttribute(\&quot;hover\&quot;);\n\tthis[\&quot;class\&quot;] = this.getAttribute(\&quot;class\&quot;,\&quot;\&quot;);\n\tthis[\&quot;aria-label\&quot;] = this.getAttribute(\&quot;aria-label\&quot;);\n\tthis.tooltip = this.getAttribute(\&quot;tooltip\&quot;);\n\tthis.style = this.getAttribute(\&quot;style\&quot;);\n\tthis.selectedClass = this.getAttribute(\&quot;selectedClass\&quot;);\n\tthis.defaultSetValue = this.getAttribute(\&quot;default\&quot;);\n\tthis.buttonTag = this.getAttribute(\&quot;tag\&quot;);\n\t// Make child widgets\n\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nButtonWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.to || changedAttributes.message || changedAttributes.param || changedAttributes.set || changedAttributes.setTo || changedAttributes.popup || changedAttributes.hover || changedAttributes[\&quot;class\&quot;] || changedAttributes.selectedClass || changedAttributes.style || (this.set &amp;&amp; changedTiddlers[this.set]) || (this.popup &amp;&amp; changedTiddlers[this.popup])) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t}\n\treturn this.refreshChildren(changedTiddlers);\n};\n\nexports.button = ButtonWidget;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/widgets/button.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;widget&quot;
@@ -6973,7 +6973,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
 
 </pre>
 </div>
-<div author="xcazin" core-version="&gt;=5.0.0" dependents="" description="Français (France)" name="fr-FR" plugin-type="language" title="$:/languages/fr-FR" type="application/json" version="5.1.8-prerelease">
+<div author="xcazin" core-version="&gt;=5.0.0" dependents="" description="Français (France)" name="fr-FR" plugin-type="language" title="$:/languages/fr-FR" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
@@ -9324,7 +9324,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Browser sniffing" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/browser-sniff" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Browser sniffing" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/browser-sniff" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/browser-sniff/sniff.js&quot;: {
@@ -9350,7 +9350,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Google Analytics: website statistics" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/googleanalytics" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Google Analytics: website statistics" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/googleanalytics" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/googleanalytics/googleanalytics.js&quot;: {
@@ -9370,7 +9370,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="NW.js saver" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/nodewebkitsaver" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="NW.js saver" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/nodewebkitsaver" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/core/modules/savers/nodewebkit.js&quot;: {
@@ -9386,7 +9386,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="AstridElocson" dependents="" description="Railroad diagram generator" list="readme usage syntax example" plugin-type="plugin" title="$:/plugins/tiddlywiki/railroad" type="application/json" version="5.1.8-prerelease">
+<div author="AstridElocson" dependents="" description="Railroad diagram generator" list="readme usage syntax example" plugin-type="plugin" title="$:/plugins/tiddlywiki/railroad" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/railroad/components.js&quot;: {
@@ -9504,7 +9504,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
 <div title="$:/theme">
 <pre>$:/themes/tiddlywiki/snowwhite</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Centralises the story river, experimental" name="Centralised" plugin-type="theme" title="$:/themes/tiddlywiki/centralised" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Centralises the story river, experimental" name="Centralised" plugin-type="theme" title="$:/themes/tiddlywiki/centralised" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/centralised/styles.tid&quot;: {
@@ -9515,7 +9515,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Hides the ability to edit tiddlers" name="ReadOnly" plugin-type="theme" title="$:/themes/tiddlywiki/readonly" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Hides the ability to edit tiddlers" name="ReadOnly" plugin-type="theme" title="$:/themes/tiddlywiki/readonly" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/readonly/styles.tid&quot;: {
@@ -9526,7 +9526,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Removes borders from tiddlers" name="Seamless" plugin-type="theme" title="$:/themes/tiddlywiki/seamless" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Removes borders from tiddlers" name="Seamless" plugin-type="theme" title="$:/themes/tiddlywiki/seamless" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/seamless/base&quot;: {
@@ -9538,7 +9538,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/snowwhite/base&quot;: {
@@ -9549,7 +9549,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Example alternative theme" name="Starlight" plugin-type="theme" title="$:/themes/tiddlywiki/starlight" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Example alternative theme" name="Starlight" plugin-type="theme" title="$:/themes/tiddlywiki/starlight" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/starlight/arvo.woff&quot;: {
@@ -9576,7 +9576,7 @@ Les cibles de compilation sont définies dans le fichier `tiddlywiki.info` du [[
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.8-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/vanilla/themetweaks&quot;: {
@@ -16997,7 +16997,108 @@ This is an hot fix release with the following change over [[Release 5.1.6]]:
 * [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/a31aa25d0c00187ff829d74108f018e44b5cb3c5]] typo in GettingStarted
 </pre>
 </div>
-<div created="20131109105400007" modified="20141126153016142" tags="About" title="Releases" type="text/vnd.tiddlywiki">
+<div caption="5.1.8" created="20150417163307227" modified="20150417163307227" released="2015041716307227" tags="ReleaseNotes" title="Release 5.1.8" type="text/vnd.tiddlywiki">
+<pre>//[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.7...v5.1.8]]//
+
+This release includes many improvements to the documentation for TiddlyWiki. Many thanks to everyone who has helped out, but especially to our prodigious new contributor Astrid Elocson.
+
+!! Translation Improvements
+
+* Improvements to French, Danish, Chinese and Japanese translations
+
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/cb8caf6a01aeeac480bf28661888961657b0dbd8]] Czech translation
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/d6918d737f5d1b663346ad9a35421a5ae0ffb9a7]] [[Interlingua|http://en.wikipedia.org/wiki/Interlingua]] translation
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/6721a5eb1b77935226ccc8559008af3a0a05d0cb]] Portuguese translation
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/b845751d3c549366adb2f6e5c58b0114fa95ba30]] Punjabi and Hindu translations
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/49a9a2c44ca3a71fff3062709f06940aaca4a574]] Slovak translation
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/5d947ed582fb9d68c01d82a334ab75498a8724ef]] Spanish translation
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/2c367c5476da70ce9c2b37838febcdf437b9aca4]] localisation for encryption prompt
+
+!! Usability Improvements
+
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/987bfcfd5b49b992e5fd45f3428497f6f55cae53]] user interface for [[setting a page background image|Setting a page background image]]
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/3df341621d30b205775288e324cef137c48e9f6e]] problem with unnecessary scrolling at startup
+* [[Upgraded|https://github.com/Jermolene/TiddlyWiki5/commit/ae001a19e5b3e43cf5388fd4e8d99788085649fe]] the [[KaTeX Plugin]] to use [[KaTeX v0.2.0|https://github.com/Khan/KaTeX/releases/tag/v0.2.0]], with better symbol support
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/70e419824fab107aab58f87780dbb5a1de70c248]] [[Help Plugin]] providing floating help panel
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/8643278a452d1a300cec8d3425c1b18699a17dca]] support for an online plugin library
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/ea6e60e66983ee1184f09c5796ef6c8bceae703a]] automatic focusing of the search box at startup
+* [[Introduced|https://github.com/Jermolene/TiddlyWiki5/commit/4f3cb8b9aebfc4f65f40c96ef99730887d746b41]] the [[Railroad Plugin]] by Astrid Elocson (see it in action in the new [[Filter Syntax]] documentation)
+* [[Migrated|https://github.com/Jermolene/TiddlyWiki5/commit/230066eeae9ace8336612e02c78f8cdaa3f717e4]] functionality of &quot;Sticky Titles&quot; theme into an optional tweak for the &quot;Vanilla&quot;/&quot;Snow White&quot; themes. This means that tiddler titles will stick to the top of the window during scrolling on browsers that support `position: sticky` (such as Safari and Firefox)
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/8cb7090c40489c81e8c5dfb8cbbdee2c60998c3e]] icons to [[$:/AdvancedSearch]], [[$:/ControlPanel]] and [[$:/TagManager]]
+* [[Changed|https://github.com/Jermolene/TiddlyWiki5/commit/21b6ce71ffc617f61d4da0065a3ee695be535e2a]] wording of tiddler &quot;save&quot; button to &quot;confirm&quot;
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/issues/1103]] automatic linking of system tiddlers such as $:/ControlPanel
+* [[Improved|https://github.com/Jermolene/TiddlyWiki5/commit/9c7936413a8c50817044eb409661a575f7f97563]] new tag dropdown to only list title matches
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/aae56f20af35e7be6f3839a8c727e3f43174efe9]] a warning banner notifying the user when modified plugins require the page to be reloaded
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/0bd2ec50e1514ef247182816f9f9e421f52f67bb]] first pass at &quot;stacked&quot; story view
+* [[Changed|https://github.com/Jermolene/TiddlyWiki5/commit/421ac16389cf07e8c00611ef5a858da0b89f7584]] modal headers and footers to be parsed in inline mode by default (avoiding unneeded `&lt;p&gt;` tags)
+
+!! Hackability Improvements
+
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/d340277cb219ffebd212fbf409e8ea804121d105]] [[resolvepath Macro]]
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/718ce3e4aa04f7af5e9310f90d3415c0d82bee6f]] ''class'' attribute to CheckboxWidget
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/bb10e2b02900ece4701c44c3a7e7c03304e813b7]] support for a special message to be displayed when the main story river is empty
+* [[Improved|https://github.com/Jermolene/TiddlyWiki5/commit/6e0c7d90221771ae384d620984f08a2090c500dc]] font rendering under Mac OS X
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/a2493f80a973b24ad3d3affda945c437b98c2d2e]] support for embedding ZIP files
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/1808b1597e5a61379e4e5381d6d78bb73fa3a523]] support for custom elements with the RevealWidget
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/bd6472c1d10bc86eaf1b317c35b86f84086ee3c8]] ''style'' attribute to RevealWidget
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/0b4ed3c72de16148ffe62abf1c5c06f2d2ce47f1]] text inputs to use palette colours
+* Several new [[core icons|ImageGallery Example]]: &lt;span style=&quot;fill:#aaa;&quot;&gt;&lt;span title=&quot;$:/core/images/github&quot;&gt;{{$:/core/images/github}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/help&quot;&gt;{{$:/core/images/help}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/mail&quot;&gt;{{$:/core/images/mail}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/tip&quot;&gt;{{$:/core/images/tip}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/warning&quot;&gt;{{$:/core/images/warning}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/twitter&quot;&gt;{{$:/core/images/twitter}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/video&quot;&gt;{{$:/core/images/video}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/up-arrow&quot;&gt;{{$:/core/images/up-arrow}}&lt;/span&gt; &lt;span title=&quot;$:/core/images/left-arrow&quot;&gt;{{$:/core/images/left-arrow}}&lt;/span&gt;&lt;/span&gt;
+
+!! Bug Fixes
+
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/pull/1520]] the [[sameday Operator]] and [[eachday Operator]] to accept TW5 date strings
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/pull/1249]] version number compatibility checks for plugins
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/1adfe20508116da0ee4b5c9e72ea9742f24b60c9]] problem with repeatedly cancelling a draft
+* [[Improved|https://github.com/Jermolene/TiddlyWiki5/commit/050b643948e24d1d93a83766a23a0d693616d01e]] sandboxing of generated `&lt;iframe&gt;` elements
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/b166632bbb76a7a033cd8fc3af14e5dadddfc631]] problem with modal backgrounds on Firefox
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/1b87d9134bd0b45be671eebfdcac1d7acadcecf4]] problem with accidentally dragging a tiddler within its originating window
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/c9ab873ba393753647f2b0b3b3aa1a8bcf6b1c28]] problem with dragging certain plugins with Safari
+* [[Partially fixed|https://github.com/Jermolene/TiddlyWiki5/commit/2f8837a44508687223c4d78e718cf82a9b35c97b]] problem with SVG icons being clipped by 1 pixel on the right and bottom
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/f3ed9bf7e4936dd9bbe3e237673828bbe89326f9]] problem with double quotes in a new field value
+
+!! Node.js Changes
+
+//These changes are only relevant to people using TiddlyWiki under Node.js//
+
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/cc85368fd48f1e5878018a4e00b6c17d436e67a9]] [[Highlight Plugin]] to work when generating static files under Node.js
+* [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/c296f14210545374124df5d4ae9ffb402ed73561]] problem with case-insensitive filing systems (eg Windows)
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/pull/1354]] mobile metadata to static page templates
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/pull/1352]] added &quot;noclean&quot; parameter to RenderTiddlersCommand
+* [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/b768dc332b2d5d7ac1f731953cafb5fd1b30dad9]] [[editions Operator]] and [[editiondescription Operator]] for enumerating available editions
+
+!! Contributors
+
+[[@Jermolene|https://github.com/Jermolene]] would like to thank the contributors to this release who have generously given their time to help improve TiddlyWiki:
+
+* [[@aelocson|https://github.com/aelocson]]
+* [[@andreasabeck|https://github.com/andreasabeck]]
+* [[@alexhough|https://github.com/alexhough]]
+* [[@Arlen22|https://github.com/Arlen22]]
+* [[@BramChen|https://github.com/BramChen]]
+* [[@danielo515|https://github.com/danielo515]]
+* [[@dpdannemiller|https://github.com/dpdannemiller]]
+* [[@Drakor|https://github.com/Drakor]]
+* [[@evgeniy-gryaznov|https://github.com/evgeniy-gryaznov]]
+* [[@felixhayashi|https://github.com/felixhayashi]]
+* [[@gernert|https://github.com/gernert]]
+* [[@Infurnoape|https://github.com/Infurnoape]]
+* [[@Jc-L|https://github.com/Jc-L]]
+* [[@le-pako|https://github.com/le-pako]]
+* [[@Mathobal|https://github.com/Mathobal]]
+* [[@ng110|https://github.com/ng110]]
+* [[@pmario|https://github.com/pmario]]
+* [[@reflectionist|https://github.com/reflectionist]]
+* [[@roma0104|https://github.com/roma0104]]
+* [[@simonbaird|https://github.com/simonbaird]]
+* [[@Spangenhelm|https://github.com/Spangenhelm]]
+* [[@sukima|https://github.com/sukima]]
+* [[@tobibeer|https://github.com/tobibeer]]
+* [[@twMat|https://github.com/twMat]]
+* [[@welford|https://github.com/welford]]
+* [[@xcazin|https://github.com/xcazin]]
+</pre>
+</div>
+<div created="20131109105400007" modified="20150417163307227" tags="About" title="Releases" type="text/vnd.tiddlywiki">
 <pre>Here are the details of recent releases of TiddlyWiki5. See [[TiddlyWiki5 Versioning]] for details of how releases are named.
 
 (BetaReleases and AlphaReleases are listed separately).
@@ -17856,6 +17957,21 @@ Lorsque TiddlyWiki démarre dans le navigateur, il cherche un tiddler nommé [[$
 
 Sur le serveur, la commande [[server|ServerCommand]] servira le tiddler [[$:/favicon.ico]] sur le chemin `/favicon.ico`.
 
+
+</pre>
+</div>
+<div created="20150417155912612" modified="20150417160627804" tags="[[Customise TiddlyWiki]]" title="Setting a page background image" type="text/vnd.tiddlywiki">
+<pre># Import your image as a tiddler (see [[Images in WikiText]])
+#* You can also use an [[external image|ExternalImages]]
+# Open the $:/ControlPanel and switch to the ''Appearance''/''Theme Tweaks'' tab
+# Select your image from the dropdown labelled &quot;Page background image&quot;
+# Set &quot;Page background image attachment&quot; to &quot;Fixed to window&quot; to have the background stay stationary and the content to scroll over the top of it, or &quot;Scroll with tiddlers&quot; to have it move (note that the iPhone/iPad [[doesn't support the fixed setting|http://stackoverflow.com/a/20444219]] for performance reasons)
+# Set &quot;Page background image size&quot; as follows:
+#* ''Auto'' causes the background image to be tiled over the page background
+#* ''Cover'' causes the background image to be sized so that it completely covers the page. Some of the image may be clipped
+#* ''Contain'' causes the background image to be sized so that it fits within the page
+
+Note that the palette ''DarkPhotos'' is provided to make the sidebar more readable on dark background images.
 
 </pre>
 </div>
