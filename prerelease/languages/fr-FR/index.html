@@ -15,7 +15,7 @@
 <meta name="copyright" content="TiddlyWiki created by Jeremy Ruston, (jeremy [at] jermolene [dot] com)
 
 Copyright © Jeremy Ruston 2004-2007
-Copyright © UnaMesa Association 2007-2014
+Copyright © UnaMesa Association 2007-2015
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
@@ -652,7 +652,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
         &quot;$:/core/copyright.txt&quot;: {
             &quot;title&quot;: &quot;$:/core/copyright.txt&quot;,
             &quot;type&quot;: &quot;text/plain&quot;,
-            &quot;text&quot;: &quot;TiddlyWiki created by Jeremy Ruston, (jeremy [at] jermolene [dot] com)\n\nCopyright © Jeremy Ruston 2004-2007\nCopyright © UnaMesa Association 2007-2014\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or other\nmaterials provided with the distribution.\n\nNeither the name of the UnaMesa Association nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN\nANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE.\n&quot;
+            &quot;text&quot;: &quot;TiddlyWiki created by Jeremy Ruston, (jeremy [at] jermolene [dot] com)\n\nCopyright © Jeremy Ruston 2004-2007\nCopyright © UnaMesa Association 2007-2015\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\nRedistributions of source code must retain the above copyright notice, this\nlist of conditions and the following disclaimer.\n\nRedistributions in binary form must reproduce the above copyright notice, this\nlist of conditions and the following disclaimer in the documentation and/or other\nmaterials provided with the distribution.\n\nNeither the name of the UnaMesa Association nor the names of its contributors may be\nused to endorse or promote products derived from this software without specific\nprior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY\nEXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES\nOF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT\nSHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,\nINCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED\nTO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR\nBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN\nCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN\nANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH\nDAMAGE.\n&quot;
         },
         &quot;$:/core/icon&quot;: {
             &quot;title&quot;: &quot;$:/core/icon&quot;,
@@ -3817,7 +3817,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/fr-FR/tiddlers/$(g
             &quot;module-type&quot;: &quot;macro&quot;
         },
         &quot;$:/core/modules/macros/contrastcolour.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/macros/contrastcolour.js\ntype: application/javascript\nmodule-type: macro\n\nMacro to choose which of two colours has the highest contrast with a base colour\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nInformation about this macro\n*/\n\nexports.name = \&quot;contrastcolour\&quot;;\n\nexports.params = [\n\t{name: \&quot;target\&quot;},\n\t{name: \&quot;fallbackTarget\&quot;},\n\t{name: \&quot;colourA\&quot;},\n\t{name: \&quot;colourB\&quot;}\n];\n\n/*\nRun the macro\n*/\nexports.run = function(target,fallbackTarget,colourA,colourB) {\n\tvar rgbTarget = $tw.utils.parseCSSColor(target) || $tw.utils.parseCSSColor(fallbackTarget);\n\tif(!rgbTarget) {\n\t\treturn colourA;\n\t}\n\t// Colour brightness formula derived from http://www.w3.org/WAI/ER/WD-AERT/#color-contrast\n\tvar rgbColourA = $tw.utils.parseCSSColor(colourA),\n\t\trgbColourB = $tw.utils.parseCSSColor(colourB),\n\t\tbrightnessTarget = rgbTarget[0] * 0.299 + rgbTarget[1] * 0.587 + rgbTarget[2] * 0.114,\n\t\tbrightnessA = rgbColourA[0] * 0.299 + rgbColourA[1] * 0.587 + rgbColourA[2] * 0.114,\n\t\tbrightnessB = rgbColourB[0] * 0.299 + rgbColourB[1] * 0.587 + rgbColourB[2] * 0.114;\n\treturn Math.abs(brightnessTarget - brightnessA) &gt; Math.abs(brightnessTarget - brightnessB) ? colourA : colourB;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/macros/contrastcolour.js\ntype: application/javascript\nmodule-type: macro\n\nMacro to choose which of two colours has the highest contrast with a base colour\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nInformation about this macro\n*/\n\nexports.name = \&quot;contrastcolour\&quot;;\n\nexports.params = [\n\t{name: \&quot;target\&quot;},\n\t{name: \&quot;fallbackTarget\&quot;},\n\t{name: \&quot;colourA\&quot;},\n\t{name: \&quot;colourB\&quot;}\n];\n\n/*\nRun the macro\n*/\nexports.run = function(target,fallbackTarget,colourA,colourB) {\n\tvar rgbTarget = $tw.utils.parseCSSColor(target) || $tw.utils.parseCSSColor(fallbackTarget);\n\tif(!rgbTarget) {\n\t\treturn colourA;\n\t}\n\tvar rgbColourA = $tw.utils.parseCSSColor(colourA),\n\t\trgbColourB = $tw.utils.parseCSSColor(colourB);\n\tif(rgbColourA &amp;&amp; !rgbColourB) {\n\t\treturn rgbColourA;\n\t}\n\tif(rgbColourB &amp;&amp; !rgbColourA) {\n\t\treturn rgbColourB;\n\t}\n\tif(!rgbColourA &amp;&amp; !rgbColourB) {\n\t\t// If neither colour is readable, return a crude inverse of the target\n\t\treturn [255 - rgbTarget[0],255 - rgbTarget[1],255 - rgbTarget[2],rgbTarget[3]];\n\t}\n\t// Colour brightness formula derived from http://www.w3.org/WAI/ER/WD-AERT/#color-contrast\n\tvar brightnessTarget = rgbTarget[0] * 0.299 + rgbTarget[1] * 0.587 + rgbTarget[2] * 0.114,\n\t\tbrightnessA = rgbColourA[0] * 0.299 + rgbColourA[1] * 0.587 + rgbColourA[2] * 0.114,\n\t\tbrightnessB = rgbColourB[0] * 0.299 + rgbColourB[1] * 0.587 + rgbColourB[2] * 0.114;\n\treturn Math.abs(brightnessTarget - brightnessA) &gt; Math.abs(brightnessTarget - brightnessB) ? colourA : colourB;\n};\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/macros/contrastcolour.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;macro&quot;
@@ -17098,15 +17098,8 @@ This release includes many improvements to the documentation for TiddlyWiki. Man
 * [[@xcazin|https://github.com/xcazin]]
 </pre>
 </div>
-<div created="20131109105400007" modified="20150417163307227" tags="About" title="Releases" type="text/vnd.tiddlywiki">
-<pre>Here are the details of recent releases of TiddlyWiki5. See [[TiddlyWiki5 Versioning]] for details of how releases are named.
-
-(BetaReleases and AlphaReleases are listed separately).
-
-&lt;$list filter=&quot;[tag[ReleaseNotes]!sort[created]limit[1]]&quot;&gt;
-  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[ReleaseNotes]!sort[created]]&quot;default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
-&lt;/$list&gt;
-</pre>
+<div created="20150419144523070" modified="20150420114530386" tags="About" title="Releases" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;tabs &quot;[[TiddlyWiki Releases]] [[TiddlyDesktop Releases]]&quot; &quot;TiddlyWiki Releases&quot; &quot;$:/state/tab&quot;&gt;&gt;</pre>
 </div>
 <div created="20141115211411211" title="ReleaseTemplate" type="text/vnd.tiddlywiki">
 <pre>&lt;h2&gt;&lt;$link to=&lt;&lt;currentTab&gt;&gt;&gt;&lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h2&gt;
@@ -18370,6 +18363,7 @@ These are the available system tags
 * {{$:/tags/ControlPanel/Toolbars||$:/core/ui/TagTemplate}} for control panel toolbar customisation tabs
 * {{$:/tags/EditTemplate||$:/core/ui/TagTemplate}} for the edit template
 * {{$:/tags/EditToolbar||$:/core/ui/TagTemplate}} for the edit mode tiddler toolbar
+* {{$:/tags/Exporter||$:/core/ui/TagTemplate}} for the exporters
 * {{$:/tags/Filter||$:/core/ui/TagTemplate}} for filters in advanced seach sample filter dropdown
 * {{$:/tags/Image||$:/core/ui/TagTemplate}} for (core) images
 * {{$:/tags/Macro||$:/core/ui/TagTemplate}} for global macros
@@ -18377,7 +18371,9 @@ These are the available system tags
 * {{$:/tags/PageControls||$:/core/ui/TagTemplate}} for the page control tools in the sidebar
 * {{$:/tags/PageTemplate||$:/core/ui/TagTemplate}} for the main page elements
 * {{$:/tags/Palette||$:/core/ui/TagTemplate}} for colour palettes
+* {{$:/tags/PluginLibrary||$:/core/ui/TagTemplate}} for the plugin library
 * {{$:/tags/RawMarkup||$:/core/ui/TagTemplate}} for raw markup to be included in the generated HTML file
+* {{$:/tags/SearchResults||$:/core/ui/TagTemplate}} for customised search results
 * {{$:/tags/SideBar||$:/core/ui/TagTemplate}} for sidebar tabs
 * {{$:/tags/Stylesheet||$:/core/ui/TagTemplate}} to indicate that a tiddler should be applied as a CSS stylesheet
 * {{$:/tags/TiddlerInfo||$:/core/ui/TagTemplate}} for tiddler info panel tabs
@@ -19325,7 +19321,7 @@ TiddlyClip allows parts of webpages to be clipped into a TiddlyWiki, and consist
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20140126125259638" modified="20150412185515402" tags="Definitions Features Saving Configurations" title="TiddlyDesktop" type="text/vnd.tiddlywiki">
+<div created="20140126125259638" modified="20150427121710347" tags="Definitions Features Saving Configurations" title="TiddlyDesktop" type="text/vnd.tiddlywiki">
 <pre>TiddlyDesktop is an app for working with TiddlyWiki files (both TiddlyWikiClassic and TiddlyWiki version 5). It can be installed on Windows, Mac OS X or Linux. It is compatible with TiddlyWiki version 5 and the older TiddlyWikiClassic.
 
 See the [[Introducing TiddlyDesktop Video]]
@@ -19343,7 +19339,93 @@ TiddlyDesktop is based on the OpenSource project [[NW.js]]. The source is on Git
 
 https://github.com/Jermolene/TiddlyDesktop/
 
+See [[TiddlyDesktop Releases]]
 </pre>
+</div>
+<div caption="0.0.1" created="20150419144925501" modified="20150419152103526" released="20140108" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.1" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.1&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+First release - use with extreme caution</pre>
+</div>
+<div caption="0.0.2" created="20150419150123810" modified="20150419154256169" released="20140118" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.2" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.2&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.1...v0.0.2]]
+
+This second version of TiddlyDesktop has the following fixes and improvements:
+
+*The saving mechanism is now TiddlyFox compatible, so TiddlyWiki5 wikis don't need a special plugin to work with TiddlyDesktop
+*TiddlyDesktop is now compatible with TiddlyWiki Classic
+*Chromium Developer Tools now accessible via a pulldown menu
+*Each TiddlyWiki document is now sandboxed, so it isn't possible for malicious or buggy JavaScript to affect other documents
+*Linux 32-bit and 64-bit builds</pre>
+</div>
+<div caption="0.0.3" created="20150419150143521" modified="20150419154240713" released="20140130" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.3" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.3&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.2...v0.0.3]]
+
+This third version of TiddlyDesktop has the following fixes and improvements:
+
+*Access Chromium developer tools with F12
+*No menu bars
+*Fixed problem with paths containing spaces
+*Enabled webkit experimental features
+*Adjusted the main window toolbar to be position: sticky
+*Fixed problem with relative inter-wiki links not working
+*Add &quot;file not found&quot; error indication
+</pre>
+</div>
+<div caption="0.0.4" created="20150419150210402" modified="20150419154800738" released="20150111" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.4" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.4&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.3...v0.0.4]]
+
+This release includes a major reworking of the internals of TiddlyDesktop. It's really a bit early for general release, but we need feedback to improve it. Please use it with great caution, and consider reverting to v0.0.3 if you run into any problems.
+
+Please report any problems or suggestions via GitHub issues, or post to the TiddlyWiki discussion group:
+
+http://groups.google.com/group/TiddlyWiki
+
+!New Features
+*Warning message when closing windows with unsaved changes (TWC and TW 5.1.8 and above only)
+*Help window
+*Toolbar for TiddlyWiki windows
+*Reveal original file in Finder/Explorer
+*Automatic backups
+Note that there is currently no way to hide the toolbar for TiddlyWiki windows. This will be remedied soon!
+
+!New Architecture
+TiddlyDesktop itself is now an instance of the Node.js edition of TiddlyWiki. TiddlyWiki HTML files are run within embedded, sandboxed iframes with the &quot;backstage&quot; TiddlyWiki providing services such as saving to the file system.
+
+The advantage of this approach is that the user interface and functionality of the desktop application can now be customised and extended with exactly the same techniques that are used in regular TiddlyWiki.
+
+!Coming Soon
+The functionality of this release barely matches that of the previous v0.0.3 version, but it lays the groundwork for a number of other features such as:
+
+*Configurable toolbars
+*Hyperbookmarklets
+*Page zoom
+*Creating new wikis from standard editions and custom templates
+*Dragging _canonical_uri links from the file system
+*Multiple languages
+*One-click copying of text to the clipboard from within TiddlyWiki
+*Global keyboard shortcut for clipping content etc.</pre>
+</div>
+<div caption="~TiddlyDesktop" created="20150419144649101" modified="20150419153948247" tags="Releases" title="TiddlyDesktop Releases" type="text/vnd.tiddlywiki">
+<pre>Here are the details of recent releases of TiddlyDesktop
+
+&lt;$list filter=&quot;[tag[TiddlyDesktopReleaseNotes]!sort[created]limit[1]]&quot;&gt;
+  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[TiddlyDesktopReleaseNotes]!sort[created]]&quot;default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20130825161100000" modified="20140928165957195" tags="Definitions" title="TiddlyFox" type="text/vnd.tiddlywiki">
 <pre>//~TiddlyFox// est une extension pour Firefox qui permet aux fichiers &lt;&lt;tw&gt;&gt; autonomes d'enregistrer leurs modifications directement sur le système de fichiers. //~TiddlyFox// fonctionne aussi bien sur les versions station de travail que mobile de [[Firefox]]. Voir [[Enregistrer avec TiddlyFox|Saving with TiddlyFox]] ou [[Enregistrer avec TiddlyFox pour Android|Saving with TiddlyFox on Android]] pour des instructions détaillées.
@@ -19447,6 +19529,16 @@ Pour plus d'informations, voir :
 * [[ïnstaller TiddlyWiki sur Node.js|Installing TiddlyWiki on Node.js]]
 * [[Utiliser TiddlyWiki avec Node.js|Using TiddlyWiki on Node.js]]
 * [[Mettre à jour TiddlyWiki avec Node.js|Upgrading TiddlyWiki on Node.js]]
+</pre>
+</div>
+<div caption="~TiddlyWiki" created="20131109105400007" modified="20150419163355790" tags="Releases" title="TiddlyWiki Releases" type="text/vnd.tiddlywiki">
+<pre>Here are the details of recent releases of TiddlyWiki5. See [[TiddlyWiki5 Versioning]] for details of how releases are named.
+
+(BetaReleases and AlphaReleases are listed separately).
+
+&lt;$list filter=&quot;[tag[ReleaseNotes]!sort[created]limit[1]]&quot;&gt;
+  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[ReleaseNotes]!sort[created]]&quot; default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
+&lt;/$list&gt;
 </pre>
 </div>
 <div title="TiddlyWiki.mp3" type="audio/mp3">
