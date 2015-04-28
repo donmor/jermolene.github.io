@@ -728,6 +728,9 @@ th {
 	-webkit-box-sizing: border-box;
 }html button {
 	line-height: 1.2;
+	color: ;
+	background: ;
+	border-color: ;
 }/*
 ** Basic element styles
 */html {
@@ -778,11 +781,17 @@ th {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
-}textarea, input[type=text] {
+}textarea,
+input[type=text],
+input[type=search],
+input[type=""],
+input:not([type]) {
 	color: #333333;
-	background-color: #ffffff;
+	background: #ffffff;
 }.tc-muted {
 	color: #bbb;
+}svg {
+	fill: #333333;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
 }/*
