@@ -20898,7 +20898,7 @@ Just by building on these simple and basic concepts,
 These points already enable TW to be used as an offline-enabled single file web application.
 Also, by using a server side node.js environment running the same TiddlyWiki application, TiddlyWiki can be used as an online web application. This is realized on server-side by providing an additional module to persist tiddlers into plain text files and on client-side by a module syncing the local data store with the node.js server.</pre>
 </div>
-<div modified="20141016083333808" tags="dev" title="TiddlyWiki Coding Style Guidelines">
+<div modified="20150430153333808" tags="dev" title="TiddlyWiki Coding Style Guidelines">
 <pre>! Motivation
 
 TiddlyWiki is a large project with many interested parties. It benefits everyone if the code is as easy to read as possible. A key part of that it must be written and laid out consistently -- the code should read as though it were written by a single author.
@@ -20922,9 +20922,9 @@ See the following example for layout of basic JavaScript constructs:
 Multiline comments are used to introduce a block of code such as a function definition
 */
 function demoFunction(param,more) {
-	// Proper sentence capitalisation for comments
-	if(condition == &quot;something&quot;) {
-		// No space between &quot;if&quot; and the brackets; always spaces around binary operators
+	// Proper sentence capitalisation for comments; prefer strict equality checks
+	if(condition === &quot;something&quot;) {
+		// Always use braces, even when optional; no space between &quot;if&quot; and the brackets; always spaces around binary operators
 		something = somethingElse;
 		myOtherFunction(one,two); // No whitespace within function parameters
 		do {

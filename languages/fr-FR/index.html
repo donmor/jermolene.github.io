@@ -560,6 +560,7 @@ This is my work in progress version of TW5, incorporating various features and i
 	background-color: &lt;&lt;colour message-background&gt;&gt;;
 	padding: 1em;
 	height: 400px;
+	position: relative;
 }
 
 .tc-improvement-banner {
@@ -10336,7 +10337,7 @@ node ../../tiddlywiki.js \
 &lt;&lt;.operator-example 3 &quot;A B C D E F G H I J K L M +[butlast[7]]&quot;&gt;&gt;
 </pre>
 </div>
-<div caption="button" created="20131024141900000" modified="20141008145311298" tags="Widgets" title="ButtonWidget" type="text/vnd.tiddlywiki">
+<div caption="button" created="20131024141900000" modified="20150427122454736" tags="Widgets" title="ButtonWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
 The button widget displays an HTML `&lt;button&gt;` element that can perform a combination of optional actions when clicked:
@@ -10368,7 +10369,7 @@ The content of the `&lt;$button&gt;` widget is displayed within the button.
 |selectedClass |An optional additional CSS class to be assigned if the popup is triggered or the tiddler specified in `set` already has the value specified in `setTo`  |
 |default |Default value if `set` tiddler is missing for testing against `setTo` to determine `selectedClass` |
 
-''Tip:'' Set ''class'' to `tc-btn-invisble tc-tiddlylink` to have a button look like an internal link.</pre>
+''Tip:'' Set ''class'' to `tc-btn-invisible tc-tiddlylink` to have a button look like an internal link.</pre>
 </div>
 <div created="20130828185300000" modified="20130828185300000" tags="Definitions" title="CamelCase">
 <pre>CamelCase is formed by taking a phrase, capitalising the initial letter of each word, and smashing the words together to form a portmanteau word. Most wikis use CamelCase to signal phrases that should automatically become links.
@@ -16997,7 +16998,7 @@ This is an hot fix release with the following change over [[Release 5.1.6]]:
 * [[Fixed|https://github.com/Jermolene/TiddlyWiki5/commit/a31aa25d0c00187ff829d74108f018e44b5cb3c5]] typo in GettingStarted
 </pre>
 </div>
-<div caption="5.1.8" created="20150417163307227" modified="20150417163307227" tags="ReleaseNotes" title="Release 5.1.8" type="text/vnd.tiddlywiki">
+<div caption="5.1.8" created="20150417163307227" modified="20150417163307227" released="2015041716307227" tags="ReleaseNotes" title="Release 5.1.8" type="text/vnd.tiddlywiki">
 <pre>//[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.7...v5.1.8]]//
 
 This release includes many improvements to the documentation for TiddlyWiki. Many thanks to everyone who has helped out, but especially to our prodigious new contributor Astrid Elocson.
@@ -17098,15 +17099,8 @@ This release includes many improvements to the documentation for TiddlyWiki. Man
 * [[@xcazin|https://github.com/xcazin]]
 </pre>
 </div>
-<div created="20131109105400007" modified="20150417163307227" tags="About" title="Releases" type="text/vnd.tiddlywiki">
-<pre>Here are the details of recent releases of TiddlyWiki5. See [[TiddlyWiki5 Versioning]] for details of how releases are named.
-
-(BetaReleases and AlphaReleases are listed separately).
-
-&lt;$list filter=&quot;[tag[ReleaseNotes]!sort[created]limit[1]]&quot;&gt;
-  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[ReleaseNotes]!sort[created]]&quot;default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
-&lt;/$list&gt;
-</pre>
+<div created="20150419144523070" modified="20150420114530386" tags="About" title="Releases" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;tabs &quot;[[TiddlyWiki Releases]] [[TiddlyDesktop Releases]]&quot; &quot;TiddlyWiki Releases&quot; &quot;$:/state/tab&quot;&gt;&gt;</pre>
 </div>
 <div created="20141115211411211" title="ReleaseTemplate" type="text/vnd.tiddlywiki">
 <pre>&lt;h2&gt;&lt;$link to=&lt;&lt;currentTab&gt;&gt;&gt;&lt;$view tiddler=&lt;&lt;currentTab&gt;&gt; field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/h2&gt;
@@ -17721,7 +17715,7 @@ This script builds TiddlyWiki 2.6.5 from the original source and then displays t
 
 </pre>
 </div>
-<div caption="scrollable" created="20140324223413403" modified="20140324223524945" tags="Widgets" title="ScrollableWidget" type="text/vnd.tiddlywiki">
+<div caption="scrollable" created="20140324223413403" modified="20150427123524945" tags="Widgets" title="ScrollableWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
 The scrollable widget wraps its content in a scrollable frame. The user can scroll the contents with the mouse or with touch gestures. Code can use the [[WidgetMessage: tm-scroll]] to programmatically scroll specific DOM nodes into view.
@@ -17746,6 +17740,7 @@ This example requires the following CSS definitions from [[$:/_tw5.com-styles]]:
 	background-color: &lt;&lt;colour message-background&gt;&gt;;
 	padding: 1em;
 	height: 400px;
+	position: relative;
 }
 ```
 
@@ -17829,6 +17824,16 @@ Clicking on the magnifying glass icon to the right of the search box will open [
 </div>
 <div created="20150221194433000" modified="20150221194643000" tags="Second" title="SecondTwo">
 <pre>&lt;&lt;.toc-lorem&gt;&gt;
+</pre>
+</div>
+<div created="20150430154234863" modified="20150430154355656" tags="Resources" title="SeeAlso by Matias Goldman" type="text/vnd.tiddlywiki" url="http://seealso.tiddlyspot.com">
+<pre>A simple technique for adding tag-based cross references to the default view template.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+See also: - is a feature to generate a &quot;See also:&quot; section after the tiddler text, somewhat like in Wikipedia articles.
+&lt;&lt;&lt;
 </pre>
 </div>
 <div created="20150117204109000" modified="20150129133830000" tags="Concepts" title="Selection Constructors" type="text/vnd.tiddlywiki">
@@ -18370,6 +18375,7 @@ These are the available system tags
 * {{$:/tags/ControlPanel/Toolbars||$:/core/ui/TagTemplate}} for control panel toolbar customisation tabs
 * {{$:/tags/EditTemplate||$:/core/ui/TagTemplate}} for the edit template
 * {{$:/tags/EditToolbar||$:/core/ui/TagTemplate}} for the edit mode tiddler toolbar
+* {{$:/tags/Exporter||$:/core/ui/TagTemplate}} for the exporters
 * {{$:/tags/Filter||$:/core/ui/TagTemplate}} for filters in advanced seach sample filter dropdown
 * {{$:/tags/Image||$:/core/ui/TagTemplate}} for (core) images
 * {{$:/tags/Macro||$:/core/ui/TagTemplate}} for global macros
@@ -18377,7 +18383,9 @@ These are the available system tags
 * {{$:/tags/PageControls||$:/core/ui/TagTemplate}} for the page control tools in the sidebar
 * {{$:/tags/PageTemplate||$:/core/ui/TagTemplate}} for the main page elements
 * {{$:/tags/Palette||$:/core/ui/TagTemplate}} for colour palettes
+* {{$:/tags/PluginLibrary||$:/core/ui/TagTemplate}} for the plugin library
 * {{$:/tags/RawMarkup||$:/core/ui/TagTemplate}} for raw markup to be included in the generated HTML file
+* {{$:/tags/SearchResults||$:/core/ui/TagTemplate}} for customised search results
 * {{$:/tags/SideBar||$:/core/ui/TagTemplate}} for sidebar tabs
 * {{$:/tags/Stylesheet||$:/core/ui/TagTemplate}} to indicate that a tiddler should be applied as a CSS stylesheet
 * {{$:/tags/TiddlerInfo||$:/core/ui/TagTemplate}} for tiddler info panel tabs
@@ -19325,7 +19333,7 @@ TiddlyClip allows parts of webpages to be clipped into a TiddlyWiki, and consist
 &lt;&lt;&lt;
 </pre>
 </div>
-<div created="20140126125259638" modified="20150412185515402" tags="Definitions Features Saving Configurations" title="TiddlyDesktop" type="text/vnd.tiddlywiki">
+<div created="20140126125259638" modified="20150427121710347" tags="Definitions Features Saving Configurations" title="TiddlyDesktop" type="text/vnd.tiddlywiki">
 <pre>TiddlyDesktop is an app for working with TiddlyWiki files (both TiddlyWikiClassic and TiddlyWiki version 5). It can be installed on Windows, Mac OS X or Linux. It is compatible with TiddlyWiki version 5 and the older TiddlyWikiClassic.
 
 See the [[Introducing TiddlyDesktop Video]]
@@ -19343,7 +19351,93 @@ TiddlyDesktop is based on the OpenSource project [[NW.js]]. The source is on Git
 
 https://github.com/Jermolene/TiddlyDesktop/
 
+See [[TiddlyDesktop Releases]]
 </pre>
+</div>
+<div caption="0.0.1" created="20150419144925501" modified="20150419152103526" released="20140108" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.1" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.1&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+First release - use with extreme caution</pre>
+</div>
+<div caption="0.0.2" created="20150419150123810" modified="20150419154256169" released="20140118" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.2" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.2&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.1...v0.0.2]]
+
+This second version of TiddlyDesktop has the following fixes and improvements:
+
+*The saving mechanism is now TiddlyFox compatible, so TiddlyWiki5 wikis don't need a special plugin to work with TiddlyDesktop
+*TiddlyDesktop is now compatible with TiddlyWiki Classic
+*Chromium Developer Tools now accessible via a pulldown menu
+*Each TiddlyWiki document is now sandboxed, so it isn't possible for malicious or buggy JavaScript to affect other documents
+*Linux 32-bit and 64-bit builds</pre>
+</div>
+<div caption="0.0.3" created="20150419150143521" modified="20150419154240713" released="20140130" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.3" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.3&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.2...v0.0.3]]
+
+This third version of TiddlyDesktop has the following fixes and improvements:
+
+*Access Chromium developer tools with F12
+*No menu bars
+*Fixed problem with paths containing spaces
+*Enabled webkit experimental features
+*Adjusted the main window toolbar to be position: sticky
+*Fixed problem with relative inter-wiki links not working
+*Add &quot;file not found&quot; error indication
+</pre>
+</div>
+<div caption="0.0.4" created="20150419150210402" modified="20150419154800738" released="20150111" tags="TiddlyDesktopReleaseNotes" title="TiddlyDesktop Release 0.0.4" type="text/vnd.tiddlywiki">
+<pre>&lt;a href=&quot;https://github.com/Jermolene/TiddlyDesktop/releases/tag/v0.0.4&quot; class=&quot;tc-btn-big-green&quot; target=&quot;_blank&quot;&gt;
+{{$:/core/images/github}} Download from ~GitHub
+&lt;/a&gt;
+
+[[See GitHub for detailed change history of this release|https://github.com/Jermolene/TiddlyDesktop/compare/v0.0.3...v0.0.4]]
+
+This release includes a major reworking of the internals of TiddlyDesktop. It's really a bit early for general release, but we need feedback to improve it. Please use it with great caution, and consider reverting to v0.0.3 if you run into any problems.
+
+Please report any problems or suggestions via GitHub issues, or post to the TiddlyWiki discussion group:
+
+http://groups.google.com/group/TiddlyWiki
+
+!New Features
+*Warning message when closing windows with unsaved changes (TWC and TW 5.1.8 and above only)
+*Help window
+*Toolbar for TiddlyWiki windows
+*Reveal original file in Finder/Explorer
+*Automatic backups
+Note that there is currently no way to hide the toolbar for TiddlyWiki windows. This will be remedied soon!
+
+!New Architecture
+TiddlyDesktop itself is now an instance of the Node.js edition of TiddlyWiki. TiddlyWiki HTML files are run within embedded, sandboxed iframes with the &quot;backstage&quot; TiddlyWiki providing services such as saving to the file system.
+
+The advantage of this approach is that the user interface and functionality of the desktop application can now be customised and extended with exactly the same techniques that are used in regular TiddlyWiki.
+
+!Coming Soon
+The functionality of this release barely matches that of the previous v0.0.3 version, but it lays the groundwork for a number of other features such as:
+
+*Configurable toolbars
+*Hyperbookmarklets
+*Page zoom
+*Creating new wikis from standard editions and custom templates
+*Dragging _canonical_uri links from the file system
+*Multiple languages
+*One-click copying of text to the clipboard from within TiddlyWiki
+*Global keyboard shortcut for clipping content etc.</pre>
+</div>
+<div caption="~TiddlyDesktop" created="20150419144649101" modified="20150419153948247" tags="Releases" title="TiddlyDesktop Releases" type="text/vnd.tiddlywiki">
+<pre>Here are the details of recent releases of TiddlyDesktop
+
+&lt;$list filter=&quot;[tag[TiddlyDesktopReleaseNotes]!sort[created]limit[1]]&quot;&gt;
+  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[TiddlyDesktopReleaseNotes]!sort[created]]&quot;default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20130825161100000" modified="20140928165957195" tags="Definitions" title="TiddlyFox" type="text/vnd.tiddlywiki">
 <pre>//~TiddlyFox// est une extension pour Firefox qui permet aux fichiers &lt;&lt;tw&gt;&gt; autonomes d'enregistrer leurs modifications directement sur le système de fichiers. //~TiddlyFox// fonctionne aussi bien sur les versions station de travail que mobile de [[Firefox]]. Voir [[Enregistrer avec TiddlyFox|Saving with TiddlyFox]] ou [[Enregistrer avec TiddlyFox pour Android|Saving with TiddlyFox on Android]] pour des instructions détaillées.
@@ -19447,6 +19541,16 @@ Pour plus d'informations, voir :
 * [[ïnstaller TiddlyWiki sur Node.js|Installing TiddlyWiki on Node.js]]
 * [[Utiliser TiddlyWiki avec Node.js|Using TiddlyWiki on Node.js]]
 * [[Mettre à jour TiddlyWiki avec Node.js|Upgrading TiddlyWiki on Node.js]]
+</pre>
+</div>
+<div caption="~TiddlyWiki" created="20131109105400007" modified="20150419163355790" tags="Releases" title="TiddlyWiki Releases" type="text/vnd.tiddlywiki">
+<pre>Here are the details of recent releases of TiddlyWiki5. See [[TiddlyWiki5 Versioning]] for details of how releases are named.
+
+(BetaReleases and AlphaReleases are listed separately).
+
+&lt;$list filter=&quot;[tag[ReleaseNotes]!sort[created]limit[1]]&quot;&gt;
+  &lt;$macrocall $name=&quot;tabs&quot; tabsList=&quot;[tag[ReleaseNotes]!sort[created]]&quot; default={{!!title}} class=&quot;tc-vertical&quot; template=&quot;ReleaseTemplate&quot; /&gt;
+&lt;/$list&gt;
 </pre>
 </div>
 <div title="TiddlyWiki.mp3" type="audio/mp3">
@@ -20313,8 +20417,10 @@ HelloThere,
 See http://tiddlywiki.com/plugins/tiddlywiki/tw2parser/
 </pre>
 </div>
-<div created="20140920124011558" modified="20140920124011558" tags="Resources" title="TWGuides by Andreas Hahn" type="text/vnd.tiddlywiki" url="http://twguides.org/">
+<div created="20140920124011558" modified="20150430154230509" tags="Resources" title="TWGuides by Andreas Hahn" type="text/vnd.tiddlywiki" url="http://twguides.org/">
 <pre>A collection of community tips and tutorials curated by Andreas Hahn, including a handy &quot;customiser&quot; that simplifies creating an empty TiddlyWiki with selected plugins and enhancements.
+
+Updated to include [[Tinka|http://twguides.org/tinka.html]], a plugin that &quot;provides a GUI to create and modify plugins more easily, therefore saving time on the packaging process&quot;.
 
 {{!!url}}
 

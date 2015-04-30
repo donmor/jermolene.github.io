@@ -1951,6 +1951,7 @@ a .doc-attr {
 	background-color: #ecf2ff;
 	padding: 1em;
 	height: 400px;
+	position: relative;
 }.tc-improvement-banner {
 	font-size: 0.7em;
 	background: #fcc;

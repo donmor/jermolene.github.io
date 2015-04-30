@@ -48,7 +48,7 @@ TiddlyWiki Coding Style Guidelines
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 6 months ago
+</a> 12 minutes ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -68,9 +68,9 @@ color:#4e432f;">
 Multiline comments are used to introduce a block of code such as a function definition
 */</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">demoFunction</span><span class="hljs-params">(param,more)</span> </span>{
-    <span class="hljs-comment">// Proper sentence capitalisation for comments</span>
-    <span class="hljs-keyword">if</span>(condition == <span class="hljs-string">"something"</span>) {
-        <span class="hljs-comment">// No space between "if" and the brackets; always spaces around binary operators</span>
+    <span class="hljs-comment">// Proper sentence capitalisation for comments; prefer strict equality checks</span>
+    <span class="hljs-keyword">if</span>(condition === <span class="hljs-string">"something"</span>) {
+        <span class="hljs-comment">// Always use braces, even when optional; no space between "if" and the brackets; always spaces around binary operators</span>
         something = somethingElse;
         myOtherFunction(one,two); <span class="hljs-comment">// No whitespace within function parameters</span>
         <span class="hljs-keyword">do</span> {
