@@ -956,6 +956,7 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 	width: 2em;
 	vertical-align: middle;
+	fill: #ffffff;
 }.tc-sidebar-lists input {
 	color: #333333;
 }.tc-sidebar-lists button {
@@ -1233,7 +1234,12 @@ a.tc-tiddlylink:hover {
 	line-height: 22px;
 }.tc-titlebar, .tc-tiddler-edit-title {
 	overflow: hidden; /* https://github.com/Jermolene/TiddlyWiki5/issues/282 */
+}html body.tc-body.tc-single-tiddler-window {
+	margin: 1em;
+	background: #ffffff;
 }/*
+** Adjustments for fluid-fixed mode
+*/@media (min-width: 960px) {}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
   fill: ;
@@ -1823,6 +1829,7 @@ a.tc-tiddlylink:hover {
 	opacity: 1;
     min-width: 100%;
     min-height: 100%;
+    max-width: 100%;
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-image svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-image img {
 	filter: alpha(opacity=0.8);
