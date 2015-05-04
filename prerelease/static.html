@@ -1323,7 +1323,23 @@ a.tc-tiddlylink:hover {
 	background: #ffffff;
 }/*
 ** Adjustments for fluid-fixed mode
-*/@media (min-width: 960px) {}/*
+*/@media (min-width: 960px) {.tc-story-river {
+		padding-right: 0;
+		position: relative;
+		width: auto;
+		left: 0;
+		margin-right: 350px;
+	}.tc-tiddler-frame {
+		width: 100%;
+	}.tc-sidebar-scrollable {
+		left: auto;
+		bottom: 0;
+		right: 0;
+		width: 350px;
+	}body.tc-body .tc-storyview-zoomin-tiddler {
+		width: 100%;
+		width: calc(100% - 42px);
+	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
   fill: ;
@@ -2359,7 +2375,7 @@ TiddlyWiki Pre-release
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 5 days ago
+</a> 6 days ago
 </div>
 <div class="tc-tags-wrapper"></div>
 
