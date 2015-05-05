@@ -1364,6 +1364,13 @@ a.tc-tiddlylink:hover {
 	text-align: left;
 	color: #333333;
 	line-height: 1.4;
+}.tc-drop-down .tc-prompt {
+	padding: 0 14px;	
+}.tc-drop-down .tc-chooser {
+	border: none;
+}.tc-drop-down .tc-chooser .tc-swatches-horiz {
+	font-size: 0.4em;
+	padding-left: 1.2em;
 }.tc-drop-down .tc-file-input-wrapper {
 	width: 100%;
 }.tc-drop-down .tc-file-input-wrapper button {
@@ -1698,8 +1705,8 @@ a.tc-tiddlylink:hover {
 }.tc-swatch {
 	width: 2em;
 	height: 2em;
-	margin: 4px;
-	border: 1px solid #000;
+	margin: 0.4em;
+	border: 1px solid #888;
 }/*
 ** Table of contents
 */.tc-sidebar-lists .tc-table-of-contents {
