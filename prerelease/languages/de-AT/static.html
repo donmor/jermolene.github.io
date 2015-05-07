@@ -1237,6 +1237,12 @@ a.tc-tiddlylink:hover {
 }html body.tc-body.tc-single-tiddler-window {
 	margin: 1em;
 	background: #ffffff;
+}.tc-single-tiddler-window img,
+.tc-single-tiddler-window svg,
+.tc-single-tiddler-window canvas,
+.tc-single-tiddler-window embed,
+.tc-single-tiddler-window iframe {
+	max-width: 100%;
 }/*
 ** Adjustments for fluid-fixed mode
 */@media (min-width: 960px) {.tc-story-river {
@@ -2065,23 +2071,33 @@ font-weight:bold;
 <div class="tc-tab-buttons ">
 
 <button class=" tc-tab-selected">
+
 Offen
+
 </button>
 
 <button class="">
+
 Inhalt
+
 </button>
 
 <button class="">
+
 Zuletzt
+
 </button>
 
 <button class="">
+
 Tools
+
 </button>
 
 <button class="">
+
 Mehr
+
 </button>
 
 </div><div class="tc-tab-divider "></div><div class="tc-tab-content ">

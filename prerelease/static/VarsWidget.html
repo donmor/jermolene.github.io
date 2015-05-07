@@ -17,7 +17,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -39,7 +39,7 @@
 
 
 <h2 class="tc-title">
-Dashes in WikiText
+VarsWidget
 </h2>
 
 </div>
@@ -48,7 +48,7 @@ Dashes in WikiText
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 17 months ago
+</a> 11 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -56,7 +56,7 @@ Dashes in WikiText
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- WikiText
+ Widgets
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -71,8 +71,17 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><p>You can create an n-dash with a double hyphen <code>--</code> and an m-dash with a triple hyphen <code>---</code>. For example – this is an example — and so is this
-</p></div>
+<div class="tc-tiddler-body"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
+
+&lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
+  &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
+&lt;/$vars&gt;</code></pre><p>In contrast, here is the same example using the <code>&lt;$set&gt;</code> widget:</p><pre><code>&lt;$set name=&quot;greeting&quot; value=&quot;Hi&quot; /&gt;
+&lt;$set name=&quot;me&quot; value={{!!title}} /&gt;
+&lt;$set name=&quot;sentence&quot; value=&lt;&lt;helloworld&gt;&gt; /&gt;
+  &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;
+&lt;/$set&gt;</code></pre><h1 class="">Remarks</h1><p>It should be noted that this widget differs from the set widget in the following ways:</p><ul><li>A fallback (also known as &quot;emptyValue&quot;) cannot be specified</li><li>Filters cannot be used to produce a conditional variable assignement</li><li>Variable names must be literal strings</li></ul></div>
 
 
 
