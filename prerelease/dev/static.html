@@ -765,6 +765,7 @@ th {
 	line-height: 20px;
 	color: #4e432f;
 	background-color: #f4d7a3;
+	fill: #4e432f;
 	word-wrap: break-word;
 	
 
@@ -810,8 +811,6 @@ input:not([type]) {
 	background: #e5f8fd;
 }.tc-muted {
 	color: #bbb;
-}svg {
-	fill: #4e432f;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
 }/*
@@ -1247,23 +1246,7 @@ a.tc-tiddlylink:hover {
 	max-width: 100%;
 }/*
 ** Adjustments for fluid-fixed mode
-*/@media (min-width: 960px) {.tc-story-river {
-		padding-right: 0;
-		position: relative;
-		width: auto;
-		left: 0;
-		margin-right: 350px;
-	}.tc-tiddler-frame {
-		width: 100%;
-	}.tc-sidebar-scrollable {
-		left: auto;
-		bottom: 0;
-		right: 0;
-		width: 350px;
-	}body.tc-body .tc-storyview-zoomin-tiddler {
-		width: 100%;
-		width: calc(100% - 42px);
-	}}/*
+*/@media (min-width: 960px) {}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
   fill: ;
@@ -1347,8 +1330,9 @@ a.tc-tiddlylink:hover {
 	position: absolute;
 	display: block;
 	width: 100%;
-	width: calc(100% - 84px);
-}/*
+}@media (min-width: 960px) {.tc-storyview-zoomin-tiddler {
+		width: calc(100% - 84px);
+	}}/*
 ** Dropdowns
 */.tc-btn-dropdown {
 	text-align: left;
@@ -1713,12 +1697,12 @@ a.tc-tiddlylink:hover {
 	border: 1px solid #dddddd;
 }.tc-chooser-item {
 	border: 8px;
+	padding: 2px 4px;
 }.tc-chooser-item a.tc-tiddlylink {
 	display: block;
 	text-decoration: none;
 	color: #5778d8;
 	background-color: #e5f8fd;
-	margin: 4px;
 }.tc-chooser-item a.tc-tiddlylink:hover {
 	text-decoration: none;
 	color: #e5f8fd;
@@ -1873,17 +1857,17 @@ a.tc-tiddlylink:hover {
 	width: 3em;
 	height: 3em;
 	
-  -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-     -moz-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-          filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+     -moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+          filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
 	fill: #fff;
 	
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
-     -moz-filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
-          filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
+  -webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+     -moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+          filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 
 }.tc-thumbnail-icon {
 	position: absolute;
@@ -1892,9 +1876,11 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	bottom: 0;
 	display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }.tc-thumbnail-caption {
 	position: absolute;
 	background-color: #777;
