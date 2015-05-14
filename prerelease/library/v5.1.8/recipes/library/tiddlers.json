@@ -154,6 +154,18 @@
         "readme": "This plugin provides a ''saver'' module for saving changes when using TiddlyWiki directly under NW.js (previously known as node-webkit).\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/nodewebkitsaver]]\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/powered-by-tiddlywiki",
+        "description": "Powered by TiddlyWiki Banner",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme",
+        "version": "5.1.9-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin adds a \"Powered by ~TiddlyWiki\" banner that links back to http://tiddlywiki.com\n\nIt's very basic at the moment, but the plan is to improve it by making it more customisable.\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/railroad",
         "description": "Railroad diagram generator",
         "author": "AstridElocson",
