@@ -1712,13 +1712,14 @@ a.tc-tiddlylink:hover {
 	font-weight: bold;
 }.tc-alert-highlight {
 	color: #881122;
-}.tc-static-alert {
-	position: relative;
-}.tc-static-alert-inner {
+}@media (min-width: 960px) {.tc-static-alert {
+		position: relative;
+	}.tc-static-alert-inner {
+		position: absolute;
+		z-index: 100;
+	}}.tc-static-alert-inner {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
-	position: absolute;
-	z-index: 100;
 }/*
 ** Control panel
 */.tc-control-panel td {
