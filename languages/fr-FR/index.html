@@ -13611,17 +13611,17 @@ An example can be seen in the [[template tiddler for JSON exports|$:/core/templa
 See http://tiddlywiki.com/plugins/tiddlywiki/katex/
 </pre>
 </div>
-<div created="20140526204527418" modified="20140912141318967" tags="Features [[Working with TiddlyWiki]]" title="KeyboardShortcuts" type="text/vnd.tiddlywiki">
+<div created="20140526204527418" modified="20150514091409984" tags="Features [[Working with TiddlyWiki]]" title="KeyboardShortcuts" type="text/vnd.tiddlywiki">
 <pre>Keyboard shortcut support is currently very limited but will be improved in later releases.
 
 ! Editing Shortcuts
 
 |Key |Shortcut description |
-|`Ctrl-Enter` |Confirm changes to the draft tiddler containing the keyboard focus |
-|`Escape` |Abandon changes to the draft tiddler containing the keyboard focus |
+|&lt;kbd&gt;ctrl-enter&lt;/kbd&gt; |Confirm changes to the draft tiddler containing the keyboard focus |
+|&lt;kbd&gt;escape&lt;/kbd&gt; |Abandon changes to the draft tiddler containing the keyboard focus |
 </pre>
 </div>
-<div caption="keyboard" created="20140302192136805" modified="20140302192935781" tags="Widgets" title="KeyboardWidget" type="text/vnd.tiddlywiki">
+<div caption="keyboard" created="20140302192136805" modified="20150514091459257" tags="Widgets" title="KeyboardWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
 The keyboard widget allows [[Messages]] to be generated in response to key presses.
@@ -13638,7 +13638,7 @@ The content of the `&lt;$keyboard&gt;` widget is rendered normally. The keyboard
 
 ! Key Strings
 
-Key strings are made up of zero or more of the modifiers ''alt'', ''shift'' or ''ctrl'' followed by the name of a key, all joined with &quot;+&quot; plus symbols. Key names are either the letter or digit printed on the key (eg &quot;a&quot; or &quot;1&quot;), or one of the special keys ''backspace'', ''tab'', ''enter'' or ''escape''.
+Key strings are made up of zero or more of the modifiers &lt;kbd&gt;alt&lt;/kbd&gt;, &lt;kbd&gt;shift&lt;/kbd&gt; or &lt;kbd&gt;ctrl&lt;/kbd&gt; followed by the name of a key, all joined with &quot;+&quot; plus symbols. Key names are either the letter or digit printed on the key (eg &quot;a&quot; or &quot;1&quot;), or one of the special keys &lt;kbd&gt;backspace&lt;/kbd&gt;, &lt;kbd&gt;tab&lt;/kbd&gt;, &lt;kbd&gt;enter&lt;/kbd&gt; or &lt;kbd&gt;escape&lt;/kbd&gt;.
 
 For example:
 
@@ -13697,6 +13697,8 @@ Vous pouvez contribuer en suivant les instructions pour [[traduire TiddlyWiki da
 &lt;/div&gt;
 
 &lt;/$list&gt;
+
+&lt;/div&gt;
 </pre>
 </div>
 <div created="20140923200804020" fr-title="Lancement de TiddlyWiki" modified="20141217193442167" title="Launch of TiddlyWiki" type="text/vnd.tiddlywiki">
@@ -15335,6 +15337,9 @@ La philosophie des [[tiddlers|Tiddlers]] consiste à maximiser les possibilités
 
 TiddlyWiki a pour ambition de proposer une algèbre pour les tiddlers&lt;&lt;dp&gt;&gt; une manière concise d'exprimer et d'explorer les relations entre les diverses pièces d'information.
 </pre>
+</div>
+<div title="Pinstripe.gif" type="image/gif">
+<pre>R0lGODlhAgABAIAAAP////f39yH5BAAAAAAALAAAAAACAAEAAAICDAoAOw==</pre>
 </div>
 <div created="20130826122000000" modified="20141029221758239" tags="Mechanisms" title="PluginMechanism" type="text/vnd.tiddlywiki">
 <pre>[[Plugins]] are bundles of tiddlers that are distributed and managed as a single unit by being packed into a single JSON tiddler. If a tiddler isn't found in the main store, then the registered plugins are searched for it instead.
@@ -17250,7 +17255,7 @@ The return value is a path, but does &lt;&lt;.em not&gt;&gt; end with `/`.
 &lt;&lt;.operator-example 3 &quot;Z Y X W V U T S R Q P O +[rest[5]]&quot;&gt;&gt;
 </pre>
 </div>
-<div caption="reveal" created="20131024141900000" modified="20150310124305795" tags="Widgets" title="RevealWidget" type="text/vnd.tiddlywiki">
+<div caption="reveal" created="20131024141900000" modified="20150518163239603" tags="Widgets" title="RevealWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
 The reveal widget hides or shows its content depending upon the value of a [[state tiddler|StateTiddlers]]. The type of the widget determines the condition for the content being displayed:
@@ -17264,7 +17269,7 @@ The reveal widget hides or shows its content depending upon the value of a [[sta
 The content of the `&lt;$reveal&gt;` widget is displayed according to the rules given above.
 
 |!Attribute |!Description |
-|state |The title of the tiddler containing the state |
+|state |A TextReference containing the state |
 |tag |Overrides the default HTML element tag (`&lt;div&gt;` in block mode or `&lt;span&gt;` in inline mode) |
 |type |The type of matching performed: ''match'', ''nomatch'' or ''popup'' |
 |text |The text to match when the type is ''match'' and ''nomatch'' |
@@ -17293,9 +17298,9 @@ And this is some text
 
 &lt;/$reveal&gt;'&gt;&gt;
 
-!! &quot;Slider&quot;
+!! Accordion or Slider
 
-A slider appears as a single button that can be used to toggle the display of the contained content.
+An &quot;accordion&quot; or &quot;slider&quot; is a button that can be used to toggle the display of associated content.
 
 &lt;&lt;wikitext-example-without-html '&lt;$reveal type=&quot;nomatch&quot; state=&quot;$:/state/SampleReveal2&quot; text=&quot;show&quot;&gt;
 
@@ -17987,7 +17992,7 @@ Note that the palette ''DarkPhotos'' is provided to make the sidebar more readab
 <div caption="set" created="20131115182700000" modified="20150220162217000" tags="Widgets" title="SetWidget">
 <pre>! Introduction
 
-The set variable widget assigns a value to a specified [[variable|Variables]]. The new value of the variable is availale to the content within the set variable widget.
+The set variable widget assigns a value to a specified [[variable|Variables]]. The new value of the variable is available to the content within the set variable widget.
 
 ! Content and Attributes
 
@@ -19000,15 +19005,15 @@ The `test.html` file will be placed in the `output` folder within the wiki folde
 http://tiddlywiki.com/test.html
 </pre>
 </div>
-<div created="20130827075900000" modified="20150124211238000" tags="Concepts" title="TextReference">
+<div created="20130827075900000" modified="20150518180615650" tags="Concepts" title="TextReference" type="text/vnd.tiddlywiki">
 <pre>A TextReference identifies a chunk of text from a tiddler that can be retrieved or modified depending on the context.
 
 Text references are made up of several parts, most of which can be optional:
 
-* `&lt;tiddler title&gt;` - the text [[field|TiddlerFields]] of the specified tiddler
-* `&lt;tiddler title&gt;!!&lt;metadata field&gt;` - a tiddler metadata [[field|TiddlerFields]] (eg, `modified`, `modifier`, `type` etc)
-* `!!&lt;metadata field&gt;` - a metadata [[field|TiddlerFields]] of the current tiddler
-* `&lt;tiddler title&gt;##&lt;property index&gt;` - extracts a named property from DataTiddlers
+* `tiddlerTitle` - the text [[field|TiddlerFields]] of the specified tiddler
+* `tiddlerTitle!!field` - a [[tiddler field|TiddlerFields]] (eg, `modified`, `modifier`, `type` etc)
+* `!!field` - a [[field|TiddlerFields]] of the current tiddler
+* `tiddlerTitle##propertyIndex` - extracts a named property from DataTiddlers
 
 Text references can be used in several places:
 
@@ -20050,7 +20055,7 @@ See also:
 * [[Transclusion with Templates]]
 * TemplateTiddlers
 * TranscludeWidget
-* [[Confusion between Transclusion and Substitution]]
+* [[Transclusion and Substitution]]
 </pre>
 </div>
 <div caption="transclusion" created="20141002004621385" modified="20150221225622000" tags="Variables [[Core Variables]]" title="transclusion Variable" type="text/vnd.tiddlywiki">
@@ -20417,6 +20422,20 @@ HelloThere,
 See http://tiddlywiki.com/plugins/tiddlywiki/tw2parser/
 </pre>
 </div>
+<div created="20150529084054330" modified="20150529084329815" tags="Resources" title="TWaddle by Matias Goldman" type="text/vnd.tiddlywiki" url="http://twaddle.tiddlyspot.com/">
+<pre>A collection of hints and tips, musings and proposals from long-time TiddlyWiki contributor Mat Goldman.
+
+{{!!url}}
+
+&lt;&lt;&lt;
+This is Mat's, a.k.a &lt;:-) little man-cave in the ~TiddlyVerse.
+
+Most TW development is, understandably, based on the premise that //&quot;Improve code ➔ Better TW&quot;//. ''TWaddle'' is also about developing TW but from the perspective that [[Bigger community ⇄ Better TW]]. Thus, TWaddle looks more to people issues - how to attract them, how to make them stick with TW etc.
+
+I'm not a programmer but I //am// a TW enthusiast so I tiddlefiddle enough to make the occasional discovery of something cool. Given the amount of words I utter, it is also a mere numbers game before I say something that makes sense. TWaddle is intended to capture these eventualities. 
+&lt;&lt;&lt;
+</pre>
+</div>
 <div created="20140920124011558" modified="20150430154230509" tags="Resources" title="TWGuides by Andreas Hahn" type="text/vnd.tiddlywiki" url="http://twguides.org/">
 <pre>A collection of community tips and tutorials curated by Andreas Hahn, including a handy &quot;customiser&quot; that simplifies creating an empty TiddlyWiki with selected plugins and enhancements.
 
@@ -20779,7 +20798,7 @@ Les commandes disponibles sont&lt;&lt;dp&gt;&gt;
 &lt;&lt;list-links &quot;[tag[Commands]]&quot;&gt;&gt;
 </pre>
 </div>
-<div created="20131028132700000" modified="20140912141152984" tags="Features" title="UsingSVG" type="text/vnd.tiddlywiki">
+<div created="20131028132700000" modified="20150505063640327" tags="Features" title="UsingSVG" type="text/vnd.tiddlywiki">
 <pre>TiddlyWiki5 allows you to use SVG to display vector graphics in two ways:
 
 * Tiddlers with the type `image/svg+xml` are interpreted as SVG images, and displayed and transcluded as self-contained `&lt;img&gt;` elements with the SVG embedded as a data URI in the `src` attribute.
@@ -20825,7 +20844,10 @@ When embedding SVG elements you can also use WikiText features like transclusion
 &lt;svg width=&quot;150&quot; height=&quot;150&quot;&gt;&lt;circle cx=&quot;75&quot; cy=&quot;75&quot; r={{$:/SVGExampleRadius}} stroke=&quot;black&quot; stroke-width=&quot;2&quot; fill=&quot;green&quot;/&gt;&lt;/svg&gt;
 
 You can edit the value of the radius here: &lt;$edit-text tiddler=&quot;$:/SVGExampleRadius&quot; tag=&quot;input&quot;/&gt;
-</pre>
+
+! Making curved text with SVG
+
+{{Making curved text with SVG}}</pre>
 </div>
 <div created="20141002133113496" modified="20150221215644000" tags="Concepts Reference" title="Variables" type="text/vnd.tiddlywiki">
 <pre>A &lt;&lt;.def variable&gt;&gt; is a snippet of text that can be accessed by name within a particular branch of the [[widget tree|Widgets]]. The snippet is known as the variable's &lt;&lt;.def value&gt;&gt;.
@@ -20948,6 +20970,14 @@ The following example will view the core version of the tiddler [[$:/DefaultTidd
 &lt;$view tiddler=&quot;$:/core&quot; subtiddler=&quot;$:/DefaultTiddlers&quot;/&gt;
 
 '&gt;&gt;
+</pre>
+</div>
+<div created="20150527080809699" modified="20150527080809699" tags="Resources" title="vis.js Timeline by emkay, revived by kixam" type="text/vnd.tiddlywiki" url="http://kixam.github.io/TW5-visjsTimeline/">
+<pre>An interactive timeline visualisation plugin based on [[Vis.js|http://visjs.org]]. A demo can be found here: {{!!url}}.
+
+&lt;&lt;&lt;
+vis.js Timeline is a TiddlyWiki plugin that allows you to link your wiki-topics (tiddlers) in order to create clickable timelines. This project is a direct continuation of [[emkay's plugin|https://github.com/emkayonline/tw5visjs]].
+&lt;&lt;&lt;
 </pre>
 </div>
 <div created="20150117192119000" modified="20150118131707000" title="Wednesday" type="text/vnd.tiddlywiki">
