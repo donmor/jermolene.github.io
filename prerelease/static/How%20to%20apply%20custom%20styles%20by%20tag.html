@@ -52,7 +52,7 @@ How to apply custom styles by tag
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 8 months ago
+</a> 5 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -83,7 +83,12 @@ color:#333333;">
 
 .tc-tagged-NightReader .tc-tiddler-body {
 	font-size: 1.5em;
-}</code></pre><p>The <code>tc-tagged-NightReader</code> class is applied to the entire tiddler and not just the tiddler text. If you want to target a smaller portion of the tiddler you can qualify the CSS selector, as is done here with <code>.tc-tagged-NightReader .tc-tiddler-body</code>.</p><p>Note that tags containing spaces or non-alphanumeric characters will be converted using URI encoding, making the generated CSS classname hard to predict. For example:</p><table><tbody><tr class="evenRow"><th align="left">Tag</th><th align="left">Generated Class Name</th></tr><tr class="oddRow"><td align="left"><code>$:/mytag</code></td><td align="left"><code>tc-tagged-%24%3A%2Fmytag</code></td></tr><tr class="evenRow"><td align="left"><code>one two</code></td><td align="left"><code>tc-tagged-one%20two</code></td></tr><tr class="oddRow"><td align="left"><code>£35.23</code></td><td align="left"><code>tc-tagged-%C2%A335.23</code></td></tr></tbody></table></div>
+}</code></pre><p>The <code>tc-tagged-NightReader</code> class is applied to the entire tiddler and not just the tiddler text. If you want to target a smaller portion of the tiddler you can qualify the CSS selector, as is done here with <code>.tc-tagged-NightReader .tc-tiddler-body</code>.</p><p>Note that tags containing spaces or non-alphanumeric characters will be converted using URI encoding, making the generated CSS classname hard to predict. For example:</p><table><tbody><tr class="evenRow"><th align="left">Tag</th><th align="left">Generated Class Name</th></tr><tr class="oddRow"><td align="left"><code>$:/mytag</code></td><td align="left"><code>tc-tagged-%24%3A%2Fmytag</code></td></tr><tr class="evenRow"><td align="left"><code>Doctor Who</code></td><td align="left"><code>tc-tagged-Doctor%20Who</code></td></tr><tr class="oddRow"><td align="left"><code>£35.23</code></td><td align="left"><code>tc-tagged-%C2%A335.23</code></td></tr></tbody></table><p>Although TiddlyWiki will generate these tags, to actually use them in your css, you will need to escape the percent character in your stylesheet, like:</p><pre><code>.tc-tagged-Doctor\%20Who {
+    background-image: url(./tardis_back.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    color:#FBFBFB;
+}</code></pre></div>
 
 
 
