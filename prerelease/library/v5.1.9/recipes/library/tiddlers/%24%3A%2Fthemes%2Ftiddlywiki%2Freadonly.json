@@ -1,0 +1,12 @@
+{
+    "title": "$:/themes/tiddlywiki/readonly",
+    "name": "ReadOnly",
+    "author": "JeremyRuston",
+    "core-version": ">=5.0.0",
+    "plugin-type": "theme",
+    "description": "Hides the ability to edit tiddlers",
+    "dependents": "$:/themes/tiddlywiki/snowwhite",
+    "version": "5.1.9-prerelease",
+    "type": "application/json",
+    "text": "{\n    \"tiddlers\": {\n        \"$:/themes/tiddlywiki/readonly/styles.tid\": {\n            \"title\": \"$:/themes/tiddlywiki/readonly/styles.tid\",\n            \"tags\": \"[[$:/tags/Stylesheet]]\",\n            \"text\": \"\\\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\\n\\nsvg.tc-image-new-button, svg.tc-image-options-button, svg.tc-image-save-button, svg.tc-image-edit-button, svg.tc-image-delete-button, svg.tc-image-cancel-button, svg.tc-image-done-button {\\n\\tdisplay: none;\\t\\n}\\n\"\n        }\n    }\n}"
+}

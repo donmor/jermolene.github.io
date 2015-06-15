@@ -4994,7 +4994,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/core/templates/static.tiddler.html&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/static.tiddler.html&quot;,
-            &quot;text&quot;: &quot;\\define tv-wikilink-template() $uri_doubleencoded$.html\n\\define tv-config-toolbar-icons() no\n\\define tv-config-toolbar-text() no\n\\define tv-config-toolbar-class() tc-btn-invisible\n`&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html;charset=utf-8\&quot; /&gt;\n&lt;meta name=\&quot;generator\&quot; content=\&quot;TiddlyWiki\&quot; /&gt;\n&lt;meta name=\&quot;tiddlywiki-version\&quot; content=\&quot;`{{$:/core/templates/version}}`\&quot; /&gt;\n&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0\&quot; /&gt;\n&lt;meta name=\&quot;apple-mobile-web-app-capable\&quot; content=\&quot;yes\&quot; /&gt;\n&lt;meta name=\&quot;apple-mobile-web-app-status-bar-style\&quot; content=\&quot;black-translucent\&quot; /&gt;\n&lt;meta name=\&quot;format-detection\&quot; content=\&quot;telephone=no\&quot;&gt;\n&lt;link id=\&quot;faviconLink\&quot; rel=\&quot;shortcut icon\&quot; href=\&quot;favicon.ico\&quot;&gt;\n&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;static.css\&quot;&gt;\n&lt;title&gt;`{{$:/core/wiki/title}}`&lt;/title&gt;\n&lt;/head&gt;\n&lt;body class=\&quot;tc-body\&quot;&gt;\n`{{$:/StaticBanner||$:/core/templates/html-tiddler}}`\n&lt;section class=\&quot;tc-story-river\&quot;&gt;\n`&lt;$importvariables filter=\&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\&quot;&gt;\n&lt;$view tiddler=\&quot;$:/core/ui/ViewTemplate\&quot; format=\&quot;htmlwikified\&quot;/&gt;\n&lt;/$importvariables&gt;`\n&lt;/section&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n`&quot;
+            &quot;text&quot;: &quot;\\define tv-wikilink-template() $uri_doubleencoded$.html\n\\define tv-config-toolbar-icons() no\n\\define tv-config-toolbar-text() no\n\\define tv-config-toolbar-class() tc-btn-invisible\n`&lt;!doctype html&gt;\n&lt;html&gt;\n&lt;head&gt;\n&lt;meta http-equiv=\&quot;Content-Type\&quot; content=\&quot;text/html;charset=utf-8\&quot; /&gt;\n&lt;meta name=\&quot;generator\&quot; content=\&quot;TiddlyWiki\&quot; /&gt;\n&lt;meta name=\&quot;tiddlywiki-version\&quot; content=\&quot;`{{$:/core/templates/version}}`\&quot; /&gt;\n&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1.0\&quot; /&gt;\n&lt;meta name=\&quot;apple-mobile-web-app-capable\&quot; content=\&quot;yes\&quot; /&gt;\n&lt;meta name=\&quot;apple-mobile-web-app-status-bar-style\&quot; content=\&quot;black-translucent\&quot; /&gt;\n&lt;meta name=\&quot;format-detection\&quot; content=\&quot;telephone=no\&quot;&gt;\n&lt;link id=\&quot;faviconLink\&quot; rel=\&quot;shortcut icon\&quot; href=\&quot;favicon.ico\&quot;&gt;\n&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;static.css\&quot;&gt;\n&lt;title&gt;`&lt;$view field=\&quot;caption\&quot;&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$view&gt;: {{$:/core/wiki/title}}`&lt;/title&gt;\n&lt;/head&gt;\n&lt;body class=\&quot;tc-body\&quot;&gt;\n`{{$:/StaticBanner||$:/core/templates/html-tiddler}}`\n&lt;section class=\&quot;tc-story-river\&quot;&gt;\n`&lt;$importvariables filter=\&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\&quot;&gt;\n&lt;$view tiddler=\&quot;$:/core/ui/ViewTemplate\&quot; format=\&quot;htmlwikified\&quot;/&gt;\n&lt;/$importvariables&gt;`\n&lt;/section&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n`&quot;
         },
         &quot;$:/core/templates/store.area.template.html&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/store.area.template.html&quot;,
@@ -6351,6 +6351,41 @@ GettingStarted
 Community
 </pre>
 </div>
+<div module-type="macro" tags="$:/tags/Macro" title="$:/edition/tw5.com/dropbox-url.js" type="application/javascript">
+<pre>/*\
+title: $:/edition/tw5.com/dropbox-url.js
+type: application/javascript
+tags: $:/tags/Macro
+module-type: macro
+
+Implements the Dropbox URL converter macro.
+
+```
+&lt;$macrocall $name=&quot;dropbox-url&quot; url={{$:/temp/dropbox}}/&gt;
+```
+
+\*/
+
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+&quot;use strict&quot;;
+
+exports.name = &quot;dropbox-url&quot;;
+
+exports.params = [
+	{name: &quot;url&quot;, default: &quot;https://www.dropbox.com/s/&lt;gobbledegook&gt;/mywiki.html&quot;}
+];
+
+exports.run = function(url) {
+	url = url.replace(&quot;www.dropbox.com&quot;,&quot;dl.dropboxusercontent.com&quot;);
+	return &quot;`&quot; + url + &quot;` &lt;small&gt;([[open|&quot; + url + &quot;]])&lt;/small&gt;&quot;;
+};
+
+})();
+</pre>
+</div>
 <div created="20150117152607000" modified="20150228081437000" tags="$:/tags/Macro" title="$:/editions/tw5.com/doc-macros">
 <pre>\define .concat(1,2,3,4,5) $1$$2$$3$$4$$5$
 
@@ -7642,6 +7677,22 @@ yes
         &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/ToolbarButtons/Text/Description&quot;,
             &quot;text&quot;: &quot;包含文本&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Caption&quot;,
+            &quot;text&quot;: &quot;条目标题&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Hint&quot;,
+            &quot;text&quot;: &quot;可选地显示条目标题为链接&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/No/Description&quot;,
+            &quot;text&quot;: &quot;不显示条目标题为链接&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Yes/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Yes/Description&quot;,
+            &quot;text&quot;: &quot;显示条目标题为链接&quot;
         },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
@@ -17684,7 +17735,7 @@ The current shadow tiddlers are:
 &lt;$list filter=&quot;[all[shadows]sort[title]]&quot;/&gt;
 </pre>
 </div>
-<div created="20140122085818089" modified="20140919160722247" tags="Learning" title="Sharing a TiddlyWiki on Dropbox" type="text/vnd.tiddlywiki">
+<div created="20140122085818089" modified="20150608032039504" tags="Learning" title="Sharing a TiddlyWiki on Dropbox" type="text/vnd.tiddlywiki">
 <pre>You can work on a TiddlyWiki file in Dropbox and publish a URL that anyone can use to see a read-only view of the file.
 
 # Save your TiddlyWiki file within your Dropbox folder
@@ -17696,6 +17747,14 @@ The current shadow tiddlers are:
 #&gt; `https://dl.dropboxusercontent.com/s/&lt;gobbledegook&gt;/mywiki.html`
 
 The result is a &quot;secret&quot; URL that you can send to other people to enable them to see the wiki.
+
+----
+
+Enter a generated URL here and you can copy and paste the secret URL:
+
+&lt;$edit-text tiddler=&quot;$:/temp/dropboxurl&quot; default=&quot;https://www.dropbox.com/s/&lt;gobbledegook&gt;/mywiki.html&quot; tag=&quot;input&quot; type=&quot;text&quot; size=&quot;60&quot;/&gt;
+
+&lt;$macrocall $name=&quot;dropbox-url&quot; url={{$:/temp/dropboxurl}}/&gt;
 </pre>
 </div>
 <div created="20140908163900000" modified="20140919160707386" tags="Learning" title="Sharing your tiddlers with others" type="text/vnd.tiddlywiki">
