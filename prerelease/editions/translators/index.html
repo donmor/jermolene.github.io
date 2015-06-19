@@ -4303,7 +4303,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;widget&quot;
         },
         &quot;$:/core/modules/widgets/navigator.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/navigator.js\ntype: application/javascript\nmodule-type: widget\n\nNavigator widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar IMPORT_TITLE = \&quot;$:/Import\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar NavigatorWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n\tthis.addEventListeners([\n\t\t{type: \&quot;tm-navigate\&quot;, handler: \&quot;handleNavigateEvent\&quot;},\n\t\t{type: \&quot;tm-edit-tiddler\&quot;, handler: \&quot;handleEditTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-delete-tiddler\&quot;, handler: \&quot;handleDeleteTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-save-tiddler\&quot;, handler: \&quot;handleSaveTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-cancel-tiddler\&quot;, handler: \&quot;handleCancelTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-close-tiddler\&quot;, handler: \&quot;handleCloseTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-close-all-tiddlers\&quot;, handler: \&quot;handleCloseAllTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-close-other-tiddlers\&quot;, handler: \&quot;handleCloseOtherTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-new-tiddler\&quot;, handler: \&quot;handleNewTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-import-tiddlers\&quot;, handler: \&quot;handleImportTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-perform-import\&quot;, handler: \&quot;handlePerformImportEvent\&quot;}\n\t]);\n};\n\n/*\nInherit from the base widget class\n*/\nNavigatorWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nNavigatorWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tthis.execute();\n\tthis.renderChildren(parent,nextSibling);\n};\n\n/*\nCompute the internal state of the widget\n*/\nNavigatorWidget.prototype.execute = function() {\n\t// Get our parameters\n\tthis.storyTitle = this.getAttribute(\&quot;story\&quot;);\n\tthis.historyTitle = this.getAttribute(\&quot;history\&quot;);\n\t// Construct the child widgets\n\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nNavigatorWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.story || changedAttributes.history) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn this.refreshChildren(changedTiddlers);\t\t\n\t}\n};\n\nNavigatorWidget.prototype.getStoryList = function() {\n\treturn this.storyTitle ? this.wiki.getTiddlerList(this.storyTitle) : null;\n};\n\nNavigatorWidget.prototype.saveStoryList = function(storyList) {\n\tvar storyTiddler = this.wiki.getTiddler(this.storyTitle);\n\tthis.wiki.addTiddler(new $tw.Tiddler(\n\t\t{title: this.storyTitle},\n\t\tstoryTiddler,\n\t\t{list: storyList}\n\t));\n};\n\nNavigatorWidget.prototype.removeTitleFromStory = function(storyList,title) {\n\tvar p = storyList.indexOf(title);\n\twhile(p !== -1) {\n\t\tstoryList.splice(p,1);\n\t\tp = storyList.indexOf(title);\n\t}\n};\n\nNavigatorWidget.prototype.replaceFirstTitleInStory = function(storyList,oldTitle,newTitle) {\n\tvar pos = storyList.indexOf(oldTitle);\n\tif(pos !== -1) {\n\t\tstoryList[pos] = newTitle;\n\t\tdo {\n\t\t\tpos = storyList.indexOf(oldTitle,pos + 1);\n\t\t\tif(pos !== -1) {\n\t\t\t\tstoryList.splice(pos,1);\n\t\t\t}\n\t\t} while(pos !== -1);\n\t} else {\n\t\tstoryList.splice(0,0,newTitle);\n\t}\n};\n\nNavigatorWidget.prototype.addToStory = function(title,fromTitle) {\n\tvar storyList = this.getStoryList();\n\t// Quit if we cannot get hold of the story list\n\tif(!storyList) {\n\t\treturn;\n\t}\n\t// See if the tiddler is already there\n\tvar slot = storyList.indexOf(title);\n\t// Quit if it already exists in the story river\n\tif(slot &gt;= 0) {\n\t\treturn;\n\t}\n\t// First we try to find the position of the story element we navigated from\n\tvar fromIndex = storyList.indexOf(fromTitle);\n\tif(fromIndex &gt;= 0) {\n\t\t// How to open internal links that were clicked from *within* the story river?\n\t\tvar openLinkFromInsideRiver = $tw.wiki.getTiddlerText(\&quot;$:/config/Navigation/openLinkFromInsideRiver\&quot;,\&quot;below\&quot;);\n\t\t// The tiddler is added from inside the river\n\t\t// Determine where to insert the tiddler; Fallback is \&quot;below\&quot;\n\t\tswitch(openLinkFromInsideRiver) {\n\t\t\tcase \&quot;top\&quot;:\n\t\t\t\tslot = 0;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;bottom\&quot;:\n\t\t\t\tslot = storyList.length;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;above\&quot;:\n\t\t\t\tslot = fromIndex;\n\t\t\t\tbreak;\n\t\t\tdefault:\n\t\t\t\tslot = fromIndex + 1;\n\t\t}\n\t} else {\n\t\t// The tiddler is opened from outside the river.\n\t\tvar openLinkFromOutsideRiver = $tw.wiki.getTiddlerText(\&quot;$:/config/Navigation/openLinkFromOutsideRiver\&quot;,\&quot;top\&quot;);\n\t\t// Determine where to insert the tiddler; Default is \&quot;top\&quot;\n\t\tif(openLinkFromOutsideRiver === \&quot;bottom\&quot;) {\n\t\t\t// Insert at bottom\n\t\t\tslot = storyList.length;\n\t\t} else {\n\t\t\t// Insert at top\n\t\t\tslot = 0;\n\t\t}\n\t}\n\t// Add the tiddler\n\tstoryList.splice(slot,0,title);\n\t// Save the story\n\tthis.saveStoryList(storyList);\n};\n\n/*\nAdd a new record to the top of the history stack\ntitle: a title string or an array of title strings\nfromPageRect: page coordinates of the origin of the navigation\n*/\nNavigatorWidget.prototype.addToHistory = function(title,fromPageRect) {\n\tthis.wiki.addToHistory(title,fromPageRect,this.historyTitle);\n};\n\n/*\nHandle a tm-navigate event\n*/\nNavigatorWidget.prototype.handleNavigateEvent = function(event) {\n\tif(event.navigateTo) {\n\t\tthis.addToStory(event.navigateTo,event.navigateFromTitle);\n\t\tif(!event.navigateSuppressNavigation) {\n\t\t\tthis.addToHistory(event.navigateTo,event.navigateFromClientRect);\n\t\t}\n\t}\n\treturn false;\n};\n\n// Close a specified tiddler\nNavigatorWidget.prototype.handleCloseTiddlerEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle,\n\t\tstoryList = this.getStoryList();\n\t// Look for tiddlers with this title to close\n\tthis.removeTitleFromStory(storyList,title);\n\tthis.saveStoryList(storyList);\n\treturn false;\n};\n\n// Close all tiddlers\nNavigatorWidget.prototype.handleCloseAllTiddlersEvent = function(event) {\n\tthis.saveStoryList([]);\n\treturn false;\n};\n\n// Close other tiddlers\nNavigatorWidget.prototype.handleCloseOtherTiddlersEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle;\n\tthis.saveStoryList([title]);\n\treturn false;\n};\n\n// Place a tiddler in edit mode\nNavigatorWidget.prototype.handleEditTiddlerEvent = function(event) {\n\tvar self = this;\n\tfunction isUnmodifiedShadow(title) {\n\t\treturn self.wiki.isShadowTiddler(title) &amp;&amp; !self.wiki.tiddlerExists(title);\n\t}\n\tfunction confirmEditShadow(title) {\n\t\treturn confirm($tw.language.getString(\n\t\t\t\&quot;ConfirmEditShadowTiddler\&quot;,\n\t\t\t{variables:\n\t\t\t\t{title: title}\n\t\t\t}\n\t\t));\n\t}\n\tvar title = event.param || event.tiddlerTitle;\n\tif(isUnmodifiedShadow(title) &amp;&amp; !confirmEditShadow(title)) {\n\t\treturn false;\n\t}\n\t// Replace the specified tiddler with a draft in edit mode\n\tvar draftTiddler = this.makeDraftTiddler(title),\n\t\tdraftTitle = draftTiddler.fields.title,\n\t\tstoryList = this.getStoryList();\n\tthis.removeTitleFromStory(storyList,draftTitle);\n\tthis.replaceFirstTitleInStory(storyList,title,draftTitle);\n\tthis.addToHistory(draftTitle,event.navigateFromClientRect);\n\tthis.saveStoryList(storyList);\n\treturn false;\n};\n\n// Delete a tiddler\nNavigatorWidget.prototype.handleDeleteTiddlerEvent = function(event) {\n\t// Get the tiddler we're deleting\n\tvar title = event.param || event.tiddlerTitle,\n\t\ttiddler = this.wiki.getTiddler(title),\n\t\tstoryList = this.getStoryList(),\n\t\toriginalTitle = tiddler ? tiddler.fields[\&quot;draft.of\&quot;] : \&quot;\&quot;,\n\t\tconfirmationTitle;\n\tif(!tiddler) {\n\t\treturn false;\n\t}\n\t// Check if the tiddler we're deleting is in draft mode\n\tif(originalTitle) {\n\t\t// If so, we'll prompt for confirmation referencing the original tiddler\n\t\tconfirmationTitle = originalTitle;\n\t} else {\n\t\t// If not a draft, then prompt for confirmation referencing the specified tiddler\n\t\tconfirmationTitle = title;\n\t}\n\t// Seek confirmation\n\tif((this.wiki.getTiddler(originalTitle) || (tiddler.fields.text || \&quot;\&quot;) !== \&quot;\&quot;) &amp;&amp; !confirm($tw.language.getString(\n\t\t\t\t\&quot;ConfirmDeleteTiddler\&quot;,\n\t\t\t\t{variables:\n\t\t\t\t\t{title: confirmationTitle}\n\t\t\t\t}\n\t\t\t))) {\n\t\treturn false;\n\t}\n\t// Delete the original tiddler\n\tif(originalTitle) {\n\t\tthis.wiki.deleteTiddler(originalTitle);\n\t\tthis.removeTitleFromStory(storyList,originalTitle);\n\t}\n\t// Delete this tiddler\n\tthis.wiki.deleteTiddler(title);\n\t// Remove the closed tiddler from the story\n\tthis.removeTitleFromStory(storyList,title);\n\tthis.saveStoryList(storyList);\n\t// Trigger an autosave\n\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n\treturn false;\n};\n\n/*\nCreate/reuse the draft tiddler for a given title\n*/\nNavigatorWidget.prototype.makeDraftTiddler = function(targetTitle) {\n\t// See if there is already a draft tiddler for this tiddler\n\tvar draftTitle = this.wiki.findDraft(targetTitle);\n\tif(draftTitle) {\n\t\treturn this.wiki.getTiddler(draftTitle);\n\t}\n\t// Get the current value of the tiddler we're editing\n\tvar tiddler = this.wiki.getTiddler(targetTitle);\n\t// Save the initial value of the draft tiddler\n\tdraftTitle = this.generateDraftTitle(targetTitle);\n\tvar draftTiddler = new $tw.Tiddler(\n\t\t\ttiddler,\n\t\t\t{\n\t\t\t\ttitle: draftTitle,\n\t\t\t\t\&quot;draft.title\&quot;: targetTitle,\n\t\t\t\t\&quot;draft.of\&quot;: targetTitle\n\t\t\t},\n\t\t\tthis.wiki.getModificationFields()\n\t\t);\n\tthis.wiki.addTiddler(draftTiddler);\n\treturn draftTiddler;\n};\n\n/*\nGenerate a title for the draft of a given tiddler\n*/\nNavigatorWidget.prototype.generateDraftTitle = function(title) {\n\tvar c = 0,\n\t\tdraftTitle;\n\tdo {\n\t\tdraftTitle = \&quot;Draft \&quot; + (c ? (c + 1) + \&quot; \&quot; : \&quot;\&quot;) + \&quot;of '\&quot; + title + \&quot;'\&quot;;\n\t\tc++;\n\t} while(this.wiki.tiddlerExists(draftTitle));\n\treturn draftTitle;\n};\n\n// Take a tiddler out of edit mode, saving the changes\nNavigatorWidget.prototype.handleSaveTiddlerEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle,\n\t\ttiddler = this.wiki.getTiddler(title),\n\t\tstoryList = this.getStoryList();\n\t// Replace the original tiddler with the draft\n\tif(tiddler) {\n\t\tvar draftTitle = (tiddler.fields[\&quot;draft.title\&quot;] || \&quot;\&quot;).trim(),\n\t\t\tdraftOf = (tiddler.fields[\&quot;draft.of\&quot;] || \&quot;\&quot;).trim();\n\t\tif(draftTitle) {\n\t\t\tvar isRename = draftOf !== draftTitle,\n\t\t\t\tisConfirmed = true;\n\t\t\tif(isRename &amp;&amp; this.wiki.tiddlerExists(draftTitle)) {\n\t\t\t\tisConfirmed = confirm($tw.language.getString(\n\t\t\t\t\t\&quot;ConfirmOverwriteTiddler\&quot;,\n\t\t\t\t\t{variables:\n\t\t\t\t\t\t{title: draftTitle}\n\t\t\t\t\t}\n\t\t\t\t));\n\t\t\t}\n\t\t\tif(isConfirmed) {\n\t\t\t\t// Save the draft tiddler as the real tiddler\n\t\t\t\tthis.wiki.addTiddler(new $tw.Tiddler(this.wiki.getCreationFields(),tiddler,{\n\t\t\t\t\ttitle: draftTitle,\n\t\t\t\t\t\&quot;draft.title\&quot;: undefined,\n\t\t\t\t\t\&quot;draft.of\&quot;: undefined\n\t\t\t\t},this.wiki.getModificationFields()));\n\t\t\t\t// Remove the draft tiddler\n\t\t\t\tthis.wiki.deleteTiddler(title);\n\t\t\t\t// Remove the original tiddler if we're renaming it\n\t\t\t\tif(isRename) {\n\t\t\t\t\tthis.wiki.deleteTiddler(draftOf);\n\t\t\t\t}\n\t\t\t\t// Replace the draft in the story with the original\n\t\t\t\tthis.replaceFirstTitleInStory(storyList,title,draftTitle);\n\t\t\t\tthis.addToHistory(draftTitle,event.navigateFromClientRect);\n\t\t\t\tif(draftTitle !== this.storyTitle) {\n\t\t\t\t\tthis.saveStoryList(storyList);\n\t\t\t\t}\n\t\t\t\t// Trigger an autosave\n\t\t\t\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n\t\t\t}\n\t\t}\n\t}\n\treturn false;\n};\n\n// Take a tiddler out of edit mode without saving the changes\nNavigatorWidget.prototype.handleCancelTiddlerEvent = function(event) {\n\t// Flip the specified tiddler from draft back to the original\n\tvar draftTitle = event.param || event.tiddlerTitle,\n\t\tdraftTiddler = this.wiki.getTiddler(draftTitle),\n\t\toriginalTitle = draftTiddler &amp;&amp; draftTiddler.fields[\&quot;draft.of\&quot;];\n\tif(draftTiddler &amp;&amp; originalTitle) {\n\t\t// Ask for confirmation if the tiddler text has changed\n\t\tvar isConfirmed = true,\n\t\t\toriginalTiddler = this.wiki.getTiddler(originalTitle),\n\t\t\tstoryList = this.getStoryList();\n\t\tif(this.wiki.isDraftModified(draftTitle)) {\n\t\t\tisConfirmed = confirm($tw.language.getString(\n\t\t\t\t\&quot;ConfirmCancelTiddler\&quot;,\n\t\t\t\t{variables:\n\t\t\t\t\t{title: draftTitle}\n\t\t\t\t}\n\t\t\t));\n\t\t}\n\t\t// Remove the draft tiddler\n\t\tif(isConfirmed) {\n\t\t\tthis.wiki.deleteTiddler(draftTitle);\n\t\t\tif(originalTiddler) {\n\t\t\t\tthis.replaceFirstTitleInStory(storyList,draftTitle,originalTitle);\n\t\t\t\tthis.addToHistory(originalTitle,event.navigateFromClientRect);\n\t\t\t} else {\n\t\t\t\tthis.removeTitleFromStory(storyList,draftTitle);\n\t\t\t}\n\t\t\tthis.saveStoryList(storyList);\t\n\t\t}\n\t}\n\treturn false;\n};\n\n// Create a new draft tiddler\n// event.param can either be the title of a template tiddler, or a hashmap of fields.\n//\n// The title of the newly created tiddler follows these rules:\n// * If a hashmap was used and a title field was specified, use that title\n// * If a hashmap was used without a title field, use a default title, if necessary making it unique with a numeric suffix\n// * If a template tiddler was used, use the title of the template, if necessary making it unique with a numeric suffix\n//\n// If a draft of the target tiddler already exists then it is reused\nNavigatorWidget.prototype.handleNewTiddlerEvent = function(event) {\n\t// Get the story details\n\tvar storyList = this.getStoryList(),\n\t\ttemplateTiddler, additionalFields, title, draftTitle, existingTiddler;\n\t// Get the template tiddler (if any)\n\tif(typeof event.param === \&quot;string\&quot;) {\n\t\t// Get the template tiddler\n\t\ttemplateTiddler = this.wiki.getTiddler(event.param);\n\t\t// Generate a new title\n\t\ttitle = this.wiki.generateNewTitle(event.param || $tw.language.getString(\&quot;DefaultNewTiddlerTitle\&quot;));\n\t}\n\t// Get the specified additional fields\n\tif(typeof event.paramObject === \&quot;object\&quot;) {\n\t\tadditionalFields = event.paramObject;\n\t}\n\tif(typeof event.param === \&quot;object\&quot;) { // Backwards compatibility with 5.1.3\n\t\tadditionalFields = event.param;\n\t}\n\tif(additionalFields &amp;&amp; additionalFields.title) {\n\t\ttitle = additionalFields.title;\n\t}\n\t// Generate a title if we don't have one\n\ttitle = title || this.wiki.generateNewTitle($tw.language.getString(\&quot;DefaultNewTiddlerTitle\&quot;));\n\t// Find any existing draft for this tiddler\n\tdraftTitle = this.wiki.findDraft(title);\n\t// Pull in any existing tiddler\n\tif(draftTitle) {\n\t\texistingTiddler = this.wiki.getTiddler(draftTitle);\n\t} else {\n\t\tdraftTitle = this.generateDraftTitle(title);\n\t\texistingTiddler = this.wiki.getTiddler(title);\n\t}\n\t// Merge the tags\n\tvar mergedTags = [];\n\tif(existingTiddler &amp;&amp; existingTiddler.fields.tags) {\n\t\t$tw.utils.pushTop(mergedTags,existingTiddler.fields.tags)\n\t}\n\tif(additionalFields &amp;&amp; additionalFields.tags) {\n\t\t// Merge tags\n\t\tmergedTags = $tw.utils.pushTop(mergedTags,$tw.utils.parseStringArray(additionalFields.tags));\n\t}\n\tif(templateTiddler &amp;&amp; templateTiddler.fields.tags) {\n\t\t// Merge tags\n\t\tmergedTags = $tw.utils.pushTop(mergedTags,templateTiddler.fields.tags);\n\t}\n\t// Save the draft tiddler\n\tvar draftTiddler = new $tw.Tiddler({\n\t\t\ttext: \&quot;\&quot;,\n\t\t\t\&quot;draft.title\&quot;: title\n\t\t},\n\t\ttemplateTiddler,\n\t\texistingTiddler,\n\t\tadditionalFields,\n\t\tthis.wiki.getCreationFields(),\n\t\t{\n\t\t\ttitle: draftTitle,\n\t\t\t\&quot;draft.of\&quot;: title,\n\t\t\ttags: mergedTags\n\t\t},this.wiki.getModificationFields());\n\tthis.wiki.addTiddler(draftTiddler);\n\t// Update the story to insert the new draft at the top and remove any existing tiddler\n\tif(storyList.indexOf(draftTitle) === -1) {\n\t\tvar slot = storyList.indexOf(event.navigateFromTitle);\n\t\tstoryList.splice(slot + 1,0,draftTitle);\n\t}\n\tif(storyList.indexOf(title) !== -1) {\n\t\tstoryList.splice(storyList.indexOf(title),1);\t\t\n\t}\n\tthis.saveStoryList(storyList);\n\t// Add a new record to the top of the history stack\n\tthis.addToHistory(draftTitle);\n\treturn false;\n};\n\n// Import JSON tiddlers into a pending import tiddler\nNavigatorWidget.prototype.handleImportTiddlersEvent = function(event) {\n\tvar self = this;\n\t// Get the tiddlers\n\tvar tiddlers = [];\n\ttry {\n\t\ttiddlers = JSON.parse(event.param);\t\n\t} catch(e) {\n\t}\n\t// Get the current $:/Import tiddler\n\tvar importTiddler = this.wiki.getTiddler(IMPORT_TITLE),\n\t\timportData = this.wiki.getTiddlerData(IMPORT_TITLE,{}),\n\t\tnewFields = new Object({\n\t\t\ttitle: IMPORT_TITLE,\n\t\t\ttype: \&quot;application/json\&quot;,\n\t\t\t\&quot;plugin-type\&quot;: \&quot;import\&quot;,\n\t\t\t\&quot;status\&quot;: \&quot;pending\&quot;\n\t\t}),\n\t\tincomingTiddlers = [];\n\t// Process each tiddler\n\timportData.tiddlers = importData.tiddlers || {};\n\t$tw.utils.each(tiddlers,function(tiddlerFields) {\n\t\tvar title = tiddlerFields.title;\n\t\tif(title) {\n\t\t\tincomingTiddlers.push(title);\n\t\t\timportData.tiddlers[title] = tiddlerFields;\n\t\t}\n\t});\n\t// Give the active upgrader modules a chance to process the incoming tiddlers\n\tvar messages = this.wiki.invokeUpgraders(incomingTiddlers,importData.tiddlers);\n\t$tw.utils.each(messages,function(message,title) {\n\t\tnewFields[\&quot;message-\&quot; + title] = message;\n\t});\n\t// Deselect any suppressed tiddlers\n\t$tw.utils.each(importData.tiddlers,function(tiddler,title) {\n\t\tif($tw.utils.count(tiddler) === 0) {\n\t\t\tnewFields[\&quot;selection-\&quot; + title] = \&quot;unchecked\&quot;;\n\t\t}\n\t});\n\t// Save the $:/Import tiddler\n\tnewFields.text = JSON.stringify(importData,null,$tw.config.preferences.jsonSpaces);\n\tthis.wiki.addTiddler(new $tw.Tiddler(importTiddler,newFields));\n\t// Update the story and history details\n\tif(this.getVariable(\&quot;tv-auto-open-on-import\&quot;) !== \&quot;no\&quot;) {\n\t\tvar storyList = this.getStoryList(),\n\t\t\thistory = [];\n\t\t// Add it to the story\n\t\tif(storyList.indexOf(IMPORT_TITLE) === -1) {\n\t\t\tstoryList.unshift(IMPORT_TITLE);\n\t\t}\n\t\t// And to history\n\t\thistory.push(IMPORT_TITLE);\n\t\t// Save the updated story and history\n\t\tthis.saveStoryList(storyList);\n\t\tthis.addToHistory(history);\t\t\n\t}\n\treturn false;\n};\n\n// \nNavigatorWidget.prototype.handlePerformImportEvent = function(event) {\n\tvar self = this,\n\t\timportTiddler = this.wiki.getTiddler(event.param),\n\t\timportData = this.wiki.getTiddlerData(event.param,{tiddlers: {}}),\n\t\timportReport = [];\n\t// Add the tiddlers to the store\n\timportReport.push(\&quot;The following tiddlers were imported:\\n\&quot;);\n\t$tw.utils.each(importData.tiddlers,function(tiddlerFields) {\n\t\tvar title = tiddlerFields.title;\n\t\tif(title &amp;&amp; importTiddler &amp;&amp; importTiddler.fields[\&quot;selection-\&quot; + title] !== \&quot;unchecked\&quot;) {\n\t\t\tself.wiki.addTiddler(new $tw.Tiddler(tiddlerFields));\n\t\t\timportReport.push(\&quot;# [[\&quot; + tiddlerFields.title + \&quot;]]\&quot;);\n\t\t}\n\t});\n\t// Replace the $:/Import tiddler with an import report\n\tthis.wiki.addTiddler(new $tw.Tiddler({\n\t\ttitle: IMPORT_TITLE,\n\t\ttext: importReport.join(\&quot;\\n\&quot;),\n\t\t\&quot;status\&quot;: \&quot;complete\&quot;\n\t}));\n\t// Navigate to the $:/Import tiddler\n\tthis.addToHistory([IMPORT_TITLE]);\n\t// Trigger an autosave\n\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n};\n\nexports.navigator = NavigatorWidget;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/widgets/navigator.js\ntype: application/javascript\nmodule-type: widget\n\nNavigator widget\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar IMPORT_TITLE = \&quot;$:/Import\&quot;;\n\nvar Widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget;\n\nvar NavigatorWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n\tthis.addEventListeners([\n\t\t{type: \&quot;tm-navigate\&quot;, handler: \&quot;handleNavigateEvent\&quot;},\n\t\t{type: \&quot;tm-edit-tiddler\&quot;, handler: \&quot;handleEditTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-delete-tiddler\&quot;, handler: \&quot;handleDeleteTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-save-tiddler\&quot;, handler: \&quot;handleSaveTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-cancel-tiddler\&quot;, handler: \&quot;handleCancelTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-close-tiddler\&quot;, handler: \&quot;handleCloseTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-close-all-tiddlers\&quot;, handler: \&quot;handleCloseAllTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-close-other-tiddlers\&quot;, handler: \&quot;handleCloseOtherTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-new-tiddler\&quot;, handler: \&quot;handleNewTiddlerEvent\&quot;},\n\t\t{type: \&quot;tm-import-tiddlers\&quot;, handler: \&quot;handleImportTiddlersEvent\&quot;},\n\t\t{type: \&quot;tm-perform-import\&quot;, handler: \&quot;handlePerformImportEvent\&quot;}\n\t]);\n};\n\n/*\nInherit from the base widget class\n*/\nNavigatorWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nNavigatorWidget.prototype.render = function(parent,nextSibling) {\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tthis.execute();\n\tthis.renderChildren(parent,nextSibling);\n};\n\n/*\nCompute the internal state of the widget\n*/\nNavigatorWidget.prototype.execute = function() {\n\t// Get our parameters\n\tthis.storyTitle = this.getAttribute(\&quot;story\&quot;);\n\tthis.historyTitle = this.getAttribute(\&quot;history\&quot;);\n\t// Construct the child widgets\n\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nNavigatorWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.story || changedAttributes.history) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn this.refreshChildren(changedTiddlers);\t\t\n\t}\n};\n\nNavigatorWidget.prototype.getStoryList = function() {\n\treturn this.storyTitle ? this.wiki.getTiddlerList(this.storyTitle) : null;\n};\n\nNavigatorWidget.prototype.saveStoryList = function(storyList) {\n\tvar storyTiddler = this.wiki.getTiddler(this.storyTitle);\n\tthis.wiki.addTiddler(new $tw.Tiddler(\n\t\t{title: this.storyTitle},\n\t\tstoryTiddler,\n\t\t{list: storyList}\n\t));\n};\n\nNavigatorWidget.prototype.removeTitleFromStory = function(storyList,title) {\n\tvar p = storyList.indexOf(title);\n\twhile(p !== -1) {\n\t\tstoryList.splice(p,1);\n\t\tp = storyList.indexOf(title);\n\t}\n};\n\nNavigatorWidget.prototype.replaceFirstTitleInStory = function(storyList,oldTitle,newTitle) {\n\tvar pos = storyList.indexOf(oldTitle);\n\tif(pos !== -1) {\n\t\tstoryList[pos] = newTitle;\n\t\tdo {\n\t\t\tpos = storyList.indexOf(oldTitle,pos + 1);\n\t\t\tif(pos !== -1) {\n\t\t\t\tstoryList.splice(pos,1);\n\t\t\t}\n\t\t} while(pos !== -1);\n\t} else {\n\t\tstoryList.splice(0,0,newTitle);\n\t}\n};\n\nNavigatorWidget.prototype.addToStory = function(title,fromTitle) {\n\tvar storyList = this.getStoryList();\n\t// Quit if we cannot get hold of the story list\n\tif(!storyList) {\n\t\treturn;\n\t}\n\t// See if the tiddler is already there\n\tvar slot = storyList.indexOf(title);\n\t// Quit if it already exists in the story river\n\tif(slot &gt;= 0) {\n\t\treturn;\n\t}\n\t// First we try to find the position of the story element we navigated from\n\tvar fromIndex = storyList.indexOf(fromTitle);\n\tif(fromIndex &gt;= 0) {\n\t\t// The tiddler is added from inside the river\n\t\t// Determine where to insert the tiddler; Fallback is \&quot;below\&quot;\n\t\tswitch(this.getAttribute(\&quot;openLinkFromInsideRiver\&quot;,\&quot;below\&quot;)) {\n\t\t\tcase \&quot;top\&quot;:\n\t\t\t\tslot = 0;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;bottom\&quot;:\n\t\t\t\tslot = storyList.length;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;above\&quot;:\n\t\t\t\tslot = fromIndex;\n\t\t\t\tbreak;\n\t\t\tcase \&quot;below\&quot;: // Intentional fall-through\n\t\t\tdefault:\n\t\t\t\tslot = fromIndex + 1;\n\t\t\t\tbreak;\n\t\t}\n\t} else {\n\t\t// The tiddler is opened from outside the river. Determine where to insert the tiddler; default is \&quot;top\&quot;\n\t\tif(this.getAttribute(\&quot;openLinkFromOutsideRiver\&quot;,\&quot;top\&quot;) === \&quot;bottom\&quot;) {\n\t\t\t// Insert at bottom\n\t\t\tslot = storyList.length;\n\t\t} else {\n\t\t\t// Insert at top\n\t\t\tslot = 0;\n\t\t}\n\t}\n\t// Add the tiddler\n\tstoryList.splice(slot,0,title);\n\t// Save the story\n\tthis.saveStoryList(storyList);\n};\n\n/*\nAdd a new record to the top of the history stack\ntitle: a title string or an array of title strings\nfromPageRect: page coordinates of the origin of the navigation\n*/\nNavigatorWidget.prototype.addToHistory = function(title,fromPageRect) {\n\tthis.wiki.addToHistory(title,fromPageRect,this.historyTitle);\n};\n\n/*\nHandle a tm-navigate event\n*/\nNavigatorWidget.prototype.handleNavigateEvent = function(event) {\n\tif(event.navigateTo) {\n\t\tthis.addToStory(event.navigateTo,event.navigateFromTitle);\n\t\tif(!event.navigateSuppressNavigation) {\n\t\t\tthis.addToHistory(event.navigateTo,event.navigateFromClientRect);\n\t\t}\n\t}\n\treturn false;\n};\n\n// Close a specified tiddler\nNavigatorWidget.prototype.handleCloseTiddlerEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle,\n\t\tstoryList = this.getStoryList();\n\t// Look for tiddlers with this title to close\n\tthis.removeTitleFromStory(storyList,title);\n\tthis.saveStoryList(storyList);\n\treturn false;\n};\n\n// Close all tiddlers\nNavigatorWidget.prototype.handleCloseAllTiddlersEvent = function(event) {\n\tthis.saveStoryList([]);\n\treturn false;\n};\n\n// Close other tiddlers\nNavigatorWidget.prototype.handleCloseOtherTiddlersEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle;\n\tthis.saveStoryList([title]);\n\treturn false;\n};\n\n// Place a tiddler in edit mode\nNavigatorWidget.prototype.handleEditTiddlerEvent = function(event) {\n\tvar self = this;\n\tfunction isUnmodifiedShadow(title) {\n\t\treturn self.wiki.isShadowTiddler(title) &amp;&amp; !self.wiki.tiddlerExists(title);\n\t}\n\tfunction confirmEditShadow(title) {\n\t\treturn confirm($tw.language.getString(\n\t\t\t\&quot;ConfirmEditShadowTiddler\&quot;,\n\t\t\t{variables:\n\t\t\t\t{title: title}\n\t\t\t}\n\t\t));\n\t}\n\tvar title = event.param || event.tiddlerTitle;\n\tif(isUnmodifiedShadow(title) &amp;&amp; !confirmEditShadow(title)) {\n\t\treturn false;\n\t}\n\t// Replace the specified tiddler with a draft in edit mode\n\tvar draftTiddler = this.makeDraftTiddler(title),\n\t\tdraftTitle = draftTiddler.fields.title,\n\t\tstoryList = this.getStoryList();\n\tthis.removeTitleFromStory(storyList,draftTitle);\n\tthis.replaceFirstTitleInStory(storyList,title,draftTitle);\n\tthis.addToHistory(draftTitle,event.navigateFromClientRect);\n\tthis.saveStoryList(storyList);\n\treturn false;\n};\n\n// Delete a tiddler\nNavigatorWidget.prototype.handleDeleteTiddlerEvent = function(event) {\n\t// Get the tiddler we're deleting\n\tvar title = event.param || event.tiddlerTitle,\n\t\ttiddler = this.wiki.getTiddler(title),\n\t\tstoryList = this.getStoryList(),\n\t\toriginalTitle = tiddler ? tiddler.fields[\&quot;draft.of\&quot;] : \&quot;\&quot;,\n\t\tconfirmationTitle;\n\tif(!tiddler) {\n\t\treturn false;\n\t}\n\t// Check if the tiddler we're deleting is in draft mode\n\tif(originalTitle) {\n\t\t// If so, we'll prompt for confirmation referencing the original tiddler\n\t\tconfirmationTitle = originalTitle;\n\t} else {\n\t\t// If not a draft, then prompt for confirmation referencing the specified tiddler\n\t\tconfirmationTitle = title;\n\t}\n\t// Seek confirmation\n\tif((this.wiki.getTiddler(originalTitle) || (tiddler.fields.text || \&quot;\&quot;) !== \&quot;\&quot;) &amp;&amp; !confirm($tw.language.getString(\n\t\t\t\t\&quot;ConfirmDeleteTiddler\&quot;,\n\t\t\t\t{variables:\n\t\t\t\t\t{title: confirmationTitle}\n\t\t\t\t}\n\t\t\t))) {\n\t\treturn false;\n\t}\n\t// Delete the original tiddler\n\tif(originalTitle) {\n\t\tthis.wiki.deleteTiddler(originalTitle);\n\t\tthis.removeTitleFromStory(storyList,originalTitle);\n\t}\n\t// Delete this tiddler\n\tthis.wiki.deleteTiddler(title);\n\t// Remove the closed tiddler from the story\n\tthis.removeTitleFromStory(storyList,title);\n\tthis.saveStoryList(storyList);\n\t// Trigger an autosave\n\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n\treturn false;\n};\n\n/*\nCreate/reuse the draft tiddler for a given title\n*/\nNavigatorWidget.prototype.makeDraftTiddler = function(targetTitle) {\n\t// See if there is already a draft tiddler for this tiddler\n\tvar draftTitle = this.wiki.findDraft(targetTitle);\n\tif(draftTitle) {\n\t\treturn this.wiki.getTiddler(draftTitle);\n\t}\n\t// Get the current value of the tiddler we're editing\n\tvar tiddler = this.wiki.getTiddler(targetTitle);\n\t// Save the initial value of the draft tiddler\n\tdraftTitle = this.generateDraftTitle(targetTitle);\n\tvar draftTiddler = new $tw.Tiddler(\n\t\t\ttiddler,\n\t\t\t{\n\t\t\t\ttitle: draftTitle,\n\t\t\t\t\&quot;draft.title\&quot;: targetTitle,\n\t\t\t\t\&quot;draft.of\&quot;: targetTitle\n\t\t\t},\n\t\t\tthis.wiki.getModificationFields()\n\t\t);\n\tthis.wiki.addTiddler(draftTiddler);\n\treturn draftTiddler;\n};\n\n/*\nGenerate a title for the draft of a given tiddler\n*/\nNavigatorWidget.prototype.generateDraftTitle = function(title) {\n\tvar c = 0,\n\t\tdraftTitle;\n\tdo {\n\t\tdraftTitle = \&quot;Draft \&quot; + (c ? (c + 1) + \&quot; \&quot; : \&quot;\&quot;) + \&quot;of '\&quot; + title + \&quot;'\&quot;;\n\t\tc++;\n\t} while(this.wiki.tiddlerExists(draftTitle));\n\treturn draftTitle;\n};\n\n// Take a tiddler out of edit mode, saving the changes\nNavigatorWidget.prototype.handleSaveTiddlerEvent = function(event) {\n\tvar title = event.param || event.tiddlerTitle,\n\t\ttiddler = this.wiki.getTiddler(title),\n\t\tstoryList = this.getStoryList();\n\t// Replace the original tiddler with the draft\n\tif(tiddler) {\n\t\tvar draftTitle = (tiddler.fields[\&quot;draft.title\&quot;] || \&quot;\&quot;).trim(),\n\t\t\tdraftOf = (tiddler.fields[\&quot;draft.of\&quot;] || \&quot;\&quot;).trim();\n\t\tif(draftTitle) {\n\t\t\tvar isRename = draftOf !== draftTitle,\n\t\t\t\tisConfirmed = true;\n\t\t\tif(isRename &amp;&amp; this.wiki.tiddlerExists(draftTitle)) {\n\t\t\t\tisConfirmed = confirm($tw.language.getString(\n\t\t\t\t\t\&quot;ConfirmOverwriteTiddler\&quot;,\n\t\t\t\t\t{variables:\n\t\t\t\t\t\t{title: draftTitle}\n\t\t\t\t\t}\n\t\t\t\t));\n\t\t\t}\n\t\t\tif(isConfirmed) {\n\t\t\t\t// Save the draft tiddler as the real tiddler\n\t\t\t\tthis.wiki.addTiddler(new $tw.Tiddler(this.wiki.getCreationFields(),tiddler,{\n\t\t\t\t\ttitle: draftTitle,\n\t\t\t\t\t\&quot;draft.title\&quot;: undefined,\n\t\t\t\t\t\&quot;draft.of\&quot;: undefined\n\t\t\t\t},this.wiki.getModificationFields()));\n\t\t\t\t// Remove the draft tiddler\n\t\t\t\tthis.wiki.deleteTiddler(title);\n\t\t\t\t// Remove the original tiddler if we're renaming it\n\t\t\t\tif(isRename) {\n\t\t\t\t\tthis.wiki.deleteTiddler(draftOf);\n\t\t\t\t}\n\t\t\t\t// Replace the draft in the story with the original\n\t\t\t\tthis.replaceFirstTitleInStory(storyList,title,draftTitle);\n\t\t\t\tthis.addToHistory(draftTitle,event.navigateFromClientRect);\n\t\t\t\tif(draftTitle !== this.storyTitle) {\n\t\t\t\t\tthis.saveStoryList(storyList);\n\t\t\t\t}\n\t\t\t\t// Trigger an autosave\n\t\t\t\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n\t\t\t}\n\t\t}\n\t}\n\treturn false;\n};\n\n// Take a tiddler out of edit mode without saving the changes\nNavigatorWidget.prototype.handleCancelTiddlerEvent = function(event) {\n\t// Flip the specified tiddler from draft back to the original\n\tvar draftTitle = event.param || event.tiddlerTitle,\n\t\tdraftTiddler = this.wiki.getTiddler(draftTitle),\n\t\toriginalTitle = draftTiddler &amp;&amp; draftTiddler.fields[\&quot;draft.of\&quot;];\n\tif(draftTiddler &amp;&amp; originalTitle) {\n\t\t// Ask for confirmation if the tiddler text has changed\n\t\tvar isConfirmed = true,\n\t\t\toriginalTiddler = this.wiki.getTiddler(originalTitle),\n\t\t\tstoryList = this.getStoryList();\n\t\tif(this.wiki.isDraftModified(draftTitle)) {\n\t\t\tisConfirmed = confirm($tw.language.getString(\n\t\t\t\t\&quot;ConfirmCancelTiddler\&quot;,\n\t\t\t\t{variables:\n\t\t\t\t\t{title: draftTitle}\n\t\t\t\t}\n\t\t\t));\n\t\t}\n\t\t// Remove the draft tiddler\n\t\tif(isConfirmed) {\n\t\t\tthis.wiki.deleteTiddler(draftTitle);\n\t\t\tif(originalTiddler) {\n\t\t\t\tthis.replaceFirstTitleInStory(storyList,draftTitle,originalTitle);\n\t\t\t\tthis.addToHistory(originalTitle,event.navigateFromClientRect);\n\t\t\t} else {\n\t\t\t\tthis.removeTitleFromStory(storyList,draftTitle);\n\t\t\t}\n\t\t\tthis.saveStoryList(storyList);\t\n\t\t}\n\t}\n\treturn false;\n};\n\n// Create a new draft tiddler\n// event.param can either be the title of a template tiddler, or a hashmap of fields.\n//\n// The title of the newly created tiddler follows these rules:\n// * If a hashmap was used and a title field was specified, use that title\n// * If a hashmap was used without a title field, use a default title, if necessary making it unique with a numeric suffix\n// * If a template tiddler was used, use the title of the template, if necessary making it unique with a numeric suffix\n//\n// If a draft of the target tiddler already exists then it is reused\nNavigatorWidget.prototype.handleNewTiddlerEvent = function(event) {\n\t// Get the story details\n\tvar storyList = this.getStoryList(),\n\t\ttemplateTiddler, additionalFields, title, draftTitle, existingTiddler;\n\t// Get the template tiddler (if any)\n\tif(typeof event.param === \&quot;string\&quot;) {\n\t\t// Get the template tiddler\n\t\ttemplateTiddler = this.wiki.getTiddler(event.param);\n\t\t// Generate a new title\n\t\ttitle = this.wiki.generateNewTitle(event.param || $tw.language.getString(\&quot;DefaultNewTiddlerTitle\&quot;));\n\t}\n\t// Get the specified additional fields\n\tif(typeof event.paramObject === \&quot;object\&quot;) {\n\t\tadditionalFields = event.paramObject;\n\t}\n\tif(typeof event.param === \&quot;object\&quot;) { // Backwards compatibility with 5.1.3\n\t\tadditionalFields = event.param;\n\t}\n\tif(additionalFields &amp;&amp; additionalFields.title) {\n\t\ttitle = additionalFields.title;\n\t}\n\t// Generate a title if we don't have one\n\ttitle = title || this.wiki.generateNewTitle($tw.language.getString(\&quot;DefaultNewTiddlerTitle\&quot;));\n\t// Find any existing draft for this tiddler\n\tdraftTitle = this.wiki.findDraft(title);\n\t// Pull in any existing tiddler\n\tif(draftTitle) {\n\t\texistingTiddler = this.wiki.getTiddler(draftTitle);\n\t} else {\n\t\tdraftTitle = this.generateDraftTitle(title);\n\t\texistingTiddler = this.wiki.getTiddler(title);\n\t}\n\t// Merge the tags\n\tvar mergedTags = [];\n\tif(existingTiddler &amp;&amp; existingTiddler.fields.tags) {\n\t\t$tw.utils.pushTop(mergedTags,existingTiddler.fields.tags)\n\t}\n\tif(additionalFields &amp;&amp; additionalFields.tags) {\n\t\t// Merge tags\n\t\tmergedTags = $tw.utils.pushTop(mergedTags,$tw.utils.parseStringArray(additionalFields.tags));\n\t}\n\tif(templateTiddler &amp;&amp; templateTiddler.fields.tags) {\n\t\t// Merge tags\n\t\tmergedTags = $tw.utils.pushTop(mergedTags,templateTiddler.fields.tags);\n\t}\n\t// Save the draft tiddler\n\tvar draftTiddler = new $tw.Tiddler({\n\t\t\ttext: \&quot;\&quot;,\n\t\t\t\&quot;draft.title\&quot;: title\n\t\t},\n\t\ttemplateTiddler,\n\t\texistingTiddler,\n\t\tadditionalFields,\n\t\tthis.wiki.getCreationFields(),\n\t\t{\n\t\t\ttitle: draftTitle,\n\t\t\t\&quot;draft.of\&quot;: title,\n\t\t\ttags: mergedTags\n\t\t},this.wiki.getModificationFields());\n\tthis.wiki.addTiddler(draftTiddler);\n\t// Update the story to insert the new draft at the top and remove any existing tiddler\n\tif(storyList.indexOf(draftTitle) === -1) {\n\t\tvar slot = storyList.indexOf(event.navigateFromTitle);\n\t\tstoryList.splice(slot + 1,0,draftTitle);\n\t}\n\tif(storyList.indexOf(title) !== -1) {\n\t\tstoryList.splice(storyList.indexOf(title),1);\t\t\n\t}\n\tthis.saveStoryList(storyList);\n\t// Add a new record to the top of the history stack\n\tthis.addToHistory(draftTitle);\n\treturn false;\n};\n\n// Import JSON tiddlers into a pending import tiddler\nNavigatorWidget.prototype.handleImportTiddlersEvent = function(event) {\n\tvar self = this;\n\t// Get the tiddlers\n\tvar tiddlers = [];\n\ttry {\n\t\ttiddlers = JSON.parse(event.param);\t\n\t} catch(e) {\n\t}\n\t// Get the current $:/Import tiddler\n\tvar importTiddler = this.wiki.getTiddler(IMPORT_TITLE),\n\t\timportData = this.wiki.getTiddlerData(IMPORT_TITLE,{}),\n\t\tnewFields = new Object({\n\t\t\ttitle: IMPORT_TITLE,\n\t\t\ttype: \&quot;application/json\&quot;,\n\t\t\t\&quot;plugin-type\&quot;: \&quot;import\&quot;,\n\t\t\t\&quot;status\&quot;: \&quot;pending\&quot;\n\t\t}),\n\t\tincomingTiddlers = [];\n\t// Process each tiddler\n\timportData.tiddlers = importData.tiddlers || {};\n\t$tw.utils.each(tiddlers,function(tiddlerFields) {\n\t\tvar title = tiddlerFields.title;\n\t\tif(title) {\n\t\t\tincomingTiddlers.push(title);\n\t\t\timportData.tiddlers[title] = tiddlerFields;\n\t\t}\n\t});\n\t// Give the active upgrader modules a chance to process the incoming tiddlers\n\tvar messages = this.wiki.invokeUpgraders(incomingTiddlers,importData.tiddlers);\n\t$tw.utils.each(messages,function(message,title) {\n\t\tnewFields[\&quot;message-\&quot; + title] = message;\n\t});\n\t// Deselect any suppressed tiddlers\n\t$tw.utils.each(importData.tiddlers,function(tiddler,title) {\n\t\tif($tw.utils.count(tiddler) === 0) {\n\t\t\tnewFields[\&quot;selection-\&quot; + title] = \&quot;unchecked\&quot;;\n\t\t}\n\t});\n\t// Save the $:/Import tiddler\n\tnewFields.text = JSON.stringify(importData,null,$tw.config.preferences.jsonSpaces);\n\tthis.wiki.addTiddler(new $tw.Tiddler(importTiddler,newFields));\n\t// Update the story and history details\n\tif(this.getVariable(\&quot;tv-auto-open-on-import\&quot;) !== \&quot;no\&quot;) {\n\t\tvar storyList = this.getStoryList(),\n\t\t\thistory = [];\n\t\t// Add it to the story\n\t\tif(storyList.indexOf(IMPORT_TITLE) === -1) {\n\t\t\tstoryList.unshift(IMPORT_TITLE);\n\t\t}\n\t\t// And to history\n\t\thistory.push(IMPORT_TITLE);\n\t\t// Save the updated story and history\n\t\tthis.saveStoryList(storyList);\n\t\tthis.addToHistory(history);\t\t\n\t}\n\treturn false;\n};\n\n// \nNavigatorWidget.prototype.handlePerformImportEvent = function(event) {\n\tvar self = this,\n\t\timportTiddler = this.wiki.getTiddler(event.param),\n\t\timportData = this.wiki.getTiddlerData(event.param,{tiddlers: {}}),\n\t\timportReport = [];\n\t// Add the tiddlers to the store\n\timportReport.push(\&quot;The following tiddlers were imported:\\n\&quot;);\n\t$tw.utils.each(importData.tiddlers,function(tiddlerFields) {\n\t\tvar title = tiddlerFields.title;\n\t\tif(title &amp;&amp; importTiddler &amp;&amp; importTiddler.fields[\&quot;selection-\&quot; + title] !== \&quot;unchecked\&quot;) {\n\t\t\tself.wiki.addTiddler(new $tw.Tiddler(tiddlerFields));\n\t\t\timportReport.push(\&quot;# [[\&quot; + tiddlerFields.title + \&quot;]]\&quot;);\n\t\t}\n\t});\n\t// Replace the $:/Import tiddler with an import report\n\tthis.wiki.addTiddler(new $tw.Tiddler({\n\t\ttitle: IMPORT_TITLE,\n\t\ttext: importReport.join(\&quot;\\n\&quot;),\n\t\t\&quot;status\&quot;: \&quot;complete\&quot;\n\t}));\n\t// Navigate to the $:/Import tiddler\n\tthis.addToHistory([IMPORT_TITLE]);\n\t// Trigger an autosave\n\t$tw.rootWidget.dispatchEvent({type: \&quot;tm-auto-save-wiki\&quot;});\n};\n\nexports.navigator = NavigatorWidget;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/widgets/navigator.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;widget&quot;
@@ -5218,7 +5218,7 @@ Error message and password prompt
         },
         &quot;$:/core/ui/PageTemplate&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/PageTemplate&quot;,
-            &quot;text&quot;: &quot;\\define containerClasses()\ntc-page-container tc-page-view-$(themeTitle)$ tc-language-$(languageTitle)$\n\\end\n\n&lt;$importvariables filter=\&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value={{$:/config/Toolbar/Icons}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value={{$:/config/Toolbar/Text}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value=\&quot;tc-btn-invisible\&quot;&gt;\n\n&lt;$set name=\&quot;themeTitle\&quot; value={{$:/view}}&gt;\n\n&lt;$set name=\&quot;currentTiddler\&quot; value={{$:/language}}&gt;\n\n&lt;$set name=\&quot;languageTitle\&quot; value={{!!name}}&gt;\n\n&lt;$set name=\&quot;currentTiddler\&quot; value=\&quot;\&quot;&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n\n&lt;$dropzone&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;\n\n&lt;/$list&gt;\n\n&lt;/$dropzone&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$importvariables&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define containerClasses()\ntc-page-container tc-page-view-$(themeTitle)$ tc-language-$(languageTitle)$\n\\end\n\n&lt;$importvariables filter=\&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\&quot;&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-icons\&quot; value={{$:/config/Toolbar/Icons}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-text\&quot; value={{$:/config/Toolbar/Text}}&gt;\n\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; value=\&quot;tc-btn-invisible\&quot;&gt;\n\n&lt;$set name=\&quot;themeTitle\&quot; value={{$:/view}}&gt;\n\n&lt;$set name=\&quot;currentTiddler\&quot; value={{$:/language}}&gt;\n\n&lt;$set name=\&quot;languageTitle\&quot; value={{!!name}}&gt;\n\n&lt;$set name=\&quot;currentTiddler\&quot; value=\&quot;\&quot;&gt;\n\n&lt;div class=&lt;&lt;containerClasses&gt;&gt;&gt;\n\n&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot; openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}}&gt;\n\n&lt;$dropzone&gt;\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageTemplate]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt;\n\n&lt;/$list&gt;\n\n&lt;/$dropzone&gt;\n\n&lt;/$navigator&gt;\n\n&lt;/div&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$set&gt;\n\n&lt;/$importvariables&gt;\n&quot;
         },
         &quot;$:/core/ui/PluginInfo&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/PluginInfo&quot;,
@@ -6227,11 +6227,11 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/Basics/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/Caption&quot;,
-            &quot;text&quot;: &quot;Basic&quot;
+            &quot;text&quot;: &quot;Bàsic&quot;
         },
         &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/BottomHint&quot;,
-            &quot;text&quot;: &quot;Useu &amp;#91;&amp;#91;corxets dobles&amp;#93;&amp;#93; per als títol amb espais. O podeu triar &lt;$button set=\&quot;$:/DefaultTiddlers\&quot; setTo=\&quot;[list[$:/StoryList]]\&quot;&gt;mantenir l'ordre de l'story&lt;/$button&gt;&quot;
+            &quot;text&quot;: &quot;Useu &amp;#91;&amp;#91;corxets dobles&amp;#93;&amp;#93; per als títols amb espais. O podeu triar &lt;$button set=\&quot;$:/DefaultTiddlers\&quot; setTo=\&quot;[list[$:/StoryList]]\&quot;&gt;mantenir l'ordre de la cronologia&lt;/$button&gt;&quot;
         },
         &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt&quot;,
@@ -6291,7 +6291,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Caption&quot;,
-            &quot;text&quot;: &quot;Editor Tipus&quot;
+            &quot;text&quot;: &quot;Tipus de l'editor&quot;
         },
         &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/EditorTypes/Editor/Caption&quot;,
@@ -6319,7 +6319,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/LoadedModules/Hint&quot;,
-            &quot;text&quot;: &quot;Aquests són els mòduls tiddlers enllaçats a als seys tiddlers font. Any italicised modules lack a source tiddler, typically because they were setup during the boot process.&quot;
+            &quot;text&quot;: &quot;Aquests són els mòduls tiddlers enllaçats a als seus tiddlers font. Els mòduls indicats en cursiva no disposen de tiddler font, amb freqüència per que s'han configurat a l'arrencada.&quot;
         },
         &quot;$:/language/ControlPanel/Palette/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Caption&quot;,
@@ -6331,7 +6331,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Clone/Prompt&quot;,
-            &quot;text&quot;: &quot;Es recomana que cloneu aquesta paeta ombra abans d'editar-la&quot;
+            &quot;text&quot;: &quot;Es recomana que cloneu aquesta paleta ombra abans d'editar-la&quot;
         },
         &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/Editor/Prompt&quot;,
@@ -6555,7 +6555,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
-            &quot;text&quot;: &quot;Vista del Story&quot;
+            &quot;text&quot;: &quot;Vista de la cronologia&quot;
         },
         &quot;$:/language/ControlPanel/StoryView/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Prompt&quot;,
@@ -6575,7 +6575,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/TiddlerFields/Hint&quot;,
-            &quot;text&quot;: &quot;Auqest és el conjunt complet de CampsDelsTiddlers utilkitzats en aquest wiki (inclòs els tiddlers del sistema però sense incloure els tiddlers ombra).&quot;
+            &quot;text&quot;: &quot;Aquest és el conjunt complet de CampsDelsTiddlers utilitzats en aquest wiki (inclòs els tiddlers del sistema però sense incloure els tiddlers ombra).&quot;
         },
         &quot;$:/language/ControlPanel/Toolbars/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Caption&quot;,
@@ -6771,51 +6771,51 @@ Error message and password prompt
         },
         &quot;$:/language/Date/Long/Month/1&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/1&quot;,
-            &quot;text&quot;: &quot;Gener&quot;
+            &quot;text&quot;: &quot;de gener de&quot;
         },
         &quot;$:/language/Date/Long/Month/10&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/10&quot;,
-            &quot;text&quot;: &quot;Ovtubre&quot;
+            &quot;text&quot;: &quot;d'octubre de&quot;
         },
         &quot;$:/language/Date/Long/Month/11&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/11&quot;,
-            &quot;text&quot;: &quot;Novembre&quot;
+            &quot;text&quot;: &quot;de novembre de&quot;
         },
         &quot;$:/language/Date/Long/Month/12&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/12&quot;,
-            &quot;text&quot;: &quot;Desembre&quot;
+            &quot;text&quot;: &quot;de desembre de&quot;
         },
         &quot;$:/language/Date/Long/Month/2&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/2&quot;,
-            &quot;text&quot;: &quot;Febrer&quot;
+            &quot;text&quot;: &quot;de febrer de&quot;
         },
         &quot;$:/language/Date/Long/Month/3&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/3&quot;,
-            &quot;text&quot;: &quot;Març&quot;
+            &quot;text&quot;: &quot;de març de&quot;
         },
         &quot;$:/language/Date/Long/Month/4&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/4&quot;,
-            &quot;text&quot;: &quot;Abril&quot;
+            &quot;text&quot;: &quot;d'abril de&quot;
         },
         &quot;$:/language/Date/Long/Month/5&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/5&quot;,
-            &quot;text&quot;: &quot;Maig&quot;
+            &quot;text&quot;: &quot;de maig de&quot;
         },
         &quot;$:/language/Date/Long/Month/6&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/6&quot;,
-            &quot;text&quot;: &quot;Juny&quot;
+            &quot;text&quot;: &quot;de juny de&quot;
         },
         &quot;$:/language/Date/Long/Month/7&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/7&quot;,
-            &quot;text&quot;: &quot;Juliol&quot;
+            &quot;text&quot;: &quot;de juliol de&quot;
         },
         &quot;$:/language/Date/Long/Month/8&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/8&quot;,
-            &quot;text&quot;: &quot;Agost&quot;
+            &quot;text&quot;: &quot;d'agost de&quot;
         },
         &quot;$:/language/Date/Long/Month/9&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Long/Month/9&quot;,
-            &quot;text&quot;: &quot;Septembre&quot;
+            &quot;text&quot;: &quot;de septembre de&quot;
         },
         &quot;$:/language/Date/Short/Day/0&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Short/Day/0&quot;,
@@ -6864,6 +6864,14 @@ Error message and password prompt
         &quot;$:/language/Date/Short/Month/8&quot;: {
             &quot;title&quot;: &quot;$:/language/Date/Short/Month/8&quot;,
             &quot;text&quot;: &quot;Ago&quot;
+        },
+        &quot;$:/language/Date/Period/am&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/am&quot;,
+            &quot;text&quot;: &quot;m.&quot;
+        },
+        &quot;$:/language/Date/Period/pm&quot;: {
+            &quot;title&quot;: &quot;$:/language/Date/Period/pm&quot;,
+            &quot;text&quot;: &quot;t.&quot;
         },
         &quot;$:/language/RelativeDate/Future/Days&quot;: {
             &quot;title&quot;: &quot;$:/language/RelativeDate/Future/Days&quot;,
@@ -6999,7 +7007,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/ModuleTypes/wikirule&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/ModuleTypes/wikirule&quot;,
-            &quot;text&quot;: &quot;Regles d'anàlisi sintàctic individuals  per a l'analitzador sintactic principal del WikiText.&quot;
+            &quot;text&quot;: &quot;Regles d'anàlisi sintàctic individuals per a l'analitzador sintàctic principal del WikiText.&quot;
         },
         &quot;$:/language/Docs/PaletteColours/alert-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/alert-background&quot;,
@@ -7023,7 +7031,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/blockquote-bar&quot;,
-            &quot;text&quot;: &quot;Barra Blockquote bar&quot;
+            &quot;text&quot;: &quot;Barra de bloc de cita&quot;
         },
         &quot;$:/language/Docs/PaletteColours/code-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/code-background&quot;,
@@ -7059,19 +7067,19 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-background&quot;,
-            &quot;text&quot;: &quot;Fons de la zona aterratge&quot;
+            &quot;text&quot;: &quot;Fons de la llista desplegable&quot;
         },
         &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-border&quot;,
-            &quot;text&quot;: &quot;Vora de la zona aterratge&quot;
+            &quot;text&quot;: &quot;Vora de la llista desplegable&quot;
         },
         &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta de la zona aterratge&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya de la llista desplegable&quot;
         },
         &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropdown-tab-background-selected&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta de la zona aterratge per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya de la llista desplegable per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/dropzone-background&quot;,
@@ -7081,13 +7089,21 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background&quot;,
             &quot;text&quot;: &quot;Fons de l'enllaç extern&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-hover&quot;,
+            &quot;text&quot;: &quot;Fons de la bafarada de l'enllaç extern&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-background-visited&quot;,
             &quot;text&quot;: &quot;Fons de l'enllaç extern visitat&quot;
         },
         &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground&quot;,
-            &quot;text&quot;: &quot;Primer plà  de l'enllaç extern&quot;
+            &quot;text&quot;: &quot;Primer plà de l'enllaç extern&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Primer plà de la bafarada de l'enllaç extern&quot;
         },
         &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/external-link-foreground-visited&quot;,
@@ -7109,25 +7125,29 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/message-foreground&quot;,
             &quot;text&quot;: &quot;Primer plà de la capsa de text&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-backdrop&quot;,
+            &quot;text&quot;: &quot;Zona d'aterratge dels diàlegs modals&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/modal-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-background&quot;,
-            &quot;text&quot;: &quot;Modal background per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Fons dels diàlegs modals per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/modal-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-border&quot;,
-            &quot;text&quot;: &quot;Vora modal&quot;
+            &quot;text&quot;: &quot;Vora dels diàlegs modals&quot;
         },
         &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-background&quot;,
-            &quot;text&quot;: &quot;Fons del peu modal&quot;
+            &quot;text&quot;: &quot;Fons del peu dels diàlegs modals&quot;
         },
         &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-footer-border&quot;,
-            &quot;text&quot;: &quot;Vora del peu modal&quot;
+            &quot;text&quot;: &quot;Vora del peu dels diàlegs modals&quot;
         },
         &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/modal-header-border&quot;,
-            &quot;text&quot;: &quot;Vora de la capçalera modal&quot;
+            &quot;text&quot;: &quot;Vora de la capçalera dels diàlegs modals&quot;
         },
         &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/muted-foreground&quot;,
@@ -7143,23 +7163,31 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/page-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/page-background&quot;,
-            &quot;text&quot;: &quot;Fons Page backgroundPrimer plà del titol del Tiddler&quot;
+            &quot;text&quot;: &quot;Fons de la pàgina&quot;
         },
         &quot;$:/language/Docs/PaletteColours/pre-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-background&quot;,
-            &quot;text&quot;: &quot;Fons Preformatted code background&quot;
+            &quot;text&quot;: &quot;Fons del codi preformatat&quot;
         },
         &quot;$:/language/Docs/PaletteColours/pre-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/pre-border&quot;,
             &quot;text&quot;: &quot;Vora del codi preformatat&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/primary&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/primary&quot;,
+            &quot;text&quot;: &quot;General primari&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-button-foreground&quot;,
-            &quot;text&quot;: &quot;Primer plà Sidebar button foreground&quot;
+            &quot;text&quot;: &quot;Primer plà del botó de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground&quot;,
-            &quot;text&quot;: &quot;Primer plà Sidebar controls foreground&quot;
+            &quot;text&quot;: &quot;Primer plà dels controls de la barra lateral&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Primer plà de la bafarada dels controls de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-foreground&quot;,
@@ -7173,37 +7201,45 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground&quot;,
             &quot;text&quot;: &quot;Primer plà de la barra lateral silenciada&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-muted-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Primer plà de la bafarada de la barra lateral silenciada&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta de la barra lateral&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-background-selected&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta de la barra lateral per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya de la barra lateral per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border&quot;,
-            &quot;text&quot;: &quot;Vora de l'etiqueta de la barra lateral&quot;
+            &quot;text&quot;: &quot;Vora de la pestanya de la barra lateraletiqueta&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-border-selected&quot;,
-            &quot;text&quot;: &quot;Vora de l'etiqueta de la barra lateral per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Vora de la pestanya de la barra lateral per les etiquetes seleccionadesetiqueta&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-divider&quot;,
-            &quot;text&quot;: &quot;Divisor de l'etiqueta de la barra lateral&quot;
+            &quot;text&quot;: &quot;Divisor de lla pestanya de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground&quot;,
-            &quot;text&quot;: &quot;Primer plà de l'etiqueta de la barra lateral&quot;
+            &quot;text&quot;: &quot;Primer plà de la pestanya de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tab-foreground-selected&quot;,
-            &quot;text&quot;: &quot;Primer plà de l'etiqueta de la barra lateral per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Primer plà de la pestanya de la barra lateral per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground&quot;,
             &quot;text&quot;: &quot;Primer plà de l'enllaç del tiddler de la barra lateral&quot;
+        },
+        &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/sidebar-tiddler-link-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Primer plà de la bafarada de l'enllaç del tiddler de la barra lateral&quot;
         },
         &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/static-alert-foreground&quot;,
@@ -7211,31 +7247,31 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-background-selected&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border&quot;,
-            &quot;text&quot;: &quot;Vora de l'etiqueta&quot;
+            &quot;text&quot;: &quot;Vora de la pestanya&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-border-selected&quot;,
-            &quot;text&quot;: &quot;Vora de l'etiqueta per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Vora de la pestanya per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-divider&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-divider&quot;,
-            &quot;text&quot;: &quot;Divisor de l'etiqueta&quot;
+            &quot;text&quot;: &quot;Divisor de la pestanya&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground&quot;,
-            &quot;text&quot;: &quot;Primer plà de l'etiqueta&quot;
+            &quot;text&quot;: &quot;Primer plà de la pestanya&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tab-foreground-selected&quot;,
-            &quot;text&quot;: &quot;Primer plà de l'etiqueta per les etiquetes seleccionades&quot;
+            &quot;text&quot;: &quot;Primer plà de la pestanya per les etiquetes seleccionades&quot;
         },
         &quot;$:/language/Docs/PaletteColours/table-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/table-border&quot;,
@@ -7269,6 +7305,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground&quot;,
             &quot;text&quot;: &quot;Primer plà dels controls del tiddler&quot;
         },
+        &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-hover&quot;,
+            &quot;text&quot;: &quot;Primer plà de la bafarada dels controls del tiddler&quot;
+        },
         &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-controls-foreground-selected&quot;,
             &quot;text&quot;: &quot;Primer plà dels controls del tiddler per als controls seleccionats&quot;
@@ -7279,7 +7319,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border&quot;,
-            &quot;text&quot;: &quot;Tiddler editor borderAlert border&quot;
+            &quot;text&quot;: &quot;Vora de l'editor de tiddlers&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-border-image&quot;,
@@ -7287,11 +7327,11 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-even&quot;,
-            &quot;text&quot;: &quot;Fons de l'editor de tiddlersper als camps parells&quot;
+            &quot;text&quot;: &quot;Fons de l'editor de tiddlers per als camps parells&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-editor-fields-odd&quot;,
-            &quot;text&quot;: &quot;Fons de l'editor de tiddlersper als camps senars&quot;
+            &quot;text&quot;: &quot;Fons de l'editor de tiddlers per als camps senars&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-background&quot;,
@@ -7303,7 +7343,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-info-tab-background&quot;,
-            &quot;text&quot;: &quot;Fons de l'etiqueta del tiddler del tauler d'informació&quot;
+            &quot;text&quot;: &quot;Fons de la pestanya del tiddler del tauler d'informació&quot;
         },
         &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/PaletteColours/tiddler-link-background&quot;,
@@ -7639,7 +7679,7 @@ Error message and password prompt
         },
         &quot;GettingStarted&quot;: {
             &quot;title&quot;: &quot;GettingStarted&quot;,
-            &quot;text&quot;: &quot;Benvingut a TiddlyWiki i a la comunitat TiddlyWiki\n\nAbans de començar a desar informació important al TiddlyWiki és important que us assegureu que podeu desar els canvis de forma fiable. Veieu els detalls a http://tiddlywiki.com/#GettingStarted\n\n!! Configureu aquest TiddlyWiki\n\n HelloThere\n[[$:/Translators]]\n[[$:/plugins/tiddlywiki/translators/readme]]\n\n\nVeieu més opcions al  tauler de control.\n&quot;
+            &quot;text&quot;: &quot;Benvingut a TiddlyWiki i a la comunitat TiddlyWiki\n\nAbans de començar a desar informació important al TiddlyWiki cal que us assegureu que podeu desar els canvis de forma fiable. Veieu els detalls a http://tiddlywiki.com/#GettingStarted\n\n!! Configureu aquest TiddlyWiki\n\n HelloThere\n[[$:/Translators]]\n[[$:/plugins/tiddlywiki/translators/readme]]\n\n\nVeieu més opcions al  tauler de control.\n&quot;
         },
         &quot;$:/language/Help/build&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/build&quot;,
@@ -7669,7 +7709,7 @@ Error message and password prompt
         &quot;$:/language/Help/init&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/init&quot;,
             &quot;description&quot;: &quot;Inicia una nova carpeta wiki&quot;,
-            &quot;text&quot;: &quot;Inicialitza una [[CarpetaWiki|WikiFolders]] buida amb una còpia de l'edició indicada.\n\n```\n--init &lt;edició&gt; [&lt;edició&gt; ...]\n```\n\nPer exemple:\n\n```\ntiddlywiki .LaMevaCarpetaWiki --init empty\n```\n\nNotes:\n\n* Si cal es generarà la carpeta wiki folder\n* El valor per omisió de \&quot;edition\&quot; és ''empty''\n* L'ordre init fracassarà si la carpeta wiki no està buida\n* L'ordre init suprimeix qualsevol definició `includeWikis` de l'edició del fitxer `tiddlywiki.info`\n* Quan s'indiqui múltiples edicions, les edicions que s'iniciïn més tard sobreescriuran qualsevol fitxers compartit amb edicions anteriors (així que el fitxer final `tiddlywiki.info` es copiarà de la darrera edció)\n* `--editions` retorna la llista d'edicions disponibles\n&quot;
+            &quot;text&quot;: &quot;Inicialitza una [[CarpetaWiki|WikiFolders]] buida amb una còpia de l'edició indicada.\n\n```\n--init &lt;edició&gt; [&lt;edició&gt; ...]\n```\n\nPer exemple:\n\n```\ntiddlywiki ./LaMevaCarpetaWiki --init empty\n```\n\nNotes:\n\n* Si cal es generarà la carpeta wiki folder\n* El valor per omisió de \&quot;edition\&quot; és ''empty''\n* L'ordre init fracassarà si la carpeta wiki no està buida\n* L'ordre init suprimeix qualsevol definició `includeWikis` de l'edició del fitxer `tiddlywiki.info`\n* Quan s'indiqui múltiples edicions, les edicions que s'iniciïn més tard sobreescriuran qualsevol fitxer compartit amb edicions anteriors (així que el fitxer final `tiddlywiki.info` es copiarà de la darrera edció)\n* `--editions` retorna la llista d'edicions disponibles\n&quot;
         },
         &quot;$:/language/Help/load&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/load&quot;,
@@ -7719,12 +7759,12 @@ Error message and password prompt
         &quot;$:/language/Help/server&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/server&quot;,
             &quot;description&quot;: &quot;Proporciona una interfície de servidor HTTP a TiddlyWiki&quot;,
-            &quot;text&quot;: &quot;El servidor que inclou el TiddlyWiki5 és molt simple. Encara que és compatible amb TiddlyWeb no permet moltes de les característiques necessàries que calen per a l'ús robust de l'Internet.\n\nA l'arrel, serveix per a renderitzar un tiddler concret. Fora de l'arrel, serveis els tiddlers individuals codificats en JSON, i permet l'ús de les operacions bàsiques HTTP per `GET`, `PUT` i `DELETE`.\n\n```\n--server &lt;port&gt; &lt;tiddlerarrel&gt; &lt;rendertype&gt; &lt;tipusdeservidor&gt; &lt;usuari&gt; &lt;contrasenya&gt; &lt;host&gt; &lt;prefixdelaruta&gt;\n```\n\nEls paràmetres són:\n\n* ''port'' - número del port que donarà el servei (per omissió \&quot;8080\&quot;)\n* ''tiddlerarrel'' - el tiddler que donarà el servei arrel (per omissió \&quot;$:/core/save/all\&quot;) \n* ''rendertype'' - el tipus de contingut al qual s'haurà de renderitzar el tiddler arrel (per omissió \&quot;text/plain\&quot;)\n* ''tipusdeservidor'' - el tipus de contingut amb el qual s'haurà de servir el tiddler arrel (per omissió \&quot;text/html\&quot;)\n* ''usuari'' - nom de l'usuari per omissió per signar les edicions\n* ''contrasenya'' - contrasenya opcional per l'autenticació bàsica\n* ''host'' - nom de host opcional que donarà el servei (per omissió \&quot;127.0.0.1\&quot; és a dir \&quot;localhost\&quot;)\n* ''prefixdelaruta'' - prefix opcional de les rutes\n\nSi s'indica el paràmetre de la contrasenya el navegador demanrà un usuari i una contrasenya. La contrasenya es trasmet tal qual així que no és una bona solució d'ús general.\n\nPer exemple:\n\n```\n--server 8080 $:/core/save/all text/plain text/html ElMeuUsuari c0ntran3nya\n```\n\nEl nom d'usuari i la contrasenya es pot indicar com cadenes buides si voleu indicar un host o un prefixdelaruta i no us cal una contrasenya:\n\n```\n--server 8080 $:/core/save/all text/plain text/html \&quot;\&quot; \&quot;\&quot; 192.168.0.245\n```\n\nPer tal d'executar diversos servidors TiddlyWiki al mateix temps, heu d'indicar un port diferent per a cada un.\n&quot;
+            &quot;text&quot;: &quot;El servidor que inclou el TiddlyWiki5 és molt simple. Encara que és compatible amb TiddlyWeb no permet moltes de les característiques necessàries que calen per a l'ús robust de l'Internet.\n\nA l'arrel, serveix per a renderitzar un tiddler concret. Fora de l'arrel, serveis els tiddlers individuals codificats en JSON, i permet l'ús de les operacions bàsiques HTTP per `GET`, `PUT` i `DELETE`.\n\n```\n--server &lt;port&gt; &lt;tiddlerarrel&gt; &lt;rendertype&gt; &lt;tipusdeservidor&gt; &lt;usuari&gt; &lt;contrasenya&gt; &lt;host&gt; &lt;prefixdelaruta&gt;\n```\n\nEls paràmetres són:\n\n* ''port'' - número del port que donarà el servei (per omissió \&quot;8080\&quot;)\n* ''tiddlerarrel'' - el tiddler que donarà el servei arrel (per omissió \&quot;$:/core/save/all\&quot;) \n* ''rendertype'' - el tipus de contingut al qual s'haurà de renderitzar el tiddler arrel (per omissió \&quot;text/plain\&quot;)\n* ''tipusdeservidor'' - el tipus de contingut amb el qual s'haurà de servir el tiddler arrel (per omissió \&quot;text/html\&quot;)\n* ''usuari'' - nom de l'usuari per omissió per signar les edicions\n* ''contrasenya'' - contrasenya opcional per l'autenticació bàsica\n* ''host'' - nom de host opcional que donarà el servei (per omissió \&quot;127.0.0.1\&quot; és a dir \&quot;localhost\&quot;)\n* ''prefixdelaruta'' - prefix opcional de les rutes\n\nSi s'indica el paràmetre de la contrasenya el navegador demanarà un usuari i una contrasenya. La contrasenya es trasmet tal qual així que no és una bona solució d'ús general.\n\nPer exemple:\n\n```\n--server 8080 $:/core/save/all text/plain text/html ElMeuUsuari c0ntran3nya\n```\n\nEl nom d'usuari i la contrasenya es pot indicar com cadenes buides si voleu indicar un host o un prefixdelaruta i no us cal una contrasenya:\n\n```\n--server 8080 $:/core/save/all text/plain text/html \&quot;\&quot; \&quot;\&quot; 192.168.0.245\n```\n\nPer tal d'executar diversos servidors TiddlyWiki al mateix temps, heu d'indicar un port diferent per a cada un.\n&quot;
         },
         &quot;$:/language/Help/setfield&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/setfield&quot;,
             &quot;description&quot;: &quot;Prepara els tiddlers externs per que puguin ser utilitzats&quot;,
-            &quot;text&quot;: &quot;//Noteu que aquesta ordre is experimental i podria canviar abans d'estar acabada//\n\nEstableix el camp d'un grup de tiddlers al resultar de wikificar un tiddler palntilla indicat per la variable `currentTiddler`.\n\n```\n--setfield &lt;filtre&gt; &lt;nomdelcamp&gt; &lt;plantilladeltítol&gt; &lt;tipus&gt;\n```\n\nEls paràmetres són:\n\n* ''filtre'' - filtre que identifica els tiddlers afectats\n* ''nomdelcamp'' - el camp a modificar (per omisió \&quot;text\&quot;)\n* ''plantilladeltítol'' - el tiddler a wikificar del camp indicat. Si està en blanc o no hi és llavors el camp indicar es suprimirà\n* ''tipus'' - el tipus de text que cal generar (per omisió \&quot;text/plain\&quot;; es possible utilitzar \&quot;text/html\&quot; per incloure etiquetes HTML)\n\n&quot;
+            &quot;text&quot;: &quot;//Noteu que aquesta ordre is experimental i podria canviar abans d'estar acabada//\n\nEstableix el camp d'un grup de tiddlers al resultat de wikificar un tiddler plantilla indicat per la variable `currentTiddler`.\n\n```\n--setfield &lt;filtre&gt; &lt;nomdelcamp&gt; &lt;plantilladeltítol&gt; &lt;tipus&gt;\n```\n\nEls paràmetres són:\n\n* ''filtre'' - filtre que identifica els tiddlers afectats\n* ''nomdelcamp'' - el camp a modificar (per omisió \&quot;text\&quot;)\n* ''plantilladeltítol'' - el tiddler a wikificar del camp indicat. Si està en blanc o no hi és llavors el camp indicar es suprimirà\n* ''tipus'' - el tipus de text que cal generar (per omisió \&quot;text/plain\&quot;; es possible utilitzar \&quot;text/html\&quot; per incloure etiquetes HTML)\n\n&quot;
         },
         &quot;$:/language/Help/unpackplugin&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/unpackplugin&quot;,
@@ -7807,11 +7847,11 @@ Error message and password prompt
         },
         &quot;$:/language/ConfirmCancelTiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/ConfirmCancelTiddler&quot;,
-            &quot;text&quot;: &quot;Segur que voleu descartar els canvis del tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+            &quot;text&quot;: &quot;Voleu descartar els canvis del tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
         },
         &quot;$:/language/ConfirmDeleteTiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/ConfirmDeleteTiddler&quot;,
-            &quot;text&quot;: &quot;Segur que voleu suprimir el tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
+            &quot;text&quot;: &quot;Voleu suprimir el tiddler \&quot;&lt;$text text=&lt;&lt;title&gt;&gt;/&gt;\&quot;?&quot;
         },
         &quot;$:/language/ConfirmEditShadowTiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/ConfirmEditShadowTiddler&quot;,
@@ -7835,7 +7875,7 @@ Error message and password prompt
         },
         &quot;$:/language/Encryption/ConfirmClearPassword&quot;: {
             &quot;title&quot;: &quot;$:/language/Encryption/ConfirmClearPassword&quot;,
-            &quot;text&quot;: &quot;Segur que voleu suprimir la contrasenya? Això eliminarà l'encriptació utilitzada quan es desa aquest wiki&quot;
+            &quot;text&quot;: &quot;Voleu suprimir la contrasenya? Això eliminarà l'encriptació utilitzada quan es desa aquest wiki&quot;
         },
         &quot;$:/language/Encryption/Password&quot;: {
             &quot;title&quot;: &quot;$:/language/Encryption/Password&quot;,
@@ -7883,7 +7923,7 @@ Error message and password prompt
         },
         &quot;$:/language/MissingTiddler/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/MissingTiddler/Hint&quot;,
-            &quot;text&quot;: &quot;Tiddler que falta \&quot;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\&quot; - cliqueu {{$:/core/images/edit-button}} per generar-ho&quot;
+            &quot;text&quot;: &quot;Falta el tiddler \&quot;&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;\&quot; - cliqueu {{$:/core/images/edit-button}} per generar-ho&quot;
         },
         &quot;$:/language/OfficialPluginLibrary&quot;: {
             &quot;title&quot;: &quot;$:/language/OfficialPluginLibrary&quot;,
@@ -7892,6 +7932,10 @@ Error message and password prompt
         &quot;$:/language/PluginReloadWarning&quot;: {
             &quot;title&quot;: &quot;$:/language/PluginReloadWarning&quot;,
             &quot;text&quot;: &quot;Deseu si us plau {{$:/core/ui/Buttons/save-wiki}} i torneu a carregar {{$:/core/ui/Buttons/refresh}} per tal que els canvis als connectors es puguin activar&quot;
+        },
+        &quot;$:/language/RecentChanges/DateFormat&quot;: {
+            &quot;title&quot;: &quot;$:/language/RecentChanges/DateFormat&quot;,
+            &quot;text&quot;: &quot;DD MMM YYYY&quot;
         },
         &quot;$:/language/SystemTiddler/Tooltip&quot;: {
             &quot;title&quot;: &quot;$:/language/SystemTiddler/Tooltip&quot;,
@@ -7923,7 +7967,7 @@ Error message and password prompt
             &quot;subtitle&quot;: &quot;Download changes&quot;,
             &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Close&lt;/$button&gt;&quot;,
             &quot;help&quot;: &quot;http://tiddlywiki.com/static/DownloadingChanges.html&quot;,
-            &quot;text&quot;: &quot;El vostre navegador només permet desar de forma manual. Per desar les modificacions del vostre wiki, cliqueu amb el botó dret l'enllaç per baixar de sota i trieu \&quot;Baixa el fitxer\&quot; o \&quot;Desa el fitxer\&quot;, i llavors trieu la carpeta i el nom del fitxer.//Podeu accelerar-ho clicant l'enllaç amb la tecla control (Windows) o la tecla opcions/alt (Mac OS X). Es demanarà la carpeta o el nom del fitxer, però probablement el vostre navegador hi assignarà un nom irreconeixible -- podeu reanomenar el fitxer per incloure l'extensió `.html` abans no pogueu fer res útil amb ell.//Als mòbils que no permeten baixar fitxers podeu desar l'enllaç als preferits, i llavors sincronitzar els vostres preferits a un ordinador des del que podeu  desar el wiki normalment.&quot;
+            &quot;text&quot;: &quot;El vostre navegador només permet desar de forma manual. Per desar les modificacions del vostre wiki, cliqueu amb el botó dret l'enllaç per baixar de sota i trieu \&quot;Baixa el fitxer\&quot; o \&quot;Desa el fitxer\&quot;, i llavors trieu la carpeta i el nom del fitxer.//Podeu accelerar-ho clicant l'enllaç amb la tecla control (Windows) o la tecla opcions/alt (Mac OS X). Es demanarà la carpeta o el nom del fitxer, però probablement el vostre navegador hi assignarà un nom irreconeixible -- haureu de reanomenar el fitxer per incloure l'extensió `.html` abans no pogueu fer res útil amb ell.//Als mòbils que no permeten baixar fitxers podeu desar l'enllaç als preferits, i llavors sincronitzar els vostres preferits a un ordinador des del que podeu desar el wiki normalment.&quot;
         },
         &quot;$:/language/Modals/SaveInstructions&quot;: {
             &quot;title&quot;: &quot;$:/language/Modals/SaveInstructions&quot;,
@@ -7931,11 +7975,15 @@ Error message and password prompt
             &quot;subtitle&quot;: &quot;Save your work&quot;,
             &quot;footer&quot;: &quot;&lt;$button message=\&quot;tm-close-tiddler\&quot;&gt;Close&lt;/$button&gt;&quot;,
             &quot;help&quot;: &quot;http://tiddlywiki.com/static/SavingChanges.html&quot;,
-            &quot;text&quot;: &quot;Els vostres canvis a aquest wiki s'han de desar com un fitxer HTML ~TiddlyWiki.!!! Navegadors d'escriptori# Trieu ''Anomena i desa'' del menú ''Fitxer''# Trieu un nom i un lloc per al fitxer#* Per alguns navegadors també cal que el format del fitxer com a 'Pàgina web, només HTML'' o similar# Tanqueu aquesta pestanya!!! Navegadors per mòbils# Deseu aquesta pàgina als Preferits#* Si teniu configurat iCloud o Google Sync llavors el preferits es sincronitzarà automaticament amb el vostre ordinador des d'on el podreu obrir i¡ desar com s'indica més amunt# Tanqueu aquests pestanya//Si torneu a obrir el preferits a Safari Mobile tornareu a veure el missatge. Si voleu continuar i utilitzar el fitxer, només heu de clicat el botó 'tanca'' de sota//&quot;
+            &quot;text&quot;: &quot;Els vostres canvis a aquest wiki s'han de desar com un fitxer HTML ~TiddlyWiki.!!! Navegadors d'escriptori# Trieu ''Anomena i desa'' al menú ''Fitxer''# Trieu un nom i un lloc per al fitxer#* Per alguns navegadors també cal que el format del fitxer sigui 'Pàgina web, només HTML'' o similar# Tanqueu aquesta pestanya!!! Navegadors per mòbils# Deseu aquesta pàgina als Preferits#* Si teniu configurat iCloud o Google Sync llavors el preferits es sincronitzarà automaticament amb el vostre ordinador des d'on el podreu obrir i desar com s'indica més amunt# Tanqueu aquests pestanya//Si torneu a obrir el preferits a Safari Mobile tornareu a veure el missatge. Si voleu continuar i utilitzar el fitxer, només heu de clicat el botó 'tanca'' de sota//&quot;
         },
         &quot;$:/config/NewJournal/Tags&quot;: {
             &quot;title&quot;: &quot;$:/config/NewJournal/Tags&quot;,
             &quot;text&quot;: &quot;Diari&quot;
+        },
+        &quot;$:/config/NewJournal/Title&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Title&quot;,
+            &quot;text&quot;: &quot;DD MMM YYYY&quot;
         },
         &quot;$:/language/Notifications/Save/Done&quot;: {
             &quot;title&quot;: &quot;$:/language/Notifications/Save/Done&quot;,
@@ -13544,6 +13592,22 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Settings/LinkToBehaviour/OpenAtBottom&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/LinkToBehaviour/OpenAtBottom&quot;,
             &quot;text&quot;: &quot;Öffne alse letzten Tiddler in der Story&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Caption&quot;,
+            &quot;text&quot;: &quot;Tiddler Titel&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Hint&quot;,
+            &quot;text&quot;: &quot;Tiddler Titel als Links anzeigen:&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/No/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/No/Description&quot;,
+            &quot;text&quot;: &quot;Tiddler Titel normal anzeigen.&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/TitleLinks/Yes/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/TitleLinks/Yes/Description&quot;,
+            &quot;text&quot;: &quot;Tiddler Titel als Link anzeigen.&quot;
         },
         &quot;$:/language/ControlPanel/StoryView/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/StoryView/Caption&quot;,
