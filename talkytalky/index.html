@@ -179,6 +179,8 @@ Error message and password prompt
 
 <li>$:/languages/zh-Hant</li>
 
+<li>$:/palettes/Vanilla</li>
+
 <li>$:/plugins/tiddlywiki/cecily</li>
 
 <li>$:/plugins/tiddlywiki/highlight</li>
@@ -222,6 +224,10 @@ Error message and password prompt
 <li>EverythingIsWikification</li>
 
 <li>Features</li>
+
+<li>Internalities</li>
+
+<li>InTheWild</li>
 
 <li>Introduction</li>
 
@@ -6199,7 +6205,9 @@ TiddlyDesktop
 TiddlyDesktopDemo
 TWEdit
 NodeDemo
+InTheWild
 Serverlessness
+Internalities
 TiddlersWikification
 EverythingIsATiddler
 RenderingPipeline
@@ -19007,6 +19015,113 @@ End
     }
 }</pre>
 </div>
+<div description="Pale and unobtrusive" name="Vanilla" tags="$:/tags/Palette" title="$:/palettes/Vanilla" type="application/x-tiddler-dictionary">
+<pre>alert-background: #ffe476
+alert-border: #b99e2f
+alert-highlight: #881122
+alert-muted-foreground: #b99e2f
+background: #ffffff
+blockquote-bar: &lt;&lt;colour muted-foreground&gt;&gt;
+button-background:
+button-foreground:
+button-border:
+code-background: #f7f7f9
+code-border: #e1e1e8
+code-foreground: #dd1144
+dirty-indicator: #ff0000
+download-background: #34c734
+download-foreground: &lt;&lt;colour background&gt;&gt;
+dragger-background: &lt;&lt;colour foreground&gt;&gt;
+dragger-foreground: &lt;&lt;colour background&gt;&gt;
+dropdown-background: &lt;&lt;colour background&gt;&gt;
+dropdown-border: &lt;&lt;colour muted-foreground&gt;&gt;
+dropdown-tab-background-selected: #fff
+dropdown-tab-background: #ececec
+dropzone-background: rgba(0,200,0,0.7)
+external-link-background-hover: inherit
+external-link-background-visited: inherit
+external-link-background: inherit
+external-link-foreground-hover: inherit
+external-link-foreground-visited: #0000aa
+external-link-foreground: #0000ee
+foreground: #333333
+message-background: #ecf2ff
+message-border: #cfd6e6
+message-foreground: #547599
+modal-backdrop: &lt;&lt;colour foreground&gt;&gt;
+modal-background: &lt;&lt;colour background&gt;&gt;
+modal-border: #999999
+modal-footer-background: #f5f5f5
+modal-footer-border: #dddddd
+modal-header-border: #eeeeee
+muted-foreground: #bbb
+notification-background: #ffffdd
+notification-border: #999999
+page-background: #f4f4f4
+pre-background: #f5f5f5
+pre-border: #cccccc
+primary: #C1D1FF
+sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
+sidebar-controls-foreground-hover: #000000
+sidebar-controls-foreground: #aaaaaa
+sidebar-foreground-shadow: rgba(255,255,255, 0.8)
+sidebar-foreground: #acacac
+sidebar-muted-foreground-hover: #444444
+sidebar-muted-foreground: #c0c0c0
+sidebar-tab-background-selected: #f4f4f4
+sidebar-tab-background: #e0e0e0
+sidebar-tab-border-selected: &lt;&lt;colour tab-border-selected&gt;&gt;
+sidebar-tab-border: &lt;&lt;colour tab-border&gt;&gt;
+sidebar-tab-divider: #e4e4e4
+sidebar-tab-foreground-selected:
+sidebar-tab-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
+sidebar-tiddler-link-foreground-hover: #444444
+sidebar-tiddler-link-foreground: #999999
+site-title-foreground: &lt;&lt;colour tiddler-title-foreground&gt;&gt;
+static-alert-foreground: #aaaaaa
+tab-background-selected: #ffffff
+tab-background: #d8d8d8
+tab-border-selected: #d8d8d8
+tab-border: #cccccc
+tab-divider: #d8d8d8
+tab-foreground-selected: &lt;&lt;colour tab-foreground&gt;&gt;
+tab-foreground: #666666
+table-border: #dddddd
+table-footer-background: #a8a8a8
+table-header-background: #f0f0f0
+tag-background: #ec6
+tag-foreground: #ffffff
+tiddler-background: &lt;&lt;colour background&gt;&gt;
+tiddler-border: &lt;&lt;colour background&gt;&gt;
+tiddler-controls-foreground-hover: #888888
+tiddler-controls-foreground-selected: #444444
+tiddler-controls-foreground: #cccccc
+tiddler-editor-background: #f8f8f8
+tiddler-editor-border-image: #ffffff
+tiddler-editor-border: #cccccc
+tiddler-editor-fields-even: #e0e8e0
+tiddler-editor-fields-odd: #f0f4f0
+tiddler-info-background: #f8f8f8
+tiddler-info-border: #dddddd
+tiddler-info-tab-background: #f8f8f8
+tiddler-link-background: &lt;&lt;colour background&gt;&gt;
+tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
+tiddler-subtitle-foreground: #c0c0c0
+tiddler-title-foreground: #182955
+toolbar-new-button:
+toolbar-options-button:
+toolbar-save-button:
+toolbar-info-button:
+toolbar-edit-button:
+toolbar-close-button:
+toolbar-delete-button:
+toolbar-cancel-button:
+toolbar-done-button:
+untagged-background: #999999
+very-muted-foreground: #888888
+
+</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Zoomable storyview (Cecily)" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/cecily" type="application/json" version="5.1.9-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -19123,7 +19238,7 @@ End
 <div title="$:/state/sidebar">
 <pre>no</pre>
 </div>
-<div list="TalkyTalky WhatIsTiddlyWiki Introduction StandaloneDemo Saving TiddlyFox TiddlyFoxDemo TiddlyDesktop TiddlyDesktopDemo TWEdit NodeDemo Serverlessness TiddlersWikification EverythingIsATiddler RenderingPipeline UserInterfaceState ServerSync Reflections Shoutouts End" title="$:/StoryList">
+<div list="TalkyTalky WhatIsTiddlyWiki Introduction StandaloneDemo Saving TiddlyFox TiddlyFoxDemo TiddlyDesktop TiddlyDesktopDemo TWEdit NodeDemo InTheWild Serverlessness Internalities TiddlersWikification EverythingIsATiddler RenderingPipeline UserInterfaceState ServerSync Reflections Shoutouts End" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -19160,7 +19275,7 @@ End
         &quot;$:/themes/tiddlywiki/punch/base&quot;: {
             &quot;title&quot;: &quot;$:/themes/tiddlywiki/punch/base&quot;,
             &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
-            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n@media screen {\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n\n\tbody.tc-body .tc-story-river {\n\t\tpadding: 0;\n\t}\n\n}\n\nbody.tc-body .tc-tiddler-frame {\n\tborder: 0;\n\tmargin-bottom: 0;\n\tmin-height: 1000px;\n}\n\nbody.tc-body .tc-tiddler-frame &gt; a {\n\ttext-decoration: none;\n\tcolor: &lt;&lt;color foreground&gt;&gt;;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body {\n\ttext-align: center;\n\tmax-width: 850px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tmargin-top: -70px;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ul,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ol,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body p {\n\tfont-size: 27px;\n\tline-height: 1.5;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ul,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ol {\n\ttext-align: left;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body pre, body.tc-body .tc-tiddler-frame .tc-tiddler-body code {\n\tfont-size: 18px;\n\ttext-align: left;\n\tbackground: #121;\n\tcolor: #fff;\n}\n\nbody.tc-body .tc-tiddler-controls button svg {\n\twidth: 20px;\n\theight: 20px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar, body.tc-body .tc-tiddler-view-frame .tc-topbar {\n\t&lt;&lt;transition \&quot;opacity 200ms ease-in-out\&quot;&gt;&gt;\n\topacity: 0;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar:hover, body.tc-body .tc-tiddler-view-frame .tc-topbar:hover {\n\topacity: 1;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar {\n\tfont-size: 20px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar h2 {\n\tfont-size: 10px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-subtitle, body.tc-body .tc-tiddler-view-frame .tc-tags-wrapper {\n\tdisplay: none;\n}\n\nbody.tc-body h1 {\n\tfont-weight: 700;\n\tfont-size: 60px;\n}\n\nbody.tc-body h2, body.tc-body h3, body.tc-body h4 {\n\tfont-weight: 400;\n}\n\nbody.tc-body h2 {\n\tfont-size: 35px;\n}\n\nbody.tc-body h3 {\n\tfont-size: 24px;\n}\n\n} /* @media screen */\n\n&quot;
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n@media screen {\n\n@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {\n\n\tbody.tc-body .tc-story-river {\n\t\tpadding: 0;\n\t}\n\n}\n\nbody.tc-body .tc-tiddler-frame {\n\tborder: 0;\n\tmargin-bottom: 0;\n\tmin-height: 1000px;\n}\n\nbody.tc-body .tc-tiddler-frame &gt; a {\n\ttext-decoration: none;\n\tcolor: &lt;&lt;color foreground&gt;&gt;;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body {\n\ttext-align: center;\n\tmax-width: 850px;\n\tmargin-left: auto;\n\tmargin-right: auto;\n\tmargin-top: -70px;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ul,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ol,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body p {\n\tfont-size: 27px;\n\tline-height: 1.5;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ul,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body ol {\n\ttext-align: left;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body pre, body.tc-body .tc-tiddler-frame .tc-tiddler-body code {\n\tfont-size: 18px;\n\ttext-align: left;\n\tbackground: #121;\n\tcolor: #fff;\n}\n\nbody.tc-body .tc-tiddler-controls button svg {\n\twidth: 20px;\n\theight: 20px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar, body.tc-body .tc-tiddler-view-frame .tc-topbar {\n\t&lt;&lt;transition \&quot;opacity 200ms ease-in-out\&quot;&gt;&gt;\n\topacity: 0;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar:hover, body.tc-body .tc-tiddler-view-frame .tc-topbar:hover {\n\topacity: 1;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar {\n\tfont-size: 20px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-titlebar h2 {\n\tfont-size: 10px;\n}\n\nbody.tc-body .tc-tiddler-view-frame .tc-subtitle, body.tc-body .tc-tiddler-view-frame .tc-tags-wrapper {\n\tdisplay: none;\n}\n\nbody.tc-body h1 {\n\tfont-weight: 700;\n\tfont-size: 60px;\n}\n\nbody.tc-body h2, body.tc-body h3, body.tc-body h4 {\n\tfont-weight: 400;\n}\n\nbody.tc-body h2 {\n\tfont-size: 35px;\n}\n\nbody.tc-body h3 {\n\tfont-size: 24px;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body .tc-diatribe {\n\tmax-height:85vh;\n\t-moz-columns:3;\n\t-webkit-columns:3;\n\tcolumns:3;\n\tfont-size: 10px;\n}\n\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body .tc-diatribe p {\n\tmargin: 0 0 0.5em 0;\n}\n\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body .tc-diatribe ul,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body .tc-diatribe ol,\nbody.tc-body .tc-tiddler-frame .tc-tiddler-body .tc-diatribe p {\n\tfont-size: 10px;\n\ttext-align: left;\n}\n\n} /* @media screen */\n\n&quot;
         }
     }
 }</pre>
@@ -19336,7 +19451,7 @@ See http://tiddlywiki.com/#SystemTags
 Example of a deeply customised &quot;edition&quot;: http://tw5.scholars.tiddlyspot.com
 </pre>
 </div>
-<div background-color="#4ee7d8" title="End">
+<div background-color="#FF9563" title="End">
 <pre>! &lt;br&gt;Thank You
 
 http://tiddlywiki.com/
@@ -19348,7 +19463,7 @@ https://twitter.com/TiddlyWiki
 https://github.com/Jermolene/TiddlyWiki5
 </pre>
 </div>
-<div background-color="#d8d3e7" title="EverythingIsATiddler">
+<div background-color="#FF7575" title="EverythingIsATiddler">
 <pre>! Everything is a Tiddler
 
 It's tiddlers, all the way down. The tiddler model is used for:
@@ -19357,8 +19472,8 @@ It's tiddlers, all the way down. The tiddler model is used for:
 * ~JavaScript ~CommonJS-compatible modules
 * User interface state
 * Configuration eg
-** Settings [[$:/config/Navigation/UpdateAddressBar]]
-** Editor type mappings [[$:/config/EditorTypeMappings/image/gif]]
+** Settings `$:/config/Navigation/UpdateAddressBar`
+** Editor type mappings `$:/config/EditorTypeMappings/image/gif`
 * Plugins:
 ** Core code
 ** Themes
@@ -19400,6 +19515,33 @@ The rendering pipeline does everything:
 ** Highlight.js
 ** ~MarkDown
 * Pluggable navigation visualisations
+</pre>
+</div>
+<div background-color="#A7FF7B" title="Internalities">
+<pre>! Architectural Coherence
+
+People need tools to have a clear, reliable mental model in order to be useful. The classic tools of history present elegant, generative models:
+
+* Physical card index systems
+* The grid of ~VisiCalc/Excel
+* The file/directory structure of Unix
+* The combination of HTML and HTTP
+
+~TiddlyWiki strives to do the same thing with its &quot;hypertext card index system from the future&quot;.
+
+Everything is a tiddler, and the only process is wikification.
+
+Optimise everything for re-use.
+</pre>
+</div>
+<div background-color="#FF9563" title="InTheWild">
+<pre>! What do people do with ~TiddlyWiki?
+
+* http://tw5.scholars.tiddlyspot.com/
+* http://pespot.tiddlyspot.com
+* http://testregister.tiddlyspot.com/
+* http://felixhayashi.github.io/TW5-TiddlyMap/
+* the two static blogs
 </pre>
 </div>
 <div background-color="#DEFF65" title="Introduction">
@@ -19444,7 +19586,7 @@ tiddlywiki my2wiki --server
 ~PouchDB - from Jon Udell's Thali project - https://gist.github.com/judell/9744381
 </pre>
 </div>
-<div background-color="#e7d3d8" title="NodeDemo">
+<div background-color="#FF7575" title="NodeDemo">
 <pre>! Demo 4: Node.js
 
 !! Installation
@@ -19473,7 +19615,7 @@ tiddlywiki MyWiki --rendertiddlers [!is[system]] $:/core/templates/static.tiddle
 ```
 </pre>
 </div>
-<div background-color="#4ee7d8" title="Reflections">
+<div background-color="#5AD3FF" title="Reflections">
 <pre>! 10+ years of ~TiddlyWiki
 
 I've learned:
@@ -19487,7 +19629,7 @@ I've learned:
 * Being a software designer isn't enough. We need to design business models that are healthy for us, and in the best interests of our users. Something as personal and fundamental as my intellectual apparatus shouldn't be under the control of someone else
 </pre>
 </div>
-<div background-color="#f7cece" title="RenderingPipeline">
+<div background-color="#FF9563" title="RenderingPipeline">
 <pre>! ~TiddlyWiki Rendering Pipeline
 
 {{TiddlyWiki Architecture.svg}}
@@ -19517,17 +19659,45 @@ document.body.removeChild(link);
 <div _canonical_uri="./images/Server%2520Architecture.svg" modified="20140614120823657" tags="picture external-image dev" title="Server Architecture.svg" type="image/svg+xml">
 <pre></pre>
 </div>
-<div background-color="#d1caee" title="Serverlessness">
+<div background-color="#DEFF65" title="Serverlessness">
 <pre>! Serverlessness FTW!
 
-Individual deserve the freedom to have private spaces where their thoughts are their own, and where they control their own environment, making their own trade-offs.
+&lt;div class=&quot;tc-diatribe&quot;&gt;
 
-How can we make an independent web? It's fundamentally asymmetrical; only brave homesteaders run their own servers, most people are happy to rent space from a central service.
+For web developers -- the generation of software-minded people that grew up with the web -- the web is a place of unparalleled experimentation and excitement: a venue for personal expression.
 
-For civilians, the barriers to running your own server are huge: it's a new cost for most people, and the benefit is intangible. It's one of those situations where the penalties for screwing up can be disproportionately unforgiving: eg, failing to keep backups or to keep security software up to date.
+But for most citizens of the earth, that personal expression is limited and modulated by the needs of the corporation providing the service they are using (and the government of the country hosting it).
+
+The dirty secret of the futuristic-seeming web is that its traditional client-server architecture has led us to a modern version of medieval feudalism.
+
+Few people have the freedom to enjoy private spaces where their thoughts are their own, and where they control their own environment, making their own trade-offs.
+
+Being client-server wasn't a problem in the dawn of the web: every group had a cooperative share of a server that they shared, and the internet was a network of networks, not, as we think of it now, a fabric for individual devices.
+
+For civilians, the barriers to running your own server are huge: it's a new cost for most people, the benefit is intangible and there are many risks. It's one of those situations where the penalties for screwing up can be disproportionately unforgiving: eg, failing to keep backups or to keep security software up to date.
+
+That leaves &quot;renting&quot; server space from Internet service providers like Google, Facebook and Twitter. We know how that bargain ends: the services are obliged to exploit their users because they are the one asset that the company has.
+
+It causes an immediate asymmetry between those that own or control servers and those that do not.
+
+So, what can we do? There's a bunch of exciting developments exploring decentralising the web: using peer-to-peer technologies to create social networks that are have the behaviour of Twitter, but no overall central control.
+
+But the trouble with those efforts is that they still require the participants to own a server, or borrow space on a server run by someone else.
+
+~TiddlyWiki is for a world that is barely served at the moment. People who don't have access to a server that they control. People whose only connection with the internet is a peripatetic thumbdrive. I collaborate with ~JavaScript programmers who don't own a laptop or even a tablet, but do all their development on a smartphone.
+
+Sure, the browser is a viewer for HTML pages, but whether you like it or not, it's also the most performant, portable VM that we've got, with the remarkable property that end users can provision it themselves
+
+The frustration is that the low incremental cost of serving another user with a server means that the sliver of server &quot;power&quot; for which so much is demanded is in fact so tiny. In fact, the average computer power expended by Google or Facebook to serve you are probably lower than the average computing power of your phone.
+
+Anyhow, in the end the problem might disappear by itself. However fast our data centres grow, servers there will be outnumbered by servers baked into the fabric of the objects in our lives: the ~IoT.
+
+So, I see ~TiddlyWiki as both a re-democratisation of the web; a way for anyone to build customised, interactive web applications from a small number of simple components, and as a universal mental model for recording and reusing information.
+
+&lt;/div&gt;
 </pre>
 </div>
-<div background-color="#f7e2ce" title="ServerSync">
+<div background-color="#A7FF7B" title="ServerSync">
 <pre>! ~TiddlyWiki Server Synchronisation
 
 {{Server Architecture.svg}}
@@ -19535,7 +19705,7 @@ For civilians, the barriers to running your own server are huge: it's a new cost
 The same ''syncer'' module is used in the browser and the server.
 </pre>
 </div>
-<div background-color="#ced8f7" title="Shoutouts">
+<div background-color="#FF7575" title="Shoutouts">
 <pre>! Shout-outs
 
 Several other projects share goals with ~TiddlyWiki:
@@ -19574,6 +19744,7 @@ You're already in a demo of ~TiddlyWiki, but here's a quick run through of using
 * Visit http://tiddlywiki.com/empty.html in Google Chrome
 * Explore: Navigation, Editing, Tags, Fields, Sidebar, Search
 * Drag image and use Control Panel to set as page background
+* Show plugin library
 * Drag TaskManagementDemo from http://tiddlywiki.com
 * All the changes so far are confined to the browser...
 * Now we'll save locally using the &quot;HTML5 fallback saver&quot;
@@ -19640,7 +19811,7 @@ tiddlywiki ./myWiki \
 See http://tiddlywiki.com/#TaskManagementExample
 </pre>
 </div>
-<div background-color="#4ee7d8" title="TiddlersWikification">
+<div background-color="#5AD3FF" title="TiddlersWikification">
 <pre>! Duality of ~TiddlyWiki
 
 !! ''Tiddly'' === Everything is a tiddler
@@ -19657,7 +19828,7 @@ Wikification is the process of converting ~WikiText into HTML.
 //It makes linking (and other hypertext operations) become part of the punctuation of writing.//
 </pre>
 </div>
-<div background-color="#d8e7d3" title="TiddlyDesktop">
+<div background-color="#DEFF65" title="TiddlyDesktop">
 <pre>! Saving with ~TiddlyDesktop
 
 [img height=&quot;400&quot; [TiddlyDesktop.png]]
@@ -19668,10 +19839,10 @@ Wikification is the process of converting ~WikiText into HTML.
 <div _canonical_uri="./images/TiddlyDesktop.png" tags="picture" title="TiddlyDesktop.png" type="image/png">
 <pre></pre>
 </div>
-<div background-color="#f7e2ce" title="TiddlyDesktopDemo">
-<pre>! Demo 3: TiddlyDesktop
+<div background-color="#A7FF7B" title="TiddlyDesktopDemo">
+<pre>! Demo 3: ~TiddlyDesktop
 
-* Run TiddlyDesktop, open demo wiki
+* Run ~TiddlyDesktop, open demo wiki
 * Show wikilist, saving, control panel, help
 * Open backstage wiki, explore
 </pre>
@@ -19689,10 +19860,10 @@ https://addons.mozilla.org/en-Us/firefox/addon/tiddlyfox/
 <div _canonical_uri="./images/TiddlyFox.png" tags="picture" title="TiddlyFox.png" type="image/png">
 <pre></pre>
 </div>
-<div background-color="#d1caee" title="TiddlyFoxDemo">
-<pre>! Demo 2: TiddlyFox, Hierarchies and Customisation
+<div background-color="#FF9563" title="TiddlyFoxDemo">
+<pre>! Demo 2: ~TiddlyFox, Hierarchies and Customisation
 
-* Open demo wiki in Firefox with TiddlyFox installed
+* Open demo wiki in Firefox with ~TiddlyFox installed
 * Show the seamless saving
 * Show source, enable encryption, resave, check source
 * Show table of contents:
@@ -19717,7 +19888,7 @@ https://addons.mozilla.org/en-Us/firefox/addon/tiddlyfox/
 <div _canonical_uri="./images/TW%2520Thumbnail.jpg" tags="picture" title="TW Thumbnail.jpg" type="image/jpeg">
 <pre></pre>
 </div>
-<div background-color="#e7d3d8" title="TWEdit">
+<div background-color="#5AD3FF" title="TWEdit">
 <pre>! Saving on iPad/iPhone
 
 [img height=&quot;400&quot; [TWEdit on iPad.png]]
@@ -19728,7 +19899,7 @@ Download [[TWEdit|https://itunes.apple.com/gb/app/twedit/id409607956?mt=8]]
 <div _canonical_uri="./images/TWEdit%2520on%2520iPad.png" tags="picture" title="TWEdit on iPad.png" type="image/png">
 <pre></pre>
 </div>
-<div background-color="#d1caee" title="UserInterfaceState">
+<div background-color="#DEFF65" title="UserInterfaceState">
 <pre>! User Interface State
 
 Show how sidebar state is held in [[$:/state/sidebar]]:
