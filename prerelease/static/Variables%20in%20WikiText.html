@@ -23,7 +23,7 @@
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
-</button><span class=" tc-reveal" hidden="true"></span></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
 </button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
@@ -89,7 +89,7 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><h2 class="">Example: defining a macro</h2><p>The <code>\define</code> pragma below <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">defines a macro</a> called <code class="doc-var">tags</code>. The macro returns the value of the tiddler's <code class="doc-field">tags</code> field, and can be accessed from anywhere else in the same tiddler (or in any tiddler that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">imports</a> it).</p><p>
+</div></p><h2 class="">Example: defining a macro</h2><p>The <code>\define</code> pragma below <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">defines a macro</a> called <code class="doc-var">tags-of-current-tiddler</code>. The macro returns the value of the tiddler's <code class="doc-field">tags</code> field, and can be accessed from anywhere else in the same tiddler (or in any tiddler that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">imports</a> it).</p><p>
 <pre><code>\define tags-of-current-tiddler() {{!!tags}}
 </code></pre>
 <div class="doc-example">

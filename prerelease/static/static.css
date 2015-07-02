@@ -1019,6 +1019,37 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
+}.tc-btn-boxed {
+	font-size: 0.6em;
+	padding: 0.2em;
+	margin: 1px;
+	background: none;
+	border: 1px solid #cccccc;
+	border-radius: 0.25em;
+}html body.tc-body .tc-btn-boxed svg {
+	font-size: 1.6666em;
+}.tc-btn-boxed:hover {
+	background: #333333;
+	color: #ffffff;
+}html body.tc-body .tc-btn-boxed:hover svg {
+	fill: #ffffff;
+}.tc-btn-rounded {
+	font-size: 0.6em;
+	padding: 0.2em 0.4em 0.2em 0.4em;
+	margin: 1px;
+	border: 1px solid #333333;
+	background: #333333;
+	color: #ffffff;
+	border-radius: 2em;
+}html body.tc-body .tc-btn-rounded svg {
+	font-size: 1.6666em;
+	fill: #ffffff;
+}.tc-btn-rounded:hover {
+	border: 1px solid #333333;
+	background: #ffffff;
+	color: #333333;
+}html body.tc-body .tc-btn-rounded:hover svg {
+	fill: #333333;
 }.tc-btn-icon svg {
 	height: 1em;
 	width: 1em;
@@ -1026,10 +1057,6 @@ a.tc-tiddlylink:hover {
 }.tc-btn-text {
 	padding: 0;
 	margin: 0;
-}.tc-tiddler-controls .tc-btn-text {
-	font-size: 0.5em;	
-}.tc-page-controls .tc-btn-text {
-	font-size: 0.7em;
 }.tc-btn-big-green {
 	display: inline-block;
 	padding: 8px;
