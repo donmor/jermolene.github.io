@@ -640,6 +640,9 @@ th {
 	-webkit-box-sizing: border-box;
 }html button {
 	line-height: 1.2;
+	color: ;
+	background: ;
+	border-color: ;
 }/*
 ** Basic element styles
 */html {
@@ -654,6 +657,7 @@ th {
 	line-height: 20px;
 	color: #333333;
 	background-color: #f4f4f4;
+	fill: #333333;
 	word-wrap: break-word;
 	
 
@@ -690,13 +694,29 @@ th {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
-}textarea, input[type=text] {
+}textarea,
+input[type=text],
+input[type=search],
+input[type=""],
+input:not([type]) {
 	color: #333333;
-	background-color: #ffffff;
+	background: #ffffff;
 }.tc-muted {
 	color: #bbb;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
+}kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 0.8em;
+	line-height: 1.2;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: solid 1px #bbb;
+	border-bottom-color: #bbb;
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 #bbb;
 }/*
 Markdown likes putting code elements inside pre elements
 */
@@ -818,6 +838,38 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
+}.tc-btn-boxed {
+	font-size: 0.6em;
+	padding: 0.2em;
+	margin: 1px;
+	background: none;
+	border: 1px solid #cccccc;
+	border-radius: 0.25em;
+}html body.tc-body .tc-btn-boxed svg {
+	font-size: 1.6666em;
+}.tc-btn-boxed:hover {
+	background: #bbb;
+	color: #ffffff;
+}html body.tc-body .tc-btn-boxed:hover svg {
+	fill: #ffffff;
+}.tc-btn-rounded {
+	font-size: 0.5em;
+	line-height: 2;
+	padding: 0em 0.3em 0.2em 0.4em;
+	margin: 1px;
+	border: 1px solid #bbb;
+	background: #bbb;
+	color: #ffffff;
+	border-radius: 2em;
+}html body.tc-body .tc-btn-rounded svg {
+	font-size: 1.6666em;
+	fill: #ffffff;
+}.tc-btn-rounded:hover {
+	border: 1px solid #bbb;
+	background: #ffffff;
+	color: #bbb;
+}html body.tc-body .tc-btn-rounded:hover svg {
+	fill: #bbb;
 }.tc-btn-icon svg {
 	height: 1em;
 	width: 1em;
@@ -841,6 +893,7 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 	width: 2em;
 	vertical-align: middle;
+	fill: #ffffff;
 }.tc-sidebar-lists input {
 	color: #333333;
 }.tc-sidebar-lists button {
@@ -1118,7 +1171,18 @@ a.tc-tiddlylink:hover {
 	line-height: 22px;
 }.tc-titlebar, .tc-tiddler-edit-title {
 	overflow: hidden; /* https://github.com/Jermolene/TiddlyWiki5/issues/282 */
+}html body.tc-body.tc-single-tiddler-window {
+	margin: 1em;
+	background: #ffffff;
+}.tc-single-tiddler-window img,
+.tc-single-tiddler-window svg,
+.tc-single-tiddler-window canvas,
+.tc-single-tiddler-window embed,
+.tc-single-tiddler-window iframe {
+	max-width: 100%;
 }/*
+** Adjustments for fluid-fixed mode
+*/@media (min-width: 960px) {}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
   fill: ;
@@ -1202,8 +1266,9 @@ a.tc-tiddlylink:hover {
 	position: absolute;
 	display: block;
 	width: 100%;
-	width: calc(100% - 84px);
-}/*
+}@media (min-width: 960px) {.tc-storyview-zoomin-tiddler {
+		width: calc(100% - 84px);
+	}}/*
 ** Dropdowns
 */.tc-btn-dropdown {
 	text-align: left;
@@ -1245,6 +1310,13 @@ a.tc-tiddlylink:hover {
 	text-align: left;
 	color: #333333;
 	line-height: 1.4;
+}.tc-drop-down .tc-prompt {
+	padding: 0 14px;	
+}.tc-drop-down .tc-chooser {
+	border: none;
+}.tc-drop-down .tc-chooser .tc-swatches-horiz {
+	font-size: 0.4em;
+	padding-left: 1.2em;
 }.tc-drop-down .tc-file-input-wrapper {
 	width: 100%;
 }.tc-drop-down .tc-file-input-wrapper button {
@@ -1423,7 +1495,6 @@ a.tc-tiddlylink:hover {
 	border-left: 1px solid #cccccc;
 	-webkit-flex: 1 0 70%;
 	flex: 1 0 70%;
-	overflow: auto; 
 }.tc-sidebar-lists .tc-tab-buttons {
 	margin-bottom: -1px;
 }.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
@@ -1475,13 +1546,14 @@ a.tc-tiddlylink:hover {
 	font-weight: bold;
 }.tc-alert-highlight {
 	color: #881122;
-}.tc-static-alert {
-	position: relative;
-}.tc-static-alert-inner {
+}@media (min-width: 960px) {.tc-static-alert {
+		position: relative;
+	}.tc-static-alert-inner {
+		position: absolute;
+		z-index: 100;
+	}}.tc-static-alert-inner {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
-	position: absolute;
-	z-index: 100;
 }/*
 ** Control panel
 */.tc-control-panel td {
@@ -1561,12 +1633,12 @@ a.tc-tiddlylink:hover {
 	border: 1px solid #dddddd;
 }.tc-chooser-item {
 	border: 8px;
+	padding: 2px 4px;
 }.tc-chooser-item a.tc-tiddlylink {
 	display: block;
 	text-decoration: none;
 	color: #5778d8;
 	background-color: #ffffff;
-	margin: 4px;
 }.tc-chooser-item a.tc-tiddlylink:hover {
 	text-decoration: none;
 	color: #ffffff;
@@ -1579,8 +1651,8 @@ a.tc-tiddlylink:hover {
 }.tc-swatch {
 	width: 2em;
 	height: 2em;
-	margin: 4px;
-	border: 1px solid #000;
+	margin: 0.4em;
+	border: 1px solid #888;
 }/*
 ** Table of contents
 */.tc-sidebar-lists .tc-table-of-contents {
@@ -1708,6 +1780,7 @@ a.tc-tiddlylink:hover {
 	opacity: 1;
     min-width: 100%;
     min-height: 100%;
+    max-width: 100%;
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-image svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-image img {
 	filter: alpha(opacity=0.8);
@@ -1720,17 +1793,17 @@ a.tc-tiddlylink:hover {
 	width: 3em;
 	height: 3em;
 	
-  -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-     -moz-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-          filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+  -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+     -moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+          filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
 	fill: #fff;
 	
-  -webkit-filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
-     -moz-filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
-          filter: drop-shadow(3px 3px 2px rgba(0,0,0,0.6));
+  -webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+     -moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+          filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 
 }.tc-thumbnail-icon {
 	position: absolute;
@@ -1739,9 +1812,11 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	bottom: 0;
 	display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }.tc-thumbnail-caption {
 	position: absolute;
 	background-color: #777;
