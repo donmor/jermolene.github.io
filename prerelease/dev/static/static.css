@@ -940,27 +940,28 @@ a.tc-tiddlylink:hover {
 }html body.tc-body .tc-btn-boxed svg {
 	font-size: 1.6666em;
 }.tc-btn-boxed:hover {
-	background: #4e432f;
+	background: #bbb;
 	color: #e5f8fd;
 }html body.tc-body .tc-btn-boxed:hover svg {
 	fill: #e5f8fd;
 }.tc-btn-rounded {
-	font-size: 0.6em;
-	padding: 0.2em 0.4em 0.2em 0.4em;
+	font-size: 0.5em;
+	line-height: 2;
+	padding: 0em 0.3em 0.2em 0.4em;
 	margin: 1px;
-	border: 1px solid #4e432f;
-	background: #4e432f;
+	border: 1px solid #bbb;
+	background: #bbb;
 	color: #e5f8fd;
 	border-radius: 2em;
 }html body.tc-body .tc-btn-rounded svg {
 	font-size: 1.6666em;
 	fill: #e5f8fd;
 }.tc-btn-rounded:hover {
-	border: 1px solid #4e432f;
+	border: 1px solid #bbb;
 	background: #e5f8fd;
-	color: #4e432f;
+	color: #bbb;
 }html body.tc-body .tc-btn-rounded:hover svg {
-	fill: #4e432f;
+	fill: #bbb;
 }.tc-btn-icon svg {
 	height: 1em;
 	width: 1em;
