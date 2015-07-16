@@ -6965,6 +6965,7 @@ Help us to improve the documentation by sending a ~GitHub pull request for this 
 <div created="20150228114241000" modified="20150228141312000" tags="$:/tags/Macro" title="$:/editions/tw5.com/variable-macros">
 <pre>\define .variable-examples(v,text:&quot;Examples&quot;) &lt;$link to=&quot;$v$ Variable (Examples)&quot;&gt;$text$&lt;/$link&gt;
 \define .macro-examples(m,text:&quot;Examples&quot;) &lt;$link to=&quot;$m$ Macro (Examples)&quot;&gt;$text$&lt;/$link&gt;
+\define .widget-examples(w,text:&quot;Examples&quot;) &lt;$link to=&quot;$w$ Widget (Examples)&quot;&gt;$text$&lt;/$link&gt;
 
 \define .js-macro-link(_) [[$_$|http://tiddlywiki.com/dev/index.html#JavaScript%20Macros]]
 
@@ -12119,6 +12120,17 @@ The syntax of a [[filter step|Filter Step]] treats any unrecognised [[filter ope
 &lt;&lt;.operator-example 2 &quot;[plugin-type[theme]author[JeremyRuston]]&quot; &quot;themes authored by JeremyRuston&quot;&gt;&gt;
 </pre>
 </div>
+<div created="20150706160301163" modified="20150706172915783" tags="[[Widget Examples]] FieldManglerWidget" title="FieldMangler Widget Example" type="text/vnd.tiddlywiki">
+<pre>&lt;$macrocall $name=&quot;.example&quot; n=&quot;1&quot;
+eg=&quot;&quot;&quot;
+&lt;$fieldmangler&gt;
+Add tag ''example'' to this tiddler (current)&lt;$button message=&quot;tm-add-tag&quot; param=&quot;example&quot;&gt;{{$:/core/images/new-button}}&lt;/$button&gt;
+&lt;br&gt;
+Remove tag ''example'' to this tiddler (current)&lt;$button message=&quot;tm-remove-tag&quot; param=&quot;example&quot;&gt;{{$:/core/images/delete-button}}&lt;/$button&gt;
+&lt;/$fieldmangler&gt;
+&quot;&quot;&quot;/&gt;
+</pre>
+</div>
 <div caption="fieldmangler" created="20131024141900000" modified="20150220161229000" tags="Widgets" title="FieldManglerWidget" type="text/vnd.tiddlywiki">
 <pre>! Introduction
 
@@ -12136,6 +12148,9 @@ The field mangler widget displays any contained content, and responds to [[Messa
 
 |!Attribute |!Description |
 |tiddler |Title of the tiddler to manipulate (defaults to the [[current tiddler|Current Tiddler]]) |
+
+&lt;&lt;.widget-examples &quot;FieldMangler&quot;&gt;&gt;
+
 </pre>
 </div>
 <div caption="fields" created="20140924115616653" modified="20150203184828000" op-input="a [[selection of titles|Title Selection]]" op-output="all the field names contained in the input tiddlers" op-parameter="none" op-purpose="select all field names of the input titles" tags="[[Filter Operators]] [[Field Operators]]" title="fields Operator" type="text/vnd.tiddlywiki">
@@ -12240,7 +12255,7 @@ A typical step is written as `[operator[parameter]]`, although not all of the op
 Most steps process the [[selection of titles|Title Selection]] that are supplied as their input, but a few [[construct an entirely new selection|Selection Constructors]] instead. For the exact rules, see [[Filter Syntax]].
 </pre>
 </div>
-<div created="20160515060000000" modified="20150220152540000" tags="[[Filter Syntax]]" title="Filter Parameter" type="text/vnd.tiddlywiki">
+<div created="20150220152540000" modified="20150220152540000" tags="[[Filter Syntax]]" title="Filter Parameter" type="text/vnd.tiddlywiki">
 <pre>&lt;$railroad text=&quot;&quot;&quot;
 ( &quot;[&quot; [:{/&quot;anything but ]&quot;/}] &quot;]&quot;
   |
@@ -18370,6 +18385,22 @@ The upgrade operation falls foul of a security restriction in Firefox. Until thi
 # Try creating a new tiddler using the ''plus'' {{$:/core/images/new-button}} button in the sidebar. Type some content for the tiddler, and click the {{$:/core/images/done-button}} ''tick'' button
 # Save your changes by clicking the {{$:/core/images/save-button}} ''Save changes'' button in the sidebar. Internet Explorer will ask for your consent to save the file locally by presenting a file ''Save As'' dialog.
 # Refresh the browser window to verify that your changes have been saved correctly
+</pre>
+</div>
+<div created="20150709150749755" modified="20150712080651008" tags="Mechanisms" title="SavingMechanism" type="text/vnd.tiddlywiki">
+<pre>The SavingMechanism is the mechanism by which TiddlyWiki generates a new HTML file and stores it. It is different from the SyncMechanism, which is concerned with synchronising changes to individual tiddlers back to a server.
+
+The following steps are involved:
+
+# The saver mechanism uses the filter defined in $:/config/SaverFilter to specify which modified tiddlers trigger the dirty state for the wiki
+# The ButtonWidget is used to generate a [[tm-save-wiki|WidgetMessage: tm-save-wiki]] message to trigger the save operation
+# The optional parameter for the message specifies the template that will be used for generating the HTML file, defaulting to $:/core/save/all
+#* The plugin $:/plugins/tiddlywiki/tiddlyweb in the client-server configuration replaces the default template with $:/plugins/tiddlywiki/tiddlyweb/save/offline
+# The template includes a variable assignment that specifies a filter to select the tiddlers that should be included in the saved file. It then transcludes the main page template `$:/core/templates/tiddlywiki5.html`
+#* The template includes a reference to `$(publishFilter)$` that allows the filter to be customised via a global variable
+# The [[tm-save-wiki|WidgetMessage: tm-save-wiki]] handler renders the template to generate the HTML file
+# The message handler chooses the highest priority &quot;saver&quot; module that can handle saving the file
+#* See http://tiddlywiki.com/dev/#Saver for more details
 </pre>
 </div>
 <div created="20130822173400000" modified="20140912145800365" tags="Features" title="Scalability" type="text/vnd.tiddlywiki">
