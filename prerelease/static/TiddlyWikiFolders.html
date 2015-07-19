@@ -52,7 +52,7 @@ TiddlyWikiFolders
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 8 months ago
+</a> 5 hours ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -93,7 +93,7 @@ color:#333333;">
 	&quot;config&quot;: {
 		&quot;retain-original-tiddler-path&quot;: true	
 	}
-}</code></pre><h2 class="">Content of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>.</p><p>Sub-folders within the <code>tiddlers</code> folder can also be given a <code>tiddlywiki.files</code> JSON file that overrides the default processing for that folder. The file format is illustrated with this example from the D3 plugin:</p><pre><code>{
+}</code></pre><h2 class="">Content of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>.</p><p>Sub-folders within the <code>tiddlers</code> folder can also be given a <code>tiddlywiki.files</code> JSON file that overrides the default processing for that folder. The file format is illustrated with this example:</p><pre><code>{
 	&quot;tiddlers&quot;: [
 		{
 			&quot;file&quot;: &quot;d3.min.js&quot;,
@@ -112,9 +112,15 @@ color:#333333;">
 				&quot;title&quot;: &quot;$:/plugins/tiddlywiki/d3/d3.layout.cloud.js&quot;,
 				&quot;module-type&quot;: &quot;library&quot;
 			}
+		},
+		{
+			&quot;tiddlerFile&quot;: &quot;local/mytiddler.tid&quot;,
+			&quot;fields&quot;: {
+				&quot;title&quot;: &quot;A different title&quot;
+			}
 		}
 	]
-}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li><code>file</code>: the relative or absolute path to the file to include</li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul></div>
+}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: a plain file that will not be deserialised</li><li><code>tiddlerFile</code>: a tiddler file that will be deserialised to extract the tiddlers</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul></div>
 
 
 

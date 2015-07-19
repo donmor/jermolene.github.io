@@ -1102,11 +1102,9 @@ a.tc-tiddlylink:hover {
 	text-decoration: none;
 }.tc-page-controls img {
 	width: 1em;
-}.tc-page-controls svg,
-.tc-search svg {
+}.tc-page-controls svg {
 	fill: #658deb;
-}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg,
-.tc-search button:hover svg, .tc-search a:hover svg {
+}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg {
 	fill: #000000;
 }.tc-menu-list-item {
 	white-space: nowrap;
@@ -1229,13 +1227,15 @@ a.tc-tiddlylink:hover {
 }.tc-tiddler-controls > span > button {
 	vertical-align: baseline;
 	margin-left:5px;
-}.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
+.tc-search button svg, .tc-search a svg {
 	height: 0.75em;
 	fill: #9eaeb4;
 }.tc-tiddler-controls button.tc-selected svg,
 .tc-page-controls button.tc-selected svg  {
 	fill: #444444;
-}.tc-tiddler-controls button.tc-btn-invisible:hover svg {
+}.tc-tiddler-controls button.tc-btn-invisible:hover svg,
+.tc-search button:hover svg, .tc-search a:hover svg {
 	fill: #888888;
 }@media print {
 	.tc-tiddler-controls {
@@ -2226,7 +2226,7 @@ Introduction
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 11 months ago
+</a> 12 months ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
