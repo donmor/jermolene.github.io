@@ -117,7 +117,21 @@ Error message and password prompt
 
 <p>This <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
+<li>$:/config/DefaultSidebarTab</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
+
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler</li>
+
 <li>$:/core</li>
+
+<li>$:/core/ui/SideBar/More</li>
+
+<li>$:/core/ui/SideBar/Open</li>
+
+<li>$:/core/ui/SideBar/Recent</li>
+
+<li>$:/core/ui/SideBar/Tools</li>
 
 <li>$:/data/Personal Information</li>
 
@@ -191,8 +205,6 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
-<li>$:/state/tab/sidebar--1835078512</li>
-
 <li>$:/StoryList</li>
 
 <li>$:/temp/info-plugin</li>
@@ -237,6 +249,8 @@ Error message and password prompt
 
 <li>Making a new section</li>
 
+<li>New Section Creation Tool</li>
+
 <li>Preview</li>
 
 <li>Preview and Set Options</li>
@@ -257,6 +271,15 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
+<div created="20150719185223155" modified="20150719185226532" title="$:/config/DefaultSidebarTab">
+<pre>Preview</pre>
+</div>
+<div modified="20150719172915740" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<pre>show</pre>
+</div>
+<div modified="20150719172917795" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/new-tiddler">
+<pre>hide</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.10-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -5975,6 +5998,58 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div caption="{{$:/language/SideBar/More/Caption}}" created="20150719185507821" modified="20150719185507821" title="$:/core/ui/SideBar/More">
+<pre>&lt;div class=&quot;tc-more-sidebar&quot;&gt;
+&lt;&lt;tabs &quot;[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]&quot; &quot;$:/core/ui/MoreSideBar/Tags&quot; &quot;$:/state/tab/moresidebar&quot; &quot;tc-vertical&quot;&gt;&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<div caption="{{$:/language/SideBar/Open/Caption}}" created="20150719185529309" modified="20150719185529309" title="$:/core/ui/SideBar/Open">
+<pre>\define lingo-base() $:/language/CloseAll/
+&lt;$list filter=&quot;[list[$:/StoryList]]&quot; history=&quot;$:/HistoryList&quot; storyview=&quot;pop&quot;&gt;
+
+&lt;$button message=&quot;tm-close-tiddler&quot; tooltip={{$:/language/Buttons/Close/Hint}} aria-label={{$:/language/Buttons/Close/Caption}} class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;&amp;times;&lt;/$button&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
+
+&lt;/$list&gt;
+
+&lt;$button message=&quot;tm-close-all-tiddlers&quot; class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;&lt;&lt;lingo Button&gt;&gt;&lt;/$button&gt;
+</pre>
+</div>
+<div caption="{{$:/language/SideBar/Recent/Caption}}" created="20150719185549965" modified="20150719185549965" title="$:/core/ui/SideBar/Recent">
+<pre>&lt;$macrocall $name=&quot;timeline&quot; format={{$:/language/RecentChanges/DateFormat}}/&gt;
+</pre>
+</div>
+<div caption="{{$:/language/SideBar/Tools/Caption}}" created="20150719185611214" modified="20150719185622149" title="$:/core/ui/SideBar/Tools">
+<pre>\define lingo-base() $:/language/ControlPanel/
+\define config-title()
+$:/config/PageControlButtons/Visibility/$(listItem)$
+\end
+
+&lt;&lt;lingo Basics/Version/Prompt&gt;&gt; &lt;&lt;version&gt;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-icons&quot; value=&quot;yes&quot;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-text&quot; value=&quot;yes&quot;&gt;
+
+&lt;$set name=&quot;tv-config-toolbar-class&quot; value=&quot;&quot;&gt;
+
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;
+
+&lt;div style=&quot;position:relative;&quot;&gt;
+
+&lt;$checkbox tiddler=&lt;&lt;config-title&gt;&gt; field=&quot;text&quot; checked=&quot;show&quot; unchecked=&quot;hide&quot; default=&quot;show&quot;/&gt; &lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt;/&gt; &lt;i class=&quot;tc-muted&quot;&gt;&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; field=&quot;description&quot;/&gt;&lt;/i&gt;
+
+&lt;/div&gt;
+
+&lt;/$list&gt;
+
+&lt;/$set&gt;
+
+&lt;/$set&gt;
+
+&lt;/$set&gt;
+</pre>
+</div>
 <div address="111 some st" city="Albuquerque" country="USA" email_address="nothing@nowhere.com" entered_date="October 16th 20XD6" name="Jedediah Carty" phone_number="5555555555" state="NM" street="" street_address="111 Some St." title="$:/data/Personal Information" zip_code="87110">
 <pre></pre>
 </div>
@@ -6079,7 +6154,7 @@ Add Education
 &lt;/$set&gt;
 &lt;/$set&gt;
 
-!!Current list:
+&lt;h2&gt;Current list:&lt;/h2&gt;
 
 &lt;$vars ThisResume={{$:/settings/Global!!selected_resume}}&gt;
 &lt;table style='width:100%'&gt;
@@ -6161,7 +6236,7 @@ Select objective to use:
 &lt;/table&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div caption="Previous Employment" tags="Section" title="$:/input/Previous Employment">
+<div caption="Previous Employment" created="20150719182555935" modified="20150719182603681" tags="Section" title="$:/input/Previous Employment">
 <pre>\define thisAddEmployment()
 &lt;$action-setfield $tiddler='$:/temp/Previous Employment' $field='title' $value=&quot;&quot;&quot;$:/data/Previous Employment/$(Employer)$/$(JobTitle)$&quot;&quot;&quot;/&gt;
 \end
@@ -6187,7 +6262,7 @@ Add Employment
 &lt;/$set&gt;
 &lt;/$set&gt;
 
-!!Current Listing:
+&lt;h2&gt;Current Listing:&lt;/h2&gt;
 
 &lt;table style='width:100%'&gt;
 &lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;Visible&lt;/th&gt;&lt;th&gt;Entry&lt;/th&gt;&lt;th&gt;Order&lt;/th&gt;&lt;/tr&gt;
@@ -6234,7 +6309,7 @@ Add New Title:
 &lt;&lt;thisResumeTitleInput&gt;&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div caption="Skills and Expertise" tags="Section" title="$:/input/Skills and Expertise">
+<div caption="Skills and Expertise" created="20150719182443671" modified="20150719182521401" tags="Section" title="$:/input/Skills and Expertise">
 <pre>\define thisAddSkill()
 &lt;$action-setfield $tiddler='$:/temp/Skills and Expertise' $field='title' $value=&quot;&quot;&quot;$:/data/Skills and Expertise/$(ThisSkill)$&quot;&quot;&quot;/&gt;
 \end
@@ -6252,7 +6327,7 @@ Add Skill
 &lt;/$button&gt;
 &lt;/$set&gt;
 
-!!Current Listing:
+&lt;h2&gt;Current Listing:&lt;/h2&gt;
 
 &lt;table style='width:100%'&gt;
 &lt;tr&gt;&lt;th&gt;&lt;/th&gt;&lt;th&gt;Visible&lt;/th&gt;&lt;th&gt;Entry&lt;/th&gt;&lt;th&gt;Order&lt;/th&gt;&lt;/tr&gt;
@@ -6426,9 +6501,6 @@ Select title to use:&lt;br&gt;
 <div created="20150619215748447" modified="20150619215751266" title="$:/SiteTitle">
 <pre>Resume Builder</pre>
 </div>
-<div modified="20150718063056801" title="$:/state/tab/sidebar--1835078512">
-<pre>Preview</pre>
-</div>
 <div list="Help [[Resume Wizard]] [[Edit Existing Items]] [[Layout Options]] [[Resume Options]]" title="$:/StoryList">
 <pre></pre>
 </div>
@@ -6548,11 +6620,6 @@ __''Objective:''__&lt;br&gt;&lt;$vars ThisResume={{$:/settings/Global!!selected_
 
 &lt;ul&gt;
 &lt;&lt;thisSkillsAndExpertiseList&gt;&gt;
-&lt;!--
-&lt;$list filter='[prefix[$:/data/Skills and Expertise/]!show[false]sort[order]]'&gt;
-&lt;li&gt;&lt;$view field='skill'/&gt;&lt;/li&gt;
-&lt;/$list&gt;
---&gt;
 &lt;/ul&gt;</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Centralises the story river, experimental" name="Centralised" plugin-type="theme" title="$:/themes/tiddlywiki/centralised" type="application/json" version="5.1.10-prerelease">
@@ -6724,7 +6791,7 @@ __''Objective:''__&lt;br&gt;&lt;$vars ThisResume={{$:/settings/Global!!selected_
 <div title="$:/view">
 <pre>zoomin</pre>
 </div>
-<div tags="" title="Edit Existing Items">
+<div created="20150719182943383" modified="20150719182947178" tags="" title="Edit Existing Items">
 <pre>\define thisMakeTabs()
 &lt;&lt;tabs '[prefix[$:/settings/$(ThisResume)$/]show[true]get[template]get[input_tiddler]]' default:[[Contact Information]]&gt;&gt;
 \end
@@ -6735,7 +6802,7 @@ Each tab lets you edit the contents of that section. Click on the `Preview and S
 &lt;&lt;thisMakeTabs&gt;&gt;
 &lt;/$vars&gt;
 
-&lt;$button to=&quot;Preview and Set Options&quot;&gt;Open Preview and Options&lt;/$button&gt;</pre>
+&lt;!--&lt;$button to=&quot;Preview and Set Options&quot;&gt;Open Preview and Options&lt;/$button&gt;--&gt;</pre>
 </div>
 <div tags="" title="GenericSectionDisplayTemplate">
 <pre>\define thisDisplayThing()
@@ -6756,7 +6823,7 @@ Each tab lets you edit the contents of that section. Click on the `Preview and S
 &lt;&lt;thisDisplayThing&gt;&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div tags="" title="Help">
+<div created="20150719184941848" modified="20150719185024380" tags="" title="Help">
 <pre>Clicking on [[Resume Wizard]] at the top is a good place to start.
 
 To save your work, either click on the {{$:/core/ui/Buttons/save-wiki}} button to the right or the Save button at the top of the screen. The button to the right will turn red when there are unsaved changes.
@@ -6771,18 +6838,10 @@ There are buttons along the top that bring you to the different things you can d
 *Resume Options - Available options for the resume output. The `Layout Options` tab has options for which sections are included in the resume as well as their order and the templates used, the other tabs are for configuring each section individually.
 *Preview - Shows a preview of the result, this is also shown on the right side of the screen by default.
 *Help - Displays this information.
+*Print - Open the resume by itself in a new window for printing.
 *Save - saves your changes
 
 &lt;!--
-There is a sequence of tiddlers that are input forms that guide you through entering your information for each section. These tiddlers are then displayed in the tiddler 'Resume Wizard' and you can go through them in sequence to fill out each form.
-
-At the end templates are used to display all of the information in a reasonable format.
-
-You can go to the [[Resume Wizard]] or to [[Edit Existing Items]].
-
-To set if a section is displayed, change the order of the sections on the resume, or to change the templates used go to [[Layout Options]]. The order set in that tiddler also determines the order of the sections in the [[Resume Wizard]].
---&gt;
-
 Things to add:
 
 *The section/item order options should get a better way to change the order
@@ -6791,12 +6850,13 @@ Things to add:
 *More section options
 *A reasonable way for users to create custom sections without requiring knowledge of wikitext. This could turn into something rather complex by itself if I let it. I will try to avoid that.
 *Other user options?
+--&gt;
 
 Other documentation:
 
 [[Making a new section]]</pre>
 </div>
-<div tags="Options" title="Layout Options">
+<div created="20150719190741300" modified="20150719191131503" tags="Options" title="Layout Options">
 <pre>\define thisMakeCheckbox()
 &lt;$reveal type='nomatch' state='$:/settings/$(ThisResumeName)$/$(currentTiddler)$!!show' text=true&gt;
 &lt;$button class='tc-btn-invisible'&gt;
@@ -6822,7 +6882,7 @@ Other documentation:
 \end
 
 \define thisSetOrder()
-&lt;$edit-text tiddler='$:/settings/$(ThisResumeName)$/$(currentTiddler)$' field='order'/&gt;
+&lt;$edit-text tiddler='$:/settings/$(ThisResumeName)$/$(currentTiddler)$' field='order' size=2/&gt;
 \end
 
 &lt;$set name=ThisResumeName value={{$:/settings/Global!!selected_resume}}&gt;
@@ -6839,7 +6899,9 @@ Other documentation:
 &lt;&lt;thisMakeCheckbox&gt;&gt;
 &lt;/td&gt;
 &lt;td&gt;
+&lt;$list filter='[&lt;currentTiddler&gt;addprefix[$:/display/]]'&gt;
 &lt;$view field='section'/&gt;
+&lt;/$list&gt;
 &lt;/td&gt;
 &lt;td&gt;
 &lt;&lt;thisSelectTemplate&gt;&gt;
@@ -6852,8 +6914,10 @@ Other documentation:
 &lt;/table&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div title="Making a new section">
-<pre>Each section needs the following tiddlers:
+<div created="20150719191225198" modified="20150719234223143" title="Making a new section">
+<pre>There is a [[New Section Creation Tool]] to help with creating new resume sections.
+
+Each section needs the following tiddlers:
 
 #A display tiddler
 #A template tiddler (possibly more than one)
@@ -6863,7 +6927,17 @@ Other documentation:
 You can have multiple template tiddlers that use the same input and options tiddlers.
 
 !!Display tiddler
-Create a tiddler tagged with `Section Display`, I have been naming the tiddlers in the form `$:/display/(section name) Display`, like [[$:/display/Resume Title Display]] and [[$:/display/Objective Display]]. Following this convention isn't strictly necessary, but you should use it to remain consistent with other sections.
+
+This is the container used to display the section in the resume itself, there isn't any customization here.
+
+''Required tags'': `Section Display`&lt;br&gt;
+''Required name format'': `$:/display/(section name) Display`&lt;br&gt;
+''Additional fields'':
+
+*'section' - the section name, something like 'Resume Title' or 'Objective'.
+''Examples'': [[$:/display/Resume Title Display]] and [[$:/display/Objective Display]].&lt;br&gt;
+
+''Other things'':
 
 In the text field put 
 
@@ -6871,35 +6945,57 @@ In the text field put
 &lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;
 ```
 
-and nothing else. Additionally, these tiddlers need to have 1 additional field:
+and nothing else.
 
-*`section` - the section name (in the ones I have created it is the title of the tiddler you are creating without the Display part at the end, so `Resume Title` and `Objective`)
+This tiddler should have only what is listed above.
 
 !!Template tiddler(s)
-Create a template tiddler (or multiple templates if you want) for that section. See [[$:/template/ResumeTitleTemplate]] or [[$:/template/EducationTemplate]], or any of the other tiddlers that start with `$:/template/` for examples.
 
-These tiddlers need to have two fields:
+These tiddlers determine how the section is displayed on the resume. This sets the look of the final result.
+
+''Required tags'': `DisplayTemplate`&lt;br&gt;
+''Required name format'': `$:/template/(template name)`&lt;br&gt;
+''Additional fields'':
 
 *`section_name` - the name of the section that the template is for, this must be the same as the value in the `section` field of the section display template you made.
 *`input_tiddler` - the name of the tiddler that has the form to take input for this section.
 *`template_name` - an optional field containing a more convenient name for the template than the tiddler title. If it exists this will be displayed for the template selection.
 *`options_tiddler` - The name of the options tiddler for this template, if any.
 
+''Examples'': [[$:/template/ResumeTitleTemplate]] or [[$:/template/EducationTemplate]], or any of the other tiddlers that start with `$:/template/` for examples.
+
+The data displayed by the templates will be from tiddlers named in the form `$:/data/(section name)/(section item)`.
+
 !!Input Tiddler
 
-A tiddler that contains the input from for adding entries to the section, and if desired options for the section. The title of this tiddler should start with `$:/input/`, this is not strictly required, but it keeps everything consistent.
+A tiddler that contains the input from for adding entries to the section, and if desired options for the section. 
 
-I don't have any real help for this one, what you do will be dependent on what you want in the section. Look at the examples here, the tiddlers [[$:/input/Resume Title]], [[$:/input/ObjectiveInput1]], [[$:/input/ObjectiveInput2]], [[$:/input/Education]] and [[$:/input/Skills and Expertise]] are examples of what you would make for this.
+''Required tags'': none&lt;br&gt;
+''Required name format'': `$:/input/(template name)`&lt;br&gt;
+''Additional fields'': 
+
+*`caption` - The contents of this field will be displayed as the section name in the [[Resume Wizard]].
+''Examples'': [[$:/input/Resume Title]], [[$:/input/Education]]
+
+The data taken from the input tiddler should be stored in the fields of a tiddler named in the form `$:/data/(SectionName)/(ItemName)`.
+
+I don't have any real help for this one, what you do will be dependent on what you want in the section. Look at the examples. If you have any questions please feel free to ask on the group (https://groups.google.com/forum/#!forum/tiddlywiki).
 
 !!Options tiddler
 
-And finally, if you wish, you can make an options tiddler for the section you are adding. You would change the fonts used and list types and similar things here. This tiddler should be tagged with `Options` and all of the settings should be stored following the rules below. Other than that there aren't any restrictions on how to make one. Some examples are [[Education Options]] and [[Previous Employment Options]].
+A tiddler used to set options for a section.
 
-All settings and state information about each section should be stored in a tiddler named in the form `$:/settings/(ResumeName)/(SectionName)`
+''Required tags'': `Options`&lt;br&gt;
+''Required name format'': `$:/options/(template name)`&lt;br&gt;
+''Additional fields'':
 
-For each item within a section all state and configuration information should be kept in a tiddler with a name in the form `$:/settings/(ResumeName)/(SectionName)/(ItemName)`
+*`caption` - a caption field, it should have something like `(section name) Options`. This is what appears on the tabs in the [[Resume Options]] tiddler.
+''Examples'': [[$:/options/Education Options]], [[$:/options/Previous Employment Options]].
 
-These need to be different than the tiddlers holding the data that have names in the form `$:/data/(SectionName)` or `$:/data/(SectionName)/(ItemName)`
+You would use this tiddler to change the fonts used and list types and similar things here.
+All settings and state information about each section should be stored in a tiddler named in the form `$:/settings/(ResumeName)/(SectionName)`.
+For each item within a section all state and configuration information should be kept in a tiddler with a name in the form `$:/settings/(ResumeName)/(SectionName)/(ItemName)`.
+The options tiddler must only change fields in these tiddlers.
 
 These tiddlers hold the information about which items/sections are visible in each resume. See the list of system tiddlers for many examples. You don't need to make those tiddlers, you just need to make your input and settings tiddlers create or modify the correct tiddler name and they will be created. See the examples.
 
@@ -6910,11 +7006,201 @@ If you are going to make your own section, in order to allow the items to be in 
 
 `[prefix[$:/data/(SectionName)/]removeprefix[$:/data/]addprefix[$:/settings/$(ThisResumeName)$/]!show[false]sort[order]removeprefix[$:/settings/$(ThisResumeName)$/]addprefix[$:/data/]]`
 
-&lt;!--
-`[prefix[$:/data/(SectionName)/]removeprefix[$:/data/(SectionName)/]addprefix[$:/settings/$(ThisResumeName)$/(SectionName)/]!show[false]sort[order]removeprefix[$:/settings/$(ThisResumeName)$/(SectionName)/]addprefix[$:/data/(SectionName)/]]`
---&gt;
+you need to manually replace `(SectionName)` with the name of the section you are adding, and you need to put `&lt;$vars ThisResumeName={{$:/settings/Global!!selected_resume}}&gt;` and `&lt;/$vars&gt;` around the macro that contains the list widget with the above filter. Look at the examples and it will hopefully make more sense.</pre>
+</div>
+<div created="20150719200725211" modified="20150719235401264" tags="Tools" title="New Section Creation Tool">
+<pre>\define thisMakeDisplayTiddler()
+&lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/display/$(ThisSection)$&quot;&quot;&quot; text=&quot;&quot;&quot;&lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;&quot;&quot;&quot; tags=&quot;&quot;&quot;[[Section Display]]&quot;&quot;&quot; section=&quot;&quot;&quot;$(ThisSection)$&quot;&quot;&quot;/&gt;
+\end
 
-you need to manually replace `(SectionName)` with the name of the section you are adding, and you need to put `&lt;$vars ThisResumeName={{$:/settings/Global!!selected_resume}}&gt;` and `&lt;/$vars&gt;` around the macro that contains the list widget with the above filter. Look at the examples and it will hopefully make more sense. PreviousEmploymentTemplate is one example.</pre>
+\define thisInputTiddlerText()
+$(TiddlerPreamble)$$(TiddlerPreamble2)$$(TiddlerPreamble3)$
+
+$(ThisAddItemButtonMacro)$
+
+$(UserInputTiddlerText)$
+\end
+
+\define thisMakeInputTiddler()
+&lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/input/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; text=&lt;&lt;thisInputTiddlerText&gt;&gt; tags=Section caption=&quot;&quot;&quot;$(ThisSection)$&quot;&quot;&quot;/&gt;
+\end
+
+\define thisOptionsTiddlerText()
+$(TiddlerPreamble)$$(TiddlerPreamble2)$$(TiddlerPreamble3)$
+
+$(UserOptionsTiddlerText)$
+\end
+
+\define thisMakeOptionsTiddler()
+&lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/options/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; text=&lt;&lt;thisOptionsTiddlerText&gt;&gt; caption=&quot;&quot;&quot;$(ThisSection)$ Options&quot;&quot;&quot;/&gt;
+\end
+
+\define thisTemplateTiddlerText()
+$(TiddlerPreamble)$$(TiddlerPreamble2)$$(TiddlerPreamble3)$
+
+$(UserTemplateTiddlerText)$
+\end
+
+\define thisMakeTemplateTiddler()
+&lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/template/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; text=&lt;&lt;thisTemplateTiddlerText&gt;&gt; input_tiddler=&quot;&quot;&quot;$:/input/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; options_tiddler=&quot;&quot;&quot;$:/options/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; section_name=&quot;&quot;&quot;$(ThisSection)$&quot;&quot;&quot; template_name=&quot;&quot;&quot;$(TemplateName)$&quot;&quot;&quot; tags=DisplayTemplate/&gt;
+\end
+
+''Once you have created your new section you have to go to [[Resume Options]] and select a template and set the section as visible before it will appear in the resume.''
+
+This is a tool to aid in the creation of custom resume sections. Fill out each section and then click on the 'Create Section' button below. Click on the ^^(?)^^ next to each tiddler name to get more information and a basic example. If you copy all of the examples given they will work together.
+
+Automatically defined helper macros and values (with the exception of `&lt;&lt;thisAddResumeSectionItem&gt;&gt;` these macros are defined for all of the tiddlers created using this tool.):
+
+*`&lt;&lt;thisAddResumeSectionItem&gt;&gt;` - This macro places a button that will automatically create the data tiddler using the supplied inputs. It is only available in the input tiddler.
+*`&lt;&lt;ItemListFilter&gt;&gt;` - This is the list of the names for all items in the current section.
+*`&lt;&lt;SortedItemFilterList&gt;&gt;` - This is the sorted list data tiddlers for the visible items in the current section.
+*`&lt;&lt;DataTiddler&gt;&gt;` - The data tiddler for the current item, use this for storing data in the input tiddler and for getting data to display for the template tiddler. This macro only works inside a list using the `&lt;&lt;ItemListFilter&gt;&gt;`
+*`&lt;&lt;ItemSettingsTiddler&gt;&gt;` - This is where settings should be stored in the options tiddler. This should hold the visibility and order sections for each item. This macro only works inside a list using the `&lt;&lt;ItemListFilter&gt;&gt;`
+*`&lt;&lt;SectionName&gt;&gt;` - This is the name of the current section.
+*`&lt;&lt;SectionSettingsTiddler&gt;&gt;` - This is the name of the tiddler containing the settings for the current section. It holds the visibility and order settings, but they are automatically created by the [[Layout Options]] tiddler. You shouldn't need to use this unless you are doing something special.
+
+Section Name^^(&lt;$button class='tc-btn-invisible' popup='$:/state/popup/SectionNameHelp'&gt;?&lt;/$button&gt;&lt;$reveal type='popup' state='$:/state/popup/SectionNameHelp'&gt;&lt;div class='tc-drop-down'&gt;This should be a short descriptive section name, like 'Resume Title' or 'Lands Conquered'&lt;/div&gt;&lt;/$reveal&gt;)^^:
+&lt;$edit-text tiddler='$:/temp/NewSection' field='section_name' class='tc-edit-texteditor' placeholder='Section Name'/&gt;
+
+Input Tiddler^^(&lt;$reveal type='nomatch' state='$:/state/popup/InputTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/InputTiddlerHelp' setTo='show'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/popup/InputTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/InputTiddlerHelp' setTo='hide'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;)^^:
+
+&lt;$reveal type='match' state='$:/state/popup/InputTiddlerHelp' text=show&gt;
+&lt;div style=&quot;word-wrap: true;&quot;&gt;
+&lt;hr&gt;
+This is the tiddler used to take input. This should have a way to input data for each field you want for your section items (like start date, end date, employer, ...) This must have a field called 'name' to work with the creation tool.
+
+A very simple example is:&lt;br&gt;
+
+&lt;pre&gt;
+
+```
+Item Name: &lt;$edit-text tiddler='$:/temp/$(ThisSection)$/NewItem' field=name class='tc-edit-texteditor' placeholder='Item Name'/&gt;
+
+&lt;&lt;thisAddResumeSectionItem&gt;&gt;
+
+&lt;$list filter=&lt;&lt;ItemListFilter&gt;&gt;/&gt;
+```
+&lt;/pre&gt;
+
+&lt;/div&gt;
+&lt;/$reveal&gt;
+
+&lt;$edit-text tiddler='$:/temp/NewSection/InputTiddler' class='tc-edit-texteditor' placeholder='Input Tiddler Text'/&gt;
+
+Options Tiddler^^(&lt;$reveal type='nomatch' state='$:/state/popup/OptionsTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/OptionsTiddlerHelp' setTo='show'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/popup/OptionsTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/OptionsTiddlerHelp' setTo='hide'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;)^^:
+
+&lt;$reveal type='match' state='$:/state/popup/OptionsTiddlerHelp' text=show&gt;
+&lt;div style=&quot;word-wrap: true;&quot;&gt;
+&lt;hr&gt;
+This is the tiddler listing the options, it should have at least two options:
+&lt;br&gt;
+''Visibility'' - a field called `show` given a value of true or false. Checkboxes work well for this. Example: `&lt;$checkbox tiddler=&lt;&lt;ItemSettingsTiddler&gt;&gt; field=show checked=true unchecked=false/&gt;`.&lt;br&gt;
+''Order'' - a field called `order` that contains a numeric value used to sort the items in the section. Example: `&lt;$edit-text tiddler=&lt;&lt;ItemSettingsTiddler&gt;&gt; field=order size=2/&gt;`.&lt;br&gt;
+
+
+A very simple example is:&lt;br&gt;
+
+&lt;pre&gt;
+
+```
+&lt;table&gt;
+&lt;tr&gt;
+&lt;th&gt;
+Visible?
+&lt;/th&gt;
+&lt;th&gt;
+Item Name
+&lt;/th&gt;
+&lt;th&gt;
+Order
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;$list filter=&lt;&lt;ItemListFilter&gt;&gt;&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;$checkbox tiddler=&lt;&lt;ItemSettingsTiddler&gt;&gt; field=show checked=true unchecked=false/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;$view tiddler=&lt;&lt;DataTiddler&gt;&gt; field='name'/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;$edit-text tiddler=&lt;&lt;ItemSettingsTiddler&gt;&gt; field=order size=2/&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/$list&gt;
+&lt;/table&gt;
+```
+&lt;/pre&gt;
+&lt;hr&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+
+&lt;$edit-text tiddler='$:/temp/NewSection/OptionsTiddler' class='tc-edit-texteditor' placeholder='Options Tiddler Text'/&gt;
+
+Template Tiddler^^(&lt;$reveal type='nomatch' state='$:/state/popup/TemplateTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/TemplateTiddlerHelp' setTo='show'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/popup/TemplateTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/TemplateTiddlerHelp' setTo='hide'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;)^^:
+
+&lt;$reveal type='match' state='$:/state/popup/TemplateTiddlerHelp' text=show&gt;
+&lt;div style=&quot;word-wrap: true;&quot;&gt;
+&lt;hr&gt;
+
+A template tiddler is used to display the section in the final resume. Each template must have a unique name. It should be descriptive (like Basic Objective Template).
+
+A very example template tiddler is:
+
+&lt;pre&gt;
+
+```
+&lt;h2&gt;&lt;$view field='section_name'/&gt;&lt;/h2&gt;
+
+&lt;$list filter=&lt;&lt;SortedItemListFilter&gt;&gt;&gt;
+*&lt;$view field='name'/&gt;&lt;br&gt;
+&lt;/$list&gt;
+```
+&lt;/pre&gt;
+&lt;hr&gt;
+&lt;/div&gt;
+&lt;/$reveal&gt;
+
+Template Name:
+&lt;$edit-text tiddler='$:/temp/NewSection/TemplateTiddler' field=template_name class='tc-edit-texteditor' placeholder='Template Name'/&gt;
+
+Template:
+&lt;$edit-text tiddler='$:/temp/NewSection/TemplateTiddler' class='tc-edit-texteditor' placeholder='Template Tiddler Text'/&gt;
+
+&lt;$vars TiddlerPreamble=&quot;&quot;&quot;\define SectionsSettingsTiddler() $:/settings/$(ThisResume)$/$(ThisSection)$
+
+\define ItemListFilter() [prefix[$:/data/$(ThisSection)$/]removeprefix[$:/data/$(ThisSection)$/]]
+
+\define SortedItemListFilter() [prefix[$:/data/$(ThisSection)$/]removeprefix[$:/data]addprefix[$:/settings/$(ThisResume)$]sort[order]!show[false]removeprefix[$:/settings/$(ThisResume)$]addprefix[$:/data]]
+
+\define SectionName() $(ThisSection)$
+
+\define ItemSettingsTiddler() $:/settings/$(ThisResume)$/$(ThisSection)$/$(current&quot;&quot;&quot;
+
+TiddlerPreamble2=&quot;&quot;&quot;Tiddler)$
+
+\define DataTiddler() $:/data/$(ThisSection)$/$(current&quot;&quot;&quot;
+
+TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
+
+&quot;&quot;&quot; ThisAddItemButtonMacro='\define thisAddResumeSectionItemInside(ItemName)
+&lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/temp/$(ThisSection)$/NewItem&quot;&quot;&quot; title=&quot;&quot;&quot;$:/data/$(ThisSection)$/$ItemName$&quot;&quot;&quot;/&gt;
+\end
+
+\define thisAddResumeSectionItem()
+&lt;$button&gt;Add Item
+&lt;$macrocall $name=thisAddResumeSectionItemInside ItemName={{$:/temp/$(ThisSection)$/NewItem!!name}}&gt;
+&lt;/$button&gt;
+\end
+
+' ThisSection={{$:/temp/NewSection!!section_name}} ThisResume={{$:/settings/Global!!selected_resume}} UserInputTiddlerText={{$:/temp/NewSection/InputTiddler}} UserOptionsTiddlerText={{$:/temp/NewSection/OptionsTiddler}} UserTemplateTiddlerText={{$:/temp/NewSection/TemplateTiddler}} TemplateName={{$:/temp/NewSection/TemplateTiddler!!template_name}}&gt;
+&lt;$button&gt;Create Section
+&lt;$macrocall $name=thisMakeDisplayTiddler/&gt;
+&lt;$macrocall $name=thisMakeInputTiddler/&gt;
+&lt;$macrocall $name=thisMakeOptionsTiddler/&gt;
+&lt;$macrocall $name=thisMakeTemplateTiddler/&gt;
+&lt;/$button&gt;
+&lt;/$vars&gt;</pre>
 </div>
 <div tags="$:/tags/SideBar" title="Preview">
 <pre>\define thisMakePreview()
@@ -6940,10 +7226,10 @@ you need to manually replace `(SectionName)` with the name of the section you ar
 
 &lt;$transclude tiddler='Preview' mode=block/&gt;</pre>
 </div>
-<div tags="" title="Resume Options">
-<pre>&lt;&lt;tabs &quot;[[Layout Options]][tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]!show[false]get[template]get[options_tiddler]]&quot; [[Layout Options]]&gt;&gt;</pre>
+<div created="20150719183128695" modified="20150719183135450" tags="" title="Resume Options">
+<pre>&lt;&lt;tabs &quot;[[Layout Options]][tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]!show[false]sort[order]get[template]get[options_tiddler]]&quot; [[Layout Options]]&gt;&gt;</pre>
 </div>
-<div tags="" title="Resume Wizard">
+<div created="20150719173441992" modified="20150719182326153" tags="" title="Resume Wizard">
 <pre>\define CurrentResume() {{$:/settings/Global!!selected_resume}}
 
 \define thisDisplayInputTiddler()
@@ -6952,71 +7238,135 @@ you need to manually replace `(SectionName)` with the name of the section you ar
 &lt;/$list&gt;
 \end
 
+\define thisResumeWizardTiddlerEmptyMessage()
+&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]last[]]'&gt;
+	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&lt;&lt;currentTiddler&gt;&gt;&gt;
+		&lt;$button&gt;
+			Continue to Options
+			&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&quot;Resume Options&quot;/&gt;
+		&lt;/$button&gt;
+	&lt;/$reveal&gt;
+
+	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&quot;Resume Options&quot;&gt;
+		&lt;$button&gt;
+			Go to Preview
+			&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&quot;Preview&quot;/&gt;
+		&lt;/$button&gt;
+	&lt;/$reveal&gt;
+	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&quot;Preview&quot;&gt;
+		&lt;$tiddler tiddler='Preview'&gt;
+			&lt;$button message=&quot;tm-open-window&quot;&gt;
+				Print
+			&lt;/$button&gt;
+		&lt;/$tiddler&gt;
+	&lt;/$reveal&gt;
+&lt;/$list&gt;
+\end
+
+&lt;!-- If the user hasn't started the wizard yet display the interface to add or select a resume and the button to start the wizard --&gt;
 &lt;$reveal type='match' state='$:/state/ResumeWizardState' text=''&gt;
-Select resume to work on: &lt;$select tiddler='$:/settings/Global' field='selected_resume'&gt;&lt;$list filter='[[$:/data/ResumeList]indexes[]]'&gt;
-&lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
-&lt;/$list&gt;
-&lt;/$select&gt;
-&lt;br&gt;
- You can add a resume to the list:
-&lt;$edit-text tiddler='$:/temp/NewResumeName' field='resume_name' class='tc-edit-texteditor' placeholder='Name of new resume'/&gt; &lt;$button&gt;Add Resume&lt;$action-setfield $tiddler='$:/data/ResumeList' $index={{$:/temp/NewResumeName!!resume_name}} $value=true/&gt;
-&lt;$action-setfield $tiddler='$:/temp/NewResumeName' resume_name=''/&gt;
-&lt;/$button&gt;&lt;br&gt;&lt;br&gt;
+	&lt;!-- User can select an existing resume --&gt;
+	Select resume to work on:
+	&lt;$select tiddler='$:/settings/Global' field='selected_resume'&gt;
+		&lt;$list filter='[[$:/data/ResumeList]indexes[]]'&gt;
+			&lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
+		&lt;/$list&gt;
+	&lt;/$select&gt;
+	&lt;br&gt;
+	&lt;!-- User can add a new resume --&gt;
+	You can add a resume to the list:
+	&lt;$edit-text tiddler='$:/temp/NewResumeName' field='resume_name' class='tc-edit-texteditor' placeholder='Name of new resume'/&gt;
+	&lt;$button&gt;
+		Add Resume
+		&lt;$action-setfield $tiddler='$:/data/ResumeList' $index={{$:/temp/NewResumeName!!resume_name}} $value=true/&gt;
+		&lt;$action-setfield $tiddler='$:/temp/NewResumeName' resume_name=''/&gt;
+	&lt;/$button&gt;
+	&lt;br&gt;
+	&lt;br&gt;
 
-&lt;$button&gt;Click here to get started
-&lt;$list filter='[tag[Section Display]sort[order]first[]]'&gt;
-&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
-&lt;/$list&gt;
-&lt;/$button&gt;
+	&lt;!-- The button that starts the wizard --&gt;
+	&lt;$button&gt;
+		Click here to get started
+		&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]first[]]'&gt;
+			&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
+		&lt;/$list&gt;
+	&lt;/$button&gt;
 &lt;/$reveal&gt;
 
+&lt;!-- Once the wizard is started display the current input tiddler with forward and back buttons. There is also a 'back to start' button. --&gt;
 &lt;$reveal type='nomatch' state='$:/state/ResumeWizardState' text=''&gt;
-&lt;h1&gt;&lt;$transclude tiddler={{$:/state/ResumeWizardState}} field='section' mode=block/&gt;&lt;/h1&gt;
+	&lt;!-- Display the current section title. --&gt;
+	&lt;h1&gt;
+		&lt;$transclude tiddler={{$:/state/ResumeWizardState}} field='section' mode=block/&gt;
+	&lt;/h1&gt;
 
-&lt;$list filter='[{$:/state/ResumeWizardState}removeprefix[$:/display/]]' variable=CurrentSection&gt;
-&lt;$vars ThisResume={{$:/settings/Global!!selected_resume}}&gt;
-&lt;&lt;thisDisplayInputTiddler&gt;&gt;
-&lt;/$vars&gt;
-&lt;/$list&gt;
+	&lt;!-- Display the correct input tiddler. --&gt;
+	&lt;$list filter='[{$:/state/ResumeWizardState}removeprefix[$:/display/]]' variable=CurrentSection&gt;
+		&lt;$vars ThisResume={{$:/settings/Global!!selected_resume}}&gt;
+			&lt;&lt;thisDisplayInputTiddler&gt;&gt;
+		&lt;/$vars&gt;
+	&lt;/$list&gt;
+	&lt;!-- Display the resume options if that is the current section. --&gt;
+	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text='Resume Options'&gt;
+		Here you can change the order of sections (or of items in each section) on your resume as well as set other options. Click on 'Print' to open the resume in a new window to save or print it.
 
-&lt;$reveal type='nomatch' state='$:/state/ResumeWizardState' text='Preview and Set Options'&gt;
-&lt;$tiddler tiddler={{$:/state/ResumeWizardState}}&gt;
-&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]before&lt;currentTiddler&gt;]' emptyMessage=&quot;&quot; variable=PreviousTiddler&gt;
-&lt;$button&gt;
-Back (&lt;$view tiddler=&lt;&lt;PreviousTiddler&gt;&gt; field='section'/&gt;)
-&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;PreviousTiddler&gt;&gt;/&gt;
-&lt;/$button&gt;
-&lt;/$list&gt;
-&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]after&lt;currentTiddler&gt;]' emptyMessage=&quot;&quot;&quot;&lt;$list filter='[tag[Section]sort[order]last[]]'&gt;&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$button&gt;Continue to Options&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&quot;Resume Options&quot;/&gt;&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&quot;Resume Options&quot;&gt;&lt;$button&gt;Go to Preview&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&quot;Preview&quot;/&gt;&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/ResumeWizardState' text=&quot;Preview&quot;&gt;&lt;$tiddler tiddler='Preview'&gt;&lt;$button message=&quot;tm-open-window&quot;&gt;Print&lt;/$button&gt;&lt;/$tiddler&gt;&lt;/$reveal&gt;&lt;/$list&gt;&quot;&quot;&quot; variable=NextTiddler&gt;
-&lt;$button&gt;
-Next Section (&lt;$view tiddler=&lt;&lt;NextTiddler&gt;&gt; field='section'/&gt;)
-&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;NextTiddler&gt;&gt;/&gt;
-&lt;/$button&gt;
-&lt;/$list&gt;
-&lt;/$tiddler&gt;
-&lt;/$reveal&gt;
+		&lt;$transclude tiddler='Resume Options' mode=block/&gt;
+	&lt;/$reveal&gt;
 
+	&lt;!-- If the user hasn't reached options section yet, make and display the back and next buttons. --&gt;
+	&lt;$reveal type='nomatch' state='$:/state/ResumeWizardState' text='Resume Options'&gt;
+		&lt;!-- This makes the back button. If the user is on the first section this doesn't display anything. --&gt;
+		&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]before{$:/state/ResumeWizardState}]' emptyMessage=&quot;&quot; variable=PreviousTiddler&gt;
+			&lt;$button&gt;
+				Back (&lt;$view tiddler=&lt;&lt;PreviousTiddler&gt;&gt; field='section'/&gt;)
+				&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;PreviousTiddler&gt;&gt;/&gt;
+			&lt;/$button&gt;
+		&lt;/$list&gt;
+		&lt;!-- This Makes the next button. If the user is on the last section this is a button that opens the options section. --&gt;
+		&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]after{$:/state/ResumeWizardState}]' emptyMessage=&lt;&lt;thisResumeWizardTiddlerEmptyMessage&gt;&gt; variable=NextTiddler&gt;
+			&lt;$button&gt;
+				Next Section (&lt;$view tiddler=&lt;&lt;NextTiddler&gt;&gt; field='section'/&gt;)
+				&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;NextTiddler&gt;&gt;/&gt;
+			&lt;/$button&gt;
+		&lt;/$list&gt;
+	&lt;/$reveal&gt;
 
-&lt;$reveal type='match' state='$:/state/ResumeWizardState' text='Preview and Set Options'&gt;
-&lt;$button&gt;Print&lt;/$button&gt; (This doesn't work yet)&lt;br&gt;
-&lt;$button to=Preview&gt;Show Preview By Itself&lt;/$button&gt;
-&lt;/$reveal&gt;
+	&lt;!-- If the user has reached the options section display the print button (and the back button, this is a special case). --&gt;
+	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text='Resume Options'&gt;
+		&lt;!-- Magic to make the back button. --&gt;
+		&lt;$list filter='[tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]sort[order]removeprefix[$:/settings/]removeprefix{$:/settings/Global!!selected_resume}addprefix[$:/display]last[]]' emptyMessage=&quot;&quot; variable=PreviousTiddler&gt;
+			&lt;$button&gt;
+				Back (&lt;$view tiddler=&lt;&lt;PreviousTiddler&gt;&gt; field='section'/&gt;)
+				&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;PreviousTiddler&gt;&gt;/&gt;
+			&lt;/$button&gt;
+		&lt;/$list&gt;
+		&lt;!-- Open resume in new window for saving/printing. --&gt;
+		&lt;$tiddler tiddler='Preview'&gt;
+			&lt;$button message=&quot;tm-open-window&quot;&gt;
+				Print
+			&lt;/$button&gt;
+		&lt;/$tiddler&gt;
+		&lt;br&gt;
+	&lt;/$reveal&gt;
 
-&lt;hr&gt;
-&lt;hr&gt;
+	&lt;hr&gt;
+	&lt;hr&gt;
 
-&lt;$button&gt;
-Back to start
-&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=''/&gt;
-&lt;/$button&gt;
+	&lt;$button&gt;
+		Back to start
+		&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=''/&gt;
+	&lt;/$button&gt;
 &lt;/$reveal&gt;</pre>
 </div>
-<div tags="$:/tags/TopLeftBar" title="Top Bar Buttons">
+<div created="20150719172021101" modified="20150719172244848" tags="$:/tags/TopLeftBar" title="Top Bar Buttons">
 <pre>&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Resume Wizard&quot;&gt;Resume Wizard&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Edit Existing Items&quot;&gt;Edit Existing Items&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Resume Options&quot;&gt;Resume Options&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Preview&quot;&gt;Preview&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Help&quot;&gt;Help&lt;/$button&gt;
+&lt;$tiddler tiddler=Preview&gt;
+&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' message=&quot;tm-open-window&quot;&gt;Print&lt;/$button&gt;
+&lt;/$tiddler&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' message='tm-save-wiki'&gt;Save&lt;/$button&gt;</pre>
 </div>
 
