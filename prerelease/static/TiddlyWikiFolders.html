@@ -52,7 +52,7 @@ TiddlyWikiFolders
 </div><div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 44 hours ago
+</a> 4 days ago
 </div>
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
@@ -114,13 +114,14 @@ color:#333333;">
 			}
 		},
 		{
-			&quot;tiddlerFile&quot;: &quot;local/mytiddler.tid&quot;,
+			&quot;file&quot;: &quot;local/mytiddler.tid&quot;,
+			&quot;isTiddlerFile&quot;: true,
 			&quot;fields&quot;: {
 				&quot;title&quot;: &quot;A different title&quot;
 			}
 		}
 	]
-}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: a plain file that will not be deserialised</li><li><code>tiddlerFile</code>: a tiddler file that will be deserialised to extract the tiddlers</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul></div>
+}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: the file containing the tiddler</li><li><code>isTiddlerFile</code>: if <code>true</code>, the file will be deserialised to extract the tiddlers. Otherwise, the raw content of the file is assigned to the <code>text</code> field without any parsing</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul></div>
 
 
 

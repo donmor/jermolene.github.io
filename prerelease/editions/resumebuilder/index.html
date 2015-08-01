@@ -43,7 +43,7 @@ ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF S
 DAMAGE.
 " />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>Resume Builder — a resume building tool using TiddlyWiki</title>
+<title>Résumé Builder — a résumé building tool using TiddlyWiki</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~--><!--~~ Raw markup ~~-->
 
 </head>
@@ -139,6 +139,8 @@ Error message and password prompt
 
 <li>$:/data/ResumeTitle/Resume</li>
 
+<li>$:/data/ResumeTitle/Résumé</li>
+
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/display/Contact Information Display</li>
@@ -209,6 +211,14 @@ Error message and password prompt
 
 <li>$:/temp/info-plugin</li>
 
+<li>$:/temp/NewSection/InputTiddler</li>
+
+<li>$:/temp/NewSection/OptionsTiddler</li>
+
+<li>$:/temp/NewSection/TemplateTiddler</li>
+
+<li>$:/temp/Objective</li>
+
 <li>$:/template/ContactInformationTemplate</li>
 
 <li>$:/template/EducationTemplate</li>
@@ -255,9 +265,11 @@ Error message and password prompt
 
 <li>Preview and Set Options</li>
 
-<li>Resume Options</li>
+<li>Print Version</li>
 
-<li>Resume Wizard</li>
+<li>Résumé Options</li>
+
+<li>Résumé Wizard</li>
 
 <li>Top Bar Buttons</li>
 
@@ -1028,6 +1040,26 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/ControlPanel/Palette/ShowEditor/Caption&quot;,
             &quot;text&quot;: &quot;show editor&quot;
         },
+        &quot;$:/language/ControlPanel/Parsing/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Parsing/Caption&quot;,
+            &quot;text&quot;: &quot;Parsing&quot;
+        },
+        &quot;$:/language/ControlPanel/Parsing/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Parsing/Hint&quot;,
+            &quot;text&quot;: &quot;Here you can globally disable individual wiki parser rules. Take care as disabling some paser rules can prevent ~TiddlyWiki functioning correctly (you can restore normal operation with [[safe mode|http://tiddlywiki.com/#SafeMode]] )&quot;
+        },
+        &quot;$:/language/ControlPanel/Parsing/Block/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Parsing/Block/Caption&quot;,
+            &quot;text&quot;: &quot;Block Parse Rules&quot;
+        },
+        &quot;$:/language/ControlPanel/Parsing/Inline/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Parsing/Inline/Caption&quot;,
+            &quot;text&quot;: &quot;Inline Parse Rules&quot;
+        },
+        &quot;$:/language/ControlPanel/Parsing/Pragma/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Parsing/Pragma/Caption&quot;,
+            &quot;text&quot;: &quot;Pragma Parse Rules&quot;
+        },
         &quot;$:/language/ControlPanel/Plugins/Add/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Add/Hint&quot;,
             &quot;text&quot;: &quot;Install plugins from the official library&quot;
@@ -1159,6 +1191,18 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/AutoSave/Hint&quot;,
             &quot;text&quot;: &quot;Automatically save changes during editing&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/CamelCase/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/CamelCase/Caption&quot;,
+            &quot;text&quot;: &quot;Camel Case Wiki Links&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/CamelCase/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/CamelCase/Hint&quot;,
+            &quot;text&quot;: &quot;You can globally disable automatic linking of ~CamelCase phrases. Requires reload to take effect&quot;
+        },
+        &quot;$:/language/ControlPanel/Settings/CamelCase/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/CamelCase/Description&quot;,
+            &quot;text&quot;: &quot;Enable automatic ~CamelCase linking&quot;
         },
         &quot;$:/language/ControlPanel/Settings/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Settings/Caption&quot;,
@@ -3555,6 +3599,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
+        &quot;$:/core/modules/filters/wikiparserrules.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/wikiparserrules.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for returning the names of the wiki parser rules in this wiki\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.wikiparserrules = function(source,operator,options) {\n\tvar results = [];\n\t$tw.utils.each($tw.modules.types.wikirule,function(mod) {\n\t\tvar exp = mod.exports;\n\t\tif(exp.types[operator.operand]) {\n\t\t\tresults.push(exp.name);\n\t\t}\n\t});\n\tresults.sort();\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;$:/core/modules/filters/wikiparserrules.js&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
         &quot;$:/core/modules/filters.js&quot;: {
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters.js\ntype: application/javascript\nmodule-type: wikimethod\n\nAdds tiddler filtering methods to the $tw.Wiki object.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nParses an operation (i.e. a run) within a filter string\n\toperators: Array of array of operator nodes into which results should be inserted\n\tfilterString: filter string\n\tp: start position within the string\nReturns the new start position, after the parsed operation\n*/\nfunction parseFilterOperation(operators,filterString,p) {\n\tvar operator, operand, bracketPos, curlyBracketPos;\n\t// Skip the starting square bracket\n\tif(filterString.charAt(p++) !== \&quot;[\&quot;) {\n\t\tthrow \&quot;Missing [ in filter expression\&quot;;\n\t}\n\t// Process each operator in turn\n\tdo {\n\t\toperator = {};\n\t\t// Check for an operator prefix\n\t\tif(filterString.charAt(p) === \&quot;!\&quot;) {\n\t\t\toperator.prefix = filterString.charAt(p++);\n\t\t}\n\t\t// Get the operator name\n\t\tvar nextBracketPos = filterString.substring(p).search(/[\\[\\{&lt;\\/]/);\n\t\tif(nextBracketPos === -1) {\n\t\t\tthrow \&quot;Missing [ in filter expression\&quot;;\n\t\t}\n\t\tnextBracketPos += p;\n\t\tvar bracket = filterString.charAt(nextBracketPos);\n\t\toperator.operator = filterString.substring(p,nextBracketPos);\n\t\t\n\t\t// Any suffix?\n\t\tvar colon = operator.operator.indexOf(':');\n\t\tif(colon &gt; -1) {\n\t\t\toperator.suffix = operator.operator.substring(colon + 1);\n\t\t\toperator.operator = operator.operator.substring(0,colon) || \&quot;field\&quot;;\n\t\t}\n\t\t// Empty operator means: title\n\t\telse if(operator.operator === \&quot;\&quot;) {\n\t\t\toperator.operator = \&quot;title\&quot;;\n\t\t}\n\n\t\tp = nextBracketPos + 1;\n\t\tswitch (bracket) {\n\t\t\tcase \&quot;{\&quot;: // Curly brackets\n\t\t\t\toperator.indirect = true;\n\t\t\t\tnextBracketPos = filterString.indexOf(\&quot;}\&quot;,p);\n\t\t\t\tbreak;\n\t\t\tcase \&quot;[\&quot;: // Square brackets\n\t\t\t\tnextBracketPos = filterString.indexOf(\&quot;]\&quot;,p);\n\t\t\t\tbreak;\n\t\t\tcase \&quot;&lt;\&quot;: // Angle brackets\n\t\t\t\toperator.variable = true;\n\t\t\t\tnextBracketPos = filterString.indexOf(\&quot;&gt;\&quot;,p);\n\t\t\t\tbreak;\n\t\t\tcase \&quot;/\&quot;: // regexp brackets\n\t\t\t\tvar rex = /^((?:[^\\\\\\/]*|\\\\.)*)\\/(?:\\(([mygi]+)\\))?/g,\n\t\t\t\t\trexMatch = rex.exec(filterString.substring(p));\n\t\t\t\tif(rexMatch) {\n\t\t\t\t\toperator.regexp = new RegExp(rexMatch[1], rexMatch[2]);\n// DEPRECATION WARNING\nconsole.log(\&quot;WARNING: Filter\&quot;,operator.operator,\&quot;has a deprecated regexp operand\&quot;,operator.regexp);\n\t\t\t\t\tnextBracketPos = p + rex.lastIndex - 1;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tthrow \&quot;Unterminated regular expression in filter expression\&quot;;\n\t\t\t\t}\n\t\t\t\tbreak;\n\t\t}\n\t\t\n\t\tif(nextBracketPos === -1) {\n\t\t\tthrow \&quot;Missing closing bracket in filter expression\&quot;;\n\t\t}\n\t\tif(!operator.regexp) {\n\t\t\toperator.operand = filterString.substring(p,nextBracketPos);\n\t\t}\n\t\tp = nextBracketPos + 1;\n\t\t\t\n\t\t// Push this operator\n\t\toperators.push(operator);\n\t} while(filterString.charAt(p) !== \&quot;]\&quot;);\n\t// Skip the ending square bracket\n\tif(filterString.charAt(p++) !== \&quot;]\&quot;) {\n\t\tthrow \&quot;Missing ] in filter expression\&quot;;\n\t}\n\t// Return the parsing position\n\treturn p;\n}\n\n/*\nParse a filter string\n*/\nexports.parseFilter = function(filterString) {\n\tfilterString = filterString || \&quot;\&quot;;\n\tvar results = [], // Array of arrays of operator nodes {operator:,operand:}\n\t\tp = 0, // Current position in the filter string\n\t\tmatch;\n\tvar whitespaceRegExp = /(\\s+)/mg,\n\t\toperandRegExp = /((?:\\+|\\-)?)(?:(\\[)|(?:\&quot;([^\&quot;]*)\&quot;)|(?:'([^']*)')|([^\\s\\[\\]]+))/mg;\n\twhile(p &lt; filterString.length) {\n\t\t// Skip any whitespace\n\t\twhitespaceRegExp.lastIndex = p;\n\t\tmatch = whitespaceRegExp.exec(filterString);\n\t\tif(match &amp;&amp; match.index === p) {\n\t\t\tp = p + match[0].length;\n\t\t}\n\t\t// Match the start of the operation\n\t\tif(p &lt; filterString.length) {\n\t\t\toperandRegExp.lastIndex = p;\n\t\t\tmatch = operandRegExp.exec(filterString);\n\t\t\tif(!match || match.index !== p) {\n\t\t\t\tthrow \&quot;Syntax error in filter expression\&quot;;\n\t\t\t}\n\t\t\tvar operation = {\n\t\t\t\tprefix: \&quot;\&quot;,\n\t\t\t\toperators: []\n\t\t\t};\n\t\t\tif(match[1]) {\n\t\t\t\toperation.prefix = match[1];\n\t\t\t\tp++;\n\t\t\t}\n\t\t\tif(match[2]) { // Opening square bracket\n\t\t\t\tp = parseFilterOperation(operation.operators,filterString,p);\n\t\t\t} else {\n\t\t\t\tp = match.index + match[0].length;\n\t\t\t}\n\t\t\tif(match[3] || match[4] || match[5]) { // Double quoted string, single quoted string or unquoted title\n\t\t\t\toperation.operators.push(\n\t\t\t\t\t{operator: \&quot;title\&quot;, operand: match[3] || match[4] || match[5]}\n\t\t\t\t);\n\t\t\t}\n\t\t\tresults.push(operation);\n\t\t}\n\t}\n\treturn results;\n};\n\nexports.getFilterOperators = function() {\n\tif(!this.filterOperators) {\n\t\t$tw.Wiki.prototype.filterOperators = {};\n\t\t$tw.modules.applyMethods(\&quot;filteroperator\&quot;,this.filterOperators);\n\t}\n\treturn this.filterOperators;\n};\n\nexports.filterTiddlers = function(filterString,widget,source) {\n\tvar fn = this.compileFilter(filterString);\n\treturn fn.call(this,source,widget);\n};\n\n/*\nCompile a filter into a function with the signature fn(source,widget) where:\nsource: an iterator function for the source tiddlers, called source(iterator), where iterator is called as iterator(tiddler,title)\nwidget: an optional widget node for retrieving the current tiddler etc.\n*/\nexports.compileFilter = function(filterString) {\n\tvar filterParseTree;\n\ttry {\n\t\tfilterParseTree = this.parseFilter(filterString);\n\t} catch(e) {\n\t\treturn function(source,widget) {\n\t\t\treturn [\&quot;Filter error: \&quot; + e];\n\t\t};\n\t}\n\t// Get the hashmap of filter operator functions\n\tvar filterOperators = this.getFilterOperators();\n\t// Assemble array of functions, one for each operation\n\tvar operationFunctions = [];\n\t// Step through the operations\n\tvar self = this;\n\t$tw.utils.each(filterParseTree,function(operation) {\n\t\t// Create a function for the chain of operators in the operation\n\t\tvar operationSubFunction = function(source,widget) {\n\t\t\tvar accumulator = source,\n\t\t\t\tresults = [],\n\t\t\t\tcurrTiddlerTitle = widget &amp;&amp; widget.getVariable(\&quot;currentTiddler\&quot;);\n\t\t\t$tw.utils.each(operation.operators,function(operator) {\n\t\t\t\tvar operand = operator.operand,\n\t\t\t\t\toperatorFunction;\n\t\t\t\tif(!operator.operator) {\n\t\t\t\t\toperatorFunction = filterOperators.title;\n\t\t\t\t} else if(!filterOperators[operator.operator]) {\n\t\t\t\t\toperatorFunction = filterOperators.field;\n\t\t\t\t} else {\n\t\t\t\t\toperatorFunction = filterOperators[operator.operator];\n\t\t\t\t}\n\t\t\t\tif(operator.indirect) {\n\t\t\t\t\toperand = self.getTextReference(operator.operand,\&quot;\&quot;,currTiddlerTitle);\n\t\t\t\t}\n\t\t\t\tif(operator.variable) {\n\t\t\t\t\toperand = widget.getVariable(operator.operand,{defaultValue: \&quot;\&quot;});\n\t\t\t\t}\n\t\t\t\t// Invoke the appropriate filteroperator module\n\t\t\t\tresults = operatorFunction(accumulator,{\n\t\t\t\t\t\t\toperator: operator.operator,\n\t\t\t\t\t\t\toperand: operand,\n\t\t\t\t\t\t\tprefix: operator.prefix,\n\t\t\t\t\t\t\tsuffix: operator.suffix,\n\t\t\t\t\t\t\tregexp: operator.regexp\n\t\t\t\t\t\t},{\n\t\t\t\t\t\t\twiki: self,\n\t\t\t\t\t\t\twidget: widget\n\t\t\t\t\t\t});\n\t\t\t\tif($tw.utils.isArray(results)) {\n\t\t\t\t\taccumulator = self.makeTiddlerIterator(results);\n\t\t\t\t} else {\n\t\t\t\t\taccumulator = results;\n\t\t\t\t}\n\t\t\t});\n\t\t\tif($tw.utils.isArray(results)) {\n\t\t\t\treturn results;\n\t\t\t} else {\n\t\t\t\tvar resultArray = [];\n\t\t\t\tresults(function(tiddler,title) {\n\t\t\t\t\tresultArray.push(title);\n\t\t\t\t});\n\t\t\t\treturn resultArray;\n\t\t\t}\n\t\t};\n\t\t// Wrap the operator functions in a wrapper function that depends on the prefix\n\t\toperationFunctions.push((function() {\n\t\t\tswitch(operation.prefix || \&quot;\&quot;) {\n\t\t\t\tcase \&quot;\&quot;: // No prefix means that the operation is unioned into the result\n\t\t\t\t\treturn function(results,source,widget) {\n\t\t\t\t\t\t$tw.utils.pushTop(results,operationSubFunction(source,widget));\n\t\t\t\t\t};\n\t\t\t\tcase \&quot;-\&quot;: // The results of this operation are removed from the main result\n\t\t\t\t\treturn function(results,source,widget) {\n\t\t\t\t\t\t$tw.utils.removeArrayEntries(results,operationSubFunction(source,widget));\n\t\t\t\t\t};\n\t\t\t\tcase \&quot;+\&quot;: // This operation is applied to the main results so far\n\t\t\t\t\treturn function(results,source,widget) {\n\t\t\t\t\t\t// This replaces all the elements of the array, but keeps the actual array so that references to it are preserved\n\t\t\t\t\t\tsource = self.makeTiddlerIterator(results);\n\t\t\t\t\t\tresults.splice(0,results.length);\n\t\t\t\t\t\t$tw.utils.pushTop(results,operationSubFunction(source,widget));\n\t\t\t\t\t};\n\t\t\t}\n\t\t})());\n\t});\n\t// Return a function that applies the operations to a source iterator of tiddler titles\n\treturn $tw.perf.measure(\&quot;filter\&quot;,function filterFunction(source,widget) {\n\t\tif(!source) {\n\t\t\tsource = self.each;\n\t\t} else if(typeof source === \&quot;object\&quot;) { // Array or hashmap\n\t\t\tsource = self.makeTiddlerIterator(source);\n\t\t}\n\t\tvar results = [];\n\t\t$tw.utils.each(operationFunctions,function(operationFunction) {\n\t\t\toperationFunction(results,source,widget);\n\t\t});\n\t\treturn results;\n\t});\n};\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/filters.js&quot;,
@@ -3886,7 +3936,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;wikirule&quot;
         },
         &quot;$:/core/modules/parsers/wikiparser/wikiparser.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/wikiparser.js\ntype: application/javascript\nmodule-type: parser\n\nThe wiki text parser processes blocks of source text into a parse tree.\n\nThe parse tree is made up of nested arrays of these JavaScript objects:\n\n\t{type: \&quot;element\&quot;, tag: &lt;string&gt;, attributes: {}, children: []} - an HTML element\n\t{type: \&quot;text\&quot;, text: &lt;string&gt;} - a text node\n\t{type: \&quot;entity\&quot;, value: &lt;string&gt;} - an entity\n\t{type: \&quot;raw\&quot;, html: &lt;string&gt;} - raw HTML\n\nAttributes are stored as hashmaps of the following objects:\n\n\t{type: \&quot;string\&quot;, value: &lt;string&gt;} - literal string\n\t{type: \&quot;indirect\&quot;, textReference: &lt;textReference&gt;} - indirect through a text reference\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar WikiParser = function(type,text,options) {\n\tthis.wiki = options.wiki;\n\t// Initialise the classes if we don't have them already\n\tif(!this.pragmaRuleClasses) {\n\t\tWikiParser.prototype.pragmaRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;pragma\&quot;,$tw.WikiRuleBase);\n\t}\n\tif(!this.blockRuleClasses) {\n\t\tWikiParser.prototype.blockRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;block\&quot;,$tw.WikiRuleBase);\n\t}\n\tif(!this.inlineRuleClasses) {\n\t\tWikiParser.prototype.inlineRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;inline\&quot;,$tw.WikiRuleBase);\n\t}\n\t// Save the parse text\n\tthis.type = type || \&quot;text/vnd.tiddlywiki\&quot;;\n\tthis.source = text || \&quot;\&quot;;\n\tthis.sourceLength = this.source.length;\n\t// Set current parse position\n\tthis.pos = 0;\n\t// Instantiate the pragma parse rules\n\tthis.pragmaRules = this.instantiateRules(this.pragmaRuleClasses,\&quot;pragma\&quot;,0);\n\t// Instantiate the parser block and inline rules\n\tthis.blockRules = this.instantiateRules(this.blockRuleClasses,\&quot;block\&quot;,0);\n\tthis.inlineRules = this.instantiateRules(this.inlineRuleClasses,\&quot;inline\&quot;,0);\n\t// Parse any pragmas\n\tthis.tree = [];\n\tvar topBranch = this.parsePragmas();\n\t// Parse the text into inline runs or blocks\n\tif(options.parseAsInline) {\n\t\ttopBranch.push.apply(topBranch,this.parseInlineRun());\n\t} else {\n\t\ttopBranch.push.apply(topBranch,this.parseBlocks());\n\t}\n\t// Return the parse tree\n};\n\n/*\nInstantiate an array of parse rules\n*/\nWikiParser.prototype.instantiateRules = function(classes,type,startPos) {\n\tvar rulesInfo = [],\n\t\tself = this;\n\t$tw.utils.each(classes,function(RuleClass) {\n\t\t// Instantiate the rule\n\t\tvar rule = new RuleClass(self);\n\t\trule.is = {};\n\t\trule.is[type] = true;\n\t\trule.init(self);\n\t\tvar matchIndex = rule.findNextMatch(startPos);\n\t\tif(matchIndex !== undefined) {\n\t\t\trulesInfo.push({\n\t\t\t\trule: rule,\n\t\t\t\tmatchIndex: matchIndex\n\t\t\t});\n\t\t}\n\t});\n\treturn rulesInfo;\n};\n\n/*\nSkip any whitespace at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n*/\nWikiParser.prototype.skipWhitespace = function(options) {\n\toptions = options || {};\n\tvar whitespaceRegExp = options.treatNewlinesAsNonWhitespace ? /([^\\S\\n]+)/mg : /(\\s+)/mg;\n\twhitespaceRegExp.lastIndex = this.pos;\n\tvar whitespaceMatch = whitespaceRegExp.exec(this.source);\n\tif(whitespaceMatch &amp;&amp; whitespaceMatch.index === this.pos) {\n\t\tthis.pos = whitespaceRegExp.lastIndex;\n\t}\n};\n\n/*\nGet the next match out of an array of parse rule instances\n*/\nWikiParser.prototype.findNextMatch = function(rules,startPos) {\n\t// Find the best matching rule by finding the closest match position\n\tvar matchingRule,\n\t\tmatchingRulePos = this.sourceLength;\n\t// Step through each rule\n\tfor(var t=0; t&lt;rules.length; t++) {\n\t\tvar ruleInfo = rules[t];\n\t\t// Ask the rule to get the next match if we've moved past the current one\n\t\tif(ruleInfo.matchIndex !== undefined  &amp;&amp; ruleInfo.matchIndex &lt; startPos) {\n\t\t\truleInfo.matchIndex = ruleInfo.rule.findNextMatch(startPos);\n\t\t}\n\t\t// Adopt this match if it's closer than the current best match\n\t\tif(ruleInfo.matchIndex !== undefined &amp;&amp; ruleInfo.matchIndex &lt;= matchingRulePos) {\n\t\t\tmatchingRule = ruleInfo;\n\t\t\tmatchingRulePos = ruleInfo.matchIndex;\n\t\t}\n\t}\n\treturn matchingRule;\n};\n\n/*\nParse any pragmas at the beginning of a block of parse text\n*/\nWikiParser.prototype.parsePragmas = function() {\n\tvar currentTreeBranch = this.tree;\n\twhile(true) {\n\t\t// Skip whitespace\n\t\tthis.skipWhitespace();\n\t\t// Check for the end of the text\n\t\tif(this.pos &gt;= this.sourceLength) {\n\t\t\tbreak;\n\t\t}\n\t\t// Check if we've arrived at a pragma rule match\n\t\tvar nextMatch = this.findNextMatch(this.pragmaRules,this.pos);\n\t\t// If not, just exit\n\t\tif(!nextMatch || nextMatch.matchIndex !== this.pos) {\n\t\t\tbreak;\n\t\t}\n\t\t// Process the pragma rule\n\t\tvar subTree = nextMatch.rule.parse();\n\t\tif(subTree.length &gt; 0) {\n\t\t\t// Quick hack; we only cope with a single parse tree node being returned, which is true at the moment\n\t\t\tcurrentTreeBranch.push.apply(currentTreeBranch,subTree);\n\t\t\tsubTree[0].children = [];\n\t\t\tcurrentTreeBranch = subTree[0].children;\n\t\t}\n\t}\n\treturn currentTreeBranch;\n};\n\n/*\nParse a block from the current position\n\tterminatorRegExpString: optional regular expression string that identifies the end of plain paragraphs. Must not include capturing parenthesis\n*/\nWikiParser.prototype.parseBlock = function(terminatorRegExpString) {\n\tvar terminatorRegExp = terminatorRegExpString ? new RegExp(\&quot;(\&quot; + terminatorRegExpString + \&quot;|\\\\r?\\\\n\\\\r?\\\\n)\&quot;,\&quot;mg\&quot;) : /(\\r?\\n\\r?\\n)/mg;\n\tthis.skipWhitespace();\n\tif(this.pos &gt;= this.sourceLength) {\n\t\treturn [];\n\t}\n\t// Look for a block rule that applies at the current position\n\tvar nextMatch = this.findNextMatch(this.blockRules,this.pos);\n\tif(nextMatch &amp;&amp; nextMatch.matchIndex === this.pos) {\n\t\treturn nextMatch.rule.parse();\n\t}\n\t// Treat it as a paragraph if we didn't find a block rule\n\treturn [{type: \&quot;element\&quot;, tag: \&quot;p\&quot;, children: this.parseInlineRun(terminatorRegExp)}];\n};\n\n/*\nParse a series of blocks of text until a terminating regexp is encountered or the end of the text\n\tterminatorRegExpString: terminating regular expression\n*/\nWikiParser.prototype.parseBlocks = function(terminatorRegExpString) {\n\tif(terminatorRegExpString) {\n\t\treturn this.parseBlocksTerminated(terminatorRegExpString);\n\t} else {\n\t\treturn this.parseBlocksUnterminated();\n\t}\n};\n\n/*\nParse a block from the current position to the end of the text\n*/\nWikiParser.prototype.parseBlocksUnterminated = function() {\n\tvar tree = [];\n\twhile(this.pos &lt; this.sourceLength) {\n\t\ttree.push.apply(tree,this.parseBlock());\n\t}\n\treturn tree;\n};\n\n/*\nParse blocks of text until a terminating regexp is encountered\n*/\nWikiParser.prototype.parseBlocksTerminated = function(terminatorRegExpString) {\n\tvar terminatorRegExp = new RegExp(\&quot;(\&quot; + terminatorRegExpString + \&quot;)\&quot;,\&quot;mg\&quot;),\n\t\ttree = [];\n\t// Skip any whitespace\n\tthis.skipWhitespace();\n\t//  Check if we've got the end marker\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar match = terminatorRegExp.exec(this.source);\n\t// Parse the text into blocks\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; !(match &amp;&amp; match.index === this.pos)) {\n\t\tvar blocks = this.parseBlock(terminatorRegExpString);\n\t\ttree.push.apply(tree,blocks);\n\t\t// Skip any whitespace\n\t\tthis.skipWhitespace();\n\t\t//  Check if we've got the end marker\n\t\tterminatorRegExp.lastIndex = this.pos;\n\t\tmatch = terminatorRegExp.exec(this.source);\n\t}\n\tif(match &amp;&amp; match.index === this.pos) {\n\t\tthis.pos = match.index + match[0].length;\n\t}\n\treturn tree;\n};\n\n/*\nParse a run of text at the current position\n\tterminatorRegExp: a regexp at which to stop the run\n\toptions: see below\nOptions available:\n\teatTerminator: move the parse position past any encountered terminator (default false)\n*/\nWikiParser.prototype.parseInlineRun = function(terminatorRegExp,options) {\n\tif(terminatorRegExp) {\n\t\treturn this.parseInlineRunTerminated(terminatorRegExp,options);\n\t} else {\n\t\treturn this.parseInlineRunUnterminated(options);\n\t}\n};\n\nWikiParser.prototype.parseInlineRunUnterminated = function(options) {\n\tvar tree = [];\n\t// Find the next occurrence of an inline rule\n\tvar nextMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around the matches until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; nextMatch) {\n\t\t// Process the text preceding the run rule\n\t\tif(nextMatch.matchIndex &gt; this.pos) {\n\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,nextMatch.matchIndex)});\n\t\t\tthis.pos = nextMatch.matchIndex;\n\t\t}\n\t\t// Process the run rule\n\t\ttree.push.apply(tree,nextMatch.rule.parse());\n\t\t// Look for the next run rule\n\t\tnextMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t}\n\t// Process the remaining text\n\tif(this.pos &lt; this.sourceLength) {\n\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substr(this.pos)});\n\t}\n\tthis.pos = this.sourceLength;\n\treturn tree;\n};\n\nWikiParser.prototype.parseInlineRunTerminated = function(terminatorRegExp,options) {\n\toptions = options || {};\n\tvar tree = [];\n\t// Find the next occurrence of the terminator\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar terminatorMatch = terminatorRegExp.exec(this.source);\n\t// Find the next occurrence of a inlinerule\n\tvar inlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; (terminatorMatch || inlineRuleMatch)) {\n\t\t// Return if we've found the terminator, and it precedes any inline rule match\n\t\tif(terminatorMatch) {\n\t\t\tif(!inlineRuleMatch || inlineRuleMatch.matchIndex &gt;= terminatorMatch.index) {\n\t\t\t\tif(terminatorMatch.index &gt; this.pos) {\n\t\t\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,terminatorMatch.index)});\n\t\t\t\t}\n\t\t\t\tthis.pos = terminatorMatch.index;\n\t\t\t\tif(options.eatTerminator) {\n\t\t\t\t\tthis.pos += terminatorMatch[0].length;\n\t\t\t\t}\n\t\t\t\treturn tree;\n\t\t\t}\n\t\t}\n\t\t// Process any inline rule, along with the text preceding it\n\t\tif(inlineRuleMatch) {\n\t\t\t// Preceding text\n\t\t\tif(inlineRuleMatch.matchIndex &gt; this.pos) {\n\t\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,inlineRuleMatch.matchIndex)});\n\t\t\t\tthis.pos = inlineRuleMatch.matchIndex;\n\t\t\t}\n\t\t\t// Process the inline rule\n\t\t\ttree.push.apply(tree,inlineRuleMatch.rule.parse());\n\t\t\t// Look for the next inline rule\n\t\t\tinlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t\t\t// Look for the next terminator match\n\t\t\tterminatorRegExp.lastIndex = this.pos;\n\t\t\tterminatorMatch = terminatorRegExp.exec(this.source);\n\t\t}\n\t}\n\t// Process the remaining text\n\tif(this.pos &lt; this.sourceLength) {\n\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substr(this.pos)});\n\t}\n\tthis.pos = this.sourceLength;\n\treturn tree;\n};\n\n/*\nParse zero or more class specifiers `.classname`\n*/\nWikiParser.prototype.parseClasses = function() {\n\tvar classRegExp = /\\.([^\\s\\.]+)/mg,\n\t\tclassNames = [];\n\tclassRegExp.lastIndex = this.pos;\n\tvar match = classRegExp.exec(this.source);\n\twhile(match &amp;&amp; match.index === this.pos) {\n\t\tthis.pos = match.index + match[0].length;\n\t\tclassNames.push(match[1]);\n\t\tmatch = classRegExp.exec(this.source);\n\t}\n\treturn classNames;\n};\n\n/*\nAmend the rules used by this instance of the parser\n\ttype: `only` keeps just the named rules, `except` keeps all but the named rules\n\tnames: array of rule names\n*/\nWikiParser.prototype.amendRules = function(type,names) {\n\tnames = names || [];\n\t// Define the filter function\n\tvar keepFilter;\n\tif(type === \&quot;only\&quot;) {\n\t\tkeepFilter = function(name) {\n\t\t\treturn names.indexOf(name) !== -1;\n\t\t};\n\t} else if(type === \&quot;except\&quot;) {\n\t\tkeepFilter = function(name) {\n\t\t\treturn names.indexOf(name) === -1;\n\t\t};\n\t} else {\n\t\treturn;\n\t}\n\t// Define a function to process each of our rule arrays\n\tvar processRuleArray = function(ruleArray) {\n\t\tfor(var t=ruleArray.length-1; t&gt;=0; t--) {\n\t\t\tif(!keepFilter(ruleArray[t].rule.name)) {\n\t\t\t\truleArray.splice(t,1);\n\t\t\t}\n\t\t}\n\t};\n\t// Process each rule array\n\tprocessRuleArray(this.pragmaRules);\n\tprocessRuleArray(this.blockRules);\n\tprocessRuleArray(this.inlineRules);\n};\n\nexports[\&quot;text/vnd.tiddlywiki\&quot;] = WikiParser;\n\n})();\n\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/parsers/wikiparser/wikiparser.js\ntype: application/javascript\nmodule-type: parser\n\nThe wiki text parser processes blocks of source text into a parse tree.\n\nThe parse tree is made up of nested arrays of these JavaScript objects:\n\n\t{type: \&quot;element\&quot;, tag: &lt;string&gt;, attributes: {}, children: []} - an HTML element\n\t{type: \&quot;text\&quot;, text: &lt;string&gt;} - a text node\n\t{type: \&quot;entity\&quot;, value: &lt;string&gt;} - an entity\n\t{type: \&quot;raw\&quot;, html: &lt;string&gt;} - raw HTML\n\nAttributes are stored as hashmaps of the following objects:\n\n\t{type: \&quot;string\&quot;, value: &lt;string&gt;} - literal string\n\t{type: \&quot;indirect\&quot;, textReference: &lt;textReference&gt;} - indirect through a text reference\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar WikiParser = function(type,text,options) {\n\tthis.wiki = options.wiki;\n\t// Initialise the classes if we don't have them already\n\tif(!this.pragmaRuleClasses) {\n\t\tWikiParser.prototype.pragmaRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;pragma\&quot;,$tw.WikiRuleBase);\n\t\tthis.setupRules(WikiParser.prototype.pragmaRuleClasses,\&quot;$:/config/WikiParserRules/Pragmas/\&quot;);\n\t}\n\tif(!this.blockRuleClasses) {\n\t\tWikiParser.prototype.blockRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;block\&quot;,$tw.WikiRuleBase);\n\t\tthis.setupRules(WikiParser.prototype.blockRuleClasses,\&quot;$:/config/WikiParserRules/Block/\&quot;);\n\t}\n\tif(!this.inlineRuleClasses) {\n\t\tWikiParser.prototype.inlineRuleClasses = $tw.modules.createClassesFromModules(\&quot;wikirule\&quot;,\&quot;inline\&quot;,$tw.WikiRuleBase);\n\t\tthis.setupRules(WikiParser.prototype.inlineRuleClasses,\&quot;$:/config/WikiParserRules/Inline/\&quot;);\n\t}\n\t// Save the parse text\n\tthis.type = type || \&quot;text/vnd.tiddlywiki\&quot;;\n\tthis.source = text || \&quot;\&quot;;\n\tthis.sourceLength = this.source.length;\n\t// Set current parse position\n\tthis.pos = 0;\n\t// Instantiate the pragma parse rules\n\tthis.pragmaRules = this.instantiateRules(this.pragmaRuleClasses,\&quot;pragma\&quot;,0);\n\t// Instantiate the parser block and inline rules\n\tthis.blockRules = this.instantiateRules(this.blockRuleClasses,\&quot;block\&quot;,0);\n\tthis.inlineRules = this.instantiateRules(this.inlineRuleClasses,\&quot;inline\&quot;,0);\n\t// Parse any pragmas\n\tthis.tree = [];\n\tvar topBranch = this.parsePragmas();\n\t// Parse the text into inline runs or blocks\n\tif(options.parseAsInline) {\n\t\ttopBranch.push.apply(topBranch,this.parseInlineRun());\n\t} else {\n\t\ttopBranch.push.apply(topBranch,this.parseBlocks());\n\t}\n\t// Return the parse tree\n};\n\n/*\n*/\nWikiParser.prototype.setupRules = function(proto,configPrefix) {\n\tvar self = this;\n\tif(!$tw.safemode) {\n\t\t$tw.utils.each(proto,function(object,name) {\n\t\t\tif(self.wiki.getTiddlerText(configPrefix + name,\&quot;enable\&quot;) !== \&quot;enable\&quot;) {\n\t\t\t\tdelete proto[name];\n\t\t\t}\n\t\t});\n\t}\n};\n\n/*\nInstantiate an array of parse rules\n*/\nWikiParser.prototype.instantiateRules = function(classes,type,startPos) {\n\tvar rulesInfo = [],\n\t\tself = this;\n\t$tw.utils.each(classes,function(RuleClass) {\n\t\t// Instantiate the rule\n\t\tvar rule = new RuleClass(self);\n\t\trule.is = {};\n\t\trule.is[type] = true;\n\t\trule.init(self);\n\t\tvar matchIndex = rule.findNextMatch(startPos);\n\t\tif(matchIndex !== undefined) {\n\t\t\trulesInfo.push({\n\t\t\t\trule: rule,\n\t\t\t\tmatchIndex: matchIndex\n\t\t\t});\n\t\t}\n\t});\n\treturn rulesInfo;\n};\n\n/*\nSkip any whitespace at the current position. Options are:\n\ttreatNewlinesAsNonWhitespace: true if newlines are NOT to be treated as whitespace\n*/\nWikiParser.prototype.skipWhitespace = function(options) {\n\toptions = options || {};\n\tvar whitespaceRegExp = options.treatNewlinesAsNonWhitespace ? /([^\\S\\n]+)/mg : /(\\s+)/mg;\n\twhitespaceRegExp.lastIndex = this.pos;\n\tvar whitespaceMatch = whitespaceRegExp.exec(this.source);\n\tif(whitespaceMatch &amp;&amp; whitespaceMatch.index === this.pos) {\n\t\tthis.pos = whitespaceRegExp.lastIndex;\n\t}\n};\n\n/*\nGet the next match out of an array of parse rule instances\n*/\nWikiParser.prototype.findNextMatch = function(rules,startPos) {\n\t// Find the best matching rule by finding the closest match position\n\tvar matchingRule,\n\t\tmatchingRulePos = this.sourceLength;\n\t// Step through each rule\n\tfor(var t=0; t&lt;rules.length; t++) {\n\t\tvar ruleInfo = rules[t];\n\t\t// Ask the rule to get the next match if we've moved past the current one\n\t\tif(ruleInfo.matchIndex !== undefined  &amp;&amp; ruleInfo.matchIndex &lt; startPos) {\n\t\t\truleInfo.matchIndex = ruleInfo.rule.findNextMatch(startPos);\n\t\t}\n\t\t// Adopt this match if it's closer than the current best match\n\t\tif(ruleInfo.matchIndex !== undefined &amp;&amp; ruleInfo.matchIndex &lt;= matchingRulePos) {\n\t\t\tmatchingRule = ruleInfo;\n\t\t\tmatchingRulePos = ruleInfo.matchIndex;\n\t\t}\n\t}\n\treturn matchingRule;\n};\n\n/*\nParse any pragmas at the beginning of a block of parse text\n*/\nWikiParser.prototype.parsePragmas = function() {\n\tvar currentTreeBranch = this.tree;\n\twhile(true) {\n\t\t// Skip whitespace\n\t\tthis.skipWhitespace();\n\t\t// Check for the end of the text\n\t\tif(this.pos &gt;= this.sourceLength) {\n\t\t\tbreak;\n\t\t}\n\t\t// Check if we've arrived at a pragma rule match\n\t\tvar nextMatch = this.findNextMatch(this.pragmaRules,this.pos);\n\t\t// If not, just exit\n\t\tif(!nextMatch || nextMatch.matchIndex !== this.pos) {\n\t\t\tbreak;\n\t\t}\n\t\t// Process the pragma rule\n\t\tvar subTree = nextMatch.rule.parse();\n\t\tif(subTree.length &gt; 0) {\n\t\t\t// Quick hack; we only cope with a single parse tree node being returned, which is true at the moment\n\t\t\tcurrentTreeBranch.push.apply(currentTreeBranch,subTree);\n\t\t\tsubTree[0].children = [];\n\t\t\tcurrentTreeBranch = subTree[0].children;\n\t\t}\n\t}\n\treturn currentTreeBranch;\n};\n\n/*\nParse a block from the current position\n\tterminatorRegExpString: optional regular expression string that identifies the end of plain paragraphs. Must not include capturing parenthesis\n*/\nWikiParser.prototype.parseBlock = function(terminatorRegExpString) {\n\tvar terminatorRegExp = terminatorRegExpString ? new RegExp(\&quot;(\&quot; + terminatorRegExpString + \&quot;|\\\\r?\\\\n\\\\r?\\\\n)\&quot;,\&quot;mg\&quot;) : /(\\r?\\n\\r?\\n)/mg;\n\tthis.skipWhitespace();\n\tif(this.pos &gt;= this.sourceLength) {\n\t\treturn [];\n\t}\n\t// Look for a block rule that applies at the current position\n\tvar nextMatch = this.findNextMatch(this.blockRules,this.pos);\n\tif(nextMatch &amp;&amp; nextMatch.matchIndex === this.pos) {\n\t\treturn nextMatch.rule.parse();\n\t}\n\t// Treat it as a paragraph if we didn't find a block rule\n\treturn [{type: \&quot;element\&quot;, tag: \&quot;p\&quot;, children: this.parseInlineRun(terminatorRegExp)}];\n};\n\n/*\nParse a series of blocks of text until a terminating regexp is encountered or the end of the text\n\tterminatorRegExpString: terminating regular expression\n*/\nWikiParser.prototype.parseBlocks = function(terminatorRegExpString) {\n\tif(terminatorRegExpString) {\n\t\treturn this.parseBlocksTerminated(terminatorRegExpString);\n\t} else {\n\t\treturn this.parseBlocksUnterminated();\n\t}\n};\n\n/*\nParse a block from the current position to the end of the text\n*/\nWikiParser.prototype.parseBlocksUnterminated = function() {\n\tvar tree = [];\n\twhile(this.pos &lt; this.sourceLength) {\n\t\ttree.push.apply(tree,this.parseBlock());\n\t}\n\treturn tree;\n};\n\n/*\nParse blocks of text until a terminating regexp is encountered\n*/\nWikiParser.prototype.parseBlocksTerminated = function(terminatorRegExpString) {\n\tvar terminatorRegExp = new RegExp(\&quot;(\&quot; + terminatorRegExpString + \&quot;)\&quot;,\&quot;mg\&quot;),\n\t\ttree = [];\n\t// Skip any whitespace\n\tthis.skipWhitespace();\n\t//  Check if we've got the end marker\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar match = terminatorRegExp.exec(this.source);\n\t// Parse the text into blocks\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; !(match &amp;&amp; match.index === this.pos)) {\n\t\tvar blocks = this.parseBlock(terminatorRegExpString);\n\t\ttree.push.apply(tree,blocks);\n\t\t// Skip any whitespace\n\t\tthis.skipWhitespace();\n\t\t//  Check if we've got the end marker\n\t\tterminatorRegExp.lastIndex = this.pos;\n\t\tmatch = terminatorRegExp.exec(this.source);\n\t}\n\tif(match &amp;&amp; match.index === this.pos) {\n\t\tthis.pos = match.index + match[0].length;\n\t}\n\treturn tree;\n};\n\n/*\nParse a run of text at the current position\n\tterminatorRegExp: a regexp at which to stop the run\n\toptions: see below\nOptions available:\n\teatTerminator: move the parse position past any encountered terminator (default false)\n*/\nWikiParser.prototype.parseInlineRun = function(terminatorRegExp,options) {\n\tif(terminatorRegExp) {\n\t\treturn this.parseInlineRunTerminated(terminatorRegExp,options);\n\t} else {\n\t\treturn this.parseInlineRunUnterminated(options);\n\t}\n};\n\nWikiParser.prototype.parseInlineRunUnterminated = function(options) {\n\tvar tree = [];\n\t// Find the next occurrence of an inline rule\n\tvar nextMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around the matches until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; nextMatch) {\n\t\t// Process the text preceding the run rule\n\t\tif(nextMatch.matchIndex &gt; this.pos) {\n\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,nextMatch.matchIndex)});\n\t\t\tthis.pos = nextMatch.matchIndex;\n\t\t}\n\t\t// Process the run rule\n\t\ttree.push.apply(tree,nextMatch.rule.parse());\n\t\t// Look for the next run rule\n\t\tnextMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t}\n\t// Process the remaining text\n\tif(this.pos &lt; this.sourceLength) {\n\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substr(this.pos)});\n\t}\n\tthis.pos = this.sourceLength;\n\treturn tree;\n};\n\nWikiParser.prototype.parseInlineRunTerminated = function(terminatorRegExp,options) {\n\toptions = options || {};\n\tvar tree = [];\n\t// Find the next occurrence of the terminator\n\tterminatorRegExp.lastIndex = this.pos;\n\tvar terminatorMatch = terminatorRegExp.exec(this.source);\n\t// Find the next occurrence of a inlinerule\n\tvar inlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t// Loop around until we've reached the end of the text\n\twhile(this.pos &lt; this.sourceLength &amp;&amp; (terminatorMatch || inlineRuleMatch)) {\n\t\t// Return if we've found the terminator, and it precedes any inline rule match\n\t\tif(terminatorMatch) {\n\t\t\tif(!inlineRuleMatch || inlineRuleMatch.matchIndex &gt;= terminatorMatch.index) {\n\t\t\t\tif(terminatorMatch.index &gt; this.pos) {\n\t\t\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,terminatorMatch.index)});\n\t\t\t\t}\n\t\t\t\tthis.pos = terminatorMatch.index;\n\t\t\t\tif(options.eatTerminator) {\n\t\t\t\t\tthis.pos += terminatorMatch[0].length;\n\t\t\t\t}\n\t\t\t\treturn tree;\n\t\t\t}\n\t\t}\n\t\t// Process any inline rule, along with the text preceding it\n\t\tif(inlineRuleMatch) {\n\t\t\t// Preceding text\n\t\t\tif(inlineRuleMatch.matchIndex &gt; this.pos) {\n\t\t\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substring(this.pos,inlineRuleMatch.matchIndex)});\n\t\t\t\tthis.pos = inlineRuleMatch.matchIndex;\n\t\t\t}\n\t\t\t// Process the inline rule\n\t\t\ttree.push.apply(tree,inlineRuleMatch.rule.parse());\n\t\t\t// Look for the next inline rule\n\t\t\tinlineRuleMatch = this.findNextMatch(this.inlineRules,this.pos);\n\t\t\t// Look for the next terminator match\n\t\t\tterminatorRegExp.lastIndex = this.pos;\n\t\t\tterminatorMatch = terminatorRegExp.exec(this.source);\n\t\t}\n\t}\n\t// Process the remaining text\n\tif(this.pos &lt; this.sourceLength) {\n\t\ttree.push({type: \&quot;text\&quot;, text: this.source.substr(this.pos)});\n\t}\n\tthis.pos = this.sourceLength;\n\treturn tree;\n};\n\n/*\nParse zero or more class specifiers `.classname`\n*/\nWikiParser.prototype.parseClasses = function() {\n\tvar classRegExp = /\\.([^\\s\\.]+)/mg,\n\t\tclassNames = [];\n\tclassRegExp.lastIndex = this.pos;\n\tvar match = classRegExp.exec(this.source);\n\twhile(match &amp;&amp; match.index === this.pos) {\n\t\tthis.pos = match.index + match[0].length;\n\t\tclassNames.push(match[1]);\n\t\tmatch = classRegExp.exec(this.source);\n\t}\n\treturn classNames;\n};\n\n/*\nAmend the rules used by this instance of the parser\n\ttype: `only` keeps just the named rules, `except` keeps all but the named rules\n\tnames: array of rule names\n*/\nWikiParser.prototype.amendRules = function(type,names) {\n\tnames = names || [];\n\t// Define the filter function\n\tvar keepFilter;\n\tif(type === \&quot;only\&quot;) {\n\t\tkeepFilter = function(name) {\n\t\t\treturn names.indexOf(name) !== -1;\n\t\t};\n\t} else if(type === \&quot;except\&quot;) {\n\t\tkeepFilter = function(name) {\n\t\t\treturn names.indexOf(name) === -1;\n\t\t};\n\t} else {\n\t\treturn;\n\t}\n\t// Define a function to process each of our rule arrays\n\tvar processRuleArray = function(ruleArray) {\n\t\tfor(var t=ruleArray.length-1; t&gt;=0; t--) {\n\t\t\tif(!keepFilter(ruleArray[t].rule.name)) {\n\t\t\t\truleArray.splice(t,1);\n\t\t\t}\n\t\t}\n\t};\n\t// Process each rule array\n\tprocessRuleArray(this.pragmaRules);\n\tprocessRuleArray(this.blockRules);\n\tprocessRuleArray(this.inlineRules);\n};\n\nexports[\&quot;text/vnd.tiddlywiki\&quot;] = WikiParser;\n\n})();\n\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/parsers/wikiparser/wikiparser.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;parser&quot;
@@ -4012,7 +4062,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;startup&quot;
         },
         &quot;$:/core/modules/startup.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup.js\ntype: application/javascript\nmodule-type: startup\n\nMiscellaneous startup logic for both the client and server.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;startup\&quot;;\nexports.after = [\&quot;load-modules\&quot;];\nexports.synchronous = true;\n\n// Set to `true` to enable performance instrumentation\nvar PERFORMANCE_INSTRUMENTATION = true;\n\nvar widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;);\n\nexports.startup = function() {\n\tvar modules,n,m,f;\n\tif($tw.browser) {\n\t\t$tw.browser.isIE = (/msie|trident/i.test(navigator.userAgent));\n\t}\n\t$tw.version = $tw.utils.extractVersionInfo();\n\t// Set up the performance framework\n\t$tw.perf = new $tw.Performance(PERFORMANCE_INSTRUMENTATION);\n\t// Kick off the language manager and switcher\n\t$tw.language = new $tw.Language();\n\t$tw.languageSwitcher = new $tw.PluginSwitcher({\n\t\twiki: $tw.wiki,\n\t\tpluginType: \&quot;language\&quot;,\n\t\tcontrollerTitle: \&quot;$:/language\&quot;,\n\t\tdefaultPlugins: [\n\t\t\t\&quot;$:/languages/en-US\&quot;\n\t\t]\n\t});\n\t// Kick off the theme manager\n\t$tw.themeManager = new $tw.PluginSwitcher({\n\t\twiki: $tw.wiki,\n\t\tpluginType: \&quot;theme\&quot;,\n\t\tcontrollerTitle: \&quot;$:/theme\&quot;,\n\t\tdefaultPlugins: [\n\t\t\t\&quot;$:/themes/tiddlywiki/snowwhite\&quot;,\n\t\t\t\&quot;$:/themes/tiddlywiki/vanilla\&quot;\n\t\t]\n\t});\n\t// Clear outstanding tiddler store change events to avoid an unnecessary refresh cycle at startup\n\t$tw.wiki.clearTiddlerEventQueue();\n\t// Create a root widget for attaching event handlers. By using it as the parentWidget for another widget tree, one can reuse the event handlers\n\tif($tw.browser) {\n\t\t$tw.rootWidget = new widget.widget({\n\t\t\ttype: \&quot;widget\&quot;,\n\t\t\tchildren: []\n\t\t},{\n\t\t\twiki: $tw.wiki,\n\t\t\tdocument: document\n\t\t});\n\t}\n\t// Find a working syncadaptor\n\t$tw.syncadaptor = undefined;\n\t$tw.modules.forEachModuleOfType(\&quot;syncadaptor\&quot;,function(title,module) {\n\t\tif(!$tw.syncadaptor &amp;&amp; module.adaptorClass) {\n\t\t\t$tw.syncadaptor = new module.adaptorClass({wiki: $tw.wiki});\n\t\t}\n\t});\n\t// Set up the syncer object if we've got a syncadaptor\n\tif($tw.syncadaptor) {\n\t\t$tw.syncer = new $tw.Syncer({wiki: $tw.wiki, syncadaptor: $tw.syncadaptor});\n\t} \n\t// Setup the saver handler\n\t$tw.saverHandler = new $tw.SaverHandler({wiki: $tw.wiki, dirtyTracking: !$tw.syncadaptor});\n\t// Host-specific startup\n\tif($tw.browser) {\n\t\t// Install the popup manager\n\t\t$tw.popup = new $tw.utils.Popup();\n\t\t// Install the animator\n\t\t$tw.anim = new $tw.utils.Animator();\n\t}\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup.js\ntype: application/javascript\nmodule-type: startup\n\nMiscellaneous startup logic for both the client and server.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;startup\&quot;;\nexports.after = [\&quot;load-modules\&quot;];\nexports.synchronous = true;\n\n// Set to `true` to enable performance instrumentation\nvar PERFORMANCE_INSTRUMENTATION = false;\n\nvar widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;);\n\nexports.startup = function() {\n\tvar modules,n,m,f;\n\tif($tw.browser) {\n\t\t$tw.browser.isIE = (/msie|trident/i.test(navigator.userAgent));\n\t}\n\t$tw.version = $tw.utils.extractVersionInfo();\n\t// Set up the performance framework\n\t$tw.perf = new $tw.Performance(PERFORMANCE_INSTRUMENTATION);\n\t// Kick off the language manager and switcher\n\t$tw.language = new $tw.Language();\n\t$tw.languageSwitcher = new $tw.PluginSwitcher({\n\t\twiki: $tw.wiki,\n\t\tpluginType: \&quot;language\&quot;,\n\t\tcontrollerTitle: \&quot;$:/language\&quot;,\n\t\tdefaultPlugins: [\n\t\t\t\&quot;$:/languages/en-US\&quot;\n\t\t]\n\t});\n\t// Kick off the theme manager\n\t$tw.themeManager = new $tw.PluginSwitcher({\n\t\twiki: $tw.wiki,\n\t\tpluginType: \&quot;theme\&quot;,\n\t\tcontrollerTitle: \&quot;$:/theme\&quot;,\n\t\tdefaultPlugins: [\n\t\t\t\&quot;$:/themes/tiddlywiki/snowwhite\&quot;,\n\t\t\t\&quot;$:/themes/tiddlywiki/vanilla\&quot;\n\t\t]\n\t});\n\t// Clear outstanding tiddler store change events to avoid an unnecessary refresh cycle at startup\n\t$tw.wiki.clearTiddlerEventQueue();\n\t// Create a root widget for attaching event handlers. By using it as the parentWidget for another widget tree, one can reuse the event handlers\n\tif($tw.browser) {\n\t\t$tw.rootWidget = new widget.widget({\n\t\t\ttype: \&quot;widget\&quot;,\n\t\t\tchildren: []\n\t\t},{\n\t\t\twiki: $tw.wiki,\n\t\t\tdocument: document\n\t\t});\n\t}\n\t// Find a working syncadaptor\n\t$tw.syncadaptor = undefined;\n\t$tw.modules.forEachModuleOfType(\&quot;syncadaptor\&quot;,function(title,module) {\n\t\tif(!$tw.syncadaptor &amp;&amp; module.adaptorClass) {\n\t\t\t$tw.syncadaptor = new module.adaptorClass({wiki: $tw.wiki});\n\t\t}\n\t});\n\t// Set up the syncer object if we've got a syncadaptor\n\tif($tw.syncadaptor) {\n\t\t$tw.syncer = new $tw.Syncer({wiki: $tw.wiki, syncadaptor: $tw.syncadaptor});\n\t} \n\t// Setup the saver handler\n\t$tw.saverHandler = new $tw.SaverHandler({wiki: $tw.wiki, dirtyTracking: !$tw.syncadaptor});\n\t// Host-specific startup\n\tif($tw.browser) {\n\t\t// Install the popup manager\n\t\t$tw.popup = new $tw.utils.Popup();\n\t\t// Install the animator\n\t\t$tw.anim = new $tw.utils.Animator();\n\t}\n};\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/startup.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;startup&quot;
@@ -4174,7 +4224,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;utils&quot;
         },
         &quot;$:/core/modules/utils/parsetree.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/parsetree.js\ntype: application/javascript\nmodule-type: utils\n\nParse tree utility functions.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.addAttributeToParseTreeNode = function(node,name,value) {\n\tnode.attributes = node.attributes || {};\n\tnode.attributes[name] = {type: \&quot;string\&quot;, value: value};\n};\n\nexports.getAttributeValueFromParseTreeNode = function(node,name,defaultValue) {\n\tif(node.attributes &amp;&amp; node.attributes[name] &amp;&amp; node.attributes[name].value !== undefined) {\n\t\treturn node.attributes[name].value;\n\t}\n\treturn defaultValue;\n};\n\nexports.addClassToParseTreeNode = function(node,classString) {\n\tvar classes = [];\n\tnode.attributes = node.attributes || {};\n\tnode.attributes[\&quot;class\&quot;] = node.attributes[\&quot;class\&quot;] || {type: \&quot;string\&quot;, value: \&quot;\&quot;};\n\tif(node.attributes[\&quot;class\&quot;].type === \&quot;string\&quot;) {\n\t\tif(node.attributes[\&quot;class\&quot;].value !== \&quot;\&quot;) {\n\t\t\tclasses = node.attributes[\&quot;class\&quot;].value.split(\&quot; \&quot;);\n\t\t}\n\t\tif(classString !== \&quot;\&quot;) {\n\t\t\t$tw.utils.pushTop(classes,classString.split(\&quot; \&quot;));\n\t\t}\n\t\tnode.attributes[\&quot;class\&quot;].value = classes.join(\&quot; \&quot;);\n\t}\n};\n\nexports.addStyleToParseTreeNode = function(node,name,value) {\n\t\tnode.attributes = node.attributes || {};\n\t\tnode.attributes.style = node.attributes.style || {type: \&quot;string\&quot;, value: \&quot;\&quot;};\n\t\tif(node.attributes.style.type === \&quot;string\&quot;) {\n\t\t\tnode.attributes.style.value += name + \&quot;:\&quot; + value + \&quot;;\&quot;;\n\t\t}\n};\n\nexports.findParseTreeNode = function(nodeArray,search) {\n\tfor(var t=0; t&lt;nodeArray.length; t++) {\n\t\tif(nodeArray[t].type === search.type &amp;&amp; nodeArray[t].tag === search.tag) {\n\t\t\treturn nodeArray[t];\n\t\t}\n\t}\n\treturn undefined;\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/utils/parsetree.js\ntype: application/javascript\nmodule-type: utils\n\nParse tree utility functions.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.addAttributeToParseTreeNode = function(node,name,value) {\n\tnode.attributes = node.attributes || {};\n\tnode.attributes[name] = {type: \&quot;string\&quot;, value: value};\n};\n\nexports.getAttributeValueFromParseTreeNode = function(node,name,defaultValue) {\n\tif(node.attributes &amp;&amp; node.attributes[name] &amp;&amp; node.attributes[name].value !== undefined) {\n\t\treturn node.attributes[name].value;\n\t}\n\treturn defaultValue;\n};\n\nexports.addClassToParseTreeNode = function(node,classString) {\n\tvar classes = [];\n\tnode.attributes = node.attributes || {};\n\tnode.attributes[\&quot;class\&quot;] = node.attributes[\&quot;class\&quot;] || {type: \&quot;string\&quot;, value: \&quot;\&quot;};\n\tif(node.attributes[\&quot;class\&quot;].type === \&quot;string\&quot;) {\n\t\tif(node.attributes[\&quot;class\&quot;].value !== \&quot;\&quot;) {\n\t\t\tclasses = node.attributes[\&quot;class\&quot;].value.split(\&quot; \&quot;);\n\t\t}\n\t\tif(classString !== \&quot;\&quot;) {\n\t\t\t$tw.utils.pushTop(classes,classString.split(\&quot; \&quot;));\n\t\t}\n\t\tnode.attributes[\&quot;class\&quot;].value = classes.join(\&quot; \&quot;);\n\t}\n};\n\nexports.addStyleToParseTreeNode = function(node,name,value) {\n\t\tnode.attributes = node.attributes || {};\n\t\tnode.attributes.style = node.attributes.style || {type: \&quot;string\&quot;, value: \&quot;\&quot;};\n\t\tif(node.attributes.style.type === \&quot;string\&quot;) {\n\t\t\tnode.attributes.style.value += name + \&quot;:\&quot; + value + \&quot;;\&quot;;\n\t\t}\n};\n\nexports.findParseTreeNode = function(nodeArray,search) {\n\tfor(var t=0; t&lt;nodeArray.length; t++) {\n\t\tif(nodeArray[t].type === search.type &amp;&amp; nodeArray[t].tag === search.tag) {\n\t\t\treturn nodeArray[t];\n\t\t}\n\t}\n\treturn undefined;\n};\n\n/*\nHelper to get the text of a parse tree node or array of nodes\n*/\nexports.getParseTreeText = function getParseTreeText(tree) {\n\tvar output = [];\n\tif($tw.utils.isArray(tree)) {\n\t\t$tw.utils.each(tree,function(node) {\n\t\t\toutput.push(getParseTreeText(node));\n\t\t});\n\t} else {\n\t\tif(tree.type === \&quot;text\&quot;) {\n\t\t\toutput.push(tree.text);\n\t\t}\n\t\tif(tree.children) {\n\t\t\treturn getParseTreeText(tree.children);\n\t\t}\n\t}\n\treturn output.join(\&quot;\&quot;);\n};\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/utils/parsetree.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;utils&quot;
@@ -4755,6 +4805,12 @@ Error message and password prompt
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Palette/Caption}}&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Palette/\n\n{{$:/snippets/paletteswitcher}}\n\n&lt;$reveal type=\&quot;nomatch\&quot; state=\&quot;$:/state/ShowPaletteEditor\&quot; text=\&quot;yes\&quot;&gt;\n\n&lt;$button set=\&quot;$:/state/ShowPaletteEditor\&quot; setTo=\&quot;yes\&quot;&gt;&lt;&lt;lingo ShowEditor/Caption&gt;&gt;&lt;/$button&gt;\n\n&lt;/$reveal&gt;\n\n&lt;$reveal type=\&quot;match\&quot; state=\&quot;$:/state/ShowPaletteEditor\&quot; text=\&quot;yes\&quot;&gt;\n\n&lt;$button set=\&quot;$:/state/ShowPaletteEditor\&quot; setTo=\&quot;no\&quot;&gt;&lt;&lt;lingo HideEditor/Caption&gt;&gt;&lt;/$button&gt;\n{{$:/snippets/paletteeditor}}\n\n&lt;/$reveal&gt;\n\n&quot;
         },
+        &quot;$:/core/ui/ControlPanel/Parsing&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Parsing&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Advanced&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Parsing/Caption}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Parsing/\n\n\\define parsing-inner(typeCap)\n&lt;li&gt;\n&lt;$checkbox tiddler=\&quot;\&quot;\&quot;$:/config/WikiParserRules/$typeCap$/$(currentTiddler)$\&quot;\&quot;\&quot; field=\&quot;text\&quot; checked=\&quot;enable\&quot; unchecked=\&quot;disable\&quot; default=\&quot;enable\&quot;&gt; ''&lt;$text text=&lt;&lt;currentTiddler&gt;&gt;/&gt;'': &lt;/$checkbox&gt;\n&lt;/li&gt;\n\\end\n\n\\define parsing-outer(typeLower,typeCap)\n&lt;ul&gt;\n&lt;$list filter=\&quot;[wikiparserrules[$typeLower$]]\&quot;&gt;\n&lt;&lt;parsing-inner typeCap:\&quot;$typeCap$\&quot;&gt;&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\\end\n\n&lt;&lt;lingo Hint&gt;&gt;\n\n! &lt;&lt;lingo Pragma/Caption&gt;&gt;\n\n&lt;&lt;parsing-outer typeLower:\&quot;pragma\&quot; typeCap:\&quot;Pragma\&quot;&gt;&gt;\n\n! &lt;&lt;lingo Inline/Caption&gt;&gt;\n\n&lt;&lt;parsing-outer typeLower:\&quot;inline\&quot; typeCap:\&quot;Inline\&quot;&gt;&gt;\n\n! &lt;&lt;lingo Block/Caption&gt;&gt;\n\n&lt;&lt;parsing-outer typeLower:\&quot;block\&quot; typeCap:\&quot;Block\&quot;&gt;&gt;\n&quot;
+        },
         &quot;$:/core/ui/ControlPanel/Plugins/Add/Languages&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Plugins/Add/Languages&quot;,
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Plugins/Languages/Caption}} (&lt;$count filter=\&quot;[all[tiddlers+shadows]tag[$:/tags/RemoteAssetInfo]server-url{!!url}original-plugin-type[language]]\&quot;/&gt;)&quot;,
@@ -4820,6 +4876,12 @@ Error message and password prompt
             &quot;tags&quot;: &quot;$:/tags/ToolbarButtonStyle&quot;,
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Settings/ToolbarButtonStyle/Styles/Rounded}}&quot;,
             &quot;text&quot;: &quot;tc-btn-rounded&quot;
+        },
+        &quot;$:/core/ui/ControlPanel/Settings/CamelCase&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Settings/CamelCase&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Settings&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Settings/CamelCase/Caption}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Settings/CamelCase/\n&lt;&lt;lingo Hint&gt;&gt;\n\n&lt;$checkbox tiddler=\&quot;$:/config/WikiParserRules/Inline/wikilink\&quot; field=\&quot;text\&quot; checked=\&quot;enable\&quot; unchecked=\&quot;disable\&quot; default=\&quot;enable\&quot;&gt; &lt;$link to=\&quot;$:/config/WikiParserRules/Inline/wikilink\&quot;&gt;&lt;&lt;lingo Description&gt;&gt;&lt;/$link&gt; &lt;/$checkbox&gt;\n&quot;
         },
         &quot;$:/core/ui/ControlPanel/Settings/DefaultSidebarTab&quot;: {
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Settings/DefaultSidebarTab/Caption}}&quot;,
@@ -5822,6 +5884,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/delete&quot;,
             &quot;text&quot;: &quot;hide&quot;
         },
+        &quot;$:/config/WikiParserRules/Inline/wikilink&quot;: {
+            &quot;title&quot;: &quot;$:/config/WikiParserRules/Inline/wikilink&quot;,
+            &quot;text&quot;: &quot;enable&quot;
+        },
         &quot;$:/snippets/currpalettepreview&quot;: {
             &quot;title&quot;: &quot;$:/snippets/currpalettepreview&quot;,
             &quot;text&quot;: &quot;\\define swatchStyle()\nbackground-color: $(swatchColour)$;\n\\end\n\\define swatch(colour)\n&lt;$set name=\&quot;swatchColour\&quot; value={{##$colour$}}&gt;\n&lt;div class=\&quot;tc-swatch\&quot; style=&lt;&lt;swatchStyle&gt;&gt;/&gt;\n&lt;/$set&gt;\n\\end\n&lt;div class=\&quot;tc-swatches-horiz\&quot;&gt;\n&lt;&lt;swatch foreground&gt;&gt;\n&lt;&lt;swatch background&gt;&gt;\n&lt;&lt;swatch muted-foreground&gt;&gt;\n&lt;&lt;swatch primary&gt;&gt;\n&lt;&lt;swatch page-background&gt;&gt;\n&lt;&lt;swatch tab-background&gt;&gt;\n&lt;&lt;swatch tiddler-info-background&gt;&gt;\n&lt;/div&gt;\n&quot;
@@ -6061,12 +6127,15 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div resume_title="Resume" title="$:/data/ResumeTitle/Resume">
 <pre></pre>
 </div>
-<div created="20150620003518997" modified="20150717051407353" title="$:/DefaultTiddlers">
+<div created="20150720164801633" modified="20150720164806249" resume_title="Résumé" title="$:/data/ResumeTitle/Résumé">
+<pre></pre>
+</div>
+<div created="20150620003518997" modified="20150720162957690" title="$:/DefaultTiddlers">
 <pre>[[Help]]
-[[Resume Wizard]]
+[[Résumé Wizard]]
 [[Edit Existing Items]]
 [[Layout Options]]
-[[Resume Options]]
+[[Résumé Options]]
 </pre>
 </div>
 <div section="Contact Information" tags="[[Section Display]]" template="$:/template/ContactInformationTemplate" title="$:/display/Contact Information Display">
@@ -6083,14 +6152,14 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 
 &lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;</pre>
 </div>
-<div section="Resume Title" tags="[[Section Display]]" template="$:/template/ResumeTitleTemplate" title="$:/display/Resume Title Display">
+<div created="20150720164501834" modified="20150720164522750" section="Résumé Title" tags="[[Section Display]]" template="$:/template/ResumeTitleTemplate" title="$:/display/Resume Title Display">
 <pre>&lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;</pre>
 </div>
 <div section="Skills and Expertise" tags="[[Section Display]]" template="$:/template/SkillsAndExpertiseTemplate" title="$:/display/Skills and Expertise Display">
 <pre>&lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;</pre>
 </div>
-<div caption="Contact Information" tags="Section" title="$:/input/Contact Information">
-<pre>This is contact information to be included in your resume.
+<div caption="Contact Information" created="20150720164912365" modified="20150720164948543" tags="Section" title="$:/input/Contact Information">
+<pre>This is contact information to be included in your résumé.&lt;br&gt;&lt;br&gt;
 
 Name: &lt;$edit-text tiddler='$:/data/Personal Information' field='name' placeholder='Your Name' class='tc-edit-texteditor'/&gt;
 
@@ -6173,7 +6242,7 @@ Add Education
 &lt;/table&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div caption="Objective" tags="Section" title="$:/input/ObjectiveInput1">
+<div caption="Objective" created="20150720165104821" modified="20150720165123543" tags="Section" title="$:/input/ObjectiveInput1">
 <pre>\define thisAddObjectiveButton()
 &lt;$button&gt;Add Objective&lt;$action-setfield $tiddler='$:/temp/Objective' title='$:/data/Objective/$(ObjectiveName)$'/&gt;&lt;$action-setfield $tiddler='$:/temp/Objective' name='' text=''/&gt;&lt;/$button&gt;
 \end
@@ -6183,10 +6252,12 @@ Add Education
 \end
 
 Your objective should very briefly describe the sort of job you are looking for and be phrased in a way that flatters the company you are applying to. Something like 'To gain professional experience with a leader in the field of underwater basket weaving.' 
-
+&lt;br&gt;
+&lt;br&gt;
 You can enter multiple possible objectives and then select the one you want to use on the current resume.
 You can add a new objective or select one that you have already entered (if you have previously entered any).
-
+&lt;br&gt;
+&lt;br&gt;
 Name:
 &lt;$edit-text tiddler='$:/temp/Objective' field=name class='tc-edit-texteditor' placeholder='Short Name'/&gt;
 
@@ -6271,7 +6342,7 @@ Add Employment
 &lt;/$list&gt;
 &lt;/table&gt;</pre>
 </div>
-<div tags="Section" title="$:/input/Resume Title">
+<div created="20150720170603658" modified="20150720170624801" tags="Section" title="$:/input/Resume Title">
 <pre>\define thisResumeTitleInput()
 &lt;$button&gt;Add Title&lt;$action-setfield $tiddler='$:/temp/ResumeTitle' title='$:/data/ResumeTitle/$(ThisTitle)$'/&gt;&lt;$action-setfield $tiddler='$:/temp/ResumeTitle' resume_title=''/&gt;&lt;/$button&gt;
 &lt;br&gt;&lt;br&gt;
@@ -6282,16 +6353,16 @@ Select title to use:&lt;br&gt;
 &lt;/$list&gt;
 \end
 
-This is the title that will appear at the top of your resume. Just putting 'Resume' isn't an uncommon choice. You can add a new title or pick an existing title from the list. If you select 'Use your name' than your name (entered with your contact information) will be used as the title.
+This is the title that will appear at the top of your résumé. Just putting 'Résumé' isn't an uncommon choice. You can add a new title or pick an existing title from the list. If you select 'Use your name' than your name (entered with your contact information) will be used as the title.
 
 Add New Title:
-&lt;$edit-text tiddler='$:/temp/ResumeTitle' field='resume_title' placeholder='Resume Title' class='tc-edit-texteditor'/&gt;
+&lt;$edit-text tiddler='$:/temp/ResumeTitle' field='resume_title' placeholder='Résumé Title' class='tc-edit-texteditor'/&gt;
 
 &lt;$vars ThisResume={{$:/settings/Global!!selected_resume}} ThisTitle={{$:/temp/ResumeTitle!!resume_title}}&gt;
 &lt;&lt;thisResumeTitleInput&gt;&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div caption="Resume Title" tags="Section" title="$:/input/Resume Title2">
+<div caption="Resume Title" created="20150720170858240" modified="20150720170900145" tags="Section" title="$:/input/Resume Title2">
 <pre>\define thisResumeTitleInput()
 &lt;$button&gt;Add Title&lt;$action-setfield $tiddler='$:/temp/ResumeTitle' title='$:/data/ResumeTitle/$(ThisTitle)$'/&gt;&lt;$action-setfield $tiddler='$:/temp/ResumeTitle' resume_title=''/&gt;&lt;/$button&gt;
 &lt;br&gt;&lt;br&gt;
@@ -6303,7 +6374,7 @@ Select title to use:&lt;br&gt;
 \end
 
 Add New Title:
-&lt;$edit-text tiddler='$:/temp/ResumeTitle' field='resume_title' placeholder='Resume Title' class='tc-edit-texteditor'/&gt;
+&lt;$edit-text tiddler='$:/temp/ResumeTitle' field='resume_title' placeholder='Résumé Title' class='tc-edit-texteditor'/&gt;
 
 &lt;$vars ThisResume={{$:/settings/Global!!selected_resume}} ThisTitle={{$:/temp/ResumeTitle!!resume_title}}&gt;
 &lt;&lt;thisResumeTitleInput&gt;&gt;
@@ -6495,13 +6566,13 @@ Select title to use:&lt;br&gt;
 <div selected_resume="Default" tags="" title="$:/settings/Global">
 <pre></pre>
 </div>
-<div created="20150619215753488" modified="20150619215804124" title="$:/SiteSubtitle">
-<pre>a resume building tool using ~TiddlyWiki</pre>
+<div created="20150619215753488" modified="20150720163304383" title="$:/SiteSubtitle">
+<pre>a résumé building tool using ~TiddlyWiki</pre>
 </div>
-<div created="20150619215748447" modified="20150619215751266" title="$:/SiteTitle">
-<pre>Resume Builder</pre>
+<div created="20150619215748447" modified="20150720163301922" title="$:/SiteTitle">
+<pre>Résumé Builder</pre>
 </div>
-<div list="Help [[Resume Wizard]] [[Edit Existing Items]] [[Layout Options]] [[Resume Options]]" title="$:/StoryList">
+<div list="Help [[Résumé Wizard]] [[Edit Existing Items]] [[Layout Options]] [[Résumé Options]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -6517,6 +6588,18 @@ Select title to use:&lt;br&gt;
         }
     }
 }</pre>
+</div>
+<div created="20150720164306989" modified="20150720164306989" title="$:/temp/NewSection/InputTiddler">
+<pre></pre>
+</div>
+<div created="20150720164308156" modified="20150720164308156" title="$:/temp/NewSection/OptionsTiddler">
+<pre></pre>
+</div>
+<div created="20150720164309668" modified="20150720164309668" title="$:/temp/NewSection/TemplateTiddler">
+<pre></pre>
+</div>
+<div created="20150720165013749" modified="20150720165013749" title="$:/temp/Objective">
+<pre></pre>
 </div>
 <div input_tiddler="$:/input/Contact Information" options_tiddler="$:/options/Contact Information Options" section_name="Contact Information" tags="DisplayTemplate" template_name="Contact Information Template 1" title="$:/template/ContactInformationTemplate">
 <pre>&lt;div style='text-align:center'&gt;
@@ -6583,7 +6666,7 @@ __''Objective:''__&lt;br&gt;&lt;$vars ThisResume={{$:/settings/Global!!selected_
 &lt;&lt;thisPreviousEmploymentList&gt;&gt;
 &lt;/ul&gt;</pre>
 </div>
-<div input_tiddler="$:/input/Resume Title" options_tiddler="$:/options/Title Options" section_name="Resume Title" tags="DisplayTemplate" template_name="Title Template 1" title="$:/template/ResumeTitleTemplate">
+<div created="20150720170700740" input_tiddler="$:/input/Resume Title" modified="20150720170702537" options_tiddler="$:/options/Title Options" section_name="Résumé Title" tags="DisplayTemplate" template_name="Title Template 1" title="$:/template/ResumeTitleTemplate">
 <pre>\define thisShowTitle()
 &lt;h1&gt;&lt;$reveal type='nomatch' state='$:/settings/$(ThisResume)$/ResumeTitle' text='use name'&gt;''{{$:/settings/$(ThisResume)$/ResumeTitle}}''&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/settings/$(ThisResume)$/ResumeTitle' text='use name'&gt;''{{$:/data/Personal Information!!name}}''&lt;/$reveal&gt;&lt;/h1&gt;
 \end
@@ -6596,7 +6679,7 @@ __''Objective:''__&lt;br&gt;&lt;$vars ThisResume={{$:/settings/Global!!selected_
 
 &lt;/div&gt;</pre>
 </div>
-<div input_tiddler="$:/input/Resume Title2" options_tiddler="$:/options/Title Options" section_name="Resume Title" tags="DisplayTemplate" template_name="Title Template 2" title="$:/template/ResumeTitleTemplate2">
+<div created="20150720170711876" input_tiddler="$:/input/Resume Title2" modified="20150720170713665" options_tiddler="$:/options/Title Options" section_name="Résumé Title" tags="DisplayTemplate" template_name="Title Template 2" title="$:/template/ResumeTitleTemplate2">
 <pre>\define thisShowTitle()
 &lt;h1&gt;__&lt;$reveal type='nomatch' state='$:/settings/$(ThisResume)$/ResumeTitle' text='use name'&gt;''{{$:/settings/$(ThisResume)$/ResumeTitle}}''&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/settings/$(ThisResume)$/ResumeTitle' text='use name'&gt;''{{$:/data/Personal Information!!name}}''&lt;/$reveal&gt;__&lt;/h1&gt;
 \end
@@ -6823,34 +6906,23 @@ Each tab lets you edit the contents of that section. Click on the `Preview and S
 &lt;&lt;thisDisplayThing&gt;&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20150719184941848" modified="20150719185024380" tags="" title="Help">
-<pre>Clicking on [[Resume Wizard]] at the top is a good place to start.
+<div created="20150719184941848" modified="20150720163457716" tags="" title="Help">
+<pre>Clicking on [[Résumé Wizard]] at the top is a good place to start.
 
 To save your work, either click on the {{$:/core/ui/Buttons/save-wiki}} button to the right or the Save button at the top of the screen. The button to the right will turn red when there are unsaved changes.
 
 How it works:
 
-There are buttons along the top that bring you to the different things you can do with the resume builder. To the right you should see a preview of the completed resume.
+There are buttons along the top that bring you to the different things you can do with the résumé builder. To the right you should see a preview of the completed résumé.
 
-*Resume Wizard - A wizard that guides you through a sequence of steps to create a resume.
+*Résumé Wizard - A wizard that guides you through a sequence of steps to create a résumé.
 *Edit Existing Items - An interface to edit already entered information
 *Layout Options - Options for changing the order of the sections, which sections are visible, and the templates used for each section.
-*Resume Options - Available options for the resume output. The `Layout Options` tab has options for which sections are included in the resume as well as their order and the templates used, the other tabs are for configuring each section individually.
+*Résumé Options - Available options for the résumé output. The `Layout Options` tab has options for which sections are included in the résumé as well as their order and the templates used, the other tabs are for configuring each section individually.
 *Preview - Shows a preview of the result, this is also shown on the right side of the screen by default.
 *Help - Displays this information.
-*Print - Open the resume by itself in a new window for printing.
+*Print - Open the résumé by itself in a new window for printing.
 *Save - saves your changes
-
-&lt;!--
-Things to add:
-
-*The section/item order options should get a better way to change the order
-*There should be options for other templates for each section
-*options for fonts and sizes and so on. Using a settings system like I have for the contacts database would be a good idea.
-*More section options
-*A reasonable way for users to create custom sections without requiring knowledge of wikitext. This could turn into something rather complex by itself if I let it. I will try to avoid that.
-*Other user options?
---&gt;
 
 Other documentation:
 
@@ -6914,8 +6986,8 @@ Other documentation:
 &lt;/table&gt;
 &lt;/$set&gt;</pre>
 </div>
-<div created="20150719191225198" modified="20150719234223143" title="Making a new section">
-<pre>There is a [[New Section Creation Tool]] to help with creating new resume sections.
+<div created="20150719191225198" modified="20150720163929573" title="Making a new section">
+<pre>There is a [[New Section Creation Tool]] to help with creating new résumé sections.
 
 Each section needs the following tiddlers:
 
@@ -6928,13 +7000,13 @@ You can have multiple template tiddlers that use the same input and options tidd
 
 !!Display tiddler
 
-This is the container used to display the section in the resume itself, there isn't any customization here.
+This is the container used to display the section in the résumé itself, there isn't any customization here.
 
 ''Required tags'': `Section Display`&lt;br&gt;
 ''Required name format'': `$:/display/(section name) Display`&lt;br&gt;
 ''Additional fields'':
 
-*'section' - the section name, something like 'Resume Title' or 'Objective'.
+*'section' - the section name, something like 'Résumé Title' or 'Objective'.
 ''Examples'': [[$:/display/Resume Title Display]] and [[$:/display/Objective Display]].&lt;br&gt;
 
 ''Other things'':
@@ -6951,7 +7023,7 @@ This tiddler should have only what is listed above.
 
 !!Template tiddler(s)
 
-These tiddlers determine how the section is displayed on the resume. This sets the look of the final result.
+These tiddlers determine how the section is displayed on the résumé. This sets the look of the final result.
 
 ''Required tags'': `DisplayTemplate`&lt;br&gt;
 ''Required name format'': `$:/template/(template name)`&lt;br&gt;
@@ -6974,7 +7046,7 @@ A tiddler that contains the input from for adding entries to the section, and if
 ''Required name format'': `$:/input/(template name)`&lt;br&gt;
 ''Additional fields'': 
 
-*`caption` - The contents of this field will be displayed as the section name in the [[Resume Wizard]].
+*`caption` - The contents of this field will be displayed as the section name in the [[Résumé Wizard]].
 ''Examples'': [[$:/input/Resume Title]], [[$:/input/Education]]
 
 The data taken from the input tiddler should be stored in the fields of a tiddler named in the form `$:/data/(SectionName)/(ItemName)`.
@@ -6989,7 +7061,7 @@ A tiddler used to set options for a section.
 ''Required name format'': `$:/options/(template name)`&lt;br&gt;
 ''Additional fields'':
 
-*`caption` - a caption field, it should have something like `(section name) Options`. This is what appears on the tabs in the [[Resume Options]] tiddler.
+*`caption` - a caption field, it should have something like `(section name) Options`. This is what appears on the tabs in the [[Résumé Options]] tiddler.
 ''Examples'': [[$:/options/Education Options]], [[$:/options/Previous Employment Options]].
 
 You would use this tiddler to change the fonts used and list types and similar things here.
@@ -6997,18 +7069,18 @@ All settings and state information about each section should be stored in a tidd
 For each item within a section all state and configuration information should be kept in a tiddler with a name in the form `$:/settings/(ResumeName)/(SectionName)/(ItemName)`.
 The options tiddler must only change fields in these tiddlers.
 
-These tiddlers hold the information about which items/sections are visible in each resume. See the list of system tiddlers for many examples. You don't need to make those tiddlers, you just need to make your input and settings tiddlers create or modify the correct tiddler name and they will be created. See the examples.
+These tiddlers hold the information about which items/sections are visible in each résumé. See the list of system tiddlers for many examples. You don't need to make those tiddlers, you just need to make your input and settings tiddlers create or modify the correct tiddler name and they will be created. See the examples.
 
 ''Important note:''
 
-If you are going to make your own section, in order to allow the items to be in different orders in different resumes you will need to use this wonderful filter
+If you are going to make your own section, in order to allow the items to be in different orders in different résumés you will need to use this wonderful filter
 (Thanks to Eric for pointing out that my original version could be shortened):
 
 `[prefix[$:/data/(SectionName)/]removeprefix[$:/data/]addprefix[$:/settings/$(ThisResumeName)$/]!show[false]sort[order]removeprefix[$:/settings/$(ThisResumeName)$/]addprefix[$:/data/]]`
 
 you need to manually replace `(SectionName)` with the name of the section you are adding, and you need to put `&lt;$vars ThisResumeName={{$:/settings/Global!!selected_resume}}&gt;` and `&lt;/$vars&gt;` around the macro that contains the list widget with the above filter. Look at the examples and it will hopefully make more sense.</pre>
 </div>
-<div created="20150719200725211" modified="20150719235401264" tags="Tools" title="New Section Creation Tool">
+<div created="20150719200725211" modified="20150720164139669" tags="Tools" title="New Section Creation Tool">
 <pre>\define thisMakeDisplayTiddler()
 &lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/display/$(ThisSection)$&quot;&quot;&quot; text=&quot;&quot;&quot;&lt;$transclude tiddler=GenericSectionDisplayTemplate mode=block/&gt;&quot;&quot;&quot; tags=&quot;&quot;&quot;[[Section Display]]&quot;&quot;&quot; section=&quot;&quot;&quot;$(ThisSection)$&quot;&quot;&quot;/&gt;
 \end
@@ -7045,9 +7117,9 @@ $(UserTemplateTiddlerText)$
 &lt;$action-setfield $tiddler=&quot;&quot;&quot;$:/template/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; text=&lt;&lt;thisTemplateTiddlerText&gt;&gt; input_tiddler=&quot;&quot;&quot;$:/input/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; options_tiddler=&quot;&quot;&quot;$:/options/$(ThisSection)$/$(TemplateName)$&quot;&quot;&quot; section_name=&quot;&quot;&quot;$(ThisSection)$&quot;&quot;&quot; template_name=&quot;&quot;&quot;$(TemplateName)$&quot;&quot;&quot; tags=DisplayTemplate/&gt;
 \end
 
-''Once you have created your new section you have to go to [[Resume Options]] and select a template and set the section as visible before it will appear in the resume.''
+''Once you have created your new section you have to go to [[Résumé Options]] and select a template and set the section as visible before it will appear in the résumé.''
 
-This is a tool to aid in the creation of custom resume sections. Fill out each section and then click on the 'Create Section' button below. Click on the ^^(?)^^ next to each tiddler name to get more information and a basic example. If you copy all of the examples given they will work together.
+This is a tool to aid in the creation of custom résumé sections. Fill out each section and then click on the 'Create Section' button below. Click on the ^^(?)^^ next to each tiddler name to get more information and a basic example. If you copy all of the examples given they will work together.
 
 Automatically defined helper macros and values (with the exception of `&lt;&lt;thisAddResumeSectionItem&gt;&gt;` these macros are defined for all of the tiddlers created using this tool.):
 
@@ -7059,7 +7131,7 @@ Automatically defined helper macros and values (with the exception of `&lt;&lt;t
 *`&lt;&lt;SectionName&gt;&gt;` - This is the name of the current section.
 *`&lt;&lt;SectionSettingsTiddler&gt;&gt;` - This is the name of the tiddler containing the settings for the current section. It holds the visibility and order settings, but they are automatically created by the [[Layout Options]] tiddler. You shouldn't need to use this unless you are doing something special.
 
-Section Name^^(&lt;$button class='tc-btn-invisible' popup='$:/state/popup/SectionNameHelp'&gt;?&lt;/$button&gt;&lt;$reveal type='popup' state='$:/state/popup/SectionNameHelp'&gt;&lt;div class='tc-drop-down'&gt;This should be a short descriptive section name, like 'Resume Title' or 'Lands Conquered'&lt;/div&gt;&lt;/$reveal&gt;)^^:
+Section Name^^(&lt;$button class='tc-btn-invisible' popup='$:/state/popup/SectionNameHelp'&gt;?&lt;/$button&gt;&lt;$reveal type='popup' state='$:/state/popup/SectionNameHelp'&gt;&lt;div class='tc-drop-down'&gt;This should be a short descriptive section name, like 'Résumé Title' or 'Lands Conquered'&lt;/div&gt;&lt;/$reveal&gt;)^^:
 &lt;$edit-text tiddler='$:/temp/NewSection' field='section_name' class='tc-edit-texteditor' placeholder='Section Name'/&gt;
 
 Input Tiddler^^(&lt;$reveal type='nomatch' state='$:/state/popup/InputTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/InputTiddlerHelp' setTo='show'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;&lt;$reveal type='match' state='$:/state/popup/InputTiddlerHelp' text=show&gt;&lt;$button class='tc-btn-invisible' set='$:/state/popup/InputTiddlerHelp' setTo='hide'&gt;?&lt;/$button&gt;&lt;/$reveal&gt;)^^:
@@ -7143,7 +7215,7 @@ Template Tiddler^^(&lt;$reveal type='nomatch' state='$:/state/popup/TemplateTidd
 &lt;div style=&quot;word-wrap: true;&quot;&gt;
 &lt;hr&gt;
 
-A template tiddler is used to display the section in the final resume. Each template must have a unique name. It should be descriptive (like Basic Objective Template).
+A template tiddler is used to display the section in the final résumé. Each template must have a unique name. It should be descriptive (like Basic Objective Template).
 
 A very example template tiddler is:
 
@@ -7202,18 +7274,10 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 &lt;/$button&gt;
 &lt;/$vars&gt;</pre>
 </div>
-<div tags="$:/tags/SideBar" title="Preview">
-<pre>\define thisMakePreview()
-&lt;$list filter='[tag[Section Display]removeprefix[$:/display/]addprefix[$:/settings/$(ThisResume)$/]sort[order]!show[false]removeprefix[$:/settings/$(ThisResume)$/]addprefix[$:/display/]]'&gt;
-&lt;$transclude mode=block/&gt;
-&lt;/$list&gt;
-\end
-
-&lt;div class='tc-tiddly-frame' style='background:white;max-width:700px;border:solid black 1px;color:black'&gt;
+<div created="20150720171244344" modified="20150720171304274" tags="$:/tags/SideBar" title="Preview">
+<pre>&lt;div class='tc-tiddly-frame' style='background:white;max-width:700px;border:solid black 1px;color:black'&gt;
 &lt;div style='max-width:689px;margin-left:20px'&gt;
-&lt;$vars ThisResume={{$:/settings/Global!!selected_resume}}&gt;
-&lt;&lt;thisMakePreview&gt;&gt;
-&lt;/$vars&gt;
+&lt;$transclude tiddler='Print Version' mode=block/&gt;
 &lt;/div&gt;
 &lt;/div&gt;</pre>
 </div>
@@ -7226,10 +7290,24 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 
 &lt;$transclude tiddler='Preview' mode=block/&gt;</pre>
 </div>
-<div created="20150719183128695" modified="20150719183135450" tags="" title="Resume Options">
-<pre>&lt;&lt;tabs &quot;[[Layout Options]][tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]!show[false]sort[order]get[template]get[options_tiddler]]&quot; [[Layout Options]]&gt;&gt;</pre>
+<div created="20150720171146515" modified="20150720171221769" tags="" title="Print Version">
+<pre>\define thisMakePreview()
+&lt;$list filter='[tag[Section Display]removeprefix[$:/display/]addprefix[$:/settings/$(ThisResume)$/]sort[order]!show[false]removeprefix[$:/settings/$(ThisResume)$/]addprefix[$:/display/]]'&gt;
+&lt;$transclude mode=block/&gt;
+&lt;/$list&gt;
+\end
+
+&lt;div style='max-width:689px;margin-left:20px'&gt;
+&lt;$vars ThisResume={{$:/settings/Global!!selected_resume}}&gt;
+&lt;&lt;thisMakePreview&gt;&gt;
+&lt;/$vars&gt;
+&lt;/div&gt;</pre>
 </div>
-<div created="20150719173441992" modified="20150719182326153" tags="" title="Resume Wizard">
+<div created="20150719183128695" modified="20150720163126223" tags="" title="Résumé Options">
+<pre>&lt;&lt;tabs &quot;[[Layout Options]][tag[Section Display]removeprefix[$:/display]addprefix{$:/settings/Global!!selected_resume}addprefix[$:/settings/]!show[false]sort[order]get[template]get[options_tiddler]]&quot; [[Layout Options]]&gt;&gt;
+</pre>
+</div>
+<div created="20150719173441992" modified="20150720171426440" tags="" title="Résumé Wizard">
 <pre>\define CurrentResume() {{$:/settings/Global!!selected_resume}}
 
 \define thisDisplayInputTiddler()
@@ -7263,26 +7341,44 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 &lt;/$list&gt;
 \end
 
-&lt;!-- If the user hasn't started the wizard yet display the interface to add or select a resume and the button to start the wizard --&gt;
+\define thisAddResumeButton()
+&lt;$button&gt;
+	Add Résumé
+	&lt;$action-setfield $tiddler='$:/data/ResumeList' $index={{$:/temp/NewResumeName!!resume_name}} $value=true/&gt;
+	&lt;$action-setfield $tiddler='$:/temp/NewResumeName' resume_name=''/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Resume Title Display' order=1 show=true template='$:/template/ResumeTitleTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Contact Information Display' order=2 show=true template='$:/template/ContactInformationTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Objective Display' order=3 show=true template='$:/template/ObjectiveTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Skills and Expertise Display' order=4 show=true template='$:/template/SkillsAndExpertiseTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Previous Employment Display' order=5 show=true template='$:/template/PreviousEmploymentTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/Education Display' order=6 show=true template='$:/template/EducationTemplate'/&gt;
+	&lt;$action-setfield $tiddler='$:/settings/$(ResumeName)$/ResumeTitle' text=Resume/&gt;
+&lt;/$button&gt;
+\end
+
+&lt;!-- If the user hasn't started the wizard yet display the interface to add or select a résumé and the button to start the wizard --&gt;
 &lt;$reveal type='match' state='$:/state/ResumeWizardState' text=''&gt;
-	&lt;!-- User can select an existing resume --&gt;
-	Select resume to work on:
+	&lt;!-- User can select an existing résumé --&gt;
+	Select résumé to work on:
 	&lt;$select tiddler='$:/settings/Global' field='selected_resume'&gt;
 		&lt;$list filter='[[$:/data/ResumeList]indexes[]]'&gt;
 			&lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 		&lt;/$list&gt;
 	&lt;/$select&gt;
 	&lt;br&gt;
-	&lt;!-- User can add a new resume --&gt;
-	You can add a resume to the list:
-	&lt;$edit-text tiddler='$:/temp/NewResumeName' field='resume_name' class='tc-edit-texteditor' placeholder='Name of new resume'/&gt;
-	&lt;$button&gt;
-		Add Resume
-		&lt;$action-setfield $tiddler='$:/data/ResumeList' $index={{$:/temp/NewResumeName!!resume_name}} $value=true/&gt;
-		&lt;$action-setfield $tiddler='$:/temp/NewResumeName' resume_name=''/&gt;
-	&lt;/$button&gt;
+	&lt;!-- User can add a new résumé. Creating a new résumé automatically populates some of the settings, namely setting all default résumé sections to visible using the first template and in the default order. --&gt;
+	You can add a résumé to the list:
+	&lt;$edit-text tiddler='$:/temp/NewResumeName' field='resume_name' class='tc-edit-texteditor' placeholder='Name of new résumé'/&gt;
+	&lt;$vars ResumeName={{$:/temp/NewResumeName!!resume_name}}&gt;
+		&lt;&lt;thisAddResumeButton&gt;&gt;
+	&lt;/$vars&gt;
 	&lt;br&gt;
 	&lt;br&gt;
+
+	&lt;!-- The layout options. This is so that the user can set up which sections they want to see before starting the résumé wizard. --&gt;
+	The preview is displayed to the right. The options below let you set which sections are visible and the section order. Only sections that are visible will be included in the wizard. You will be able to change these options later also.
+
+	&lt;$transclude tiddler='Layout Options' mode=block/&gt;
 
 	&lt;!-- The button that starts the wizard --&gt;
 	&lt;$button&gt;
@@ -7306,11 +7402,11 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 			&lt;&lt;thisDisplayInputTiddler&gt;&gt;
 		&lt;/$vars&gt;
 	&lt;/$list&gt;
-	&lt;!-- Display the resume options if that is the current section. --&gt;
+	&lt;!-- Display the résumé options if that is the current section. --&gt;
 	&lt;$reveal type='match' state='$:/state/ResumeWizardState' text='Resume Options'&gt;
-		Here you can change the order of sections (or of items in each section) on your resume as well as set other options. Click on 'Print' to open the resume in a new window to save or print it.
+		Here you can change the order of sections (or of items in each section) on your résumé as well as set other options. Click on 'Print' to open the résumé in a new window to save or print it.&lt;br&gt;
 
-		&lt;$transclude tiddler='Resume Options' mode=block/&gt;
+		&lt;$transclude tiddler='Résumé Options' mode=block/&gt;&lt;br&gt;
 	&lt;/$reveal&gt;
 
 	&lt;!-- If the user hasn't reached options section yet, make and display the back and next buttons. --&gt;
@@ -7340,8 +7436,8 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 				&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=&lt;&lt;PreviousTiddler&gt;&gt;/&gt;
 			&lt;/$button&gt;
 		&lt;/$list&gt;
-		&lt;!-- Open resume in new window for saving/printing. --&gt;
-		&lt;$tiddler tiddler='Preview'&gt;
+		&lt;!-- Open résumé in new window for saving/printing. --&gt;
+		&lt;$tiddler tiddler='Print Version'&gt;
 			&lt;$button message=&quot;tm-open-window&quot;&gt;
 				Print
 			&lt;/$button&gt;
@@ -7356,15 +7452,16 @@ TiddlerPreamble3=&quot;&quot;&quot;Tiddler)$
 		Back to start
 		&lt;$action-setfield $tiddler='$:/state/ResumeWizardState' $field='text' $value=''/&gt;
 	&lt;/$button&gt;
-&lt;/$reveal&gt;</pre>
+&lt;/$reveal&gt;
+</pre>
 </div>
-<div created="20150719172021101" modified="20150719172244848" tags="$:/tags/TopLeftBar" title="Top Bar Buttons">
-<pre>&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Resume Wizard&quot;&gt;Resume Wizard&lt;/$button&gt;
+<div created="20150719172021101" modified="20150720172257267" tags="$:/tags/TopLeftBar" title="Top Bar Buttons">
+<pre>&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Résumé Wizard&quot;&gt;Résumé Wizard&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Edit Existing Items&quot;&gt;Edit Existing Items&lt;/$button&gt;
-&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Resume Options&quot;&gt;Resume Options&lt;/$button&gt;
+&lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Résumé Options&quot;&gt;Résumé Options&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Preview&quot;&gt;Preview&lt;/$button&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' to=&quot;Help&quot;&gt;Help&lt;/$button&gt;
-&lt;$tiddler tiddler=Preview&gt;
+&lt;$tiddler tiddler='Print Version'&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' message=&quot;tm-open-window&quot;&gt;Print&lt;/$button&gt;
 &lt;/$tiddler&gt;
 &lt;$button style='border:solid 1px;height:1.25em;vertical-align:top;line-height:0.025em;' message='tm-save-wiki'&gt;Save&lt;/$button&gt;</pre>
@@ -9002,9 +9099,9 @@ $tw.loadTiddlersFromPath = function(filepath,excludeRegExp) {
 				$tw.utils.each(filesInfo.tiddlers,function(tidInfo) {
 					var type = tidInfo.fields.type || "text/plain",
 						typeInfo = $tw.config.contentTypeInfo[type],
-						pathname = path.resolve(filepath,tidInfo.file || tidInfo.tiddlerFile),
+						pathname = path.resolve(filepath,tidInfo.file),
 						text = fs.readFileSync(pathname,typeInfo ? typeInfo.encoding : "utf8");
-					if(tidInfo.tiddlerFile) {
+					if(tidInfo.isTiddlerFile) {
 						var fileTiddlers = $tw.wiki.deserializeTiddlers(path.extname(pathname),text) || [];
 						$tw.utils.each(fileTiddlers,function(tiddler) {
 							$tw.utils.extend(tiddler,tidInfo.fields);
