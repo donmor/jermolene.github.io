@@ -1595,7 +1595,7 @@ a.tc-tiddlylink:hover {
 	background-color: #5778d8;
 	color: #ffffff;
 	fill: #333333;
-}a.tc-tiddlylink.tc-plugin-info:hover svg {
+}a.tc-tiddlylink.tc-plugin-info:hover .tc-plugin-info > .tc-plugin-info-chunk > svg {
 	fill: #333333;
 }.tc-plugin-info-chunk {
 	display: inline-block;
@@ -1609,11 +1609,15 @@ a.tc-tiddlylink:hover {
 }.tc-plugin-info-chunk div {
 	font-size: 0.7em;
 	margin: 2px 0 2px 0;
-}.tc-plugin-info img, .tc-plugin-info svg {
+}.tc-plugin-info:hover > .tc-plugin-info-chunk > img, .tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
+	width: 2em;
+	height: 2em;
+	fill: #333333;
+}.tc-plugin-info > .tc-plugin-info-chunk > img, .tc-plugin-info > .tc-plugin-info-chunk > svg {
 	width: 2em;
 	height: 2em;
 	fill: #bbb;
-}.tc-plugin-info.tc-small-icon img, .tc-plugin-info.tc-small-icon svg {
+}.tc-plugin-info.tc-small-icon > .tc-plugin-info-chunk > img, .tc-plugin-info.tc-small-icon > .tc-plugin-info-chunk > svg {
 	width: 1em;
 	height: 1em;
 }.tc-plugin-info-dropdown {
