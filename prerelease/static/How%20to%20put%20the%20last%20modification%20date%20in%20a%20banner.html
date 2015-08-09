@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ How to put the last modification date in a banner
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 9 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,6 +74,7 @@ color:#333333;">
 
 </span>
 </div>
+</div>
 
 
 
@@ -74,8 +82,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p>Here's how to display the last modification date of a wiki in a banner in the corner of the window:</p><ol><li>Copy the plugin <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Fplugins%252Ftiddlywiki%252Fgithub-fork-ribbon.html">$:/plugins/tiddlywiki/github-fork-ribbon</a> to your <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a></li><li>Save and reload your wiki</li><li>Create a new tiddler called <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252F_MyRibbon.html">$:/_MyRibbon</a> tagged <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> and containing:<div><pre><code>&lt;div class=&quot;github-fork-ribbon-wrapper right&quot;&gt;
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p>Here's how to display the last modification date of a wiki in a banner in the corner of the window:</p><ol><li>Copy the plugin <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Fplugins%252Ftiddlywiki%252Fgithub-fork-ribbon.html">$:/plugins/tiddlywiki/github-fork-ribbon</a> to your <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a></li><li>Save and reload your wiki</li><li>Create a new tiddler called <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252F_MyRibbon.html">$:/_MyRibbon</a> tagged <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> and containing:<div><pre><code>&lt;div class=&quot;github-fork-ribbon-wrapper right&quot;&gt;
 &lt;div class=&quot;github-fork-ribbon&quot; style=&quot;background-color:#DF4848;&quot;&gt;
 &lt;$list filter=&quot;[!is[system]!has[draft.of]!sort[modified]limit[1]]&quot;&gt;
 &lt;$link&gt;
@@ -83,7 +90,7 @@ color:#333333;">
 &lt;/$link&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
-&lt;/div&gt;</code></pre></div></li><li>If required, change the background-color value to your preference</li><li>You can also try changing the positioning class from <code>right</code> to <code>right-bottom</code><ol><li>To make the banner appear at the top left you'll need to tag the tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageTemplate.html">$:/tags/PageTemplate</a> instead of <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> and then change the position class to <code>left</code></li></ol></li></ol></div>
+&lt;/div&gt;</code></pre></div></li><li>If required, change the background-color value to your preference</li><li>You can also try changing the positioning class from <code>right</code> to <code>right-bottom</code><ol><li>To make the banner appear at the top left you'll need to tag the tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageTemplate.html">$:/tags/PageTemplate</a> instead of <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> and then change the position class to <code>left</code></li></ol></li></ol></div></div>
 
 
 

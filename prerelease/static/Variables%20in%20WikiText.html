@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ Variables in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 5 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,6 +74,7 @@ color:#333333;">
 
 </span>
 </div>
+</div>
 
 
 
@@ -74,8 +82,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p>See also the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">introduction to the concept of variables</a>.</p><p>To transclude the value of a variable, use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Calls%2520in%2520WikiText.html">macro call syntax</a> with no parameters. You can also use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html"><code class="doc-widget">$macrocall</code></a> widget.</p><p>A <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> snippet can contain <code>$(name)$</code> as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">placeholder</a> for which the value of the variable of that name will be substituted.</p><p>A variable's value can be used as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">filter parameter</a>, or as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget attribute</a>. The latter supports macro parameters.</p><h2 class="">Example: defining a variable</h2><p><div class="doc-example">
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p>See also the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">introduction to the concept of variables</a>.</p><p>To transclude the value of a variable, use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Calls%2520in%2520WikiText.html">macro call syntax</a> with no parameters. You can also use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html"><code class="doc-widget">$macrocall</code></a> widget.</p><p>A <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> snippet can contain <code>$(name)$</code> as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">placeholder</a> for which the value of the variable of that name will be substituted.</p><p>A variable's value can be used as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">filter parameter</a>, or as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget attribute</a>. The latter supports macro parameters.</p><h2 class="">Example: defining a variable</h2><p><div class="doc-example">
 <span class=" tc-reveal">
 	<pre><code>&lt;$set name=animal value=zebra&gt;
 &lt;&lt;animal&gt;&gt;
@@ -117,7 +124,7 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p></div>
+</div></p></div></div>
 
 
 

@@ -22,7 +22,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Makros"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="mehr" class="tc-btn-invisible" title="Weitere Aktionen">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="mehr" class="tc-btn-invisible" title="Weitere Aktionen">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Bearbeiten" class="tc-btn-invisible" title="Bearbeite diesen Tiddler">
@@ -51,11 +55,14 @@ TableOfContentsMacro
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="pmario.html">
 pmario
 </a> vor 10 Monaten
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -69,8 +76,8 @@ color:#333333;">
 
 </span>
 </div>
-
-<div class="tc-tiddler-body"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als &quot;root tag&quot; bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den &quot;root tags&quot; getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="Tagging.html">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsB.html">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des &quot;toc&quot; Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der &quot;erweitern&quot; Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die &quot;selective-expandable&quot; Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der &quot;root tag&quot; legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der &quot;tag&quot; und &quot;sort&quot; Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set ">
+</div>
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als &quot;root tag&quot; bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den &quot;root tags&quot; getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="Tagging.html">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsB.html">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des &quot;toc&quot; Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der &quot;erweitern&quot; Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die &quot;selective-expandable&quot; Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der &quot;root tag&quot; legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der &quot;tag&quot; und &quot;sort&quot; Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 
 <button class=" tc-tab-selected">
@@ -212,7 +219,7 @@ EinsB
 </ol>
 </div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
-</div></p></div>
+</div></p></div></div>
 
 
 

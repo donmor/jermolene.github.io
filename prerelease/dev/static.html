@@ -1120,7 +1120,7 @@ a.tc-tiddlylink:hover {
 	    z-index: 1000;
 	    background-color: #f4d7a3;
 	    width: 100%;
-	    max-height: 50%;
+	    max-height: 100%;
 		
 	}.tc-story-river {
 		position: relative;
@@ -2109,7 +2109,21 @@ More
 </div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+<span class=" tc-reveal">
+<svg class="tc-image-fold tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <rect height="16" rx="8" width="128" x="0" y="0"></rect>
+        <path d="M40,118 L40,62.0000511 C40,57.5797863 36.418278,54 32,54 C27.5907123,54 24,57.5817449 24,62.0000511 L24,125.999949 C24,130.409288 27.5817449,134 32.0000511,134 L95.9999489,134 C100.420214,134 104,130.418278 104,126 C104,121.590712 100.418255,118 95.9999489,118 L40,118 Z" id="Rectangle-432-Copy" transform="translate(64.000000, 94.000000) scale(1, -1) rotate(-45.000000) translate(-64.000000, -94.000000) "></path>
+    </g>
+</svg>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 <svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
@@ -2156,11 +2170,14 @@ HelloThere
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
 </a> 8 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -2174,8 +2191,8 @@ color:#4e432f;">
 
 </span>
 </div>
-
-<div class="tc-tiddler-body"><p>Welcome to the developer documentation for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> (<a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a>). It is currently a work in progress as material from two different sources is adapted and merged in addition to original content being added:</p><ul><li>An assignment by Christian Jurke and Christian Heigele, two students working on their Master's degree in Information Technology at the Gießen University of Applied Sciences (Technische Hochschule Mittelhessen). Their work can be seen in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Introduction.html">Introduction</a> and the tiddlers that link from it.</li><li>The original developer documentation from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>:<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520for%2520Developers.html">TiddlyWiki for Developers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Coding%2520Style%2520Guidelines.html">TiddlyWiki Coding Style Guidelines</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Architecture.html">TiddlyWiki Architecture</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki5%2520Development%2520Environment.html">TiddlyWiki5 Development Environment</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Developing%2520plugins%2520using%2520Node.js%2520and%2520GitHub.html">Developing plugins using Node.js and GitHub</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/How%2520to%2520create%2520a%2520translation%2520for%2520TiddlyWiki.html">How to create a translation for TiddlyWiki</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/JavaScript%2520Macros.html">JavaScript Macros</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520on%2520NW.js.html">TiddlyWiki on NW.js</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/package.json%2520for%2520NW.js.html">package.json for NW.js</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/How%2520to%2520create%2520plugins%2520in%2520the%2520browser.html">How to create plugins in the browser</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Contributing%2520to%2520the%2520TiddlyWiki%2520Core.html">Contributing to the TiddlyWiki Core</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Contributing%2520to%2520the%2520TiddlyWiki%2520Plugin%2520Library.html">Contributing to the TiddlyWiki Plugin Library</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Scripts%2520for%2520building%2520tiddlywiki.com.html">Scripts for building tiddlywiki.com</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SyncAdaptorModules.html">SyncAdaptorModules</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WidgetModules.html">WidgetModules</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WikiRuleModules.html">WikiRuleModules</a></li></ul></li><li>Original developer documentation<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HookMechanism.html">HookMechanism</a></li></ul></li></ul></div>
+</div>
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p>Welcome to the developer documentation for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> (<a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a>). It is currently a work in progress as material from two different sources is adapted and merged in addition to original content being added:</p><ul><li>An assignment by Christian Jurke and Christian Heigele, two students working on their Master's degree in Information Technology at the Gießen University of Applied Sciences (Technische Hochschule Mittelhessen). Their work can be seen in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Introduction.html">Introduction</a> and the tiddlers that link from it.</li><li>The original developer documentation from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>:<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520for%2520Developers.html">TiddlyWiki for Developers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Coding%2520Style%2520Guidelines.html">TiddlyWiki Coding Style Guidelines</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Architecture.html">TiddlyWiki Architecture</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki5%2520Development%2520Environment.html">TiddlyWiki5 Development Environment</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Developing%2520plugins%2520using%2520Node.js%2520and%2520GitHub.html">Developing plugins using Node.js and GitHub</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/How%2520to%2520create%2520a%2520translation%2520for%2520TiddlyWiki.html">How to create a translation for TiddlyWiki</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/JavaScript%2520Macros.html">JavaScript Macros</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520on%2520NW.js.html">TiddlyWiki on NW.js</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/package.json%2520for%2520NW.js.html">package.json for NW.js</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/How%2520to%2520create%2520plugins%2520in%2520the%2520browser.html">How to create plugins in the browser</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Contributing%2520to%2520the%2520TiddlyWiki%2520Core.html">Contributing to the TiddlyWiki Core</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Contributing%2520to%2520the%2520TiddlyWiki%2520Plugin%2520Library.html">Contributing to the TiddlyWiki Plugin Library</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Scripts%2520for%2520building%2520tiddlywiki.com.html">Scripts for building tiddlywiki.com</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SyncAdaptorModules.html">SyncAdaptorModules</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WidgetModules.html">WidgetModules</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WikiRuleModules.html">WikiRuleModules</a></li></ul></li><li>Original developer documentation<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HookMechanism.html">HookMechanism</a></li></ul></li></ul></div></div>
 
 
 
@@ -2184,7 +2201,21 @@ color:#4e432f;">
 <div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+<span class=" tc-reveal">
+<svg class="tc-image-fold tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <rect height="16" rx="8" width="128" x="0" y="0"></rect>
+        <path d="M40,118 L40,62.0000511 C40,57.5797863 36.418278,54 32,54 C27.5907123,54 24,57.5817449 24,62.0000511 L24,125.999949 C24,130.409288 27.5817449,134 32.0000511,134 L95.9999489,134 C100.420214,134 104,130.418278 104,126 C104,121.590712 100.418255,118 95.9999489,118 L40,118 Z" id="Rectangle-432-Copy" transform="translate(64.000000, 94.000000) scale(1, -1) rotate(-45.000000) translate(-64.000000, -94.000000) "></path>
+    </g>
+</svg>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 <svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
@@ -2231,11 +2262,14 @@ Introduction
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
 </a> 12 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -2249,10 +2283,10 @@ color:#4e432f;">
 
 </span>
 </div>
-
-<div class="tc-tiddler-body"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is a personal notebook application based on a wiki application. In addition to a static Web-Site, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is implemented as a single page application. This is a approach to build rich internet applications, it includes the possibility to put application logic into web-pages to make them dynamically. Furthermore this means the whole application is delivered in one HTML file, consisting of source code to dynamically change the view and behaviour of the application as well as the data of the application. During the runtime nothing must be loaded from a server to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> application. The HTML file contains everything needed to start the application. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is highly customisable because of a very sophisticated module concept. Except of a micro-kernel written in <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/JavaScript.html">JavaScript</a> the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText. Even the modules are realised as tiddlers.</p><p>The aim of this documentation is to overview the idea behind the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> application as well as give a overview of the architecture to the reader. This means after reading the documentation the reader is has the knowledge how the overall application works and where the points are where the reader can extend the functionality of the application.</p><p><strong><u>Section Overview:</u></strong></p><p><dl>
+</div>
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is a personal notebook application based on a wiki application. In addition to a static Web-Site, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is implemented as a single page application. This is a approach to build rich internet applications, it includes the possibility to put application logic into web-pages to make them dynamically. Furthermore this means the whole application is delivered in one HTML file, consisting of source code to dynamically change the view and behaviour of the application as well as the data of the application. During the runtime nothing must be loaded from a server to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> application. The HTML file contains everything needed to start the application. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is highly customisable because of a very sophisticated module concept. Except of a micro-kernel written in <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/JavaScript.html">JavaScript</a> the whole application consist of a own data-structure called tiddlers and a own markup language called wikiText. Even the modules are realised as tiddlers.</p><p>The aim of this documentation is to overview the idea behind the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> application as well as give a overview of the architecture to the reader. This means after reading the documentation the reader is has the knowledge how the overall application works and where the points are where the reader can extend the functionality of the application.</p><p><strong><u>Section Overview:</u></strong></p><p><dl>
 <p><dt> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520-%2520A%2520quick%2520Overview.html">TiddlyWiki - A quick Overview</a></dt><dd>This section describes the idea of the TiddlyWiki application. This should give the reader a overview over what TiddlyWiki consists of give a brief introduction to the topics of the main documentation.</dd></p><p><dt> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Microkernel%2520Architecture.html">Microkernel Architecture</a></dt><dd>The heart of TiddlyWiki is it's microkernel. This section will describe what bare mechanisms are included in the microkernel and how additional modules are loaded.</dd></p><p><dt> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Core%2520Application.html">TiddlyWiki Core Application</a></dt><dd>After the microkernel has been explained this section focuses on the core plug-in. It describes the central modules of the core and explains how they work together to build a single file application.</dd></p><p><dt> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Conclusion.html">Conclusion</a></dt><dd>A briefly summary about this documentation bringing out the advantages, disadvantages and experiences with TiddlyWiki.</dd></p>
-</dl></p></div>
+</dl></p></div></div>
 
 
 

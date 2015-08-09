@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TiddlyWiki%20on%20Node.js"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ Building TiddlyWikiClassic
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 10 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,6 +74,7 @@ color:#333333;">
 
 </span>
 </div>
+</div>
 
 
 
@@ -74,12 +82,11 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> can be used to build older 2.x.x versions of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiClassic.html">TiddlyWikiClassic</a> from their constituent components. Doing so involves these  features:</p><ul><li>The <code>tiddlywiki/classictools</code> plugin, containing a deserializer module which allows tiddlers to be loaded from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 2.x.x <code>.recipe</code> files</li><li>The <code>stripcomments</code> format for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">ViewWidget</a>, which strips single line <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> comments starting <code>//#</code></li><li>The <code>stripTitlePrefix='yes'</code> attribute of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldsWidget.html">FieldsWidget</a>, which removes prefixes wrapped in curly braces from the <code>title</code> attribute<ul><li>For example, <code>{tiddler}HelloThere</code> would be transformed to <code>HelloThere</code></li></ul></li></ul><h1 class="">Usage</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiClassic.html">TiddlyWikiClassic</a> is built from the command line by running <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>. A typical usage would be:</p><pre><code>node ../../tiddlywiki.js \
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> can be used to build older 2.x.x versions of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiClassic.html">TiddlyWikiClassic</a> from their constituent components. Doing so involves these  features:</p><ul><li>The <code>tiddlywiki/classictools</code> plugin, containing a deserializer module which allows tiddlers to be loaded from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 2.x.x <code>.recipe</code> files</li><li>The <code>stripcomments</code> format for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">ViewWidget</a>, which strips single line <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> comments starting <code>//#</code></li><li>The <code>stripTitlePrefix='yes'</code> attribute of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldsWidget.html">FieldsWidget</a>, which removes prefixes wrapped in curly braces from the <code>title</code> attribute<ul><li>For example, <code>{tiddler}HelloThere</code> would be transformed to <code>HelloThere</code></li></ul></li></ul><h1 class="">Usage</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiClassic.html">TiddlyWikiClassic</a> is built from the command line by running <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>. A typical usage would be:</p><pre><code>node ../../tiddlywiki.js \
 	--verbose \
 	--load &lt;path_to_recipe_file&gt; \
 	--rendertiddler $:/core/templates/tiddlywiki2.template.html &lt;path_to_write_index_file&gt; text/plain \
-	|| exit 1</code></pre></div>
+	|| exit 1</code></pre></div></div>
 
 
 

@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ VarsWidget
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 3 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,6 +74,7 @@ color:#333333;">
 
 </span>
 </div>
+</div>
 
 
 
@@ -74,8 +82,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
+<div class="tc-tiddler-body"><div class=" tc-reveal"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
 
 &lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
@@ -85,7 +92,7 @@ color:#333333;">
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
-&lt;/$set&gt;</code></pre><h1 class="">Remarks</h1><p>It should be noted that this widget differs from the set widget in the following ways:</p><ul><li>A fallback (also known as &quot;emptyValue&quot;) cannot be specified</li><li>Filters cannot be used to produce a conditional variable assignement</li><li>Variable names must be literal strings</li></ul></div>
+&lt;/$set&gt;</code></pre><h1 class="">Remarks</h1><p>It should be noted that this widget differs from the set widget in the following ways:</p><ul><li>A fallback (also known as &quot;emptyValue&quot;) cannot be specified</li><li>Filters cannot be used to produce a conditional variable assignement</li><li>Variable names must be literal strings</li></ul></div></div>
 
 
 

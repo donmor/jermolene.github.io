@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Commands"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ LoadCommand
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 18 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,6 +74,7 @@ color:#333333;">
 
 </span>
 </div>
+</div>
 
 
 
@@ -74,9 +82,8 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p>Load tiddlers from 2.x.x <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> files (<code>.html</code>), <code>.tiddler</code>, <code>.tid</code>, <code>.json</code> or other files </p><pre><code>--load &lt;filepath&gt;</code></pre><p>To load tiddlers from an encrypted <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> file you should first specify the password with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PasswordCommand.html">PasswordCommand</a>. For example:</p><pre><code>tiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html</code></pre><p>Note that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> will not load an older version of an already loaded plugin.
-</p></div>
+<div class="tc-tiddler-body"><div class=" tc-reveal"><p>Load tiddlers from 2.x.x <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> files (<code>.html</code>), <code>.tiddler</code>, <code>.tid</code>, <code>.json</code> or other files </p><pre><code>--load &lt;filepath&gt;</code></pre><p>To load tiddlers from an encrypted <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> file you should first specify the password with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PasswordCommand.html">PasswordCommand</a>. For example:</p><pre><code>tiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html</code></pre><p>Note that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> will not load an older version of an already loaded plugin.
+</p></div></div>
 
 
 

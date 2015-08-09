@@ -20,7 +20,11 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+<span class=" tc-reveal"><button aria-label="fold/unfold tiddler" class="tc-btn-invisible" title="Fold/unfold the body of this tiddler">
+
+
+
+</button></span><span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
@@ -49,11 +53,14 @@ Tags and Filter Mechanism
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 12 months ago
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -67,8 +74,8 @@ color:#4e432f;">
 
 </span>
 </div>
-
-<div class="tc-tiddler-body"><h3 class="">Tags</h3><p>The core plug-in extends the store by a simple mechanism to tag a tiddler.
+</div>
+<div class="tc-tiddler-body"><div class=" tc-reveal"><h3 class="">Tags</h3><p>The core plug-in extends the store by a simple mechanism to tag a tiddler.
 This provides the functionality to</p><ul><li>retrieve tiddlers with a specific tag</li><li>retreive a hashmap of <code>{ tag: [tiddler1, tiddler3, tiddler3] }</code></li><li>list or iterate tiddlers not tagged with a specific tag</li></ul><p>The tags are stored directly in the tiddler. Each tiddler can have a field named &quot;tag&quot;, which contains an array of its tags.
 The above functions use this field to calculate their results and cache them in a global cache.</p><p>Organising information with tags is easy, intuitive and is common throughout the web.
 In most cases the functions mentioned above are not enough and a more sophisticated way of querying is needed.
@@ -82,7 +89,7 @@ But more sophisticated operators are possible, too.
 An example would be the search-operator. This filter operator looks for the searched string in the text and in the tags of the tiddlers.
 If the provided filter operators are not enough, a developer can add new filters by adding a module with the <code>filteroperator</code> type.</p><h3 class="">System Tags</h3><p>Tags and the filter mechanism are used throughout the core plug-in for internal puproses.
 Tags which start with <code>$:/</code> are normally hidden from the casual user, similar to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="System%2520Tiddlers.html">System Tiddlers</a></p><p>The filter mechanism is added to the wiki store with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.
-</p></div>
+</p></div></div>
 
 
 
