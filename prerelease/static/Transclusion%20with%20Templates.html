@@ -53,7 +53,7 @@ Transclusion with Templates
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 5 months ago
+</a> 6 months ago
 </div>
 </div>
 <div class=" tc-reveal">
@@ -78,7 +78,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><div class=" tc-reveal"><h1 class="">Introduction</h1><p>In <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a> we have seen how to include the content of a tiddler A into a tiddler B. Now suppose that tiddler A contains:</p><pre><code>@@background-color:yellow;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>In <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a> we have seen how to include the content of a tiddler A into a tiddler B. Now suppose that tiddler A contains:</p><pre><code>@@background-color:yellow;
 Hello, my title is {{!!title}}
 @@</code></pre><p>This makes tiddler A display its title with a yellow background (see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Styles%2520and%2520Classes%2520in%2520WikiText.html">Styles and Classes in WikiText</a> to learn about CSS style). Imagine that you want to display the title in the same way in tiddler B. But you don't want to copy/paste the style instructions, because you might want to change the background colour later and you want to keep it consistent among tiddlers. This looks like a typical case of transclusion, so let's try to transclude tiddler A in tiddler B the usual way with <code>{{A}}</code>. You should see the following content in tiddler B:</p><blockquote class="tc-quote"><p style="background-color:yellow;">Hello, my title is A
 </p></blockquote><p>The style is applied as expected, but the title is wrong: we want <code>{{!!title}}</code> to refer to the target tiddler B, and not the source tiddler A.</p><p>The solution is to use a <em>template</em>. In this case, the source tiddler A is called the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddler</a>, and it is <em>applied</em> to tiddler B using the notation <code>{{||A}}</code>. The difference is that any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> which does not refer explicitly to a specific tiddler is applied to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>, that is, the target tiddler. As a result, tiddler B now looks as expected:</p><blockquote class="tc-quote"><p style="background-color:yellow;">Hello, my title is B
@@ -94,7 +94,7 @@ color:#333333;">
 
 
 </span>
-</p><p>See also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">Transclusion in WikiText</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">TranscludeWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">Current Tiddler</a></li></ul></div></div>
+</p><p>See also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">Transclusion in WikiText</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">TranscludeWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">Current Tiddler</a></li></ul></div>
 
 
 

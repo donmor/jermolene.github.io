@@ -78,10 +78,10 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body"><div class=" tc-reveal"><p>A data tiddler is a miniature database contained within a tiddler.</p><p>There are two standard formats:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">DictionaryTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">JSONTiddlers</a></li></ul><p>Other formats of tiddler can also be parsed to yield blocks of data that behave like data tiddlers.</p><p>Use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> to look up a value by its name. For example, if a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">DictionaryTiddler</a> called <code>MonthDays</code> contains:</p><pre><code>oct:31
+<div class="tc-tiddler-body tc-reveal"><p>A data tiddler is a miniature database contained within a tiddler.</p><p>There are two standard formats:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">DictionaryTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">JSONTiddlers</a></li></ul><p>Other formats of tiddler can also be parsed to yield blocks of data that behave like data tiddlers.</p><p>Use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> to look up a value by its name. For example, if a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">DictionaryTiddler</a> called <code>MonthDays</code> contains:</p><pre><code>oct:31
 nov:30
 dec:31</code></pre><p>... then <code>{{MonthDays##nov}}</code> will resolve to the value <code>30</code>.</p><p>The same is true if <code>MonthDays</code> is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">JSONTiddler</a> with the following content:</p><pre><code>{&quot;oct&quot;:31,&quot;nov&quot;:30,&quot;dec&quot;:31}</code></pre><p>Note: <em>It is currently only possible to retrieve data from the immediate properties of the root object of a JSONTiddler.</em>
-</p></div></div>
+</p></div>
 
 
 

@@ -53,7 +53,7 @@ Startup Process
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 12 months ago
+</a> 13 months ago
 </div>
 </div>
 <div class=" tc-reveal">
@@ -71,7 +71,7 @@ color:#4e432f;">
 </span>
 </div>
 </div>
-<div class="tc-tiddler-body"><div class=" tc-reveal"><p>Modules with <code>module-type: startup</code> have to export a  function named <code>startup</code> and may export a name property to identify this module. The startup function will be executed by the boot kernel at the end of the boot process.</p><pre class="js hljs"><code><span class="hljs-comment">// From boot.js:</span>
+<div class="tc-tiddler-body tc-reveal"><p>Modules with <code>module-type: startup</code> have to export a  function named <code>startup</code> and may export a name property to identify this module. The startup function will be executed by the boot kernel at the end of the boot process.</p><pre class="js hljs"><code><span class="hljs-comment">// From boot.js:</span>
 <span class="hljs-comment">// Gather up any startup modules</span>
 $tw.boot.remainingStartupModules = []; <span class="hljs-comment">// Array of startup modules</span>
 $tw.modules.forEachModuleOfType(<span class="hljs-string">"startup"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(title,module)</span> </span>{
@@ -83,7 +83,7 @@ $tw.modules.forEachModuleOfType(<span class="hljs-string">"startup"</span>,<span
 $tw.boot.executedStartupModules = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
 $tw.boot.disabledStartupModules = $tw.boot.disabledStartupModules || [];
 <span class="hljs-comment">// Repeatedly execute the next eligible task</span>
-$tw.boot.executeNextStartupTask();</code></pre><p><code>executeNextStartupTask()</code> will execute the remaining startup modules in <code>remainingStartupModules</code>. A startup module can export the variables <code>before</code> and/or <code>after</code>, each containing an array of names of other startup modules. <code>executeNextStartupTask()</code> will use this information to execute the modules in the correct order.</p><p>Startup modules can be marked as synchronous by exporting <code>synchronous = true</code>. If synchronous is set to false, the startup function is executed with an callback function as the first argument. The startup function has to call this function to allow subsequent startup modules to get executed. This is necessary when the startup function itself uses asynchronous calls.</p></div></div>
+$tw.boot.executeNextStartupTask();</code></pre><p><code>executeNextStartupTask()</code> will execute the remaining startup modules in <code>remainingStartupModules</code>. A startup module can export the variables <code>before</code> and/or <code>after</code>, each containing an array of names of other startup modules. <code>executeNextStartupTask()</code> will use this information to execute the modules in the correct order.</p><p>Startup modules can be marked as synchronous by exporting <code>synchronous = true</code>. If synchronous is set to false, the startup function is executed with an callback function as the first argument. The startup function has to call this function to allow subsequent startup modules to get executed. This is necessary when the startup function itself uses asynchronous calls.</p></div>
 
 
 
