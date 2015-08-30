@@ -1372,6 +1372,7 @@ a.tc-tiddlylink:hover {
 		position: relative;
 		width: auto;
 		left: 0;
+		margin-left: 0px;
 		margin-right: 350px;
 	}.tc-tiddler-frame {
 		width: 100%;
