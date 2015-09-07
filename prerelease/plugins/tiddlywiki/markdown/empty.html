@@ -2506,7 +2506,7 @@ Error message and password prompt
         &quot;$:/language/Help/rendertiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddler&quot;,
             &quot;description&quot;: &quot;Render an individual tiddler as a specified ContentType&quot;,
-            &quot;text&quot;: &quot;Render an individual tiddler as a specified ContentType, defaults to `text/html` and save it to the specified filename:\n\n```\n--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;]\n```\n\nBy default, the filename is resolved relative to the `output` subdirectory of the edition directory. The `--output` command can be used to direct output to a different directory.\n\nAny missing directories in the path to the filename are automatically created.\n&quot;
+            &quot;text&quot;: &quot;Render an individual tiddler as a specified ContentType, defaulting to `text/html` and save it to the specified filename. Optionally a template can be specified, in which case the template tiddler is rendered with the \&quot;currentTiddler\&quot; variable set to the tiddler that is being rendered (the first parameter value).\n\n```\n--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;]\n```\n\nBy default, the filename is resolved relative to the `output` subdirectory of the edition directory. The `--output` command can be used to direct output to a different directory.\n\nAny missing directories in the path to the filename are automatically created.\n&quot;
         },
         &quot;$:/language/Help/rendertiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddlers&quot;,
@@ -2521,7 +2521,7 @@ Error message and password prompt
         &quot;$:/language/Help/savetiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/savetiddlers&quot;,
             &quot;description&quot;: &quot;Saves a group of raw tiddlers to a directory&quot;,
-            &quot;text&quot;: &quot;Saves a group of tiddlers in their raw text or binary format to the specified directory. \n\n```\n--savetiddlers &lt;filter&gt; &lt;pathname&gt;\n```\n\nBy default, the pathname is resolved relative to the `output` subdirectory of the edition directory. The `--output` command can be used to direct output to a different directory.\n\nAny missing directories in the pathname are automatically created.\n&quot;
+            &quot;text&quot;: &quot;Saves a group of tiddlers in their raw text or binary format to the specified directory. \n\n```\n--savetiddlers &lt;filter&gt; &lt;pathname&gt; [-do-not-delete]\n```\n\nBy default, the pathname is resolved relative to the `output` subdirectory of the edition directory. The `--output` command can be used to direct output to a different directory.\n\nThe output directory is cleared of existing files before saving the specified files. The deletion can be disabled by specifying the ''-do-not-delete'' flag.\n\nAny missing directories in the pathname are automatically created.\n&quot;
         },
         &quot;$:/language/Help/server&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/server&quot;,
@@ -2595,6 +2595,10 @@ Error message and password prompt
         &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;,
             &quot;text&quot;: &quot;Migrated theme tweak from &lt;$text text=&lt;&lt;from&gt;&gt;/&gt;&quot;
+        },
+        &quot;$:/language/AboveStory/ClassicPlugin/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/AboveStory/ClassicPlugin/Warning&quot;,
+            &quot;text&quot;: &quot;It looks like you are trying to load a plugin designed for ~TiddlyWiki Classic. Please note that [[these plugins do not work with TiddlyWiki version 5.x.x|http://tiddlywiki.com/#TiddlyWikiClassic]]. ~TiddlyWiki Classic plugins detected:&quot;
         },
         &quot;$:/language/BinaryWarning/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/BinaryWarning/Prompt&quot;,
@@ -3096,7 +3100,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;command&quot;
         },
         &quot;$:/core/modules/commands/rendertiddler.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/rendertiddler.js\ntype: application/javascript\nmodule-type: command\n\nCommand to render a tiddler and save it to a file\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.info = {\n\tname: \&quot;rendertiddler\&quot;,\n\tsynchronous: false\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 2) {\n\t\treturn \&quot;Missing filename\&quot;;\n\t}\n\tvar self = this,\n\t\tfs = require(\&quot;fs\&quot;),\n\t\tpath = require(\&quot;path\&quot;),\n\t\ttitle = this.params[0],\n\t\tfilename = path.resolve(this.commander.outputPath,this.params[1]),\n\t\ttype = this.params[2] || \&quot;text/html\&quot;;\n\t$tw.utils.createFileDirectories(filename);\n\tfs.writeFile(filename,this.commander.wiki.renderTiddler(type,title),\&quot;utf8\&quot;,function(err) {\n\t\tself.callback(err);\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/rendertiddler.js\ntype: application/javascript\nmodule-type: command\n\nCommand to render a tiddler and save it to a file\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nexports.info = {\n\tname: \&quot;rendertiddler\&quot;,\n\tsynchronous: false\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 2) {\n\t\treturn \&quot;Missing filename\&quot;;\n\t}\n\tvar self = this,\n\t\tfs = require(\&quot;fs\&quot;),\n\t\tpath = require(\&quot;path\&quot;),\n\t\ttitle = this.params[0],\n\t\tfilename = path.resolve(this.commander.outputPath,this.params[1]),\n\t\ttype = this.params[2] || \&quot;text/html\&quot;,\n\t\ttemplate = this.params[3],\n\t\tvariables = {};\n\t$tw.utils.createFileDirectories(filename);\n\tif(template) {\n\t\tvariables.currentTiddler = title;\n\t\ttitle = template;\n\t}\n\tfs.writeFile(filename,this.commander.wiki.renderTiddler(type,title,{variables: variables}),\&quot;utf8\&quot;,function(err) {\n\t\tself.callback(err);\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/commands/rendertiddler.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;command&quot;
@@ -3120,7 +3124,7 @@ Error message and password prompt
             &quot;module-type&quot;: &quot;command&quot;
         },
         &quot;$:/core/modules/commands/savetiddlers.js&quot;: {
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/savetiddlers.js\ntype: application/javascript\nmodule-type: command\n\nCommand to save several tiddlers to a folder of files\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;);\n\nexports.info = {\n\tname: \&quot;savetiddlers\&quot;,\n\tsynchronous: true\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 1) {\n\t\treturn \&quot;Missing filename\&quot;;\n\t}\n\tvar self = this,\n\t\tfs = require(\&quot;fs\&quot;),\n\t\tpath = require(\&quot;path\&quot;),\n\t\twiki = this.commander.wiki,\n\t\tfilter = this.params[0],\n\t\tpathname = path.resolve(this.commander.outputPath,this.params[1]),\n\t\ttiddlers = wiki.filterTiddlers(filter);\n\t$tw.utils.deleteDirectory(pathname);\n\t$tw.utils.createDirectory(pathname);\n\t$tw.utils.each(tiddlers,function(title) {\n\t\tvar tiddler = self.commander.wiki.getTiddler(title),\n\t\t\ttype = tiddler.fields.type || \&quot;text/vnd.tiddlywiki\&quot;,\n\t\t\tcontentTypeInfo = $tw.config.contentTypeInfo[type] || {encoding: \&quot;utf8\&quot;},\n\t\t\tfilename = path.resolve(pathname,encodeURIComponent(title));\n\t\tfs.writeFileSync(filename,tiddler.fields.text,contentTypeInfo.encoding);\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/commands/savetiddlers.js\ntype: application/javascript\nmodule-type: command\n\nCommand to save several tiddlers to a folder of files\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar widget = require(\&quot;$:/core/modules/widgets/widget.js\&quot;);\n\nexports.info = {\n\tname: \&quot;savetiddlers\&quot;,\n\tsynchronous: true\n};\n\nvar Command = function(params,commander,callback) {\n\tthis.params = params;\n\tthis.commander = commander;\n\tthis.callback = callback;\n};\n\nCommand.prototype.execute = function() {\n\tif(this.params.length &lt; 1) {\n\t\treturn \&quot;Missing filename\&quot;;\n\t}\n\tvar self = this,\n\t\tfs = require(\&quot;fs\&quot;),\n\t\tpath = require(\&quot;path\&quot;),\n\t\twiki = this.commander.wiki,\n\t\tfilter = this.params[0],\n\t\tpathname = path.resolve(this.commander.outputPath,this.params[1]),\n\t\tdontDelete = (this.params[2] || \&quot;\&quot;).toLowerCase() === \&quot;-do-not-delete\&quot;,\n\t\ttiddlers = wiki.filterTiddlers(filter);\n\tif(!dontDelete) {\n\t\t$tw.utils.deleteDirectory(pathname);\n\t}\n\t$tw.utils.createDirectory(pathname);\n\t$tw.utils.each(tiddlers,function(title) {\n\t\tvar tiddler = self.commander.wiki.getTiddler(title),\n\t\t\ttype = tiddler.fields.type || \&quot;text/vnd.tiddlywiki\&quot;,\n\t\t\tcontentTypeInfo = $tw.config.contentTypeInfo[type] || {encoding: \&quot;utf8\&quot;},\n\t\t\tfilename = path.resolve(pathname,encodeURIComponent(title));\n\t\tfs.writeFileSync(filename,tiddler.fields.text,contentTypeInfo.encoding);\n\t});\n\treturn null;\n};\n\nexports.Command = Command;\n\n})();\n&quot;,
             &quot;title&quot;: &quot;$:/core/modules/commands/savetiddlers.js&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;command&quot;
@@ -4654,6 +4658,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/core/templates/wikified-tiddler&quot;,
             &quot;text&quot;: &quot;&lt;$transclude /&gt;&quot;
         },
+        &quot;$:/core/ui/AboveStory/tw2-plugin-check&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/AboveStory/tw2-plugin-check&quot;,
+            &quot;tags&quot;: &quot;$:/tags/AboveStory&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/AboveStory/ClassicPlugin/\n&lt;$list filter=\&quot;[all[system+tiddlers]tag[systemConfig]limit[1]]\&quot;&gt;\n\n&lt;div class=\&quot;tc-message-box\&quot;&gt;\n\n&lt;&lt;lingo Warning&gt;&gt;\n\n&lt;ul&gt;\n\n&lt;$list filter=\&quot;[all[system+tiddlers]tag[systemConfig]limit[1]]\&quot;&gt;\n\n&lt;li&gt;\n\n&lt;$link&gt;&lt;$view field=\&quot;title\&quot;/&gt;&lt;/$link&gt;\n\n&lt;/li&gt;\n\n&lt;/$list&gt;\n\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n&lt;/$list&gt;\n&quot;
+        },
         &quot;$:/core/ui/AdvancedSearch/Filter&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/AdvancedSearch/Filter&quot;,
             &quot;tags&quot;: &quot;$:/tags/AdvancedSearch&quot;,
@@ -5718,6 +5727,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/export-page&quot;,
             &quot;text&quot;: &quot;hide&quot;
         },
+        &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/fold-all&quot;: {
+            &quot;title&quot;: &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/fold-all&quot;,
+            &quot;text&quot;: &quot;hide&quot;
+        },
         &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/full-screen&quot;: {
             &quot;title&quot;: &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/full-screen&quot;,
             &quot;text&quot;: &quot;hide&quot;
@@ -5764,6 +5777,10 @@ Error message and password prompt
         },
         &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/theme&quot;: {
             &quot;title&quot;: &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/theme&quot;,
+            &quot;text&quot;: &quot;hide&quot;
+        },
+        &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all&quot;: {
+            &quot;title&quot;: &quot;$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/unfold-all&quot;,
             &quot;text&quot;: &quot;hide&quot;
         },
         &quot;$:/config/SaveWikiButton/Template&quot;: {
@@ -6051,7 +6068,7 @@ Error message and password prompt
 [[MarkdownExample]]
 </pre>
 </div>
-<div created="20150831141055753" current-tiddler="HelloThere" modified="20150831141055753" title="$:/HistoryList" type="application/json">
+<div created="20150907080211935" current-tiddler="HelloThere" modified="20150907080211935" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -7278,10 +7295,12 @@ $tw.Wiki = function(options) {
 	this.deleteTiddler = function(title) {
 // Uncomment the following line for detailed logs of all tiddler deletions
 // console.log("Deleting",title,tiddler)
-		delete tiddlers[title];
-		this.clearCache(title);
-		this.clearGlobalCache();
-		this.enqueueTiddlerEvent(title,true);
+		if($tw.utils.hop(tiddlers,title)) {
+			delete tiddlers[title];
+			this.clearCache(title);
+			this.clearGlobalCache();
+			this.enqueueTiddlerEvent(title,true);
+		}
 	};
 
 	// Get a tiddler from the store

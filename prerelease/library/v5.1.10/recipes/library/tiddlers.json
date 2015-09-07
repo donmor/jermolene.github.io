@@ -1,5 +1,17 @@
 [
     {
+        "title": "$:/plugins/tiddlywiki/blog",
+        "description": "Tools for using TiddlyWiki to publish blogs",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme docs",
+        "version": "5.1.10-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin contains tools to help publish blogs:\n\n* Templates and tools for building static HTML pages and posts\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/browser-sniff",
         "description": "Browser sniffing",
         "author": "JeremyRuston",
