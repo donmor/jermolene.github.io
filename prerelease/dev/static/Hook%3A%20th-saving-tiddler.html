@@ -10,7 +10,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Hook: tc-opening-default-tiddlers-list: TiddlyWiki/Dev — documentation for developers</title>
+<title>Hook: th-saving-tiddler: TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
@@ -41,7 +41,7 @@
 
 
 <h2 class="tc-title">
-Hook: tc-opening-default-tiddlers-list
+Hook: th-saving-tiddler
 </h2>
 
 </span>
@@ -53,13 +53,13 @@ Hook: tc-opening-default-tiddlers-list
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 9 months ago
+</a> 119 minutes ago
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"></div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to add to or remove from the list of tiddlers that are opened when the wiki is first loaded or the home button is clicked.</p><p>The function takes a list of tiddlers as its only argument and returns a modified list of tiddler titles to display.</p><p>Note that this hook is invoked with the tiddler titles that are generated from the filter in <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FDefaultTiddlers.html">$:/DefaultTiddlers</a>. Any added entries must be tiddler titles, not filter expressions.
+<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to modify tiddlers before they are saved via the <strong>confirm</strong> toolbar button; the hook is not invoked for tiddlers that are saved through other means, such as state tiddlers created by the <a class="tc-tiddlylink tc-tiddlylink-missing" href="ActionSetFieldWidget.html">ActionSetFieldWidget</a>.</p><p>Hook function parameters:</p><ul><li><strong>tiddler</strong>: tiddler object about to be saved</li></ul><p>Return value:</p><ul><li>tiddler object to be saved</li></ul><p>The original tiddler object can be returned unmodified by the hook. If the hook needs to modify the tiddler then it should return a new tiddler object, for example:</p><pre><code>	return new $tw.Tiddler(tiddler,{&quot;my-field&quot;: value});</code></pre><p>Hooks must not change the <strong>title</strong> field but can freely modify any other field of the tiddler.
 </p></div>
 
 

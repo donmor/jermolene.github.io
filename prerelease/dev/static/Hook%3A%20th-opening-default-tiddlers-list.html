@@ -10,14 +10,14 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>"Microblogging con Tiddlywiki" by Juan: TiddlyWiki Pre-release — 5.1.10-prerelease</title>
+<title>Hook: th-opening-default-tiddlers-list: TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Tutorials"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   "><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -41,7 +41,7 @@
 
 
 <h2 class="tc-title">
-&quot;Microblogging con Tiddlywiki&quot; by Juan
+Hook: th-opening-default-tiddlers-list
 </h2>
 
 </span>
@@ -53,33 +53,13 @@
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 11 months ago
+</a> 9 months ago
 </div>
 </div>
 <div class=" tc-reveal">
-<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
-fill:#333333;
-color:#333333;">
- Tutorials
-</button>
-<span class=" tc-reveal" hidden="true"></span>
-
-
-</span>
+<div class="tc-tags-wrapper"></div>
 </div>
-</div>
-
-
-
-
-
-
-
-<div class="tc-tiddler-body tc-reveal"><p>A Spanish guide to using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> on Android.</p><p><a class="tc-tiddlylink-external" href="http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/" target="_blank">http://3palmeras.wordpress.com/2014/11/05/microblogging-con-tiddlywiki/</a></p><blockquote class="tc-quote"><p>Tiddlywiki software is prodigious based on javascript which is capable of holding a notepad that can be edited with Internet Explorer or function as a full blog, contained in a single file.
-</p></blockquote><p><em>Translation by Google Translate</em>
+<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to add to or remove from the list of tiddlers that are opened when the wiki is first loaded or the home button is clicked.</p><p>The function takes a list of tiddlers as its only argument and returns a modified list of tiddler titles to display.</p><p>Note that this hook is invoked with the tiddler titles that are generated from the filter in <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FDefaultTiddlers.html">$:/DefaultTiddlers</a>. Any added entries must be tiddler titles, not filter expressions.
 </p></div>
 
 
