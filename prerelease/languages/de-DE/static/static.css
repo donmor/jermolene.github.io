@@ -1002,18 +1002,8 @@ a.tc-tiddlylink:hover {
 	position: relative;
 }@media (max-width: 960px) {.tc-sidebar-header {
 		padding: 14px;
-		
+		min-height: 32px;
 		margin-top: 0px;
-	}.tc-sidebar-scrollable {
-		position: fixed;
-		overflow-y: auto;
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
-	    z-index: 1000;
-	    background-color: #f4f4f4;
-	    width: 100%;
-	    max-height: 100%;
-		
 	}.tc-story-river {
 		position: relative;
 		padding: 0;
