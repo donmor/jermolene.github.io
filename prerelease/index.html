@@ -1179,7 +1179,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/tw5.com/tiddlers/$
         },
         &quot;$:/language/Buttons/Import/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Import/Hint&quot;,
-            &quot;text&quot;: &quot;Import files&quot;
+            &quot;text&quot;: &quot;Import tiddlers from text or image files&quot;
         },
         &quot;$:/language/Buttons/Info/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Info/Caption&quot;,
@@ -15340,6 +15340,7 @@ See [[Alice in Wonderland]] for an example. Try opening it without a network con
 * [[@araname|https://github.com/araname]]
 * [[@BramChen|https://github.com/BramChen]]
 * [[@danielo515|https://github.com/danielo515]]
+* [[@hegart-dmishiv|https://github.com/hegart-dmishiv]]
 * [[@idoine|https://github.com/idoine]]
 * [[@inmysocks|https://github.com/inmysocks]]
 * [[@nameanyone|https://github.com/nameanyone]]
@@ -17010,7 +17011,7 @@ Unusually, TiddlyWiki is also a SingleFileApplication.
 <div created="20150110182900000" modified="20150117152553000" tags="[[Improving TiddlyWiki Documentation]]" title="Spelling">
 <pre>Because ~TiddlyWiki is of British origin, its English documentation uses [[British spelling in preference to US spelling|http://en.wikipedia.org/wiki/American_and_British_English_spelling_differences]].
 
-Words like &lt;&lt;.word customise&gt;&gt; are spelled &lt;&lt;.word -ise&gt;&gt;, not &lt;&lt;.word -ize&gt;&gt;.
+Words like &lt;&lt;.word customise&gt;&gt; are spelled &lt;&lt;.word -ise&gt;&gt;, not &lt;&lt;.word -ize&gt;&gt;. Words like &lt;&lt;.word colour&gt;&gt; will also be spelled using UK English unless they are being used for reserved words in code, such as in CSS or JavaScript.
 
 Standard technical acronyms are written in upper case, without dots: &lt;&lt;.word HTML&gt;&gt;, not &lt;&lt;.word html&gt;&gt; or &lt;&lt;.word H.T.M.L.&gt;&gt;
 
@@ -18453,6 +18454,9 @@ Sub-folders within the `tiddlers` folder can also be given a `tiddlywiki.files` 
 				&quot;title&quot;: &quot;A different title&quot;
 			}
 		}
+	],
+	&quot;directories&quot;: [
+		&quot;../../mytiddlers/store&quot;
 	]
 }
 ```
@@ -18464,6 +18468,8 @@ The JSON data consists of an object with a `tiddlers` property that contains an 
 ** `isTiddlerFile`: if `true`, the file will be deserialised to extract the tiddlers. Otherwise, the raw content of the file is assigned to the `text` field without any parsing
 * `fields`: an object containing fields that override any provided in the tiddler file
 * `prefix` &amp; `suffix`: (optional) specify strings to be prefixed and suffixed to the tiddler file text content
+
+The ''directories'' property allows a list of directories to be specified. All tiddlers will be recursively loaded from each directory listed.
 </pre>
 </div>
 <div caption="timeline" created="20150220180357000" modified="20150221224401000" tags="Macros [[Core Macros]]" title="timeline Macro">
@@ -21806,6 +21812,7 @@ $tw.loadTiddlersFromPath = function(filepath,excludeRegExp) {
 			if(files.indexOf("tiddlywiki.files") !== -1) {
 				// If so, process the files it describes
 				var filesInfo = JSON.parse(fs.readFileSync(filepath + path.sep + "tiddlywiki.files","utf8"));
+				// First the tiddlers
 				$tw.utils.each(filesInfo.tiddlers,function(tidInfo) {
 					var type = tidInfo.fields.type || "text/plain",
 						typeInfo = $tw.config.contentTypeInfo[type],
@@ -21832,6 +21839,13 @@ $tw.loadTiddlersFromPath = function(filepath,excludeRegExp) {
 						}
 						tidInfo.fields.text = text;
 						tiddlers.push({tiddlers: [tidInfo.fields]});
+					}
+				});
+				// Then any recursive directories
+				$tw.utils.each(filesInfo.directories,function(dirPath) {
+					var pathname = path.resolve(filepath,dirPath);
+					if(fs.existsSync(pathname) && fs.statSync(pathname).isDirectory()) {
+						tiddlers.push.apply(tiddlers,$tw.loadTiddlersFromPath(pathname,excludeRegExp));
 					}
 				});
 			} else {

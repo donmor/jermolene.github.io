@@ -53,7 +53,7 @@ TiddlyWikiFolders
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 46 days ago
+</a> 49 days ago
 </div>
 </div>
 <div class=" tc-reveal">
@@ -123,8 +123,12 @@ color:#333333;">
 				&quot;title&quot;: &quot;A different title&quot;
 			}
 		}
+	],
+	&quot;directories&quot;: [
+		&quot;../../mytiddlers/store&quot;
 	]
-}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: the file containing the tiddler</li><li><code>isTiddlerFile</code>: if <code>true</code>, the file will be deserialised to extract the tiddlers. Otherwise, the raw content of the file is assigned to the <code>text</code> field without any parsing</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul></div>
+}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: the file containing the tiddler</li><li><code>isTiddlerFile</code>: if <code>true</code>, the file will be deserialised to extract the tiddlers. Otherwise, the raw content of the file is assigned to the <code>text</code> field without any parsing</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul><p>The <strong>directories</strong> property allows a list of directories to be specified. All tiddlers will be recursively loaded from each directory listed.
+</p></div>
 
 
 
