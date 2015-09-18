@@ -1081,7 +1081,49 @@ a.tc-tiddlylink:hover {
 }button svg.tc-image-button, button .tc-image-button img {
 	height: 1em;
 	width: 1em;
-}/*
+}.tc-unfold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 100%;
+    width: calc(100% + 2px);
+    margin-left: -43px;
+	text-align: center;
+	border-top: 2px solid #f8f8f8;
+	margin-top: 4px;
+}.tc-unfold-banner:hover {
+	background: #f8f8f8;
+	border-top: 2px solid #dddddd;
+}.tc-unfold-banner svg, .tc-fold-banner svg {
+	height: 0.75em;
+	fill: #cccccc;
+}.tc-unfold-banner:hover svg, .tc-fold-banner:hover svg {
+	fill: #888888;
+}.tc-fold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 23px;
+	text-align: center;
+	margin-left: -35px;
+    top: 6px;
+    bottom: 6px;
+}.tc-fold-banner:hover {
+	background: #f8f8f8;
+}@media (max-width: 960px) {
+	
+	.tc-unfold-banner {
+		position: static;
+	    width: calc(100% + 59px);
+    }.tc-fold-banner {
+		width: 16px;
+		margin-left: -16px;
+	    font-size: 0.75em;
+	}}/*
 ** Tags and missing tiddlers
 */.tc-tag-list-item {
 	position: relative;
@@ -1223,6 +1265,7 @@ a.tc-tiddlylink:hover {
 }/*
 ** Tiddler styles
 */.tc-tiddler-frame {
+	position: relative;
 	margin-bottom: 28px;
 	background-color: #ffffff;
 	border: 1px solid #ffffff;
