@@ -1266,8 +1266,6 @@ a.tc-tiddlylink:hover {
 	width: 1.2em;
 	height: 1.2em;
 	vertical-align: middle;
-}.tc-search-results {
-	padding-top: 14px;
 }.tc-page-controls {
 	margin-top: 14px;
 	font-size: 1.5em;
@@ -1450,6 +1448,8 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
+}.tc-tiddler-body {
+	clear: both;
 }.tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
 	line-height: 22px;
@@ -1563,6 +1563,8 @@ a.tc-tiddlylink:hover {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
+	position: absolute;
+	z-index: 1000;
 	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #e5f8fd;
@@ -1571,6 +1573,8 @@ a.tc-tiddlylink:hover {
 	white-space: nowrap;
 	text-shadow: none;
 	line-height: 1.4;
+}.tc-search-drop-down {
+	margin-left: -12px;
 }.tc-drop-down .tc-drop-down {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
@@ -1788,6 +1792,8 @@ a.tc-tiddlylink:hover {
 	border-top: 1px solid #d9ba83;
 	border-right: 1px solid #d9ba83;
 }.tc-sidebar-lists .tc-tab-buttons button {
+	display: inline;
+	width: auto;
 	background-color: #e6c58b;
 	color: #66573e;
 	border-left: 1px solid #dbb678;
@@ -1796,6 +1802,8 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-lists .tc-tab-divider {
 	border-top: 1px solid #dfbe87;
 }.tc-more-sidebar .tc-tab-buttons button {
+	display: block;
+	width: 100%;
 	background-color: #e6c58b;
 	border-top: none;
 	border-left: none;

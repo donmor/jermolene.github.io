@@ -1216,8 +1216,6 @@ a.tc-tiddlylink:hover {
 	width: 1.2em;
 	height: 1.2em;
 	vertical-align: middle;
-}.tc-search-results {
-	padding-top: 14px;
 }.tc-page-controls {
 	margin-top: 14px;
 	font-size: 1.5em;
@@ -1400,6 +1398,8 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
+}.tc-tiddler-body {
+	clear: both;
 }.tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
 	line-height: 22px;
@@ -1530,6 +1530,8 @@ a.tc-tiddlylink:hover {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
+	position: absolute;
+	z-index: 1000;
 	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
@@ -1538,6 +1540,8 @@ a.tc-tiddlylink:hover {
 	white-space: nowrap;
 	text-shadow: none;
 	line-height: 1.4;
+}.tc-search-drop-down {
+	margin-left: -12px;
 }.tc-drop-down .tc-drop-down {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
@@ -1755,6 +1759,8 @@ a.tc-tiddlylink:hover {
 	border-top: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 }.tc-sidebar-lists .tc-tab-buttons button {
+	display: inline;
+	width: auto;
 	background-color: #e0e0e0;
 	color: #666666;
 	border-left: 1px solid #cccccc;
@@ -1763,6 +1769,8 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-lists .tc-tab-divider {
 	border-top: 1px solid #e4e4e4;
 }.tc-more-sidebar .tc-tab-buttons button {
+	display: block;
+	width: 100%;
 	background-color: #e0e0e0;
 	border-top: none;
 	border-left: none;
@@ -2397,8 +2405,9 @@ a .doc-attr {
 
 </span>
 
-</div></p><div class="tc-sidebar-lists"><p><div class="tc-search">
-<input type="search" value="">
+</div></p><div class="tc-sidebar-lists"><p>
+<div class="tc-search">
+<input class="tc-popup-handle" type="search" value="">
 <span class=" tc-reveal" hidden="true"></span>
 <span class=" tc-reveal">
 <button aria-label="advanced search" class="tc-btn-invisible" title="Advanced search">
@@ -2412,7 +2421,11 @@ a .doc-attr {
 </svg>
 </button>
 </span>
-</div></p><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><div class="tc-tab-set ">
+</div>
+
+<div class=" tc-reveal" hidden="true"></div>
+
+</p><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 
 <button class=" tc-tab-selected">
@@ -2449,7 +2462,7 @@ More
 <div class=" tc-reveal"><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Pre-release.html">TiddlyWiki Pre-release</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">GettingStarted</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Community</a></p><p><button class="tc-btn-invisible tc-btn-mini">close all</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
-</div></p></div></div>
+</div></p></div>
 </div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   "><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -2480,7 +2493,7 @@ More
 
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -2500,20 +2513,7 @@ TiddlyWiki Pre-release
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal">
-<div class=" tc-reveal">
-<button aria-label="fold tiddler" class="tc-fold-banner" title="Fold the body of this tiddler">
-
-<svg class="tc-image-chevron-up tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
-	<g fill-rule="evenodd" transform="translate(64.000000, 89.500000) rotate(-90.000000) translate(-64.000000, -89.500000) translate(-22.500000, 22.500000)">
-        <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
-        <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
-	</g>
-</svg>
-</button>
-</div>
-<div class=" tc-reveal" hidden="true"></div>
-</div>
+</div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
@@ -2576,7 +2576,7 @@ Revert
 
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -2596,20 +2596,7 @@ HelloThere
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal">
-<div class=" tc-reveal">
-<button aria-label="fold tiddler" class="tc-fold-banner" title="Fold the body of this tiddler">
-
-<svg class="tc-image-chevron-up tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
-	<g fill-rule="evenodd" transform="translate(64.000000, 89.500000) rotate(-90.000000) translate(-64.000000, -89.500000) translate(-22.500000, 22.500000)">
-        <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
-        <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
-	</g>
-</svg>
-</button>
-</div>
-<div class=" tc-reveal" hidden="true"></div>
-</div>
+</div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
@@ -2744,7 +2731,7 @@ TiddlyWiki Classic
 
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -2764,20 +2751,7 @@ GettingStarted
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal">
-<div class=" tc-reveal">
-<button aria-label="fold tiddler" class="tc-fold-banner" title="Fold the body of this tiddler">
-
-<svg class="tc-image-chevron-up tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
-	<g fill-rule="evenodd" transform="translate(64.000000, 89.500000) rotate(-90.000000) translate(-64.000000, -89.500000) translate(-22.500000, 22.500000)">
-        <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
-        <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
-	</g>
-</svg>
-</button>
-</div>
-<div class=" tc-reveal" hidden="true"></div>
-</div>
+</div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
@@ -2901,7 +2875,7 @@ Download full wiki <svg class="tc-image-save-button tc-image-button" height="22p
 
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -2921,20 +2895,7 @@ Community
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal">
-<div class=" tc-reveal">
-<button aria-label="fold tiddler" class="tc-fold-banner" title="Fold the body of this tiddler">
-
-<svg class="tc-image-chevron-up tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
-	<g fill-rule="evenodd" transform="translate(64.000000, 89.500000) rotate(-90.000000) translate(-64.000000, -89.500000) translate(-22.500000, 22.500000)">
-        <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
-        <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
-	</g>
-</svg>
-</button>
-</div>
-<div class=" tc-reveal" hidden="true"></div>
-</div>
+</div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
@@ -3024,13 +2985,13 @@ Meetups
 </button>
 
 </div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Jingle%2520by%2520M%25C3%25A5ns%2520M%25C3%25A5rtensson.html">TiddlyWiki Jingle by Måns Mårtensson</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A catchy jingle for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="https://musescore.com/node/796056" target="_blank">https://musescore.com/node/796056</a></p><blockquote class="tc-quote"><p>Even if it sounds like some ol' jazz tune it <strong>IS</strong> an original composition and it should be quite obvious that the &quot;hook of the melody&quot; is a trill made by singing Tidd-ly Wiki :-).</p><p>My lacking skills for writing text/lyrics should be apparent in the fact that the text consists of 12 Tidd-ly Wikis and some extra &quot;tiddly's&quot; - just for the sake of getting the message delivered ;-)...</p><p>I've recorded every instrument on my guitar via a guitar synth on a loop machine (except for the drums - they were played live/in sync with the loop station on a &quot;BeatBuddy&quot; drum pedal..) - no pc was involved..
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Video%2520Tutorials%2520by%2520Francis%2520Meetze.html">TiddlyWiki Video Tutorials by Francis Meetze</a></h1><p><div class="tc-subtitle">Posted 28 hours ago</div></p><p>An extensive tutorial for getting started with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Recommended </p><p><a class="tc-tiddlylink-external" href="https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK" target="_blank">https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK</a></p><blockquote class="tc-quote"><p>This tutorial is aimed at giving you a basic foundation so that you can start using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> right away. Here we take a look at the technology behind Tiddlywiki, how to install it and create your first Tiddler.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Jingle%2520by%2520M%25C3%25A5ns%2520M%25C3%25A5rtensson.html">TiddlyWiki Jingle by Måns Mårtensson</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A catchy jingle for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="https://musescore.com/node/796056" target="_blank">https://musescore.com/node/796056</a></p><blockquote class="tc-quote"><p>Even if it sounds like some ol' jazz tune it <strong>IS</strong> an original composition and it should be quite obvious that the &quot;hook of the melody&quot; is a trill made by singing Tidd-ly Wiki :-).</p><p>My lacking skills for writing text/lyrics should be apparent in the fact that the text consists of 12 Tidd-ly Wikis and some extra &quot;tiddly's&quot; - just for the sake of getting the message delivered ;-)...</p><p>I've recorded every instrument on my guitar via a guitar synth on a loop machine (except for the drums - they were played live/in sync with the loop station on a &quot;BeatBuddy&quot; drum pedal..) - no pc was involved..
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/rboue's%2520plugins%2520for%2520TiddlyWiki.html">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>Featuring plugins that integrate two interesting new capabilities:</p><ul><li><a class="tc-tiddlylink-external" href="https://www.socialtext.net/open/socialcalc" target="_blank">SocialCalc</a> providing a powerful spreadsheet</li><li><a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> providing interactive 3D graphics</li></ul><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> community.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Interactive%2520Git%2520Documentation%2520by%2520Devin%2520Weaver.html">Interactive Git Documentation by Devin Weaver</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A git choose-your-own-adventure!ⓡ for walking yourself though fixing a <em>broken</em> Git repository.</p><p><a class="tc-tiddlylink-external" href="http://sukima.github.io/GitFixUm/" target="_blank">http://sukima.github.io/GitFixUm/</a></p><blockquote class="tc-quote"><p>This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git. It isn't that git is so complicated that you need a large document to take care or your particular problem, it is more that the set of things that you might have done is so large that different techniques are needed depending on exactly what you have done and what you want to have happen.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Interactive%2520Git%2520Documentation%2520by%2520Devin%2520Weaver.html">Interactive Git Documentation by Devin Weaver</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A git choose-your-own-adventure!ⓡ for walking yourself though fixing a <em>broken</em> Git repository.</p><p><a class="tc-tiddlylink-external" href="http://sukima.github.io/GitFixUm/" target="_blank">http://sukima.github.io/GitFixUm/</a></p><blockquote class="tc-quote"><p>This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git. It isn't that git is so complicated that you need a large document to take care or your particular problem, it is more that the set of things that you might have done is so large that different techniques are needed depending on exactly what you have done and what you want to have happen.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Encrypt%2520single%2520tiddler%2520plugin%2522%2520by%2520Danielo%2520Rodriguez.html">&quot;Encrypt single tiddler plugin&quot; by Danielo Rodriguez</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A plugin that allows to encrypt your tiddlers individually Danielo Rodriguez.</p><p><a class="tc-tiddlylink-external" href="http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/" target="_blank">http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/</a></p><blockquote class="tc-quote"><p>Advantages:</p><ul><li>You can specify a different password for each tiddler if you want.</li><li>You don't have to encrypt your whole wiky.</li><li>If you forget your password, you only lose a tiddler.</li><li>It's possible to edit the tiddler content , tags and fields except the encrypt field after encryption.</li><li>[...]</li></ul></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TWaddle%2520by%2520Matias%2520Goldman.html">TWaddle by Matias Goldman</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of hints and tips, musings and proposals from long-time <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> contributor Mat Goldman.</p><p><a class="tc-tiddlylink-external" href="http://twaddle.tiddlyspot.com/" target="_blank">http://twaddle.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>This is Mat's, a.k.a &lt;:-) little man-cave in the TiddlyVerse.</p><p>Most TW development is, understandably, based on the premise that <em>&quot;Improve code ➔ Better TW&quot;</em>. <strong>TWaddle</strong> is also about developing TW but from the perspective that <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/Bigger%2520community%2520%25E2%2587%2584%2520Better%2520TW.html">Bigger community ⇄ Better TW</a>. Thus, TWaddle looks more to people issues - how to attract them, how to make them stick with TW etc.</p><p>I'm not a programmer but I <em>am</em> a TW enthusiast so I tiddlefiddle enough to make the occasional discovery of something cool. Given the amount of words I utter, it is also a mere numbers game before I say something that makes sense. TWaddle is intended to capture these eventualities. 
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/vis.js%2520Timeline%2520by%2520emkay%252C%2520revived%2520by%2520kixam.html">vis.js Timeline by emkay, revived by kixam</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An interactive timeline visualisation plugin based on <a class="tc-tiddlylink-external" href="http://visjs.org" target="_blank">Vis.js</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://kixam.github.io/TW5-visjsTimeline/" target="_blank">http://kixam.github.io/TW5-visjsTimeline/</a>.</p><blockquote class="tc-quote"><p>vis.js Timeline is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> plugin that allows you to link your wiki-topics (tiddlers) in order to create clickable timelines. This project is a direct continuation of <a class="tc-tiddlylink-external" href="https://github.com/emkayonline/tw5visjs" target="_blank">emkay's plugin</a>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/vis.js%2520Timeline%2520by%2520emkay%252C%2520revived%2520by%2520kixam.html">vis.js Timeline by emkay, revived by kixam</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An interactive timeline visualisation plugin based on <a class="tc-tiddlylink-external" href="http://visjs.org" target="_blank">Vis.js</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://kixam.github.io/TW5-visjsTimeline/" target="_blank">http://kixam.github.io/TW5-visjsTimeline/</a>.</p><blockquote class="tc-quote"><p>vis.js Timeline is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> plugin that allows you to link your wiki-topics (tiddlers) in order to create clickable timelines. This project is a direct continuation of <a class="tc-tiddlylink-external" href="https://github.com/emkayonline/tw5visjs" target="_blank">emkay's plugin</a>.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SeeAlso%2520by%2520Matias%2520Goldman.html">SeeAlso by Matias Goldman</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>A simple technique for adding tag-based cross references to the default view template.</p><p><a class="tc-tiddlylink-external" href="http://seealso.tiddlyspot.com" target="_blank">http://seealso.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>See also: - is a feature to generate a &quot;See also:&quot; section after the tiddler text, somewhat like in Wikipedia articles.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TWGuides%2520by%2520Andreas%2520Hahn.html">TWGuides by Andreas Hahn</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>A collection of community tips and tutorials curated by Andreas Hahn, including a handy &quot;customiser&quot; that simplifies creating an empty <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> with selected plugins and enhancements.</p><p>Updated to include <a class="tc-tiddlylink-external" href="http://twguides.org/tinka.html" target="_blank">Tinka</a>, a plugin that &quot;provides a GUI to create and modify plugins more easily, therefore saving time on the packaging process&quot;.</p><p><a class="tc-tiddlylink-external" href="http://twguides.org/" target="_blank">http://twguides.org/</a></p><blockquote class="tc-quote"><p>The intent of the project is to encourage people to use and actively tweak <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> according to their needs. Similar to the old version, I also want to encourage people to share their knowledge and help other people get the most out of this wonderful piece of wiki software.
 </p></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>

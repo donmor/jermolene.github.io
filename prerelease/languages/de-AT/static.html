@@ -1037,8 +1037,6 @@ a.tc-tiddlylink:hover {
 	width: 1.2em;
 	height: 1.2em;
 	vertical-align: middle;
-}.tc-search-results {
-	padding-top: 14px;
 }.tc-page-controls {
 	margin-top: 14px;
 	font-size: 1.5em;
@@ -1221,6 +1219,8 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
+}.tc-tiddler-body {
+	clear: both;
 }.tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
 	line-height: 22px;
@@ -1334,6 +1334,8 @@ a.tc-tiddlylink:hover {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
+	position: absolute;
+	z-index: 1000;
 	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
@@ -1342,6 +1344,8 @@ a.tc-tiddlylink:hover {
 	white-space: nowrap;
 	text-shadow: none;
 	line-height: 1.4;
+}.tc-search-drop-down {
+	margin-left: -12px;
 }.tc-drop-down .tc-drop-down {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
@@ -1559,6 +1563,8 @@ a.tc-tiddlylink:hover {
 	border-top: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 }.tc-sidebar-lists .tc-tab-buttons button {
+	display: inline;
+	width: auto;
 	background-color: #e0e0e0;
 	color: #666666;
 	border-left: 1px solid #cccccc;
@@ -1567,6 +1573,8 @@ a.tc-tiddlylink:hover {
 }.tc-sidebar-lists .tc-tab-divider {
 	border-top: 1px solid #e4e4e4;
 }.tc-more-sidebar .tc-tab-buttons button {
+	display: block;
+	width: 100%;
 	background-color: #e0e0e0;
 	border-top: none;
 	border-left: none;
@@ -2033,8 +2041,9 @@ font-weight:bold;
 
 <span class=" tc-reveal" hidden="true"></span>
 
-</div></p><div class="tc-sidebar-lists"><p><div class="tc-search">
-<input type="search" value="">
+</div></p><div class="tc-sidebar-lists"><p>
+<div class="tc-search">
+<input class="tc-popup-handle" type="search" value="">
 <span class=" tc-reveal" hidden="true"></span>
 <span class=" tc-reveal">
 <button aria-label="Erweiterte Suche" class="tc-btn-invisible" title="Erweiterte Suche">
@@ -2048,7 +2057,11 @@ font-weight:bold;
 </svg>
 </button>
 </span>
-</div></p><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><div class="tc-tab-set ">
+</div>
+
+<div class=" tc-reveal" hidden="true"></div>
+
+</p><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 
 <button class=" tc-tab-selected">
@@ -2085,7 +2098,7 @@ Mehr
 <div class=" tc-reveal"><p><button aria-label="Schließen" class="tc-btn-invisible tc-btn-mini" title="Schließe diesen Tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></p><p><button class="tc-btn-invisible tc-btn-mini">alle schließen</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
-</div></p></div></div>
+</div></p></div>
 </div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-InhaltsVerzeichnis"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -2116,7 +2129,7 @@ Mehr
 
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -2136,20 +2149,7 @@ HelloThere
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class=" tc-reveal">
-<div class=" tc-reveal">
-<button aria-label="fold tiddler" class="tc-fold-banner" title="Fold the body of this tiddler">
-
-<svg class="tc-image-chevron-up tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
-	<g fill-rule="evenodd" transform="translate(64.000000, 89.500000) rotate(-90.000000) translate(-64.000000, -89.500000) translate(-22.500000, 22.500000)">
-        <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
-        <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
-	</g>
-</svg>
-</button>
-</div>
-<div class=" tc-reveal" hidden="true"></div>
-</div>
+</div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/pmario.html">
