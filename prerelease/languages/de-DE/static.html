@@ -1336,8 +1336,6 @@ a.tc-tiddlylink:hover {
 }.tc-drop-down-wrapper {
 	position: relative;
 }.tc-drop-down {
-	position: absolute;
-	z-index: 1000;
 	min-width: 380px;
 	border: 1px solid #bbb;
 	background-color: #ffffff;
@@ -1346,8 +1344,6 @@ a.tc-tiddlylink:hover {
 	white-space: nowrap;
 	text-shadow: none;
 	line-height: 1.4;
-}.tc-search-drop-down {
-	margin-left: -12px;
 }.tc-drop-down .tc-drop-down {
 	margin-left: 14px;
 }.tc-drop-down button svg, .tc-drop-down a svg  {
@@ -1407,9 +1403,15 @@ a.tc-tiddlylink:hover {
 	margin: 4px 0 0 0;
 	white-space: nowrap;
 	z-index: 1000;
+	text-shadow: none;
+}.tc-block-dropdown.tc-search-drop-down {
+	margin-left: -12px;
 }.tc-block-dropdown a {
 	display: block;
 	padding: 4px 14px 4px 14px;
+}.tc-block-dropdown.tc-search-drop-down a {
+	display: block;
+	padding: 0px 10px 0px 10px;
 }.tc-drop-down .tc-dropdown-item,
 .tc-block-dropdown .tc-dropdown-item {
 	padding: 4px 14px 4px 7px;
@@ -1418,6 +1420,8 @@ a.tc-tiddlylink:hover {
 	color: #ffffff;
 	background-color: #5778d8;
 	text-decoration: none;
+}.tc-search-results {
+    padding: 0 7px 0 7px;
 }/*
 ** Modals
 */.tc-modal-wrapper {
@@ -1928,7 +1932,7 @@ font-weight:bold;
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/de-DE" target="_blank">http://tiddlywiki.com/languages/de-DE</a></div></div>
 </p>
 <div class="tc-page-container tc-page-view-classic tc-language-de-DE"><div class="tc-dropzone"><span class="tc-topbar tc-topbar-left"></span><span class="tc-topbar tc-topbar-right"><span class=" tc-reveal">
-<button aria-label="Sidebar Ausblenden" class="tc-btn-invisible" title="Sidebar ausblenden"><svg class="tc-image-chevron-right tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+<button aria-label="Sidebar ausblenden" class="tc-btn-invisible" title="Sidebar ausblenden"><svg class="tc-image-chevron-right tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd" transform="translate(-48.000000, -3.000000)">
         <path d="M112.743107,112.12741 C111.310627,113.561013 109.331747,114.449239 107.145951,114.449239 L27.9777917,114.449239 C23.6126002,114.449239 20.0618714,110.904826 20.0618714,106.532572 C20.0618714,102.169214 23.6059497,98.6159054 27.9777917,98.6159054 L99.2285381,98.6159054 L99.2285381,27.365159 C99.2285381,22.9999675 102.77295,19.4492387 107.145205,19.4492387 C111.508562,19.4492387 115.061871,22.993317 115.061871,27.365159 L115.061871,106.533318 C115.061871,108.71579 114.175869,110.694669 112.743378,112.127981 Z" transform="translate(67.561871, 66.949239) rotate(-45.000000) translate(-67.561871, -66.949239) "></path>
         <path d="M151.35638,112.12741 C149.923899,113.561013 147.94502,114.449239 145.759224,114.449239 L66.5910645,114.449239 C62.225873,114.449239 58.6751442,110.904826 58.6751442,106.532572 C58.6751442,102.169214 62.2192225,98.6159054 66.5910645,98.6159054 L137.841811,98.6159054 L137.841811,27.365159 C137.841811,22.9999675 141.386223,19.4492387 145.758478,19.4492387 C150.121835,19.4492387 153.675144,22.993317 153.675144,27.365159 L153.675144,106.533318 C153.675144,108.71579 152.789142,110.694669 151.356651,112.127981 Z" transform="translate(106.175144, 66.949239) rotate(-45.000000) translate(-106.175144, -66.949239) "></path>
@@ -2061,7 +2065,7 @@ font-weight:bold;
 </span>
 </div>
 
-<div class=" tc-reveal" hidden="true"></div>
+<div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div>
 
 </p><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
