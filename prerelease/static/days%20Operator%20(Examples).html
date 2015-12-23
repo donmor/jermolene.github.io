@@ -10,14 +10,14 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>recent Operator (Examples): TiddlyWiki Pre-release — 5.1.10-prerelease</title>
+<title>days Operator (Examples): TiddlyWiki Pre-release — 5.1.10-prerelease</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-recent%20Operator tc-tagged-Operator%20Examples"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Operator%20Examples tc-tagged-days%20Operator"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -41,7 +41,7 @@
 
 
 <h2 class="tc-title">
-recent Operator (Examples)
+days Operator (Examples)
 </h2>
 
 </span>
@@ -64,7 +64,7 @@ recent Operator (Examples)
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- Operator Examples
+ days Operator
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -76,7 +76,7 @@ color:#333333;">
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- recent Operator
+ Operator Examples
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -92,8 +92,8 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p><div class="doc-example">
-<code>[recent[1]]</code>
-<dd>→ tiddlers modified yesterday and today</dd>
+<code>[days[-14]]</code>
+<dd>→ tiddlers modified within the last 14 days</dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -102,8 +102,8 @@ color:#333333;">
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 </div></p><p><div class="doc-example">
-<code>[recent:created[14]]</code>
-<dd>→ tiddlers created within the last 14 days</dd>
+<code>[!days:created[-800]]</code>
+<dd>→ tiddlers created more than 800 days ago</dd>
 
 <span class=" tc-reveal">
 	<dl>
@@ -116,7 +116,7 @@ color:#333333;">
 &lt;ul&gt;
   &lt;$list filter=&quot;[tag[ReleaseNotes]!&lt;currentTiddler&gt;!sort[modified]]&quot;&gt;
     &lt;li&gt;
-      &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;$list filter=&quot;[&lt;currentTiddler&gt;recent[90]]&quot;&gt; @@color:red;^^new^^@@&lt;/$list&gt;
+      &lt;$link&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;$list filter=&quot;[&lt;currentTiddler&gt;days[-120]]&quot;&gt; @@color:red;^^new^^@@&lt;/$list&gt;
     &lt;/li&gt;
   &lt;/$list&gt;
 &lt;/ul&gt;
