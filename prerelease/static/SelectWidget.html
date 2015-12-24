@@ -642,7 +642,42 @@ Every time the user selects a new value in the menu, the selected value is writt
 </optgroup>
 
 </select>
-</p></div></div>
+</p></div><h2 class="">Multiple Selections</h2><p>This example uses the <code>multiple</code> keyword to specify that we should be able to select multiple items.</p><p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='testing' multiple&gt;
+&lt;$list filter='[tag[TableOfContents]]'&gt;
+&lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
+&lt;/$list&gt;
+&lt;/$select&gt;&lt;br /&gt;
+&lt;$list filter='[list[$:/generated-list-demo-state!!testing]]'&gt;
+&lt;$view field='title' /&gt;&lt;br /&gt;
+&lt;/$list&gt;
+</code></pre><p>That renders as:</p><p><select multiple="multiple">
+
+<option>HelloThere</option>
+
+<option>Learning</option>
+
+<option>Working with TiddlyWiki</option>
+
+<option>Customise TiddlyWiki</option>
+
+<option>Features</option>
+
+<option>Languages</option>
+
+<option>Editions</option>
+
+<option>Plugins</option>
+
+<option>Platforms</option>
+
+<option>Reference</option>
+
+<option>Community</option>
+
+<option>About</option>
+
+</select><br>
+</p></div></p></div>
 
 
 
