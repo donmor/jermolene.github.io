@@ -1520,6 +1520,7 @@ a.tc-tiddlylink:hover {
 }.tc-tab-buttons button {
 	color: #666666;
 	padding: 3px 5px 3px 5px;
+	margin-right: 0.3em;
 	font-weight: 300;
 	border: none;
 	background: inherit;
@@ -1533,6 +1534,7 @@ a.tc-tiddlylink:hover {
 	display: block;
 	width: 100%;
 	margin-top: 3px;
+	margin-right: 0;
 	text-align: right;
 	background-color: #d8d8d8;
 	border-left: 1px solid #cccccc;
@@ -2668,7 +2670,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">3</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">5</tspan>
                 </text>
             </g>
         </g>
@@ -4079,63 +4081,35 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><p>
 <div class="tc-tab-set tc-vertical">
 <div class="tc-tab-buttons tc-vertical">
-
-
 <button class="">
 
 Android
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Chrome
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Firefox
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Internet Explorer
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Node.js
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Safari
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 iPad/iPhone
 
 </button>
-
-
 </div><div class="tc-tab-divider tc-vertical"></div><div class="tc-tab-content tc-vertical">
 <div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
@@ -12432,39 +12406,23 @@ color:#333333;">
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als &quot;root tag&quot; bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den &quot;root tags&quot; getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="#Tagging">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#EinsB">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des &quot;toc&quot; Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der &quot;erweitern&quot; Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die &quot;selective-expandable&quot; Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der &quot;root tag&quot; legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der &quot;tag&quot; und &quot;sort&quot; Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
-
-
 <button class=" tc-tab-selected">
 
 Einfach
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Erweiterbar
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Selectiv Erweiterbar
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 Sorted Expandable
 
 </button>
-
-
 </div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
 <div class=" tc-reveal"><h3 class="">Einfaches Inhaltsverzeichnis</h3><pre><code>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc &quot;tocBeispiel&quot;&gt;&gt;
@@ -12646,69 +12604,45 @@ color:#333333;">
 
 &lt;&lt;tabs &quot;[tag[TabsMakro]]&quot; &quot;ReiterDrei&quot; &quot;$:/state/tab2&quot; &quot;tc-vertical&quot;&gt;&gt;</code></pre><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
-
-
 <button class="">
 
 
 ReiterEins
 
 
-</button>
-
-
-
-<button class=" tc-tab-selected">
+</button><button class=" tc-tab-selected">
 
 
 ReiterZwei
 
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 hohoho
 
 </button>
-
-
 </div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
 <div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterZwei">ReiterZwei</a>, enthält kein <code>caption</code> Feld, deshalb wird der Tiddler Titel angezeigt.</p></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p><p><div class="tc-tab-set tc-vertical">
 <div class="tc-tab-buttons tc-vertical">
-
-
 <button class="">
 
 
 ReiterEins
 
 
-</button>
-
-
-
-<button class="">
+</button><button class="">
 
 
 ReiterZwei
 
 
-</button>
-
-
-
-<button class=" tc-tab-selected">
+</button><button class=" tc-tab-selected">
 
 hohoho
 
 </button>
-
-
 </div><div class="tc-tab-divider tc-vertical"></div><div class="tc-tab-content tc-vertical">
 <div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Inhalt von <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#ReiterDrei">ReiterDrei</a>. Dieser Tiddler hat ein Feld mit dem Namen: <code>caption</code>, welches den Text: tabs-Reiter, enthält.</p></div>
 </div>

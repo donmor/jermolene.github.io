@@ -54,7 +54,7 @@ ActionListopsWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 8th November 2015 at 7:52am
+</a> 28th December 2015 at 8:33am
 </div>
 </div>
 <div class=" tc-reveal">
@@ -89,7 +89,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-listops</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that manipulates user lists in any field or data index. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-listops</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose lists are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$list</td><td align="left">The name of a field to be manipulated as a list (defaults to 'list')</td></tr><tr class="oddRow"><td align="left">$index</td><td align="left">Optional index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">data tiddler</a> index to be manipulated as a list</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">An optional filter expression, the output of which will be saved to the field/index being manipulated</td></tr><tr class="oddRow"><td align="left">$subfilter</td><td align="left">An optional subfilter expression, which takes the list being manipulated as input, and saves the modified list back to the field/index being manipulated</td></tr><tr class="evenRow"><td align="left">$tags</td><td align="left">An optional subfilter expression, which takes the 'tags' field of the target tiddler as input, and saves the modified list of tags back to the 'tags' field</td></tr></tbody></table><h1 class="">Extended Filter Operators</h1><p>A number of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="The%2520Extended%2520Listops%2520Filters.html">extended filter operators</a> are necessary for the manipulation of lists. These operators have been designed primarily for use in subfilter expressions whereby the modified current list is returned in place of the current list.</p><p><table>
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-listops</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that manipulates user lists in any field or data index. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-listops</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose lists are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$field</td><td align="left">The name of a field to be manipulated as a list (defaults to 'list')</td></tr><tr class="oddRow"><td align="left">$index</td><td align="left">Optional index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">data tiddler</a> index to be manipulated as a list</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">An optional filter expression, the output of which will be saved to the field/index being manipulated</td></tr><tr class="oddRow"><td align="left">$subfilter</td><td align="left">An optional subfilter expression, which takes the list being manipulated as input, and saves the modified list back to the field/index being manipulated</td></tr><tr class="evenRow"><td align="left">$tags</td><td align="left">An optional subfilter expression, which takes the 'tags' field of the target tiddler as input, and saves the modified list of tags back to the 'tags' field</td></tr></tbody></table><h1 class="">Extended Filter Operators</h1><p>A number of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="The%2520Extended%2520Listops%2520Filters.html">extended filter operators</a> are necessary for the manipulation of lists. These operators have been designed primarily for use in subfilter expressions whereby the modified current list is returned in place of the current list.</p><p><table>
 <tr class="doc-table-subheading"><th align="center" colspan="3">Listops Operators</th></tr>
 <tr>
 <th align="left">Operator</th>
@@ -146,19 +146,19 @@ color:#333333;">
 <td align="center"></td>
 </tr>
 </table></p><h1 class="">Examples</h1><p>In this example we shall populate and then clear a list in an ordinary field (myfield) of this tiddler (the default.)</p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $subfilter=&quot;efg hlm pqr&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;efg hlm pqr&quot;/&gt;
 Populate 'myfield'
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $subfilter=&quot;abc xyz&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;abc xyz&quot;/&gt;
 Append More Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $subfilter=&quot;-abc -hlm&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-abc -hlm&quot;/&gt;
 Remove Items
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $filter=&quot;[[]]&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $filter=&quot;[[]]&quot;/&gt;
 Clear 'myfield'
 &lt;/$button&gt;
 
@@ -180,11 +180,11 @@ Remove Items
 
 Clear 'myfield'
 </button></p></div><hr><p>In this example we shall append and remove items from a list in an ordinary field (myfield) of this tiddler (the default) and sort the resultant list. We shall then remove some of the appended items and sort the resulting list in reverse order.</p><div class="doc-example"><pre><code>&lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $subfilter=&quot;-efg ijk xyz [[this is a title]] +[sort[]]&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-efg ijk xyz [[this is a title]] +[sort[]]&quot;/&gt;
 Mangle List
 &lt;/$button&gt;
 &lt;$button&gt;
-&lt;$action-listops $list=&quot;myfield&quot; $subfilter=&quot;-xyz -[[this is a title]] +[!sort[]]&quot;/&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-xyz -[[this is a title]] +[!sort[]]&quot;/&gt;
 Unmangle List
 &lt;/$button&gt;
 
