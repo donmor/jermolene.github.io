@@ -2437,26 +2437,28 @@ a .doc-attr {
 <div class="tc-tab-buttons ">
 <button class=" tc-tab-selected">
 
-Open
 
+Open
 </button><button class="">
+
 
 Contents
-
 </button><button class="">
+
 
 Recent
-
 </button><button class="">
+
 
 Tools
-
 </button><button class="">
 
-More
 
+More
 </button>
-</div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
+</div>
+<div class="tc-tab-divider "></div>
+<div class="tc-tab-content ">
 <div class=" tc-reveal"><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Pre-release.html">TiddlyWiki Pre-release</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">GettingStarted</a></p><p><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Community</a></p><p><button class="tc-btn-invisible tc-btn-mini">close all</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
@@ -2531,7 +2533,7 @@ TiddlyWiki Pre-release
 
 <div class="tc-tiddler-body tc-reveal"><p>This is a pre-release build of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. It is provided for testing purposes. <strong>Please don't try to use it for anything important</strong> – you should use the latest official release from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>.</p><p>
 <h1>Release 5.1.10</h1>
-<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.9...v5.1.10" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">Major Improvements</h1><h2 class="">Performance Optimisations</h2><p>This release includes several low-level performance optimisations that should improve speed and responsiveness in many common operations.</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b0cb17cd83dde89753ec159e27c920a7bf22bee1" target="_blank">Caching the results of parsing a tiddler</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c6e48ebc2db4af895f5b3935b3f575b8aab292fe" target="_blank">Loop optimisations</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/8f63e2a959a7ac44533ae2b6192716ee17a1ce93" target="_blank">Tiddler iteration optimisations</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/848a7f4e744c8f4dcb4ec88a0e99c4ae6aac25e5" target="_blank">State qualifier generation</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/32f6d7f1b01474b82debcbdd5d76c49c59303265" target="_blank">Caching data tiddlers</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/4f5cf4597abb08af787b62c2e2ee1b8c667dad1e" target="_blank">Removed expensive visual effects</a></li></ul><p>There is a new setting in the control panel to enable performance instrumentation, making it much easier to measure and improve performance issues.</p><h2 class="">Résumé Builder Edition</h2><p>The new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/R%25C3%25A9sum%25C3%25A9%2520Builder%2520Edition.html">Résumé Builder Edition</a> by @inmysocks is a custom edition to guide you through the process of using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> to create a good looking résumé (or curriculum vitæ).</p><h2 class="">Blog Edition</h2><p>The new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Blog%2520Edition.html">Blog Edition</a> provides tools for using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> under Node.js to create a static HTML blog that can be published on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> pages (or similar).</p><h2 class="">Text-Slicer Edition</h2><p>The new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Text-Slicer%2520Edition.html">Text-Slicer Edition</a> is a custom edition with tools to help advanced users slice longer texts up into individual tiddlers.</p><h2 class="">External Text Tiddlers</h2><p>Limited support for tiddlers stored in external <code>.tid</code> files:</p><ul><li>standalone <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> HTML files with external text tiddlers can be built under Node.js</li><li>wikis with external text tiddlers can be worked with in the browser, automatically lazily loading the content of external text tiddlers when it is first referenced<ul><li>saving changes in the browser doesn't work as expected: if edited, the external text tiddler is replaced with an ordinary tiddler</li><li>lazy loading of external text tiddlers doesn't work in Chrome when viewing the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> HTML file on a <strong>file:</strong> URI; it works OK in Firefox</li><li>lazy loading works on an HTTP URI on all browsers as long as the target file is either stored on the same domain or is served by a <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">server that supports CORS</a></li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Alice%2520in%2520Wonderland.html">Alice in Wonderland</a> for an example. Try opening it without a network connection.</p><h2 class="">New &quot;Tight&quot; Theme</h2><p>A new theme called &quot;Tight&quot; uses reduced padding, margins and font-sizes to pack as much text as possible:</p><p><button class="">
+<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.9...v5.1.10" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">Major Improvements</h1><h2 class="">Performance Optimisations</h2><p>This release includes several low-level performance optimisations that should improve speed and responsiveness in many common operations.</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b0cb17cd83dde89753ec159e27c920a7bf22bee1" target="_blank">Caching the results of parsing a tiddler</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c6e48ebc2db4af895f5b3935b3f575b8aab292fe" target="_blank">Loop optimisations</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/8f63e2a959a7ac44533ae2b6192716ee17a1ce93" target="_blank">Tiddler iteration optimisations</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/848a7f4e744c8f4dcb4ec88a0e99c4ae6aac25e5" target="_blank">State qualifier generation</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/32f6d7f1b01474b82debcbdd5d76c49c59303265" target="_blank">Caching data tiddlers</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/4f5cf4597abb08af787b62c2e2ee1b8c667dad1e" target="_blank">Removed expensive visual effects</a></li></ul><p>There is a new setting in the control panel to enable performance instrumentation, making it much easier to measure and improve performance issues.</p><h2 class="">New Editions</h2><p>Three new editions of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> are included in this release. These can be used as starting points for creating your own wiki for several purposes:</p><ul><li>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/R%25C3%25A9sum%25C3%25A9%2520Builder%2520Edition.html">Résumé Builder Edition</a> by @inmysocks is a custom edition to guide you through the process of using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> to create a good looking résumé (or curriculum vitæ)</li><li>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Blog%2520Edition.html">Blog Edition</a> provides tools for using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> under Node.js to create a static HTML blog that can be published on <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> pages (or similar)</li><li>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Text-Slicer%2520Edition.html">Text-Slicer Edition</a> is a custom edition with tools to help advanced users slice longer texts up into individual tiddlers.</li></ul><h2 class="">External Text Tiddlers</h2><p>Limited support for tiddlers stored in external <code>.tid</code> files:</p><ul><li>standalone <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> HTML files with external text tiddlers can be built under Node.js</li><li>wikis with external text tiddlers can be worked with in the browser, automatically lazily loading the content of external text tiddlers when it is first referenced<ul><li>saving changes in the browser doesn't work as expected: if edited, the external text tiddler is replaced with an ordinary tiddler</li><li>lazy loading of external text tiddlers doesn't work in Chrome when viewing the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> HTML file on a <strong>file:</strong> URI; it works OK in Firefox</li><li>lazy loading works on an HTTP URI on all browsers as long as the target file is either stored on the same domain or is served by a <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank">server that supports CORS</a></li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Alice%2520in%2520Wonderland.html">Alice in Wonderland</a> for an example. Try opening it without a network connection.</p><h2 class="">New &quot;Tight&quot; Theme</h2><p>A new theme called &quot;Tight&quot; uses reduced padding, margins and font-sizes to pack as much text as possible:</p><p><button class="">
 
 Try it out
 </button> <button class="">
@@ -2788,34 +2790,36 @@ color:#333333;">
 <div class="tc-tab-buttons tc-vertical">
 <button class="">
 
-Android
 
+Android
 </button><button class="">
+
 
 Chrome
-
 </button><button class="">
+
 
 Firefox
-
 </button><button class="">
+
 
 Internet Explorer
-
 </button><button class="">
+
 
 Node.js
-
 </button><button class="">
+
 
 Safari
-
 </button><button class="">
 
-iPad/iPhone
 
+iPad/iPhone
 </button>
-</div><div class="tc-tab-divider tc-vertical"></div><div class="tc-tab-content tc-vertical">
+</div>
+<div class="tc-tab-divider tc-vertical"></div>
+<div class="tc-tab-content tc-vertical">
 <div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div>
@@ -2917,47 +2921,49 @@ color:#333333;">
 <button class="">
 
 
-Forums
 
+Forums
 
 </button><button class=" tc-tab-selected">
 
 
+
 Latest
 
-
 </button><button class="">
+
 
 
 Tutorials
 
-
 </button><button class="">
+
 
 
 Resources
 
-
 </button><button class="">
+
 
 
 Examples
 
-
 </button><button class="">
+
 
 
 Articles
 
-
 </button><button class="">
+
 
 
 Meetups
 
-
 </button>
-</div><div class="tc-tab-divider "></div><div class="tc-tab-content ">
+</div>
+<div class="tc-tab-divider "></div>
+<div class="tc-tab-content ">
 <div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/datepicker%2520plugin%2520based%2520on%2520Pikaday%252C%2520by%2520kixam.html">datepicker plugin based on Pikaday, by kixam</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>An interactive date picker plugin based on <a class="tc-tiddlylink-external" href="https://github.com/dbushell/Pikaday" target="_blank">Pikaday</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://kixam.github.io/TW5-datePicker/" target="_blank">http://kixam.github.io/TW5-datePicker/</a>.</p><blockquote class="tc-quote"><p>datepicker is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> plugin that allows you to use a widget much like <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/EditTextWidget.html">EditTextWidget</a> to pick a date (not a time). It shows a nice interactive mini-calendar when clicked, allows you to set a date format for display, and is compatible with core date fields such as <code>modified</code> and <code>created</code>.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Video%2520Tutorials%2520by%2520Francis%2520Meetze.html">TiddlyWiki Video Tutorials by Francis Meetze</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An extensive tutorial for getting started with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Recommended </p><p><a class="tc-tiddlylink-external" href="https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK" target="_blank">https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK</a></p><blockquote class="tc-quote"><p>This tutorial is aimed at giving you a basic foundation so that you can start using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> right away. Here we take a look at the technology behind Tiddlywiki, how to install it and create your first Tiddler.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TWCommunitySearch.html">TWCommunitySearch</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>The <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search" target="_blank">CommunitySearch wiki</a> aggregates many public wikis from the community. It is updated automatically every day. At the time of writing, more than 5000 tiddlers are indexed, thus giving access to the largest known collection of TW content.</p><p>It lets you search for some specific content among a preselected list of wikis. The indexed content is mostly focused on TW usage, so you would typically use this search system to find information about a particular aspect of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Say for example that you want to learn how to make a table of content, type &quot;table of content&quot; in the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunitySearch" target="_blank">CommunitySearch box</a> (also accessible in the default tiddler <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#GettingStarted" target="_blank">GettingStarted</a>). The search results are links to various wikis, and point directly to the specific tiddlers containing your request.</p><p>The CommunitySearch wiki also lets you:</p><ul><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityWikis" target="_blank">list of wikis</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityAuthors" target="_blank">list of author</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityPlugins" target="_blank">list of plugins</a></li><li>Access content by <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityTags" target="_blank">tag</a> (see also <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#BookmarkingTags" target="_blank">BookmarkingTags</a>)</li><li>Follow the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityNews" target="_blank">latest news</a> from the community (and <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#PublishingInCommunityNews" target="_blank">publish your own news</a> if you are a wiki author)</li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Jingle%2520by%2520M%25C3%25A5ns%2520M%25C3%25A5rtensson.html">TiddlyWiki Jingle by Måns Mårtensson</a></h1><p><div class="tc-subtitle">Posted 6 months ago</div></p><p>A catchy jingle for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="https://musescore.com/node/796056" target="_blank">https://musescore.com/node/796056</a></p><blockquote class="tc-quote"><p>Even if it sounds like some ol' jazz tune it <strong>IS</strong> an original composition and it should be quite obvious that the &quot;hook of the melody&quot; is a trill made by singing Tidd-ly Wiki :-).</p><p>My lacking skills for writing text/lyrics should be apparent in the fact that the text consists of 12 Tidd-ly Wikis and some extra &quot;tiddly's&quot; - just for the sake of getting the message delivered ;-)...</p><p>I've recorded every instrument on my guitar via a guitar synth on a loop machine (except for the drums - they were played live/in sync with the loop station on a &quot;BeatBuddy&quot; drum pedal..) - no pc was involved..

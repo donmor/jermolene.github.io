@@ -4,7 +4,7 @@
     "author": "JeremyRuston",
     "core-version": ">=5.0.0",
     "plugin-type": "theme",
-    "description": "Centralises the story river, experimental",
+    "description": "Centralises the story river",
     "dependents": "$:/themes/tiddlywiki/snowwhite",
     "version": "5.1.10-prerelease",
     "type": "application/json",
