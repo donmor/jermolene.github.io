@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ Parser
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 11 months ago
+</a> 17th July 2014 at 9:23pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,14 +69,13 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
-
-<div class="tc-tiddler-body"><p>The first stage of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> processing is the parser.
+<div class="tc-tiddler-body tc-reveal"><p>The first stage of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> processing is the parser.
 A Parser is provided by a module with <code>module-type: parser</code> and is responsible to transform block of text to a parse-tree.
 The parse-tree consists of nested nodes like</p><pre class="js hljs"><code>{type: <span class="hljs-string">"element"</span>, tag: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>, attributes: {}, children: []} - an HTML element
 {type: "text", text: <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>} - a text node
-{type: "entity", value: <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>} - an HTML entity like &amp;copy; for a copyright symbol
+{type: "entity", entity: <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>} - an HTML entity like &amp;copy; for a copyright symbol
 {type: "raw", html: <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>} - raw HTML</span></code></pre><p>The core plug-in provides a recursive descent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> parser which loads it's individual rules from individual modules.
 Thus a developer can provide additional rules by using <code>module-type: wikirule</code>. Each rule can produce a list of parse-tree nodes.
 A simple example for a wikirule producing a <code>&lt;hr&gt;</code> from <code>---</code> can be found in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fparsers%252Fwikiparser%252Frules%252Fhorizrule.js.html">horizrule.js</a></p><p>HTML tags can be embedded into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> because of the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fparsers%252Fwikiparser%252Frules%252Fhtml.js.html">html rule</a>.

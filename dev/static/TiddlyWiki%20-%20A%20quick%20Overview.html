@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ TiddlyWiki - A quick Overview
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 11 months ago
+</a> 17th July 2014 at 10:14pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,8 +69,7 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
-<span class="tc-tag-list-item">
+</span><span class="tc-tag-list-item">
 
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -77,10 +80,9 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
-
-<div class="tc-tiddler-body"><p>Traditional web applications are bound to ~HTTP-Concepts, including stateless requests to transfer data. In these applications a state is often emulated by the use of sessions, which need to be handled on the client and especially on the server side.
+<div class="tc-tiddler-body tc-reveal"><p>Traditional web applications are bound to ~HTTP-Concepts, including stateless requests to transfer data. In these applications a state is often emulated by the use of sessions, which need to be handled on the client and especially on the server side.
 These restrictions often lead to a fragmented user experience because the user interface is rebuilt on every data transfer.
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> tries to overcome these restrictions and the resulting disadvantages by building on few but basic concepts which loosen the coupling of HTTP and the actual application, eliminating the need of state emulation and resulting in a wiki style single page application with the ability to run in an offline environment.</p><h1 class="">TiddlyWiki as Single Page Application</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> builds on some basic concepts. First, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> should not be perceived as a dynamic web page like traditional server-side generated web pages. Instead <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> can be perceived as an application which is written entirely in JavaScript and uses HTML5 and CSS3 to render a GUI. This way <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> can be executed in any JavaScript environment like a browser or a node.js instance, while keeping the advantages of a simple application.
 One of these advantages is, that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> has no need to emulate an application state, as a traditional web application would need to do.</p><p>A second idea concerns the storage of the application data. In contrast to a traditional web application, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> doesn't store the data in an external database but simply uses native data structures already existing in JavaScript to store tiddlers, the basic (atomic) element of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> application, in the memory. Additional core modules provide a way to persist this storage in simple HTML div elements.</p><p>Just by building on these simple and basic concepts,</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> is able to store application data in a single HTML page by using div elements as data container.</li><li>TW is able to store application code (JavaScript) in the same single HTML page.</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> can be executed in any JavaScript environment like a browser.</li></ul><p>These points already enable TW to be used as an offline-enabled single file web application.

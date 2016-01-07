@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ Deserializer
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 11 months ago
+</a> 15th July 2014 at 7:48pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,10 +69,9 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
-
-<div class="tc-tiddler-body"><p>Modules with <code>module-type: tiddlerdeserializer</code> can provide functions to create tiddlers out of any textual representation. Each function must be associated with a type like <code>application/json</code> or <code>text/html</code>.
+<div class="tc-tiddler-body tc-reveal"><p>Modules with <code>module-type: tiddlerdeserializer</code> can provide functions to create tiddlers out of any textual representation. Each function must be associated with a type like <code>application/json</code> or <code>text/html</code>.
 They get the textual representation of the tiddlers, some default field values and the type of the text block as arguments. They return an array of <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> objects representing the resulting tiddlers.</p><p>Deserializers are not managed by the syncer module. Instead the concept of deserializers is in fact part of the microkernel.
 This is necessary because the microkernel needs a way of loading tiddlers before it can load the core plug-in and execute it's startup modules.
 (Due to the fact that the core plug-in and it's modules are represented as tiddlers.)</p><p>The <code>load-modules</code> startup module loads additional deserializers and pushes them into the store.

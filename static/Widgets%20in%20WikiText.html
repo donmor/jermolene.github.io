@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ Widgets in WikiText
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 12 months ago
+</a> 19th June 2014 at 12:17pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,7 +69,7 @@ color:#333333;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
 
 
@@ -74,8 +78,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p>Widgets provide rich functionality within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. They have the same syntax as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML elements</a>, but the tag name always starts with <code>$</code>. For example:</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt;</code></pre><p>Note that widgets inherit all the features of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>:</p><ul><li>Widget attributes can be specified as:<ul><li>Unquoted strings (that cannot contain spaces)</li><li>Strings quoted with single or double quotes</li><li>Strings quoted with triple-double quotes</li><li>Macro invocations (eg <code>attr=&lt;&lt;myMacro&gt;&gt;</code>)</li><li>Transclusions (eg, <code>attr={{MyTiddler!!field}}</code>)</li></ul></li><li>The content of a widget is parsed in inline mode unless the opening tag is followed by two linebreaks, which forces block mode<ul><li>'Inline mode' means that 'block mode' parse rules like headings, tables and lists are not recognised</li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a> for more details.</p><p>The available widgets include:</p><p><ul class="">
+<div class="tc-tiddler-body tc-reveal"><p>Widgets provide rich functionality within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. They have the same syntax as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML elements</a>, but the tag name always starts with <code>$</code>. For example:</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt;</code></pre><p>Note that widgets inherit all the features of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>:</p><ul><li>Widget attributes can be specified as:<ul><li>Unquoted strings (that cannot contain spaces)</li><li>Strings quoted with single or double quotes</li><li>Strings quoted with triple-double quotes</li><li>Macro invocations (eg <code>attr=&lt;&lt;myMacro&gt;&gt;</code>)</li><li>Transclusions (eg, <code>attr={{MyTiddler!!field}}</code>)</li></ul></li><li>The content of a widget is parsed in inline mode unless the opening tag is followed by two linebreaks, which forces block mode<ul><li>'Inline mode' means that 'block mode' parse rules like headings, tables and lists are not recognised</li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a> for more details.</p><p>The available widgets include:</p><p><ul class="">
 
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
@@ -86,6 +89,12 @@ action-deletefield
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteTiddlerWidget.html">
 action-deletetiddler
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">
+action-listops
 </a>
 </li>
 
@@ -130,6 +139,12 @@ button
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CheckboxWidget.html">
 checkbox
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CodeBlockWidget.html">
+codeblock
 </a>
 </li>
 

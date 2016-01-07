@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ WikiRuleModules
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 20 months ago
+</a> 1st November 2013 at 1:07pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,8 +69,7 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
-<span class="tc-tag-list-item">
+</span><span class="tc-tag-list-item">
 
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -77,10 +80,9 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
-
-<div class="tc-tiddler-body"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiRuleModules.html">WikiRuleModules</a> cover the module types <code>wikirunrule</code>, <code>wikiblockrule</code> and <code>wikipragmarule</code>. Modules of these types encapsulate the logic of individual parsing rules used by the <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiParser.html">WikiParser</a> engine. For example, there is a <code>wikirunrule</code> module that identifies references to HTML entities by matching the pattern <code>&amp;&lt;chars&gt;;</code>.</p><p>Pragma rules are applied at the start of a block of text, and cover definitions and declarations that affect the parsing of the rest of the text. Block rules are only applied at the beginning of a block of wikitext, while run rules can appear anywhere. The only current example of a pragma rule is for macro definitions.</p><p>Examples of block rules:</p><ul><li>Headings</li><li>Tables</li><li>Lists</li></ul><p>Examples of run rules:</p><ul><li>Entities</li><li>HTML tags</li><li>Wiki links</li></ul><p>Parser rule modules extend the <code>$tw.WikiParserRule</code> class. This is done by instantiating the class and then copying the exports of the rule module onto the instance. In this way, the parser rule can override the base behaviour of the <code>$tw.WikiParserRule</code> class. In particular, the base class incorporates logic for using regular expressions to match parse rules but this logic could be overridden by a parse rule that wanted to, say, use <code>indexOf()</code> instead of regular expressions.</p><p>The standard methods and properties of parser rules are as follows:</p><ul><li><code>name</code>: a string containing the name of this parse rule</li><li><code>init(parser)</code>: initialisation function called immediately after the constructor with a pointer back to the parser containing this rule</li><li><code>findNextMatch(pos)</code>: returns the position of the next match after the specified position</li><li><code>parse()</code>: parses the most recent match, returning an array of the generated parse tree nodes. Pragma rules don't return parse tree nodes but instead modify the parser object directly (for example, to add local macro definitions)</li></ul><p>The built in parser rules use regular expression matching. Such rules can take advantage of the implementation of <code>findNextMatch()</code> in the base <code>$tw.WikiRule</code> class by ensuring that their <code>init()</code> method creates a <code>matchRegExp</code> property containing the regular expression to match. The <code>match</code> property contains the details of the match for use in the <code>parse()</code> method.
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiRuleModules.html">WikiRuleModules</a> cover the module types <code>wikirunrule</code>, <code>wikiblockrule</code> and <code>wikipragmarule</code>. Modules of these types encapsulate the logic of individual parsing rules used by the <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiParser.html">WikiParser</a> engine. For example, there is a <code>wikirunrule</code> module that identifies references to HTML entities by matching the pattern <code>&amp;&lt;chars&gt;;</code>.</p><p>Pragma rules are applied at the start of a block of text, and cover definitions and declarations that affect the parsing of the rest of the text. Block rules are only applied at the beginning of a block of wikitext, while run rules can appear anywhere. The only current example of a pragma rule is for macro definitions.</p><p>Examples of block rules:</p><ul><li>Headings</li><li>Tables</li><li>Lists</li></ul><p>Examples of run rules:</p><ul><li>Entities</li><li>HTML tags</li><li>Wiki links</li></ul><p>Parser rule modules extend the <code>$tw.WikiParserRule</code> class. This is done by instantiating the class and then copying the exports of the rule module onto the instance. In this way, the parser rule can override the base behaviour of the <code>$tw.WikiParserRule</code> class. In particular, the base class incorporates logic for using regular expressions to match parse rules but this logic could be overridden by a parse rule that wanted to, say, use <code>indexOf()</code> instead of regular expressions.</p><p>The standard methods and properties of parser rules are as follows:</p><ul><li><code>name</code>: a string containing the name of this parse rule</li><li><code>init(parser)</code>: initialisation function called immediately after the constructor with a pointer back to the parser containing this rule</li><li><code>findNextMatch(pos)</code>: returns the position of the next match after the specified position</li><li><code>parse()</code>: parses the most recent match, returning an array of the generated parse tree nodes. Pragma rules don't return parse tree nodes but instead modify the parser object directly (for example, to add local macro definitions)</li></ul><p>The built in parser rules use regular expression matching. Such rules can take advantage of the implementation of <code>findNextMatch()</code> in the base <code>$tw.WikiRule</code> class by ensuring that their <code>init()</code> method creates a <code>matchRegExp</code> property containing the regular expression to match. The <code>match</code> property contains the details of the match for use in the <code>parse()</code> method.
 </p></div>
 
 

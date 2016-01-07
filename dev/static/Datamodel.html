@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ Datamodel
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 11 months ago
+</a> 15th July 2014 at 9:38am
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,8 +69,7 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
-<span class="tc-tag-list-item">
+</span><span class="tc-tag-list-item">
 
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -77,8 +80,7 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
-<span class="tc-tag-list-item">
+</span><span class="tc-tag-list-item">
 
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
@@ -89,10 +91,9 @@ color:#4e432f;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
-
-<div class="tc-tiddler-body"><p>The micro-kernel creates a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> specific data-structure called tiddler. Here you have to separate the different definition of tiddlers. In the architectural view a tiddler is a <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> object holding some data. In the overall concept a tiddler is similar to a wiki page in a normal wiki application like wikipedia. In this section we describe the architectural view of a tiddler. The listing below shows the JSON representation of a tiddler object. During the runtime of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> everything is saved an object like this. Without any plug-in the architecture is not able to persist any kind of data. All the data is stored in a store. This store is a <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> object. This store is constructed like a Map with a bunch of key value pairs. Every tiddler has its name as the key in the map and the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a>-Object as the value. The tiddler concept is the main data-model within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>, everything from data up to plug-ins is stored as a tiddler.</p><pre class="javascript hljs"><code>{<span class="hljs-string">"fields"</span>:{
+<div class="tc-tiddler-body tc-reveal"><p>The micro-kernel creates a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> specific data-structure called tiddler. Here you have to separate the different definition of tiddlers. In the architectural view a tiddler is a <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> object holding some data. In the overall concept a tiddler is similar to a wiki page in a normal wiki application like wikipedia. In this section we describe the architectural view of a tiddler. The listing below shows the JSON representation of a tiddler object. During the runtime of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> everything is saved an object like this. Without any plug-in the architecture is not able to persist any kind of data. All the data is stored in a store. This store is a <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> object. This store is constructed like a Map with a bunch of key value pairs. Every tiddler has its name as the key in the map and the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a>-Object as the value. The tiddler concept is the main data-model within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>, everything from data up to plug-ins is stored as a tiddler.</p><pre class="javascript hljs"><code>{<span class="hljs-string">"fields"</span>:{
    <span class="hljs-string">"text"</span>:<span class="hljs-string">"example Text"</span>,
    <span class="hljs-string">"title"</span>:<span class="hljs-string">"Infrastruktur"</span>,
    <span class="hljs-string">"tags"</span>:[<span class="hljs-string">"vs"</span>],

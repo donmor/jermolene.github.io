@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,11 +49,15 @@ VarsWidget
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2 months ago
+</a> 26th April 2015 at 12:59pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
@@ -65,7 +69,7 @@ color:#333333;">
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
 
 
@@ -74,8 +78,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
 
 &lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;

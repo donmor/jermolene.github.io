@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.9" />
+<meta name="tiddlywiki-version" content="5.1.10" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Filters"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -26,10 +26,10 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
-</button></span>
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -49,23 +49,27 @@ Selection Constructors
 </div>
 
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
-</div><div class="tc-subtitle">
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 5 months ago
+</a> 17th September 2015 at 8:37pm
 </div>
+</div>
+<div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- Concepts
+ Filters
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
 
-</span>
+</span></div>
 </div>
 
 
@@ -74,8 +78,7 @@ color:#333333;">
 
 
 
-
-<div class="tc-tiddler-body"><p>The output of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a> step depends on its <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operator</a>:</p><ul><li>Most operators derive their output from their input. For example, many of them output a subset of their input, and thus truly live up to the name of &quot;filters&quot;, narrowing down the overall output of the containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">run</a>. These operators are called <dfn class="doc-def">selection modifiers</dfn>.</li><li>A few operators ignore their input and generate an independent output instead. These are called <dfn class="doc-def">selection constructors</dfn>: they construct an entirely new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a>.</li></ul><p>A good example of a constructor is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html"><code class="doc-operator">title</code></a>. The output of <code>[title[A]title[B]]</code> is just <code class="doc-tiddler">B</code>. But the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="field%2520Operator.html"><code class="doc-operator">field</code></a> operator is a modifier, so <code>[title[A]field:title[B]</code> outputs nothing at all.
+<div class="tc-tiddler-body tc-reveal"><p>The output of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a> step depends on its <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operator</a>:</p><ul><li>Most operators derive their output from their input. For example, many of them output a subset of their input, and thus truly live up to the name of &quot;filters&quot;, narrowing down the overall output of the containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">run</a>. These operators are called <dfn class="doc-def">selection modifiers</dfn>.</li><li>A few operators ignore their input and generate an independent output instead. These are called <dfn class="doc-def">selection constructors</dfn>: they construct an entirely new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a>.</li></ul><p>A good example of a constructor is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html"><code class="doc-operator">title</code></a>. The output of <code>[title[A]title[B]]</code> is just <code class="doc-tiddler">B</code>. But the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="field%2520Operator.html"><code class="doc-operator">field</code></a> operator is a modifier, so <code>[title[A]field:title[B]</code> outputs nothing at all.
 </p></div>
 
 

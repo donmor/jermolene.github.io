@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.10" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>action-listops: TiddlyWiki — a non-linear personal web notebook</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-ActionWidgets tc-tagged-Widgets"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+ActionListopsWidget
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 28th December 2015 at 8:33am
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ ActionWidgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-listops</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that manipulates user lists in any field or data index. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-listops</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose lists are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$field</td><td align="left">The name of a field to be manipulated as a list (defaults to 'list')</td></tr><tr class="oddRow"><td align="left">$index</td><td align="left">Optional index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">data tiddler</a> index to be manipulated as a list</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">An optional filter expression, the output of which will be saved to the field/index being manipulated</td></tr><tr class="oddRow"><td align="left">$subfilter</td><td align="left">An optional subfilter expression, which takes the list being manipulated as input, and saves the modified list back to the field/index being manipulated</td></tr><tr class="evenRow"><td align="left">$tags</td><td align="left">An optional subfilter expression, which takes the 'tags' field of the target tiddler as input, and saves the modified list of tags back to the 'tags' field</td></tr></tbody></table><h1 class="">Extended Filter Operators</h1><p>A number of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="The%2520Extended%2520Listops%2520Filters.html">extended filter operators</a> are necessary for the manipulation of lists. These operators have been designed primarily for use in subfilter expressions whereby the modified current list is returned in place of the current list.</p><p><table>
+<tr class="doc-table-subheading"><th align="center" colspan="3">Listops Operators</th></tr>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Purpose</th>
+<th></th>
+</tr>
+<tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="allafter%2520Operator.html">allafter</a></td>
+<td>discard all items except those after the marker </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="allbefore%2520Operator.html">allbefore</a></td>
+<td>discard all items except those before the marker </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="append%2520Operator.html">append</a></td>
+<td>append a range of items from an array to the list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="move%2520Operator.html">move</a></td>
+<td>move marker N places in the list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="prepend%2520Operator.html">prepend</a></td>
+<td>prepend a range of items from an array to the list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="putafter%2520Operator.html">putafter</a></td>
+<td>move N trailing items after the marker </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="putbefore%2520Operator.html">putbefore</a></td>
+<td>move N trailing items before the marker </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="putfirst%2520Operator.html">putfirst</a></td>
+<td>move N trailing items to the head of the list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="putlast%2520Operator.html">putlast</a></td>
+<td>move N leading items to the tail of the list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="remove%2520Operator.html">remove</a></td>
+<td>remove a range of items in an array from the current list </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="replace%2520Operator.html">replace</a></td>
+<td>replace marker with N trailing items </td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sortby%2520Operator.html">sortby</a></td>
+<td>sort the current list in the order of the list referenced in the operand </td>
+<td align="center"></td>
+</tr>
+</table></p><h1 class="">Examples</h1><p>In this example we shall populate and then clear a list in an ordinary field (myfield) of this tiddler (the default.)</p><div class="doc-example"><pre><code>&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;efg hlm pqr&quot;/&gt;
+Populate 'myfield'
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;abc xyz&quot;/&gt;
+Append More Items
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-abc -hlm&quot;/&gt;
+Remove Items
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $filter=&quot;[[]]&quot;/&gt;
+Clear 'myfield'
+&lt;/$button&gt;
+
+&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+
+&lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
+
+Populate 'myfield'
+</button>
+<button class="">
+
+Append More Items
+</button>
+<button class="">
+
+Remove Items
+</button>
+<button class="">
+
+Clear 'myfield'
+</button></p></div><hr><p>In this example we shall append and remove items from a list in an ordinary field (myfield) of this tiddler (the default) and sort the resultant list. We shall then remove some of the appended items and sort the resulting list in reverse order.</p><div class="doc-example"><pre><code>&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-efg ijk xyz [[this is a title]] +[sort[]]&quot;/&gt;
+Mangle List
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $field=&quot;myfield&quot; $subfilter=&quot;-xyz -[[this is a title]] +[!sort[]]&quot;/&gt;
+Unmangle List
+&lt;/$button&gt;
+
+&lt;$list filter=&quot;[list[!!myfield]]&quot;&gt;
+
+&lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
+
+Mangle List
+</button>
+<button class="">
+
+Unmangle List
+</button></p></div><hr><p>In this example we shall append a few tags to the 'tags' field of this tiddler (the default.) We shall then remove some of the appended tags. </p><div class="doc-example"><pre><code>&lt;$button&gt;
+&lt;$action-listops $tags=&quot;+[append{Days of the Week!!short}] $:/tag1 $:/tag2 $:/tag3&quot;/&gt;
+Populate 'tags'
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $tags=&quot;+[!remove:2{!!tags}]&quot;/&gt;
+Remove Last Two Tags
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $tags=&quot;+[!prefix[$:/]]&quot;/&gt;
+Remove System Tags
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $tags=&quot;-Mon -Tue&quot;/&gt;
+Remove Mon and Tue
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $tags=&quot;+[prefix[$:/]] ActionWidgets Widgets&quot;/&gt;
+Remove User Tags
+&lt;/$button&gt;
+&lt;$button&gt;
+&lt;$action-listops $tags=&quot;+[[]] ActionWidgets Widgets&quot;/&gt;
+Clear Tags
+&lt;/$button&gt;
+
+&lt;$list filter=&quot;[list[!!tags]]&quot;&gt;
+
+&lt;/$list&gt;</code></pre><p>That renders as:</p><p><button class="">
+
+Populate 'tags'
+</button>
+<button class="">
+
+Remove Last Two Tags
+</button>
+<button class="">
+
+Remove System Tags
+</button>
+<button class="">
+
+Remove Mon and Tue
+</button>
+<button class="">
+
+Remove User Tags
+</button>
+<button class="">
+
+Clear Tags
+</button></p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a></div></div></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
