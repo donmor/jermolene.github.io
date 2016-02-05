@@ -1592,6 +1592,9 @@ a.tc-tiddlylink:hover {
 }.tc-block-dropdown.tc-search-drop-down a {
 	display: block;
 	padding: 0px 10px 0px 10px;
+}.tc-drop-down .tc-dropdown-item-plain,
+.tc-block-dropdown .tc-dropdown-item-plain {
+	padding: 4px 14px 4px 7px;
 }.tc-drop-down .tc-dropdown-item,
 .tc-block-dropdown .tc-dropdown-item {
 	padding: 4px 14px 4px 7px;
