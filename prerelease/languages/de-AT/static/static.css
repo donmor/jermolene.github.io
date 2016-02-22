@@ -1556,8 +1556,6 @@ a.tc-tiddlylink:hover {
 	border-top: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 }.tc-sidebar-lists .tc-tab-buttons button {
-	display: inline;
-	width: auto;
 	background-color: #e0e0e0;
 	color: #666666;
 	border-left: 1px solid #cccccc;
