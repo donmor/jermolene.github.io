@@ -1010,7 +1010,6 @@ th {
 	margin-bottom: 1em;
 	word-break: normal;
 	word-wrap: break-word;
-	white-space: pre;
 	white-space: pre-wrap;
 	background-color: #f5f5f5;
 	border: 1px solid #cccccc;
@@ -1021,7 +1020,7 @@ th {
 	color: #dd1144;
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
-    white-space: pre-wrap;
+	white-space: pre-wrap;
 	padding: 0 3px 2px;
 	border-radius: 3px;
 	font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
@@ -1169,7 +1168,7 @@ a.tc-tiddlylink:hover {
 	text-align: center;
 }/*
 ** Buttons
-*/button svg, button img {
+*/button svg, button img, label svg, label img {
 	vertical-align: middle;
 }.tc-btn-invisible {
 	padding: 0;
@@ -1517,13 +1516,16 @@ a.tc-tiddlylink:hover {
 	margin-top: 14px;
 }.tc-tiddler-help a.tc-tiddlylink {
 	color: #888888;
-}.tc-tiddler-frame input.tc-edit-texteditor, .tc-tiddler-frame textarea.tc-edit-texteditor {
+}.tc-tiddler-frame .tc-edit-texteditor {
 	width: 100%;
+	margin: 4px 0 4px 0;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
 	padding: 3px 3px 3px 3px;
 	border: 1px solid #cccccc;
 	line-height: 1.3em;
 	-webkit-appearance: none;
-	margin: 4px 0 4px 0;
 }.tc-tiddler-frame .tc-binary-warning {
 	width: 100%;
 	height: 5em;
@@ -1561,6 +1563,35 @@ a.tc-tiddlylink:hover {
 .tc-single-tiddler-window embed,
 .tc-single-tiddler-window iframe {
 	max-width: 100%;
+}/*
+** Editor
+*/.tc-edit-text-iframe-toolbar {
+    margin-top: 8px;	
+}.tc-edit-text-iframe-toolbar button {
+	vertical-align: middle;
+	background-color: #cccccc;
+	fill: #444444;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 2px 0;
+}.tc-edit-text-iframe-toolbar button.tc-text-editor-toolbar-item-adjunct {
+    margin-left: -4px;
+    width: 1em;
+    border-radius: 8px;	
+}.tc-edit-text-iframe-toolbar button.tc-selected {
+	background-color: #5778d8;
+}.tc-edit-text-iframe-toolbar button svg {
+    width: 1.6em;
+    height: 1.2em;
+}.tc-edit-text-iframe-toolbar button:hover {
+	background-color: #444444;
+	fill: #ffffff;
+}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more {
+	white-space: normal;
+}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more button {
+	display: inline-block;
+	padding: 3px;
+	width: auto;
 }/*
 ** Adjustments for fluid-fixed mode
 */@media (min-width: 960px) {.tc-story-river {
@@ -1624,12 +1655,14 @@ a.tc-tiddlylink:hover {
 	overflow: auto;
 }.tc-tiddler-preview-preview {
 	float: right;
-	width: 48%;
+	width: 49.75%;
 	border: 1px solid #cccccc;
 	margin: 4px 3px 3px 3px;
 	padding: 3px 3px 3px 3px;
-}.tc-tiddler-preview-edit {
-	width: 48%;
+}.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
+	width: 49.75%;
+}.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {
+	max-width: 49.75%;
 }.tc-edit-fields {
 	width: 100%;
 }.tc-edit-fields table, .tc-edit-fields tr, .tc-edit-fields td {
@@ -1766,6 +1799,43 @@ a.tc-tiddlylink:hover {
 	text-decoration: none;
 }.tc-search-results {
     padding: 0 7px 0 7px;
+}.tc-image-chooser, .tc-colour-chooser {
+	white-space: normal;
+}.tc-image-chooser a,
+.tc-colour-chooser a {
+	display: inline-block;
+	vertical-align: top;
+    text-align: center;
+	position: relative;
+}.tc-image-chooser a {
+	border: 1px solid #bbb;
+	padding: 2px;
+	margin: 2px;
+	width: 4em;
+	height: 4em;
+}.tc-colour-chooser a {
+	padding: 3px;
+	width: 2em;
+	height: 2em;
+    vertical-align: middle;
+}.tc-image-chooser a:hover,
+.tc-colour-chooser a:hover {
+	background: #5778d8;
+	padding: 0px;
+	border: 3px solid #5778d8;
+}.tc-image-chooser a svg,
+.tc-image-chooser a img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 3.5em;
+    max-height: 3.5em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }/*
 ** Modals
 */.tc-modal-wrapper {
@@ -2411,6 +2481,7 @@ a .doc-attr {
 	padding: 1em;
 	height: 400px;
 	position: relative;
+	overflow: auto;
 }.tc-improvement-banner {
 	font-size: 0.7em;
 	background: #fcc;

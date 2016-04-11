@@ -1026,7 +1026,6 @@ th {
 	margin-bottom: 1em;
 	word-break: normal;
 	word-wrap: break-word;
-	white-space: pre;
 	white-space: pre-wrap;
 	background-color: #f5f5f5;
 	border: 1px solid #cccccc;
@@ -1037,7 +1036,7 @@ th {
 	color: #dd1144;
 	background-color: #f7f7f9;
 	border: 1px solid #e1e1e8;
-    white-space: pre-wrap;
+	white-space: pre-wrap;
 	padding: 0 3px 2px;
 	border-radius: 3px;
 	font-family: Monaco, Consolas, "Lucida Console", "DejaVu Sans Mono", monospace;
@@ -1185,7 +1184,7 @@ a.tc-tiddlylink:hover {
 	text-align: center;
 }/*
 ** Buttons
-*/button svg, button img {
+*/button svg, button img, label svg, label img {
 	vertical-align: middle;
 }.tc-btn-invisible {
 	padding: 0;
@@ -1533,13 +1532,16 @@ a.tc-tiddlylink:hover {
 	margin-top: 14px;
 }.tc-tiddler-help a.tc-tiddlylink {
 	color: #888888;
-}.tc-tiddler-frame input.tc-edit-texteditor, .tc-tiddler-frame textarea.tc-edit-texteditor {
+}.tc-tiddler-frame .tc-edit-texteditor {
 	width: 100%;
+	margin: 4px 0 4px 0;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
 	padding: 3px 3px 3px 3px;
 	border: 1px solid #cccccc;
 	line-height: 1.3em;
 	-webkit-appearance: none;
-	margin: 4px 0 4px 0;
 }.tc-tiddler-frame .tc-binary-warning {
 	width: 100%;
 	height: 5em;
@@ -1577,6 +1579,35 @@ a.tc-tiddlylink:hover {
 .tc-single-tiddler-window embed,
 .tc-single-tiddler-window iframe {
 	max-width: 100%;
+}/*
+** Editor
+*/.tc-edit-text-iframe-toolbar {
+    margin-top: 8px;	
+}.tc-edit-text-iframe-toolbar button {
+	vertical-align: middle;
+	background-color: #cccccc;
+	fill: #444444;
+    border-radius: 4px;
+    padding: 3px;
+    margin: 2px 0;
+}.tc-edit-text-iframe-toolbar button.tc-text-editor-toolbar-item-adjunct {
+    margin-left: -4px;
+    width: 1em;
+    border-radius: 8px;	
+}.tc-edit-text-iframe-toolbar button.tc-selected {
+	background-color: #5778d8;
+}.tc-edit-text-iframe-toolbar button svg {
+    width: 1.6em;
+    height: 1.2em;
+}.tc-edit-text-iframe-toolbar button:hover {
+	background-color: #444444;
+	fill: #ffffff;
+}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more {
+	white-space: normal;
+}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more button {
+	display: inline-block;
+	padding: 3px;
+	width: auto;
 }/*
 ** Adjustments for fluid-fixed mode
 */@media (min-width: 960px) {.tc-story-river {
@@ -1640,12 +1671,14 @@ a.tc-tiddlylink:hover {
 	overflow: auto;
 }.tc-tiddler-preview-preview {
 	float: right;
-	width: 48%;
+	width: 49.75%;
 	border: 1px solid #cccccc;
 	margin: 4px 3px 3px 3px;
 	padding: 3px 3px 3px 3px;
-}.tc-tiddler-preview-edit {
-	width: 48%;
+}.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
+	width: 49.75%;
+}.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {
+	max-width: 49.75%;
 }.tc-edit-fields {
 	width: 100%;
 }.tc-edit-fields table, .tc-edit-fields tr, .tc-edit-fields td {
@@ -1782,6 +1815,43 @@ a.tc-tiddlylink:hover {
 	text-decoration: none;
 }.tc-search-results {
     padding: 0 7px 0 7px;
+}.tc-image-chooser, .tc-colour-chooser {
+	white-space: normal;
+}.tc-image-chooser a,
+.tc-colour-chooser a {
+	display: inline-block;
+	vertical-align: top;
+    text-align: center;
+	position: relative;
+}.tc-image-chooser a {
+	border: 1px solid #bbb;
+	padding: 2px;
+	margin: 2px;
+	width: 4em;
+	height: 4em;
+}.tc-colour-chooser a {
+	padding: 3px;
+	width: 2em;
+	height: 2em;
+    vertical-align: middle;
+}.tc-image-chooser a:hover,
+.tc-colour-chooser a:hover {
+	background: #5778d8;
+	padding: 0px;
+	border: 3px solid #5778d8;
+}.tc-image-chooser a svg,
+.tc-image-chooser a img {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    max-width: 3.5em;
+    max-height: 3.5em;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }/*
 ** Modals
 */.tc-modal-wrapper {
@@ -2427,6 +2497,7 @@ a .doc-attr {
 	padding: 1em;
 	height: 400px;
 	position: relative;
+	overflow: auto;
 }.tc-improvement-banner {
 	font-size: 0.7em;
 	background: #fcc;
@@ -2502,6 +2573,8 @@ a .doc-attr {
 
 </button>
 </span>
+
+<span class=" tc-reveal" hidden="true"></span>
 
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -2680,7 +2753,7 @@ TiddlyWiki Pre-release
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 28th April 2015 at 10:49pm
+</a> 28th April 2015 at 9:49pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -2695,7 +2768,7 @@ TiddlyWiki Pre-release
 
 <div class="tc-tiddler-body tc-reveal"><p>This is a pre-release build of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. It is provided for testing purposes. <strong>Please don't try to use it for anything important</strong> – you should use the latest official release from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" target="_blank">http://tiddlywiki.com</a>.</p><p>
 <h1>Release 5.1.12</h1>
-<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.11...v5.1.12" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">Major Improvements</h1><h2 class="">Evernote Plugin Introduction</h2><p>The experimental Evernote plugin allows notes and images from <code>.enex</code> files to be imported into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Install it through the &quot;Plugins&quot; tab of control panel.</p><h2 class="">&quot;Internals&quot; Plugin Introduction</h2><p>The new <code>tiddlywiki/internals</code> plugin provides features to help understand the internal operation of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, including:</p><ul><li>New preview modes in the editor showing both the parse and widget trees of the current tiddler</li></ul><h2 class="">Text-Slicer Plugin Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/176d2ccd76856b10aadd5e71af587574e7bcd447" target="_blank">Added</a> support for sticky notes within documents</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c98ef97d236fb023c3b5099a5fc52c1e8da7eb4d" target="_blank">Extended</a> support for slicing documents to Node.js</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1335dff45013f83fb06a47453e6063b5c0e2c0b3" target="_blank">Improved</a> document metadata display</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/46800d790a6521aafba24fc9cb9e0d0e8f1a48a2" target="_blank">Added</a> <code>list-children</code> filter operator</li><li>Fixed bugs</li></ul><h1 class="">Other Improvements</h1><h2 class="">Translation Improvements</h2><ul><li>TBD</li></ul><h2 class="">Usability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/adf45b346847a81d4ed26397466daa4514035bb9" target="_blank">Added</a> a bulk delete button to <a class="tc-tiddlylink tc-tiddlylink-shadow" href="static/%2524%253A%252FAdvancedSearch.html">advanced search</a> &quot;Filter&quot; tab</li></ul><h2 class="">Hackability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/&lt;TODO&gt;" target="_blank">Extended</a> editor preview pane to allow plugins to add further types of preview (see the new <code>tiddlywiki/internals</code> plugin for an example)</li></ul><h2 class="">Bug Fixes</h2><ul><li>TBD</li></ul><h2 class="">Node.js Improvements</h2><ul><li>TBD</li></ul><h1 class="">Contributors</h1><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>:</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/sukima" target="_blank">@sukima</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/telmiger" target="_blank">@telmiger</a></li></ul>
+<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.11...v5.1.12" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">Major Improvements</h1><h2 class="">New Text Editor Toolbars</h2><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/2315" target="_blank">Added</a> support for extensible formatting toolbars for the edit-text widget.</p><h2 class="">New Evernote Plugin</h2><p>The experimental Evernote plugin allows notes and images from <code>.enex</code> files to be imported into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Install it through the &quot;Plugins&quot; tab of control panel.</p><h2 class="">New &quot;Internals&quot; Plugin</h2><p>The new <code>tiddlywiki/internals</code> plugin provides features to help understand the internal operation of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, including:</p><ul><li>New preview modes in the editor showing both the parse and widget trees of the current tiddler</li></ul><h2 class="">Text-Slicer Plugin Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/176d2ccd76856b10aadd5e71af587574e7bcd447" target="_blank">Added</a> support for sticky notes within documents</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c98ef97d236fb023c3b5099a5fc52c1e8da7eb4d" target="_blank">Extended</a> support for slicing documents to Node.js</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1335dff45013f83fb06a47453e6063b5c0e2c0b3" target="_blank">Improved</a> document metadata display</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/46800d790a6521aafba24fc9cb9e0d0e8f1a48a2" target="_blank">Added</a> <code>list-children</code> filter operator</li><li>Fixed bugs</li></ul><h1 class="">Other Improvements</h1><h2 class="">Translation Improvements</h2><ul><li>TBD</li></ul><h2 class="">Usability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/adf45b346847a81d4ed26397466daa4514035bb9" target="_blank">Added</a> a bulk delete button to <a class="tc-tiddlylink tc-tiddlylink-shadow" href="static/%2524%253A%252FAdvancedSearch.html">advanced search</a> &quot;Filter&quot; tab</li></ul><h2 class="">Hackability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/&lt;TODO&gt;" target="_blank">Extended</a> editor preview pane to allow plugins to add further types of preview (see the new <code>tiddlywiki/internals</code> plugin for an example)</li></ul><h2 class="">Bug Fixes</h2><ul><li>TBD</li></ul><h2 class="">Node.js Improvements</h2><ul><li>TBD</li></ul><h1 class="">Contributors</h1><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>:</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/sukima" target="_blank">@sukima</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/telmiger" target="_blank">@telmiger</a></li></ul>
 </p><h1 class="">Features held back for later release</h1><p>These unfinished features are included in this prerelease build, but are not planned for inclusion in the next release.</p><ul><li><button class="">
 
 Set &quot;Stacked&quot; story view
@@ -2763,7 +2836,7 @@ HelloThere
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 30th January 2016 at 1:41pm
+</a> 30th January 2016 at 12:41pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -2838,6 +2911,13 @@ TiddlyWiki Classic
         <path d="M122.826782,104.894066 C121.945525,105.22777 120.990324,105.41043 119.993027,105.41043 L8.00697327,105.41043 C7.19458381,105.41043 6.41045219,105.289614 5.67161357,105.064967 L5.67161357,105.064967 L39.8346483,70.9019325 L60.6765759,91.7438601 C61.6118278,92.679112 62.8865166,93.0560851 64.0946097,92.8783815 C65.2975108,93.0473238 66.5641085,92.6696979 67.4899463,91.7438601 L88.5941459,70.6396605 C88.6693095,70.7292352 88.7490098,70.8162939 88.8332479,70.9005321 L122.826782,104.894066 Z M127.903244,98.6568194 C127.966933,98.2506602 128,97.8343714 128,97.4103789 L128,33.410481 C128,32.7414504 127.917877,32.0916738 127.763157,31.4706493 L94.2292399,65.0045665 C94.3188145,65.0797417 94.4058701,65.1594458 94.4901021,65.2436778 L127.903244,98.6568194 Z M0.205060636,99.2178117 C0.0709009529,98.6370366 0,98.0320192 0,97.4103789 L0,33.410481 C0,32.694007 0.0944223363,31.9995312 0.27147538,31.3387595 L0.27147538,31.3387595 L34.1777941,65.2450783 L0.205060636,99.2178117 L0.205060636,99.2178117 Z M5.92934613,25.6829218 C6.59211333,25.5051988 7.28862283,25.4104299 8.00697327,25.4104299 L119.993027,25.4104299 C120.759109,25.4104299 121.500064,25.5178649 122.201605,25.7184927 L122.201605,25.7184927 L64.0832611,83.8368368 L5.92934613,25.6829218 L5.92934613,25.6829218 Z"></path>
     </g>
 </svg> TiddlyWiki Mailing List
+</a>
+<a class="tc-btn-big-green" href="http://www.youtube.com/c/JeremyRuston" style="background-color:#e52d27;" target="_blank">
+<svg class="tc-image-video tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M64,12 C29.0909091,12 8.72727273,14.9166667 5.81818182,17.8333333 C2.90909091,20.75 1.93784382e-15,41.1666667 0,64.5 C1.93784382e-15,87.8333333 2.90909091,108.25 5.81818182,111.166667 C8.72727273,114.083333 29.0909091,117 64,117 C98.9090909,117 119.272727,114.083333 122.181818,111.166667 C125.090909,108.25 128,87.8333333 128,64.5 C128,41.1666667 125.090909,20.75 122.181818,17.8333333 C119.272727,14.9166667 98.9090909,12 64,12 Z M54.9161194,44.6182253 C51.102648,42.0759111 48.0112186,43.7391738 48.0112186,48.3159447 L48.0112186,79.6840553 C48.0112186,84.2685636 51.109784,85.9193316 54.9161194,83.3817747 L77.0838806,68.6032672 C80.897352,66.0609529 80.890216,61.9342897 77.0838806,59.3967328 L54.9161194,44.6182253 Z"></path>
+    </g>
+</svg> TiddlyWiki on YouTube
 </a>
 <a class="tc-btn-big-green" href="https://twitter.com/TiddlyWiki" style="background-color:#5E9FCA;" target="_blank">
 <svg class="tc-image-twitter tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2917,7 +2997,7 @@ GettingStarted
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 17th April 2015 at 5:58pm
+</a> 17th April 2015 at 4:58pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -3048,7 +3128,7 @@ Community
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="static/.html">
 
-</a> 11th September 2014 at 10:49am
+</a> 11th September 2014 at 9:49am
 </div>
 </div>
 <div class=" tc-reveal">
@@ -3120,13 +3200,13 @@ Meetups
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522A%2520free%252C%2520open%2520source%2520wiki%2520revisited%2522%2520by%2520Mark%2520Gibbs%252C%2520NetworkWorld.html">&quot;A free, open source wiki revisited&quot; by Mark Gibbs, NetworkWorld</a></h1><p><div class="tc-subtitle">Posted 17 days ago</div></p><p>Interesting article giving the perspective of someone who has been away from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> for a few years:</p><p><a class="tc-tiddlylink-external" href="http://www.networkworld.com/article/3028098/open-source-tools/tiddlywiki-a-free-open-source-wiki-revisited.html" target="_blank">http://www.networkworld.com/article/3028098/open-source-tools/tiddlywiki-a-free-open-source-wiki-revisited.html</a></p><blockquote class="tc-quote"><p>Way back in the mists of time (actually, January 2009) I wrote about a really cool tool called <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, a “non-linear personal web notebook”. Fast forward to today and I just had an out of body experience: Completely by accident I found a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> that I started when I wrote that piece and it still works! </p><p>Finding code that works flawlessly after just two or three years is magical enough but after seven years?! And given that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is written as a single page Web application and considering how different browsers are now than they were in 2009, the fact that the old version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> still works is not short of miraculous.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/datepicker%2520plugin%2520based%2520on%2520Pikaday%252C%2520by%2520kixam.html">datepicker plugin based on Pikaday, by kixam</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An interactive date picker plugin based on <a class="tc-tiddlylink-external" href="https://github.com/dbushell/Pikaday" target="_blank">Pikaday</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://kixam.github.io/TW5-datePicker/" target="_blank">http://kixam.github.io/TW5-datePicker/</a>.</p><blockquote class="tc-quote"><p>datepicker is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> plugin that allows you to use a widget much like <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/EditTextWidget.html">EditTextWidget</a> to pick a date (not a time). It shows a nice interactive mini-calendar when clicked, allows you to set a date format for display, and is compatible with core date fields such as <code>modified</code> and <code>created</code>.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Video%2520Tutorials%2520by%2520Francis%2520Meetze.html">TiddlyWiki Video Tutorials by Francis Meetze</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An extensive tutorial for getting started with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Recommended </p><p><a class="tc-tiddlylink-external" href="https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK" target="_blank">https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK</a></p><blockquote class="tc-quote"><p>This tutorial is aimed at giving you a basic foundation so that you can start using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> right away. Here we take a look at the technology behind Tiddlywiki, how to install it and create your first Tiddler.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TWCommunitySearch.html">TWCommunitySearch</a></h1><p><div class="tc-subtitle">Posted 5 months ago</div></p><p>The <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search" target="_blank">CommunitySearch wiki</a> aggregates many public wikis from the community. It is updated automatically every day. At the time of writing, more than 5000 tiddlers are indexed, thus giving access to the largest known collection of TW content.</p><p>It lets you search for some specific content among a preselected list of wikis. The indexed content is mostly focused on TW usage, so you would typically use this search system to find information about a particular aspect of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Say for example that you want to learn how to make a table of content, type &quot;table of content&quot; in the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunitySearch" target="_blank">CommunitySearch box</a> (also accessible in the default tiddler <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#GettingStarted" target="_blank">GettingStarted</a>). The search results are links to various wikis, and point directly to the specific tiddlers containing your request.</p><p>The CommunitySearch wiki also lets you:</p><ul><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityWikis" target="_blank">list of wikis</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityAuthors" target="_blank">list of author</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityPlugins" target="_blank">list of plugins</a></li><li>Access content by <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityTags" target="_blank">tag</a> (see also <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#BookmarkingTags" target="_blank">BookmarkingTags</a>)</li><li>Follow the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityNews" target="_blank">latest news</a> from the community (and <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#PublishingInCommunityNews" target="_blank">publish your own news</a> if you are a wiki author)</li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Jingle%2520by%2520M%25C3%25A5ns%2520M%25C3%25A5rtensson.html">TiddlyWiki Jingle by Måns Mårtensson</a></h1><p><div class="tc-subtitle">Posted 7 months ago</div></p><p>A catchy jingle for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="https://musescore.com/node/796056" target="_blank">https://musescore.com/node/796056</a></p><blockquote class="tc-quote"><p>Even if it sounds like some ol' jazz tune it <strong>IS</strong> an original composition and it should be quite obvious that the &quot;hook of the melody&quot; is a trill made by singing Tidd-ly Wiki :-).</p><p>My lacking skills for writing text/lyrics should be apparent in the fact that the text consists of 12 Tidd-ly Wikis and some extra &quot;tiddly's&quot; - just for the sake of getting the message delivered ;-)...</p><p>I've recorded every instrument on my guitar via a guitar synth on a loop machine (except for the drums - they were played live/in sync with the loop station on a &quot;BeatBuddy&quot; drum pedal..) - no pc was involved..
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/rboue's%2520plugins%2520for%2520TiddlyWiki.html">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 7 months ago</div></p><p>Featuring plugins that integrate two interesting new capabilities:</p><ul><li><a class="tc-tiddlylink-external" href="https://www.socialtext.net/open/socialcalc" target="_blank">SocialCalc</a> providing a powerful spreadsheet</li><li><a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> providing interactive 3D graphics</li></ul><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> community.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Interactive%2520Git%2520Documentation%2520by%2520Devin%2520Weaver.html">Interactive Git Documentation by Devin Weaver</a></h1><p><div class="tc-subtitle">Posted 8 months ago</div></p><p>A git choose-your-own-adventure!ⓡ for walking yourself though fixing a <em>broken</em> Git repository.</p><p><a class="tc-tiddlylink-external" href="http://sukima.github.io/GitFixUm/" target="_blank">http://sukima.github.io/GitFixUm/</a></p><blockquote class="tc-quote"><p>This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git. It isn't that git is so complicated that you need a large document to take care or your particular problem, it is more that the set of things that you might have done is so large that different techniques are needed depending on exactly what you have done and what you want to have happen.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Encrypt%2520single%2520tiddler%2520plugin%2522%2520by%2520Danielo%2520Rodriguez.html">&quot;Encrypt single tiddler plugin&quot; by Danielo Rodriguez</a></h1><p><div class="tc-subtitle">Posted 8 months ago</div></p><p>A plugin that allows to encrypt your tiddlers individually Danielo Rodriguez.</p><p><a class="tc-tiddlylink-external" href="http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/" target="_blank">http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/</a></p><blockquote class="tc-quote"><p>Advantages:</p><ul><li>You can specify a different password for each tiddler if you want.</li><li>You don't have to encrypt your whole wiky.</li><li>If you forget your password, you only lose a tiddler.</li><li>It's possible to edit the tiddler content , tags and fields except the encrypt field after encryption.</li><li>[...]</li></ul></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522A%2520free%252C%2520open%2520source%2520wiki%2520revisited%2522%2520by%2520Mark%2520Gibbs%252C%2520NetworkWorld.html">&quot;A free, open source wiki revisited&quot; by Mark Gibbs, NetworkWorld</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>Interesting article giving the perspective of someone who has been away from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> for a few years:</p><p><a class="tc-tiddlylink-external" href="http://www.networkworld.com/article/3028098/open-source-tools/tiddlywiki-a-free-open-source-wiki-revisited.html" target="_blank">http://www.networkworld.com/article/3028098/open-source-tools/tiddlywiki-a-free-open-source-wiki-revisited.html</a></p><blockquote class="tc-quote"><p>Way back in the mists of time (actually, January 2009) I wrote about a really cool tool called <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, a “non-linear personal web notebook”. Fast forward to today and I just had an out of body experience: Completely by accident I found a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> that I started when I wrote that piece and it still works! </p><p>Finding code that works flawlessly after just two or three years is magical enough but after seven years?! And given that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is written as a single page Web application and considering how different browsers are now than they were in 2009, the fact that the old version of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> still works is not short of miraculous.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/datepicker%2520plugin%2520based%2520on%2520Pikaday%252C%2520by%2520kixam.html">datepicker plugin based on Pikaday, by kixam</a></h1><p><div class="tc-subtitle">Posted 5 months ago</div></p><p>An interactive date picker plugin based on <a class="tc-tiddlylink-external" href="https://github.com/dbushell/Pikaday" target="_blank">Pikaday</a>. A demo can be found here: <a class="tc-tiddlylink-external" href="http://kixam.github.io/TW5-datePicker/" target="_blank">http://kixam.github.io/TW5-datePicker/</a>.</p><blockquote class="tc-quote"><p>datepicker is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> plugin that allows you to use a widget much like <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/EditTextWidget.html">EditTextWidget</a> to pick a date, and optionaly a time. It shows a nice interactive mini-calendar when clicked, allows you to set a date format for display, and is compatible with core date fields such as <code>modified</code> and <code>created</code>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Video%2520Tutorials%2520by%2520Francis%2520Meetze.html">TiddlyWiki Video Tutorials by Francis Meetze</a></h1><p><div class="tc-subtitle">Posted 6 months ago</div></p><p>An extensive tutorial for getting started with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Recommended </p><p><a class="tc-tiddlylink-external" href="https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK" target="_blank">https://www.youtube.com/playlist?list=PLzZCajspPU_UjFn0uy-J9URz0LP4zhxRK</a></p><blockquote class="tc-quote"><p>This tutorial is aimed at giving you a basic foundation so that you can start using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> right away. Here we take a look at the technology behind Tiddlywiki, how to install it and create your first Tiddler.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TWCommunitySearch.html">TWCommunitySearch</a></h1><p><div class="tc-subtitle">Posted 6 months ago</div></p><p>The <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search" target="_blank">CommunitySearch wiki</a> aggregates many public wikis from the community. It is updated automatically every day. At the time of writing, more than 5000 tiddlers are indexed, thus giving access to the largest known collection of TW content.</p><p>It lets you search for some specific content among a preselected list of wikis. The indexed content is mostly focused on TW usage, so you would typically use this search system to find information about a particular aspect of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Say for example that you want to learn how to make a table of content, type &quot;table of content&quot; in the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunitySearch" target="_blank">CommunitySearch box</a> (also accessible in the default tiddler <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#GettingStarted" target="_blank">GettingStarted</a>). The search results are links to various wikis, and point directly to the specific tiddlers containing your request.</p><p>The CommunitySearch wiki also lets you:</p><ul><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityWikis" target="_blank">list of wikis</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityAuthors" target="_blank">list of author</a></li><li>Browse the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityPlugins" target="_blank">list of plugins</a></li><li>Access content by <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityTags" target="_blank">tag</a> (see also <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#BookmarkingTags" target="_blank">BookmarkingTags</a>)</li><li>Follow the <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#CommunityNews" target="_blank">latest news</a> from the community (and <a class="tc-tiddlylink-external" href="http://erwanm.github.io/tw-community-search/#PublishingInCommunityNews" target="_blank">publish your own news</a> if you are a wiki author)</li></ul></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520Jingle%2520by%2520M%25C3%25A5ns%2520M%25C3%25A5rtensson.html">TiddlyWiki Jingle by Måns Mårtensson</a></h1><p><div class="tc-subtitle">Posted 9 months ago</div></p><p>A catchy jingle for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="https://musescore.com/node/796056" target="_blank">https://musescore.com/node/796056</a></p><blockquote class="tc-quote"><p>Even if it sounds like some ol' jazz tune it <strong>IS</strong> an original composition and it should be quite obvious that the &quot;hook of the melody&quot; is a trill made by singing Tidd-ly Wiki :-).</p><p>My lacking skills for writing text/lyrics should be apparent in the fact that the text consists of 12 Tidd-ly Wikis and some extra &quot;tiddly's&quot; - just for the sake of getting the message delivered ;-)...</p><p>I've recorded every instrument on my guitar via a guitar synth on a loop machine (except for the drums - they were played live/in sync with the loop station on a &quot;BeatBuddy&quot; drum pedal..) - no pc was involved..
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/rboue's%2520plugins%2520for%2520TiddlyWiki.html">rboue's plugins for TiddlyWiki</a></h1><p><div class="tc-subtitle">Posted 9 months ago</div></p><p>Featuring plugins that integrate two interesting new capabilities:</p><ul><li><a class="tc-tiddlylink-external" href="https://www.socialtext.net/open/socialcalc" target="_blank">SocialCalc</a> providing a powerful spreadsheet</li><li><a class="tc-tiddlylink-external" href="http://threejs.org/" target="_blank">Three.js</a> providing interactive 3D graphics</li></ul><p><a class="tc-tiddlylink-external" href="http://rboue.tiddlyspot.com" target="_blank">http://rboue.tiddlyspot.com</a></p><blockquote class="tc-quote"><p>I developed some plugins related to engineering tasks.</p><p>After using them for personal projects I'm glad to share with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> community.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Interactive%2520Git%2520Documentation%2520by%2520Devin%2520Weaver.html">Interactive Git Documentation by Devin Weaver</a></h1><p><div class="tc-subtitle">Posted 9 months ago</div></p><p>A git choose-your-own-adventure!ⓡ for walking yourself though fixing a <em>broken</em> Git repository.</p><p><a class="tc-tiddlylink-external" href="http://sukima.github.io/GitFixUm/" target="_blank">http://sukima.github.io/GitFixUm/</a></p><blockquote class="tc-quote"><p>This document is an attempt to be a fairly comprehensive guide to recovering from what you did not mean to do when using git. It isn't that git is so complicated that you need a large document to take care or your particular problem, it is more that the set of things that you might have done is so large that different techniques are needed depending on exactly what you have done and what you want to have happen.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Encrypt%2520single%2520tiddler%2520plugin%2522%2520by%2520Danielo%2520Rodriguez.html">&quot;Encrypt single tiddler plugin&quot; by Danielo Rodriguez</a></h1><p><div class="tc-subtitle">Posted 10 months ago</div></p><p>A plugin that allows to encrypt your tiddlers individually Danielo Rodriguez.</p><p><a class="tc-tiddlylink-external" href="http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/" target="_blank">http://danielorodriguez.com/TW5-EncryptTiddlerPlugin/</a></p><blockquote class="tc-quote"><p>Advantages:</p><ul><li>You can specify a different password for each tiddler if you want.</li><li>You don't have to encrypt your whole wiky.</li><li>If you forget your password, you only lose a tiddler.</li><li>It's possible to edit the tiddler content , tags and fields except the encrypt field after encryption.</li><li>[...]</li></ul></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
 
