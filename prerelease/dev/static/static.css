@@ -1470,30 +1470,30 @@ a.tc-tiddlylink:hover {
 	max-width: 100%;
 }/*
 ** Editor
-*/.tc-edit-text-iframe-toolbar {
+*/.tc-editor-toolbar {
     margin-top: 8px;	
-}.tc-edit-text-iframe-toolbar button {
+}.tc-editor-toolbar button {
 	vertical-align: middle;
 	background-color: #9eaeb4;
 	fill: #444444;
     border-radius: 4px;
     padding: 3px;
     margin: 2px 0;
-}.tc-edit-text-iframe-toolbar button.tc-text-editor-toolbar-item-adjunct {
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-adjunct {
     margin-left: -4px;
     width: 1em;
     border-radius: 8px;	
-}.tc-edit-text-iframe-toolbar button.tc-selected {
+}.tc-editor-toolbar button.tc-selected {
 	background-color: #5778d8;
-}.tc-edit-text-iframe-toolbar button svg {
+}.tc-editor-toolbar button svg {
     width: 1.6em;
     height: 1.2em;
-}.tc-edit-text-iframe-toolbar button:hover {
+}.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #e5f8fd;
-}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more {
+}.tc-editor-toolbar .tc-text-editor-toolbar-more {
 	white-space: normal;
-}.tc-edit-text-iframe-toolbar .tc-text-editor-toolbar-more button {
+}.tc-editor-toolbar .tc-text-editor-toolbar-more button {
 	display: inline-block;
 	padding: 3px;
 	width: auto;
@@ -1543,14 +1543,14 @@ a.tc-tiddlylink:hover {
 	overflow: auto;
 }.tc-tiddler-preview-preview {
 	float: right;
-	width: 49.75%;
+	width: 49%;
 	border: 1px solid #cccccc;
 	margin: 4px 3px 3px 3px;
 	padding: 3px 3px 3px 3px;
 }.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
-	width: 49.75%;
+	width: 49%;
 }.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {
-	max-width: 49.75%;
+	max-width: 49%;
 }.tc-edit-fields {
 	width: 100%;
 }.tc-edit-fields table, .tc-edit-fields tr, .tc-edit-fields td {
