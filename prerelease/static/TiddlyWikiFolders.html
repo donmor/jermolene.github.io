@@ -96,7 +96,7 @@ color:#333333;">
 	&quot;config&quot;: {
 		&quot;retain-original-tiddler-path&quot;: true	
 	}
-}</code></pre><h2 class="">Content of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>.</p><p>Sub-folders within the <code>tiddlers</code> folder can also be given a <code>tiddlywiki.files</code> JSON file that overrides the default processing for that folder. The file format is illustrated with this example:</p><pre><code>{
+}</code></pre><h2 class="">Content of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>. Newly created tiddlers are stored in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> directly beneath the <code>tiddlers</code> folder, unless <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">configured otherwise</a>.</p><p>Sub-folders within the <code>tiddlers</code> folder can also be given a <code>tiddlywiki.files</code> JSON file that overrides the default processing for that folder. The file format is illustrated with this example:</p><pre><code>{
 	&quot;tiddlers&quot;: [
 		{
 			&quot;file&quot;: &quot;d3.min.js&quot;,

@@ -78,7 +78,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The scrollable widget wraps its content in a scrollable frame. The user can scroll the contents with the mouse or with touch gestures. Code can use the <a class="tc-tiddlylink tc-tiddlylink-missing" href="WidgetMessage%253A%2520tm-scroll.html">WidgetMessage: tm-scroll</a> to programmatically scroll specific DOM nodes into view.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$scrollable&gt;</code> widget is displayed within a pair of wrapper DIVs. If the inner DIV is larger then it scrolls within the outer one. CSS is used to specify the size of the outer wrapper.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">class</td><td align="left">The CSS class(es) to be applied to the outer DIV</td></tr><tr class="evenRow"><td align="left">fallthrough</td><td align="left">See below</td></tr></tbody></table><p>If a scrollable widget can't handle the <code>tm-scroll</code> message because the inner DIV fits within the outer DIV, then by default the message falls through to the parent widget. Setting the <strong>fallthrough</strong> attribute to <code>no</code> prevents this behaviour.</p><h1 class="">Examples</h1><p>This example requires the following CSS definitions from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com-styles.html">$:/_tw5.com-styles</a>:</p><pre><code>.tc-scrollable-demo {
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The scrollable widget wraps its content in a scrollable frame. The user can scroll the contents with the mouse or with touch gestures. Code can use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-scroll.html">WidgetMessage: tm-scroll</a> to programmatically scroll specific DOM nodes into view.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$scrollable&gt;</code> widget is displayed within a pair of wrapper DIVs. If the inner DIV is larger then it scrolls within the outer one. CSS is used to specify the size of the outer wrapper.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">class</td><td align="left">The CSS class(es) to be applied to the outer DIV</td></tr><tr class="evenRow"><td align="left">fallthrough</td><td align="left">See below</td></tr></tbody></table><p>If a scrollable widget can't handle the <code>tm-scroll</code> message because the inner DIV fits within the outer DIV, then by default the message falls through to the parent widget. Setting the <strong>fallthrough</strong> attribute to <code>no</code> prevents this behaviour.</p><h1 class="">Examples</h1><p>This example requires the following CSS definitions from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com-styles.html">$:/_tw5.com-styles</a>:</p><pre><code>.tc-scrollable-demo {
 	border: 1px solid &lt;&lt;colour message-border&gt;&gt;;
 	background-color: &lt;&lt;colour message-background&gt;&gt;;
 	padding: 1em;
@@ -712,6 +712,8 @@ color:#333333;">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Fconfig%252FOriginalTiddlerPaths.html">$:/config/OriginalTiddlerPaths</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="BuildCommand.html">BuildCommand</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">Customising Tiddler File Naming</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginMechanism.html">PluginMechanism</a>
 
@@ -1986,6 +1988,44 @@ color:#333333;">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="EncryptionMechanism.html">EncryptionMechanism</a>
+</p><p>WidgetMessage: tm-edit-bitmap-operation: 
+<a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FEditorToolbar%252Fsize-dropdown.html">$:/core/ui/EditorToolbar/size-dropdown</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="ActionWidget.html">ActionWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+</p><p>WidgetMessage: tm-edit-text-operation: 
+<a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FEditorToolbar%252Fbold.html">$:/core/ui/EditorToolbar/bold</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="ActionWidget.html">ActionWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+</p><p>WidgetMessage: tm-fold-all-tiddlers: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a>
+</p><p>WidgetMessage: tm-fold-other-tiddlers: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a>
+</p><p>WidgetMessage: tm-fold-tiddler: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a>
+</p><p>WidgetMessage: tm-load-plugin-from-library: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="CodeMirror.html">CodeMirror</a>
+</p><p>WidgetMessage: tm-load-plugin-library: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+</p><p>WidgetMessage: tm-open-window: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+</p><p>WidgetMessage: tm-scroll: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ScrollableWidget.html">ScrollableWidget</a>
+</p><p>WidgetMessage: tm-unfold-all-tiddlers: 
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a>
 </p><p>Building TiddlyWikiClassic: 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldsWidget.html">FieldsWidget</a>
 
@@ -2000,6 +2040,16 @@ color:#333333;">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiClassic.html">TiddlyWikiClassic</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">ViewWidget</a>
+</p><p>Customising Tiddler File Naming: 
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252FFileSystemPaths.html">$:/config/FileSystemPaths</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="task.html">task</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">TiddlyWikiFolders</a>
 </p><p>Environment Variables on Node.js: 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="GitHub.html">GitHub</a>
 
@@ -2216,6 +2266,8 @@ color:#333333;">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="CodeMirror.html">CodeMirror</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="colour-picker%2520Macro.html">colour-picker Macro</a>
+
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">Customising Tiddler File Naming</a>
 
 <a class="tc-tiddlylink tc-tiddlylink-missing" href="EditShortcutWidget.html">EditShortcutWidget</a>
 
@@ -3351,7 +3403,7 @@ color:#333333;">
 </p><p>ScrollableWidget: 
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252F_tw5.com-styles.html">$:/_tw5.com-styles</a>
 
-<a class="tc-tiddlylink tc-tiddlylink-missing" href="WidgetMessage%253A%2520tm-scroll.html">WidgetMessage: tm-scroll</a>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-scroll.html">WidgetMessage: tm-scroll</a>
 </p><p>SelectWidget: 
 <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a>
 
