@@ -922,8 +922,8 @@ a.tc-tiddlylink:hover {
 	background: none;
 	border: none;
 	width: 100%;
-    width: calc(100% + 2px);
-    margin-left: -43px;
+	width: calc(100% + 2px);
+	margin-left: -43px;
 	text-align: center;
 	border-top: 2px solid #f8f8f8;
 	margin-top: 4px;
@@ -944,19 +944,19 @@ a.tc-tiddlylink:hover {
 	width: 23px;
 	text-align: center;
 	margin-left: -35px;
-    top: 6px;
-    bottom: 6px;
+	top: 6px;
+	bottom: 6px;
 }.tc-fold-banner:hover {
 	background: #f8f8f8;
 }@media (max-width: 960px) {
 	
 	.tc-unfold-banner {
 		position: static;
-	    width: calc(100% + 59px);
-    }.tc-fold-banner {
+		width: calc(100% + 59px);
+	}.tc-fold-banner {
 		width: 16px;
 		margin-left: -16px;
-	    font-size: 0.75em;
+		font-size: 0.75em;
 	}}/*
 ** Tags and missing tiddlers
 */.tc-tag-list-item {
@@ -1238,23 +1238,25 @@ a.tc-tiddlylink:hover {
 }/*
 ** Editor
 */.tc-editor-toolbar {
-    margin-top: 8px;	
+	margin-top: 8px;	
 }.tc-editor-toolbar button {
 	vertical-align: middle;
 	background-color: #cccccc;
 	fill: #444444;
-    border-radius: 4px;
-    padding: 3px;
-    margin: 2px 0;
+	border-radius: 4px;
+	padding: 3px;
+	margin: 2px 0;
 }.tc-editor-toolbar button.tc-text-editor-toolbar-item-adjunct {
-    margin-left: -4px;
-    width: 1em;
-    border-radius: 8px;	
+	margin-left: -3px;
+	width: 1em;
+	border-radius: 8px;	
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-start-group {
+	margin-left: 6px;
 }.tc-editor-toolbar button.tc-selected {
 	background-color: #5778d8;
 }.tc-editor-toolbar button svg {
-    width: 1.6em;
-    height: 1.2em;
+	width: 1.6em;
+	height: 1.2em;
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
@@ -1264,6 +1266,8 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 3px;
 	width: auto;
+}.tc-editor-toolbar .tc-search-results {
+	padding: 0;
 }/*
 ** Adjustments for fluid-fixed mode
 */@media (min-width: 960px) {}/*
@@ -1396,6 +1400,12 @@ a.tc-tiddlylink:hover {
 	text-align: left;
 	color: #333333;
 	line-height: 1.4;
+}.tc-drop-down .tc-tab-set .tc-tab-buttons button {
+	display: inline-block;
+    width: auto;
+    margin-bottom: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }.tc-drop-down .tc-prompt {
 	padding: 0 14px;	
 }.tc-drop-down .tc-chooser {
@@ -1453,14 +1463,14 @@ a.tc-tiddlylink:hover {
 	background-color: #5778d8;
 	text-decoration: none;
 }.tc-search-results {
-    padding: 0 7px 0 7px;
+	padding: 0 7px 0 7px;
 }.tc-image-chooser, .tc-colour-chooser {
 	white-space: normal;
 }.tc-image-chooser a,
 .tc-colour-chooser a {
 	display: inline-block;
 	vertical-align: top;
-    text-align: center;
+	text-align: center;
 	position: relative;
 }.tc-image-chooser a {
 	border: 1px solid #bbb;
@@ -1472,7 +1482,7 @@ a.tc-tiddlylink:hover {
 	padding: 3px;
 	width: 2em;
 	height: 2em;
-    vertical-align: middle;
+	vertical-align: middle;
 }.tc-image-chooser a:hover,
 .tc-colour-chooser a:hover {
 	background: #5778d8;
@@ -1480,17 +1490,17 @@ a.tc-tiddlylink:hover {
 	border: 3px solid #5778d8;
 }.tc-image-chooser a svg,
 .tc-image-chooser a img {
-    display: inline-block;
-    width: auto;
-    height: auto;
-    max-width: 3.5em;
-    max-height: 3.5em;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	max-width: 3.5em;
+	max-height: 3.5em;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }/*
 ** Modals
 */.tc-modal-wrapper {
@@ -1913,16 +1923,16 @@ a.tc-tiddlylink:hover {
 	float:right;
 	margin: 0.5em 0 0.5em 0.5em;
 }.tc-thumbnail-image {
-    text-align: center;
+	text-align: center;
 	overflow: hidden;
 	border-radius: 3px;
 }.tc-thumbnail-image svg,
 .tc-thumbnail-image img {
 	filter: alpha(opacity=1);
 	opacity: 1;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-image svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-image img {
 	filter: alpha(opacity=0.8);
@@ -2773,6 +2783,13 @@ margin: 1em;
     </g>
 </svg>
 
+<svg class="tc-image-link tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M128.719999,57.568543 C130.219553,53.8628171 131.045202,49.8121445 131.045202,45.5685425 C131.045202,27.8915447 116.718329,13.5685425 99.0452364,13.5685425 L67.0451674,13.5685425 C49.3655063,13.5685425 35.0452019,27.8954305 35.0452019,45.5685425 C35.0452019,63.2455403 49.3720745,77.5685425 67.0451674,77.5685425 L99.0452364,77.5685425 C100.406772,77.5685425 101.748384,77.4835732 103.065066,77.3186499 C96.4792444,73.7895096 91.1190212,68.272192 87.7873041,61.5685425 L67.0506214,61.5685425 C58.2110723,61.5685425 51.0452019,54.4070414 51.0452019,45.5685425 C51.0452019,36.7319865 58.2005234,29.5685425 67.0506214,29.5685425 L99.0397824,29.5685425 C107.879331,29.5685425 115.045202,36.7300436 115.045202,45.5685425 C115.045202,48.9465282 113.99957,52.0800164 112.21335,54.6623005 C114.314383,56.4735917 117.050039,57.5685425 120.041423,57.5685425 L128.720003,57.5685425 Z" transform="translate(83.045202, 45.568542) rotate(-225.000000) translate(-83.045202, -45.568542)"></path>
+        <path d="M-0.106255113,71.0452019 C-1.60580855,74.7509276 -2.43145751,78.8016001 -2.43145751,83.0452019 C-2.43145751,100.7222 11.8954151,115.045202 29.568508,115.045202 L61.568577,115.045202 C79.2482381,115.045202 93.5685425,100.718314 93.5685425,83.0452019 C93.5685425,65.3682041 79.2416699,51.0452019 61.568577,51.0452019 L29.568508,51.0452019 C28.206973,51.0452019 26.8653616,51.1301711 25.5486799,51.2950943 C32.1345,54.8242347 37.4947231,60.3415524 40.8264403,67.0452019 L61.563123,67.0452019 C70.4026721,67.0452019 77.5685425,74.206703 77.5685425,83.0452019 C77.5685425,91.8817579 70.413221,99.0452019 61.563123,99.0452019 L29.573962,99.0452019 C20.7344129,99.0452019 13.5685425,91.8837008 13.5685425,83.0452019 C13.5685425,79.6672162 14.6141741,76.533728 16.4003949,73.9514439 C14.2993609,72.1401527 11.5637054,71.0452019 8.5723215,71.0452019 L-0.106255113,71.0452019 Z" transform="translate(45.568542, 83.045202) rotate(-225.000000) translate(-45.568542, -83.045202)"></path>
+    </g>
+</svg>
+
 <svg class="tc-image-list-bullet tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M11.6363636,40.2727273 C18.0629498,40.2727273 23.2727273,35.0629498 23.2727273,28.6363636 C23.2727273,22.2097775 18.0629498,17 11.6363636,17 C5.20977746,17 0,22.2097775 0,28.6363636 C0,35.0629498 5.20977746,40.2727273 11.6363636,40.2727273 Z M11.6363636,75.1818182 C18.0629498,75.1818182 23.2727273,69.9720407 23.2727273,63.5454545 C23.2727273,57.1188684 18.0629498,51.9090909 11.6363636,51.9090909 C5.20977746,51.9090909 0,57.1188684 0,63.5454545 C0,69.9720407 5.20977746,75.1818182 11.6363636,75.1818182 Z M11.6363636,110.090909 C18.0629498,110.090909 23.2727273,104.881132 23.2727273,98.4545455 C23.2727273,92.0279593 18.0629498,86.8181818 11.6363636,86.8181818 C5.20977746,86.8181818 0,92.0279593 0,98.4545455 C0,104.881132 5.20977746,110.090909 11.6363636,110.090909 Z M34.9090909,22.8181818 L128,22.8181818 L128,34.4545455 L34.9090909,34.4545455 L34.9090909,22.8181818 Z M34.9090909,57.7272727 L128,57.7272727 L128,69.3636364 L34.9090909,69.3636364 L34.9090909,57.7272727 Z M34.9090909,92.6363636 L128,92.6363636 L128,104.272727 L34.9090909,104.272727 L34.9090909,92.6363636 Z"></path>
@@ -2846,7 +2863,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">26</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">29</tspan>
                 </text>
             </g>
         </g>
