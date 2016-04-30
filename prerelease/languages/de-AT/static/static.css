@@ -1237,7 +1237,7 @@ a.tc-tiddlylink:hover {
 	width: 1em;
 	border-radius: 8px;	
 }.tc-editor-toolbar button.tc-text-editor-toolbar-item-start-group {
-	margin-left: 6px;
+	margin-left: 7px;
 }.tc-editor-toolbar button.tc-selected {
 	background-color: #5778d8;
 }.tc-editor-toolbar button svg {
