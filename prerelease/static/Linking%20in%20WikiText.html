@@ -13,7 +13,7 @@
 <title>Linking: TiddlyWiki Pre-release — 5.1.12-prerelease</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -54,7 +54,7 @@ Linking in WikiText
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 6th July 2013 at 7:58pm
+</a> 6th July 2013 at 12:58pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -79,7 +79,7 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>A key capability of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> is the ability to make links to other tiddlers or to external websites.</p><h1 class="">Manual Links</h1><p>Link to a tiddler by title:</p><pre><code>[[Tiddler Title]]</code></pre><p>To link to a tiddler and specify the text of the link:</p><pre><code>[[Displayed Link Title|Tiddler Title]]</code></pre><h1 class="">CamelCase Links</h1><p>For tiddler titles that match the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CamelCase.html">CamelCase</a> rules, just typing the title without double square brackets will automatically create a link.</p><p>You can suppress a link from being recognised by preceding it with <code>~</code>. For example:</p><div class="doc-example"><pre><code>* ~HelloThere is not a link
-* ~http://google.com/ is not a link</code></pre><p>That renders as:</p><ul><li>HelloThere is not a link</li><li>http://google.com/ is not a link</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;HelloThere is not a link&lt;/li&gt;&lt;li&gt;http://google.com/ is not a link&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">External Links</h1><p>To link to an external <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Web_resource" target="_blank">resource</a> such as a website or a file, type its <em>full</em> <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URL" target="_blank">URL</a>, including the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URI_scheme" target="_blank">URI scheme</a> such as a protocol (e.g. <code>http://</code>, <code>file://</code>) or <code>mailto</code>:</p><pre><code>http://tiddlywiki.com/
+* ~http://google.com/ is not a link</code></pre><p>That renders as:</p><ul><li>HelloThere is not a link</li><li>http://google.com/ is not a link</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;HelloThere is not a link&lt;/li&gt;&lt;li&gt;http://google.com/ is not a link&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">External Links</h1><p>To link to an external <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Web_resource" rel="noopener noreferrer" target="_blank">resource</a> such as a website or a file, type its <em>full</em> <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URL" rel="noopener noreferrer" target="_blank">URL</a>, including the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URI_scheme" rel="noopener noreferrer" target="_blank">URI scheme</a> such as a protocol (e.g. <code>http://</code>, <code>file://</code>) or <code>mailto</code>:</p><pre><code>http://tiddlywiki.com/
 
 [[TW5|http://tiddlywiki.com/]]
 

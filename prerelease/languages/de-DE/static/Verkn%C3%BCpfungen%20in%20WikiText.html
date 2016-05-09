@@ -14,7 +14,7 @@
 </title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/de-DE" target="_blank">http://tiddlywiki.com/languages/de-DE</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">Diese Seite ist Teil der &quot;reinen&quot; HTML Version von TiddlyWiki auf <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/de-DE" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/de-DE</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -55,7 +55,7 @@ Verknüpfungen in WikiText
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ChrisK.html">
 ChrisK
-</a> 22. September 2014 um 14:22
+</a> 22. September 2014 um 07:22
 </div>
 </div>
 <div class=" tc-reveal">
@@ -95,11 +95,11 @@ color:#333333;">
   <td>Verknüpfung zu einem Tiddler und Festlegen des angezeigten Textes.</td>
 </tr>
 </tbody></table></p><h2 class="">CamelCase Verknüpfungen</h2><p>Für Tiddler, für die die &quot;Camel Case&quot; Richtlinien gelten, ist es nicht nötig, die &quot;doppelten eckigen Klammen&quot; zu verwenden. &quot;Camel Case&quot; Verknüpfungen werden automatisch erstellt. </p><pre><code>* HelloThere ist eine Verknüpfung
-* http://google.com/ ist eine Verknüpfung&quot;</code></pre><p>Dargestellt als: </p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a> ist eine Verknüpfung</li><li><a class="tc-tiddlylink-external" href="http://google.com/" target="_blank">http://google.com/</a> ist eine Verknüpfung&quot;</li></ul><hr><p>Diese Regel kann mit einem Tilde <code>~</code> Zeichen unterdrückt werden. (Bei manchen Tastatur Einstellungen muss die Taste 2 mal gedrückt werden) Beispiele:</p><pre><code>* ~HelloThere ist keine Verknüpfung
+* http://google.com/ ist eine Verknüpfung&quot;</code></pre><p>Dargestellt als: </p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a> ist eine Verknüpfung</li><li><a class="tc-tiddlylink-external" href="http://google.com/" rel="noopener noreferrer" target="_blank">http://google.com/</a> ist eine Verknüpfung&quot;</li></ul><hr><p>Diese Regel kann mit einem Tilde <code>~</code> Zeichen unterdrückt werden. (Bei manchen Tastatur Einstellungen muss die Taste 2 mal gedrückt werden) Beispiele:</p><pre><code>* ~HelloThere ist keine Verknüpfung
 * ~http://google.com/ ist keine Verknüpfung&quot;</code></pre><p>Dargestellt als: </p><ul><li>HelloThere ist keine Verknüpfung</li><li>http://google.com/ ist keine Verknüpfung&quot;</li></ul><h2 class="">Externe Verknüpfungen</h2><p>Um zu externen Seiten zu verknüpfen muss die volle URL verwendet werden:</p><pre><code>* http://tiddlywiki.com/
-* [[TW5|http://tiddlywiki.com/]]</code></pre><p>Dargestellt als: </p><ul><li><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></li><li><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">TW5</a></li></ul><p>Die automatische Erkennung von externen Verknüpfungen hat einige Schwächen. Deshalb ist es möglich eine externe Verknüpfung zu definieren: </p><pre><code>[ext[tiddlywiki.com]]
+* [[TW5|http://tiddlywiki.com/]]</code></pre><p>Dargestellt als: </p><ul><li><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></li><li><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">TW5</a></li></ul><p>Die automatische Erkennung von externen Verknüpfungen hat einige Schwächen. Deshalb ist es möglich eine externe Verknüpfung zu definieren: </p><pre><code>[ext[tiddlywiki.com]]
 [ext[caption for link|tiddlywiki.com]]
-[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><ul><li><a class="tc-tiddlylink-external" href="tiddlywiki.com" target="_blank">tiddlywiki.com</a></li><li><a class="tc-tiddlylink-external" href="tiddlywiki.com" target="_blank">caption for link</a></li><li><a class="tc-tiddlylink-external" href="bitcoin:1aabbdd....?amount=0.001" target="_blank">Donate</a></li></ul><h2 class="">Anpassen von &quot;Tiddler Links&quot;</h2><p>Siehe <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> für eine genauere Beschreibung. Dieser Link zeigt auf die englische Dokumentation!</p></div>
+[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><ul><li><a class="tc-tiddlylink-external" href="tiddlywiki.com" rel="noopener noreferrer" target="_blank">tiddlywiki.com</a></li><li><a class="tc-tiddlylink-external" href="tiddlywiki.com" rel="noopener noreferrer" target="_blank">caption for link</a></li><li><a class="tc-tiddlylink-external" href="bitcoin:1aabbdd....?amount=0.001" rel="noopener noreferrer" target="_blank">Donate</a></li></ul><h2 class="">Anpassen von &quot;Tiddler Links&quot;</h2><p>Siehe <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> für eine genauere Beschreibung. Dieser Link zeigt auf die englische Dokumentation!</p></div>
 
 
 

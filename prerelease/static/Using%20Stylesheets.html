@@ -13,7 +13,7 @@
 <title>Using Stylesheets: TiddlyWiki Pre-release — 5.1.12-prerelease</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -54,7 +54,7 @@ Using Stylesheets
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 21st February 2015 at 5:56pm
+</a> 21st February 2015 at 10:56am
 </div>
 </div>
 <div class=" tc-reveal">
@@ -78,7 +78,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The first steps to changing the appearance of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> are to choose and apply one of the available themes, or to modify the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ColourPalettes.html">colour palette</a>.</p><p>In addition, custom <a class="tc-tiddlylink-external" href="http://www.w3schools.com/css" target="_blank">CSS stylesheets</a> can be defined by tagging a tiddler <code>$:/tags/Stylesheet</code>. Try creating a custom stylesheet now with the following content in order to change the page background colour to red:</p><pre><code>html body.tc-body {
+<div class="tc-tiddler-body tc-reveal"><p>The first steps to changing the appearance of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> are to choose and apply one of the available themes, or to modify the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ColourPalettes.html">colour palette</a>.</p><p>In addition, custom <a class="tc-tiddlylink-external" href="http://www.w3schools.com/css" rel="noopener noreferrer" target="_blank">CSS stylesheets</a> can be defined by tagging a tiddler <code>$:/tags/Stylesheet</code>. Try creating a custom stylesheet now with the following content in order to change the page background colour to red:</p><pre><code>html body.tc-body {
 	background: red;
 }</code></pre><h1 class="">Overriding Theme Settings</h1><p>Custom stylesheets are applied independently from theme stylesheets. Therefore, it is often necessary for the css rules in your custom stylesheet to be more specific than those of the theme you want to override. For example, <code>html body.tc-body</code> is more specific than <code>body.tc-body</code>.</p><h1 class="">Stylesheet Types</h1><p>Usually it is best to use the type <code>text/css</code> for stylesheets. This treats them as plain stylesheets, and ensures that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> doesn't apply any wiki processing to them.</p><p>If you wish to use macros and transclusions in your stylesheets you should instead use the default <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> type <code>text/vnd.tiddlywiki</code>. This allows full <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> processing to be performed. Here is an example:</p><pre><code>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 
