@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Customising Tiddler File Naming: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TiddlyWiki%20on%20Node.js"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Customising Tiddler File Naming
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 24 abril 2016 a las 12:13
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ TiddlyWiki en Node.js
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>By default, a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a> instance using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">wiki folder</a> will create new tiddler files by using the sanitised and disambiguated title as filename.</p><p>This can be customised by creating a tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252FFileSystemPaths.html">$:/config/FileSystemPaths</a> containing one or more <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">filter expressions</a>, each on a line of its own. Newly created tiddlers are matched to each filter in turn, and the first output of the first filter to produce any output is taken as a logical path to be used for the tiddler file. Logical paths don't include the <code>.tid</code> extension, and they always use <code>/</code> as directory separator (when generating the physical path, this is replaced by the correct separator for the platform TiddlyWiki is running on). If none of the filters matches, the logical path is simply the title with all occurences of <code>/</code> replaced by <code>_</code> (for backwards compatibility).</p><p>In both cases, the characters <code>&lt;&gt;:&quot;\|?*^ </code> are replaced by <code>_</code> in order to guarantee that the resulting path is legal on all supported platforms.</p><h2 class="">Example</h2><pre><code>[is[system]removeprefix[$:/]addprefix[_system/]]
+[tag[task][addprefix[mytasks/]]
+[!has[draft.of]]</code></pre><p>This will store newly created system tiddlers in <code>tiddlers/_system</code> (after stripping the <code>$:/</code> prefix), tiddlers tagged <a class="tc-tiddlylink tc-tiddlylink-resolves" href="task.html">task</a> in a subdirectory <code>tiddlers/mytasks</code>, and also create subdirectory structures for all other non-draft tiddlers.</p><p>Thus, <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252FFileSystemPaths.html">$:/config/FileSystemPaths</a> itself will end up in <code>tiddlers/_system/config/FileSystemPaths.tid</code> or <code>tiddlers\_system\config\FileSystemPaths.tid</code>, depending on the platform.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,1304 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>5.1.9: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-ReleaseNotes"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Release 5.1.9
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 3 julio 2015 a las 9:37
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ ReleaseNotes
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.8...v5.1.9" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><h1 class="">Major Improvements</h1><h2 class="">New &quot;Powered by TiddlyWiki&quot; plugin</h2><p>An experimental plugin to add a simple &quot;Powered by TiddlyWiki&quot; banner to your site. It is included in this prerelease but will not be on the main tiddlywiki.com wiki.</p><h2 class="">New &quot;Fluid story, fixed sidebar&quot; mode</h2><p>It is now possible to arrange the main window so that the sidebar has a fixed width and the story river expands to fill the remaining space.</p><p>To switch it on, visit <strong>Theme Tweaks</strong> in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FControlPanel.html">$:/ControlPanel</a> <strong>Appearance</strong> tab and use the following options:</p><ul><li>Sidebar layout:<ul><li><strong>Fixed story, fluid sidebar</strong> (default) - the story river has a fixed width and the sidebar fills the remaining space</li><li><strong>Fluid story, fixed sidebar</strong> - the story river expands to fill horizontal space remaining after the fixed width sidebar</li></ul></li><li>Sidebar width:<ul><li>The width of the sidebar. Can be specified in pixels (eg <strong>350px</strong>), a percentage (eg <strong>25%</strong>) or other <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en/docs/Web/CSS/length" rel="noopener noreferrer" target="_blank">CSS unit</a></li></ul></li></ul><h2 class="">Toolbar Button Style Setting</h2><p>A new setting in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FControlPanel.html">$:/ControlPanel</a> <strong>Settings</strong> tab allows the toolbar button style to be chosen from the following options:</p><ul><li><button class="">borderless</button> the existing style</li><li><button class="">boxed</button>, which adds a thin border box around the button</li><li><button class="">rounded</button>, which rounds the button corners and inverts the button colours</li></ul><p>Plugins can add new style options.</p><h2 class="">New Tiddler Toolbar Button: &quot;Open in new window&quot;</h2><p>An experimental new tiddler toolbar button opens a single tiddler in a separate pop-up browser window. The tiddler will be dynamically updated just as in the main window. There are several uses:</p><ul><li>Arranging reference tiddlers for easy access while editing in the main window</li><li>Making good use of multi-screen layouts</li><li>Printing the content of a single tiddler</li><li>Running presentations in a separate window while maintaining notes in the main window</li></ul><h2 class="">Improvements for visually impaired users</h2><ul><li>Improved monochrome palette variants:<ul><li><button class="">
+
+
+Dark palette
+</button>. Foreground: <div class="tc-colour-chooser"><p>Recientes: </p><hr><p>
+<a class="" title="LightPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Pink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Pink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Crimson"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Crimson; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LavenderBlush"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LavenderBlush; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="HotPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: HotPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DeepPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Orchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Thistle"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Thistle; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Plum"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Plum; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Violet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Violet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Magenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Magenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Fuchsia"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Fuchsia; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkMagenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkMagenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Purple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Purple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Indigo"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Indigo; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlueViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BlueViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumPurple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumPurple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lavender"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Lavender; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GhostWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: GhostWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Blue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Blue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MidnightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MidnightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Navy"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Navy; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RoyalBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: RoyalBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CornflowerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: CornflowerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DodgerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DodgerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AliceBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: AliceBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DeepSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PowderBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PowderBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CadetBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: CadetBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Azure"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Azure; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Cyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aqua"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Aqua; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Teal"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Teal; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Turquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Turquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Aquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumAquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumAquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MintCream"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MintCream; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Honeydew"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Honeydew; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LimeGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LimeGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lime"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Lime; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="ForestGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: ForestGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Green"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Green; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chartreuse"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Chartreuse; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LawnGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LawnGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GreenYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: GreenYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOliveGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOliveGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="YellowGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: YellowGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OliveDrab"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OliveDrab; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Beige"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Beige; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGoldenrodYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGoldenrodYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Ivory"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Ivory; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Yellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Yellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Olive"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Olive; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkKhaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkKhaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LemonChiffon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LemonChiffon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Khaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Khaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gold"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Gold; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cornsilk"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Cornsilk; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Goldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Goldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FloralWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: FloralWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OldLace"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OldLace; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Wheat"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Wheat; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Moccasin"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Moccasin; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Orange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PapayaWhip"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PapayaWhip; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlanchedAlmond"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BlanchedAlmond; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="NavajoWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: NavajoWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AntiqueWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: AntiqueWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Tan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BurlyWood"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BurlyWood; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Bisque"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Bisque; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOrange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Linen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Linen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Peru"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Peru; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PeachPuff"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PeachPuff; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SandyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SandyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chocolate"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Chocolate; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SaddleBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SaddleBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Seashell"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Seashell; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Sienna"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Sienna; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Coral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Coral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OrangeRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OrangeRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tomato"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Tomato; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MistyRose"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MistyRose; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Salmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Salmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Snow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Snow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCoral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightCoral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RosyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: RosyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="IndianRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: IndianRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Red"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Red; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Brown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Brown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FireBrick"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: FireBrick; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Maroon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Maroon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="White"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: White; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="WhiteSmoke"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: WhiteSmoke; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gainsboro"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Gainsboro; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Silver"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Silver; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Grey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Grey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DimGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DimGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Black"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Black; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p><hr><p><input value=""> 
+<input type="color" value="Type the text for the tiddler '$:/config/ColourPicker/New'">
+
+<a class=""><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: ; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p></div>
+, Background: <div class="tc-colour-chooser"><p>Recientes: </p><hr><p>
+<a class="" title="LightPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Pink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Pink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Crimson"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Crimson; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LavenderBlush"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LavenderBlush; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="HotPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: HotPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DeepPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Orchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Thistle"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Thistle; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Plum"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Plum; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Violet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Violet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Magenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Magenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Fuchsia"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Fuchsia; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkMagenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkMagenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Purple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Purple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Indigo"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Indigo; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlueViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BlueViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumPurple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumPurple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lavender"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Lavender; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GhostWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: GhostWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Blue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Blue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MidnightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MidnightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Navy"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Navy; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RoyalBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: RoyalBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CornflowerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: CornflowerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DodgerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DodgerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AliceBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: AliceBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DeepSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PowderBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PowderBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CadetBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: CadetBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Azure"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Azure; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Cyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aqua"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Aqua; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Teal"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Teal; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Turquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Turquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Aquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumAquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumAquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MintCream"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MintCream; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MediumSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Honeydew"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Honeydew; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LimeGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LimeGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lime"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Lime; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="ForestGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: ForestGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Green"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Green; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chartreuse"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Chartreuse; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LawnGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LawnGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GreenYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: GreenYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOliveGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOliveGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="YellowGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: YellowGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OliveDrab"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OliveDrab; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Beige"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Beige; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGoldenrodYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGoldenrodYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Ivory"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Ivory; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Yellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Yellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Olive"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Olive; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkKhaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkKhaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LemonChiffon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LemonChiffon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PaleGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Khaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Khaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gold"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Gold; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cornsilk"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Cornsilk; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Goldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Goldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FloralWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: FloralWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OldLace"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OldLace; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Wheat"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Wheat; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Moccasin"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Moccasin; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Orange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PapayaWhip"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PapayaWhip; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlanchedAlmond"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BlanchedAlmond; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="NavajoWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: NavajoWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AntiqueWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: AntiqueWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Tan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BurlyWood"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: BurlyWood; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Bisque"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Bisque; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkOrange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Linen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Linen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Peru"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Peru; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PeachPuff"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: PeachPuff; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SandyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SandyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chocolate"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Chocolate; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SaddleBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: SaddleBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Seashell"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Seashell; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Sienna"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Sienna; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Coral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Coral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OrangeRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: OrangeRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tomato"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Tomato; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MistyRose"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: MistyRose; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Salmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Salmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Snow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Snow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCoral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightCoral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RosyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: RosyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="IndianRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: IndianRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Red"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Red; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Brown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Brown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FireBrick"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: FireBrick; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Maroon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Maroon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="White"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: White; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="WhiteSmoke"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: WhiteSmoke; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gainsboro"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Gainsboro; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: LightGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Silver"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Silver; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DarkGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Grey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Grey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DimGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: DimGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Black"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: Black; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p><hr><p><input value=""> 
+<input type="color" value="Type the text for the tiddler '$:/config/ColourPicker/New'">
+
+<a class=""><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastDark.html">$:/palettes/ContrastDark</a></p><div style="background-color: ; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p></div>
+</li><li><button class="">
+
+
+Light palette
+</button>. Foreground: <div class="tc-colour-chooser"><p>Recientes: </p><hr><p>
+<a class="" title="LightPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Pink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Pink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Crimson"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Crimson; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LavenderBlush"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LavenderBlush; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="HotPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: HotPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DeepPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Orchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Thistle"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Thistle; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Plum"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Plum; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Violet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Violet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Magenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Magenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Fuchsia"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Fuchsia; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkMagenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkMagenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Purple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Purple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Indigo"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Indigo; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlueViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BlueViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumPurple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumPurple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lavender"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Lavender; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GhostWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: GhostWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Blue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Blue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MidnightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MidnightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Navy"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Navy; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RoyalBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: RoyalBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CornflowerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: CornflowerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DodgerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DodgerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AliceBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: AliceBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DeepSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PowderBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PowderBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CadetBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: CadetBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Azure"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Azure; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Cyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aqua"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Aqua; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Teal"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Teal; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Turquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Turquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Aquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumAquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumAquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MintCream"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MintCream; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Honeydew"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Honeydew; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LimeGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LimeGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lime"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Lime; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="ForestGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: ForestGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Green"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Green; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chartreuse"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Chartreuse; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LawnGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LawnGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GreenYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: GreenYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOliveGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOliveGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="YellowGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: YellowGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OliveDrab"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OliveDrab; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Beige"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Beige; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGoldenrodYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGoldenrodYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Ivory"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Ivory; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Yellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Yellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Olive"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Olive; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkKhaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkKhaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LemonChiffon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LemonChiffon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Khaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Khaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gold"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Gold; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cornsilk"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Cornsilk; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Goldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Goldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FloralWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: FloralWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OldLace"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OldLace; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Wheat"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Wheat; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Moccasin"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Moccasin; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Orange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PapayaWhip"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PapayaWhip; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlanchedAlmond"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BlanchedAlmond; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="NavajoWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: NavajoWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AntiqueWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: AntiqueWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Tan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BurlyWood"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BurlyWood; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Bisque"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Bisque; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOrange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Linen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Linen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Peru"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Peru; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PeachPuff"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PeachPuff; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SandyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SandyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chocolate"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Chocolate; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SaddleBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SaddleBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Seashell"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Seashell; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Sienna"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Sienna; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Coral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Coral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OrangeRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OrangeRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tomato"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Tomato; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MistyRose"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MistyRose; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Salmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Salmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Snow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Snow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCoral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightCoral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RosyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: RosyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="IndianRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: IndianRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Red"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Red; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Brown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Brown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FireBrick"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: FireBrick; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Maroon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Maroon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="White"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: White; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="WhiteSmoke"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: WhiteSmoke; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gainsboro"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Gainsboro; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Silver"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Silver; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Grey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Grey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DimGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DimGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Black"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Black; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p><hr><p><input value=""> 
+<input type="color" value="Type the text for the tiddler '$:/config/ColourPicker/New'">
+
+<a class=""><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: ; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p></div>
+, Background: <div class="tc-colour-chooser"><p>Recientes: </p><hr><p>
+<a class="" title="LightPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Pink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Pink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Crimson"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Crimson; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LavenderBlush"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LavenderBlush; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="HotPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: HotPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepPink"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DeepPink; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumVioletRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumVioletRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Orchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Thistle"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Thistle; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Plum"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Plum; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Violet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Violet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Magenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Magenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Fuchsia"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Fuchsia; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkMagenta"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkMagenta; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Purple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Purple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrchid"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOrchid; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Indigo"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Indigo; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlueViolet"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BlueViolet; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumPurple"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumPurple; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSlateBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lavender"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Lavender; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GhostWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: GhostWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Blue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Blue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MidnightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MidnightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Navy"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Navy; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RoyalBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: RoyalBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CornflowerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: CornflowerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DodgerBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DodgerBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AliceBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: AliceBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SteelBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SteelBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DeepSkyBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DeepSkyBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PowderBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PowderBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="CadetBlue"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: CadetBlue; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Azure"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Azure; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Cyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aqua"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Aqua; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSlateGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSlateGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkCyan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkCyan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Teal"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Teal; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumTurquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumTurquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Turquoise"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Turquoise; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Aquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Aquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumAquamarine"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumAquamarine; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MintCream"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MintCream; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SpringGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SpringGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MediumSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MediumSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Honeydew"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Honeydew; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSeaGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSeaGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LimeGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LimeGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Lime"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Lime; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="ForestGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: ForestGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Green"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Green; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chartreuse"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Chartreuse; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LawnGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LawnGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="GreenYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: GreenYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOliveGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOliveGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="YellowGreen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: YellowGreen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OliveDrab"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OliveDrab; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Beige"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Beige; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGoldenrodYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGoldenrodYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Ivory"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Ivory; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightYellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightYellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Yellow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Yellow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Olive"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Olive; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkKhaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkKhaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LemonChiffon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LemonChiffon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PaleGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PaleGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Khaki"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Khaki; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gold"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Gold; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Cornsilk"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Cornsilk; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Goldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Goldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGoldenrod"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGoldenrod; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FloralWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: FloralWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OldLace"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OldLace; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Wheat"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Wheat; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Moccasin"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Moccasin; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Orange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Orange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PapayaWhip"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PapayaWhip; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BlanchedAlmond"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BlanchedAlmond; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="NavajoWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: NavajoWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="AntiqueWhite"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: AntiqueWhite; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tan"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Tan; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="BurlyWood"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: BurlyWood; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Bisque"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Bisque; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkOrange"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkOrange; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Linen"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Linen; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Peru"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Peru; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="PeachPuff"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: PeachPuff; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SandyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SandyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Chocolate"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Chocolate; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="SaddleBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: SaddleBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Seashell"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Seashell; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Sienna"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Sienna; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Coral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Coral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="OrangeRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: OrangeRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkSalmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkSalmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Tomato"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Tomato; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="MistyRose"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: MistyRose; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Salmon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Salmon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Snow"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Snow; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightCoral"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightCoral; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="RosyBrown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: RosyBrown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="IndianRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: IndianRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Red"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Red; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Brown"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Brown; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="FireBrick"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: FireBrick; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkRed"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkRed; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Maroon"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Maroon; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="White"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: White; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="WhiteSmoke"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: WhiteSmoke; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Gainsboro"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Gainsboro; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="LightGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: LightGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Silver"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Silver; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DarkGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DarkGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Grey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Grey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="DimGrey"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: DimGrey; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+
+<a class="" title="Black"><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: Black; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p><hr><p><input value=""> 
+<input type="color" value="Type the text for the tiddler '$:/config/ColourPicker/New'">
+
+<a class=""><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fpalettes%252FContrastLight.html">$:/palettes/ContrastLight</a></p><div style="background-color: ; width: 100%; height: 100%; border-radius: 50%;"></div></a>
+</p></div>
+</li><li><button class="">
+
+
+Revert
+</button></li></ul></li></ul><h2 class="">New &quot;Solar Flare&quot; palette</h2><p>There's a new core palette &quot;Solar Flare&quot;, contributed by Rustem Akbulatov (@nameanyone).</p><p><button class="">
+
+
+Try it out
+</button> <button class="">
+
+
+Revert
+</button></p><h2 class="">Options for Story Control</h2><p>There are new options for controlling the position in the story river of newly opened tiddlers. Visit the <strong>Settings</strong> tab of <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FControlPanel.html">$:/ControlPanel</a> and look for &quot;Tiddler Opening Behaviour&quot;.</p><h2 class="">New Hidden Settings</h2><p>Two new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hidden%2520Settings.html">hidden settings</a> for advanced configuration:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hidden%2520Setting%253A%2520Search%2520AutoFocus.html">Hidden Setting: Search AutoFocus</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hidden%2520Setting%253A%2520Typing%2520Refresh%2520Delay.html">Hidden Setting: Typing Refresh Delay</a></li></ul><h2 class="">New Vars widget</h2><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/1678" rel="noopener noreferrer" target="_blank">Added</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="VarsWidget.html">VarsWidget</a> for setting multiple variables in one operation:</p><pre><code>&lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
+  &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
+&lt;/$vars&gt;</code></pre><h1 class="">Other Improvements</h1><h2 class="">Translation Improvements</h2><ul><li>Updates to the Dutch, Chinese, Italian and German translations</li><li>New Catalan (Spain) translation</li></ul><h2 class="">Usability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/789069bb6b9ca1bd9da75e035b18728e83eb232c" rel="noopener noreferrer" target="_blank">Added</a> new page control icon for setting the palette: 
+
+
+<span class="tc-popup-keep">
+<button aria-label="Paleta" class="btn" title="Selecciona la paleta de color">
+
+<svg class="tc-image-palette tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M80.2470434,39.1821571 C75.0645698,38.2680897 69.6261555,37.7814854 64.0193999,37.7814854 C28.6624616,37.7814854 0,57.1324214 0,81.0030106 C0,90.644534 4.67604329,99.5487133 12.5805659,106.738252 C23.5031767,91.1899067 26.3405471,72.3946229 36.8885698,63.5622337 C52.0716764,50.8486559 63.4268694,55.7343343 63.4268694,55.7343343 L80.2470434,39.1821571 Z M106.781666,48.8370714 C119.830962,56.749628 128.0388,68.229191 128.0388,81.0030106 C128.0388,90.3534932 128.557501,98.4142085 116.165191,106.082518 C105.367708,112.763955 112.341384,99.546808 104.321443,95.1851533 C96.3015017,90.8234987 84.3749007,96.492742 86.1084305,103.091059 C89.3087234,115.272303 105.529892,114.54645 92.4224435,119.748569 C79.3149955,124.950687 74.2201582,124.224536 64.0193999,124.224536 C56.1979176,124.224536 48.7040365,123.277578 41.7755684,121.544216 C51.620343,117.347916 69.6563669,109.006202 75.129737,102.088562 C82.7876655,92.4099199 87.3713218,80.0000002 83.3235694,72.4837191 C83.1303943,72.1250117 94.5392656,60.81569 106.781666,48.8370714 Z M1.13430476,123.866563 C0.914084026,123.867944 0.693884185,123.868637 0.473712455,123.868637 C33.9526848,108.928928 22.6351223,59.642592 59.2924543,59.6425917 C59.6085574,61.0606542 59.9358353,62.5865065 60.3541977,64.1372318 C34.4465025,59.9707319 36.7873124,112.168427 1.13429588,123.866563 L1.13430476,123.866563 Z M1.84669213,123.859694 C40.7185279,123.354338 79.9985412,101.513051 79.9985401,79.0466836 C70.7284906,79.0466835 65.9257264,75.5670082 63.1833375,71.1051511 C46.585768,64.1019718 32.81846,116.819636 1.84665952,123.859695 L1.84669213,123.859694 Z M67.1980193,59.8524981 C62.748213,63.9666823 72.0838429,76.2846822 78.5155805,71.1700593 C89.8331416,59.8524993 112.468264,37.2173758 123.785825,25.8998146 C135.103386,14.5822535 123.785825,3.26469247 112.468264,14.5822535 C101.150703,25.8998144 78.9500931,48.9868127 67.1980193,59.8524981 Z"></path>
+    </g>
+</svg>
+
+
+<span class="tc-btn-text">Paleta</span>
+
+</button>
+</span>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</li><li>Added new icons for <span style="fill:#aaa;">
+palette <span title="$:/core/images/palette"><svg class="tc-image-palette tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M80.2470434,39.1821571 C75.0645698,38.2680897 69.6261555,37.7814854 64.0193999,37.7814854 C28.6624616,37.7814854 0,57.1324214 0,81.0030106 C0,90.644534 4.67604329,99.5487133 12.5805659,106.738252 C23.5031767,91.1899067 26.3405471,72.3946229 36.8885698,63.5622337 C52.0716764,50.8486559 63.4268694,55.7343343 63.4268694,55.7343343 L80.2470434,39.1821571 Z M106.781666,48.8370714 C119.830962,56.749628 128.0388,68.229191 128.0388,81.0030106 C128.0388,90.3534932 128.557501,98.4142085 116.165191,106.082518 C105.367708,112.763955 112.341384,99.546808 104.321443,95.1851533 C96.3015017,90.8234987 84.3749007,96.492742 86.1084305,103.091059 C89.3087234,115.272303 105.529892,114.54645 92.4224435,119.748569 C79.3149955,124.950687 74.2201582,124.224536 64.0193999,124.224536 C56.1979176,124.224536 48.7040365,123.277578 41.7755684,121.544216 C51.620343,117.347916 69.6563669,109.006202 75.129737,102.088562 C82.7876655,92.4099199 87.3713218,80.0000002 83.3235694,72.4837191 C83.1303943,72.1250117 94.5392656,60.81569 106.781666,48.8370714 Z M1.13430476,123.866563 C0.914084026,123.867944 0.693884185,123.868637 0.473712455,123.868637 C33.9526848,108.928928 22.6351223,59.642592 59.2924543,59.6425917 C59.6085574,61.0606542 59.9358353,62.5865065 60.3541977,64.1372318 C34.4465025,59.9707319 36.7873124,112.168427 1.13429588,123.866563 L1.13430476,123.866563 Z M1.84669213,123.859694 C40.7185279,123.354338 79.9985412,101.513051 79.9985401,79.0466836 C70.7284906,79.0466835 65.9257264,75.5670082 63.1833375,71.1051511 C46.585768,64.1019718 32.81846,116.819636 1.84665952,123.859695 L1.84669213,123.859694 Z M67.1980193,59.8524981 C62.748213,63.9666823 72.0838429,76.2846822 78.5155805,71.1700593 C89.8331416,59.8524993 112.468264,37.2173758 123.785825,25.8998146 C135.103386,14.5822535 123.785825,3.26469247 112.468264,14.5822535 C101.150703,25.8998144 78.9500931,48.9868127 67.1980193,59.8524981 Z"></path>
+    </g>
+</svg></span>
+and &quot;open new window&quot; <span title="$:/core/images/open-window"><svg class="tc-image-open-window tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M16,112 L104.993898,112 C108.863261,112 112,115.590712 112,120 C112,124.418278 108.858091,128 104.993898,128 L7.00610161,128 C3.13673853,128 0,124.409288 0,120 C0,119.998364 4.30952878e-07,119.996727 1.29273572e-06,119.995091 C4.89579306e-07,119.993456 0,119.99182 0,119.990183 L0,24.0098166 C0,19.586117 3.59071231,16 8,16 C12.418278,16 16,19.5838751 16,24.0098166 L16,112 Z"></path>
+        <path d="M96,43.1959595 L96,56 C96,60.418278 99.581722,64 104,64 C108.418278,64 112,60.418278 112,56 L112,24 C112,19.5907123 108.415101,16 103.992903,16 L72.0070969,16 C67.5881712,16 64,19.581722 64,24 C64,28.4092877 67.5848994,32 72.0070969,32 L84.5685425,32 L48.2698369,68.2987056 C45.1421332,71.4264093 45.1434327,76.4904296 48.267627,79.614624 C51.3854642,82.7324612 56.4581306,82.7378289 59.5835454,79.6124141 L96,43.1959595 Z M32,7.9992458 C32,3.58138434 35.5881049,0 39.9992458,0 L120.000754,0 C124.418616,0 128,3.5881049 128,7.9992458 L128,88.0007542 C128,92.4186157 124.411895,96 120.000754,96 L39.9992458,96 C35.5813843,96 32,92.4118951 32,88.0007542 L32,7.9992458 Z"></path>
+    </g>
+</svg></span>
+</span></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/648f670bcbba088780bc76f0c33cbe378d283bbd" rel="noopener noreferrer" target="_blank">Improved</a> the theme icon to better match the new palette icon: <span style="fill:#aaa;">
+<span title="$:/core/images/theme-button"><svg class="tc-image-theme-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M55.854113,66.9453198 C54.3299482,65.1432292 53.0133883,63.518995 51.9542746,62.1263761 C40.8899947,47.578055 35.3091807,55.2383404 28.9941893,62.1263758 C22.6791979,69.0144112 30.6577916,74.5954741 24.6646171,79.4611023 C18.6714426,84.3267304 19.0414417,86.0133155 8.92654943,77.1119468 C-1.18834284,68.2105781 -1.88793412,65.7597832 2.7553553,60.6807286 C7.39864472,55.601674 11.2794845,63.5989423 20.7646627,54.5728325 C30.2498409,45.5467226 22.2819131,37.5470737 22.2819131,37.5470737 C22.2819131,37.5470737 42.0310399,-2.82433362 68.4206088,0.157393922 C94.8101776,3.13912147 58.4373806,-3.70356506 49.3898693,27.958066 C45.5161782,41.5139906 50.1107906,38.3197672 57.4560458,44.0453955 C59.1625767,45.3756367 63.8839488,48.777453 70.127165,53.3625321 C63.9980513,59.2416709 58.9704753,64.0315459 55.854113,66.9453198 Z M67.4952439,79.8919946 C83.5082212,96.9282402 105.237121,117.617674 112.611591,120.312493 C123.044132,124.12481 128.000001,117.170903 128,105.522947 C127.999999,98.3705516 104.170675,78.980486 84.0760493,63.7529565 C76.6683337,70.9090328 70.7000957,76.7055226 67.4952439,79.8919946 Z"></path>
+        <path d="M58.2852966,138.232794 L58.2852966,88.3943645 C56.318874,88.3923153 54.7254089,86.7952906 54.7254089,84.8344788 C54.7254089,82.8684071 56.3175932,81.2745911 58.2890859,81.2745911 L79.6408336,81.2745911 C81.608998,81.2745911 83.2045105,82.8724076 83.2045105,84.8344788 C83.2045105,86.7992907 81.614366,88.3923238 79.6446228,88.3943645 L79.6446228,88.3943646 L79.6446228,138.232794 C79.6446228,144.131009 74.8631748,148.912457 68.9649597,148.912457 C63.0667446,148.912457 58.2852966,144.131009 58.2852966,138.232794 Z M65.405072,-14.8423767 L72.5248474,-14.8423767 L76.0847351,-0.690681892 L72.5248474,6.51694947 L72.5248474,81.2745911 L65.405072,81.2745911 L65.405072,6.51694947 L61.8451843,-0.690681892 L65.405072,-14.8423767 Z" transform="translate(68.964960, 67.035040) rotate(45.000000) translate(-68.964960, -67.035040) "></path>
+    </g>
+</svg></span>
+<span title="$:/core/images/plugin-generic-theme"><svg height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M29.4078519,91.4716406 L51.4693474,69.4101451 L51.4646675,69.4054652 C50.5969502,68.5377479 50.5929779,67.1348725 51.4693474,66.2585029 C52.3396494,65.3882009 53.7499654,65.3874786 54.6163097,66.2538229 L64.0805963,75.7181095 C64.9483136,76.5858268 64.9522859,77.9887022 64.0759163,78.8650718 C63.2056143,79.7353737 61.7952984,79.736096 60.9289541,78.8697517 L60.9242741,78.8650718 L60.9242741,78.8650718 L38.8627786,100.926567 C36.2518727,103.537473 32.0187578,103.537473 29.4078519,100.926567 C26.796946,98.3156614 26.796946,94.0825465 29.4078519,91.4716406 Z M60.8017407,66.3810363 C58.3659178,63.6765806 56.3370667,61.2899536 54.9851735,59.5123615 C48.1295381,50.4979488 44.671561,55.2444054 40.7586738,59.5123614 C36.8457866,63.7803174 41.789473,67.2384487 38.0759896,70.2532832 C34.3625062,73.2681177 34.5917646,74.3131575 28.3243876,68.7977024 C22.0570105,63.2822473 21.6235306,61.7636888 24.5005999,58.6166112 C27.3776691,55.4695337 29.7823103,60.4247912 35.6595047,54.8320442 C41.5366991,49.2392972 36.5996215,44.2825646 36.5996215,44.2825646 C36.5996215,44.2825646 48.8365511,19.267683 65.1880231,21.1152173 C81.5394952,22.9627517 59.0022276,18.7228947 53.3962199,38.3410355 C50.9960082,46.7405407 53.8429162,44.7613399 58.3941742,48.3090467 C59.7875202,49.3951602 64.4244828,52.7100463 70.1884353,56.9943417 L90.8648751,36.3179019 L92.4795866,31.5515482 L100.319802,26.8629752 L103.471444,30.0146174 L98.782871,37.8548326 L94.0165173,39.4695441 L73.7934912,59.6925702 C86.4558549,69.2403631 102.104532,81.8392557 102.104532,86.4016913 C102.104533,93.6189834 99.0337832,97.9277545 92.5695848,95.5655717 C87.8765989,93.8506351 73.8015497,80.3744087 63.8173444,69.668717 L60.9242741,72.5617873 L57.7726319,69.4101451 L60.8017407,66.3810363 L60.8017407,66.3810363 Z M63.9533761,1.42108547e-13 L118.512977,32 L118.512977,96 L63.9533761,128 L9.39377563,96 L9.39377563,32 L63.9533761,1.42108547e-13 Z"></path>
+    </g>
+</svg></span>
+</span></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/7b4153f87f8b4793fa055ec287a659ece3150d99" rel="noopener noreferrer" target="_blank">Avoid</a> glitch with autofocusing the search box in the plugin library</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/9f92c086c31a528a2ffb6bc9fed53d4cc016480f" rel="noopener noreferrer" target="_blank">Added</a> information about <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyDesktop.html">TiddlyDesktop</a> to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Releases.html">Releases</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/4a3a5bf1f06c4efb8449c860e90c214f707954f6" rel="noopener noreferrer" target="_blank">Stopped</a> autosaving after cancelling an edit</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/062aa03c5acf6ac506169e9f3bac9cb0307667e4" rel="noopener noreferrer" target="_blank">Added</a> dropdown to edit template to allow existing field names to be selected</li></ul><h2 class="">Hackability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/5f3587c38c2968ff63780552ef50b52d87ada3ca" rel="noopener noreferrer" target="_blank">Updated</a> to KaTeX version 0.4.3, with the following editions since the previous 0.2.0 release that was distributed with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 5.1.8:<ul><li>Added support for some <code>\begin</code>/<code>\end</code> environments, including support for <code>array</code>, <code>matrix</code>, <code>pmatrix</code>, <code>bmatrix</code>, <code>vmatrix</code>, and <code>Vmatrix</code></li><li>Added support for optional <code>\sqrt</code> arguments, e.g. <code>\sqrt[3]{x}</code></li><li>Add support for <code>\phantom</code></li><li>Add <code>\#</code>, <code>\&amp;</code></li><li>See the <a class="tc-tiddlylink-external" href="https://github.com/Khan/KaTeX/releases" rel="noopener noreferrer" target="_blank">KaTeX GitHub page</a> for full release details</li></ul></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/9b4b9d4d8878b8646112de7b5a7b282f50a4d1cb" rel="noopener noreferrer" target="_blank">Extended</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSendMessageWidget.html">ActionSendMessageWidget</a> for more flexible passing of named parameters via new <code>$name</code> and <code>$value</code> attributes</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/6942efa6289c9f1d99ea9f63972aa314ac06a8b1" rel="noopener noreferrer" target="_blank">Added</a> styling for <code>&lt;kbd&gt;</code> elements such as <kbd>escape</kbd> and <kbd>enter</kbd></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/637aaca2fc3563cc695ab5603fc0cde222a770da" rel="noopener noreferrer" target="_blank">Added</a> subtle new &quot;pin stripe&quot; pattern for page background - <button class="">
+
+
+
+Try it out
+</button></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/139496209f92d229feadf5c2883edec9090c0a0a" rel="noopener noreferrer" target="_blank">Added</a> support for custom elements to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/d8366cc45f25d16c9085e05ee18965e626e218ff" rel="noopener noreferrer" target="_blank">Improved</a> <a class="tc-tiddlylink tc-tiddlylink-missing" href="CodeMirror.html">CodeMirror</a> plugin to automatically refresh when a tiddler type changes</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/0d5033e2a00e34a7665c2cff58c0d15da224dd2b" rel="noopener noreferrer" target="_blank">Added</a> new setting in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FControlPanel.html">$:/ControlPanel</a> to render tiddler titles as links, which can be convenient for drag and drop</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/f42842f80104e8e892545c758ea0b997cacbdd31" rel="noopener noreferrer" target="_blank">Simplified</a> detecting the preview pane with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tv-tiddler-preview%2520Variable.html">tv-tiddler-preview Variable</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/50c6ce8b73aef692920d7a03b1c9c46c35f972d6" rel="noopener noreferrer" target="_blank">Improved</a> automatic linking of system tiddler titles by restricting them to letters and the characters <code>/.-</code></li></ul><h2 class="">Bug Fixes</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/5a6249894d5e79ee4e472c72be8956ce59558797" rel="noopener noreferrer" target="_blank">Fixed</a> problem with special characters in field names</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/230f40c3bd71177eb7b1f7e8252a5164e99a12c5" rel="noopener noreferrer" target="_blank">Fixed</a> static banner layout on mobile devices</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/df84e932833b3643ce600499ddd5fef497bec908" rel="noopener noreferrer" target="_blank">Fixed</a> popups within the scrollable widget by adding <code>position: relative;</code> to example scrollable widget styles</li></ul><h2 class="">Contributors</h2><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" rel="noopener noreferrer" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>:</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/BramChen" rel="noopener noreferrer" target="_blank">@BramChen</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/buggyj" rel="noopener noreferrer" target="_blank">@buggyj</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/cehmke" rel="noopener noreferrer" target="_blank">@cehmke</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/danielo515" rel="noopener noreferrer" target="_blank">@danielo515</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Drakor" rel="noopener noreferrer" target="_blank">@Drakor</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/ericshulman" rel="noopener noreferrer" target="_blank">@ericshulman</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/felixhayashi" rel="noopener noreferrer" target="_blank">@felixhayashi</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/gernert" rel="noopener noreferrer" target="_blank">@gernert</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/heroboy" rel="noopener noreferrer" target="_blank">@heroboy</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/idoine" rel="noopener noreferrer" target="_blank">@idoine</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/infurnoape" rel="noopener noreferrer" target="_blank">@infurnoape</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/inmysocks" rel="noopener noreferrer" target="_blank">@inmysocks</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/kixam" rel="noopener noreferrer" target="_blank">@kixam</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/lolole13" rel="noopener noreferrer" target="_blank">@lolole13</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/marcor" rel="noopener noreferrer" target="_blank">@marcor</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Marxsal" rel="noopener noreferrer" target="_blank">@Marxsal</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/nameanyone" rel="noopener noreferrer" target="_blank">@nameanyone</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/pmario" rel="noopener noreferrer" target="_blank">@pmario</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/r1chard5mith" rel="noopener noreferrer" target="_blank">@r1chard5mith</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/roma0104" rel="noopener noreferrer" target="_blank">@roma0104</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/silvyn" rel="noopener noreferrer" target="_blank">@silvyn</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/slovuj" rel="noopener noreferrer" target="_blank">@slovuj</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/StevenMcD" rel="noopener noreferrer" target="_blank">@StevenMcD</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/sukima" rel="noopener noreferrer" target="_blank">@sukima</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/vouko" rel="noopener noreferrer" target="_blank">@vouko</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/welford" rel="noopener noreferrer" target="_blank">@welford</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/xcazin" rel="noopener noreferrer" target="_blank">@xcazin</a></li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

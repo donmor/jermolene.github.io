@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>server: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Commands"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+ServerCommand
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 29 diciembre 2013 a las 6:05
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Comandos en Node.js
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>El servidor compilado para <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> es muy simple. Aunque es compatible con <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWeb.html">TiddlyWeb</a>, no soporta muchas de las características necesarias para un uso robusto en Internet. </p><p>En la raíz, sirve un tiddler específico<br>
+Fuera de la raíz, sirve tiddlers individuales codificados en JSON, y soporta operaciones básicas HTTP de <code>GET</code>, <code>PUT</code> y <code>DELETE</code>.</p><pre><code>--server &lt;port&gt; &lt;roottiddler&gt; &lt;rendertype&gt; &lt;servetype&gt; &lt;username&gt; &lt;password&gt; &lt;host&gt; &lt;pathprefix&gt;</code></pre><p>Los parámetros son</p><ul><li><strong>port</strong> - número de puerto desde el que sirve (por defecto, &quot;8080&quot;)</li><li><strong>roottiddler</strong> - tiddler que se sirve desde la raíz (por defecto, &quot;<a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fsave%252Fall.html">$:/core/save/all</a>&quot;)</li><li><strong>rendertype</strong> - tipo de contenido con el que se genera el tiddler raíz (por defecto &quot;text/plain&quot;)</li><li><strong>servetype</strong> - tipo de contenido con el que se sirve el tiddler raíz (por defecto &quot;text/html&quot;)</li><li><strong>username</strong> - nombre de usuario por defecto que firma la edición</li><li><strong>password</strong> - contraseña opcional para autenticación básica</li><li><strong>host</strong> - nombre opcional del servidor desde el que se sirve (por defecto, &quot;127.0.0.1&quot; o &quot;localhost&quot;)</li><li><strong>pathprefix</strong> - prefijo opcional para rutas</li></ul><p>Si se ha definido contraseña, el navegador pedirá que se introduzca nombre y contraseña. <br>Nótese que la contraseña se transmite en modo texto por lo que esta implementación no es apropiada para uso general.</p><p>Por ejemplo:</p><pre><code>--server 8080 $:/core/save/all text/plain text/html MyUserName passw0rd</code></pre><p>El nombre de usuario y la contraseña pueden ser especificados como cadenas de símbolos vacías si se necesita configurar el nombre del servidor o prefijo de ruta y no se requiere contraseña:</p><pre><code>--server 8080 $:/core/save/all text/plain text/html &quot;&quot; &quot;&quot; 192.168.0.245</code></pre><p>Para ejecutar simultáneamente múltiples servidores <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>, deberán configurarse cada uno en un puerto diferente
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
