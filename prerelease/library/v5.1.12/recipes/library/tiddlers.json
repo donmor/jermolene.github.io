@@ -174,7 +174,8 @@
         "version": "5.1.12-prerelease",
         "plugin-type": "plugin",
         "dependents": "",
-        "type": "application/json"
+        "type": "application/json",
+        "readme": "This plugin packages [[JSZip|https://stuk.github.io/jszip/]] for use by other plugins. It does not provide any end-user visible features.\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/katex",

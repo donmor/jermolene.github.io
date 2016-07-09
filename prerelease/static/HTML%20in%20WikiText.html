@@ -54,22 +54,21 @@ HTML in WikiText
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 18th October 2014 at 12:14pm
+</a> 22nd June 2016 at 12:22pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -81,7 +80,7 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><p>HTML tags and comments can be used directly in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. For example:</p><pre><code>&lt;article class=&quot;hello&quot;&gt;
 This is my nice and simple block of text. HelloThere
 &lt;!-- This comment will not appear in the wikified output --&gt;
-&lt;/article&gt;</code></pre><h1 class="">Content Parsing</h1><p>The content of an HTML element will be parsed in inline mode unless the opening tag is followed by two linebreaks, in which case it is parsed in block mode. (Inline mode means that block mode formatting such as tables, lists and headings is not recognised).</p><h1 class="">Attributes</h1><p>Attributes in HTML tags can be specified as a literal, a transclusion or a macro invocation. For example, here the value of the <code>href</code> attribute will be set to the value of the tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="MyLinkDestination.html">MyLinkDestination</a>:</p><pre><code>&lt;a href={{MyLinkDestination}}&gt;link&lt;/a&gt;</code></pre><p>Here an attribute is specified as a macro invocation:</p><pre><code>&lt;a href=&lt;&lt;MyMacro &quot;Brian&quot;&gt;&gt;&gt;link&lt;/a&gt;</code></pre><p>Literal attribute values can include line breaks. For example:</p><pre><code>&lt;div data-address=&quot;Mouse House,
+&lt;/article&gt;</code></pre><h1 class="">Content Parsing</h1><p>The content of an HTML element will be parsed in inline mode unless the opening tag is followed by two linebreaks, in which case it is parsed in block mode. (Inline mode means that block mode formatting such as tables, lists and headings is not recognised).</p><h1 class="">Attributes</h1><p>Attributes in HTML tags can be specified as a literal, a transclusion or a macro invocation. For example, here the value of the <code>href</code> attribute will be set to the value of the tiddler <a class="tc-tiddlylink tc-tiddlylink-missing" href="MyLinkDestination.html">MyLinkDestination</a>:</p><pre><code>&lt;a href={{MyLinkDestination}} rel=&quot;noopener noreferrer&quot;&gt;link&lt;/a&gt;</code></pre><p>Note that the link should have the <code>rel</code> attribute set to <code>noopener noreferrer</code> to maintain privacy of the URLs of private <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s (eg on Dropbox). See <a class="tc-tiddlylink-external" href="https://mathiasbynens.github.io/rel-noopener/" rel="noopener noreferrer" target="_blank">https://mathiasbynens.github.io/rel-noopener/</a> for more information.</p><p>Here an attribute is specified as a macro invocation:</p><pre><code>&lt;a href=&lt;&lt;MyMacro &quot;Brian&quot;&gt;&gt; rel=&quot;noopener noreferrer&quot;&gt;link&lt;/a&gt;</code></pre><p>Literal attribute values can include line breaks. For example:</p><pre><code>&lt;div data-address=&quot;Mouse House,
 Mouse Lane,
 Rodentville,
 Ratland.&quot;/&gt;</code></pre><p>By using triple-double quotes you can specify attribute values that include single double quotes. For example:</p><pre><code>&lt;div data-address=&quot;&quot;&quot;Mouse House,
