@@ -55,7 +55,7 @@ Using ES2016 for Writing Plugins
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 12th January 2016 at 5:50pm
+</a> 5th March 2016 at 10:29pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -143,7 +143,10 @@ class ClockWidget extends Widget {
     this.logger.log('Rendering clock DOM nodes');
     this.computeAttributes()
     this.parentDomNode = parent;
-    this.domNode = $tw.utils.domMaker('div', {class: 'tc-clock-widget'});
+    this.domNode = $tw.utils.domMaker('div', {
+      document: this.document,
+      class: 'tc-clock-widget'
+    });
     parent.insertBefore(this.domNode, nextSibling);
     this.tick();
   }
