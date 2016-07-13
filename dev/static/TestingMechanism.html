@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>TestingMechanism: TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -60,22 +61,21 @@ TestingMechanism
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  Mechanisms
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> incorporates the Jasmine <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> testing framework (see <a class="tc-tiddlylink-external" href="http://pivotal.github.io/jasmine/" target="_blank">http://pivotal.github.io/jasmine/</a>). It allows the same tests to be run both in the browser and under Node.js.</p><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> Testing Components</h1><p>There are two main elements to the <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> testing mechanism:</p><ul><li>The plugin <code>tiddlywiki/jasmine</code> that wraps Jasmine up into a plugin along with some glue code</li><li>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> edition <code>test</code> that contains the core test specifications and includes the Jasmine plugin</li></ul><h1 class="">Running the Tests in Node.js</h1><p>To run the tests under Node.js just load up the <code>test</code> wiki:</p><pre><code>node ./tiddlywiki.js \
+</div>
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> incorporates the Jasmine <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> testing framework (see <a class="tc-tiddlylink-external" href="http://pivotal.github.io/jasmine/" rel="noopener noreferrer" target="_blank">http://pivotal.github.io/jasmine/</a>). It allows the same tests to be run both in the browser and under Node.js.</p><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> Testing Components</h1><p>There are two main elements to the <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> testing mechanism:</p><ul><li>The plugin <code>tiddlywiki/jasmine</code> that wraps Jasmine up into a plugin along with some glue code</li><li>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> edition <code>test</code> that contains the core test specifications and includes the Jasmine plugin</li></ul><h1 class="">Running the Tests in Node.js</h1><p>To run the tests under Node.js just load up the <code>test</code> wiki:</p><pre><code>node ./tiddlywiki.js \
 	./editions/test \</code></pre><h1 class="">Running the Tests in the Browser</h1><p>To generate a wiki containing the browser tests load up the <code>test</code> wiki and save it as an HTML file:</p><pre><code>node ./tiddlywiki.js \
 	./editions/test \
 	--verbose \
-	--rendertiddler $:/core/save/all test.html text/plain \</code></pre><p>The <code>test.html</code> file will be placed in the <code>output</code> folder within the wiki folder. Open it in the browser to see the test results. There is a prebuilt version of <code>test.html</code> at:</p><p><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/test.html" target="_blank">http://tiddlywiki.com/test.html</a>
+	--rendertiddler $:/core/save/all test.html text/plain \</code></pre><p>The <code>test.html</code> file will be placed in the <code>output</code> folder within the wiki folder. Open it in the browser to see the test results. There is a prebuilt version of <code>test.html</code> at:</p><p><a class="tc-tiddlylink-external" href="http://tiddlywiki.com/test.html" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/test.html</a>
 </p></div>
 
 

@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>Encryption: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -54,33 +55,31 @@ Encryption
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 7th June 2015 at 12:20pm
+</a> 10th June 2016 at 9:33am
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Features
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span><span class="tc-tag-list-item">
-
+</span>
+<span class="tc-tag-list-item">
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Working with TiddlyWiki
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -89,7 +88,19 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>When used as a single HTML file, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> allows content to be encrypted using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stanford%2520JavaScript%2520Crypto%2520Library.html">Stanford JavaScript Crypto Library</a>.</p><ol><li>Switch to the <strong>Tools</strong> tab in the sidebar and look for the button with a padlock icon</li><li>If the button is labelled &quot;set password&quot; then the current wiki is not encrypted. Clicking the button will prompt for a password that will be used to encrypt subsequent saves</li><li>If the button is labelled &quot;clear password&quot; then the current wiki is already encrypted. Clicking the button will remove the password so that subsequent saves will be unencrypted</li><li>Optionally, open the saved file in a text editor and verify that your data is encrypted</li><li>Open the file in your browser. You will be prompted for a password before the content is displayed</li></ol><p>Note that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> has two other unrelated features concerned with passwords/encryption:</p><ul><li>The ability to set a password when saving to <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlySpot.html">TiddlySpot</a>. This is done in the &quot;Saving&quot; tab of control panel</li><li>The ability to use standard HTTP basic authentication with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">Node.js</a> server configuration. This is done on the command line with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ServerCommand.html">ServerCommand</a>. Combined with SSL, this gives the same level of transit encryption as you'd get with online services like Google or Dropbox, but there is no encryption of data on disk</li></ul></div>
+<div class="tc-tiddler-body tc-reveal"><p>When used as a single HTML file, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> allows content to be encrypted using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stanford%2520JavaScript%2520Crypto%2520Library.html">Stanford JavaScript Crypto Library</a>.</p><ol><li>Switch to the <strong>Tools</strong> tab in the sidebar and look for the button with a padlock icon</li><li>If the button is labelled <svg class="tc-image-unlocked-padlock tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M48.6266053,64 L105,64 L105,96.0097716 C105,113.673909 90.6736461,128 73.001193,128 L55.998807,128 C38.3179793,128 24,113.677487 24,96.0097716 L24,64 L30.136303,64 C19.6806213,51.3490406 2.77158986,28.2115132 25.8366966,8.85759246 C50.4723026,-11.8141335 71.6711028,13.2108337 81.613302,25.0594855 C91.5555012,36.9081373 78.9368488,47.4964439 69.1559674,34.9513593 C59.375086,22.4062748 47.9893192,10.8049522 35.9485154,20.9083862 C23.9077117,31.0118202 34.192312,43.2685325 44.7624679,55.8655518 C47.229397,58.805523 48.403443,61.5979188 48.6266053,64 Z M67.7315279,92.3641717 C70.8232551,91.0923621 73,88.0503841 73,84.5 C73,79.8055796 69.1944204,76 64.5,76 C59.8055796,76 56,79.8055796 56,84.5 C56,87.947435 58.0523387,90.9155206 61.0018621,92.2491029 L55.9067479,115.020857 L72.8008958,115.020857 L67.7315279,92.3641717 L67.7315279,92.3641717 Z"></path>
+    </g>
+</svg> <strong>set password</strong> then the current wiki is not encrypted. Clicking the button will prompt for a password that will be used to encrypt subsequent saves</li><li>If the button is labelled <svg class="tc-image-locked-padlock tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M96.4723753,64 L105,64 L105,96.0097716 C105,113.673909 90.6736461,128 73.001193,128 L55.998807,128 C38.3179793,128 24,113.677487 24,96.0097716 L24,64 L32.0000269,64 C32.0028554,48.2766389 32.3030338,16.2688026 64.1594984,16.2688041 C95.9543927,16.2688056 96.4648869,48.325931 96.4723753,64 Z M80.5749059,64 L48.4413579,64 C48.4426205,47.71306 48.5829272,31.9999996 64.1595001,31.9999996 C79.8437473,31.9999996 81.1369461,48.1359182 80.5749059,64 Z M67.7315279,92.3641717 C70.8232551,91.0923621 73,88.0503841 73,84.5 C73,79.8055796 69.1944204,76 64.5,76 C59.8055796,76 56,79.8055796 56,84.5 C56,87.947435 58.0523387,90.9155206 61.0018621,92.2491029 L55.9067479,115.020857 L72.8008958,115.020857 L67.7315279,92.3641717 L67.7315279,92.3641717 Z"></path>
+    </g>
+</svg> <strong>clear password</strong> then the current wiki is already encrypted. Clicking the button will remove the password so that subsequent saves will be unencrypted</li><li>Optionally, open the saved file in a text editor and verify that your data is encrypted</li><li>Open the file in your browser. You will be prompted for a password before the content is displayed</li></ol><p>Note that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> has two other unrelated features concerned with passwords/encryption:</p><ul><li>The ability to set a password when saving to <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlySpot.html">TiddlySpot</a>. This is done in the &quot;Saving&quot; tab of <strong>control panel</strong> <svg class="tc-image-options-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M110.48779,76.0002544 C109.354214,80.4045063 107.611262,84.5641217 105.354171,88.3838625 L105.354171,88.3838625 L112.07833,95.1080219 C115.20107,98.2307613 115.210098,103.299824 112.089164,106.420759 L106.420504,112.089418 C103.301049,115.208874 98.2346851,115.205502 95.1077675,112.078585 L88.3836082,105.354425 C84.5638673,107.611516 80.4042519,109.354468 76,110.488045 L76,110.488045 L76,119.993281 C76,124.409501 72.4220153,128.000254 68.0083475,128.000254 L59.9916525,128.000254 C55.5800761,128.000254 52,124.41541 52,119.993281 L52,110.488045 C47.5957481,109.354468 43.4361327,107.611516 39.6163918,105.354425 L32.8922325,112.078585 C29.7694931,115.201324 24.7004301,115.210353 21.5794957,112.089418 L15.9108363,106.420759 C12.7913807,103.301303 12.7947522,98.2349395 15.9216697,95.1080219 L22.6458291,88.3838625 C20.3887383,84.5641217 18.6457859,80.4045063 17.5122098,76.0002544 L8.00697327,76.0002544 C3.59075293,76.0002544 2.19088375e-16,72.4222697 4.89347582e-16,68.0086019 L9.80228577e-16,59.9919069 C1.25035972e-15,55.5803305 3.58484404,52.0002544 8.00697327,52.0002544 L17.5122098,52.0002544 C18.6457859,47.5960025 20.3887383,43.4363871 22.6458291,39.6166462 L15.9216697,32.8924868 C12.7989304,29.7697475 12.7899019,24.7006845 15.9108363,21.5797501 L21.5794957,15.9110907 C24.6989513,12.7916351 29.7653149,12.7950065 32.8922325,15.9219241 L39.6163918,22.6460835 C43.4361327,20.3889927 47.5957481,18.6460403 52,17.5124642 L52,8.00722764 C52,3.5910073 55.5779847,0.000254375069 59.9916525,0.000254375069 L68.0083475,0.000254375069 C72.4199239,0.000254375069 76,3.58509841 76,8.00722764 L76,17.5124642 C80.4042519,18.6460403 84.5638673,20.3889927 88.3836082,22.6460835 L95.1077675,15.9219241 C98.2305069,12.7991848 103.29957,12.7901562 106.420504,15.9110907 L112.089164,21.5797501 C115.208619,24.6992057 115.205248,29.7655693 112.07833,32.8924868 L105.354171,39.6166462 L105.354171,39.6166462 C107.611262,43.4363871 109.354214,47.5960025 110.48779,52.0002544 L119.993027,52.0002544 C124.409247,52.0002544 128,55.5782391 128,59.9919069 L128,68.0086019 C128,72.4201783 124.415156,76.0002544 119.993027,76.0002544 L110.48779,76.0002544 L110.48779,76.0002544 Z M64,96.0002544 C81.673112,96.0002544 96,81.6733664 96,64.0002544 C96,46.3271424 81.673112,32.0002544 64,32.0002544 C46.326888,32.0002544 32,46.3271424 32,64.0002544 C32,81.6733664 46.326888,96.0002544 64,96.0002544 Z"></path>
+    </g>
+</svg>.</li><li>The ability to use standard HTTP basic authentication with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">Node.js</a> server configuration. This is done on the command line with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ServerCommand.html">ServerCommand</a>. Combined with SSL, this gives the same level of transit encryption as you'd get with online services like Google or Dropbox, but there is no encryption of data on disk</li></ul></div>
 
 
 

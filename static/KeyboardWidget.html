@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>keyboard: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -54,22 +55,21 @@ KeyboardWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 24th December 2015 at 2:10pm
+</a> 29th April 2016 at 6:52pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -78,7 +78,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The keyboard widget allows <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered by specific key combinations. There is also a shorthand for generating <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">Messages</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$keyboard&gt;</code> widget is rendered normally. The keyboard shortcut only takes effect within the contained content.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">message</td><td align="left">The title of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">WidgetMessage</a> to generate</td></tr><tr class="evenRow"><td align="left">param</td><td align="left">The parameter to be passed with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">WidgetMessage</a></td></tr><tr class="oddRow"><td align="left">key</td><td align="left">Key string identifying the key to be trapped (see below)</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">A CSS class to be assigned to the generated HTML DIV element</td></tr></tbody></table><h1 class="">Key Strings</h1><p>Key strings are made up of zero or more of the modifiers <kbd>alt</kbd>, <kbd>shift</kbd> or <kbd>ctrl</kbd> followed by the name of a key, all joined with &quot;+&quot; plus symbols. Key names are either the letter or digit printed on the key (eg &quot;a&quot; or &quot;1&quot;), or one of the special keys <kbd>backspace</kbd>, <kbd>tab</kbd>, <kbd>enter</kbd> or <kbd>escape</kbd>.</p><p>For example:</p><pre><code>A
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The keyboard widget allows <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered by specific key combinations. There is also a shorthand for generating <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">Messages</a> via the <code>message</code> and <code>param</code> attributes.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$keyboard&gt;</code> widget is rendered normally. The keyboard shortcuts only take effect when the focus is within the contained content.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">actions</td><td align="left">A string containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered when the key combination is detected</td></tr><tr class="evenRow"><td align="left">message</td><td align="left">The title of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">WidgetMessage</a> to generate</td></tr><tr class="oddRow"><td align="left">param</td><td align="left">The parameter to be passed with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Messages.html">WidgetMessage</a></td></tr><tr class="evenRow"><td align="left">key</td><td align="left">Key string identifying the key(s) to be trapped (see below)</td></tr><tr class="oddRow"><td align="left">class</td><td align="left">A CSS class to be assigned to the generated HTML DIV element</td></tr></tbody></table><h1 class="">Key Strings</h1><p>Key strings are made up of one or more key specifiers separated by spaces. Each key specifier is zero or more of the modifiers <kbd>alt</kbd>, <kbd>shift</kbd>, <kbd>ctrl</kbd> or <kbd>meta</kbd> followed by the name of a key, all joined with &quot;+&quot; plus or &quot;-&quot; minus symbols. Key names are either the letter or digit printed on the key (eg &quot;a&quot; or &quot;1&quot;), or one of the special keys <kbd>backspace</kbd>, <kbd>tab</kbd>, <kbd>enter</kbd> or <kbd>escape</kbd>.</p><p>For example:</p><pre><code>A
 shift+A
 shift+escape
 ctrl+enter

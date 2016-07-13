@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>link: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -60,16 +61,15 @@ LinkWidget
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -78,7 +78,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The <code>link</code> widget generates links to tiddlers. (Use the HTML <code>&lt;a&gt;</code> element to generate external links).</p><h1 class="">Content and Attributes</h1><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">to</td><td align="left">The title of the target tiddler for the link (defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>)</td></tr><tr class="evenRow"><td align="left">aria-label</td><td align="left">Optional <a class="tc-tiddlylink tc-tiddlylink-missing" href="Accessibility.html">Accessibility</a> label</td></tr><tr class="oddRow"><td align="left">tooltip</td><td align="left">Optional tooltip <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a></td></tr><tr class="evenRow"><td align="left">tabindex</td><td align="left">Optional numeric <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex" target="_blank">tabindex</a></td></tr><tr class="oddRow"><td align="left">draggable</td><td align="left">&quot;yes&quot; to enable the link to be draggable (defaults to &quot;yes&quot;)</td></tr><tr class="evenRow"><td align="left">tag</td><td align="left">Optional tag to override the default &quot;a&quot; element</td></tr></tbody></table><p>The content of the link widget is rendered within the <code>&lt;a&gt;</code> tag.</p><p>The default value of the tooltip attribute is supplied by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tv-wikilink-tooltip%2520Variable.html"><code class="doc-var">tv-wikilink-tooltip</code></a> variable.</p><p>This means that you can control the text of a link tooltip in several ways:</p><pre><code>&lt;$link to=&quot;HelloThere&quot; tooltip=&quot;Custom tooltip&quot;&gt;Link 1&lt;/$link&gt;
+<div class="tc-tiddler-body tc-reveal"><p>The <code>link</code> widget generates links to tiddlers. (Use the HTML <code>&lt;a&gt;</code> element to generate external links).</p><h1 class="">Content and Attributes</h1><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">to</td><td align="left">The title of the target tiddler for the link (defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>)</td></tr><tr class="evenRow"><td align="left">aria-label</td><td align="left">Optional <a class="tc-tiddlylink tc-tiddlylink-missing" href="Accessibility.html">Accessibility</a> label</td></tr><tr class="oddRow"><td align="left">tooltip</td><td align="left">Optional tooltip <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a></td></tr><tr class="evenRow"><td align="left">tabindex</td><td align="left">Optional numeric <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex" rel="noopener noreferrer" target="_blank">tabindex</a></td></tr><tr class="oddRow"><td align="left">draggable</td><td align="left">&quot;yes&quot; to enable the link to be draggable (defaults to &quot;yes&quot;)</td></tr><tr class="evenRow"><td align="left">tag</td><td align="left">Optional tag to override the default &quot;a&quot; element</td></tr></tbody></table><p>The content of the link widget is rendered within the <code>&lt;a&gt;</code> tag.</p><p>The default value of the tooltip attribute is supplied by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tv-wikilink-tooltip%2520Variable.html"><code class="doc-var">tv-wikilink-tooltip</code></a> variable.</p><p>This means that you can control the text of a link tooltip in several ways:</p><pre><code>&lt;$link to=&quot;HelloThere&quot; tooltip=&quot;Custom tooltip&quot;&gt;Link 1&lt;/$link&gt;
 
 &lt;$set name=&quot;tv-wikilink-tooltip&quot; value=&quot;I'm a link to {{!!title}}&quot;&gt;
 &lt;$link to=&quot;HelloThere&quot;&gt;Link 2&lt;/$link&gt;

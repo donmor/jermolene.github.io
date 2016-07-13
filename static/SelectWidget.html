@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>select: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -54,22 +55,21 @@ SelectWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 3rd December 2014 at 3:51pm
+</a> 29th April 2016 at 6:52pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
 
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -78,8 +78,8 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
-Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index. If the tiddler value changes the menu is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
+Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
 &lt;$list filter='[all[shadows+tiddlers]tags[]sort[title]]'&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
@@ -88,6 +88,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/AboveStory">$:/tags/AboveStory</option>
 
 <option value="$:/tags/AdvancedSearch">$:/tags/AdvancedSearch</option>
+
+<option value="$:/tags/AdvancedSearch/FilterButton">$:/tags/AdvancedSearch/FilterButton</option>
 
 <option value="$:/tags/ControlPanel">$:/tags/ControlPanel</option>
 
@@ -100,6 +102,10 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/ControlPanel/Settings">$:/tags/ControlPanel/Settings</option>
 
 <option value="$:/tags/ControlPanel/Toolbars">$:/tags/ControlPanel/Toolbars</option>
+
+<option value="$:/tags/EditorToolbar">$:/tags/EditorToolbar</option>
+
+<option value="$:/tags/EditPreview">$:/tags/EditPreview</option>
 
 <option value="$:/tags/EditTemplate">$:/tags/EditTemplate</option>
 
@@ -128,6 +134,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/SideBar">$:/tags/SideBar</option>
 
 <option value="$:/tags/Stylesheet">$:/tags/Stylesheet</option>
+
+<option value="$:/tags/TextEditor/Snippet">$:/tags/TextEditor/Snippet</option>
 
 <option value="$:/tags/TiddlerInfo">$:/tags/TiddlerInfo</option>
 
@@ -174,6 +182,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="changecount Macro">changecount Macro</option>
 
 <option value="colour Macro">colour Macro</option>
+
+<option value="colour-picker Macro">colour-picker Macro</option>
 
 <option value="Commands">Commands</option>
 
@@ -262,6 +272,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Hosting your TiddlyWiki on the web">Hosting your TiddlyWiki on the web</option>
 
 <option value="Icon">Icon</option>
+
+<option value="image-picker Macro">image-picker Macro</option>
 
 <option value="Improving TiddlyWiki Documentation">Improving TiddlyWiki Documentation</option>
 
@@ -514,7 +526,7 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Working with TiddlyWiki">Working with TiddlyWiki</option>
 
 </select>
-</p></div><p>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="select-demo-896909202.html">state tiddler</a> currently contains:</p><input value=""><p>See the text change as you switch entries in the select widget. Try changing the value of the state tiddler and see the select widget change. Notice how the select widget only displays an entry if there is a precise match with the tiddler text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$select&gt;</code> widget should be one or more HTML <code>&lt;option&gt;</code> or <code>&lt;optiongroup&gt;</code> elements that provide the available values.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">The title of the tiddler containing the value to be displayed/modified by the select widget (defaults to the current tiddler)</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The field name for the value in the current tiddler (defaults to &quot;text&quot;)</td></tr><tr class="oddRow"><td align="left">index</td><td align="left">The index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> (takes precedence over the field attribute)</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">CSS classes to be assigned to the HTML select element</td></tr><tr class="oddRow"><td align="left">default</td><td align="left">Default value to be used if the tiddler, field or index specifies a missing value</td></tr><tr class="evenRow"><td align="left">multiple</td><td align="left">If present, switches to multiple selection mode</td></tr><tr class="oddRow"><td align="left">size</td><td align="left">The number of rows to display in multiple selection mode</td></tr></tbody></table><h1 class="">Examples</h1><h2 class="">Simple Lists</h2><p>This example sets the title of the current wiki <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a> to one of a list of book titles:</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
+</p></div><p>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="select-demo-896909202.html">state tiddler</a> currently contains:</p><input value=""><p>See the text change as you switch entries in the select widget. Try changing the value of the state tiddler and see the select widget change. Notice how the select widget only displays an entry if there is a precise match with the tiddler text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$select&gt;</code> widget should be one or more HTML <code>&lt;option&gt;</code> or <code>&lt;optiongroup&gt;</code> elements that provide the available values.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">The title of the tiddler containing the value to be displayed/modified by the select widget (defaults to the current tiddler)</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The field name for the value in the current tiddler (defaults to &quot;text&quot;)</td></tr><tr class="oddRow"><td align="left">index</td><td align="left">The index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> (takes precedence over the field attribute)</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">CSS classes to be assigned to the HTML select element</td></tr><tr class="oddRow"><td align="left">default</td><td align="left">Default value to be used if the tiddler, field or index specifies a missing value</td></tr><tr class="evenRow"><td align="left">multiple</td><td align="left">If present, switches to multiple selection mode</td></tr><tr class="oddRow"><td align="left">size</td><td align="left">The number of rows to display in multiple selection mode</td></tr><tr class="evenRow"><td align="left">actions</td><td align="left">A string containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered when the key combination is detected</td></tr></tbody></table><h1 class="">Examples</h1><h2 class="">Simple Lists</h2><p>This example sets the title of the current wiki <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a> to one of a list of book titles:</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
 &lt;option&gt;A Tale of Two Cities&lt;/option&gt;
 &lt;option&gt;A New Kind of Science&lt;/option&gt;
 &lt;option&gt;The Dice Man&lt;/option&gt;

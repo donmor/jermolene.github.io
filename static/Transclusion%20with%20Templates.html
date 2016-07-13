@@ -3,17 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.11" />
+<meta name="tiddlywiki-version" content="5.1.12" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
 <title>With Templates: TiddlyWiki — a non-linear personal web notebook</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" target="_blank">http://tiddlywiki.com/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -60,16 +61,15 @@ Transclusion with Templates
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Transclusion in WikiText
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></div>
+</span>
+</div>
 </div>
 
 
@@ -84,16 +84,15 @@ Hello, my title is {{!!title}}
 </p></blockquote><p>The style is applied as expected, but the title is wrong: we want <code>{{!!title}}</code> to refer to the target tiddler B, and not the source tiddler A.</p><p>The solution is to use a <em>template</em>. In this case, the source tiddler A is called the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddler</a>, and it is <em>applied</em> to tiddler B using the notation <code>{{||A}}</code>. The difference is that any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a> which does not refer explicitly to a specific tiddler is applied to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>, that is, the target tiddler. As a result, tiddler B now looks as expected:</p><blockquote class="tc-quote"><p style="background-color:yellow;">Hello, my title is B
 </p></blockquote><h1 class="">Usage</h1><p>Transcluding via a template is like applying a mask: assuming that the source tiddler contains generic references (like eye holes in a mask), these will be replaced with the target tiddlers values (like the eyes of the person who wears the mask).</p><p>A template can be applied to any tiddler, not necessarily the current one. This is achieved using the full notation <code>{{&lt;target&gt;||&lt;template&gt;}}</code>. The default <code>&lt;target&gt;</code> is the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a> (this is what we used in the above example).</p><h1 class="">Examples</h1><h2 class="">A predefined template to render tags nicely</h2><p>You can apply the system template <code>$:/core/ui/TagTemplate</code> to a tag in order to see it as a tag pill with a drop-down menu:</p><pre><code>{{Transclusion||$:/core/ui/TagTemplate}}</code></pre><p>is rendered as <span class="tc-tag-list-item">
 
-
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
  Transclusion
 </button>
-<span class=" tc-reveal" hidden="true"></span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-
-</span></p><p>See also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">Transclusion in WikiText</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">TranscludeWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">Current Tiddler</a></li></ul></div>
+</span>
+</p><p>See also:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">Transclusion in WikiText</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TemplateTiddlers.html">TemplateTiddlers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">TranscludeWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">Current Tiddler</a></li></ul></div>
 
 
 
