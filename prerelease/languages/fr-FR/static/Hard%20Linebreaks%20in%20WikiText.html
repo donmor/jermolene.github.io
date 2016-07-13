@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.13-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Hard Linebreaks in WikiText: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Fins de Ligne
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 23 juin 2015 à 7h50
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ WikiTexte
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Le traitement habituel des <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Paragraphs%2520in%2520WikiText.html">paragraphes en WikiTexte</a> implique que les retours à la ligne simples sont ignorés, tandis que deux retours à la ligne sont interprétés comme la fin d'un paragraphe.</p><p>Ce comportement n'est pas pratique pour du texte qui intègre des retours à la ligne – par exemple, pour de la poésie.</p><h1 class="">Syntaxe en bloc</h1><p>Un bloc de contenu délimité par trois caractères &quot;guillemets doubles&quot; <code>&quot;&quot;&quot;</code> permet d'indiquer que les fins de ligne doivent y être forcées :</p><pre><code>&quot;&quot;&quot;
+Ceci est une ligne
+et ceci est une nouvelle ligne
+tandis que cela est encore une autre ligne
+et ceci est la dernière
+
+excepté celle-ci
+&quot;&quot;&quot;</code></pre><div class="tc-message-box"><p>Ceci est une ligne<br>et ceci est une nouvelle ligne<br>tandis que cela est encore une autre ligne<br>et ceci est la dernière<br><br>excepté celle-ci<br>
+</p></div><dl><dt>Remarque</dt></dl><ul><li>Contrairement à d'autres syntaxes en bloc, celle-ci ne requière pas que ses marqueurs soient seuls sur une ligne : ils pourraient être placés n'importe où, même au milieu du texte.</li></ul><h1 class="">Syntaxe HTML</h1><p>Les fins de lignes ne devraient pas être forcées dans un texte courant, car cela peut déformer l'affichage sur des terminaux mobiles.</p><p>Cependant, dans des cas exceptionnels, la balise <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte%2520%253A%2520HTML.html">HTML</a> <code>&lt;br&gt;</code> peut être utilisée pour revenir à la ligne sans créer de nouveau paragraphe :</p><pre><code>Ceci est une première ligne.&lt;br&gt;
+Ceci est une deuxième ligne.&lt;br&gt;Et cela est une troisième ligne.</code></pre><div class="tc-message-box"><p>Ceci est une première ligne.<br>
+Ceci est une deuxième ligne.<br>Et cela est une troisième ligne.
+</p></div><dl><dt>Remarque</dt></dl><ul><li>Plusieurs <code>&lt;br&gt;</code> d'affilée permettent de créer artificiellement un espacement de plusieurs lignes.</li></ul></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

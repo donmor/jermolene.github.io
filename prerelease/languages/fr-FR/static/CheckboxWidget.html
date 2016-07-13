@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.13-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>checkbox: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+CheckboxWidget
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 26 juin 2015 à 10h13
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The checkbox widget displays an HTML <code>&lt;input type=&quot;checkbox&quot;&gt;</code> element that is dynamically bound to either:</p><ul><li>the presence or absence of a specified tag on a specified tiddler</li><li>the value of a specified field of a specified tiddler</li></ul><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$checkbox&gt;</code> widget is displayed within an HTML <code>&lt;label&gt;</code> element immediately after the checkbox itself. This means that clicking on the content will toggle the checkbox.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">Title of the tiddler to manipulate (defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a>)</td></tr><tr class="evenRow"><td align="left">tag</td><td align="left">The name of the tag to which the checkbox should be bound</td></tr><tr class="oddRow"><td align="left">invertTag</td><td align="left">When set to <strong>yes</strong>, flips the tag binding logic so that the absence of the tag causes the checkbox to be checked</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The name of the field to which the checkbox should be bound</td></tr><tr class="oddRow"><td align="left">checked</td><td align="left">The value of the field corresponding to the checkbox being checked</td></tr><tr class="evenRow"><td align="left">unchecked</td><td align="left">The value of the field corresponding to the checkbox being unchecked</td></tr><tr class="oddRow"><td align="left">default</td><td align="left">The default value to use if the field is not defined</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">The class that will be assigned to the label element</td></tr></tbody></table><h2 class="">Tag Mode</h2><p>Using the checkbox widget in tag mode requires the <strong>tag</strong> attribute to specify the name of the tag. The <strong>tiddler</strong> attribute specifies the tiddler to target, defaulting to the current tiddler if not present.</p><p>This example creates a checkbox that flips the <strong>done</strong> tag on the current tiddler:</p><pre><code>&lt;$checkbox tag=&quot;done&quot;&gt;Is it done?&lt;/$checkbox&gt;</code></pre><h2 class="">Field Mode</h2><p>Using the checkbox widget in field mode requires the <strong>field</strong> attribute to specify the name of the field. The <strong>checked</strong> and <strong>unchecked</strong> attributes specify the values to be assigned to the field to correspond to its checked and unchecked states respectively. The <strong>default</strong> attribute is used as a fallback value if the field is not defined.</p><p>This example creates a checkbox that is checked if the field <strong>status</strong> is equal to <strong>open</strong> and unchecked if the field is equal to <strong>closed</strong>. If the field is undefined then it defaults to <strong>closed</strong>, meaning that the checkbox will be unchecked if the <strong>status</strong> field is missing.</p><pre><code>&lt;$checkbox field=&quot;status&quot; checked=&quot;open&quot; unchecked=&quot;closed&quot; default=&quot;closed&quot;&gt;Is it open?&lt;/$checkbox&gt;</code></pre></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
