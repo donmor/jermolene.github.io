@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Liens: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Liens avec WikiText
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 1 juin 2015 à 10h43
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ WikiTexte
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>L'une des aptitudes-clé de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> est sa capacité à créer des liens vers d'autres mémos (appelés tiddlers) ou vers des sites externes. Il existe plusieurs moyens de les mettre en oeuvre :</p><ul><li>Lien vers un tiddler via le titre : <code>[[Titre du Tiddler]]</code></li><li>Lien vers un tiddler avec libellé : <code>[[Texte à afficher|Titre du Tiddler]]</code></li><li>Pour les tiddlers conformes aux règles <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CamelCase.html">CamelCase</a>, saisir leur titre génère automatiquement la création du lien</li><li>Pour un lien vers un site externe, saisir l'URL complète du site : <code>http://tiddlywiki.com/</code> ou <code>[[TW5|http://tiddlywiki.com/]]</code></li></ul><p>Vous pouvez annuler la prise en compte du lien en le préfixant du signe <code>~</code>. </p><p>Par exemple :</p><div class="doc-example"><pre><code>* ~SalueATous suit la règle CamelCase, mais n'est pas considéré comme un lien
+* ~http://google.com/ n'est pas un lien automatique non plus</code></pre><p>Affichera ceci :</p><ul><li>SalueATous suit la règle <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CamelCase.html">CamelCase</a>, mais n'est pas considéré comme un lien</li><li>http://google.com/ n'est pas un lien automatique non plus</li></ul><p>... Génération du HTML :</p><pre>&lt;ul&gt;&lt;li&gt;SalueATous suit la règle &lt;a class=&quot;tc-tiddlylink tc-tiddlylink-resolves&quot; href=&quot;#CamelCase&quot;&gt;CamelCase&lt;/a&gt;, mais n'est pas considéré comme un lien&lt;/li&gt;&lt;li&gt;http://google.com/ n'est pas un lien automatique non plus&lt;/li&gt;&lt;/ul&gt;</pre></div><p>Pour que cette syntaxe fonctionne, l'adresse URL doit être reconnue comme une URL, donc débuter par un protocole comme <code>http://</code> ou <code>file://</code>. Mais, vous pouvez forcer le lien externe sans cela en utilisant cette syntaxe :</p><pre><code>[ext[tiddlywiki.com]]
+
+[ext[libellé à afficher|tiddlywiki.com]]
+
+[ext[Faire un Don|bitcoin:1aabbdd....?amount=0.001]]</code></pre><h1 class="">Personnaliser les Liens des Tiddlers</h1><p>Voir le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> pour plus de détail sur le widget sous-jacent utilisé pour implémenter les liens des tiddlers, et notamment les macros qui peuvent être utilisées pour personnaliser leur comportements.</p><h1 class="">Personnaliser les Liens des Tiddlers</h1><p>Voir le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> pour plus de détail sur le widget sous-jacent utilisé pour implémenter les liens des tiddlers, et notamment les macros qui peuvent être utilisées pour personnaliser leur comportements.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

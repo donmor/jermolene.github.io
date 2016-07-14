@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Upgrading: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features tc-tagged-Working%20with%20TiddlyWiki"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Obtenir la dernière version
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 20 juin 2015 à 10h7
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Fonctionnalités
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Travailler avec TiddlyWiki
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>De nouvelles versions de <em>TiddlyWiki</em> sont publiées régulièrement, avec des améliorations et des corrections de bogues. Il est recommandé de rester à jour en hissant votre wiki au niveau de la dernière version.</p><h1 class="">Introduction</h1><p>La procédure décrite ici est réservée à la mise à niveau de fichiers <em>TiddlyWiki</em> autonomes. Pour mettre à niveau <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki sur Node.js</a>, il existe une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Upgrading%2520TiddlyWiki%2520on%2520Node.js.html">méthode différente</a>.</p><blockquote class="tc-quote"><p>Quand vous mettez à niveau, n'oubliez pas <a class="tc-tiddlylink tc-tiddlylink-resolves" href="The%2520First%2520Rule%2520of%2520Using%2520TiddlyWiki.html">la première règle d'utilisation de Tiddlywiki</a> :</p><p><em>Il est de votre responsabilité de vous occuper de vos données ; prenez soin d'effectuer des sauvegardes, surtout quand vous mettez à niveau le noyau de <em>TiddlyWiki</em>.</em>
+</p></blockquote><h1 class="">Mise à niveau en ligne</h1><p>Cette procédure fonctionnera sur la plupart des navigateurs de bureau. Notez que vos données personnelles ne quittent pas votre navigateur pendant la procédure.</p><ol><li>Localisez votre fichier <em>TiddlyWiki</em> sur le système de fichiers (à l'aide de Windows Explorer, du Finder sur Mac OS X, ou de votre gestionnaire de fichiers sur Linux)</li><li>Visitez la page <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/upgrade.html" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/upgrade.html</a> dans votre navigateur</li><li>Faites glisser votre ancien fichier <em>TiddlyWiki</em> HTML sur la fenêtre du navigateur<ul><li>Si le fichier est crypté, un mot de passe vous sera demandé</li></ul></li><li>Passez en revue la liste des tiddlers qui seront mis à niveau</li><li>Cliquez sur <strong>Upgrade</strong></li><li>Enregistrer les changements pour sauvegarder la nouvelle version</li></ol><p>Cela aura pour résultat de télécharger sur votre ordinateur un fichier nommé <strong>upgrade.html</strong>. Ce fichier constitue la version à niveau de votre ancien fichier. Il se peut que vous deviez vous rendre là où <strong>upgrade.html</strong> a été téléchargé, renommer <strong>upgrade.html</strong> avec le nom de l'ancien fichier que vous mettez à niveau, et remplacer l'ancien fichier en déplaçant le nouveau à sa place.</p><h1 class="">Mise à niveau hors ligne</h1><p>Vous pouvez également télécharger le fichier <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/upgrade.html" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/upgrade.html</a> localement et effectuer la même procédure de glisser-déposer pour mettre vos fichiers à niveau.</p><h1 class="">Problèmes avec les mises à niveau</h1><p>Il est possible qu'une personnalisation appliquée dans une version précédente devienne inopérante une fois la mise à niveau effectuée. Deux techniques peuvent être employées pour vous aider à retrouver l'origine du problème :</p><ul><li>Essayez de répéter la mise à niveau en décochant tous les tiddlers qui pourraient contenir des personnalisations de <em>TiddlyWiki</em></li><li>Utilisez le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SafeMode.html">ModeSansÉchec</a> pour désactiver toutes les adaptations personnalisées des tiddlers <em>shadow</em></li></ul><p>Vous pouvez voir quels tiddlers <em>shadow</em> ont été modifiés dans l'onglet <strong>Filtres</strong> de la <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FAdvancedSearch.html">recherche avancée</a>. Choisir &quot;Les tidders shadow modifiés&quot; depuis le menu déroulant.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

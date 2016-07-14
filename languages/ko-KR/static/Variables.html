@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Variables: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts tc-tagged-Reference"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Variables
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 2015년 2월 21일 오후 9:56
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
+fill:#333333;
+color:#333333;">
+ Concepts
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Reference
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>A <dfn class="doc-def">variable</dfn> is a snippet of text that can be accessed by name within a particular branch of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">widget tree</a>. The snippet is known as the variable's <dfn class="doc-def">value</dfn>.</p><p>A new variable is defined using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html"><code class="doc-widget">$set</code></a> widget, and is then available to any of the children of that widget, including transcluded content. A <code class="doc-widget">$set</code> widget can reuse an existing name, thus binding a different snippet to that name for the duration of the widget's children.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html"><code class="doc-widget">$list</code></a> widget also sets a particular variable (<code class="doc-var">currentTiddler</code> by default) to each listed title in turn.</p><p>For an overview of how to use variables, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables%2520in%2520WikiText.html">Variables in WikiText</a>.</p><p>Despite the term &quot;variable&quot;, each snippet is a constant string. The apparent variability is actually the result of the presence of multiple variables with the same name in different parts of the widget tree.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">Macros</a> are a special form of variable whose value can contain placeholders that get filled in with parameters whenever the macro is used.</p><p>By themselves, the snippets are <em class="doc-em">not</em> parsed as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. However, a variable reference will transclude a snippet into a context where WikiText parsing <em class="doc-em">may</em> be occurring. Within a snippet, the only markup detected is <code>$name$</code> for a macro parameter transclusion and <code>$(name)$</code> for a variable transclusion.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="dumpvariables%2520Macro.html"><code class="doc-var">dumpvariables</code></a> macro lists all variables (including macros) that are available at that position in the widget tree.</p><p>TiddlyWiki's core has <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Core%2520Variables.html">several variables</a> built in.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

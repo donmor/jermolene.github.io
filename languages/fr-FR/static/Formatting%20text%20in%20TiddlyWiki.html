@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Formatting text in TiddlyWiki: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Working%20with%20TiddlyWiki"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Formater du texte dans TiddlyWiki
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 3 décembre 2014 à 15h14
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Travailler avec TiddlyWiki
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Au sein d'un tiddler, vous pouvez utiliser un formatage spécifique appelé <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, afin de contrôler la manière dont le texte sera affiché.</p><h1 class="">Formatage simple</h1><p>Dans sa plus simple expression, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> vous permet d'appliquer des fonctions de traitement de texte familières comme le gras, l'italique, les listes et les tableaux. Par exemple :</p><pre><code>Portez ce //vieux// whisky au ''juge'' ~~brun~~ blond qui `fume`</code></pre><p>S'affiche ainsi :</p><p>Portez ce <em>vieux</em> whisky au <strong>juge</strong> <strike>brun</strike> blond qui <code>fume</code></p><h1 class="">Travailler avec les tiddlers</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> vous permet de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Linking%2520in%2520WikiText.html">pointer vers d'autres tiddlers</a> à l'aide des doubles crochets droits, ou grâce aux liens automatiques engendrés par les mots en <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CamelCase.html">CamelCase</a> :</p><pre><code>Voici un lien vers HelloThere, et un autre vers l'[[histoire de TiddlyWiki|History of TiddlyWiki]]</code></pre><p>S'affiche comme :</p><p>Voici un lien vers <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a>, et un autre vers l'<a class="tc-tiddlylink tc-tiddlylink-resolves" href="History%2520of%2520TiddlyWiki.html">histoire de TiddlyWiki</a></p><h1 class="">Macros</h1><p>Les macros vous permettent d'assembler des bouts de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> répétitifs, afin de les réutiliser facilement.</p><p>Par exemple, voici la définition d'une macro qui génère une URL vidéo YouTube à partir de son identifiant unique :</p><pre><code>\define youtube(video)
+https://www.youtube.com/watch?v=$video$
+\end</code></pre><p>Une fois cette définition mise en place, <code>&lt;&lt;youtube 1g66s7UbyuU&gt;&gt;</code> génèrera l'URL <a class="tc-tiddlylink-external" href="https://www.youtube.com/watch?v=1g66s7UbyuU" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=1g66s7UbyuU</a></p><h1 class="">WikiText avancé</h1><p>Les fonctionnalités avancées de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> permettent de produire des listes automatisées et des fonctions interactives comme des menus déroulants. En fait, toute l'interface de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> est elle-même écrite en <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> ; autrement dit, toutes les fonctionnalités que vous voyez dans <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> peuvent être adaptées pour être utilisées dans vos propres wikis.</p><p>Certaines fonctionnalités avancées nécessitent un codage complexe. <em>TiddlyWiki</em> inclut plusieurs macros prédéfinies, qui simplifient les fonctions usuelles d'interface utilisateur, comme les onglets, les tables des matières, et les listes de tiddlers.</p><h1 class="">En savoir plus</h1><p>Voir <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> pour une introduction détaillée à l'écriture de WikiText.
+</p></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

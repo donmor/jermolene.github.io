@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Block Quotes: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Block Quotes in WikiText
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 2016년 6월 7일 오전 10:24
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ WikiText
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>There are two ways to produce HTML block quotes in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>, one for content spread across multiple lines, and one for single line content.</p><h1 class="">Multi-line Block Quotes</h1><p>The syntax for multi-line block quotes (<svg class="tc-image-quote tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M51.2188077,117.712501 L51.2188077,62.1993386 L27.4274524,62.1993386 C27.4274524,53.3075754 29.1096526,45.797753 32.4741035,39.669646 C35.8385544,33.541539 42.0867267,28.9154883 51.2188077,25.7913554 L51.2188077,2 C43.7689521,2.96127169 36.8599155,5.18417913 30.4914905,8.668789 C24.1230656,12.1533989 18.6559149,16.5391352 14.0898743,21.8261295 C9.52383382,27.1131238 5.97919764,33.2411389 3.45585945,40.2103586 C0.932521268,47.1795784 -0.208971741,54.6293222 0.0313461819,62.5598136 L0.0313461819,117.712501 L51.2188077,117.712501 Z M128,117.712501 L128,62.1993386 L104.208645,62.1993386 C104.208645,53.3075754 105.890845,45.797753 109.255296,39.669646 C112.619747,33.541539 118.867919,28.9154883 128,25.7913554 L128,2 C120.550144,2.96127169 113.641108,5.18417913 107.272683,8.668789 C100.904258,12.1533989 95.4371072,16.5391352 90.8710666,21.8261295 C86.3050261,27.1131238 82.7603899,33.2411389 80.2370517,40.2103586 C77.7137136,47.1795784 76.5722206,54.6293222 76.8125385,62.5598136 L76.8125385,117.712501 L128,117.712501 Z"></path>
+    </g>
+</svg>) is:</p><div class="doc-example"><pre><code>&lt;&lt;&lt;
+This is a block quoted paragraph
+written in English
+&lt;&lt;&lt;
+</code></pre><p>That renders as:</p><blockquote class="tc-quote"><p>This is a block quoted paragraph
+written in English
+</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&quot;tc-quote&quot;&gt;&lt;p&gt;This is a block quoted paragraph
+written in English
+&lt;/p&gt;&lt;/blockquote&gt;</pre></div><h2 class="">Citation</h2><p>A citation can be added to the quote like this:</p><div class="doc-example"><pre><code>&lt;&lt;&lt;
+Computers are like a bicycle for our minds
+&lt;&lt;&lt; Steve Jobs
+</code></pre><p>That renders as:</p><blockquote class="tc-quote"><p>Computers are like a bicycle for our minds
+</p><cite>Steve Jobs</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&quot;tc-quote&quot;&gt;&lt;p&gt;Computers are like a bicycle for our minds
+&lt;/p&gt;&lt;cite&gt;Steve Jobs&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h2 class="">CSS Classes</h2><p>CSS classes can be added to a block quote:</p><div class="doc-example"><pre><code>&lt;&lt;&lt;.myClass.another-class
+Operating systems are like a brick wall for our minds
+&lt;&lt;&lt; Nobody
+</code></pre><p>That renders as:</p><blockquote class="tc-quote myClass another-class"><p>Operating systems are like a brick wall for our minds
+</p><cite>Nobody</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&quot;tc-quote myClass another-class&quot;&gt;&lt;p&gt;Operating systems are like a brick wall for our minds
+&lt;/p&gt;&lt;cite&gt;Nobody&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h1 class="">Single-line Block Quotes</h1><p>The single-line syntax for block quotes is actually an extension of the syntax for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Lists%2520in%2520WikiText.html">Lists in WikiText</a>. For example:</p><div class="doc-example"><pre><code>&gt; Quoted text
+&gt; Another line of quoted text
+</code></pre><p>That renders as:</p><blockquote><p>Quoted text</p><p>Another line of quoted text</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote&gt;&lt;p&gt;Quoted text&lt;/p&gt;&lt;p&gt;Another line of quoted text&lt;/p&gt;&lt;/blockquote&gt;</pre></div><p>You can also nest quotes like this:</p><pre><code>&gt; A top quote
+&gt;&gt; A subquote
+&gt; Another top quote</code></pre><p>Which renders as:</p><blockquote><p>A top quote<blockquote><p>A subquote</p></blockquote></p><p>Another top quote</p></blockquote><p>You can also mix block quotes with other list items. For example:</p><div class="doc-example"><pre><code>* List One
+** List Two
+**&gt; A quote
+**&gt; Another quote
+* List Three
+</code></pre><p>That renders as:</p><ul><li>List One<ul><li>List Two<blockquote><p>A quote</p><p>Another quote</p></blockquote></li></ul></li><li>List Three</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;List One&lt;ul&gt;&lt;li&gt;List Two&lt;blockquote&gt;&lt;p&gt;A quote&lt;/p&gt;&lt;p&gt;Another quote&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;List Three&lt;/li&gt;&lt;/ul&gt;</pre></div></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.12" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Introduction to filter notation: 티들리위키 — 줄 없는 개인 웹 공책</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning tc-tagged-Filters"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다">
+
+
+</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Introduction to filter notation
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 2015년 2월 28일 오전 10:45
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Filters
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Learning
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><dl><dd class="doc-preamble">This explains the basics of writing a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a> to select a set of tiddlers. For a more technical presentation, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.</dd></dl><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M64,128.241818 C99.346224,128.241818 128,99.5880417 128,64.2418177 C128,28.8955937 99.346224,0.241817675 64,0.241817675 C28.653776,0.241817675 0,28.8955937 0,64.2418177 C0,99.5880417 28.653776,128.241818 64,128.241818 Z M75.9358659,91.4531941 C75.3115438,95.581915 70.2059206,98.8016748 64,98.8016748 C57.7940794,98.8016748 52.6884562,95.581915 52.0641341,91.4531941 C54.3299053,94.0502127 58.8248941,95.8192805 64,95.8192805 C69.1751059,95.8192805 73.6700947,94.0502127 75.9358659,91.4531941 L75.9358659,91.4531941 Z M75.9358659,95.9453413 C75.3115438,100.074062 70.2059206,103.293822 64,103.293822 C57.7940794,103.293822 52.6884562,100.074062 52.0641341,95.9453413 C54.3299053,98.5423599 58.8248941,100.311428 64,100.311428 C69.1751059,100.311428 73.6700947,98.5423599 75.9358659,95.9453413 L75.9358659,95.9453413 Z M75.9358659,100.40119 C75.3115438,104.529911 70.2059206,107.74967 64,107.74967 C57.7940794,107.74967 52.6884562,104.529911 52.0641341,100.40119 C54.3299053,102.998208 58.8248941,104.767276 64,104.767276 C69.1751059,104.767276 73.6700947,102.998208 75.9358659,100.40119 L75.9358659,100.40119 Z M75.9358659,104.893337 C75.3115438,109.022058 70.2059206,112.241818 64,112.241818 C57.7940794,112.241818 52.6884562,109.022058 52.0641341,104.893337 C54.3299053,107.490356 58.8248941,109.259423 64,109.259423 C69.1751059,109.259423 73.6700947,107.490356 75.9358659,104.893337 L75.9358659,104.893337 Z M64.3010456,24.2418177 C75.9193117,24.2418188 88.0000013,32.0619847 88,48.4419659 C87.9999987,64.8219472 75.9193018,71.7540963 75.9193021,83.5755932 C75.9193022,89.4486648 70.0521957,92.8368862 63.9999994,92.8368862 C57.947803,92.8368862 51.9731007,89.8295115 51.9731007,83.5755932 C51.9731007,71.1469799 39.9999998,65.4700602 40,48.4419647 C40.0000002,31.4138691 52.6827796,24.2418166 64.3010456,24.2418177 Z"></path>
+    </g>
+</svg></div> Filters do nothing if you just type them into a tiddler on their own. They need a context. An easy way to experiment with filters is to type them into the <span class="doc-tab">필터</span> tab of <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252FAdvancedSearch.html">Advanced Search</a>.</div></p><p>The simplest case is where you already know exactly which tiddlers you want. Type each title in double square brackets, with a space between each one and the next:</p><blockquote><p><code>[[Recipe book]] [[ScrambledEggs]] [[Mom's apple pie]]</code></p></blockquote><p>You can omit the square brackets when a title doesn't contain any spaces:</p><blockquote><p><code>[[Recipe book]] ScrambledEggs [[Mom's apple pie]]</code></p></blockquote><p>The double square brackets are actually a shorthand for this:</p><blockquote><p><code>[title[ScrambledEggs]]</code></p></blockquote><p>... which gives us the <dfn class="doc-def">general model</dfn> for any filter:</p><blockquote><p><code>[operator[parameter]]</code></p></blockquote><p>For instance, here's how to select all the tiddlers that have been tagged <code class="doc-tag">Recipe</code>:</p><blockquote><p><code>[tag[Recipe]]</code></p></blockquote><p>We can reverse the meaning by adding an exclamation mark <code>!</code> just before the operator. For example, we can select any tiddlers that do <em class="doc-em">not</em> have the <code class="doc-tag">Recipe</code> tag:</p><blockquote><p><code>[!tag[Recipe]]</code></p></blockquote><p>Tiddlers can be filtered by other fields than just title and tags:</p><blockquote><p><code>[field:serving[4]]</code></p></blockquote><p>That example will select any tiddlers that have <code class="doc-value">4</code> in their <code class="doc-field">serving</code> field.</p><p>As the word &quot;serving&quot; isn't a standard filter operator (and isn't likely to become one), you can safely omit the <code>field:</code> prefix:</p><blockquote><p><code>[serving[4]]</code></p></blockquote><h1 class="">Combinations</h1><p>The filters we've looked at so far have involved just one step each. But you can <dfn class="doc-def">run</dfn> several steps together like this:</p><blockquote><p><code>[tag[Vegetarian]!tag[soup]serving[4]]</code></p></blockquote><p>Notice how the entire run is contained in a single pair of square brackets.</p><p>A tiddler has to match <em class="doc-em">all</em> of the steps in a run. So the example above retrieves vegetarian recipes (other than soups) for 4 people.</p><p>A sequence of separate runs will select the tiddlers that match <em class="doc-em">any</em> of the runs. We can use this to find recipes that serve either 3, 4 or 5 people:</p><blockquote><p><code>[serving[3]] [serving[4]] [serving[5]]</code></p></blockquote><p>If we want to ignore vegetarian recipes that serve 4, we can say this:</p><blockquote><p><code>[serving[3]] [serving[4]!tag[Vegetarian]] [serving[5]]</code></p></blockquote><p>By default, each run considers every tiddler in the wiki. But we can use a <code>+</code> sign to force a run to consider only the tiddlers that were selected by the preceding runs:</p><blockquote><p><code>[serving[3]] [serving[4]] [serving[5]] +[tag[Vegetarian]] +[sort[title]]</code></p></blockquote><p>This selects recipes for 3, 4 or 5 people, then filters <em class="doc-em">those</em> to keep only the vegetarian ones, and finally sorts any that are left into alphabetical order of title.</p><p>In a similar way, we can use a <code>-</code> sign to <em class="doc-em">remove</em> a run's tiddlers from the result so far. Here we select all vegetarian recipes apart from two:</p><blockquote><p><code>[tag[Vegetarian]] -[title[ScrambledEggs]] -BeansOnToast</code></p></blockquote><h1 class="">Special parameters</h1><p>The parameter of each step we've seen so far has been in square brackets, meaning that TiddlyWiki treats it literally. But two other kinds of bracket are possible:</p><p><dfn class="doc-def">Curly brackets</dfn> <code>{}</code> mean that the parameter is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a>, and that its value is to be looked up in a specified tiddler. For example, if we have a tiddler called <code class="doc-tiddler">Preference</code> whose text happens to be the word <code class="doc-value">Vegetarian</code>, we can say</p><blockquote><p><code>[tag{Preference}]</code></p></blockquote><p>as an alternative to <code>[tag[Vegetarian]]</code>. This allows the preference to change over time.</p><p><dfn class="doc-def">Angle brackets</dfn> <code>&lt;&gt;</code> mean that the parameter is the name of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> whose value is to be used instead. Here we use the built-in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="currentTiddler%2520Variable.html"><code class="doc-var">currentTiddler</code></a> variable in a filter that selects any tiddlers whose text contains the title of the current one:</p><blockquote><p><code>[search&lt;currentTiddler&gt;]</code></p></blockquote></div>
+
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
