@@ -8532,13 +8532,13 @@ SiteMap
 LiveStream</pre>
 </div>
 <div title="$:/DiscussionViewerTemplate">
-<pre>&lt;$list filter='[role[twDiscussionPost]parent&lt;currentTiddler&gt;]'&gt;
+<pre>&lt;$list filter='[role[twDiscussionPost]parent&lt;currentTiddler&gt;!sort[modified]]'&gt;
 &lt;li&gt;
 &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'&gt;&lt;$view field='post_title'/&gt;&lt;/$view&gt;&lt;/$link&gt;&lt;br&gt;
-&lt;$transclude /&gt;
+&lt;$transclude mode=&quot;block&quot;/&gt;
 &lt;/li&gt;
 &lt;ul&gt;
-{{ ||$:/DiscussionViewerTemplate}}
+&lt;$transclude tiddler=&quot;$:/DiscussionViewerTemplate&quot; mode=&quot;block&quot;/&gt;
 &lt;/ul&gt;
 &lt;/$list&gt;</pre>
 </div>
@@ -9094,13 +9094,13 @@ It may also give you an error saying that it can not fetch things from your own 
 </div>
 <div tags="$:/_MainMenu" title="Discussion">
 <pre>&lt;ul&gt;
-&lt;$list filter='[role[twDiscussionPost]!has[parent]]'&gt;
+&lt;$list filter='[role[twDiscussionPost]!has[parent]!sort[modified]]'&gt;
 &lt;li&gt;
 &lt;$link to=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'&gt;&lt;$view field='post_title'/&gt;&lt;/$view&gt;&lt;/$link&gt;&lt;br&gt;
-&lt;$transclude /&gt;
+&lt;$transclude mode=&quot;block&quot;/&gt;
 &lt;/li&gt;
 &lt;ul&gt;
-{{ ||$:/DiscussionViewerTemplate}}
+&lt;$transclude tiddler=&quot;$:/DiscussionViewerTemplate&quot; mode=&quot;block&quot;/&gt;
 &lt;/ul&gt;
 &lt;/$list&gt;
 &lt;/ul&gt;</pre>
