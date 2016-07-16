@@ -2278,6 +2278,798 @@ Discussion
 <p><ul>
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#DiscussionPost">DiscussionPost</a><br>
+<pre><code>Greeting and Salutations to you all from the depths of Dragondom.</code></pre>
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20bunch%20of%20small%20updates%20-%20inmysocks%20(2016071300h2600)">A bunch of small updates - inmysocks (2016071300h2600)</a><br>
+There are new versios of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-core">twederation-core</a> and <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-edition">twederation-edition</a> plugins so get the newest version from <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>.
+
+<strong>After you have updated the plugin make sure you go to the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="#%24%3A%2FControlPanel">$:/ControlPanel</a> and under the <code>twCards</code> tab update which wikis you want to follow, otherwise some features won't work. You shouldn't follow yourself or you can get some errors. Everything still works if you follow yourself, but you will get some errors popping up. I will fix this eventually.</strong>
+
+*Empty bundles should no longer be saved. This means that if you try to fetch something and no non-empty bundles are fetched you may not see any indication that anything happened. I will think about how to show that the request was successful but there isn't any new content.
+*There is a twCard manager in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="#%24%3A%2FControlPanel">$:/ControlPanel</a>, it is currently very simple
+*You can now set which wikis you follow in the twCard manager, this means a few things:
+**Only posts from wikis you follow will show up in the wall tab
+**You can select wikis you follow as a group when fetching things
+*There is a delete button next to the tiddler bundle list on the fetch communication tab, clicking on it will delete that bundle without you having to open the tiddler
+*The wall now shows how many comments a post has next to the 'show comments' button
+*The wall now has a button to fetch new posts and comments to all posts on wikis you follow. I need to make it so that they are only comments to posts that are either by people you follow or by you, and only posts by the wiki author, but that will come later
+*You can now select 'Comments on my posts' as something to fetch from other wikis
+
+<strong>When you fetch the wall posts it uses the bundle_name field to figure out which bundles to display, if a wiki hasn't updated their plugin yet than it won't have the bundle_name filled in and won't be displayed so you will have to find the bundle under the table of contents or some other way.</strong>
+
+I am hoping to make the list of bundles also have a button that will unpack everything in the bundle without you having to open the bundle as well. I am hesitant to do this though because that makes it a lot easier to sneak malicious things into bundles. I will probably make it so that if you unpack a bundle like that the tiddlers are rendered as static html and saved that way. This would mean that you wouldn't be able to have any widgets or active content in a tiddler unpacked that way, just normal text markup. I will probably make it so that the 'Fetch New Wall Posts and Comments' button automatically unpacks received bundles like this.
+
+I should also make an option to check for updated twCards. This will let people update their cards and have the updated version circulate easier. I am considering having every bundle a wiki sends contain the twCard for that wiki as a special part of the bundle. Then if the card has been updated you can unpack the card separately from the other content.
+I am hoping to expand what twCards are to be something more like a social media profile. This is more important if we get more people and for the future when I am going to create things like topic twCards that you can use to follow posts about specifc topics even if you aren't connected to the wiki with a post on it. The twCard itself would have some description and other content related to explaining or introducing the topic and you would use it to do things like display all the posts you have about that topic and to make posts that will be part of that topic when someone else looks for them.
+
+Another plan I have is to add some simple privacy settings. One simple thing I can do is make it so that your wiki won't allow someone to fetch bundles from it unless they are from a wiki you agree to allow. This won't prevent the person from going to your wiki normally and getting content, but it will prevent the automated options. This will probably work using filters so you can specify which things on your wiki are allowed to be part of bundles fetched by other wikis instead of just letting everything or nothing be pulled.
+
+I am looking into ways to use encryption so that not everything on twederation has to be public. It wouldn't give complete privacy since anyone will be able to see that something is there when you make a post or anything else that is private, but it would be a start. I need to make sure that the key exchanging ideas I have will actually work for what I have in mind.
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20A%20bunch%20of%20small%20updates%20-%20inmysocks%20(2016071300h2600)%20-%20inmysocks%20-%20And%20another%20thing">Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing</a><br>
+It is only empty bundles that aren't saved. Bundles that only have duplicate tiddlers are still saved. I need to figure out how to handle that because there are times when saving bundles like that is desirable.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20A%20bunch%20of%20small%20updates%20-%20inmysocks%20(2016071300h2600)%20-%20inmysocks%20-%20Implementation%20is%20the%20problem">Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem</a><br>
+I am trying to come up with a good way to make the interface for selecting what to follow or not and what to display or not. I haven't come up with anything yet. I will make a post about this specifically soon.
+
+As for the encryption, I am hoping to make something like you suggest, when you have an encypted tiddler you can decrypt it but the decrypted version isn't persistent so you would have to copy and paste it to save the unencrypted version. I haven't even started to work on that yet, but any ideas on how the user experience should go are good.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20A%20bunch%20of%20small%20updates%20-%20inmysocks%20(2016071300h2600)%20-%20inmysocks%20-%20Some%20notes%20about%20what%20I%20need%20to%20fix">Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix</a><br>
+For some reason I can't open the comments for the post <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Progress!!%20-%20inmysocks%20(2016070918h3750)">Progress!!</a> on the wall. Possibly because it has <code>!!</code> in the title.
+
+I need to put an option that will show you posts arranged by newest comments as well as newest posts.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20A%20bunch%20of%20small%20updates%20-%20inmysocks%20(2016071300h2600)%20-%20MAS%20-%20Keeping%20track%20of%20blogs">Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs</a><br>
+At last! We can delete bundles! I was scrolling more than a page to get to the bottom! Thank you!
+
+Is there a way that all wall posts could be folded/hidden to start? It's getting hard to find one's place unless it's at the very top.
+
+If there is an older &quot;thread&quot;, is there a way to &quot;unfollow&quot; it, so we don't have to navigate past it?
+
+The problem with encryption (at least with the by-tiddler plugin if that's what you plan to use) is that it is incredibly easy to forget and save your TW after having opened an encrypted tiddler. So it ends up saved in plain text. Maybe when the encrypted text gets viewed, it could be opened in a tiddler that is marked as &quot;don't save&quot;.  If someone wants to make encrypted material publicly available, they will have to copy it into a separate message/blog – it won't happen by accident.
+ 
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20new%20plugin%20version%20-%20inmysocks">A new plugin version - inmysocks</a><br>
+I put up a new version of the plugin for fetching tiddlers <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FFetchTiddlers">$:/plugins/inmysocks/FetchTiddlers</a>, it has fixes for a few things. The most important one is probably that having <code>:</code> in the contents of a field no longer causes problems when unbundling a tiddler. This comes up a lot with the twCards since they have urls is fields. Also Mat uses &lt;:-) as his username so we want to make sure we can support the person who coined the term TWederation. 
+
+When you fetch a bundle there is also a tiddler created that has some meta-data about the bundle. For now the titles are the bundle names prefixed with <code>$:/TiddlerBundleData/', I may change this in the future. Probably by adding a time stamp or something. Also I should have an option to not save this data.
+</code>
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20second%20post%20-%20inmysocks">A second post - inmysocks</a><br>
+Because the first one works! I am excited!
+
+And I can pull the posts from here to the TWederation at <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20test%20post%20-%20inmysocks">A test post - inmysocks</a><br>
+And content
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#And%20of%20course%20there%20are%20more%20bugs%20-%20inmysocks%20(2016071210h0643)">And of course there are more bugs - inmysocks (2016071210h0643)</a><br>
+If you fetch bundles and give them custom names they won't be listed correctly under the 'Fetch Communication' tab because I changed how the names are created. I will fix that later today. Also the wall tab just displays all blog posts that you have collected in chronological order. I plan to make it so you can make collections of people to display, or make things that only display a certain topic or thread. 
+
+If anyone wants to make something like that that would be nice.
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20And%20of%20course%20there%20are%20more%20bugs%20-%20inmysocks%20(2016071210h0643)%20-%20inmysocks%20-%20Yes">Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes</a><br>
+See the comment in the post about how custom names aren't displayed correctly. So if you have a custom name in nothing will be listed under bundles until I get that fixed. The distinctions between messages, short messages and posts are completely arbirtary and only have to do with how they are displayed and labeled in the wiki. Short messages have some special handling but that was mostly to see if I could make it work. Until now I as focused on making the basic communication between wikis work so I didn't make anything fancy.
+
+The point of not having a client-server architecture is that you control who you communicate with and what you see. You can make your own sub-net by not getting the twCards from everyone. The purpose of how TWederation is structured is so you can do exactly that. And the purpose of having the central twederation twCard packaged as part of the bundle is to give users a starting point for discovering other people who they want to connect to if they don't have some network already know about. It is also here to act as a central listing that collects things from as many other wikis as possible so people don't have to constantly fetch from everyone else.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20And%20of%20course%20there%20are%20more%20bugs%20-%20inmysocks%20(2016071210h0643)%20-%20MAS%20-%20Usage%20of%20bundle%20name%20field.%20Meaning%20of%20different%20kinds%20of%20messages.">Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.</a><br>
+The &quot;bundle name&quot; field was pre-filled on mine. Apparently that blocked me from seeing new bundles. Is it a filter, or a tool for applying bundle names?
+
+At this point, it appears that there are messages, short messages, and blog posts. Not sure I understand the distinctions yet.
+
+I know it's not a client server architecture, but polling a hundred other tweds is going to get problematic. The easy work-around would be if there was one pseudo-server that did a nightly refresh. Then others that just want to check in from time to time could pull from that central &quot;server&quot; twed. Another work-around would be to allow individuals to join &quot;sub-nets&quot;. The sub-net would just be a group of tweds that you chose to poll from regularly. Your sub-net would overlap with others sub-nets, so the entire network would get populated.
+
+I have some other thoughts – maybe I'll do a blog.
+
+Looking good!
+Good luck!
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Hey!%20TWederation%20is%20live%20on%20TWederation%20User1%20Test%20Wiki!%20-%20%20()">Hey! TWederation is live on TWederation User1 Test Wiki! -  ()</a><br>
+Hello world!!
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Hey!%20TWederation%20is%20live%20on%20TWederation%20User1%20Test%20Wiki!%20-%20%20()%20-%20Birthe%20-%20Hello%20to%20you%20too">Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too</a><br>
+Thank you for your work on this! I am not sure how to test more now. I have not seen any error messages.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Hey!%20TWederation%20is%20live%20on%20TWederation%20User1%20Test%20Wiki!%20-%20%20()%20-%20MAS%20-%20">Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - </a><br>
+Why is the author &quot;-&quot;? If it's all, where are the other posts (including mine) ?
+
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Hi%20Tiddlywikians%20in%20Oxford%20-%20Birthe%20(2016071513h1342)">Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)</a><br>
+Hope you have a nice time - I am a little envious but thankful, that you livestream.
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Hi%20Tiddlywikians%20in%20Oxford%20-%20Birthe%20(2016071513h1342)%20-%20pmario%20-%20Hi%20Birthe">Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe</a><br>
+Greetings from the first TWEM here in Oxford. 
+We are having fun ... 
+-m
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#How%20to%20set%20up%20your%20own%20federated%20tiddlywiki%20-%20inmysocks">How to set up your own federated tiddlywiki - inmysocks</a><br>
+Everything that was in this post is now wrong, now just go to ooktech.com/jed/<a class="tc-tiddlylink tc-tiddlylink-missing" href="#ExampleWikis">ExampleWikis</a>/TWederation and follow the instructions there.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#I%20am%20trying%20to%20make%20webworkers%20useful%20and%20failing%20-%20inmysocks%20(2016071123h5056)">I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)</a><br>
+This isn't really organized in any coherent way, I am just ranting a bit.
+
+If I can get web workers to actually do something useful than we can load comments and things from other wikis without making a page unresponsive while the content is being fetched. Unfortunately because of the same origin policy that browsers use I can for some reason load a page in an iframe and then get the page content from the iframe, but I can't load a page using an xmlhttprequest and get its content that way. Web workers give you multi-threaded behaviour in a browser, this means that they can load things in the background. Except the only way they can load things seems to be via xmlhttprequests. So a web worker can be used to load content from the same server that a page is being served on and that is about it. I am trying to come up with a way to have loading a page via xmlhttprequest give some security flaw that isn't there when loading a page in an iframe since in both instances the page doing the loading has to manipulate the loaded content to do anything, and you can access whatever you want from the iframe.
+
+I may be able to use some of this anyway by first trying to get a worker to load a page and if the xmlhttprequest fails fall back to using an iframe. It would hurt the worst case but if there are wikis that are on servers with the proper CORS stuff than it could greatly improve the performance in the average case.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#I%20have%20done%20a%20lot%20of%20bookkeeping%20stuff%20-%20inmysocks%20(2016071022h4428)">I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)</a><br>
+So now the back end of things works smoother for me. This includes the way that data is fetched from google and how new twcards are added to the site here. Before I just made a twCard from the data submitted to google, but it was incomplete because it only had the url, name and author for the wiki. Now I have it set to use the information sent to google to fetch the twCard directly from the wiki itself. This way we don't need to send any more data to google and we can get the full card. It also means that you don't get listed unless you have a wiki that can respond and send a card.
+
+So, if you don't have a card listed on twederation.tiddlyspot.com it is because either your card wasn't listed correctly on google or your wiki wasn't responding or you have added it after around 10pm Paris time on July 10th and I haven't added it yet. If your card isn't listed and you have a wiki with the plugins than try going through the setup wizard again, it will make sure that your data is sent correctly and that your wiki is configured correctly. I think that some of the wikis don't have the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2FSitetwCard">$:/SitetwCard</a> tiddler set correctly, which will keep you from getting listed on twederation.tiddlyspot.com.
+
+There have also been some important updates to how bundles are handled, so make sure you update your plugins. Both the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-edition">$:/plugins/inmysocks/TWederation-edition</a> and <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-core">$:/plugins/inmysocks/TWederation-core</a> plugins need to be up to date.
+
+Since I have changed how twCards are handled on this site you may want to delete all the cards (except for your twCard) on your wiki and pull them from here again. Do this by selecting 'TWederation' from select wiki and 'All Wiki twCards' from what to fetch in the <code>Fetch Communication</code> tab.
+
+After you do this your wiki will only try to contact wikis that can actually respond. This should help.
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20I%20have%20done%20a%20lot%20of%20bookkeeping%20stuff%20-%20inmysocks%20(2016071022h4428)%20-%20inmysocks%20-%20That%20was%20the%20plan">Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan</a><br>
+It isn't supposed to be saving any bundles that have a bundle_size of zero. I am not sure why it is. I will look into it now and try to fix it.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20I%20have%20done%20a%20lot%20of%20bookkeeping%20stuff%20-%20inmysocks%20(2016071022h4428)%20-%20MAS%20-%20I%20like%20that%20we're%20now%20seeing%20a%20count%20of%20new%20tiddlers%20...">Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...</a><br>
+Hopefully that means we can soon not have to see bundles with zero content.
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#I%20love%20this%20twederation%20stuff%20-%20Birthe%20(2016062713h4423)">I love this twederation stuff - Birthe (2016062713h4423)</a><br>
+Where are all the testers though? I really think that more testers are needed and maybe tests are better done in smaller groups.
+As we get comfortable using twederation I am sure more ideas will arise, can we do this and would that also be possible.
+
+Twederation is here right now on a computer as near you as you want it to be. I love it because of exactly that and the fact that even an old woman...(can your old mother use this?), an end user would be able to use it.
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20I%20love%20this%20twederation%20stuff%20-%20Birthe%20(2016062713h4423)%20-%20Birthe%20-%20Fetching%20feels%20smoother%20for%20sure">Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure</a><br>
+No problem getting your comment either. Gratulations Jed, the first steps must be the most difficult ones.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20I%20love%20this%20twederation%20stuff%20-%20Birthe%20(2016062713h4423)%20-%20inmysocks%20-%20I%20am%20not%20sure%20if%20they%20are%20the%20most%20difficult">Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult</a><br>
+But they are the most frustrating. From the outside it barely looks like I have done anything despite it being a very large step forward in terms of usability and taking me a long time to figure out. Now I can reliably use this to talk to people which should help a lot with my motivation.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20I%20love%20this%20twederation%20stuff%20-%20Birthe%20(2016062713h4423)%20-%20inmysocks%20-%20I%20would%20love%20to%20have%20more%20testers">Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers</a><br>
+I think that we are almost to the point where we could convince more people to join. For now things are not quite easy enough to set up to get a lot of testers. But we are very close and I am excited.
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Jeremys%20first%20test%20post%20-%20JeremyRuston%20(2016071512h3641)">Jeremys first test post - JeremyRuston (2016071512h3641)</a><br>
+This is Jeremy testing that I can save a blog post for TWederation.
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Jeremys%20first%20test%20post%20-%20JeremyRuston%20(2016071512h3641)%20-%20inmysocks%20-%20It%20works!">Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!</a><br>
+Hello! Your test worked! :D
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Comment%20-%20Jeremys%20first%20test%20post%20-%20JeremyRuston%20(2016071512h3641)%20-%20inmysocks%20-%20It%20works!%20-%20inmysocks%20-%20Some%20Test%20here">Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here</a><br>
+This is a test of threaded comments
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Jeremys%20first%20test%20post%20-%20JeremyRuston%20(2016071512h3641)%20-%20pmario%20-%20">Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - </a><br>
+Comment without a title, just to test it. I'm having fun!
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Lets%20try%20another%20blog%20post%20here%20-%20imysocksTest1%20(21h08-12%2F6%2F2016)">Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)</a><br>
+There have been some bugs. Too many things need to be tested I think.
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Lets%20try%20another%20blog%20post%20here%20-%20imysocksTest1%20(21h08-12%2F6%2F2016)%20-%20%20-%20A%20second%20comment%20from%20here">Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here</a><br>
+Because I needed to test it.
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Lets%20try%20another%20blog%20post%20here%20-%20imysocksTest1%20(21h08-12%2F6%2F2016)%20-%20%20-%20And%20now%20a%20comment%20from%20the%20other%20site">Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site</a><br>
+Hello! I am commenting from here now!
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Lets%20try%20another%20blog%20post%20here%20-%20imysocksTest1%20(21h08-12%2F6%2F2016)%20-%20MAS%20-%20When%20you%20change%20author%2C%20the%20same%20text%20stays">Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays</a><br>
+Changing author, the text from the prior message stays on screen.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Lets%20try%20another%20blog%20post%20here%20-%20imysocksTest1%20(21h08-12%2F6%2F2016)%20-%20some%20name%20-%20A%20comment!">Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!</a><br>
+This is me commenting on my own post. The template is about to change but I want to see if there are any other errors I need to fix right now.
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Messages%20and%20Short%20Messages%20-%20Birthe%20(2016071211h4436)">Messages and Short Messages - Birthe (2016071211h4436)</a><br>
+I have a feeling they are not working as they are supposed to. When selecting Fetch Messages nothing happens, Type to Fetch Short Messages nothing either. Using the Selection Menus that is. But using filter [tag[@Birthe]] I got a message. Or using filter [prefix[Message]] I guess we get all Messages.
+
+I have had no success fetching any Short Messages yet.
+I would like to know some more of Short Messages and the idea behind.
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Messages%20and%20Short%20Messages%20-%20Birthe%20(2016071211h4436)%20-%20Birthe%20-%20Waw%20I%20got%20a%20Short%20Message">Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message</a><br>
+Using filter [prefix[<a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2FMessages">$:/Messages</a>]] that is.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Messages%20and%20Short%20Messages%20-%20Birthe%20(2016071211h4436)%20-%20inmysocks%20-%20I%20need%20to%20work%20on%20that">Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that</a><br>
+I haven't touched how anything on the user side of things works in a while, so I am not surprised that with the new changes it is broken. The 'What to fetch' select menu just sets what filter is used and I should probably put a way for users to easily change what is displayed by the menu and add their own custom options. What exists now is simply what popped into my head as I was making the original interface.
+
+If you have some time to invest in this think about what sort of things you would like to be able to do in terms of communication style and what types of things you would like to be able to fetch from other wikis, or perhaps prepackage so other people can more easily get them from you. There are still a few more things I want to try out on the back-end before I start focusing on the UI and application side so any help with ideas and implementation will be very good to have.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Messages%20and%20Short%20Messages%20-%20Birthe%20(2016071211h4436)%20-%20MAS%20-%20I've%20just%20posted%20a%20short%20message.">Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.</a><br>
+I just &quot;sent&quot; you a short message. I don't see any short messages to you, though I see the one(s) you posted.
+
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Notes%20for%20the%20hangout%20later%20today%20-%20inmysocks%20(13h53-28%2F1%2F2016)">Notes for the hangout later today - inmysocks (13h53-28/1/2016)</a><br>
+These are some public notes for my introduction to the TWederation work  and I have been doing.
+
+I am going to make <a class="tc-tiddlylink-external" href="http://twederation.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://twederation.tiddlyspot.com</a> and use that as the center for news and work things. That way people can pull the newest updates from there.
+
+I am going to make <a class="tc-tiddlylink-external" href="http://twederation-dev.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://twederation-dev.tiddlyspot.com</a> and use that as the center for news and work things. That way people can pull the newest updates from there.
+
+<u>General:</u>
+
+*There is no server. This means that many ideas based on server-client models of communication don't apply.
+**Communication isn't done by sending information to some destination. It is done by pulling information from some origin. This takes some more up-front configuration but it will work once everything is set.
+
+<u>How to use it:</u>
+
+*By fetching bundles!
+*The general usage model:
+*#Write a post or message and label it as yours and address it appropriately
+*#Use your connections to retrieve anything addressed to you from people and wikis you follow.
+
+*Make your twCards (identity, wiki, etc.)
+*Use your cards to label your posts
+*Use other cards to search for and retrieve posts, messages etc. for other people
+*This is going to be automated later, I am working on it.
+
+<u>Code Stuff:</u>
+
+*All communication is done using postMessage
+*A hidden iframe is created and the target wiki 
+**There are two new tiddler messages
+***<code>tm-close-iframe</code> - this message is given the url of an open iframe and it closes the iframe and removes the entry from the $tw.browserMessaging.iframeInfoMap object.
+***<code>tm-request-bundle</code> - this loads an iframe with the given url and uses postMessage to send the bundle request
+**There are two messages added to the window event listener, <code>BUNDLE_REQUEST</code> and <code>DELIVER_BUNDLE</code>
+***When a bundle request is received part of the request contains the name of the packing function to use. These functions are stored in the $tw.wiki.bundleFunction object. After being bundled together the wiki uses postMessage to send the bundle to the requesting wiki. Part of that message contains the name of the unpacking function. The unpacking functions are held in the $tw.wiki.bundleHandler object.
+***You can add packing and handling functions without modifying the plugin by adding a javascript tiddler that adds new functions. You look at <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FFetchTiddlers%2FbundleOptions.js">$:/plugins/inmysocks/FetchTiddlers/bundleOptions.js</a> for examples.
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Post%20title%20example%20-%20inmysocks%20(22h49-29%2F1%2F2016)">Post title example - inmysocks (22h49-29/1/2016)</a><br>
+Because I need to remember what they are
+
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Progress!!%20-%20inmysocks%20(2016070918h3750)">Progress!! - inmysocks (2016070918h3750)</a><br>
+There has been some progress on making this all work correctly. If you have the newer versions of the plugins (at least 0.0.37 for twederation-core and at least 0.0.41 for twederation-edition) than fetching comments and things from multiple wikis should work the way it was supposed to before. There are still a lot of usability problems. I think that once I get a good naming convention for the bundles and do some simple things like make it so that empty bundles aren't saved it will help. I had empty bundles before so that it didn't just look like nothing happened if there was nothing new to fetch, but I think that having 5 empty bundles and 1 with content is worse than just having 1 (or zeros) bundle(s) returned.
+
+I should also find some way to combine bundles from multiple sources when you fetch comments, so you just get a single comments bundle that has all the content from all the wikis instead of having one bundle from each wiki. There may be problems with this if you receive a response from one wiki and you are looking at the tiddler when another response comes in, but I don't think it will be a huge problem. We shall see. I need to implement it before we can even worry about it I guess.
+
+I think we are at a point where suggestions about things like that can be useful. If you want to change anything on the wikitext side of things feel free to just try it out and show me, I am going to be working mainly on the javascript side until that works smoothly so don't expect any wonderful ui improvements from me.
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Progress!!%20-%20inmysocks%20(2016070918h3750)%20-%20Birthe%20-%20Empty%20bundles%20not%20saved%20would%20be%20nice">Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice</a><br>
+Until then we must be good &quot;housekeepers&quot; and delete them, when we go through the bundles we just received. I like that it is so easy to see what we already have unpacked and what is new in a bundle. Some disciplin cleaning out will be necessary not to completely fill up our TW.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Progress!!%20-%20inmysocks%20(2016070918h3750)%20-%20Birthe%20-%20It%20really%20helps%20not%20to%20miss%20anything">Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything</a><br>
+Lovely idea to show the numbers of tiddlers not unpacked yet. That works well. While wondering about to save/not to save duplicate titles, I think it would help not to have to open the bundle in edit mode to delete it. A delete button in view mode would at least make it faster.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Progress!!%20-%20inmysocks%20(2016070918h3750)%20-%20inmysocks%20-%20It%20works!">Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!</a><br>
+I wasn't having a particularly good day, but being able to properly get a comment from you made everything better! :D
+
+I am adding a bundle_length field to bundles that will list the number of tiddlers in the bundle, I am going to combine this with some other things so that when bundles are listed they will have the number of tiddlers they contain listed and also the number of tiddlers that you haven't unpacked yet. Then I may make a status popup on the side of the wiki that shows the number of unopened bundles you have or something like that.
+
+I am going to make the default behavior not saving empty bundles and possibly not saving bundles that just contain duplicate tiddlers. The only problem with the not saving duplicate tiddlers part is that it would be based only on the title. I don't think it will be a big deal but I need to think about that a bit since if you are working collaboratively with someone you may want to overwrite a local tiddler with one you receive from another wiki.
+
+I also realized that I should be able to use web workers, just not in the way that I was thinking about. This wouldn't necessarily make fetching any faster but it will hopefully keep your wiki from being unresponsive while the fetching is happening.
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Root%20Post">Root Post</a><br>
+And some content for the root post
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#And%20a%20sibling">And a sibling</a><br>
+Because we want them too
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#And%20a%20siblings%20child">And a siblings child</a><br>
+Blah
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Child%20Post">Child Post</a><br>
+And some other content for a child post
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Grandchild%20Post">Grandchild Post</a><br>
+Because grandchildren are like children, but grand
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Some%20demo%20title%20-%20inmysocks%20(19h35-28%2F1%2F2016)">Some demo title - inmysocks (19h35-28/1/2016)</a><br>
+Some demo text
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#SPAM%2C%20and%20%20Overhead%20messages%20-%20MAS%20(2016071207h5129)">SPAM, and  Overhead messages - MAS (2016071207h5129)</a><br>
+It would only take one compromised twed member to fill the entire network with SPAM – it would be a link spammers dream come true. The spam issue is important because upstream IP providers will take it very seriously, and might even suspend accounts.
+
+The main fix I can see for this, is some way to &quot;send&quot; (yes, it's not client-server) a network message that would cause twed members to collectively delete (or make non-visible) TW cards and messages from offending twed sites. Call it de-bundling or un-bundling. Each twed could configure how it wants to deal with these warnings (since the warning system itself could be mis-used). In particular, a twed might be configured to trust and act on overhead messages that come from certain trusted twed members. This would allow the system to quickly purge nefarious messages as soon as they are perceived.
+
+This suggests that a twed member should be able to mark twed cards, to indicate which tweds he/she is willing to accept overhead deletion (and probably others) messages from.
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20SPAM%2C%20and%20%20Overhead%20messages%20-%20MAS%20(2016071207h5129)%20-%20inmysocks%20-%20There%20is%20no%20way%20to%20force%20someone%20to%20get%20a%20message%20from%20you">Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you</a><br>
+The 'not a client-server architecture' part means that if one wiki gets compromised there is no way for them to force anyone else in the network to pull from them. If you don't want to get updates from a wiki you just remove their twCard from your wiki. In the future when I get to working more on the front-end side of things I will make tools for managing which cards you have and how you pull new things. Like preset options for only pulling new posts that mention you, or comments on posts that you have commented on and things like that. The distributed architecture means that you can set up your own network that is completely separate from me and the only way that there will be communication between the two networks is if both sides actively agree upon it.
+
+Adding, updating and removing twCards is one of the main purposes of having a central site like twederation.tiddlyspot.com, but the only thing that makes that site special is how people treat it. There is absolutely nothing preventing anyone else from starting up their own site that can fulfill the exact same purpose. In the future I am hoping that during the set-up process there will be a list of publically usable listing sites for different topics or locations or whatever anyone would want to create a group for, and you can request to be added to the list for a group, or just pull updates from a group and not be connected to any network.
+
+All of that comes from the social structure that will hopefully be set up around twederation, as it is that can happen with what has already been made.
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20SPAM%2C%20and%20%20Overhead%20messages%20-%20MAS%20(2016071207h5129)%20-%20MAS%20-%20SPAM%20will%20find%20a%20way">Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way</a><br>
+Although there's no way to &quot;force&quot; someone to pull from you, if there are 100 tweds, most people are not going to want to inspect every bit of the content that is being relayed. That is why someone might want a system to quickly purge bad content once it has been identified. 
+
+
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Test%20af%20post%20-%20%20(19h47-14%2F6%2F2016)">Test af post -  (19h47-14/6/2016)</a><br>
+This is a post for testing twederation
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Test%20Post%20-%20inmysocks%20(2016071513h1331)">Test Post - inmysocks (2016071513h1331)</a><br>
+YAY! I am posting here!! Yay!!
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#This%20is%20a%20Blog%20Post%20From%20Mark's%20Twederation2%20-%20MAS%20(2016061306h1629)">This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)</a><br>
+Cat videos are the scourge of  humanity.
+
+
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20This%20is%20a%20Blog%20Post%20From%20Mark's%20Twederation2%20-%20MAS%20(2016061306h1629)%20-%20Birthe%20-%20Scourge%3F%20Do%20not%20know%20that%20word%20sorry">Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry</a><br>
+Finally knowing you had a blogpost and fetching only from your site, I got your blogpost. First I tried fetching from all. I was offered all Jeds stuff once again, but nothing from you. So dedication might be the way to go for now.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20This%20is%20a%20Blog%20Post%20From%20Mark's%20Twederation2%20-%20MAS%20(2016061306h1629)%20-%20MAS%20-%20Definition%20of%20Scourge">Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge</a><br>
+a person or thing that causes great trouble or suffering.
+
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Titles%20titles%20everywhere%20and%20not%20a%20drop%20to%20drink...%20-%20inmysocks">Titles titles everywhere and not a drop to drink... - inmysocks</a><br>
+I need to do something about the very probable title conflicts that will arise from different users posting and from message titles. There will probably be many messages with the title 'Hi' or something similar. So we can't just have the message title be the tiddler title. I think that for short messages we could have some other storage mechanism, like a data tiddler that holds all of the messages and some utility that lets you sort and view the messages. 
+
+This may mean we should have multiple types of messages, short messages that would be stored like that and then longer email-like messages that would get their own tiddlers. We still have the naming problem. I think that appending a username and a time stamp at the end of all messages would prevent almost all conflicts but maybe someone can come up with a better idea.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TWederation%20GitHub%20repo%20-%20inmysocks%20(2016071515h0446)">TWederation GitHub repo - inmysocks (2016071515h0446)</a><br>
+This is the link to the TWederation github repo: <a class="tc-tiddlylink-external" href="https://github.com/inmysocks/TW5-TWederation" rel="noopener noreferrer" target="_blank">https://github.com/inmysocks/TW5-TWederation</a>
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)">Upgrading plugins and not fetching - Birthe (2016071309h5101)</a><br>
+I saw a post at Twederation and updated  to latest plugins. I did go go to control panel and marked follow to all the twCards I have but my own. 
+Since then I seem to be trying to fetch from everyone EXCEPT twederation. And I would expect to receive at least the blog post telling us to update. 
+Is it supposed to be so or am I fetching from the other twcards because they are no upgraded yet?
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)%20-%20Birthe%20-%20Everything%20is%20fine%20now">Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now</a><br>
+It works well now. I think you nailed it before others had the time to update plugins. Now you know you are truly FOLLOWED around the clock ;-).
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)%20-%20inmysocks%20-%20Oh%20no">Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no</a><br>
+Well, I guess as long as being followed is helpful I can deal with it. :-D
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)%20-%20inmysocks%20-%20Sorry%20about%20that">Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that</a><br>
+It turns out there was a typo in my code that kept an updated wiki from properly sending any bundles instead of just not sending empty bundles. Once you update the plugins again it should work. 
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)%20-%20Xavier%20%26%20Matt%20-%20Sorry%20to%20jump%20in%2C%20we%20need%20to%20desperately%20test%20%20comments">Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier &amp; Matt - Sorry to jump in, we need to desperately test  comments</a><br>
+Let's put some content under this very long title.
+
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Upgrading%20plugins%20and%20not%20fetching%20-%20Birthe%20(2016071309h5101)%20-%20Xavier%20%26%20Matt%20-%20Sorry%20to%20jump%20in%2C%20we%20need%20to%20desperately%20test%20%20comments%20(with%20updated%20content%20!)">Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier &amp; Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)</a><br>
+Let's put some content under this very long title. Jed is near me. Very concentrated on  adding new feature.
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Very%20excited%20about%20twederation%20going%20fast%20forward.%20-%20Birthe%20(2016061304h1812)">Very excited about twederation going fast forward. - Birthe (2016061304h1812)</a><br>
+The new upstart tiddler is very nice and following the steps given, it was filled correct I just had to press forward. What happens now I am not sure.
+I fetched all wiki TWcards from twederation and saw two marked undefined.
+I tried to comment to one of the blog posts I was able to fetch, wrote  message to someone on the list, and now this post.
+I can find no more to do for now, but at least if someone find any of this they can find something to fetch.
+I have had none of the error messages Mark S. wrote about.
+FUN FUN FUN.
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Very%20excited%20about%20twederation%20going%20fast%20forward.%20-%20Birthe%20(2016061304h1812)%20-%20Birthe%20-%20Waw%20I%20got%20your%20comment%20to%20my%20blog%20post.">Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.</a><br>
+I got totally excited to see it arriving. No error about trying to fetch things from my own site.
+You must have been doing some wizardry.
+
+</li>
+<ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Very%20excited%20about%20twederation%20going%20fast%20forward.%20-%20Birthe%20(2016061304h1812)%20-%20inmysocks%20-%20YAY!!">Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!</a><br>
+Hopefully you can get this comment correctly. There are currently some problems in how comments are fetched because it sends off the requests all at once and if one reply is received when another is being processed it can be missed. I should have a fix for it soon but until then fetching is a bit unreliable.
+
+It may also give you an error saying that it can not fetch things from your own site. I need to fix that too.
+
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#What%20about%20a%20second%20root">What about a second root</a><br>
+Does this work?
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Second%20root%20post%20child">Second root post child</a><br>
+Yay!
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Why%20are%20there%20so%20many%20songs%20about%20rainbows%3F%20-%20MAS%20(2016061407h0712)">Why are there so many songs about rainbows? - MAS (2016061407h0712)</a><br>
+Actually, there aren't enough. I could only think of two, and one of them was the song complaining that there weren't enough songs.
+
+
+</li>
+<ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Comment%20-%20Why%20are%20there%20so%20many%20songs%20about%20rainbows%3F%20-%20MAS%20(2016061407h0712)%20-%20Birthe%20-%20No%20%20not%20nearly%20enough">Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough</a><br>
+I am still hoping to find the one with a pot of gold under it.
+
+</li>
+<ul>
+
+</ul>
+
+</ul>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Message%20-%20message%20from%20TWeddle%20-%20%20(18h58-15%2F7%2F2016)">Message - message from TWeddle -  (18h58-15/7/2016)</a><br>
 So does this have the correct field format stuff thingy?
 </li>
@@ -2443,6 +3235,2221 @@ Timings
 <div class="tc-tiddler-body">
 
 <h1 class="">Friday, 15th July 2016</h1><ul><li>Start 10h00</li><li>End 19h00</li></ul><h1 class="">Saturday, 16th July 2016</h1><ul><li>Start 10h00</li><li>End 19h00</li></ul>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=DiscussionPost>
+
+DiscussionPost
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Greeting and Salutations to you all from the depths of Dragondom.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=A bunch of small updates - inmysocks (2016071300h2600)>
+
+A bunch of small updates - inmysocks (2016071300h2600)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>There are new versios of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-core">twederation-core</a> and <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-edition">twederation-edition</a> plugins so get the newest version from <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>.</p><p><strong>After you have updated the plugin make sure you go to the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="#%24%3A%2FControlPanel">$:/ControlPanel</a> and under the <code>twCards</code> tab update which wikis you want to follow, otherwise some features won't work. You shouldn't follow yourself or you can get some errors. Everything still works if you follow yourself, but you will get some errors popping up. I will fix this eventually.</strong></p><ul><li>Empty bundles should no longer be saved. This means that if you try to fetch something and no non-empty bundles are fetched you may not see any indication that anything happened. I will think about how to show that the request was successful but there isn't any new content.</li><li>There is a twCard manager in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="#%24%3A%2FControlPanel">$:/ControlPanel</a>, it is currently very simple</li><li>You can now set which wikis you follow in the twCard manager, this means a few things:<ul><li>Only posts from wikis you follow will show up in the wall tab</li><li>You can select wikis you follow as a group when fetching things</li></ul></li><li>There is a delete button next to the tiddler bundle list on the fetch communication tab, clicking on it will delete that bundle without you having to open the tiddler</li><li>The wall now shows how many comments a post has next to the 'show comments' button</li><li>The wall now has a button to fetch new posts and comments to all posts on wikis you follow. I need to make it so that they are only comments to posts that are either by people you follow or by you, and only posts by the wiki author, but that will come later</li><li>You can now select 'Comments on my posts' as something to fetch from other wikis</li></ul><p><strong>When you fetch the wall posts it uses the bundle_name field to figure out which bundles to display, if a wiki hasn't updated their plugin yet than it won't have the bundle_name filled in and won't be displayed so you will have to find the bundle under the table of contents or some other way.</strong></p><p>I am hoping to make the list of bundles also have a button that will unpack everything in the bundle without you having to open the bundle as well. I am hesitant to do this though because that makes it a lot easier to sneak malicious things into bundles. I will probably make it so that if you unpack a bundle like that the tiddlers are rendered as static html and saved that way. This would mean that you wouldn't be able to have any widgets or active content in a tiddler unpacked that way, just normal text markup. I will probably make it so that the 'Fetch New Wall Posts and Comments' button automatically unpacks received bundles like this.</p><p>I should also make an option to check for updated twCards. This will let people update their cards and have the updated version circulate easier. I am considering having every bundle a wiki sends contain the twCard for that wiki as a special part of the bundle. Then if the card has been updated you can unpack the card separately from the other content.
+I am hoping to expand what twCards are to be something more like a social media profile. This is more important if we get more people and for the future when I am going to create things like topic twCards that you can use to follow posts about specifc topics even if you aren't connected to the wiki with a post on it. The twCard itself would have some description and other content related to explaining or introducing the topic and you would use it to do things like display all the posts you have about that topic and to make posts that will be part of that topic when someone else looks for them.</p><p>Another plan I have is to add some simple privacy settings. One simple thing I can do is make it so that your wiki won't allow someone to fetch bundles from it unless they are from a wiki you agree to allow. This won't prevent the person from going to your wiki normally and getting content, but it will prevent the automated options. This will probably work using filters so you can specify which things on your wiki are allowed to be part of bundles fetched by other wikis instead of just letting everything or nothing be pulled.</p><p>I am looking into ways to use encryption so that not everything on twederation has to be public. It wouldn't give complete privacy since anyone will be able to see that something is there when you make a post or anything else that is private, but it would be a start. I need to make sure that the key exchanging ideas I have will actually work for what I have in mind.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=A new plugin version - inmysocks>
+
+A new plugin version - inmysocks
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I put up a new version of the plugin for fetching tiddlers <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FFetchTiddlers">$:/plugins/inmysocks/FetchTiddlers</a>, it has fixes for a few things. The most important one is probably that having <code>:</code> in the contents of a field no longer causes problems when unbundling a tiddler. This comes up a lot with the twCards since they have urls is fields. Also Mat uses &lt;:-) as his username so we want to make sure we can support the person who coined the term TWederation. </p><p>When you fetch a bundle there is also a tiddler created that has some meta-data about the bundle. For now the titles are the bundle names prefixed with <code>$:/TiddlerBundleData/', I may change this in the future. Probably by adding a time stamp or something. Also I should have an option to not save this data.
+</code></p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=A second post - inmysocks>
+
+A second post - inmysocks
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Because the first one works! I am excited!</p><p>And I can pull the posts from here to the TWederation at <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=A test post - inmysocks>
+
+A test post - inmysocks
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>And content
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=And a sibling>
+
+And a sibling
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Because we want them too</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=And a siblings child>
+
+And a siblings child
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Blah</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=And of course there are more bugs - inmysocks (2016071210h0643)>
+
+And of course there are more bugs - inmysocks (2016071210h0643)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>If you fetch bundles and give them custom names they won't be listed correctly under the 'Fetch Communication' tab because I changed how the names are created. I will fix that later today. Also the wall tab just displays all blog posts that you have collected in chronological order. I plan to make it so you can make collections of people to display, or make things that only display a certain topic or thread. </p><p>If anyone wants to make something like that that would be nice.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Child Post>
+
+Child Post
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>And some other content for a child post</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing>
+
+Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>It is only empty bundles that aren't saved. Bundles that only have duplicate tiddlers are still saved. I need to figure out how to handle that because there are times when saving bundles like that is desirable.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem>
+
+Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I am trying to come up with a good way to make the interface for selecting what to follow or not and what to display or not. I haven't come up with anything yet. I will make a post about this specifically soon.</p><p>As for the encryption, I am hoping to make something like you suggest, when you have an encypted tiddler you can decrypt it but the decrypted version isn't persistent so you would have to copy and paste it to save the unencrypted version. I haven't even started to work on that yet, but any ideas on how the user experience should go are good.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix>
+
+Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>For some reason I can't open the comments for the post <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Progress!!%20-%20inmysocks%20(2016070918h3750)">Progress!!</a> on the wall. Possibly because it has <code>!!</code> in the title.</p><p>I need to put an option that will show you posts arranged by newest comments as well as newest posts.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs>
+
+Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>At last! We can delete bundles! I was scrolling more than a page to get to the bottom! Thank you!</p><p>Is there a way that all wall posts could be folded/hidden to start? It's getting hard to find one's place unless it's at the very top.</p><p>If there is an older &quot;thread&quot;, is there a way to &quot;unfollow&quot; it, so we don't have to navigate past it?</p><p>The problem with encryption (at least with the by-tiddler plugin if that's what you plan to use) is that it is incredibly easy to forget and save your TW after having opened an encrypted tiddler. So it ends up saved in plain text. Maybe when the encrypted text gets viewed, it could be opened in a tiddler that is marked as &quot;don't save&quot;.  If someone wants to make encrypted material publicly available, they will have to copy it into a separate message/blog – it won't happen by accident.
+ 
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes>
+
+Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>See the comment in the post about how custom names aren't displayed correctly. So if you have a custom name in nothing will be listed under bundles until I get that fixed. The distinctions between messages, short messages and posts are completely arbirtary and only have to do with how they are displayed and labeled in the wiki. Short messages have some special handling but that was mostly to see if I could make it work. Until now I as focused on making the basic communication between wikis work so I didn't make anything fancy.</p><p>The point of not having a client-server architecture is that you control who you communicate with and what you see. You can make your own sub-net by not getting the twCards from everyone. The purpose of how TWederation is structured is so you can do exactly that. And the purpose of having the central twederation twCard packaged as part of the bundle is to give users a starting point for discovering other people who they want to connect to if they don't have some network already know about. It is also here to act as a central listing that collects things from as many other wikis as possible so people don't have to constantly fetch from everyone else.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.>
+
+Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>The &quot;bundle name&quot; field was pre-filled on mine. Apparently that blocked me from seeing new bundles. Is it a filter, or a tool for applying bundle names?</p><p>At this point, it appears that there are messages, short messages, and blog posts. Not sure I understand the distinctions yet.</p><p>I know it's not a client server architecture, but polling a hundred other tweds is going to get problematic. The easy work-around would be if there was one pseudo-server that did a nightly refresh. Then others that just want to check in from time to time could pull from that central &quot;server&quot; twed. Another work-around would be to allow individuals to join &quot;sub-nets&quot;. The sub-net would just be a group of tweds that you chose to poll from regularly. Your sub-net would overlap with others sub-nets, so the entire network would get populated.</p><p>I have some other thoughts – maybe I'll do a blog.</p><p>Looking good!
+Good luck!
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here>
+
+Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is a test of threaded comments</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too>
+
+Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Thank you for your work on this! I am not sure how to test more now. I have not seen any error messages.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - >
+
+Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - 
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Why is the author &quot;-&quot;? If it's all, where are the other posts (including mine) ?</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe>
+
+Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Greetings from the first TWEM here in Oxford. 
+We are having fun ... 
+-m
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan>
+
+Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>It isn't supposed to be saving any bundles that have a bundle_size of zero. I am not sure why it is. I will look into it now and try to fix it.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...>
+
+Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hopefully that means we can soon not have to see bundles with zero content.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure>
+
+Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>No problem getting your comment either. Gratulations Jed, the first steps must be the most difficult ones.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult>
+
+Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>But they are the most frustrating. From the outside it barely looks like I have done anything despite it being a very large step forward in terms of usability and taking me a long time to figure out. Now I can reliably use this to talk to people which should help a lot with my motivation.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers>
+
+Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I think that we are almost to the point where we could convince more people to join. For now things are not quite easy enough to set up to get a lot of testers. But we are very close and I am excited.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!>
+
+Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hello! Your test worked! :D</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - >
+
+Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - 
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Comment without a title, just to test it. I'm having fun!
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here>
+
+Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Because I needed to test it.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site>
+
+Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hello! I am commenting from here now!</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays>
+
+Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Changing author, the text from the prior message stays on screen.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!>
+
+Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is me commenting on my own post. The template is about to change but I want to see if there are any other errors I need to fix right now.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message>
+
+Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Using filter [prefix[<a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2FMessages">$:/Messages</a>]] that is.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that>
+
+Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I haven't touched how anything on the user side of things works in a while, so I am not surprised that with the new changes it is broken. The 'What to fetch' select menu just sets what filter is used and I should probably put a way for users to easily change what is displayed by the menu and add their own custom options. What exists now is simply what popped into my head as I was making the original interface.</p><p>If you have some time to invest in this think about what sort of things you would like to be able to do in terms of communication style and what types of things you would like to be able to fetch from other wikis, or perhaps prepackage so other people can more easily get them from you. There are still a few more things I want to try out on the back-end before I start focusing on the UI and application side so any help with ideas and implementation will be very good to have.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.>
+
+Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I just &quot;sent&quot; you a short message. I don't see any short messages to you, though I see the one(s) you posted.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice>
+
+Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Until then we must be good &quot;housekeepers&quot; and delete them, when we go through the bundles we just received. I like that it is so easy to see what we already have unpacked and what is new in a bundle. Some disciplin cleaning out will be necessary not to completely fill up our TW.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything>
+
+Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Lovely idea to show the numbers of tiddlers not unpacked yet. That works well. While wondering about to save/not to save duplicate titles, I think it would help not to have to open the bundle in edit mode to delete it. A delete button in view mode would at least make it faster.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!>
+
+Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I wasn't having a particularly good day, but being able to properly get a comment from you made everything better! :D</p><p>I am adding a bundle_length field to bundles that will list the number of tiddlers in the bundle, I am going to combine this with some other things so that when bundles are listed they will have the number of tiddlers they contain listed and also the number of tiddlers that you haven't unpacked yet. Then I may make a status popup on the side of the wiki that shows the number of unopened bundles you have or something like that.</p><p>I am going to make the default behavior not saving empty bundles and possibly not saving bundles that just contain duplicate tiddlers. The only problem with the not saving duplicate tiddlers part is that it would be based only on the title. I don't think it will be a big deal but I need to think about that a bit since if you are working collaboratively with someone you may want to overwrite a local tiddler with one you receive from another wiki.</p><p>I also realized that I should be able to use web workers, just not in the way that I was thinking about. This wouldn't necessarily make fetching any faster but it will hopefully keep your wiki from being unresponsive while the fetching is happening.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you>
+
+Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>The 'not a client-server architecture' part means that if one wiki gets compromised there is no way for them to force anyone else in the network to pull from them. If you don't want to get updates from a wiki you just remove their twCard from your wiki. In the future when I get to working more on the front-end side of things I will make tools for managing which cards you have and how you pull new things. Like preset options for only pulling new posts that mention you, or comments on posts that you have commented on and things like that. The distributed architecture means that you can set up your own network that is completely separate from me and the only way that there will be communication between the two networks is if both sides actively agree upon it.</p><p>Adding, updating and removing twCards is one of the main purposes of having a central site like twederation.tiddlyspot.com, but the only thing that makes that site special is how people treat it. There is absolutely nothing preventing anyone else from starting up their own site that can fulfill the exact same purpose. In the future I am hoping that during the set-up process there will be a list of publically usable listing sites for different topics or locations or whatever anyone would want to create a group for, and you can request to be added to the list for a group, or just pull updates from a group and not be connected to any network.</p><p>All of that comes from the social structure that will hopefully be set up around twederation, as it is that can happen with what has already been made.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way>
+
+Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Although there's no way to &quot;force&quot; someone to pull from you, if there are 100 tweds, most people are not going to want to inspect every bit of the content that is being relayed. That is why someone might want a system to quickly purge bad content once it has been identified. </p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry>
+
+Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Finally knowing you had a blogpost and fetching only from your site, I got your blogpost. First I tried fetching from all. I was offered all Jeds stuff once again, but nothing from you. So dedication might be the way to go for now.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge>
+
+Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>a person or thing that causes great trouble or suffering.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now>
+
+Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>It works well now. I think you nailed it before others had the time to update plugins. Now you know you are truly FOLLOWED around the clock ;-).</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no>
+
+Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Well, I guess as long as being followed is helpful I can deal with it. :-D</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that>
+
+Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>It turns out there was a typo in my code that kept an updated wiki from properly sending any bundles instead of just not sending empty bundles. Once you update the plugins again it should work. </p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments>
+
+Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Let's put some content under this very long title.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)>
+
+Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Let's put some content under this very long title. Jed is near me. Very concentrated on  adding new feature.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.>
+
+Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I got totally excited to see it arriving. No error about trying to fetch things from my own site.
+You must have been doing some wizardry.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!>
+
+Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hopefully you can get this comment correctly. There are currently some problems in how comments are fetched because it sends off the requests all at once and if one reply is received when another is being processed it can be missed. I should have a fix for it soon but until then fetching is a bit unreliable.</p><p>It may also give you an error saying that it can not fetch things from your own site. I need to fix that too.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough>
+
+Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I am still hoping to find the one with a pot of gold under it.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Grandchild Post>
+
+Grandchild Post
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Because grandchildren are like children, but grand</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Hey! TWederation is live on TWederation User1 Test Wiki! -  ()>
+
+Hey! TWederation is live on TWederation User1 Test Wiki! -  ()
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hello world!!</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)>
+
+Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Hope you have a nice time - I am a little envious but thankful, that you livestream.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=How to set up your own federated tiddlywiki - inmysocks>
+
+How to set up your own federated tiddlywiki - inmysocks
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Everything that was in this post is now wrong, now just go to ooktech.com/jed/<a class="tc-tiddlylink tc-tiddlylink-missing" href="#ExampleWikis">ExampleWikis</a>/TWederation and follow the instructions there.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)>
+
+I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This isn't really organized in any coherent way, I am just ranting a bit.</p><p>If I can get web workers to actually do something useful than we can load comments and things from other wikis without making a page unresponsive while the content is being fetched. Unfortunately because of the same origin policy that browsers use I can for some reason load a page in an iframe and then get the page content from the iframe, but I can't load a page using an xmlhttprequest and get its content that way. Web workers give you multi-threaded behaviour in a browser, this means that they can load things in the background. Except the only way they can load things seems to be via xmlhttprequests. So a web worker can be used to load content from the same server that a page is being served on and that is about it. I am trying to come up with a way to have loading a page via xmlhttprequest give some security flaw that isn't there when loading a page in an iframe since in both instances the page doing the loading has to manipulate the loaded content to do anything, and you can access whatever you want from the iframe.</p><p>I may be able to use some of this anyway by first trying to get a worker to load a page and if the xmlhttprequest fails fall back to using an iframe. It would hurt the worst case but if there are wikis that are on servers with the proper CORS stuff than it could greatly improve the performance in the average case.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)>
+
+I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>So now the back end of things works smoother for me. This includes the way that data is fetched from google and how new twcards are added to the site here. Before I just made a twCard from the data submitted to google, but it was incomplete because it only had the url, name and author for the wiki. Now I have it set to use the information sent to google to fetch the twCard directly from the wiki itself. This way we don't need to send any more data to google and we can get the full card. It also means that you don't get listed unless you have a wiki that can respond and send a card.</p><p>So, if you don't have a card listed on twederation.tiddlyspot.com it is because either your card wasn't listed correctly on google or your wiki wasn't responding or you have added it after around 10pm Paris time on July 10th and I haven't added it yet. If your card isn't listed and you have a wiki with the plugins than try going through the setup wizard again, it will make sure that your data is sent correctly and that your wiki is configured correctly. I think that some of the wikis don't have the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2FSitetwCard">$:/SitetwCard</a> tiddler set correctly, which will keep you from getting listed on twederation.tiddlyspot.com.</p><p>There have also been some important updates to how bundles are handled, so make sure you update your plugins. Both the <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-edition">$:/plugins/inmysocks/TWederation-edition</a> and <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FTWederation-core">$:/plugins/inmysocks/TWederation-core</a> plugins need to be up to date.</p><p>Since I have changed how twCards are handled on this site you may want to delete all the cards (except for your twCard) on your wiki and pull them from here again. Do this by selecting 'TWederation' from select wiki and 'All Wiki twCards' from what to fetch in the <code>Fetch Communication</code> tab.</p><p>After you do this your wiki will only try to contact wikis that can actually respond. This should help.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=I love this twederation stuff - Birthe (2016062713h4423)>
+
+I love this twederation stuff - Birthe (2016062713h4423)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Where are all the testers though? I really think that more testers are needed and maybe tests are better done in smaller groups.
+As we get comfortable using twederation I am sure more ideas will arise, can we do this and would that also be possible.</p><p>Twederation is here right now on a computer as near you as you want it to be. I love it because of exactly that and the fact that even an old woman...(can your old mother use this?), an end user would be able to use it.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Jeremys first test post - JeremyRuston (2016071512h3641)>
+
+Jeremys first test post - JeremyRuston (2016071512h3641)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is Jeremy testing that I can save a blog post for TWederation.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)>
+
+Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>There have been some bugs. Too many things need to be tested I think.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Messages and Short Messages - Birthe (2016071211h4436)>
+
+Messages and Short Messages - Birthe (2016071211h4436)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I have a feeling they are not working as they are supposed to. When selecting Fetch Messages nothing happens, Type to Fetch Short Messages nothing either. Using the Selection Menus that is. But using filter [tag[@Birthe]] I got a message. Or using filter [prefix[Message]] I guess we get all Messages.</p><p>I have had no success fetching any Short Messages yet.
+I would like to know some more of Short Messages and the idea behind.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Notes>
+
+Notes
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is intended as a continuously updated tiddler with &quot;quick notes&quot;. It's an eclectic mix of notes to <em>inmysocks</em> and myself.</p><p><span class="tc-inline-style" style="color:gray;"> <em>31 January</em></span></p><ul><li>When looking at the just un-bundled imported list, I miss the <em>dates</em> (last modified or, if not modified, created). I keep re-importing the same tiddlers so I don't know if it is anything new.<ul><li>Actually, it would be good to know the last point in time that I imported using the same importing criteria:<br>The title listing of the imported tiddlers should be sorted by date (newest on top) and I'd like a visual mark, perhaps a line marking out where in time the last import from &quot;that url, with that filter&quot; was used, according to data available in my own wiki.<br>BTW, I note that neither fields <em>created</em> nor <em>modified</em> exist in imported tiddlers, making the time sorting tricky.</li></ul></li></ul><p><span class="tc-inline-style" style="color:gray;"> <em>29 January - evening</em></span></p><ul><li>In replying to an imported post I note the need for having the imported tiddler copied or something like that. </li></ul><p><span class="tc-inline-style" style="color:gray;"> <em>29 January</em></span></p><ul><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="#Remote%20Commenting">Remote Commenting</a> </li><li><strong>twed tags</strong>- We need a generic term for those special tags (<em>inmysocks</em>, <em>twMat &lt;:-)</em>...)<ul><li>&quot;twed tag&quot; (for TWederation tag&quot;) perhaps? </li><li>@tags [i.e &quot;at-tags&quot;]... </li></ul></li><li><strong>twed tag features</strong> - but there is more than just the need for a term. As you'll see in some of the ideas below, we could perhaps use those tags as tools for needed functionality. Possibly, such tags can, in view mode <em>and edit mode</em> have drop down menus with twed tools.</li><li><strong>Quick bundle import</strong><span class="tc-inline-style" style="color:peru;"> 📦</span> - There ought to be a quick import feature readily accessible all the time. Perhaps a package button  to trigger import, using a predefined set of TWs and filters.</li><li>The more IRL a discussion is, the more need for a quick way to import from the other participant. E.g now that I' writing to <em>inmysocks</em>, I'd like to be able to import eventual new stuff for me to see if there's any reply to previous message. Maybe the twed tag can be used for this</li><li>Listening to @Jeremys elaboration on that it should be static html that is transferred. In that case, one should also be able to import an - again static - representation of the edit view so that one can understand how the tiddler is built.</li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="#Aggregation%20TWs">Aggregation TWs</a> </li><li><strong>twCards</strong> - the <em>Create twCard</em> button doesn't give any feedback that it succeeded.</li><li>Added <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%E2%81%82">⁂</a> (click to read) as favicon to here. Feel free to use for TWederation if you wish, to make browser tab identifiable and not use default tiddlsypot favicon.</li><li><strong>Needed</strong> - there is a frustration in not knowing if I've twed tagged all &quot;linked to&quot; tiddlers. I'e if I twed tag tiddler A with <em>inmysocks</em>... then there may be links in A to other tiddlers that you'll also need. We need some alert for this.<ul><li>maybe the twed tag pill can signal that there are linked to tiddlers that are not twed tagged with that twed tag?</li><li>and perhaps getting a list of which links it concerns... or, nicer; eg. hover the twed tag and those links in the tiddler highlight.</li><li>possibly also a global list of such &quot;missing twed links&quot;</li></ul></li></ul><p><span class="tc-inline-style" style="color:gray;"> <em>28 January</em></span></p><ul><li><strong>Favicon</strong> - There should probably be an easily recognizable favicon for the TWederation site., but possibly a general icon to symbolize the TWederation<ul><li>⇄ ⋮ ⊶  ⊷  ⧉   <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Asterism_%28typography%29" rel="noopener noreferrer" target="_blank">⁂</a></li></ul></li></ul>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Notes for the hangout later today - inmysocks (13h53-28/1/2016)>
+
+Notes for the hangout later today - inmysocks (13h53-28/1/2016)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>These are some public notes for my introduction to the TWederation work  and I have been doing.</p><p>I am going to make <a class="tc-tiddlylink-external" href="http://twederation.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://twederation.tiddlyspot.com</a> and use that as the center for news and work things. That way people can pull the newest updates from there.</p><p>I am going to make <a class="tc-tiddlylink-external" href="http://twederation-dev.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://twederation-dev.tiddlyspot.com</a> and use that as the center for news and work things. That way people can pull the newest updates from there.</p><p><u>General:</u></p><ul><li>There is no server. This means that many ideas based on server-client models of communication don't apply.<ul><li>Communication isn't done by sending information to some destination. It is done by pulling information from some origin. This takes some more up-front configuration but it will work once everything is set.</li></ul></li></ul><p><u>How to use it:</u></p><ul><li>By fetching bundles!</li><li>The general usage model:<ol><li>Write a post or message and label it as yours and address it appropriately</li><li>Use your connections to retrieve anything addressed to you from people and wikis you follow.</li></ol></li><li>Make your twCards (identity, wiki, etc.)</li><li>Use your cards to label your posts</li><li>Use other cards to search for and retrieve posts, messages etc. for other people</li><li>This is going to be automated later, I am working on it.</li></ul><p><u>Code Stuff:</u></p><ul><li>All communication is done using postMessage</li><li>A hidden iframe is created and the target wiki <ul><li>There are two new tiddler messages<ul><li><code>tm-close-iframe</code> - this message is given the url of an open iframe and it closes the iframe and removes the entry from the $tw.browserMessaging.iframeInfoMap object.</li><li><code>tm-request-bundle</code> - this loads an iframe with the given url and uses postMessage to send the bundle request</li></ul></li><li>There are two messages added to the window event listener, <code>BUNDLE_REQUEST</code> and <code>DELIVER_BUNDLE</code><ul><li>When a bundle request is received part of the request contains the name of the packing function to use. These functions are stored in the $tw.wiki.bundleFunction object. After being bundled together the wiki uses postMessage to send the bundle to the requesting wiki. Part of that message contains the name of the unpacking function. The unpacking functions are held in the $tw.wiki.bundleHandler object.</li><li>You can add packing and handling functions without modifying the plugin by adding a javascript tiddler that adds new functions. You look at <a class="tc-tiddlylink tc-tiddlylink-missing" href="#%24%3A%2Fplugins%2Finmysocks%2FFetchTiddlers%2FbundleOptions.js">$:/plugins/inmysocks/FetchTiddlers/bundleOptions.js</a> for examples.</li></ul></li></ul></li></ul>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Post title example - inmysocks (22h49-29/1/2016)>
+
+Post title example - inmysocks (22h49-29/1/2016)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Because I need to remember what they are</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Progress!! - inmysocks (2016070918h3750)>
+
+Progress!! - inmysocks (2016070918h3750)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>There has been some progress on making this all work correctly. If you have the newer versions of the plugins (at least 0.0.37 for twederation-core and at least 0.0.41 for twederation-edition) than fetching comments and things from multiple wikis should work the way it was supposed to before. There are still a lot of usability problems. I think that once I get a good naming convention for the bundles and do some simple things like make it so that empty bundles aren't saved it will help. I had empty bundles before so that it didn't just look like nothing happened if there was nothing new to fetch, but I think that having 5 empty bundles and 1 with content is worse than just having 1 (or zeros) bundle(s) returned.</p><p>I should also find some way to combine bundles from multiple sources when you fetch comments, so you just get a single comments bundle that has all the content from all the wikis instead of having one bundle from each wiki. There may be problems with this if you receive a response from one wiki and you are looking at the tiddler when another response comes in, but I don't think it will be a huge problem. We shall see. I need to implement it before we can even worry about it I guess.</p><p>I think we are at a point where suggestions about things like that can be useful. If you want to change anything on the wikitext side of things feel free to just try it out and show me, I am going to be working mainly on the javascript side until that works smoothly so don't expect any wonderful ui improvements from me.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Root Post>
+
+Root Post
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>And some content for the root post</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Second root post child>
+
+Second root post child
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Yay!</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Some demo title - inmysocks (19h35-28/1/2016)>
+
+Some demo title - inmysocks (19h35-28/1/2016)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Some demo text</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=SPAM, and  Overhead messages - MAS (2016071207h5129)>
+
+SPAM, and  Overhead messages - MAS (2016071207h5129)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>It would only take one compromised twed member to fill the entire network with SPAM – it would be a link spammers dream come true. The spam issue is important because upstream IP providers will take it very seriously, and might even suspend accounts.</p><p>The main fix I can see for this, is some way to &quot;send&quot; (yes, it's not client-server) a network message that would cause twed members to collectively delete (or make non-visible) TW cards and messages from offending twed sites. Call it de-bundling or un-bundling. Each twed could configure how it wants to deal with these warnings (since the warning system itself could be mis-used). In particular, a twed might be configured to trust and act on overhead messages that come from certain trusted twed members. This would allow the system to quickly purge nefarious messages as soon as they are perceived.</p><p>This suggests that a twed member should be able to mark twed cards, to indicate which tweds he/she is willing to accept overhead deletion (and probably others) messages from.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Test af post -  (19h47-14/6/2016)>
+
+Test af post -  (19h47-14/6/2016)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is a post for testing twederation</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Test Post - inmysocks (2016071513h1331)>
+
+Test Post - inmysocks (2016071513h1331)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>YAY! I am posting here!! Yay!!</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)>
+
+This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Cat videos are the scourge of  humanity.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Titles titles everywhere and not a drop to drink... - inmysocks>
+
+Titles titles everywhere and not a drop to drink... - inmysocks
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I need to do something about the very probable title conflicts that will arise from different users posting and from message titles. There will probably be many messages with the title 'Hi' or something similar. So we can't just have the message title be the tiddler title. I think that for short messages we could have some other storage mechanism, like a data tiddler that holds all of the messages and some utility that lets you sort and view the messages. </p><p>This may mean we should have multiple types of messages, short messages that would be stored like that and then longer email-like messages that would get their own tiddlers. We still have the naming problem. I think that appending a username and a time stamp at the end of all messages would prevent almost all conflicts but maybe someone can come up with a better idea.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=TWederation GitHub repo - inmysocks (2016071515h0446)>
+
+TWederation GitHub repo - inmysocks (2016071515h0446)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>This is the link to the TWederation github repo: <a class="tc-tiddlylink-external" href="https://github.com/inmysocks/TW5-TWederation" rel="noopener noreferrer" target="_blank">https://github.com/inmysocks/TW5-TWederation</a></p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Upgrading plugins and not fetching - Birthe (2016071309h5101)>
+
+Upgrading plugins and not fetching - Birthe (2016071309h5101)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>I saw a post at Twederation and updated  to latest plugins. I did go go to control panel and marked follow to all the twCards I have but my own. 
+Since then I seem to be trying to fetch from everyone EXCEPT twederation. And I would expect to receive at least the blog post telling us to update. 
+Is it supposed to be so or am I fetching from the other twcards because they are no upgraded yet?</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Very excited about twederation going fast forward. - Birthe (2016061304h1812)>
+
+Very excited about twederation going fast forward. - Birthe (2016061304h1812)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>The new upstart tiddler is very nice and following the steps given, it was filled correct I just had to press forward. What happens now I am not sure.
+I fetched all wiki TWcards from twederation and saw two marked undefined.
+I tried to comment to one of the blog posts I was able to fetch, wrote  message to someone on the list, and now this post.
+I can find no more to do for now, but at least if someone find any of this they can find something to fetch.
+I have had none of the error messages Mark S. wrote about.
+FUN FUN FUN.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=What about a second root>
+
+What about a second root
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Does this work?</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id=Why are there so many songs about rainbows? - MAS (2016061407h0712)>
+
+Why are there so many songs about rainbows? - MAS (2016061407h0712)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>Actually, there aren't enough. I could only think of two, and one of them was the song complaining that there weren't enough songs.</p>
 
 </div>
 
