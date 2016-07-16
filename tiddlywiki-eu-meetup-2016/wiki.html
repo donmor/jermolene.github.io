@@ -321,6 +321,8 @@ Error message and password prompt
 
 <li>Grandchild Post</li>
 
+<li>Hacking on TWederation at the tiddlywiki meetup - inmysocks (2016071613h1113)</li>
+
 <li>HelloThere</li>
 
 <li>Hey! TWederation is live on TWederation User1 Test Wiki! -  ()</li>
@@ -726,7 +728,7 @@ h2.tc-title {
 
 &lt;h2 class=&quot;tc-title&quot;&gt;
 
-&lt;a class=&quot;tc-tiddler-anchor&quot; id=`&lt;$text text={{!!title}}/&gt;`&gt;
+&lt;a class=&quot;tc-tiddler-anchor&quot; id=&quot;`&lt;$text text={{!!title}}/&gt;`&quot;&gt;
 `
 &lt;$text text={{!!title}}/&gt;
 `
@@ -6239,7 +6241,7 @@ h2.tc-title {
         },
         &quot;$:/core/templates/static-tiddler&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/static-tiddler&quot;,
-            &quot;text&quot;: &quot;&lt;a name=&lt;&lt;currentTiddler&gt;&gt;&gt;\n&lt;$transclude tiddler=\&quot;$:/core/ui/ViewTemplate\&quot;/&gt;\n&lt;/a&gt;&quot;
+            &quot;text&quot;: &quot;\\define static-tiddler\n&lt;a name=\&quot;\&quot;\&quot;$(currentTiddler)$\&quot;\&quot;\&quot;&gt;\n&lt;$transclude tiddler=\&quot;$:/core/ui/ViewTemplate\&quot;/&gt;\n&lt;/a&gt;\n\\end\n&lt;&lt;static-tiddler&gt;&gt;&quot;
         },
         &quot;$:/core/templates/static.area&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/static.area&quot;,
@@ -8529,7 +8531,8 @@ Timings
 Location
 Agenda
 SiteMap
-LiveStream</pre>
+LiveStream
+Discussion</pre>
 </div>
 <div title="$:/DiscussionViewerTemplate">
 <pre>&lt;$list filter='[role[twDiscussionPost]parent&lt;currentTiddler&gt;!sort[modified]]'&gt;
@@ -8644,7 +8647,7 @@ LiveStream</pre>
 <div title="$:/SiteTitle">
 <pre>TWEM2016</pre>
 </div>
-<div list="HelloThere Timings Location Agenda SiteMap LiveStream" title="$:/StoryList">
+<div list="HelloThere Timings Location Agenda SiteMap LiveStream Discussion" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9111,12 +9114,17 @@ It may also give you an error saying that it can not fetch things from your own 
 <div created="20160715152640740" modified="20160715152640741" parent="Child Post" post_title="Grandchild Post" role="twDiscussionPost" title="Grandchild Post">
 <pre>Because grandchildren are like children, but grand</pre>
 </div>
+<div author="inmysocks" created="20160716111118985" day="16" hour="13" minute="11" modified="20160716111118989" month="07" post_title="Hacking on TWederation at the tiddlywiki meetup" role="twDiscussionPost" second="13" sort="20160716131113" title="Hacking on TWederation at the tiddlywiki meetup - inmysocks (2016071613h1113)" wiki_url="http://twederation.tiddlyspot.com/" year="2016">
+<pre>The biggest visible changes for twederation is the addition of threaded discussions. This has been added using a simple method here each post or comment has a `parent` field and the `type` field is no longer used to identify blog posts and comments. Now all of them have a field `role` set to `twDiscussionPost` and the structure is determined using the `parent` field. Each post can only have one parent and parents don't have any direct knowledge of what children they have. This allows the comment structure we have, and it can be extended in the future.
+
+We are working on making sure that the tools all work with the updates, but expect lots of bugs in places where I missed something. Also Mat is working on improving the styling. More on this later.</pre>
+</div>
 <div created="20160712105521405" modified="20160712125301310" tags="$:/_MainMenu" title="HelloThere" type="text/vnd.tiddlywiki">
 <pre>Welcome to the website for the TiddlyWiki European Meetup 2016.
 
 Think local, act global!
 
-!! [[Timings]] • [[Location]] • [[Agenda]] • [[SiteMap]]  • [[LiveStream]]
+!! [[Discussion]] • [[Location]] • [[Agenda]] • [[SiteMap]]  • [[LiveStream]]
 
 //Compare the [[static HTML|http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/index.html]] and [[interactive|http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/wiki.html]] renderings of this site//
 

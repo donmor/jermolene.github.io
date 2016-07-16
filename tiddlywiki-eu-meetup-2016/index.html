@@ -2202,7 +2202,7 @@ h2.tc-title {
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=HelloThere>
+<a class="tc-tiddler-anchor" id="HelloThere">
 
 HelloThere
 
@@ -2216,7 +2216,7 @@ HelloThere
 
 <div class="tc-tiddler-body">
 
-<p>Welcome to the website for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> European Meetup 2016.</p><p>Think local, act global!</p><h2 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Timings">Timings</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Location">Location</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Agenda">Agenda</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#SiteMap">SiteMap</a>  • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#LiveStream">LiveStream</a></h2><p><em>Compare the <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/index.html" rel="noopener noreferrer" target="_blank">static HTML</a> and <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/wiki.html" rel="noopener noreferrer" target="_blank">interactive</a> renderings of this site</em></p><p><img src="./images/banner.jpg">
+<p>Welcome to the website for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#TiddlyWiki">TiddlyWiki</a> European Meetup 2016.</p><p>Think local, act global!</p><h2 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Discussion">Discussion</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Location">Location</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Agenda">Agenda</a> • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#SiteMap">SiteMap</a>  • <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#LiveStream">LiveStream</a></h2><p><em>Compare the <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/index.html" rel="noopener noreferrer" target="_blank">static HTML</a> and <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/tiddlywiki-eu-meetup-2016/wiki.html" rel="noopener noreferrer" target="_blank">interactive</a> renderings of this site</em></p><p><img src="./images/banner.jpg">
 </p>
 
 </div>
@@ -2232,7 +2232,7 @@ HelloThere
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Agenda>
+<a class="tc-tiddler-anchor" id="Agenda">
 
 Agenda
 
@@ -2261,7 +2261,7 @@ Agenda
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Discussion>
+<a class="tc-tiddler-anchor" id="Discussion">
 
 Discussion
 
@@ -2276,6 +2276,14 @@ Discussion
 <div class="tc-tiddler-body">
 
 <p><ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#Hacking%20on%20TWederation%20at%20the%20tiddlywiki%20meetup%20-%20inmysocks%20(2016071613h1113)">Hacking on TWederation at the tiddlywiki meetup - inmysocks (2016071613h1113)</a><br>
+<p>The biggest visible changes for twederation is the addition of threaded discussions. This has been added using a simple method here each post or comment has a <code>parent</code> field and the <code>type</code> field is no longer used to identify blog posts and comments. Now all of them have a field <code>role</code> set to <code>twDiscussionPost</code> and the structure is determined using the <code>parent</code> field. Each post can only have one parent and parents don't have any direct knowledge of what children they have. This allows the comment structure we have, and it can be extended in the future.</p><p>We are working on making sure that the tools all work with the updates, but expect lots of bugs in places where I missed something. Also Mat is working on improving the styling. More on this later.</p>
+</li>
+<ul>
+<p></p>
+</ul>
 
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#DiscussionPost">DiscussionPost</a><br>
@@ -2774,24 +2782,6 @@ We are having fun ...
 </ul>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20second%20post%20-%20inmysocks">A second post - inmysocks</a><br>
-<p>Because the first one works! I am excited!</p><p>And I can pull the posts from here to the TWederation at <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>
-</p>
-</li>
-<ul>
-<p></p>
-</ul>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20test%20post%20-%20inmysocks">A test post - inmysocks</a><br>
-<p>And content
-</p>
-</li>
-<ul>
-<p></p>
-</ul>
-
-<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="#And%20of%20course%20there%20are%20more%20bugs%20-%20inmysocks%20(2016071210h0643)">And of course there are more bugs - inmysocks (2016071210h0643)</a><br>
 <p>If you fetch bundles and give them custom names they won't be listed correctly under the 'Fetch Communication' tab because I changed how the names are created. I will fix that later today. Also the wall tab just displays all blog posts that you have collected in chronological order. I plan to make it so you can make collections of people to display, or make things that only display a certain topic or thread. </p><p>If anyone wants to make something like that that would be nice.</p>
 </li>
@@ -2815,6 +2805,24 @@ Good luck!
 <p></p>
 </ul>
 </p>
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20test%20post%20-%20inmysocks">A test post - inmysocks</a><br>
+<p>And content
+</p>
+</li>
+<ul>
+<p></p>
+</ul>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#A%20second%20post%20-%20inmysocks">A second post - inmysocks</a><br>
+<p>Because the first one works! I am excited!</p><p>And I can pull the posts from here to the TWederation at <a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/TWederation/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/TWederation/</a>
+</p>
+</li>
+<ul>
+<p></p>
 </ul>
 
 <li>
@@ -2940,7 +2948,7 @@ I am hoping to expand what twCards are to be something more like a social media 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=LiveStream>
+<a class="tc-tiddler-anchor" id="LiveStream">
 
 LiveStream
 
@@ -2970,7 +2978,7 @@ LiveStream
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Location>
+<a class="tc-tiddler-anchor" id="Location">
 
 Location
 
@@ -3000,7 +3008,7 @@ Location
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=SiteMap>
+<a class="tc-tiddler-anchor" id="SiteMap">
 
 SiteMap
 
@@ -3030,7 +3038,7 @@ SiteMap
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=TiddlyWiki>
+<a class="tc-tiddler-anchor" id="TiddlyWiki">
 
 TiddlyWiki
 
@@ -3060,7 +3068,7 @@ TiddlyWiki
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Timings>
+<a class="tc-tiddler-anchor" id="Timings">
 
 Timings
 
@@ -3089,7 +3097,7 @@ Timings
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=DiscussionPost>
+<a class="tc-tiddler-anchor" id="DiscussionPost">
 
 DiscussionPost
 
@@ -3118,7 +3126,7 @@ DiscussionPost
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=A bunch of small updates - inmysocks (2016071300h2600)>
+<a class="tc-tiddler-anchor" id="A bunch of small updates - inmysocks (2016071300h2600)">
 
 A bunch of small updates - inmysocks (2016071300h2600)
 
@@ -3148,7 +3156,7 @@ I am hoping to expand what twCards are to be something more like a social media 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=A new plugin version - inmysocks>
+<a class="tc-tiddler-anchor" id="A new plugin version - inmysocks">
 
 A new plugin version - inmysocks
 
@@ -3178,7 +3186,7 @@ A new plugin version - inmysocks
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=A second post - inmysocks>
+<a class="tc-tiddler-anchor" id="A second post - inmysocks">
 
 A second post - inmysocks
 
@@ -3208,7 +3216,7 @@ A second post - inmysocks
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=A test post - inmysocks>
+<a class="tc-tiddler-anchor" id="A test post - inmysocks">
 
 A test post - inmysocks
 
@@ -3238,7 +3246,7 @@ A test post - inmysocks
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=And a sibling>
+<a class="tc-tiddler-anchor" id="And a sibling">
 
 And a sibling
 
@@ -3267,7 +3275,7 @@ And a sibling
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=And a siblings child>
+<a class="tc-tiddler-anchor" id="And a siblings child">
 
 And a siblings child
 
@@ -3296,7 +3304,7 @@ And a siblings child
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=And of course there are more bugs - inmysocks (2016071210h0643)>
+<a class="tc-tiddler-anchor" id="And of course there are more bugs - inmysocks (2016071210h0643)">
 
 And of course there are more bugs - inmysocks (2016071210h0643)
 
@@ -3325,7 +3333,7 @@ And of course there are more bugs - inmysocks (2016071210h0643)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Child Post>
+<a class="tc-tiddler-anchor" id="Child Post">
 
 Child Post
 
@@ -3354,7 +3362,7 @@ Child Post
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing>
+<a class="tc-tiddler-anchor" id="Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing">
 
 Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - And another thing
 
@@ -3383,7 +3391,7 @@ Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - A
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem>
+<a class="tc-tiddler-anchor" id="Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem">
 
 Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Implementation is the problem
 
@@ -3412,7 +3420,7 @@ Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - I
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix>
+<a class="tc-tiddler-anchor" id="Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix">
 
 Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - Some notes about what I need to fix
 
@@ -3441,7 +3449,7 @@ Comment - A bunch of small updates - inmysocks (2016071300h2600) - inmysocks - S
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs>
+<a class="tc-tiddler-anchor" id="Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs">
 
 Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping track of blogs
 
@@ -3472,7 +3480,7 @@ Comment - A bunch of small updates - inmysocks (2016071300h2600) - MAS - Keeping
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes>
+<a class="tc-tiddler-anchor" id="Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes">
 
 Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmysocks - Yes
 
@@ -3501,7 +3509,7 @@ Comment - And of course there are more bugs - inmysocks (2016071210h0643) - inmy
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.>
+<a class="tc-tiddler-anchor" id="Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.">
 
 Comment - And of course there are more bugs - inmysocks (2016071210h0643) - MAS - Usage of bundle name field. Meaning of different kinds of messages.
 
@@ -3532,7 +3540,7 @@ Good luck!
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here>
+<a class="tc-tiddler-anchor" id="Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here">
 
 Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works! - inmysocks - Some Test here
 
@@ -3561,7 +3569,7 @@ Comment - Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - i
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too>
+<a class="tc-tiddler-anchor" id="Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too">
 
 Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birthe - Hello to you too
 
@@ -3591,7 +3599,7 @@ Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - Birth
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - >
+<a class="tc-tiddler-anchor" id="Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - ">
 
 Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS - 
 
@@ -3620,7 +3628,7 @@ Comment - Hey! TWederation is live on TWederation User1 Test Wiki! -  () - MAS -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe>
+<a class="tc-tiddler-anchor" id="Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe">
 
 Comment - Hi Tiddlywikians in Oxford - Birthe (2016071513h1342) - pmario - Hi Birthe
 
@@ -3652,7 +3660,7 @@ We are having fun ...
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan>
+<a class="tc-tiddler-anchor" id="Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan">
 
 Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - inmysocks - That was the plan
 
@@ -3681,7 +3689,7 @@ Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...>
+<a class="tc-tiddler-anchor" id="Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...">
 
 Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) - MAS - I like that we're now seeing a count of new tiddlers ...
 
@@ -3711,7 +3719,7 @@ Comment - I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428) -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure>
+<a class="tc-tiddler-anchor" id="Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure">
 
 Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fetching feels smoother for sure
 
@@ -3741,7 +3749,7 @@ Comment - I love this twederation stuff - Birthe (2016062713h4423) - Birthe - Fe
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult>
+<a class="tc-tiddler-anchor" id="Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult">
 
 Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I am not sure if they are the most difficult
 
@@ -3770,7 +3778,7 @@ Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers>
+<a class="tc-tiddler-anchor" id="Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers">
 
 Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks - I would love to have more testers
 
@@ -3799,7 +3807,7 @@ Comment - I love this twederation stuff - Birthe (2016062713h4423) - inmysocks -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!>
+<a class="tc-tiddler-anchor" id="Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!">
 
 Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks - It works!
 
@@ -3828,7 +3836,7 @@ Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - inmysocks -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - >
+<a class="tc-tiddler-anchor" id="Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - ">
 
 Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario - 
 
@@ -3858,7 +3866,7 @@ Comment - Jeremys first test post - JeremyRuston (2016071512h3641) - pmario -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here>
+<a class="tc-tiddler-anchor" id="Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here">
 
 Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - A second comment from here
 
@@ -3887,7 +3895,7 @@ Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site>
+<a class="tc-tiddler-anchor" id="Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site">
 
 Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  - And now a comment from the other site
 
@@ -3916,7 +3924,7 @@ Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) -  -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays>
+<a class="tc-tiddler-anchor" id="Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays">
 
 Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MAS - When you change author, the same text stays
 
@@ -3946,7 +3954,7 @@ Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - MA
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!>
+<a class="tc-tiddler-anchor" id="Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!">
 
 Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - some name - A comment!
 
@@ -3976,7 +3984,7 @@ Comment - Lets try another blog post here - imysocksTest1 (21h08-12/6/2016) - so
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message>
+<a class="tc-tiddler-anchor" id="Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message">
 
 Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw I got a Short Message
 
@@ -4006,7 +4014,7 @@ Comment - Messages and Short Messages - Birthe (2016071211h4436) - Birthe - Waw 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that>
+<a class="tc-tiddler-anchor" id="Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that">
 
 Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I need to work on that
 
@@ -4035,7 +4043,7 @@ Comment - Messages and Short Messages - Birthe (2016071211h4436) - inmysocks - I
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.>
+<a class="tc-tiddler-anchor" id="Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.">
 
 Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've just posted a short message.
 
@@ -4064,7 +4072,7 @@ Comment - Messages and Short Messages - Birthe (2016071211h4436) - MAS - I've ju
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice>
+<a class="tc-tiddler-anchor" id="Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice">
 
 Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not saved would be nice
 
@@ -4094,7 +4102,7 @@ Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - Empty bundles not 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything>
+<a class="tc-tiddler-anchor" id="Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything">
 
 Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps not to miss anything
 
@@ -4124,7 +4132,7 @@ Comment - Progress!! - inmysocks (2016070918h3750) - Birthe - It really helps no
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!>
+<a class="tc-tiddler-anchor" id="Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!">
 
 Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!
 
@@ -4153,7 +4161,7 @@ Comment - Progress!! - inmysocks (2016070918h3750) - inmysocks - It works!
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you>
+<a class="tc-tiddler-anchor" id="Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you">
 
 Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - There is no way to force someone to get a message from you
 
@@ -4182,7 +4190,7 @@ Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - inmysocks - The
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way>
+<a class="tc-tiddler-anchor" id="Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way">
 
 Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will find a way
 
@@ -4211,7 +4219,7 @@ Comment - SPAM, and  Overhead messages - MAS (2016071207h5129) - MAS - SPAM will
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry>
+<a class="tc-tiddler-anchor" id="Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry">
 
 Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - Birthe - Scourge? Do not know that word sorry
 
@@ -4241,7 +4249,7 @@ Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge>
+<a class="tc-tiddler-anchor" id="Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge">
 
 Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) - MAS - Definition of Scourge
 
@@ -4270,7 +4278,7 @@ Comment - This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629) -
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now>
+<a class="tc-tiddler-anchor" id="Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now">
 
 Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe - Everything is fine now
 
@@ -4299,7 +4307,7 @@ Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Birthe
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no>
+<a class="tc-tiddler-anchor" id="Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no">
 
 Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Oh no
 
@@ -4328,7 +4336,7 @@ Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmyso
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that>
+<a class="tc-tiddler-anchor" id="Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that">
 
 Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmysocks - Sorry about that
 
@@ -4357,7 +4365,7 @@ Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - inmyso
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments>
+<a class="tc-tiddler-anchor" id="Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments">
 
 Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments
 
@@ -4386,7 +4394,7 @@ Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)>
+<a class="tc-tiddler-anchor" id="Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)">
 
 Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier & Matt - Sorry to jump in, we need to desperately test  comments (with updated content !)
 
@@ -4416,7 +4424,7 @@ Comment - Upgrading plugins and not fetching - Birthe (2016071309h5101) - Xavier
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.>
+<a class="tc-tiddler-anchor" id="Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.">
 
 Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - Birthe - Waw I got your comment to my blog post.
 
@@ -4447,7 +4455,7 @@ You must have been doing some wizardry.
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!>
+<a class="tc-tiddler-anchor" id="Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!">
 
 Comment - Very excited about twederation going fast forward. - Birthe (2016061304h1812) - inmysocks - YAY!!
 
@@ -4476,7 +4484,7 @@ Comment - Very excited about twederation going fast forward. - Birthe (201606130
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough>
+<a class="tc-tiddler-anchor" id="Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough">
 
 Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - Birthe - No  not nearly enough
 
@@ -4506,7 +4514,7 @@ Comment - Why are there so many songs about rainbows? - MAS (2016061407h0712) - 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Grandchild Post>
+<a class="tc-tiddler-anchor" id="Grandchild Post">
 
 Grandchild Post
 
@@ -4535,7 +4543,36 @@ Grandchild Post
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Hey! TWederation is live on TWederation User1 Test Wiki! -  ()>
+<a class="tc-tiddler-anchor" id="Hacking on TWederation at the tiddlywiki meetup - inmysocks (2016071613h1113)">
+
+Hacking on TWederation at the tiddlywiki meetup - inmysocks (2016071613h1113)
+
+</a>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="tc-tiddler-body">
+
+<p>The biggest visible changes for twederation is the addition of threaded discussions. This has been added using a simple method here each post or comment has a <code>parent</code> field and the <code>type</code> field is no longer used to identify blog posts and comments. Now all of them have a field <code>role</code> set to <code>twDiscussionPost</code> and the structure is determined using the <code>parent</code> field. Each post can only have one parent and parents don't have any direct knowledge of what children they have. This allows the comment structure we have, and it can be extended in the future.</p><p>We are working on making sure that the tools all work with the updates, but expect lots of bugs in places where I missed something. Also Mat is working on improving the styling. More on this later.</p>
+
+</div>
+
+</div>
+
+
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists">
+
+<div class="tc-tiddler-title">
+
+<div class="tc-titlebar">
+
+<h2 class="tc-title">
+
+<a class="tc-tiddler-anchor" id="Hey! TWederation is live on TWederation User1 Test Wiki! -  ()">
 
 Hey! TWederation is live on TWederation User1 Test Wiki! -  ()
 
@@ -4564,7 +4601,7 @@ Hey! TWederation is live on TWederation User1 Test Wiki! -  ()
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)>
+<a class="tc-tiddler-anchor" id="Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)">
 
 Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)
 
@@ -4593,7 +4630,7 @@ Hi Tiddlywikians in Oxford - Birthe (2016071513h1342)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=How to set up your own federated tiddlywiki - inmysocks>
+<a class="tc-tiddler-anchor" id="How to set up your own federated tiddlywiki - inmysocks">
 
 How to set up your own federated tiddlywiki - inmysocks
 
@@ -4623,7 +4660,7 @@ How to set up your own federated tiddlywiki - inmysocks
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)>
+<a class="tc-tiddler-anchor" id="I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)">
 
 I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)
 
@@ -4652,7 +4689,7 @@ I am trying to make webworkers useful and failing - inmysocks (2016071123h5056)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)>
+<a class="tc-tiddler-anchor" id="I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)">
 
 I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)
 
@@ -4681,7 +4718,7 @@ I have done a lot of bookkeeping stuff - inmysocks (2016071022h4428)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=I love this twederation stuff - Birthe (2016062713h4423)>
+<a class="tc-tiddler-anchor" id="I love this twederation stuff - Birthe (2016062713h4423)">
 
 I love this twederation stuff - Birthe (2016062713h4423)
 
@@ -4712,7 +4749,7 @@ As we get comfortable using twederation I am sure more ideas will arise, can we 
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Jeremys first test post - JeremyRuston (2016071512h3641)>
+<a class="tc-tiddler-anchor" id="Jeremys first test post - JeremyRuston (2016071512h3641)">
 
 Jeremys first test post - JeremyRuston (2016071512h3641)
 
@@ -4742,7 +4779,7 @@ Jeremys first test post - JeremyRuston (2016071512h3641)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)>
+<a class="tc-tiddler-anchor" id="Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)">
 
 Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)
 
@@ -4771,7 +4808,7 @@ Lets try another blog post here - imysocksTest1 (21h08-12/6/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Messages and Short Messages - Birthe (2016071211h4436)>
+<a class="tc-tiddler-anchor" id="Messages and Short Messages - Birthe (2016071211h4436)">
 
 Messages and Short Messages - Birthe (2016071211h4436)
 
@@ -4802,7 +4839,7 @@ I would like to know some more of Short Messages and the idea behind.
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Notes>
+<a class="tc-tiddler-anchor" id="Notes">
 
 Notes
 
@@ -4831,7 +4868,7 @@ Notes
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Notes for the hangout later today - inmysocks (13h53-28/1/2016)>
+<a class="tc-tiddler-anchor" id="Notes for the hangout later today - inmysocks (13h53-28/1/2016)">
 
 Notes for the hangout later today - inmysocks (13h53-28/1/2016)
 
@@ -4860,7 +4897,7 @@ Notes for the hangout later today - inmysocks (13h53-28/1/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Post title example - inmysocks (22h49-29/1/2016)>
+<a class="tc-tiddler-anchor" id="Post title example - inmysocks (22h49-29/1/2016)">
 
 Post title example - inmysocks (22h49-29/1/2016)
 
@@ -4889,7 +4926,7 @@ Post title example - inmysocks (22h49-29/1/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Progress!! - inmysocks (2016070918h3750)>
+<a class="tc-tiddler-anchor" id="Progress!! - inmysocks (2016070918h3750)">
 
 Progress!! - inmysocks (2016070918h3750)
 
@@ -4918,7 +4955,7 @@ Progress!! - inmysocks (2016070918h3750)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Root Post>
+<a class="tc-tiddler-anchor" id="Root Post">
 
 Root Post
 
@@ -4947,7 +4984,7 @@ Root Post
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Second root post child>
+<a class="tc-tiddler-anchor" id="Second root post child">
 
 Second root post child
 
@@ -4976,7 +5013,7 @@ Second root post child
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Some demo title - inmysocks (19h35-28/1/2016)>
+<a class="tc-tiddler-anchor" id="Some demo title - inmysocks (19h35-28/1/2016)">
 
 Some demo title - inmysocks (19h35-28/1/2016)
 
@@ -5005,7 +5042,7 @@ Some demo title - inmysocks (19h35-28/1/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=SPAM, and  Overhead messages - MAS (2016071207h5129)>
+<a class="tc-tiddler-anchor" id="SPAM, and  Overhead messages - MAS (2016071207h5129)">
 
 SPAM, and  Overhead messages - MAS (2016071207h5129)
 
@@ -5035,7 +5072,7 @@ SPAM, and  Overhead messages - MAS (2016071207h5129)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Test af post -  (19h47-14/6/2016)>
+<a class="tc-tiddler-anchor" id="Test af post -  (19h47-14/6/2016)">
 
 Test af post -  (19h47-14/6/2016)
 
@@ -5064,7 +5101,7 @@ Test af post -  (19h47-14/6/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Test Post - inmysocks (2016071513h1331)>
+<a class="tc-tiddler-anchor" id="Test Post - inmysocks (2016071513h1331)">
 
 Test Post - inmysocks (2016071513h1331)
 
@@ -5093,7 +5130,7 @@ Test Post - inmysocks (2016071513h1331)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)>
+<a class="tc-tiddler-anchor" id="This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)">
 
 This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)
 
@@ -5122,7 +5159,7 @@ This is a Blog Post From Mark's Twederation2 - MAS (2016061306h1629)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Titles titles everywhere and not a drop to drink... - inmysocks>
+<a class="tc-tiddler-anchor" id="Titles titles everywhere and not a drop to drink... - inmysocks">
 
 Titles titles everywhere and not a drop to drink... - inmysocks
 
@@ -5152,7 +5189,7 @@ Titles titles everywhere and not a drop to drink... - inmysocks
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=TWederation GitHub repo - inmysocks (2016071515h0446)>
+<a class="tc-tiddler-anchor" id="TWederation GitHub repo - inmysocks (2016071515h0446)">
 
 TWederation GitHub repo - inmysocks (2016071515h0446)
 
@@ -5181,7 +5218,7 @@ TWederation GitHub repo - inmysocks (2016071515h0446)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Upgrading plugins and not fetching - Birthe (2016071309h5101)>
+<a class="tc-tiddler-anchor" id="Upgrading plugins and not fetching - Birthe (2016071309h5101)">
 
 Upgrading plugins and not fetching - Birthe (2016071309h5101)
 
@@ -5212,7 +5249,7 @@ Is it supposed to be so or am I fetching from the other twcards because they are
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Very excited about twederation going fast forward. - Birthe (2016061304h1812)>
+<a class="tc-tiddler-anchor" id="Very excited about twederation going fast forward. - Birthe (2016061304h1812)">
 
 Very excited about twederation going fast forward. - Birthe (2016061304h1812)
 
@@ -5246,7 +5283,7 @@ FUN FUN FUN.</p>
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=What about a second root>
+<a class="tc-tiddler-anchor" id="What about a second root">
 
 What about a second root
 
@@ -5275,7 +5312,7 @@ What about a second root
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Why are there so many songs about rainbows? - MAS (2016061407h0712)>
+<a class="tc-tiddler-anchor" id="Why are there so many songs about rainbows? - MAS (2016061407h0712)">
 
 Why are there so many songs about rainbows? - MAS (2016061407h0712)
 
@@ -5304,7 +5341,7 @@ Why are there so many songs about rainbows? - MAS (2016061407h0712)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Message - message from TWeddle -  (18h58-15/7/2016)>
+<a class="tc-tiddler-anchor" id="Message - message from TWeddle -  (18h58-15/7/2016)">
 
 Message - message from TWeddle -  (18h58-15/7/2016)
 
@@ -5333,7 +5370,7 @@ Message - message from TWeddle -  (18h58-15/7/2016)
 
 <h2 class="tc-title">
 
-<a class="tc-tiddler-anchor" id=Message 2 - message from TWeddle -  (19h58-15/7/2016)>
+<a class="tc-tiddler-anchor" id="Message 2 - message from TWeddle -  (19h58-15/7/2016)">
 
 Message 2 - message from TWeddle -  (19h58-15/7/2016)
 
