@@ -4,7 +4,7 @@
     "author": "JoaoBolila",
     "core-version": ">=5.0.0",
     "list": "readme usage license",
-    "version": "5.1.13-prerelease",
+    "version": "5.1.13",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",

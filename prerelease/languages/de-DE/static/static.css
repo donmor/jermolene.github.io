@@ -1076,7 +1076,7 @@ a.tc-tiddlylink:hover {
 	}.tc-story-river .tc-tiddler-frame {
 		margin: 0;
 		border: none;
-		padding: 28px;
+		padding: 0;
 	}
 }/*
 ** Tiddler styles
