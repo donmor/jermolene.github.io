@@ -993,13 +993,13 @@ th {
 }body.tc-body {
 	font-size: 14px;
 	line-height: 20px;
-	color: #333333;
-	background-color: #f4f4f4;
-	fill: #333333;
 	word-wrap: break-word;
 	
 
 
+	color: #333333;
+	background-color: #f4f4f4;
+	fill: #333333;
 }h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	font-weight: 300;

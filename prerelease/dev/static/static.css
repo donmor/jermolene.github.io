@@ -898,13 +898,13 @@ th {
 }body.tc-body {
 	font-size: 14px;
 	line-height: 20px;
-	color: #4e432f;
-	background-color: #f4d7a3;
-	fill: #4e432f;
 	word-wrap: break-word;
 	
 
 
+	color: #4e432f;
+	background-color: #f4d7a3;
+	fill: #4e432f;
 }h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	font-weight: 300;
