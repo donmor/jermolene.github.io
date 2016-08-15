@@ -1060,6 +1060,9 @@ a.tc-tiddlylink:hover {
 		-webkit-overflow-scrolling: touch;
 		margin: 0 0 0 -42px;
 		padding: 71px 0 28px 42px;
+	}html[dir="rtl"] .tc-sidebar-scrollable {
+		left: auto;
+		right: 770px;
 	}.tc-story-river {
 		position: relative;
 		left: 0px;
