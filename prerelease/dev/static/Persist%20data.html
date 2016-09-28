@@ -71,18 +71,18 @@ color:#4e432f;">
 </span>
 </div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> supports a wide range of methods to persist your data. One of this methods is the HTML5 fallback saver. This methods works on almost every browser. With this method a copy of the entire wiki will be downloaded by the browser. This means you get a new file everytime you hit the save button.  To avoid this and because every Browser has a different API to allow writing direct to the file system there a some plugins for the different browsers. These plug-ins allow the user to save direct to the current open <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>-File. The Listing below shows the HTML5-compliant to save the changes via the HTML5 fallback saver by downloading the TW as a complete HTML-file.</p><pre class="js hljs"><code>DownloadSaver.prototype.save = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">text,method,callback</span>) </span>{
-    ...
-    <span class="hljs-keyword">var</span> link = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"a"</span>);
-    link.setAttribute(<span class="hljs-string">"target"</span>,<span class="hljs-string">"_blank"</span>);
-    ...
-    link.setAttribute(<span class="hljs-string">"href"</span>,<span class="hljs-string">"data:text/html,"</span> + <span class="hljs-built_in">encodeURIComponent</span>(text));
-    ...
-    link.setAttribute(<span class="hljs-string">"download"</span>,filename);
-    <span class="hljs-built_in">document</span>.body.appendChild(link);
-    link.click();
-    <span class="hljs-built_in">document</span>.body.removeChild(link);
-    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> supports a wide range of methods to persist your data. One of this methods is the HTML5 fallback saver. This methods works on almost every browser. With this method a copy of the entire wiki will be downloaded by the browser. This means you get a new file everytime you hit the save button.  To avoid this and because every Browser has a different API to allow writing direct to the file system there a some plugins for the different browsers. These plug-ins allow the user to save direct to the current open <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>-File. The Listing below shows the HTML5-compliant to save the changes via the HTML5 fallback saver by downloading the TW as a complete HTML-file.</p><pre class="js hljs"><code>DownloadSaver.prototype.save = function(text,method,callback) {
+	...
+	var link = document.createElement(&quot;a&quot;);
+	link.setAttribute(&quot;target&quot;,&quot;_blank&quot;);
+	...
+	link.setAttribute(&quot;href&quot;,&quot;data:text/html,&quot; + encodeURIComponent(text));
+	...
+	link.setAttribute(&quot;download&quot;,filename);
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+	return true;
 };</code></pre></div>
 
 

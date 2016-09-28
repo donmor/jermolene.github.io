@@ -88,7 +88,7 @@ color:#333333;">
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
-</code></pre></p><h2 class="">Recent Tab</h2><p>The list in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Recent</a> tab is generated using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a> macro. Here, the outer list filter selects each discrete day found in the <code>modified</code> field, while the inner list filter selects all the tiddlers dated the same day in the <code>modified</code> field.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
+</code></pre></p><h2 class="">Recent Tab</h2><p>The list in the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Recent</a> tab is generated using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a> macro. Here, the outer list filter selects each discrete day found in the <code>modified</code> field, while the inner list filter selects all the tiddlers dated the same day in the <code>modified</code> field.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre class="text/vnd.tiddlywiki hljs"><code>\define timeline-title()
 &lt;!-- Override this macro with a global macro 
      of the same name if you need to change 
      how titles are displayed on the timeline 

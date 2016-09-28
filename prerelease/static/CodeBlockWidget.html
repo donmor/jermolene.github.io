@@ -55,7 +55,7 @@ CodeBlockWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 3rd November 2015 at 4:02pm
+</a> 17th August 2016 at 6:53pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -81,11 +81,11 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>codeblock</strong> widget renders text in <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> blocks, causing it to be
 displayed monospace. A language may optionally be specified using the
 <strong>language</strong> attribute, however syntax highlighting will only be used if the
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Highlight%2520Plugin.html">Highlight Plugin</a> is installed.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$codeblock&gt;</code> widget is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th>Description</th></tr><tr class="oddRow"><td>code</td><td>Contents of the block to render as code</td></tr><tr class="evenRow"><td>language</td><td>Programming language for syntax highlighting</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example embedding the contents of a tiddler as a code block.</p><div class="doc-example"><pre><code>&lt;$codeblock code={{$:/editions/tw5.com/macro-examples/say-hi}} /&gt;</code></pre><p>That renders as:</p><p><pre><code>\define sayhi(name:&quot;Bugs Bunny&quot; address:&quot;Rabbit Hole Hill&quot;)
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="Highlight%2520Plugin.html">Highlight Plugin</a> is installed.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$codeblock&gt;</code> widget is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">code</td><td align="left">Contents of the block to render as code</td></tr><tr class="evenRow"><td align="left">language</td><td align="left">Programming language for syntax highlighting</td></tr></tbody></table><p>The <code>language</code> attribute accepts either:</p><ul><li>a Highlight.js language code (see <a class="tc-tiddlylink-external" href="https://highlightjs.org/static/demo/" rel="noopener noreferrer" target="_blank">https://highlightjs.org/static/demo/</a> for a list)</li><li>a MIME type (eg, <code>text/html</code> or <code>image/svg+xml</code>)</li></ul><h1 class="">Examples</h1><p>Here is an example embedding the contents of a tiddler as a code block.</p><div class="doc-example"><pre><code>&lt;$codeblock code={{$:/editions/tw5.com/macro-examples/say-hi}} /&gt;</code></pre><p>That renders as:</p><p><pre><code>\define sayhi(name:&quot;Bugs Bunny&quot; address:&quot;Rabbit Hole Hill&quot;)
 Hi, I'm $name$ and I live in $address$.
 \end
 </code></pre>
-</p></div><p>A codeblock may also specify a language.</p><div class="doc-example"><pre><code>&lt;$codeblock code=&quot;SELECT * FROM users WHERE deleted = false&quot; language=&quot;sql&quot; /&gt;</code></pre><p>That renders as:</p><p><pre class="sql hljs"><code><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">users</span> <span class="hljs-keyword">WHERE</span> deleted = <span class="hljs-literal">false</span></span></code></pre>
+</p></div><p>A codeblock may also specify a language.</p><div class="doc-example"><pre><code>&lt;$codeblock code=&quot;SELECT * FROM users WHERE deleted = false&quot; language=&quot;sql&quot; /&gt;</code></pre><p>That renders as:</p><p><pre class="sql hljs"><code>SELECT * FROM users WHERE deleted = false</code></pre>
 </p></div></div>
 
 
