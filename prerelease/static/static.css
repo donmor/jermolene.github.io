@@ -2467,6 +2467,12 @@ a .doc-attr {
 }
 .doc-block-icon .tc-image-warning {
 	fill: #881122;
+}.doc-from-version {
+	display: inline-block;
+	border: 2px solid #b99e2f;
+	border-radius: 0.5em;
+	background: #ffe476;
+    padding: 0 0.4em;
 }
 
 
