@@ -367,6 +367,12 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
     z-index: 2000;
 }
 
+.tc-drop-down .tc-qrcode-drop-down img {
+	width: 100%;
+	height: 100%;
+}
+
+
 /* CSS modified for TiddlyWiki */
 svg.railroad-diagram {
 	background-color: hsl(30,20%,98%);
@@ -516,7 +522,7 @@ background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0
 background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
 background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
 
-}.tc-more-sidebar .tc-tab-buttons button {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
 	
 background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
@@ -524,7 +530,7 @@ background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1
 background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 
-}.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	
 background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
 background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
@@ -2009,7 +2015,7 @@ a.tc-tiddlylink:hover {
 	border-right: 1px solid #cccccc;
 }.tc-sidebar-lists .tc-tab-divider {
 	border-top: 1px solid #e4e4e4;
-}.tc-more-sidebar .tc-tab-buttons button {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
 	display: block;
 	width: 100%;
 	background-color: #e0e0e0;
@@ -2018,7 +2024,7 @@ a.tc-tiddlylink:hover {
 	border-bottom: none;
 	border-right: 1px solid #ccc;
 	margin-bottom: inherit;
-}.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	background-color: #f4f4f4;
 	border: none;
 }/*

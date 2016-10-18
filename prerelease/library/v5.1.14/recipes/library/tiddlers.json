@@ -226,6 +226,17 @@
         "readme": "This plugin adds a \"Powered by ~TiddlyWiki\" banner that links back to http://tiddlywiki.com\n\nIt's very basic at the moment, but the plan is to improve it by making it more customisable.\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/qrcode",
+        "description": "QR Code generator",
+        "author": "Zeno Zeng, adapted by Jeremy Ruston",
+        "plugin-type": "plugin",
+        "list": "readme usage examples license",
+        "version": "5.1.14-prerelease",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "The QR code plugin provides a macro that enables any text to be rendered as a [[QR code|https://en.wikipedia.org/wiki/QR_code]]. QR codes are a type of 2-dimensional bar code that encodes arbitrary data: text, numbers, links. QR code readers are available or built-in for smartphones, making them a convenient means to transfer information between devices\n\nThe QR code plugin adds the following features to TiddlyWiki:\n\n* A new [[makeqr Macro]] that renders specified text as a QR code image that can be displayed or printed\n* A new toolbar button that can display several QR code renderings of the content of a tiddler:\n** Raw content\n** Rendered, formatted content\n** URL of tiddler\n\nThe QR code plugin is based on the [[library qrcode.js by Zeno Zeng|https://github.com/zenozeng/node-yaqrcode]]."
+    },
+    {
         "title": "$:/plugins/tiddlywiki/railroad",
         "description": "Railroad diagram generator",
         "author": "AstridElocson",
