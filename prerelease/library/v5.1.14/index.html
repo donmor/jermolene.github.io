@@ -22,6 +22,17 @@ var assetList = [
         "readme": "This plugin packages [[async.js|https://github.com/caolan/async]] for use by other plugins. It does not provide any end-user visible features.\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/bibtex",
+        "description": "BibTeX importer",
+        "author": "Henrik Muehe and Mikola Lysenko, adapted by Jeremy Ruston",
+        "plugin-type": "plugin",
+        "list": "readme usage examples license",
+        "version": "5.1.14-prerelease",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "The BibTeX plugin provides a deserializer that can convert bibliographic entries in `.bib` files into individual tiddlers.\n\nThe conversion is as follows:\n\n* `title` comes from citationKey\n* `bibtex-entry-type` comes from entryType\n* all `entryTags` are assigned to fields with the prefix `bibtex-`\n\nThe BibTeX plugin is based on the library [[bibtexParseJs by Henrik Muehe and Mikola Lysenko|https://github.com/ORCID/bibtexParseJs]].\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/blog",
         "description": "Tools for using TiddlyWiki to publish blogs",
         "author": "JeremyRuston",
@@ -244,7 +255,7 @@ var assetList = [
         "version": "5.1.14-prerelease",
         "dependents": "",
         "type": "application/json",
-        "readme": "The QR code plugin provides a macro that enables any text to be rendered as a [[QR code|https://en.wikipedia.org/wiki/QR_code]]. QR codes are a type of 2-dimensional bar code that encodes arbitrary data: text, numbers, links. QR code readers are available or built-in for smartphones, making them a convenient means to transfer information between devices\n\nThe QR code plugin adds the following features to TiddlyWiki:\n\n* A new [[makeqr Macro]] that renders specified text as a QR code image that can be displayed or printed\n* A new toolbar button that can display several QR code renderings of the content of a tiddler:\n** Raw content\n** Rendered, formatted content\n** URL of tiddler\n\nThe QR code plugin is based on the [[library qrcode.js by Zeno Zeng|https://github.com/zenozeng/node-yaqrcode]]."
+        "readme": "The QR code plugin provides a macro that enables any text to be rendered as a [[QR code|https://en.wikipedia.org/wiki/QR_code]]. QR codes are a type of 2-dimensional bar code that encodes arbitrary data: text, numbers, links. QR code readers are available or built-in for smartphones, making them a convenient means to transfer information between devices\n\nThe QR code plugin adds the following features to TiddlyWiki:\n\n* A new [[makeqr Macro]] that renders specified text as a QR code image that can be displayed or printed\n* A new toolbar button that can display several QR code renderings of the content of a tiddler:\n** Raw content\n** Rendered, formatted content\n** URL of tiddler\n\nThe QR code plugin is based on the library [[qrcode.js by Zeno Zeng|https://github.com/zenozeng/node-yaqrcode]]."
     },
     {
         "title": "$:/plugins/tiddlywiki/railroad",
