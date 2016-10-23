@@ -96,6 +96,12 @@ color:#333333;">
 <div class="tc-tiddler-body tc-reveal"><p>L'affichage de TiddlyWiki est piloté par un ensemble de <dfn class="doc-def">widgets</dfn> sous-jacents. Ceux-ci sont organisés dans une structure arborescente : chaque widget a un widget parent et zéro ou plusieurs widgets enfants.</p><p>TiddlyWiki génère cet <dfn class="doc-def">arbre widget</dfn> par l'analyse <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> des tiddlers. Chaque composant de la syntaxe <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, y compris le cas trivial du texte ordinaire, génère le widget correspondant. L'arborescence widget est une représentation intermédiaire, rendue, par la suite, dans l'affichage réel final.</p><p>Les Widgets sont similaires aux éléments HTML d'un document. En fait, les balises HTML dans Wikitext génèrent des <dfn class="doc-def">éléments widgets</dfn> dédiés. </p><p>Chaque classe de widget contribue a une aptitude spécifique de la fonctionnalité globale, comme l'aptitude à <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImageWidget.html">afficher une image</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">un bouton</a>, pour <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">appeler une macro</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">transclure un texte externe</a>, ou pour <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">marquer une partie du texte comme titre</a>.</p><p>Les widget plus spécialisés utilisent une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">syntaxe de widget</a> polyvalente comme seule représentation <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> possible.</p><p>Les classes de widget suivantes sont intégrées au noyau :</p><p><ul class="">
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
+action-createtiddler
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
 action-deletefield
 </a>
