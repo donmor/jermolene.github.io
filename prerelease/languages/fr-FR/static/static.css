@@ -91,6 +91,34 @@ svg.railroad-diagram path.arrow {
     stroke-width: 2;
 }
 
+html body strong,
+html body button.tc-tiddlylink,
+html body a.tc-tiddlylink,
+html body a.tc-tiddlylink-shadow,
+html body .tc-menu-list-count {
+	font-weight: 700;
+}html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body a.tc-tiddlylink-shadow.tc-tiddlylink-resolves,
+html body button.tc-tag-label,
+html body span.tc-tag-label,
+html body .tc-sidebar-header .tc-title a.tc-tiddlylink-resolves,
+html body .tc-site-title,
+html body .tc-titlebar,
+html body .tc-subtitle,
+html body .tc-tiddler-missing .tc-title,
+html body .tc-tab-buttons button {
+	font-weight: 500;
+}html body .tc-view-field-name,
+html body .tc-tiddler-frame .tc-tiddler-body {
+	font-weight: 400;
+}
+
+
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
@@ -845,7 +873,7 @@ a.tc-tiddlylink:hover {
 	right: 0;
 	background: rgba(0,200,0,0.7);
 	text-align: center;
-	content: "Lâcher ici (ou appuyer sur « escape » pour annuler)";
+	content: "Déposer ici (ou appuyer sur « escape » pour annuler)";
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {

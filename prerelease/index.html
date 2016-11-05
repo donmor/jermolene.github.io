@@ -9965,6 +9965,17 @@ $src$
     }
 }</pre>
 </div>
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Heavier font theme" name="Heavier" plugin-type="theme" title="$:/themes/tiddlywiki/heavier" type="application/json" version="5.1.14-prerelease">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/themes/tiddlywiki/heavier/base&quot;: {
+            &quot;title&quot;: &quot;$:/themes/tiddlywiki/heavier/base&quot;,
+            &quot;tags&quot;: &quot;[[$:/tags/Stylesheet]]&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\nhtml body strong,\nhtml body button.tc-tiddlylink,\nhtml body a.tc-tiddlylink,\nhtml body a.tc-tiddlylink-shadow,\nhtml body .tc-menu-list-count {\n\tfont-weight: 700;\n}\n\nhtml body h1,\nhtml body h2,\nhtml body h3,\nhtml body h4,\nhtml body h5,\nhtml body h6,\nhtml body a.tc-tiddlylink-shadow.tc-tiddlylink-resolves,\nhtml body button.tc-tag-label,\nhtml body span.tc-tag-label,\nhtml body .tc-sidebar-header .tc-title a.tc-tiddlylink-resolves,\nhtml body .tc-site-title,\nhtml body .tc-titlebar,\nhtml body .tc-subtitle,\nhtml body .tc-tiddler-missing .tc-title,\nhtml body .tc-tab-buttons button {\n\tfont-weight: 500;\n}\n\nhtml body .tc-view-field-name,\nhtml body .tc-tiddler-frame .tc-tiddler-body {\n\tfont-weight: 400;\n}\n&quot;
+        }
+    }
+}</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/snowwhite" description="Hides the ability to edit tiddlers" name="ReadOnly" plugin-type="theme" title="$:/themes/tiddlywiki/readonly" type="application/json" version="5.1.14-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -10134,6 +10145,9 @@ $src$
         }
     }
 }</pre>
+</div>
+<div title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<pre>450px</pre>
 </div>
 <div title="$:/themes/tiddlywiki/vanilla/options/sidebarlayout">
 <pre>fluid-fixed</pre>
@@ -18762,6 +18776,18 @@ This is a minor bug fix release.
 * Added [[XLSX Utilities Edition|XLSX Utilities plugin]] for importing Excel-compatible spreadsheets
 * [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/22c1b04ee79a5ccc25cbc33cc91bf5daac1df831]] QR code generator plugin
 * [[Added|https://github.com/Jermolene/TiddlyWiki5/commit/7f11c151f06cd039d1887a6940075237ccb4b7a9]] BibTeX importer plugin
+
+!! New &quot;Heavier&quot; Theme
+
+A new theme called &quot;Heavier&quot; thickens TiddlyWiki's default lightweight fonts:
+
+&lt;$button&gt;
+&lt;$action-setfield $tiddler=&quot;$:/theme&quot; text=&quot;$:/themes/tiddlywiki/heavier&quot;/&gt;
+Try out the &quot;Heavier&quot; theme
+&lt;/$button&gt; &lt;$button&gt;
+&lt;$action-setfield $tiddler=&quot;$:/theme&quot; text=&quot;$:/themes/tiddlywiki/snowwhite&quot;/&gt;
+Revert
+&lt;/$button&gt;
 
 !! Performance Improvements
 

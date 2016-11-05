@@ -1616,14 +1616,14 @@ a.tc-tiddlylink:hover {
 		width: auto;
 		left: 0;
 		margin-left: 0px;
-		margin-right: 350px;
+		margin-right: 450px;
 	}.tc-tiddler-frame {
 		width: 100%;
 	}.tc-sidebar-scrollable {
 		left: auto;
 		bottom: 0;
 		right: 0;
-		width: 350px;
+		width: 450px;
 	}body.tc-body .tc-storyview-zoomin-tiddler {
 		width: 100%;
 		width: calc(100% - 42px);
