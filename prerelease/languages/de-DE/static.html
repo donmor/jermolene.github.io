@@ -139,7 +139,7 @@ Error message and password prompt
      -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
-}.tc-drop-down {
+}.tc-drop-down, .tc-drop-down-simple {
 	border-radius: 4px;
 	
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -851,6 +851,7 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
+    cursor: pointer;
 }.tc-btn-boxed {
 	font-size: 0.6em;
 	padding: 0.2em;
@@ -979,7 +980,7 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 0.16em 0.7em;
 	font-size: 0.9em;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.2em;
 	color: #ffffff;
 	white-space: nowrap;
@@ -999,6 +1000,7 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 	width: 1em;
 	fill: #ffffff;
+	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
@@ -1378,6 +1380,12 @@ a.tc-tiddlylink:hover {
 	fill: #bbb;
 }.tc-drop-down-wrapper {
 	position: relative;
+}.tc-drop-down-simple {
+	min-width: 380px;
+	border: 1px solid #bbb;
+	background-color: #ffffff;
+	padding: 7px;
+	margin: 4px 0 0 0;
 }.tc-drop-down {
 	min-width: 380px;
 	border: 1px solid #bbb;
@@ -1680,6 +1688,50 @@ a.tc-tiddlylink:hover {
 }.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	background-color: #f4f4f4;
 	border: none;
+}/*
+** Manager
+*/.tc-manager-wrapper {
+	
+}.tc-manager-controls {
+	
+}.tc-manager-control {
+	margin: 0.5em 0;
+}.tc-manager-list {
+	width: 100%;
+	border-top: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+}.tc-manager-list-item {}.tc-manager-list-item-heading {
+    display: block;
+    width: 100%;
+    text-align: left;	
+	border-bottom: 1px solid #bbb;
+	padding: 3px;
+}.tc-manager-list-item-heading:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-manager-list-item-content {
+	display: flex;
+}.tc-manager-list-item-content-sidebar {
+    flex: 1 0;
+    background: #f8f8f8;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+    white-space: nowrap;
+}.tc-manager-list-item-content-sidebar-item {
+    border-top: 0.5em solid #bbb;
+    padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-tiddler {
+    flex: 3 1;
+    border-left: 0.5em solid #bbb;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+}.tc-manager-list-item-content-tiddler-item {
+    border-top: 0.5em solid #bbb;
+    padding: 0.5em;	
+}.tc-manager-list-item-content-tiddler-item.tc-manager-list-item-content-tiddler-item-table {
+	padding: 0;
+	margin: 0;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -2093,6 +2145,8 @@ font-weight:bold;
 
 <span class=" tc-reveal" hidden="true"></span>
 
+<span class=" tc-reveal" hidden="true"></span>
+
 <span class=" tc-reveal">
 <span class="tc-popup-keep">
 <button aria-label="Sprache" class="tc-btn-invisible" title="Auswahldialog für die Systemsprache">
@@ -2119,6 +2173,10 @@ font-weight:bold;
 
 <span class=" tc-reveal" hidden="true"></span>
 
+<span class=" tc-reveal" hidden="true"></span>
+
+<span class=" tc-reveal" hidden="true"></span>
+
 <span class=" tc-reveal">
 <button aria-label="Speichern" class="tc-btn-invisible" title="Das Wiki speichern">
 <span class="tc-dirty-indicator">
@@ -2133,8 +2191,6 @@ font-weight:bold;
 </span>
 </button>
 </span>
-
-<span class=" tc-reveal" hidden="true"></span>
 
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -2251,11 +2307,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>

@@ -68,11 +68,13 @@ SelectWidget
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -131,6 +133,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/Macro">$:/tags/Macro</option>
 
 <option value="$:/tags/MakeQR">$:/tags/MakeQR</option>
+
+<option value="$:/tags/Manager">$:/tags/Manager</option>
 
 <option value="$:/tags/MoreSideBar">$:/tags/MoreSideBar</option>
 
@@ -613,7 +617,7 @@ Every time the user selects a new value in the menu, the selected value is writt
 &lt;/$select&gt;
 &lt;$tiddler tiddler={{$:/generated-list-demo-state}}&gt;
 &lt;$transclude mode='block'/&gt;
-&lt;/$tiddler&gt;</code></pre><p>That renders as:</p><p><select>
+&lt;/$tiddler&gt;</code></pre><p>That renders as:</p><p><select value="undefined">
 
 <option>HelloThere</option>
 

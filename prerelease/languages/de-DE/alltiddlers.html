@@ -135,7 +135,7 @@ Error message and password prompt
      -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
-}.tc-drop-down {
+}.tc-drop-down, .tc-drop-down-simple {
 	border-radius: 4px;
 	
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -847,6 +847,7 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
+    cursor: pointer;
 }.tc-btn-boxed {
 	font-size: 0.6em;
 	padding: 0.2em;
@@ -975,7 +976,7 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 0.16em 0.7em;
 	font-size: 0.9em;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.2em;
 	color: #ffffff;
 	white-space: nowrap;
@@ -995,6 +996,7 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 	width: 1em;
 	fill: #ffffff;
+	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
@@ -1374,6 +1376,12 @@ a.tc-tiddlylink:hover {
 	fill: #bbb;
 }.tc-drop-down-wrapper {
 	position: relative;
+}.tc-drop-down-simple {
+	min-width: 380px;
+	border: 1px solid #bbb;
+	background-color: #ffffff;
+	padding: 7px;
+	margin: 4px 0 0 0;
 }.tc-drop-down {
 	min-width: 380px;
 	border: 1px solid #bbb;
@@ -1676,6 +1684,50 @@ a.tc-tiddlylink:hover {
 }.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	background-color: #f4f4f4;
 	border: none;
+}/*
+** Manager
+*/.tc-manager-wrapper {
+	
+}.tc-manager-controls {
+	
+}.tc-manager-control {
+	margin: 0.5em 0;
+}.tc-manager-list {
+	width: 100%;
+	border-top: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+}.tc-manager-list-item {}.tc-manager-list-item-heading {
+    display: block;
+    width: 100%;
+    text-align: left;	
+	border-bottom: 1px solid #bbb;
+	padding: 3px;
+}.tc-manager-list-item-heading:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-manager-list-item-content {
+	display: flex;
+}.tc-manager-list-item-content-sidebar {
+    flex: 1 0;
+    background: #f8f8f8;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+    white-space: nowrap;
+}.tc-manager-list-item-content-sidebar-item {
+    border-top: 0.5em solid #bbb;
+    padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-tiddler {
+    flex: 3 1;
+    border-left: 0.5em solid #bbb;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+}.tc-manager-list-item-content-tiddler-item {
+    border-top: 0.5em solid #bbb;
+    padding: 0.5em;	
+}.tc-manager-list-item-content-tiddler-item.tc-manager-list-item-content-tiddler-item-table {
+	padding: 0;
+	margin: 0;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -2063,11 +2115,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/Stylesheet
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2134,11 +2188,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2206,11 +2262,13 @@ AddOn
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2267,11 +2325,13 @@ AndTidWiki
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2328,7 +2388,8 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#37d011;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#37d011;
 fill:#ffffff;
 color:#ffffff;">
 <svg class="tc-image-done-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2337,16 +2398,19 @@ color:#ffffff;">
     </g>
 </svg> done
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#329a34;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#329a34;
 fill:#ffffff;
 color:#ffffff;">
  task
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2403,11 +2467,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2464,11 +2530,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -2814,6 +2882,13 @@ margin: 1em;
     </g>
 </svg>
 
+<svg class="tc-image-list tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M0.719999312,185.568543 C2.21955287,181.862817 3.0452019,177.812144 3.0452019,173.568542 C3.0452019,155.891545 -11.2816707,141.568542 -28.9547636,141.568542 L-60.9548326,141.568542 C-78.6344937,141.568542 -92.9547981,155.895431 -92.9547981,173.568542 C-92.9547981,191.24554 -78.6279255,205.568542 -60.9548326,205.568542 L-28.9547636,205.568542 C-27.593228,205.568542 -26.2516158,205.483573 -24.9349335,205.31865 C-31.5207556,201.78951 -36.8809788,196.272192 -40.2126959,189.568542 L-60.9493786,189.568542 C-69.7889277,189.568542 -76.9547981,182.407041 -76.9547981,173.568542 C-76.9547981,164.731986 -69.7994766,157.568542 -60.9493786,157.568542 L-28.9602176,157.568542 C-20.1206685,157.568542 -12.9547981,164.730044 -12.9547981,173.568542 C-12.9547981,176.946528 -14.0004297,180.080016 -15.7866505,182.6623 C-13.6856165,184.473592 -10.949961,185.568542 -7.9585771,185.568542 L0.720002586,185.568542 Z" transform="translate(-44.954798, 173.568542) rotate(-225.000000) translate(44.954798, -173.568542) "></path>
+        <path d="M87.7480315,128 L23.9992458,128 C19.5813843,128 16,124.409247 16,119.993027 L16,8.00697327 C16,3.58484404 19.5881049,0 23.9992458,0 L104.000754,0 C108.418616,0 112,3.59075293 112,8.00697327 L112,104 L91.2492027,104 C90.2848199,104 89.410573,104.391703 88.7768998,105.025201 C88.1373658,105.661376 87.7480315,106.53563 87.7480315,107.501171 L87.7480315,128 Z M95.7480315,127.879386 L111.627417,112 L95.7480315,112 L95.7480315,127.879386 Z M40,15.5089165 C40,13.5709954 41.5636015,12 43.4998101,12 L98.5001899,12 C100.433082,12 102,13.5614718 102,15.5089165 L102,16.4910835 C102,18.4290046 100.436399,20 98.5001899,20 L43.4998101,20 C41.5669183,20 40,18.4385282 40,16.4910835 L40,15.5089165 Z M32,22 C35.3137085,22 38,19.3137085 38,16 C38,12.6862915 35.3137085,10 32,10 C28.6862915,10 26,12.6862915 26,16 C26,19.3137085 28.6862915,22 32,22 Z M40,31.5089165 C40,29.5709954 41.5636015,28 43.4998101,28 L98.5001899,28 C100.433082,28 102,29.5614718 102,31.5089165 L102,32.4910835 C102,34.4290046 100.436399,36 98.5001899,36 L43.4998101,36 C41.5669183,36 40,34.4385282 40,32.4910835 L40,31.5089165 Z M40,47.5089165 C40,45.5709954 41.5636015,44 43.4998101,44 L98.5001899,44 C100.433082,44 102,45.5614718 102,47.5089165 L102,48.4910835 C102,50.4290046 100.436399,52 98.5001899,52 L43.4998101,52 C41.5669183,52 40,50.4385282 40,48.4910835 L40,47.5089165 Z M40,63.5089165 C40,61.5709954 41.5636015,60 43.4998101,60 L98.5001899,60 C100.433082,60 102,61.5614718 102,63.5089165 L102,64.4910835 C102,66.4290046 100.436399,68 98.5001899,68 L43.4998101,68 C41.5669183,68 40,66.4385282 40,64.4910835 L40,63.5089165 Z M40,79.5089165 C40,77.5709954 41.5636015,76 43.4998101,76 L98.5001899,76 C100.433082,76 102,77.5614718 102,79.5089165 L102,80.4910835 C102,82.4290046 100.436399,84 98.5001899,84 L43.4998101,84 C41.5669183,84 40,82.4385282 40,80.4910835 L40,79.5089165 Z M40,95.5089165 C40,93.5709954 41.5636015,92 43.4998101,92 L98.5001899,92 C100.433082,92 102,93.5614718 102,95.5089165 L102,96.4910835 C102,98.4290046 100.436399,100 98.5001899,100 L43.4998101,100 C41.5669183,100 40,98.4385282 40,96.4910835 L40,95.5089165 Z M40,111.508916 C40,109.570995 41.5680474,108 43.4972017,108 L76.5027983,108 C78.4342495,108 80,109.561472 80,111.508916 L80,112.491084 C80,114.429005 78.4319526,116 76.5027983,116 L43.4972017,116 C41.5657505,116 40,114.438528 40,112.491084 L40,111.508916 Z M32,38 C35.3137085,38 38,35.3137085 38,32 C38,28.6862915 35.3137085,26 32,26 C28.6862915,26 26,28.6862915 26,32 C26,35.3137085 28.6862915,38 32,38 Z M32,54 C35.3137085,54 38,51.3137085 38,48 C38,44.6862915 35.3137085,42 32,42 C28.6862915,42 26,44.6862915 26,48 C26,51.3137085 28.6862915,54 32,54 Z M32,70 C35.3137085,70 38,67.3137085 38,64 C38,60.6862915 35.3137085,58 32,58 C28.6862915,58 26,60.6862915 26,64 C26,67.3137085 28.6862915,70 32,70 Z M32,86 C35.3137085,86 38,83.3137085 38,80 C38,76.6862915 35.3137085,74 32,74 C28.6862915,74 26,76.6862915 26,80 C26,83.3137085 28.6862915,86 32,86 Z M32,102 C35.3137085,102 38,99.3137085 38,96 C38,92.6862915 35.3137085,90 32,90 C28.6862915,90 26,92.6862915 26,96 C26,99.3137085 28.6862915,102 32,102 Z M32,118 C35.3137085,118 38,115.313708 38,112 C38,108.686292 35.3137085,106 32,106 C28.6862915,106 26,108.686292 26,112 C26,115.313708 28.6862915,118 32,118 Z"></path>
+    </g>
+</svg>
+
 <svg class="tc-image-locked-padlock tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M96.4723753,64 L105,64 L105,96.0097716 C105,113.673909 90.6736461,128 73.001193,128 L55.998807,128 C38.3179793,128 24,113.677487 24,96.0097716 L24,64 L32.0000269,64 C32.0028554,48.2766389 32.3030338,16.2688026 64.1594984,16.2688041 C95.9543927,16.2688056 96.4648869,48.325931 96.4723753,64 Z M80.5749059,64 L48.4413579,64 C48.4426205,47.71306 48.5829272,31.9999996 64.1595001,31.9999996 C79.8437473,31.9999996 81.1369461,48.1359182 80.5749059,64 Z M67.7315279,92.3641717 C70.8232551,91.0923621 73,88.0503841 73,84.5 C73,79.8055796 69.1944204,76 64.5,76 C59.8055796,76 56,79.8055796 56,84.5 C56,87.947435 58.0523387,90.9155206 61.0018621,92.2491029 L55.9067479,115.020857 L72.8008958,115.020857 L67.7315279,92.3641717 L67.7315279,92.3641717 Z"></path>
@@ -2875,7 +2950,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">5</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">26</tspan>
                 </text>
             </g>
         </g>
@@ -3076,6 +3151,26 @@ margin: 1em;
     </g>
 </svg>
 
+<svg class="tc-image-timestamp-off tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M2.15888296,13.318619 C-0.776179834,17.1278804 -0.406327781,21.4952226 2.16492475,26.7239514 C3.03014373,28.4834034 4.11067113,30.3160542 5.76880745,32.9198703 C6.06825521,33.3901011 6.37999986,33.8757196 6.80079264,34.5284016 C6.76601596,34.4744603 7.61863348,35.7959131 7.86014952,36.1711903 C8.7298731,37.5226015 9.3778481,38.5442055 10.0105989,39.5687001 C15.7952743,48.9347394 18.6230774,56.3058609 18.6230774,64.4749703 C18.6230774,72.500144 15.8019203,79.6588889 9.99187965,88.7880893 C9.00662207,90.3362048 5.58191554,95.5042936 5.69198351,95.3359387 C4.0173746,97.8973439 2.91465531,99.7299992 2.03902082,101.494431 C-0.54589514,106.703119 -0.85744931,111.14799 2.17511861,115.033652 C15.6698244,132.324563 50.6500225,132.339908 63.7096595,114.972891 C66.6590341,111.050742 66.1759868,106.635843 63.3937955,101.470135 C62.4605168,99.7373126 61.3048993,97.9424842 59.5384863,95.4009144 C59.2199064,94.9425317 58.8884714,94.4694576 58.4412271,93.8338047 C58.4799469,93.8888358 57.5728195,92.6005573 57.3163203,92.2353532 C56.3937123,90.9217413 55.7065963,89.9290991 55.0358011,88.9339338 C48.8570757,79.7674208 45.8504072,72.5470842 45.8504072,64.4749703 C45.8504072,56.3172642 48.8607515,48.9964358 55.0486263,39.6723638 C55.7186544,38.6627457 56.4041233,37.6566223 57.3279151,36.3199194 C57.580302,35.9547221 58.4514551,34.6972774 58.4518255,34.6967424 C58.8971366,34.0534266 59.2292056,33.5716261 59.5478274,33.1056054 C61.3093879,30.5291226 62.4637534,28.7069412 63.3948717,26.9513568 C66.1606863,21.73653 66.6440275,17.3108601 63.7253614,13.3794581 C50.5445718,-4.37487949 15.9068774,-4.52416945 2.15888296,13.318619 Z M8.9184414,18.5269065 C19.2237961,5.15213654 47.0786606,5.27219221 56.8737707,18.4660673 C57.3769652,19.1438633 57.2474271,20.3299673 55.8562144,22.9530403 C55.1101813,24.3596542 54.0987123,25.9562717 52.503549,28.2893796 C52.1959012,28.7393495 51.8722335,29.2089606 51.4354669,29.8399327 C51.4375683,29.8368968 50.5635889,31.098421 50.3078957,31.4684025 C49.3562822,32.8453625 48.6434803,33.8916051 47.9385585,34.953802 C40.9063087,45.5502032 37.3170674,54.278846 37.3170674,64.4749703 C37.3170674,74.6097584 40.917247,83.2553769 47.9598514,93.7035065 C48.6665804,94.7519818 49.3819339,95.7854174 50.3332359,97.1398838 C50.5932152,97.5100431 51.5036485,98.8030165 51.4622611,98.744194 C51.9008717,99.3675761 52.2238456,99.8285731 52.53131,100.270962 C54.1274739,102.567573 55.1371743,104.135772 55.880835,105.516531 C57.2563976,108.070544 57.3792078,109.19299 56.8894726,109.844252 C47.2294255,122.690413 18.9657471,122.678014 8.90220575,109.783491 C8.31821016,109.035211 8.39963564,107.873533 9.68284231,105.28783 C10.3736591,103.895812 11.3298349,102.306704 12.834329,100.005499 C12.6859947,100.232384 16.1555589,94.9966022 17.1909336,93.3697387 C23.7935819,82.9951297 27.1564172,74.4618651 27.1564172,64.4749703 C27.1564172,54.3925513 23.8127304,45.6766963 17.2708275,35.0846205 C16.6054244,34.0072582 15.9317417,32.945123 15.0358935,31.5531185 C14.7912045,31.172911 13.9355879,29.8468101 13.9727929,29.9045179 C13.5598963,29.2640833 13.2558887,28.7905172 12.9666018,28.3362422 C11.4640021,25.9766695 10.516422,24.3695067 9.82246396,22.9583197 C8.53123666,20.3325654 8.43180838,19.1584815 8.9184414,18.5269065 Z M32.7994632,63.9999336 C32.907638,52.9923692 36.7813241,43.6682014 44.1302604,32.5946075 C44.8526291,31.5061212 45.5790976,30.439819 46.5446218,29.0427304 C46.8019683,28.6703568 47.6773607,27.4067929 47.6740234,27.4116142 C48.1065178,26.7868139 48.4259849,26.3232975 48.7281457,25.881353 C50.2401104,23.6699326 51.1801312,22.1860971 51.8336216,20.9539684 C52.041961,20.5611532 52.2043528,20.2245697 52.3263781,19.9488385 C43.7720017,10.4362146 21.8977958,10.3575171 12.9415615,20.069191 C13.0542538,20.3454242 13.2045779,20.6823219 13.3979694,21.0755902 C14.006297,22.3126448 14.8874034,23.8070636 16.3122348,26.0445146 C16.5964412,26.4908116 16.8965803,26.9583516 17.3055289,27.5926624 C17.2671098,27.5330713 18.1242259,28.8614964 18.3705013,29.2441689 C19.2794118,30.6564702 19.9659484,31.7388709 20.6476777,32.8426671 C27.4686959,43.886662 31.0655735,53.1656526 31.1675904,63.9999337 L32.7994607,63.9999337 L32.7994632,63.9999336 Z"></path>
+        <g transform="translate(48.000000, 48.000000) scale(1.25)">
+            <circle cx="32" cy="32" fill="#FFFFFF" r="32"></circle>
+            <path d="M32.3125116,26.6556573 L23.8272482,18.170394 C22.2690672,16.6122129 19.7324731,16.6082788 18.1703759,18.1703759 C16.6114573,19.7292945 16.6082868,22.2651411 18.170394,23.8272482 L26.6556573,32.3125116 L18.170394,40.7977749 C16.6122129,42.3559559 16.6082788,44.89255 18.1703759,46.4546472 C19.7292945,48.0135658 22.2651411,48.0167363 23.8272482,46.4546291 L32.3125116,37.9693658 L40.7977749,46.4546291 C42.3559559,48.0128102 44.89255,48.0167443 46.4546472,46.4546472 C48.0135658,44.8957286 48.0167363,42.359882 46.4546291,40.7977749 L37.9693658,32.3125116 L46.4546291,23.8272482 C48.0128102,22.2690672 48.0167443,19.7324731 46.4546472,18.1703759 C44.8957286,16.6114573 42.359882,16.6082868 40.7977749,18.170394 L32.3125116,26.6556573 Z M32,58 C46.3594035,58 58,46.3594035 58,32 C58,17.6405965 46.3594035,6 32,6 C17.6405965,6 6,17.6405965 6,32 C6,46.3594035 17.6405965,58 32,58 Z" fill="#FF4848"></path>
+        </g>
+    </g>
+</svg>
+
+<svg class="tc-image-timestamp-on tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M3.15888296,13.318619 C0.223820166,17.1278804 0.593672219,21.4952226 3.16492475,26.7239514 C4.03014373,28.4834034 5.11067113,30.3160542 6.76880745,32.9198703 C7.06825521,33.3901011 7.37999986,33.8757196 7.80079264,34.5284016 C7.76601596,34.4744603 8.61863348,35.7959131 8.86014952,36.1711903 C9.7298731,37.5226015 10.3778481,38.5442055 11.0105989,39.5687001 C16.7952743,48.9347394 19.6230774,56.3058609 19.6230774,64.4749703 C19.6230774,72.500144 16.8019203,79.6588889 10.9918797,88.7880893 C10.0066221,90.3362048 6.58191554,95.5042936 6.69198351,95.3359387 C5.0173746,97.8973439 3.91465531,99.7299992 3.03902082,101.494431 C0.45410486,106.703119 0.14255069,111.14799 3.17511861,115.033652 C16.6698244,132.324563 51.6500225,132.339908 64.7096595,114.972891 C67.6590341,111.050742 67.1759868,106.635843 64.3937955,101.470135 C63.4605168,99.7373126 62.3048993,97.9424842 60.5384863,95.4009144 C60.2199064,94.9425317 59.8884714,94.4694576 59.4412271,93.8338047 C59.4799469,93.8888358 58.5728195,92.6005573 58.3163203,92.2353532 C57.3937123,90.9217413 56.7065963,89.9290991 56.0358011,88.9339338 C49.8570757,79.7674208 46.8504072,72.5470842 46.8504072,64.4749703 C46.8504072,56.3172642 49.8607515,48.9964358 56.0486263,39.6723638 C56.7186544,38.6627457 57.4041233,37.6566223 58.3279151,36.3199194 C58.580302,35.9547221 59.4514551,34.6972774 59.4518255,34.6967424 C59.8971366,34.0534266 60.2292056,33.5716261 60.5478274,33.1056054 C62.3093879,30.5291226 63.4637534,28.7069412 64.3948717,26.9513568 C67.1606863,21.73653 67.6440275,17.3108601 64.7253614,13.3794581 C51.5445718,-4.37487949 16.9068774,-4.52416945 3.15888296,13.318619 Z M9.9184414,18.5269065 C20.2237961,5.15213654 48.0786606,5.27219221 57.8737707,18.4660673 C58.3769652,19.1438633 58.2474271,20.3299673 56.8562144,22.9530403 C56.1101813,24.3596542 55.0987123,25.9562717 53.503549,28.2893796 C53.1959012,28.7393495 52.8722335,29.2089606 52.4354669,29.8399327 C52.4375683,29.8368968 51.5635889,31.098421 51.3078957,31.4684025 C50.3562822,32.8453625 49.6434803,33.8916051 48.9385585,34.953802 C41.9063087,45.5502032 38.3170674,54.278846 38.3170674,64.4749703 C38.3170674,74.6097584 41.917247,83.2553769 48.9598514,93.7035065 C49.6665804,94.7519818 50.3819339,95.7854174 51.3332359,97.1398838 C51.5932152,97.5100431 52.5036485,98.8030165 52.4622611,98.744194 C52.9008717,99.3675761 53.2238456,99.8285731 53.53131,100.270962 C55.1274739,102.567573 56.1371743,104.135772 56.880835,105.516531 C58.2563976,108.070544 58.3792078,109.19299 57.8894726,109.844252 C48.2294255,122.690413 19.9657471,122.678014 9.90220575,109.783491 C9.31821016,109.035211 9.39963564,107.873533 10.6828423,105.28783 C11.3736591,103.895812 12.3298349,102.306704 13.834329,100.005499 C13.6859947,100.232384 17.1555589,94.9966022 18.1909336,93.3697387 C24.7935819,82.9951297 28.1564172,74.4618651 28.1564172,64.4749703 C28.1564172,54.3925513 24.8127304,45.6766963 18.2708275,35.0846205 C17.6054244,34.0072582 16.9317417,32.945123 16.0358935,31.5531185 C15.7912045,31.172911 14.9355879,29.8468101 14.9727929,29.9045179 C14.5598963,29.2640833 14.2558887,28.7905172 13.9666018,28.3362422 C12.4640021,25.9766695 11.516422,24.3695067 10.822464,22.9583197 C9.53123666,20.3325654 9.43180838,19.1584815 9.9184414,18.5269065 Z M33.7994632,63.9999336 C33.907638,52.9923692 37.7813241,43.6682014 45.1302604,32.5946075 C45.8526291,31.5061212 46.5790976,30.439819 47.5446218,29.0427304 C47.8019683,28.6703568 48.6773607,27.4067929 48.6740234,27.4116142 C49.1065178,26.7868139 49.4259849,26.3232975 49.7281457,25.881353 C51.2401104,23.6699326 52.1801312,22.1860971 52.8336216,20.9539684 C53.041961,20.5611532 53.2043528,20.2245697 53.3263781,19.9488385 C44.7720017,10.4362146 22.8977958,10.3575171 13.9415615,20.069191 C14.0542538,20.3454242 14.2045779,20.6823219 14.3979694,21.0755902 C15.006297,22.3126448 15.8874034,23.8070636 17.3122348,26.0445146 C17.5964412,26.4908116 17.8965803,26.9583516 18.3055289,27.5926624 C18.2671098,27.5330713 19.1242259,28.8614964 19.3705013,29.2441689 C20.2794118,30.6564702 20.9659484,31.7388709 21.6476777,32.8426671 C28.4686959,43.886662 32.0655735,53.1656526 32.1675904,63.9999337 L33.7994607,63.9999337 L33.7994632,63.9999336 Z"></path>
+        <g transform="translate(48.000000, 48.000000) scale(1.25)">
+            <circle cx="32" cy="32" fill="#FFFFFF" r="32"></circle>
+            <path d="M32,58 C46.3594035,58 58,46.3594035 58,32 C58,17.6405965 46.3594035,6 32,6 C17.6405965,6 6,17.6405965 6,32 C6,46.3594035 17.6405965,58 32,58 Z M21.9693252,49.2119659 C22.0684627,49.3385849 22.1763171,49.4605883 22.2928932,49.5771645 C23.0571791,50.3414503 24.0562808,50.7317944 25.0603293,50.7470736 C26.1178906,50.7740098 27.1843207,50.3842218 27.991378,49.5771645 C28.1079003,49.4606422 28.2157322,49.3386633 28.3148696,49.2120423 L50.5771464,26.9497655 C52.1353275,25.3915845 52.1392616,22.8549904 50.5771645,21.2928932 C49.0182459,19.7339746 46.4823993,19.7308041 44.9202922,21.2929113 L25.1421356,41.0710678 L19.5055522,35.4344843 C17.9451356,33.8740677 15.4113396,33.8729317 13.8492424,35.4350288 C12.2903238,36.9939475 12.2869015,39.5295421 13.8486979,41.0913386 L21.9693252,49.2119659 L21.9693252,49.2119659 Z" fill="#24DF1E"></path>
+        </g>
+    </g>
+</svg>
+
 <svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M64,128.241818 C99.346224,128.241818 128,99.5880417 128,64.2418177 C128,28.8955937 99.346224,0.241817675 64,0.241817675 C28.653776,0.241817675 0,28.8955937 0,64.2418177 C0,99.5880417 28.653776,128.241818 64,128.241818 Z M75.9358659,91.4531941 C75.3115438,95.581915 70.2059206,98.8016748 64,98.8016748 C57.7940794,98.8016748 52.6884562,95.581915 52.0641341,91.4531941 C54.3299053,94.0502127 58.8248941,95.8192805 64,95.8192805 C69.1751059,95.8192805 73.6700947,94.0502127 75.9358659,91.4531941 L75.9358659,91.4531941 Z M75.9358659,95.9453413 C75.3115438,100.074062 70.2059206,103.293822 64,103.293822 C57.7940794,103.293822 52.6884562,100.074062 52.0641341,95.9453413 C54.3299053,98.5423599 58.8248941,100.311428 64,100.311428 C69.1751059,100.311428 73.6700947,98.5423599 75.9358659,95.9453413 L75.9358659,95.9453413 Z M75.9358659,100.40119 C75.3115438,104.529911 70.2059206,107.74967 64,107.74967 C57.7940794,107.74967 52.6884562,104.529911 52.0641341,100.40119 C54.3299053,102.998208 58.8248941,104.767276 64,104.767276 C69.1751059,104.767276 73.6700947,102.998208 75.9358659,100.40119 L75.9358659,100.40119 Z M75.9358659,104.893337 C75.3115438,109.022058 70.2059206,112.241818 64,112.241818 C57.7940794,112.241818 52.6884562,109.022058 52.0641341,104.893337 C54.3299053,107.490356 58.8248941,109.259423 64,109.259423 C69.1751059,109.259423 73.6700947,107.490356 75.9358659,104.893337 L75.9358659,104.893337 Z M64.3010456,24.2418177 C75.9193117,24.2418188 88.0000013,32.0619847 88,48.4419659 C87.9999987,64.8219472 75.9193018,71.7540963 75.9193021,83.5755932 C75.9193022,89.4486648 70.0521957,92.8368862 63.9999994,92.8368862 C57.947803,92.8368862 51.9731007,89.8295115 51.9731007,83.5755932 C51.9731007,71.1469799 39.9999998,65.4700602 40,48.4419647 C40.0000002,31.4138691 52.6827796,24.2418166 64.3010456,24.2418177 Z"></path>
@@ -3188,11 +3283,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3250,11 +3347,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  maintainer
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3311,11 +3410,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3455,11 +3556,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3516,11 +3619,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3577,11 +3682,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3642,11 +3749,13 @@ Dev Thumbnail.jpg
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3707,7 +3816,8 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#37d011;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#37d011;
 fill:#ffffff;
 color:#ffffff;">
 <svg class="tc-image-done-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -3716,6 +3826,7 @@ color:#ffffff;">
     </g>
 </svg> done
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3823,21 +3934,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3895,21 +4010,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Video
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -3967,11 +4086,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocEins
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4028,11 +4149,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  EinsA
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4089,11 +4212,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocEins
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4150,11 +4275,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  EinsB
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4211,11 +4338,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocEins
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4272,11 +4401,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4334,21 +4465,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4443,21 +4578,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4514,21 +4653,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4602,21 +4745,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4689,21 +4836,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4772,21 +4923,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4843,21 +4998,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -4914,21 +5073,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Einführung
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Intro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5001,21 +5164,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5072,11 +5239,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#329a34;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#329a34;
 fill:#ffffff;
 color:#ffffff;">
  task
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5133,11 +5302,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5194,11 +5365,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5256,11 +5429,13 @@ Für Entwickler
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5317,11 +5492,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5379,11 +5556,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#329a34;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#329a34;
 fill:#ffffff;
 color:#ffffff;">
  task
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5440,11 +5619,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5502,11 +5683,13 @@ GitHub
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5563,11 +5746,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5625,11 +5810,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5860,11 +6047,13 @@ HelloThumbnail - Developers
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5921,11 +6110,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -5982,11 +6173,13 @@ HelloThumbnail - HelpingTiddlyWiki
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6043,11 +6236,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6104,11 +6299,13 @@ HelloThumbnail - Latest Version
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6165,11 +6362,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  HelloThumbnail
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6226,11 +6425,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6287,11 +6488,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6361,11 +6564,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6430,21 +6635,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Transklusion in WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6502,11 +6711,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6563,21 +6774,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6634,11 +6849,13 @@ Informationen weitergeben
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -6695,11 +6912,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/SideBar
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7099,11 +7318,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocVariante
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7272,11 +7493,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocVariante
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7411,11 +7634,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocVariante
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7547,11 +7772,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocVariante
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7686,11 +7913,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7758,11 +7987,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7819,11 +8050,13 @@ Introduction Video Thumbnail.jpg
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7880,11 +8113,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -7943,11 +8178,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8004,11 +8241,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8065,11 +8304,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8126,11 +8367,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/_tags/ListIcon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8187,11 +8430,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/_tags/ListIcon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8248,11 +8493,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/_tags/ListIcon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8309,11 +8556,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -8500,21 +8749,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -9843,11 +10096,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -9922,11 +10177,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Makros
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10097,11 +10354,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10158,11 +10417,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10220,11 +10481,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10307,11 +10570,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10378,11 +10643,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10440,11 +10707,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10501,11 +10770,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Bilder
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10562,11 +10833,13 @@ Motovun Jack.svg
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10623,11 +10896,13 @@ New Release Banner.png
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10684,11 +10959,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10745,11 +11022,13 @@ Open Source Initiative
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10807,11 +11086,13 @@ OpenSource
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10869,11 +11150,13 @@ Permalink
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10930,11 +11213,13 @@ Permaview
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -10992,11 +11277,13 @@ Philosophy von Tiddlern
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11054,11 +11341,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  maintainer
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11115,11 +11404,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11176,11 +11467,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TabsMakro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11237,11 +11530,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TabsMakro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11298,11 +11593,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TabsMakro
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11410,11 +11707,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#329a34;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#329a34;
 fill:#ffffff;
 color:#ffffff;">
  task
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11522,11 +11821,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11583,11 +11884,13 @@ Speichern mit Android
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11644,11 +11947,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11722,11 +12027,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11783,11 +12090,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11860,21 +12169,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TiddlyFox
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -11947,11 +12260,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12020,11 +12335,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12093,11 +12410,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12155,11 +12474,13 @@ Stanford JavaScript Crypto Library
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12216,11 +12537,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12303,11 +12626,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12378,11 +12703,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12440,11 +12767,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12501,11 +12830,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12581,11 +12912,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Makros
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12778,11 +13111,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Makros
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -12889,11 +13224,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13037,21 +13374,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TaskManagement
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13114,21 +13455,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TaskManagement
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13185,31 +13530,37 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TaskManagement
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Was kann TiddlyWiki
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13343,11 +13694,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13404,11 +13757,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13465,11 +13820,13 @@ Tiddler Poster.png
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13526,11 +13883,13 @@ TiddlyDesktop
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13588,21 +13947,25 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13670,11 +14033,13 @@ TiddlyIE
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13731,11 +14096,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13792,11 +14159,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13853,11 +14222,13 @@ TiddlyWiki Classic.png
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  picture
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13914,11 +14285,13 @@ TiddlyWiki mit Dropbox teilen
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -13975,11 +14348,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Video
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14037,11 +14412,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14098,11 +14475,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14159,11 +14538,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14220,11 +14601,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14297,11 +14680,13 @@ TiddlyWiki Strukturieren
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14358,11 +14743,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14420,11 +14807,13 @@ Titel Listen
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14482,11 +14871,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocBeispiel
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14543,11 +14934,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocBeispiel
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14604,11 +14997,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocBeispiel
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14665,11 +15060,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14727,11 +15124,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14799,11 +15198,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14862,11 +15263,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -14923,11 +15326,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15010,11 +15415,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15075,11 +15482,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15136,11 +15545,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15198,7 +15609,8 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#37d011;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#37d011;
 fill:#ffffff;
 color:#ffffff;">
 <svg class="tc-image-done-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -15207,16 +15619,19 @@ color:#ffffff;">
     </g>
 </svg> done
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:#329a34;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:#329a34;
 fill:#ffffff;
 color:#ffffff;">
  task
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15273,21 +15688,25 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Hyperlinks
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15360,11 +15779,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Makros
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15422,11 +15843,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15483,21 +15906,25 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  TWclassic
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15554,11 +15981,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15615,11 +16044,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15690,11 +16121,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15751,11 +16184,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15813,11 +16248,13 @@ Wie kann ich helfen?
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Community
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15874,11 +16311,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Lexikon
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -15935,31 +16374,37 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  InhaltsVerzeichnis
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Konzept
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
 <span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  Referenz
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -16183,11 +16628,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  howto
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -16247,11 +16694,13 @@ ChrisK
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -16315,11 +16764,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -16403,11 +16854,13 @@ pmario
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
  tocZwei
 </button>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
