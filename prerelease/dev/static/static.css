@@ -1936,6 +1936,11 @@ a.tc-tiddlylink:hover {
     text-align: left;	
 	border-bottom: 1px solid #bbb;
 	padding: 3px;
+}.tc-manager-list-item-heading-selected {
+	font-weight: bold;
+	color: #e5f8fd;
+	fill: #e5f8fd;
+	background-color: #4e432f;
 }.tc-manager-list-item-heading:hover {
 	background: #5778d8;
 	color: #e5f8fd;
@@ -1947,20 +1952,32 @@ a.tc-tiddlylink:hover {
     border-right: 0.5em solid #bbb;
     border-bottom: 0.5em solid #bbb;
     white-space: nowrap;
-}.tc-manager-list-item-content-sidebar-item {
-    border-top: 0.5em solid #bbb;
-    padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+    background: #bbb;
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+    padding: 0.5em 0 0.5em 0;
+}.tc-manager-list-item-content-item-body {
+	padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-body > pre {
+	margin: 0.5em 0 0.5em 0;
+	border: none;
+	background: inherit;
 }.tc-manager-list-item-content-tiddler {
     flex: 3 1;
     border-left: 0.5em solid #bbb;
     border-right: 0.5em solid #bbb;
     border-bottom: 0.5em solid #bbb;
-}.tc-manager-list-item-content-tiddler-item {
-    border-top: 0.5em solid #bbb;
-    padding: 0.5em;	
-}.tc-manager-list-item-content-tiddler-item.tc-manager-list-item-content-tiddler-item-table {
+}.tc-manager-list-item-content-item-body > table {
+	border: none;
 	padding: 0;
 	margin: 0;
+}.tc-manager-list-item-content-item-body > table td {
+	border: none;
 }/*
 ** Alerts
 */.tc-alerts {

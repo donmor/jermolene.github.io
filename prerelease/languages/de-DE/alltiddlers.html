@@ -1703,6 +1703,11 @@ a.tc-tiddlylink:hover {
     text-align: left;	
 	border-bottom: 1px solid #bbb;
 	padding: 3px;
+}.tc-manager-list-item-heading-selected {
+	font-weight: bold;
+	color: #ffffff;
+	fill: #ffffff;
+	background-color: #333333;
 }.tc-manager-list-item-heading:hover {
 	background: #5778d8;
 	color: #ffffff;
@@ -1714,20 +1719,32 @@ a.tc-tiddlylink:hover {
     border-right: 0.5em solid #bbb;
     border-bottom: 0.5em solid #bbb;
     white-space: nowrap;
-}.tc-manager-list-item-content-sidebar-item {
-    border-top: 0.5em solid #bbb;
-    padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+    background: #bbb;
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+    padding: 0.5em 0 0.5em 0;
+}.tc-manager-list-item-content-item-body {
+	padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-body > pre {
+	margin: 0.5em 0 0.5em 0;
+	border: none;
+	background: inherit;
 }.tc-manager-list-item-content-tiddler {
     flex: 3 1;
     border-left: 0.5em solid #bbb;
     border-right: 0.5em solid #bbb;
     border-bottom: 0.5em solid #bbb;
-}.tc-manager-list-item-content-tiddler-item {
-    border-top: 0.5em solid #bbb;
-    padding: 0.5em;	
-}.tc-manager-list-item-content-tiddler-item.tc-manager-list-item-content-tiddler-item-table {
+}.tc-manager-list-item-content-item-body > table {
+	border: none;
 	padding: 0;
 	margin: 0;
+}.tc-manager-list-item-content-item-body > table td {
+	border: none;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -2950,7 +2967,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">26</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">28</tspan>
                 </text>
             </g>
         </g>
