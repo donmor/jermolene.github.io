@@ -469,7 +469,7 @@ svg.railroad-diagram path.arrow {
      -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
-}.tc-drop-down, .tc-drop-down-simple {
+}.tc-drop-down {
 	border-radius: 4px;
 	
   -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -1727,12 +1727,6 @@ a.tc-tiddlylink:hover {
 	fill: #bbb;
 }.tc-drop-down-wrapper {
 	position: relative;
-}.tc-drop-down-simple {
-	min-width: 380px;
-	border: 1px solid #bbb;
-	background-color: #ffffff;
-	padding: 7px;
-	margin: 4px 0 0 0;
 }.tc-drop-down {
 	min-width: 380px;
 	border: 1px solid #bbb;
@@ -2096,6 +2090,12 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 }.tc-manager-list-item-content-item-body > table td {
 	border: none;
+}.tc-manager-icon-editor > button {
+	width: 100%;
+}.tc-manager-icon-editor > button > svg,
+.tc-manager-icon-editor > button > button {
+	width: 100%;
+	height: auto;
 }/*
 ** Alerts
 */.tc-alerts {
