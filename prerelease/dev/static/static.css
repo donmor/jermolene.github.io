@@ -2078,6 +2078,10 @@ a.tc-tiddlylink:hover {
 	font-size: 12px;
 	line-height: 18px;
 	color: #547599;
+}.tc-message-box svg {
+	width: 1em;
+	height: 1em;
+    vertical-align: text-bottom;
 }/*
 ** Pictures
 */.tc-bordered-image {
