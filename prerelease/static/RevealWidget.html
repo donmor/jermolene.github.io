@@ -27,17 +27,17 @@
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep">
 <button aria-label="QR code" class="tc-btn-invisible" title="Generate QR code for this tiddler">
 
 
 </button>
 </span>
 <div class=" tc-reveal" hidden="true"></div>
-</span>
+</span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+
+
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -62,7 +62,7 @@ RevealWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 23rd December 2015 at 10:28pm
+</a> 16th December 2016 at 3:36pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -118,6 +118,11 @@ And this is some text
 
 &lt;/div&gt;
 &lt;/$reveal&gt;</code></pre><p>That renders as:</p><p><button class="">Pop me up!</button></p><p><span class=" tc-reveal" hidden="true"></span>
+</p></div><h2 class="">How to use text references with field content</h2><p>Here is a simple example how to use text references with field content to control the  <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RevealWidget.html">RevealWidget</a>. If the field <code>jeremy</code> is populated with text <code>tiddlywiki</code>, a message will be displayed.</p><div class="doc-example"><pre><code>&lt;$reveal type=&quot;match&quot; state=&quot;!!jeremy&quot; text=&quot;tiddlywiki&quot;&gt;
+~TiddlyWiki!
+&lt;/$reveal&gt;</code></pre><p>That renders as:</p><p><span class=" tc-reveal">
+TiddlyWiki!
+</span>
 </p></div></div>
 
 

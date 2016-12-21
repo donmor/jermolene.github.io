@@ -1545,6 +1545,8 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 }.tc-edit-add-tag .tc-add-tag-name input {
 	width: 50%;
+}.tc-edit-add-tag .tc-keyboard {
+	display:inline;
 }.tc-edit-tags .tc-tag-label {
 	display: inline-block;
 }.tc-edit-tags-list {
@@ -2303,7 +2305,6 @@ a.tc-tiddlylink:hover {
 	background: #f00;
 	color: #fff;
 }
-
 
 
 
