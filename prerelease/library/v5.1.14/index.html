@@ -142,13 +142,14 @@ var assetList = [
         "title": "$:/plugins/tiddlywiki/googleanalytics",
         "description": "Google Analytics: website statistics",
         "author": "JeremyRuston",
+        "contributor": "Sylvain Comte",
+        "version": "5.1.14",
         "core-version": ">=5.0.0",
-        "list": "readme usage",
-        "version": "5.1.14-prerelease",
+        "list": "readme settings usage",
         "plugin-type": "plugin",
         "dependents": "",
         "type": "application/json",
-        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/googleanalytics]]\n"
+        "readme": "This plugin enables you to use Google Analytics to track access to your online TiddlyWiki document. Based upon the [[official Google code|https://developers.google.com/analytics/devguides/collection/analyticsjs]].\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/googleanalytics]]\n"
     },
     {
         "title": "$:/plugins/tiddlywiki/help",
@@ -437,6 +438,17 @@ var assetList = [
         "plugin-type": "theme",
         "description": "Tightly packed theme",
         "dependents": "$:/themes/tiddlywiki/vanilla",
+        "version": "5.1.14-prerelease",
+        "type": "application/json"
+    },
+    {
+        "title": "$:/themes/tiddlywiki/tight-heavier",
+        "name": "Tight and Heavier",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "plugin-type": "theme",
+        "description": "Tight and Heavier font theme",
+        "dependents": "$:/themes/tiddlywiki/tight $:/themes/tiddlywiki/heavier",
         "version": "5.1.14-prerelease",
         "type": "application/json"
     },

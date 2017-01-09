@@ -11,14 +11,14 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>"TW5 Mall" by David Gifford: TiddlyWiki Pre-release — 5.1.14-prerelease</title>
+<title>How to embedd PDF and other documents: TiddlyWiki Pre-release — 5.1.14-prerelease</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Tutorials"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -49,7 +49,7 @@
 
 
 <h2 class="tc-title">
-&quot;TW5 Mall&quot; by David Gifford
+How to embedd PDF and other documents
 </h2>
 
 </span>
@@ -62,7 +62,7 @@
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 21st March 2014 at 8:45am
+</a> 29th December 2016 at 5:57pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -72,7 +72,7 @@
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
 color:#333333;">
- Tutorials
+ Learning
 </button>
 
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
@@ -87,8 +87,8 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Dave Gifford's growing catalogue of tips and tutorials.</p><p><a class="tc-tiddlylink-external" href="http://www.giffmex.org/tw5mall.htm" rel="noopener noreferrer" target="_blank">http://www.giffmex.org/tw5mall.htm</a></p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 5 is a great tool for note-taking, bookmarking, blogging, organizing to do lists, writing books, and more. But many of the things that can be done in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 5 are often hidden to the new user, either because the user doesn't know about it or because the user doesn't know how to do it. TW5 mall is a modest catalog of hacks where you can discover new tricks in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> 5 and also find out in layman's terms how to implement them.
-</p></blockquote></div>
+<div class="tc-tiddler-body tc-reveal"><h3 class="">Note about embedding versus external linking</h3><p><strong>Note:</strong> Before we dive into how you can embed files of a certain type, you may want to consider not embedding and instead simply linking to external resources like this:</p><pre><code>[ext[title|path/to/that.file]] </code></pre><p>Then let your browser decide how to handle the resource. The advantage to this approach is that it is simple and quick. The disadvantage is that the file doesn't actually travel with the TW5 file and that you can't use <code>node.js</code> with method #2 below to quickly file paths.</p><h2 class="">Two ways to embed a PDF in your TW5 file.</h2><h3 class="">1. Embedding with Drag and Drop </h3><p>One is to drag and drop the file onto your TW5 file. Wait for the green bar to appear at the top, drop, and then import from the import tiddler. This actually embeds the contents of your imported PDF (or other file) into your TW5 file.</p><p>This method be OK as long as your PDF is not too big. There can be concerns if your TW5 file becomes too big.</p><h3 class="">2. Embedding with '_canonical_uri'</h3><p>The other way is to create a tiddler link to the external file. In this method the file is not actually incorporated into your TW5 file, but can be accessed with the <code>{{My Image File.jpg}}</code> transclusion syntax just like an embedded file. The location address of the file can also be changed under <a class="tc-tiddlylink tc-tiddlylink-missing" href="node.js.html">node.js</a>. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ExternalImages.html">ExternalImages</a> for details of using external images with node.js.</p><p>Create a tiddler with a field <code>_canonical_uri</code>. Put in the local address to the external file. Set the <code>type</code> field to <code>application/pdf</code>.</p><p>With either way, with an appropriately configured browser, you should see your embedded PDF file. </p><h3 class="">Other File Types</h3><p>There's only so many file formats that TW5 knows about. There is a list at <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>. If your browser and/or TW5 doesn't know what to do with a particular file format, then you can only the use the second method to embed and then download a file. When you edit the tiddler a link is presented. You can right click on the link in order to download the file.
+</p></div>
 
 
 

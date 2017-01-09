@@ -2549,9 +2549,10 @@ a .doc-attr {
 	fill: #881122;
 }.doc-from-version {
     display: inline-block;
-	border: 2px solid #b99e2f;
     border-radius: 1em;
-	background: #ffe476;
+	background: #cccccc;
+	color: #ffffff;
+	fill: #ffffff;
     padding: 0 0.4em;
     font-size: 0.7em;
     text-transform: uppercase;
