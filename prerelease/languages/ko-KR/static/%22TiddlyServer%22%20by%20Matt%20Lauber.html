@@ -11,14 +11,14 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>How to embedd PDF and other documents: 티들리위키 — 줄 없는 개인 웹 공책</title>
+<title>"TiddlyServer" by Matt Lauber: 티들리위키 — 줄 없는 개인 웹 공책</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Resources"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다">
@@ -43,7 +43,7 @@
 
 <h2 class="tc-title">
 
-How to embedd PDF and other documents
+&quot;TiddlyServer&quot; by Matt Lauber
 
 </h2>
 
@@ -57,7 +57,7 @@ How to embedd PDF and other documents
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2016년 12월 29일 오후 5:57
+</a> 2016년 12월 26일 오후 7:39
 </div>
 </div>
 <div class=" tc-reveal">
@@ -67,7 +67,7 @@ How to embedd PDF and other documents
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- Learning
+ Resources
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -81,8 +81,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h3 class="">Note about embedding versus external linking</h3><p><strong>Note:</strong> Before we dive into how you can embed files of a certain type, you may want to consider not embedding and instead simply linking to external resources like this:</p><pre><code>[ext[title|path/to/that.file]] </code></pre><p>Then let your browser decide how to handle the resource. The advantage to this approach is that it is simple and quick. The disadvantage is that the file doesn't actually travel with the TW5 file and that you can't use <code>node.js</code> with method #2 below to quickly file paths.</p><h2 class="">Two ways to embed a PDF in your TW5 file.</h2><h3 class="">1. Embedding with Drag and Drop </h3><p>One is to drag and drop the file onto your TW5 file. Wait for the green bar to appear at the top, drop, and then import from the import tiddler. This actually embeds the contents of your imported PDF (or other file) into your TW5 file.</p><p>This method be OK as long as your PDF is not too big. There can be concerns if your TW5 file becomes too big.</p><h3 class="">2. Embedding with '_canonical_uri'</h3><p>The other way is to create a tiddler link to the external file. In this method the file is not actually incorporated into your TW5 file, but can be accessed with the <code>{{My Image File.jpg}}</code> transclusion syntax just like an embedded file. The location address of the file can also be changed under <a class="tc-tiddlylink tc-tiddlylink-missing" href="node.js.html">node.js</a>. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ExternalImages.html">ExternalImages</a> for details of using external images with node.js.</p><p>Create a tiddler with a field <code>_canonical_uri</code>. Put in the local address to the external file. Set the <code>type</code> field to <code>application/pdf</code>.</p><p>With either way, with an appropriately configured browser, you should see your embedded PDF file. </p><h3 class="">Other File Types</h3><p>There's only so many file formats that TW5 knows about. There is a list at <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>. If your browser and/or TW5 doesn't know what to do with a particular file format, then you can only the use the second method to embed and then download a file. When you edit the tiddler a link is presented. You can right click on the link in order to download the file.
-</p></div>
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyServer.html">TiddlyServer</a> is a special purpose Desktop app, designed to facilitate managing multiple instances of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> running as a server.  It does not require internet acess to access the wikis.</p><p><a class="tc-tiddlylink-external" href="https://github.com/mklauber/TiddlyServer/releases/" rel="noopener noreferrer" target="_blank">https://github.com/mklauber/TiddlyServer/releases/</a></p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyServer.html">TiddlyServer</a> can import both <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> files and <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyFolder.html">TiddlyFolder</a> wikis.  For each wiki, you specify a prefix to serve it with and the source to import from.  It will copy the wikis to its own internal store and begin serving them up at <a class="tc-tiddlylink-external" href="http://localhost:8080/" rel="noopener noreferrer" target="_blank">http://localhost:8080/</a>{prefix}/.  The export button for each wiki will convert it to a single file wiki. </p></blockquote></div>
 
 
 

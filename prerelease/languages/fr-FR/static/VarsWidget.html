@@ -86,9 +86,9 @@ color:#333333;">
 
 &lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
-&lt;/$vars&gt;</code></pre><p>In contrast, here is the same example using the <code>&lt;$set&gt;</code> widget:</p><pre><code>&lt;$set name=&quot;greeting&quot; value=&quot;Hi&quot; /&gt;
-&lt;$set name=&quot;me&quot; value={{!!title}} /&gt;
-&lt;$set name=&quot;sentence&quot; value=&lt;&lt;helloworld&gt;&gt; /&gt;
+&lt;/$vars&gt;</code></pre><p>In contrast, here is the same example using the <code>&lt;$set&gt;</code> widget:</p><pre><code>&lt;$set name=&quot;greeting&quot; value=&quot;Hi&quot; &gt;
+&lt;$set name=&quot;me&quot; value={{!!title}} &gt;
+&lt;$set name=&quot;sentence&quot; value=&lt;&lt;helloworld&gt;&gt; &gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
