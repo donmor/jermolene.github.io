@@ -270,6 +270,18 @@ var assetList = [
         "readme": "This plugin provides a `<$railroad>` widget for generating railroad diagrams as SVG images.\n\nAlternatively, the [[diagram notation|$:/plugins/tiddlywiki/railroad/syntax]] can be stored in a dedicated tiddler with its `type` field set to `text/vnd.tiddlywiki.railroad`, and that tiddler can simply be transcluded to wherever it is needed.\n\nThe plugin is based on [[a library by Tab Atkins|https://github.com/tabatkins/railroad-diagrams]], and has been extended to make it more flexible, including allowing components of a diagram to function as links or be transcluded from other tiddlers.\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/savetrail",
+        "description": "Auto-download modified tiddlers",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme settings",
+        "version": "5.1.14-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin causes TiddlyWiki to continuously save the contents of each tiddler that is changed as a JSON file. Configured correctly, the browser will download the files silently in the background, and they can be used as a backup in case of accidental data loss.\n\n''CAUTION'': Using this plugin will generate a //lot// of files in your downloads folder! Some points to watch:\n\n* This plugin is pretty much unusable unless your browser is set up to download files automatically, without prompting for the location\n* Automatic file downloading doesn't work in all browsers - in particular, Safari and Internet Explorer do not currently support the [[necessary HTML5 feature|http://caniuse.com/download]]\n* Be aware of the privacy implications of leaving a plaintext trail of all of your edits. You should only enable this plugin on computers that your trust and with content that is not sensitive\n* The plugin uses the tiddler title plus a timestamp to generate a filename for the downloaded file, but some browsers don't respect\n\nOther points to note:\n\n* By default, after a tiddler has been modified the plugin waits until at least one second has elapsed since the last modification before it attempts to save the tiddler. This reduces the number of times that rapidly changing tiddlers are saved\n* This plugin can be used with both the single file HTML configuration and under Node.js because it is independent of the usual saving and syncing processes\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/stacked-view",
         "description": "Stacked card storyview",
         "author": "JeremyRuston",
