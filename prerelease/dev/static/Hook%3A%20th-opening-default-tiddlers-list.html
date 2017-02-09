@@ -18,7 +18,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   "><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-HookMechanism"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -55,13 +55,25 @@ Hook: th-opening-default-tiddlers-list
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 22nd November 2014 at 8:03pm
+</a> 9th February 2017 at 11:55am
 </div>
 </div>
 <div class=" tc-reveal">
-<div class="tc-tags-wrapper"></div>
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-tag-label tc-btn-invisible" style="background-color:;
+fill:#4e432f;
+color:#4e432f;">
+ HookMechanism
+</button>
+
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to add to or remove from the list of tiddlers that are opened when the wiki is first loaded or the home button is clicked.</p><p>The function takes a list of tiddlers as its only argument and returns a modified list of tiddler titles to display.</p><p>Note that this hook is invoked with the tiddler titles that are generated from the filter in <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FDefaultTiddlers.html">$:/DefaultTiddlers</a>. Any added entries must be tiddler titles, not filter expressions.
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to add to or remove from the list of tiddlers that are opened when the wiki is first loaded or the home button is clicked.</p><p>Hook function parameters:</p><ul><li><strong>list</strong>: array of tiddler titles to be opened</li></ul><p>Return value:</p><ul><li>modified array of tiddler titles to be opened</li></ul><p>Note that this hook is invoked with the tiddler titles that are generated from the filter in <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FDefaultTiddlers.html">$:/DefaultTiddlers</a>. Any added entries must be tiddler titles, not filter expressions.
 </p></div>
 
 
