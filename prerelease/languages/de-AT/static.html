@@ -805,6 +805,8 @@ a.tc-tiddlylink:hover {
 	z-index: -10000;
 }.tc-tiddler-dragger-inner {
 	position: absolute;
+	top: -1000px;
+	left: -1000px;
 	display: inline-block;
 	padding: 8px 20px;
 	font-size: 16.9px;
@@ -831,6 +833,13 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Hierher ziehen (oder Escape um abzubrechen)";
+}.tc-droppable .tc-droppable-placeholder {
+	display: none;
+}.tc-droppable.tc-dragover .tc-droppable-placeholder {
+	display: block;
+	border: 2px dashed rgba(0,200,0,0.7);
+}.tc-draggable {
+	cursor: move;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
@@ -2263,7 +2272,18 @@ Mehr
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal"><p><button aria-label="Schließen" class="tc-btn-invisible tc-btn-mini" title="Schließe diesen Tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></p><p><button class="tc-btn-invisible tc-btn-mini">alle schließen</button>
+<div class=" tc-reveal"><p>
+<div style="position: relative;">
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<button aria-label="Schließen" class="tc-btn-invisible tc-btn-mini" title="Schließe diesen Tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a>
+</div>
+</div>
+</div>
+</p><p><button class="tc-btn-invisible tc-btn-mini">alle schließen</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
@@ -2327,6 +2347,7 @@ pmario
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+<span class="tc-draggable" draggable="true">
 
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
@@ -2337,6 +2358,7 @@ color:#333333;">
 
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
+</span>
 </span>
 </div>
 </div>

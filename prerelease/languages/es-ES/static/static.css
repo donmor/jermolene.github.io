@@ -820,6 +820,8 @@ a.tc-tiddlylink:hover {
 	z-index: -10000;
 }.tc-tiddler-dragger-inner {
 	position: absolute;
+	top: -1000px;
+	left: -1000px;
 	display: inline-block;
 	padding: 8px 20px;
 	font-size: 16.9px;
@@ -846,6 +848,13 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Suéltalo aquí o pulsa ESC para cancelar";
+}.tc-droppable .tc-droppable-placeholder {
+	display: none;
+}.tc-droppable.tc-dragover .tc-droppable-placeholder {
+	display: block;
+	border: 2px dashed rgba(0,200,0,0.7);
+}.tc-draggable {
+	cursor: move;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
