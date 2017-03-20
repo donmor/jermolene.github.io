@@ -1065,6 +1065,9 @@ input:not([type]) {
 	color: #bbb;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
 }kbd {
 	display: inline-block;
 	padding: 3px 5px;
@@ -1180,9 +1183,9 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Drop here (or use the 'Escape' key to cancel)";
-}.tc-droppable .tc-droppable-placeholder {
+}.tc-droppable > .tc-droppable-placeholder {
 	display: none;
-}.tc-droppable.tc-dragover .tc-droppable-placeholder {
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
 	display: block;
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
@@ -2876,7 +2879,15 @@ Stacked View
 </div>
 </div>
 </div>
-</p><p><button class="tc-btn-invisible tc-btn-mini">close all</button>
+
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<button class="tc-btn-invisible tc-btn-mini">close all</button>
+</div>
+
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
@@ -2968,10 +2979,128 @@ TiddlyWiki Pre-release
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>This is a pre-release build of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. It is provided for testing purposes. <strong>Please don't try to use it for anything important</strong> – you should use the latest official release from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com</a>.</p><hr><h2 class="">Drag and drop demo</h2><p><div class="tc-draggable" draggable="true">
+<div class="tc-tiddler-body tc-reveal"><p>This is a pre-release build of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. It is provided for testing purposes. <strong>Please don't try to use it for anything important</strong> – you should use the latest official release from <a class="tc-tiddlylink-external" href="http://tiddlywiki.com" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com</a>.</p><p>
+<ul class="">
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Monday.html">
+
+
+Monday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Tuesday.html">
+
+
+Tuesday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Wednesday.html">
+
+
+Wednesday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Thursday.html">
+
+
+Thursday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Friday.html">
+
+
+Friday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Saturday.html">
+
+
+Saturday
+
+
+</a>
+</div>
+</div>
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Sunday.html">
+
+
+Sunday
+
+
+</a>
+</div>
+</div>
+
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+ 
+</div>
+</div>
+
+</ul>
+</p><hr><h2 class="">Drag and drop demo</h2><p><div class="tc-draggable" draggable="true">
 (drag here to drag all of the tiddlers below)
 </div></p><p>
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -2982,9 +3111,7 @@ Monday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -2995,9 +3122,7 @@ Tuesday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -3008,9 +3133,7 @@ Wednesday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -3021,9 +3144,7 @@ Thursday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -3034,9 +3155,7 @@ Friday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -3047,9 +3166,7 @@ Saturday
 </div>
 </div>
 </div>
-</div>
 
-<div style="position: relative;">
 <div class="tc-droppable">
 <div class="tc-droppable-placeholder">
  
@@ -3059,6 +3176,15 @@ Saturday
 Sunday
 </div>
 </div>
+</div>
+
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<div>
+ 
 </div>
 </div>
 </p><hr><p>
@@ -3192,8 +3318,8 @@ HelloThere
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
@@ -3201,9 +3327,9 @@ color:#333333;">
  TableOfContents
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>
@@ -3383,8 +3509,8 @@ GettingStarted
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
@@ -3392,9 +3518,9 @@ color:#333333;">
  Working with TiddlyWiki
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>
@@ -3545,8 +3671,8 @@ Community
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
@@ -3554,9 +3680,9 @@ color:#333333;">
  TableOfContents
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>
@@ -3615,7 +3741,7 @@ Meetups
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Tinka%2520by%2520Andreas%2520Hahn.html">Tinka by Andreas Hahn</a></h1><p><div class="tc-subtitle">Posted 14 days ago</div></p><p>The Tinka plugin provides the ability to create and modify plugins in the browser, without requiring the use of Node.js.</p><p>See <a class="tc-tiddlylink-external" href="https://github.com/TinkaPlugin/Tinka" rel="noopener noreferrer" target="_blank">https://github.com/TinkaPlugin/Tinka</a> for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> repo.</p><p><a class="tc-tiddlylink-external" href="https://tinkaplugin.github.io/" rel="noopener noreferrer" target="_blank">https://tinkaplugin.github.io/</a></p><blockquote class="tc-quote"><p>This is a Control Panel extension that aims to simplify the plugin creation and editing process. After installing, you will find a new tab in your control panel that makes creating and modifying plugins a little bit easier.
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Tinka%2520by%2520Andreas%2520Hahn.html">Tinka by Andreas Hahn</a></h1><p><div class="tc-subtitle">Posted 15 days ago</div></p><p>The Tinka plugin provides the ability to create and modify plugins in the browser, without requiring the use of Node.js.</p><p>See <a class="tc-tiddlylink-external" href="https://github.com/TinkaPlugin/Tinka" rel="noopener noreferrer" target="_blank">https://github.com/TinkaPlugin/Tinka</a> for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> repo.</p><p><a class="tc-tiddlylink-external" href="https://tinkaplugin.github.io/" rel="noopener noreferrer" target="_blank">https://tinkaplugin.github.io/</a></p><blockquote class="tc-quote"><p>This is a Control Panel extension that aims to simplify the plugin creation and editing process. After installing, you will find a new tab in your control panel that makes creating and modifying plugins a little bit easier.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Leaflet%2520maps%2520plugin%2520by%2520Sylvain%2520Comte.html">Leaflet maps plugin by Sylvain Comte</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A mapping plugin based on <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">Leaflet</a> library. Allows you to create maps based upon geographical data contained in tiddlers.</p><p><a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin</a></p><blockquote class="tc-quote"><p>The <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">leaflet plugin</a> is a (working) attempt to integrate the <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">leaflet</a> library in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> in order to display geographical purpose tiddlers.</p><p>For now <code>&lt;$leafmap&gt;</code> widget displays an interactive map. Select size, location and zoom, clustering distance, and background. You can display data  : geojson, point(s), polygon(s) and/or polyline(s) directly or calling <em><a class="tc-tiddlylink tc-tiddlylink-missing" href="static/GeoTiddler.html">GeoTiddler</a></em>(s). Tiddler can be called individually, by list or with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Filters.html">filter</a>.</p><p>Have a look at <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#A%20plugin%20collection:%5B%5BA%20plugin%20collection%5D%5D%20%5B%5BLeaflet%20plugin%5D%5D" rel="noopener noreferrer" target="_blank">demo page on the web</a>.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Noteself%2522%2520by%2520Danielo%2520Rodr%25C3%25ADguez.html">&quot;Noteself&quot; by Danielo Rodríguez</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>NoteSelf is your personal, private, customizable, Evernote-like experience.
 You want cloud? Fine! You don't? Fine too! It's all yours, It's your decision!

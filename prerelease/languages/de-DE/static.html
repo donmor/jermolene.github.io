@@ -718,6 +718,9 @@ input:not([type]) {
 	color: #bbb;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
 }kbd {
 	display: inline-block;
 	padding: 3px 5px;
@@ -833,9 +836,9 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Hierher ziehen (oder Escape um abzubrechen)";
-}.tc-droppable .tc-droppable-placeholder {
+}.tc-droppable > .tc-droppable-placeholder {
 	display: none;
-}.tc-droppable.tc-dragover .tc-droppable-placeholder {
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
 	display: block;
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
@@ -2283,7 +2286,15 @@ Mehr
 </div>
 </div>
 </div>
-</p><p><button class="tc-btn-invisible tc-btn-mini">alle schließen</button>
+
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<button class="tc-btn-invisible tc-btn-mini">alle schließen</button>
+</div>
+
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
@@ -2347,8 +2358,8 @@ pmario
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#333333;
@@ -2356,9 +2367,9 @@ color:#333333;">
  InhaltsVerzeichnis
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>

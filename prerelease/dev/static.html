@@ -964,6 +964,9 @@ input:not([type]) {
 	color: #bbb;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
 }kbd {
 	display: inline-block;
 	padding: 3px 5px;
@@ -1079,9 +1082,9 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Drop here (or use the 'Escape' key to cancel)";
-}.tc-droppable .tc-droppable-placeholder {
+}.tc-droppable > .tc-droppable-placeholder {
 	display: none;
-}.tc-droppable.tc-dragover .tc-droppable-placeholder {
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
 	display: block;
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
@@ -2508,7 +2511,15 @@ More
 </div>
 </div>
 </div>
-</p><p><button class="tc-btn-invisible tc-btn-mini">close all</button>
+
+
+<div class="tc-droppable">
+<div class="tc-droppable-placeholder">
+ 
+</div>
+<button class="tc-btn-invisible tc-btn-mini">close all</button>
+</div>
+
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
@@ -2572,8 +2583,8 @@ HelloThere
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#4e432f;
@@ -2581,9 +2592,9 @@ color:#4e432f;">
  TableOfContents
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>
@@ -2653,8 +2664,8 @@ Introduction
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-<span class="tc-draggable" draggable="true">
 
+<span class="tc-draggable" draggable="true">
 
 <button class="tc-tag-label tc-btn-invisible" style="background-color:;
 fill:#4e432f;
@@ -2662,9 +2673,9 @@ color:#4e432f;">
  doc
 </button>
 
+</span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
-</span>
 </span>
 </div>
 </div>
