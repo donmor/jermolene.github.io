@@ -53,7 +53,7 @@ Cómo mostrar en un banner la fecha de última modificación del wiki
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 21 abril 2016 a las 10:36
 </div>
@@ -79,7 +79,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Así es como se muestra la fecha de última modificación del wiki en un banner, en una esquina de la ventana:</p><ol><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Installing%2520a%2520plugin%2520from%2520the%2520plugin%2520library.html">Instala el plugin</a> <dfn class="doc-def">Corner ribbon</dfn> en TiddlyWiki.</li><li>Guarda y recarga el wiki</li><li>Crea un tiddler llamado <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252F_MyRibbon.html">$:/_MyRibbon</a>, con la etiqueta <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> y el siguiente contenido:</li></ol><div><pre><code>&lt;div class=&quot;github-fork-ribbon-wrapper right&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Así es como se muestra la fecha de última modificación del wiki en un banner, en una esquina de la ventana:</p><ol><li><a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Installing%2520a%2520plugin%2520from%2520the%2520plugin%2520library.html">Instala el plugin</a> <dfn class="doc-def">Corner ribbon</dfn> en TiddlyWiki.</li><li>Guarda y recarga el wiki</li><li>Crea un tiddler llamado <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="%2524%253A%252F_MyRibbon.html">$:/_MyRibbon</a>, con la etiqueta <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> y el siguiente contenido:</li></ol><div><pre><code>&lt;div class=&quot;github-fork-ribbon-wrapper right&quot;&gt;
 &lt;div class=&quot;github-fork-ribbon&quot; style=&quot;background-color:#DF4848;&quot;&gt;
 &lt;$list filter=&quot;[!is[system]!has[draft.of]!sort[modified]limit[1]]&quot;&gt;
 &lt;$link&gt;
@@ -87,7 +87,7 @@ color:#333333;">
 &lt;/$link&gt;
 &lt;/$list&gt;
 &lt;/div&gt;
-&lt;/div&gt;</code></pre></div><ol><li>Puedes cambiar el valor de <code>background-color</code> según tus preferencias</li><li>También puedes cambiar la posición de <code>right</code> a <code>right-bottom</code><ol><li>Para poner el banner a la izquierda, la etiqueta de <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252F_MyRibbon.html">MyRibbon</a> debe ser <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageTemplate.html">$:/tags/PageTemplate</a> en lugar de <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> y la posición <code>left</code></li></ol></li></ol></div>
+&lt;/div&gt;</code></pre></div><ol><li>Puedes cambiar el valor de <code>background-color</code> según tus preferencias</li><li>También puedes cambiar la posición de <code>right</code> a <code>right-bottom</code><ol><li>Para poner el banner a la izquierda, la etiqueta de <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="%2524%253A%252F_MyRibbon.html">MyRibbon</a> debe ser <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Ftags%252FPageTemplate.html">$:/tags/PageTemplate</a> en lugar de <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Ftags%252FPageControls.html">$:/tags/PageControls</a> y la posición <code>left</code></li></ol></li></ol></div>
 
 
 

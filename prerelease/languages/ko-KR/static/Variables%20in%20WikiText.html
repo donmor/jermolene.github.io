@@ -55,7 +55,7 @@ Variables in WikiText
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 2015년 2월 21일 오후 10:18
 </div>
@@ -81,7 +81,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>See also the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">introduction to the concept of variables</a>.</p><p>To transclude the value of a variable, use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Calls%2520in%2520WikiText.html">macro call syntax</a> with no parameters. You can also use a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html"><code class="doc-widget">$macrocall</code></a> widget.</p><p>A <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> snippet can contain <code>$(name)$</code> as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Definitions%2520in%2520WikiText.html">placeholder</a> for which the value of the variable of that name will be substituted.</p><p>A variable's value can be used as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">filter parameter</a>, or as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget attribute</a>. The latter supports macro parameters.</p><h2 class="">Example: defining a variable</h2><p><div class="doc-example">
+<div class="tc-tiddler-body tc-reveal"><p>See also the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Variables.html">introduction to the concept of variables</a>.</p><p>To transclude the value of a variable, use the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Macro%2520Calls%2520in%2520WikiText.html">macro call syntax</a> with no parameters. You can also use a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="MacroCallWidget.html"><code class="doc-widget">$macrocall</code></a> widget.</p><p>A <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Macros.html">macro</a> snippet can contain <code>$(name)$</code> as a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Macro%2520Definitions%2520in%2520WikiText.html">placeholder</a> for which the value of the variable of that name will be substituted.</p><p>A variable's value can be used as a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Filter%2520Parameter.html">filter parameter</a>, or as a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Widgets%2520in%2520WikiText.html">widget attribute</a>. The latter supports macro parameters.</p><h2 class="">Example: defining a variable</h2><p><div class="doc-example">
 <span class=" tc-reveal">
 	<pre><code>&lt;$set name=animal value=zebra&gt;
 &lt;&lt;animal&gt;&gt;
@@ -95,7 +95,7 @@ color:#333333;">
 	</dl>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</div></p><h2 class="">Example: defining a macro</h2><p>The <code>\define</code> pragma below <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">defines a macro</a> called <code class="doc-var">tags-of-current-tiddler</code>. The macro returns the value of the tiddler's <code class="doc-field">tags</code> field, and can be accessed from anywhere else in the same tiddler (or in any tiddler that <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">imports</a> it).</p><p>
+</div></p><h2 class="">Example: defining a macro</h2><p>The <code>\define</code> pragma below <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Macros%2520in%2520WikiText.html">defines a macro</a> called <code class="doc-var">tags-of-current-tiddler</code>. The macro returns the value of the tiddler's <code class="doc-field">tags</code> field, and can be accessed from anywhere else in the same tiddler (or in any tiddler that <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ImportVariablesWidget.html">imports</a> it).</p><p>
 <pre><code>\define tags-of-current-tiddler() {{!!tags}}
 </code></pre>
 <div class="doc-example">
@@ -111,7 +111,7 @@ color:#333333;">
 </span>
 <span class=" tc-reveal" hidden="true"></span>
 </div>
-</p><h2 class="">Example: using a variable as a filter parameter</h2><p>This example uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="backlinks%2520Operator.html"><code class="doc-operator">backlinks</code></a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operator</a> to list all tiddlers that link to this one.</p><p><div class="doc-example">
+</p><h2 class="">Example: using a variable as a filter parameter</h2><p>This example uses the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="backlinks%2520Operator.html"><code class="doc-operator">backlinks</code></a> <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Filter%2520Operators.html">operator</a> to list all tiddlers that link to this one.</p><p><div class="doc-example">
 <span class=" tc-reveal">
 	<pre><code>&lt;&lt;list-links filter:&quot;[&lt;currentTiddler&gt;backlinks[]]&quot;&gt;&gt;</code></pre>
 </span>

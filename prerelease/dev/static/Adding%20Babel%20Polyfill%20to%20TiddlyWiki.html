@@ -53,7 +53,7 @@ Adding Babel Polyfill to TiddlyWiki
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 12th January 2016 at 5:50pm
 </div>
@@ -61,7 +61,7 @@ Adding Babel Polyfill to TiddlyWiki
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"></div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p>Not all browsers support the latest features of ES2015. The Babel project offers a polyfill that can be included into your <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> so those features can be available to your plugins. To do this you will need a copy of the polyfill source.</p><p>You can obtain the source either through  or downloaded/saved. See the <a class="tc-tiddlylink-external" href="https://babeljs.io/docs/usage/polyfill/" rel="noopener noreferrer" target="_blank">Babel Polyfill documentation</a> for specific information on installing it.</p><p>In your <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> editions folder make sure you have a <code>plugins/babel-polyfill</code> folder. Then create the <code>plugins/babel-polyfill/plugin.info</code> file with the following in it:</p><pre class="json hljs"><code>{
+<div class="tc-tiddler-body tc-reveal"><p>Not all browsers support the latest features of ES2015. The Babel project offers a polyfill that can be included into your <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlyWiki.html">TiddlyWiki</a> so those features can be available to your plugins. To do this you will need a copy of the polyfill source.</p><p>You can obtain the source either through  or downloaded/saved. See the <a class="tc-tiddlylink-external" href="https://babeljs.io/docs/usage/polyfill/" rel="noopener noreferrer" target="_blank">Babel Polyfill documentation</a> for specific information on installing it.</p><p>In your <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlyWiki.html">TiddlyWiki</a> editions folder make sure you have a <code>plugins/babel-polyfill</code> folder. Then create the <code>plugins/babel-polyfill/plugin.info</code> file with the following in it:</p><pre class="json hljs"><code>{
   "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"$:/plugins/babel/babel-polyfill"</span></span>,
   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Babel Polyfills for ES2015 support"</span></span>,
   "<span class="hljs-attribute">author</span>": <span class="hljs-value"><span class="hljs-string">"Your Name Here"</span></span>,
@@ -89,7 +89,7 @@ Load the babel-polyfill library on startup
 
 exports.startup = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   $tw.modules.execute(<span class="hljs-string">'$:/plugins/babel/babel-polyfill/polyfill.min.js'</span>);
-}</code></pre><p>Now all the <em>runtime</em> ES2015 features are available like using <code>Promise</code> in your plugin code.</p><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Using%2520ES2016%2520for%2520Writing%2520Plugins.html">Using ES2016 for Writing Plugins</a> on how to use the ES2015 <em>syntax</em> for your plugin code.
+}</code></pre><p>Now all the <em>runtime</em> ES2015 features are available like using <code>Promise</code> in your plugin code.</p><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Using%2520ES2016%2520for%2520Writing%2520Plugins.html">Using ES2016 for Writing Plugins</a> on how to use the ES2015 <em>syntax</em> for your plugin code.
 </p></div>
 
 

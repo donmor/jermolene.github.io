@@ -54,7 +54,7 @@ Widget set
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 20 juin 2015 à 7h11
 </div>
@@ -80,7 +80,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>Le widget set variable affecte une valeur à une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> spécifiée. La nouvelle valeur est alors disponible par le contenu dans le cadre défini du widget.</p><h1 class="">Contenu et Attributs</h1><p>Le contenu du widget <code>&lt;$set&gt;</code> forme le cadre de la valeur affectée à la variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribut</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">name</td><td align="left">Le nom de la variable à affecter (par défaut du &quot;Tiddlercourant&quot;)</td></tr><tr class="evenRow"><td align="left">value</td><td align="left">La valeur à affecter à la variable si le filtre est manquant ou non vide</td></tr><tr class="oddRow"><td align="left">filter</td><td align="left">Un filtre optionnel à évaluer et à affecter à la variable (voir ci-dessous)</td></tr><tr class="evenRow"><td align="left">emptyValue</td><td align="left">La valeur à affecter à la variable si le filtre évalue une liste vide (voir ci-dessous)</td></tr></tbody></table><h2 class="">Affectation simple d'une variable</h2><p>L'utilisation la plus simple du widget set variable affecte une chaine à une variable. L'exemple suivant affecte une chaine littérale</p><pre><code>&lt;$set name=&quot;maVariable&quot; value=&quot;du texte&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>Le widget set variable affecte une valeur à une <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Variables.html">variable</a> spécifiée. La nouvelle valeur est alors disponible par le contenu dans le cadre défini du widget.</p><h1 class="">Contenu et Attributs</h1><p>Le contenu du widget <code>&lt;$set&gt;</code> forme le cadre de la valeur affectée à la variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribut</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">name</td><td align="left">Le nom de la variable à affecter (par défaut du &quot;Tiddlercourant&quot;)</td></tr><tr class="evenRow"><td align="left">value</td><td align="left">La valeur à affecter à la variable si le filtre est manquant ou non vide</td></tr><tr class="oddRow"><td align="left">filter</td><td align="left">Un filtre optionnel à évaluer et à affecter à la variable (voir ci-dessous)</td></tr><tr class="evenRow"><td align="left">emptyValue</td><td align="left">La valeur à affecter à la variable si le filtre évalue une liste vide (voir ci-dessous)</td></tr></tbody></table><h2 class="">Affectation simple d'une variable</h2><p>L'utilisation la plus simple du widget set variable affecte une chaine à une variable. L'exemple suivant affecte une chaine littérale</p><pre><code>&lt;$set name=&quot;maVariable&quot; value=&quot;du texte&quot;&gt;
 &lt;$text text=&lt;&lt;maVariable&gt;&gt;/&gt;
 &lt;/$set&gt;</code></pre><p>Les attributs nom et valeur peuvent tous deux être transclus. Par exemple :</p><pre><code>&lt;$set name=&lt;&lt;autreVariable&gt;&gt; value={{gabarit!!texte}}&gt;
 &lt;$text text=&lt;&lt;maVariable&gt;&gt;/&gt;

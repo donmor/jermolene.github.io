@@ -53,7 +53,7 @@ TestingMechanism
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 13th October 2014 at 9:56am
 </div>
@@ -73,7 +73,7 @@ color:#4e432f;">
 </span>
 </div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> incorporates the Jasmine <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> testing framework (see <a class="tc-tiddlylink-external" href="http://pivotal.github.io/jasmine/" rel="noopener noreferrer" target="_blank">http://pivotal.github.io/jasmine/</a>). It allows the same tests to be run both in the browser and under Node.js.</p><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> Testing Components</h1><p>There are two main elements to the <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> testing mechanism:</p><ul><li>The plugin <code>tiddlywiki/jasmine</code> that wraps Jasmine up into a plugin along with some glue code</li><li>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> edition <code>test</code> that contains the core test specifications and includes the Jasmine plugin</li></ul><h1 class="">Running the Tests in Node.js</h1><p>To run the tests under Node.js just load up the <code>test</code> wiki:</p><pre><code>node ./tiddlywiki.js \
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="TiddlyWiki5.html">TiddlyWiki5</a> incorporates the Jasmine <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="JavaScript.html">JavaScript</a> testing framework (see <a class="tc-tiddlylink-external" href="http://pivotal.github.io/jasmine/" rel="noopener noreferrer" target="_blank">http://pivotal.github.io/jasmine/</a>). It allows the same tests to be run both in the browser and under Node.js.</p><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="TiddlyWiki5.html">TiddlyWiki5</a> Testing Components</h1><p>There are two main elements to the <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="TiddlyWiki5.html">TiddlyWiki5</a> testing mechanism:</p><ul><li>The plugin <code>tiddlywiki/jasmine</code> that wraps Jasmine up into a plugin along with some glue code</li><li>The <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="TiddlyWiki5.html">TiddlyWiki5</a> edition <code>test</code> that contains the core test specifications and includes the Jasmine plugin</li></ul><h1 class="">Running the Tests in Node.js</h1><p>To run the tests under Node.js just load up the <code>test</code> wiki:</p><pre><code>node ./tiddlywiki.js \
 	./editions/test \</code></pre><h1 class="">Running the Tests in the Browser</h1><p>To generate a wiki containing the browser tests load up the <code>test</code> wiki and save it as an HTML file:</p><pre><code>node ./tiddlywiki.js \
 	./editions/test \
 	--verbose \

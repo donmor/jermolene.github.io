@@ -53,7 +53,7 @@ Tags and Filter Mechanism
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 17th July 2014 at 7:21pm
 </div>
@@ -77,7 +77,7 @@ color:#4e432f;">
 This provides the functionality to</p><ul><li>retrieve tiddlers with a specific tag</li><li>retreive a hashmap of <code>{ tag: [tiddler1, tiddler3, tiddler3] }</code></li><li>list or iterate tiddlers not tagged with a specific tag</li></ul><p>The tags are stored directly in the tiddler. Each tiddler can have a field named &quot;tag&quot;, which contains an array of its tags.
 The above functions use this field to calculate their results and cache them in a global cache.</p><p>Organising information with tags is easy, intuitive and is common throughout the web.
 In most cases the functions mentioned above are not enough and a more sophisticated way of querying is needed.
-But instead of focusing only on tags <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> introduces a querying system that isn't bound to tags or single tiddlers.</p><h3 class="">Filter mechanism</h3><p>This filter mechanism is build on the idea of a pipeline of single filter operators.
+But instead of focusing only on tags <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlyWiki.html">TiddlyWiki</a> introduces a querying system that isn't bound to tags or single tiddlers.</p><h3 class="">Filter mechanism</h3><p>This filter mechanism is build on the idea of a pipeline of single filter operators.
 Filters are noted as strings and can look like</p><pre><code>[tag[task]!tag[done]interesting[very]]</code></pre><p>This example would (implicitly) put all available tiddlers into the pipe.
 The first operator <code>tag[task]</code> would only pass tiddlers which are tagged with &quot;task&quot;.
 The <code>!tag[done]</code> operator is negated and only passes tiddlers which are not tagged with &quot;done&quot;.
@@ -86,7 +86,7 @@ So as a result this filter would be used to obtain all tiddlers which are marked
 But more sophisticated operators are possible, too.
 An example would be the search-operator. This filter operator looks for the searched string in the text and in the tags of the tiddlers.
 If the provided filter operators are not enough, a developer can add new filters by adding a module with the <code>filteroperator</code> type.</p><h3 class="">System Tags</h3><p>Tags and the filter mechanism are used throughout the core plug-in for internal puproses.
-Tags which start with <code>$:/</code> are normally hidden from the casual user, similar to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="System%2520Tiddlers.html">System Tiddlers</a></p><p>The filter mechanism is added to the wiki store with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.
+Tags which start with <code>$:/</code> are normally hidden from the casual user, similar to <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="System%2520Tiddlers.html">System Tiddlers</a></p><p>The filter mechanism is added to the wiki store with the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.
 </p></div>
 
 

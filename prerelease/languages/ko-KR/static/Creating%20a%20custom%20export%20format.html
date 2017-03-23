@@ -55,7 +55,7 @@ Creating a custom export format
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 2014년 11월 24일 오후 5:35
 </div>
@@ -81,7 +81,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>To create a custom export format that exports tiddlers as their raw body text:</p><ol><li>Create a tiddler with the following fields:<ul><li><strong>tags</strong>: <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FExporter.html">$:/tags/Exporter</a></li><li><strong>description</strong>: Description of this exporter</li><li><strong>extension</strong>: Default file extension for this export format (including the dot; for example <code>.tid</code>)</li></ul></li><li>Set the following content:</li></ol><pre><code>\define renderContent()
+<div class="tc-tiddler-body tc-reveal"><p>To create a custom export format that exports tiddlers as their raw body text:</p><ol><li>Create a tiddler with the following fields:<ul><li><strong>tags</strong>: <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="%2524%253A%252Ftags%252FExporter.html">$:/tags/Exporter</a></li><li><strong>description</strong>: Description of this exporter</li><li><strong>extension</strong>: Default file extension for this export format (including the dot; for example <code>.tid</code>)</li></ul></li><li>Set the following content:</li></ol><pre><code>\define renderContent()
 {{{ $(exportFilter)$ ||$:/core/templates/plain-text-tiddler}}}
 \end
 &lt;&lt;renderContent&gt;&gt;</code></pre><p>The variable <code>exportFilter</code> contains a filter defining which tiddlers should be exported.

@@ -54,7 +54,7 @@ Fins de Ligne
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 23 juin 2015 à 7h50
 </div>
@@ -80,7 +80,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Le traitement habituel des <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Paragraphs%2520in%2520WikiText.html">paragraphes en WikiTexte</a> implique que les retours à la ligne simples sont ignorés, tandis que deux retours à la ligne sont interprétés comme la fin d'un paragraphe.</p><p>Ce comportement n'est pas pratique pour du texte qui intègre des retours à la ligne – par exemple, pour de la poésie.</p><h1 class="">Syntaxe en bloc</h1><p>Un bloc de contenu délimité par trois caractères &quot;guillemets doubles&quot; <code>&quot;&quot;&quot;</code> permet d'indiquer que les fins de ligne doivent y être forcées :</p><pre><code>&quot;&quot;&quot;
+<div class="tc-tiddler-body tc-reveal"><p>Le traitement habituel des <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Paragraphs%2520in%2520WikiText.html">paragraphes en WikiTexte</a> implique que les retours à la ligne simples sont ignorés, tandis que deux retours à la ligne sont interprétés comme la fin d'un paragraphe.</p><p>Ce comportement n'est pas pratique pour du texte qui intègre des retours à la ligne – par exemple, pour de la poésie.</p><h1 class="">Syntaxe en bloc</h1><p>Un bloc de contenu délimité par trois caractères &quot;guillemets doubles&quot; <code>&quot;&quot;&quot;</code> permet d'indiquer que les fins de ligne doivent y être forcées :</p><pre><code>&quot;&quot;&quot;
 Ceci est une ligne
 et ceci est une nouvelle ligne
 tandis que cela est encore une autre ligne
@@ -88,7 +88,7 @@ et ceci est la dernière
 
 excepté celle-ci
 &quot;&quot;&quot;</code></pre><div class="tc-message-box"><p>Ceci est une ligne<br>et ceci est une nouvelle ligne<br>tandis que cela est encore une autre ligne<br>et ceci est la dernière<br><br>excepté celle-ci<br>
-</p></div><dl><dt>Remarque</dt></dl><ul><li>Contrairement à d'autres syntaxes en bloc, celle-ci ne requière pas que ses marqueurs soient seuls sur une ligne : ils pourraient être placés n'importe où, même au milieu du texte.</li></ul><h1 class="">Syntaxe HTML</h1><p>Les fins de lignes ne devraient pas être forcées dans un texte courant, car cela peut déformer l'affichage sur des terminaux mobiles.</p><p>Cependant, dans des cas exceptionnels, la balise <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiTexte%2520%253A%2520HTML.html">HTML</a> <code>&lt;br&gt;</code> peut être utilisée pour revenir à la ligne sans créer de nouveau paragraphe :</p><pre><code>Ceci est une première ligne.&lt;br&gt;
+</p></div><dl><dt>Remarque</dt></dl><ul><li>Contrairement à d'autres syntaxes en bloc, celle-ci ne requière pas que ses marqueurs soient seuls sur une ligne : ils pourraient être placés n'importe où, même au milieu du texte.</li></ul><h1 class="">Syntaxe HTML</h1><p>Les fins de lignes ne devraient pas être forcées dans un texte courant, car cela peut déformer l'affichage sur des terminaux mobiles.</p><p>Cependant, dans des cas exceptionnels, la balise <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="WikiTexte%2520%253A%2520HTML.html">HTML</a> <code>&lt;br&gt;</code> peut être utilisée pour revenir à la ligne sans créer de nouveau paragraphe :</p><pre><code>Ceci est une première ligne.&lt;br&gt;
 Ceci est une deuxième ligne.&lt;br&gt;Et cela est une troisième ligne.</code></pre><div class="tc-message-box"><p>Ceci est une première ligne.<br>
 Ceci est une deuxième ligne.<br>Et cela est une troisième ligne.
 </p></div><dl><dt>Remarque</dt></dl><ul><li>Plusieurs <code>&lt;br&gt;</code> d'affilée permettent de créer artificiellement un espacement de plusieurs lignes.</li></ul></div>

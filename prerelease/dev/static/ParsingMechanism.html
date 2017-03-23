@@ -53,7 +53,7 @@ ParsingMechanism
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
 
 </a> 1st November 2013 at 1:07pm
 </div>
@@ -73,7 +73,7 @@ color:#4e432f;">
 </span>
 </div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The parsing mechanism analyses the text of a tiddler against a set of parsing rules, producing a tree representing the structure of the text. The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RenderingMechanism.html">RenderingMechanism</a> is used to transform parse trees into render trees of widget nodes.</p><p><a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> includes <a class="tc-tiddlylink tc-tiddlylink-missing" href="ParserModules.html">ParserModules</a> for several types of tiddler:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a></li><li>Raw HTML</li><li>Plain text</li><li>Images (bitmap, SVG and PDF)</li></ul><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> parser is the most complex, comprising separate individual <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiRuleModules.html">WikiRuleModules</a> encapsulating each parsing rule.</p><h1 class="">Parse Trees</h1><p>The output of parsing a tiddler is an object containing a tree of parse nodes corresponding to the original text. For example:</p><pre><code>&gt; JSON.stringify($tw.wiki.parseText(&quot;text/vnd.tiddlywiki&quot;,&quot;Some //italics// and a {{Transclusion}}.&quot;).tree)
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The parsing mechanism analyses the text of a tiddler against a set of parsing rules, producing a tree representing the structure of the text. The <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="RenderingMechanism.html">RenderingMechanism</a> is used to transform parse trees into render trees of widget nodes.</p><p><a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="TiddlyWiki5.html">TiddlyWiki5</a> includes <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="ParserModules.html">ParserModules</a> for several types of tiddler:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="WikiText.html">WikiText</a></li><li>Raw HTML</li><li>Plain text</li><li>Images (bitmap, SVG and PDF)</li></ul><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="WikiText.html">WikiText</a> parser is the most complex, comprising separate individual <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="WikiRuleModules.html">WikiRuleModules</a> encapsulating each parsing rule.</p><h1 class="">Parse Trees</h1><p>The output of parsing a tiddler is an object containing a tree of parse nodes corresponding to the original text. For example:</p><pre><code>&gt; JSON.stringify($tw.wiki.parseText(&quot;text/vnd.tiddlywiki&quot;,&quot;Some //italics// and a {{Transclusion}}.&quot;).tree)
 
 [
 	{type: &quot;element&quot;, tag: &quot;p&quot;, children: [
@@ -91,7 +91,7 @@ color:#4e432f;">
 		]},
 		{type: &quot;text&quot;, text: &quot;.&quot;}
 	]}
-]</code></pre><p>Parse tree nodes are plain <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> objects, and do not have a prototype.
+]</code></pre><p>Parse tree nodes are plain <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="JavaScript.html">JavaScript</a> objects, and do not have a prototype.
 </p></div>
 
 
