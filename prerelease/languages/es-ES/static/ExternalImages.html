@@ -53,7 +53,7 @@ Imágenes externas
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 26 abril 2016 a las 6:55
 </div>
@@ -94,11 +94,11 @@ color:#333333;">
     <g fill-rule="evenodd">
         <path d="M57.0717968,11 C60.1509982,5.66666667 67.8490018,5.66666667 70.9282032,11 L126.353829,107 C129.433031,112.333333 125.584029,119 119.425626,119 L8.57437416,119 C2.41597129,119 -1.43303051,112.333333 1.64617093,107 L57.0717968,11 Z M64,37 C59.581722,37 56,40.5820489 56,44.9935776 L56,73.0064224 C56,77.4211534 59.5907123,81 64,81 C68.418278,81 72,77.4179511 72,73.0064224 L72,44.9935776 C72,40.5788466 68.4092877,37 64,37 Z M64,104 C68.418278,104 72,100.418278 72,96 C72,91.581722 68.418278,88 64,88 C59.581722,88 56,91.581722 56,96 C56,100.418278 59.581722,104 64,104 Z"></path>
     </g>
-</svg></div> Comprueba bien que escribes correctamente la ruta y que escribes  <a class="tc-tiddlylink-external" href="https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme" rel="noopener noreferrer" target="_blank">URI</a>, no URL</div></p><h2 class="">Creación de imágenes externas en Node.js</h2><p>Para crear un archivo HTML estático de TiddlyWiki acompañado por una carpeta de imágenes externas referenciadas en el HTML</p><ol><li>Crea tiddlers de imagen en los <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="WikiFolders.html">WikiFolders</a>, de la manera habitual</li><li>Guarda las imágenes como archivos separados (por convención, en una subcarpeta llamada <em class="doc-em">images</em>)</li><li>Externaliza los tiddlers correspondientes a cada imagen habilitando el campo <em class="doc-em">_canonical_uri</em></li><li>Guarda el archivo HTML principal</li></ol><blockquote><p>Las imágenes deben añadirse a la subcarpeta <dfn class="doc-def">antes</dfn> de externalizar los tiddlers. El campo <em class="doc-em">_canonical_uri</em> invalida el campo <em class="doc-em">text</em> del tiddler, lo que lleva consigo que cualquier ulterior intento de guardado fallará.</p><p>Como ejemplo, véase el target <dfn class="doc-def">externalimages</dfn> de la demo &quot;tw5.com&quot;:</p></blockquote><pre><code>--savetiddlers [is[image]] images
+</svg></div> Comprueba bien que escribes correctamente la ruta y que escribes  <a class="tc-tiddlylink-external" href="https://es.wikipedia.org/wiki/Identificador_de_recursos_uniforme" rel="noopener noreferrer" target="_blank">URI</a>, no URL</div></p><h2 class="">Creación de imágenes externas en Node.js</h2><p>Para crear un archivo HTML estático de TiddlyWiki acompañado por una carpeta de imágenes externas referenciadas en el HTML</p><ol><li>Crea tiddlers de imagen en los <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiFolders.html">WikiFolders</a>, de la manera habitual</li><li>Guarda las imágenes como archivos separados (por convención, en una subcarpeta llamada <em class="doc-em">images</em>)</li><li>Externaliza los tiddlers correspondientes a cada imagen habilitando el campo <em class="doc-em">_canonical_uri</em></li><li>Guarda el archivo HTML principal</li></ol><blockquote><p>Las imágenes deben añadirse a la subcarpeta <dfn class="doc-def">antes</dfn> de externalizar los tiddlers. El campo <em class="doc-em">_canonical_uri</em> invalida el campo <em class="doc-em">text</em> del tiddler, lo que lleva consigo que cualquier ulterior intento de guardado fallará.</p><p>Como ejemplo, véase el target <dfn class="doc-def">externalimages</dfn> de la demo &quot;tw5.com&quot;:</p></blockquote><pre><code>--savetiddlers [is[image]] images
 --setfield [is[image]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain
 --setfield [is[image]] text &quot;&quot; text/plain
 --rendertiddler $:/core/save/all externalimages.html text/plain</code></pre><h3 class="">Guardar archivos separados de imagen</h3><p>Para guardar las imágenes de un wiki en una subcarpeta <em class="doc-em">images</em> puede usarse el comando <code>--savetiddlers</code> de la siguiente manera:</p><pre><code>--savetiddlers [is[image]] images</code></pre><h3 class="">Externalizar tiddlers de imagen</h3><p>Se usan dos comandos <code>--setfield</code>: el primero establece el campo <em class="doc-em"></em> con valor derivado del título del tiddler. El segundo limpia el campo <em class="doc-em">text</em>.</p><pre><code>--setfield [is[image]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain
---setfield [is[image]] text &quot;&quot; text/plain</code></pre><p>La plantilla <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Fcore%252Ftemplates%252Fcanonical-uri-external-image.html">$:/core/templates/canonical-uri-external-image</a> contiene:</p><pre>&lt;!--
+--setfield [is[image]] text &quot;&quot; text/plain</code></pre><p>La plantilla <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Ftemplates%252Fcanonical-uri-external-image.html">$:/core/templates/canonical-uri-external-image</a> contiene:</p><pre>&lt;!--
 
 This template is used to assign the ''_canonical_uri'' field to external images.
 
@@ -109,7 +109,11 @@ Change the `./images/` part to a different base URI. The URI can be relative or 
     <g fill-rule="evenodd">
         <path d="M57.0717968,11 C60.1509982,5.66666667 67.8490018,5.66666667 70.9282032,11 L126.353829,107 C129.433031,112.333333 125.584029,119 119.425626,119 L8.57437416,119 C2.41597129,119 -1.43303051,112.333333 1.64617093,107 L57.0717968,11 Z M64,37 C59.581722,37 56,40.5820489 56,44.9935776 L56,73.0064224 C56,77.4211534 59.5907123,81 64,81 C68.418278,81 72,77.4179511 72,73.0064224 L72,44.9935776 C72,40.5788466 68.4092877,37 64,37 Z M64,104 C68.418278,104 72,100.418278 72,96 C72,91.581722 68.418278,88 64,88 C59.581722,88 56,91.581722 56,96 C56,100.418278 59.581722,104 64,104 Z"></path>
     </g>
-</svg></div> Estas operaciones modifican los tiddlers en el <a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href="WikiStore.html">WikiStore</a> y pueden afectar al funcionamiento de posteriores comandos.</div></p><h2 class="">Uso de imágenes externas</h2><p>No es posible editar una imagen externa directamente en el navegador, salvo para editar la URI  de forma que apunte a otra imagen.</p></div>
+</svg></div> Estas operaciones modifican los tiddlers en el <a class="tc-tiddlylink tc-tiddlylink-missing" href="WikiStore.html">WikiStore</a> y pueden afectar al funcionamiento de posteriores comandos.</div></p><h2 class="">Uso de imágenes externas</h2><p>No es posible editar una imagen externa directamente en el navegador, salvo para editar la URI  de forma que apunte a otra imagen.</p>
+
+
+
+</div>
 
 
 

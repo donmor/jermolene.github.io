@@ -56,7 +56,7 @@ WidgetMessage: tm-delete-tiddler
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 26 février 2014 à 9h4
 </div>
@@ -93,7 +93,11 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The <code>tm-delete-tiddler</code> message deletes the specified tiddler and removes it from the current story. If the tiddler is a draft then it also deletes the tiddler specified in the <code>draft.of</code> field. The delete tiddler message requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler that is to be deleted</td></tr><tr class="evenRow"><td align="left">tiddlerTitle</td><td align="left">Fallback title that is used if <strong>param</strong> isn't specified (automatically set by the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ButtonWidget.html">ButtonWidget</a>)</td></tr></tbody></table><p>The delete tiddler message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ButtonWidget.html">ButtonWidget</a> and is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="NavigatorWidget.html">NavigatorWidget</a>.</p></div>
+<div class="tc-tiddler-body tc-reveal"><p>The <code>tm-delete-tiddler</code> message deletes the specified tiddler and removes it from the current story. If the tiddler is a draft then it also deletes the tiddler specified in the <code>draft.of</code> field. The delete tiddler message requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler that is to be deleted</td></tr><tr class="evenRow"><td align="left">tiddlerTitle</td><td align="left">Fallback title that is used if <strong>param</strong> isn't specified (automatically set by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>)</td></tr></tbody></table><p>The delete tiddler message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a> and is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a>.</p>
+
+
+
+</div>
 
 
 

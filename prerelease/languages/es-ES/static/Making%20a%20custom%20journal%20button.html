@@ -55,7 +55,7 @@ Making a custom journal button
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 18 diciembre 2016 a las 2:44
 </div>
@@ -81,12 +81,16 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>To get your own <strong><em>custom</em></strong> Journal button, start by cloning the <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Fcore%252Fui%252FButtons%252Fnew-journal.html">New Journal</a> button.</p><p>Then create your own config tiddlers, eg: </p><ul><li><code>$:/config/myNewTiddler/Tags</code> and ... </li><li><code>$:/config/myNewTiddler/Title</code></li></ul><p>Edit your custom button and &quot;search and replace&quot; the config tiddler names.</p><p>Change the following lines, near the end  of the tiddler 
+<div class="tc-tiddler-body tc-reveal"><p>To get your own <strong><em>custom</em></strong> Journal button, start by cloning the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FButtons%252Fnew-journal.html">New Journal</a> button.</p><p>Then create your own config tiddlers, eg: </p><ul><li><code>$:/config/myNewTiddler/Tags</code> and ... </li><li><code>$:/config/myNewTiddler/Title</code></li></ul><p>Edit your custom button and &quot;search and replace&quot; the config tiddler names.</p><p>Change the following lines, near the end  of the tiddler 
 from</p><pre><code>&lt;$set name=&quot;journalTitleTemplate&quot; value={{$:/config/NewJournal/Title}}&gt;
 &lt;$set name=&quot;journalTags&quot; value={{$:/config/NewJournal/Tags}}&gt;</code></pre><p>to</p><pre><code>&lt;$set name=&quot;journalTitleTemplate&quot; value={{$:/config/myNewTiddler/Title}}&gt;
 &lt;$set name=&quot;journalTags&quot; value={{$:/config/myNewTiddler/Tags}}&gt;
 </code></pre><p>if you want to see your config tiddlers in the sidebar use:</p><pre><code>&lt;$set name=&quot;journalTitleTemplate&quot; value={{config/myNewTiddler/Title}}&gt;
-&lt;$set name=&quot;journalTags&quot; value={{config/myNewTiddler/Tags}}&gt;</code></pre></div>
+&lt;$set name=&quot;journalTags&quot; value={{config/myNewTiddler/Tags}}&gt;</code></pre>
+
+
+
+</div>
 
 
 

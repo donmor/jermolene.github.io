@@ -60,7 +60,7 @@ Widgets in WikiText
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 20th October 2016 at 10:07pm
 </div>
@@ -87,52 +87,52 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Widgets provide rich functionality within <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="WikiText.html">WikiText</a>. They have the same syntax as <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="HTML%2520in%2520WikiText.html">HTML elements</a>, but the tag name always starts with <code>$</code>. For example:</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt;</code></pre><p>Note that widgets inherit all the features of <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>:</p><ul><li>Widget attributes can be specified as:<ul><li>Unquoted strings (that cannot contain spaces)</li><li>Strings quoted with single or double quotes</li><li>Strings quoted with triple-double quotes</li><li>Macro invocations (eg <code>attr=&lt;&lt;myMacro&gt;&gt;</code>)</li><li>Transclusions (eg, <code>attr={{MyTiddler!!field}}</code>)</li><li>Filtered transclusions (eg, <code>attr={{{ [filter[op]] }}}</code>)</li></ul></li><li>The content of a widget is parsed in inline mode unless the opening tag is followed by two linebreaks, which forces block mode<ul><li>'Inline mode' means that 'block mode' parse rules like headings, tables and lists are not recognised</li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a> for more details.</p><p>The available widgets include:</p><p><ul class="">
+<div class="tc-tiddler-body tc-reveal"><p>Widgets provide rich functionality within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. They have the same syntax as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML elements</a>, but the tag name always starts with <code>$</code>. For example:</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt;</code></pre><p>Note that widgets inherit all the features of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>:</p><ul><li>Widget attributes can be specified as:<ul><li>Unquoted strings (that cannot contain spaces)</li><li>Strings quoted with single or double quotes</li><li>Strings quoted with triple-double quotes</li><li>Macro invocations (eg <code>attr=&lt;&lt;myMacro&gt;&gt;</code>)</li><li>Transclusions (eg, <code>attr={{MyTiddler!!field}}</code>)</li><li>Filtered transclusions (eg, <code>attr={{{ [filter[op]] }}}</code>)</li></ul></li><li>The content of a widget is parsed in inline mode unless the opening tag is followed by two linebreaks, which forces block mode<ul><li>'Inline mode' means that 'block mode' parse rules like headings, tables and lists are not recognised</li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a> for more details.</p><p>The available widgets include:</p><p><ul class="">
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionCreateTiddlerWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
 action-createtiddler
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionDeleteFieldWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
 action-deletefield
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionDeleteTiddlerWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteTiddlerWidget.html">
 action-deletetiddler
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionListopsWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">
 action-listops
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionNavigateWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionNavigateWidget.html">
 action-navigate
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionSendMessageWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSendMessageWidget.html">
 action-sendmessage
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionSetFieldWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">
 action-setfield
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionWidgets.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">
 
 ActionWidgets
 
@@ -140,210 +140,226 @@ ActionWidgets
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="BrowseWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="BrowseWidget.html">
 browse
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ButtonWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">
 button
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="CheckboxWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CheckboxWidget.html">
 checkbox
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="CodeBlockWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CodeBlockWidget.html">
 codeblock
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="CountWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="CountWidget.html">
 count
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="DropzoneWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DraggableWidget.html">
+draggable
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DroppableWidget.html">
+droppable
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DropzoneWidget.html">
 dropzone
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="EditBitmapWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditBitmapWidget.html">
 edit-bitmap
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="EditTextWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditTextWidget.html">
 edit-text
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="EditWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditWidget.html">
 edit
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="EncryptWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EncryptWidget.html">
 encrypt
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="EntityWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="EntityWidget.html">
 entity
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="FieldManglerWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldManglerWidget.html">
 fieldmangler
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="FieldsWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="FieldsWidget.html">
 fields
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ImageWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImageWidget.html">
 image
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ImportVariablesWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">
 importvariables
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="KeyboardWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="KeyboardWidget.html">
 keyboard
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="LinkCatcherWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkCatcherWidget.html">
 linkcatcher
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="LinkWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">
 link
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ListWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">
 list
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="MacroCallWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">
 macrocall
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="NavigatorWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">
 navigator
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="PasswordWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="PasswordWidget.html">
 password
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="RadioWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="RadioWidget.html">
 radio
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="RevealWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="RevealWidget.html">
 reveal
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ScrollableWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ScrollableWidget.html">
 scrollable
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="SelectWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="SelectWidget.html">
 select
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="SetVariableWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetVariableWidget.html">
 setvariable
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="SetWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">
 set
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TextWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextWidget.html">
 text
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlerWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerWidget.html">
 tiddler
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TranscludeWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">
 transclude
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="VarsWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="VarsWidget.html">
 vars
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ViewWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">
 view
 </a>
 </li>
 
 <li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="WikifyWidget.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikifyWidget.html">
 wikify
 </a>
 </li>
 
-</ul></p></div>
+</ul></p>
+
+
+
+</div>
 
 
 

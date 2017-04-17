@@ -53,7 +53,7 @@ System Tiddlers
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 15th July 2014 at 9:48am
 </div>
@@ -86,13 +86,17 @@ color:#4e432f;">
 </div>
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>The core plug-in introduces a segregation of tiddlers.
-The tiddler model is central in the whole <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlyWiki.html">TiddlyWiki</a> application and can be used in various roles.
-Because of the fact that a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="TiddlyWiki.html">TiddlyWiki</a> user works with tiddlers (taking the role of a wiki page) and tiddlers are the building blocks of the whole application (including modules, UI elements, etc.) we need to identify the internal tiddlers.</p><p>The core plug-in introduces the concept of system tiddlers. It builds on the convention that application internal tiddler names start with <code>$:/</code>.
+The tiddler model is central in the whole <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> application and can be used in various roles.
+Because of the fact that a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> user works with tiddlers (taking the role of a wiki page) and tiddlers are the building blocks of the whole application (including modules, UI elements, etc.) we need to identify the internal tiddlers.</p><p>The core plug-in introduces the concept of system tiddlers. It builds on the convention that application internal tiddler names start with <code>$:/</code>.
 Then the core plug-in introduces a set of new functions to the wiki store which are used to retrieve tiddlers like <code>getTiddlers(options)</code> and <code>forEachTiddler(callback, options)</code>.
 These functions work with all tiddlers in the store but the options parameter provides the ability to sort tiddlers by a field-name and exclude tiddlers with a specific tag.
 By default it doesn't return system tiddlers. To get a list of all tiddlers including system tiddlers, this must be requested explicitly via the options.
 If a function wants to present a list of tiddlers to the user it can use this new functions so that internal application tiddlers wouldn't clutter the resulting list.
-These functions are added via the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.</p></div>
+These functions are added via the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.</p>
+
+
+
+</div>
 
 
 

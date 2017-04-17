@@ -55,7 +55,7 @@ ActionDeleteFieldWidget
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 2015년 2월 20일 오후 4:20
 </div>
@@ -92,28 +92,32 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-deletefield</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionWidgets.html">action widget</a> that deletes specified fields of a tiddler. <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-deletefield</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose fields are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$field</td><td align="left">Optional name of a field to delete</td></tr><tr class="oddRow"><td align="left"><em>{any attributes not starting with $}</em></td><td align="left">Each attribute name specifies a field to be deleted. The attribute value is ignored and need not be specified</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example of a button that deletes the caption and tags fields of the current tiddler:</p><div class="doc-example"><pre><code>&lt;$button&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-deletefield</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that deletes specified fields of a tiddler. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-deletefield</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose fields are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$field</td><td align="left">Optional name of a field to delete</td></tr><tr class="oddRow"><td align="left"><em>{any attributes not starting with $}</em></td><td align="left">Each attribute name specifies a field to be deleted. The attribute value is ignored and need not be specified</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example of a button that deletes the caption and tags fields of the current tiddler:</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-deletefield caption tags/&gt;
 Delete &quot;caption&quot; and &quot;tags&quot;
 &lt;/$button&gt;</code></pre><p>That renders as:</p><p><button class="">
 
 Delete &quot;caption&quot; and &quot;tags&quot;
 </button>
-</p></div><p>Here is an example of a button that deletes the modified date and tags fields of the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
+</p></div><p>Here is an example of a button that deletes the modified date and tags fields of the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-deletefield $tiddler=&quot;HelloThere&quot; modified tags/&gt;
 Delete &quot;modified&quot; and &quot;tags&quot; from ~HelloThere
 &lt;/$button&gt;</code></pre><p>That renders as:</p><p><button class="">
 
 Delete &quot;modified&quot; and &quot;tags&quot; from HelloThere
 </button>
-</p></div><p>Here is an example of a button that uses the optional $field attribute to delete the text field of the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
+</p></div><p>Here is an example of a button that uses the optional $field attribute to delete the text field of the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-deletefield $tiddler=&quot;HelloThere&quot; $field=&quot;text&quot;/&gt;
 Delete text from ~HelloThere
 &lt;/$button&gt;</code></pre><p>That renders as:</p><p><button class="">
 
 Delete text from HelloThere
 </button>
-</p></div></div>
+</p></div>
+
+
+
+</div>
 
 
 

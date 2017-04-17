@@ -60,7 +60,7 @@ RenderTiddlerCommand
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 
 </div>
@@ -87,7 +87,11 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Render an individual tiddler as a specified <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="ContentType.html">ContentType</a>, defaulting to <code>text/html</code> and save it to the specified filename.</p><p>Optionally the title of a template tiddler can be specified, in which case the template tiddler is rendered with the &quot;currentTiddler&quot; variable set to the tiddler that is being rendered (the first parameter value).</p><p>A name and value for an additional variable may optionally also be specified.</p><pre><code>--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;] [&lt;name&gt;] [&lt;value&gt;]</code></pre><p>By default, the filename is resolved relative to the <code>output</code> subdirectory of the edition directory. The <code>--output</code> command can be used to direct output to a different directory.</p><p>Any missing directories in the path to the filename are automatically created.</p><p>For example, the following command saves all tiddlers matching the filter <code>[tag[done]]</code> to a JSON file titled <code>output.json</code> by employing the core template <code>$:/core/templates/exporters/JsonFile</code>.</p><pre><code>--rendertiddler &quot;$:/core/templates/exporters/JsonFile&quot; output.json text/plain &quot;&quot; exportFilter &quot;[tag[done]]&quot;</code></pre></div>
+<div class="tc-tiddler-body tc-reveal"><p>Render an individual tiddler as a specified <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>, defaulting to <code>text/html</code> and save it to the specified filename.</p><p>Optionally the title of a template tiddler can be specified, in which case the template tiddler is rendered with the &quot;currentTiddler&quot; variable set to the tiddler that is being rendered (the first parameter value).</p><p>A name and value for an additional variable may optionally also be specified.</p><pre><code>--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;] [&lt;name&gt;] [&lt;value&gt;]</code></pre><p>By default, the filename is resolved relative to the <code>output</code> subdirectory of the edition directory. The <code>--output</code> command can be used to direct output to a different directory.</p><p>Any missing directories in the path to the filename are automatically created.</p><p>For example, the following command saves all tiddlers matching the filter <code>[tag[done]]</code> to a JSON file titled <code>output.json</code> by employing the core template <code>$:/core/templates/exporters/JsonFile</code>.</p><pre><code>--rendertiddler &quot;$:/core/templates/exporters/JsonFile&quot; output.json text/plain &quot;&quot; exportFilter &quot;[tag[done]]&quot;</code></pre>
+
+
+
+</div>
 
 
 

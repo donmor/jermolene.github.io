@@ -55,7 +55,7 @@ How to change the sort order of sub-branches in a TOC macro
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 2016년 12월 9일 오후 5:42
 </div>
@@ -81,7 +81,11 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Imagine that you are using a <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Table-of-Contents%2520Macros.html">Table of Contents</a> macro similar to this:</p><pre><code>&lt;&lt;toc-selective-expandable  &quot;TableOfContents&quot; &quot;sort[title]&quot; &gt;&gt;</code></pre><p>The sorting is fine for most cases, but you would like all your items tagged <code>Journal</code> to be sorted by the <code>created</code> field. How can you apply a separate sort order to just those sub-items tagged <code>Journal</code>?</p><p>The trick is to add a field to the parent tagging tiddler (i.e. <code>Journal</code>) that points to a different sort criteria. Let's call the field <code>fuzzy</code>, and populate it with the value <code>created</code> (<code>created </code>is the name of the field that contains a tiddler's creation date).</p><p>Now change your <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="Table-of-Contents%2520Macros.html">Table of Contents</a> to look like this:</p><pre><code>&lt;&lt;toc-selective-expandable  &quot;TableOfContents&quot; &quot;sort{fuzzy}&quot; &gt;&gt;</code></pre><p>Now your Table of Contents will sort by title everywhere, except for the children of the <code>Journal</code> tiddler, which will sort by the <code>created </code>date.</p><p>The downside to this trick is that you can't apply a reverse sort based on just one special field. If you reverse the sort order, it will be reversed everywhere.</p></div>
+<div class="tc-tiddler-body tc-reveal"><p>Imagine that you are using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Table-of-Contents%2520Macros.html">Table of Contents</a> macro similar to this:</p><pre><code>&lt;&lt;toc-selective-expandable  &quot;TableOfContents&quot; &quot;sort[title]&quot; &gt;&gt;</code></pre><p>The sorting is fine for most cases, but you would like all your items tagged <code>Journal</code> to be sorted by the <code>created</code> field. How can you apply a separate sort order to just those sub-items tagged <code>Journal</code>?</p><p>The trick is to add a field to the parent tagging tiddler (i.e. <code>Journal</code>) that points to a different sort criteria. Let's call the field <code>fuzzy</code>, and populate it with the value <code>created</code> (<code>created </code>is the name of the field that contains a tiddler's creation date).</p><p>Now change your <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Table-of-Contents%2520Macros.html">Table of Contents</a> to look like this:</p><pre><code>&lt;&lt;toc-selective-expandable  &quot;TableOfContents&quot; &quot;sort{fuzzy}&quot; &gt;&gt;</code></pre><p>Now your Table of Contents will sort by title everywhere, except for the children of the <code>Journal</code> tiddler, which will sort by the <code>created </code>date.</p><p>The downside to this trick is that you can't apply a reverse sort based on just one special field. If you reverse the sort order, it will be reversed everywhere.</p>
+
+
+
+</div>
 
 
 

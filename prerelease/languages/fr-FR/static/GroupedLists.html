@@ -54,7 +54,7 @@ Listes groupées
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 19 juin 2015 à 16h11
 </div>
@@ -80,7 +80,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Les onglets suivants du menu latéral offrent un exemple de listes groupées créées par imbrication.</p><h2 class="">Option 'types' (de l'onglet plus)</h2><p>Pour l'option <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a>, la sortie de liste filtrée sélectionne chaque valeur trouvée dans le champ <code>type</code>, comme exposé çi-dessous. Le filtre d'entrée filtre les tiddlers (non-système) de ce type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
+<div class="tc-tiddler-body tc-reveal"><p>Les onglets suivants du menu latéral offrent un exemple de listes groupées créées par imbrication.</p><h2 class="">Option 'types' (de l'onglet plus)</h2><p>Pour l'option <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a>, la sortie de liste filtrée sélectionne chaque valeur trouvée dans le champ <code>type</code>, comme exposé çi-dessous. Le filtre d'entrée filtre les tiddlers (non-système) de ce type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
 &lt;div class=&quot;tc-menu-list-item&quot;&gt;
 &lt;$view field=&quot;type&quot;/&gt;
 &lt;$list filter=&quot;[type{!!type}!is[system]sort[title]]&quot;&gt;
@@ -90,7 +90,7 @@ color:#333333;">
 &lt;/$list&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
-</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-resolves" draggable="true" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" draggable="true" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
+</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
 &lt;!-- Override this macro with a global macro 
      of the same name if you need to change 
      how titles are displayed on the timeline 
@@ -113,7 +113,11 @@ color:#333333;">
 &lt;/$list&gt;
 &lt;/div&gt;
 \end
-</code></pre></p></div>
+</code></pre></p>
+
+
+
+</div>
 
 
 

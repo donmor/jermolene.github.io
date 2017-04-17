@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>TwitterPlugin: TiddlyWiki — un carnet de notes web personnel et non linéaire
+<title>list-tagged-draggable: TiddlyWiki — un carnet de notes web personnel et non linéaire
 </title>
 </head>
 <body class="tc-body">
@@ -19,7 +19,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-OfficialPlugins"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Macros tc-tagged-Core%20Macros"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires">
@@ -44,7 +44,7 @@
 
 <h2 class="tc-title">
 
-TwitterPlugin
+list-tagged-draggable Macro
 
 </h2>
 
@@ -56,9 +56,9 @@ TwitterPlugin
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" draggable="true" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 27 février 2017 à 22h37
+</a> 29 mars 2017 à 10h32
 </div>
 </div>
 <div class=" tc-reveal">
@@ -68,7 +68,18 @@ TwitterPlugin
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- OfficialPlugins
+ Core Macros
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Macros
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -82,7 +93,11 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>This plugin adds a <code>&lt;$twitter&gt;</code> widget that can embed a variety of entities from twitter.com:</p><ul><li>Individual tweets and conversation threads</li><li>Buttons to tweet a hashtag/account, follow/like an account, or share a URL</li><li>Timelines showing tweets from a user, hashtag, list or collection</li></ul></div>
+<div class="tc-tiddler-body tc-reveal"><p>The <dfn class="doc-def">list-tagged-draggable</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> renders the tiddlers with a particular tag as a list of links that can be reordered via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Drag%2520and%2520Drop.html">drag and drop</a>.</p><h2 class="">Parameters</h2><dl><dt>tag</dt><dd>The title of the tag</dd><dt>itemTemplate</dt><dd>Optional title of a tiddler to use as the template for rendering list items</dd></dl><p>Note that the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Order%2520of%2520Tagged%2520Tiddlers.html">ordering</a> is accomplished by assigning a new list to the <code>list</code> field of the tag tiddler. Any <code>list-before</code> or <code>list-after</code> fields on any of the other tiddlers carrying the tag are also removed to ensure the <code>list</code> field is respected.</p><p>If the <code>itemTemplate</code> parameter is not provided then the list items are rendered as simple links. Within the <code>itemTemplate</code>, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="currentTiddler%2520Variable.html">currentTiddler Variable</a> refers to the current list item.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="list-tagged-draggable%2520Macro%2520(Examples).html">Exemples</a></p>
+
+
+
+</div>
 
 
 
