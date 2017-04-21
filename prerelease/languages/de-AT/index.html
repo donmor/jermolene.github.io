@@ -7394,7 +7394,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/core/ui/ViewTemplate/body&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;text&quot;: &quot;\\define re() ^\\$\\:\\/([^/])*$\n\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]is[missing]!is[shadow]]\&quot; template=\&quot;$:/language/MissingTiddler/Hint\&quot; emptyMessage=\&quot;\&quot;\&quot;\n\n&lt;$list filter=\&quot;[all[current]!is[system]] [all[current]tag[$:/tags/Image]] [all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude/&gt;\n\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[all[current]is[system]] -[all[current]tag[$:/tags/Image]] -[all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$codeblock code={{!!text}} language={{!!type}}/&gt;\n\n&lt;/$list&gt;\n\n\&quot;\&quot;\&quot;/&gt;\n\n&lt;/$reveal&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude&gt;\n\n&lt;$transclude tiddler=\&quot;$:/language/MissingTiddler/Hint\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$list&gt;\n\n&lt;/$reveal&gt;&quot;
         },
         &quot;$:/core/ui/ViewTemplate/classic&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/classic&quot;,
@@ -9223,6 +9223,10 @@ $src$
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Title/Prompt&quot;,
             &quot;text&quot;: &quot;Titel des neuen Journal-Tiddlers:&quot;
         },
+        &quot;$:/language/ControlPanel/Basics/NewJournal/Text/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Text/Prompt&quot;,
+            &quot;text&quot;: &quot;Text des neuen Journal-Tiddlers:&quot;
+        },
         &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Basics/NewJournal/Tags/Prompt&quot;,
             &quot;text&quot;: &quot;Tags des neuen Journal-Tiddlers:&quot;
@@ -9475,6 +9479,10 @@ $src$
             &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/OpenPluginLibrary&quot;,
             &quot;text&quot;: &quot;Öffne das Plugin-Verzeichnis&quot;
         },
+        &quot;$:/language/ControlPanel/Plugins/ClosePluginLibrary&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/ClosePluginLibrary&quot;,
+            &quot;text&quot;: &quot;Schließe das Plugin-Verzeichnis&quot;
+        },
         &quot;$:/language/ControlPanel/Plugins/Plugins/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Plugins/Plugins/Caption&quot;,
             &quot;text&quot;: &quot;Plugins&quot;
@@ -9499,9 +9507,33 @@ $src$
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Caption&quot;,
             &quot;text&quot;: &quot;Speichern&quot;
         },
-        &quot;$:/language/ControlPanel/Saving/Heading&quot;: {
-            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Heading&quot;,
-            &quot;text&quot;: &quot;Speichern&quot;
+        &quot;$:/language/ControlPanel/Saving/DownloadSaver/AutoSave/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/DownloadSaver/AutoSave/Description&quot;,
+            &quot;text&quot;: &quot;Erlaube automatisches Speichern für den \&quot;Download Saver\&quot;&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/DownloadSaver/AutoSave/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/DownloadSaver/AutoSave/Hint&quot;,
+            &quot;text&quot;: &quot;Erlaube automatisches Speichern für den \&quot;Download Saver\&quot;&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/DownloadSaver/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/DownloadSaver/Caption&quot;,
+            &quot;text&quot;: &quot;Download Saver&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/DownloadSaver/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/DownloadSaver/Hint&quot;,
+            &quot;text&quot;: &quot;Diese Einstellungen gelten für den HTML5-compatiblen \&quot;Download Saver\&quot;&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/General/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/General/Caption&quot;,
+            &quot;text&quot;: &quot;Allgemein&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/General/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/General/Hint&quot;,
+            &quot;text&quot;: &quot;Diese Einstellungen gelten für alle Speichermechanismen&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Hint&quot;,
+            &quot;text&quot;: &quot;Einstellungen zu den TiddlyWiki Speichermechanismen&quot;
         },
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;,
@@ -9514,6 +9546,10 @@ $src$
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Backups&quot;,
             &quot;text&quot;: &quot;\&quot;Backups\&quot;&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/TiddlySpot/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Caption&quot;,
+            &quot;text&quot;: &quot;Speichern auf ~TiddlySpot&quot;
         },
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Description&quot;,
@@ -9793,7 +9829,7 @@ $src$
         },
         &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditToolbar/Hint&quot;,
-            &quot;text&quot;: &quot;Auswählen, welche Buttons im \&quot;Edit Modus\&quot; angezeigt werden:&quot;
+            &quot;text&quot;: &quot;Auswählen, welche Buttons im \&quot;Edit Modus\&quot; angezeigt werden. Verwenden Sie \&quot;Drag and Drop\&quot;, um die Reihenfolge zu ändern&quot;
         },
         &quot;$:/language/ControlPanel/Toolbars/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/Hint&quot;,
@@ -9805,7 +9841,7 @@ $src$
         },
         &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/PageControls/Hint&quot;,
-            &quot;text&quot;: &quot;Auswählen, welche Buttons im Hauptmenü angezeigt werden:&quot;
+            &quot;text&quot;: &quot;Auswählen, welche Buttons im Hauptmenü angezeigt werden. Verwenden Sie \&quot;Drag and Drop\&quot;, um die Reihenfolge zu ändern&quot;
         },
         &quot;$:/language/ControlPanel/Toolbars/EditorToolbar/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/EditorToolbar/Caption&quot;,
@@ -9821,7 +9857,7 @@ $src$
         },
         &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Toolbars/ViewToolbar/Hint&quot;,
-            &quot;text&quot;: &quot;Auswählen, welche Buttons im \&quot;View Modus\&quot; angezeigt werden:&quot;
+            &quot;text&quot;: &quot;Auswählen, welche Buttons im \&quot;View Modus\&quot; angezeigt werden. Verwenden Sie \&quot;Drag and Drop\&quot;, um die Reihenfolge zu ändern&quot;
         },
         &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Tools/Download/Full/Caption&quot;,
@@ -10755,6 +10791,14 @@ $src$
             &quot;title&quot;: &quot;$:/language/EditTemplate/Title/BadCharacterWarning&quot;,
             &quot;text&quot;: &quot;Warnung: Folgende Zeichen im Titel können zu Problemen führen: &lt;&lt;bad-chars&gt;&gt;&quot;
         },
+        &quot;$:/language/EditTemplate/Title/Exists/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Title/Exists/Prompt&quot;,
+            &quot;text&quot;: &quot;Tiddler Name existiert bereits&quot;
+        },
+        &quot;$:/language/EditTemplate/Title/Relink/Prompt&quot;: {
+            &quot;title&quot;: &quot;$:/language/EditTemplate/Title/Relink/Prompt&quot;,
+            &quot;text&quot;: &quot;Ändere ''&lt;$text text=&lt;&lt;fromTitle&gt;&gt;/&gt;'' -&gt; ''&lt;$text text=&lt;&lt;toTitle&gt;&gt;/&gt;'' in //tags// und //list// Feld aller anderen Tiddler&quot;
+        },
         &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/EditTemplate/Type/Dropdown/Caption&quot;,
             &quot;text&quot;: &quot;Tiddler Typ Liste&quot;
@@ -10971,6 +11015,10 @@ $src$
             &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
             &quot;text&quot;: &quot;System-Tags&quot;
         },
+        &quot;$:/language/Filters/StoryList&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/StoryList&quot;,
+            &quot;text&quot;: &quot;Tiddler im \&quot;story river\&quot;, außer &lt;$text text=\&quot;$:/AdvancedSearch\&quot;/&gt;&quot;
+        },
         &quot;$:/language/Filters/TypedTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/TypedTiddlers&quot;,
             &quot;text&quot;: &quot;Nicht \&quot;wiki-text\&quot; Tiddler&quot;
@@ -10997,6 +11045,11 @@ $src$
             &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
             &quot;description&quot;: &quot;Listet alle verfügbaren TiddlyWiki Editionen auf&quot;,
             &quot;text&quot;: &quot;Listet alle verfügbaren TiddlyWiki Editionen auf.\n\n```\n--editions\n```\n\nSie können ein neues Wiki mit dem `--init` Kommando erstellen. Dabei wird eine der angezeigten Editionen \&quot;geklont\&quot;.\n&quot;
+        },
+        &quot;$:/language/Help/fetch&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/fetch&quot;,
+            &quot;description&quot;: &quot;Fetch tiddlers from wiki by URL&quot;,
+            &quot;text&quot;: &quot;Abrufen eines oder mehrerer Dateien über HTTP/HTTPS. Importieren der tiddler, die dem Filter entsprechen. Umwandeln der ankommenden Titel, wenn nötig.\n\n```\n--fetch file &lt;url&gt; &lt;import-filter&gt; &lt;transform-filter&gt;\n--fetch files &lt;url-filter&gt; &lt;import-filter&gt; &lt;transform-filter&gt;\n```\n\nWird der `file` parameter verwendet, wird nur eine einzelne Datei geholt. Der erste Parameter ist die URL von der die Datei geladen werden soll.\n\nWird der `files` parameter verwendet, werden mehrere Dateien geholt. In diesem Fall ist der erste Parameter ein Filter, der eine Liste von URLs ergibt, von denen die Dateien gelesen werden sollen. Zum Beispiel: Mehrere Tiddler sind getagged mit: `remote-server` und enthalten ein Feld: `url`. ... Der Filter `[tag[remote-server]get[url]]` wird alle verfügbaren URLs ansprechen.\n\n\nDer `&lt;import-filter&gt;` Parameter, spezifiziert jene Tiddler, die importiert werden sollen. Standard ist: `[all[tiddlers]]`, wenn nichts angegeben wird.\n\nDer `&lt;transform-filter&gt;` Parameter, spezifiziert einen Filter, mit dem der Tiddler Name verändert werden kann. zB: `[addprefix[$:/meinImport/]]` würde `$:/meinImport/` allen Tiddler Namen voran stellen.\n\nWird `--verbose` vor dem `--fetch` Befehl benutzt, dann werden erweiterte Diagnose Infos ausgegeben.\n\nHinweis: ~TiddlyWiki wird ''keine'' veralteten plugins importieren.\n\nDas folgende Beispiel wird alle \&quot;nicht-system\&quot; Tiddler von http://tiddlywiki.com holen und in ein `JSON` file speichern.\n\n```\ntiddlywiki --verbose --fetch file \&quot;http://tiddlywiki.com/\&quot; \&quot;[!is[system]]\&quot; \&quot;\&quot; --rendertiddler \&quot;$:/core/templates/exporters/JsonFile\&quot; output.json text/plain \&quot;\&quot; exportFilter \&quot;[!is[system]]\&quot;\n```\n&quot;
         },
         &quot;$:/language/Help/help&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/help&quot;,
@@ -11035,7 +11088,7 @@ $src$
         &quot;$:/language/Help/rendertiddler&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddler&quot;,
             &quot;description&quot;: &quot;Ausgabe eines individuellen Tiddlers, in einem spezifizierten Format.&quot;,
-            &quot;text&quot;: &quot;Ausgabe eines individuellen Tiddlers, in einem spezifizierten Format (standard: `text/html`) und Dateinamen.\n\nOptional kann ein Template tiddler angegeben werden. Die \&quot;currentTiddler\&quot; Variable wird auf den Tiddler gesetzt, der zu rendern ist.\n\n```\n--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;]\n```\n\nStandardmäßig ist das `output` Verzeichnis ein Unterverzeichnis im `edition` Verzeichnis. Der `--output` Befehl kann verwendet werden, um ein anderes Verzeichnis auszuwählen.\n\nNicht vorhandene Verzeichnisse werden automatisch erstellt.\n&quot;
+            &quot;text&quot;: &quot;Ausgabe eines individuellen Tiddlers, in einem spezifizierten Format (standard: `text/html`) und Dateinamen.\n\nOptional kann ein Template tiddler angegeben werden. Die \&quot;currentTiddler\&quot; Variable wird auf den Tiddler gesetzt, der zu rendern ist.\n\n```\n--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;] [&lt;name&gt;] [&lt;value&gt;]\n```\n\nStandardmäßig ist das `output` Verzeichnis ein Unterverzeichnis im `edition` Verzeichnis. Der `--output` Befehl kann verwendet werden, um ein anderes Verzeichnis auszuwählen.\n\nNicht vorhandene Verzeichnisse werden automatisch erstellt.\n\n''Beispiel:''\n\nDer folgende Befehl speichert alle tiddler mit dem `tag: done` in eine `JSON` Datei mit dem Namen: `output.json`. Das Template `$:/core/templates/exporters/JsonFile` wird auf die zu speichernden Daten angewandt.\n\n```\n--rendertiddler \&quot;$:/core/templates/exporters/JsonFile\&quot; output.json text/plain \&quot;\&quot; exportFilter \&quot;[tag[done]]\&quot;\n```\n&quot;
         },
         &quot;$:/language/Help/rendertiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/rendertiddlers&quot;,
@@ -11216,6 +11269,10 @@ $src$
         &quot;$:/language/Error/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Error/Caption&quot;,
             &quot;text&quot;: &quot;Fehler&quot;
+        },
+        &quot;$:/language/Error/EditConflict&quot;: {
+            &quot;title&quot;: &quot;$:/language/Error/EditConflict&quot;,
+            &quot;text&quot;: &quot;Datei auf Server verändert&quot;
         },
         &quot;$:/language/Error/Filter&quot;: {
             &quot;title&quot;: &quot;$:/language/Error/Filter&quot;,
@@ -11424,6 +11481,10 @@ $src$
         &quot;$:/config/NewJournal/Title&quot;: {
             &quot;title&quot;: &quot;$:/config/NewJournal/Title&quot;,
             &quot;text&quot;: &quot;YYYY MMM 0DD&quot;
+        },
+        &quot;$:/config/NewJournal/Text&quot;: {
+            &quot;title&quot;: &quot;$:/config/NewJournal/Text&quot;,
+            &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/config/NewJournal/Tags&quot;: {
             &quot;title&quot;: &quot;$:/config/NewJournal/Tags&quot;,

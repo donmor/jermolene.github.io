@@ -84,12 +84,7 @@ Each widget can then decide if it has to change or re-render its DOM representat
 This way every time a tiddler or the wiki store itself changes, each widget can instantly react on these changes or ignore them.</p><p>Another way of updating are text reference attributes (text references explained in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520and%2520TextReference.html">Transclusion and TextReference</a>):</p><pre><code>{type: &quot;indirect&quot;, textReference: &lt;textReference&gt;}</code></pre><p>When a widget got a attribute which is a text reference and the refresh function is called, it can check if the text reference references a changed tiddler and update accordingly.</p><p>Nearly every state of the UI is stored in tiddlers. A search mechanism for example would use a EditTextWidget which shows an text input field for the search string and a <a class="tc-tiddlylink tc-tiddlylink-missing" href="ListWidget.html">ListWidget</a> to show the results.
 The EditTextWidget is bound to a tiddler <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Ftemp%252Fsearch.html">$:/temp/search</a>. Meaning when editing the text in the input field the tiddlers content is changed to this text. On the other hand when the tiddler changes the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RootWidget%2520and%2520Rendering%2520Startup.html">RootWidget</a> is notified. It then starts calling its childrens refresh methods. Eventually the refresh method of the EditTextWidget is called and it can re-render itself if necessary.
 This way <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> can re-use an already existing data structure which is not only convenient because we don't need to introduce an additional structure but tiddlers managed in the wiki store are already a pretty powerful data structure, supporting an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a> (so we don't need an additional observer pattern), <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Caching.html">Caching</a>, Metadata by additional tiddler fields and a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Tags%2520and%2520Filter%2520Mechanism.html">way to obtain specific tiddlers</a>.
-</p>
-
-
-
-</div>
-
+</p></div>
 
 
 </div>

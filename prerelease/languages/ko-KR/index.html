@@ -741,6 +741,18 @@ I've known TiddlyWiki since its beginning in 2004. For personal or professional 
 //Hand optimised from a translation by Google Translate//
 </pre>
 </div>
+<div created="20170419164100000" modified="20170419164100000" tags="Resources" title="&quot;Wikilabs&quot; by PMario" type="text/vnd.tiddlywiki" url="https://wikilabs.github.io">
+<pre>A collection of references for testing concepts around ~TiddlyWiki 5...
+
+{{!!url}}
+
+&lt;&lt;&lt;
+This is PMario's playground with ramblings about ~TiddlyWiki and related stuff.
+
+It basically is a &quot;jump off&quot; page to various ~TiddlyWiki sites, that show editions, themes and plugins.
+&lt;&lt;&lt;
+</pre>
+</div>
 <div created="20140505085406905" modified="20140505085406905" tags="Resources" title="&quot;Wills Q&amp;D gTD&quot; by Matabele" type="text/vnd.tiddlywiki" url="http://wills.tiddlyspot.com">
 <pre>Matabele's stylish and clean system for personal task management.
 
@@ -8080,7 +8092,7 @@ https://github.com/Jermolene/TiddlyWiki5/edit/master/editions/ko-KR/tiddlers/$(g
         &quot;$:/core/ui/ViewTemplate/body&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;text&quot;: &quot;\\define re() ^\\$\\:\\/([^/])*$\n\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]is[missing]!is[shadow]]\&quot; template=\&quot;$:/language/MissingTiddler/Hint\&quot; emptyMessage=\&quot;\&quot;\&quot;\n\n&lt;$list filter=\&quot;[all[current]!is[system]] [all[current]tag[$:/tags/Image]] [all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude/&gt;\n\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[all[current]is[system]] -[all[current]tag[$:/tags/Image]] -[all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$codeblock code={{!!text}} language={{!!type}}/&gt;\n\n&lt;/$list&gt;\n\n\&quot;\&quot;\&quot;/&gt;\n\n&lt;/$reveal&gt;\n&quot;
+            &quot;text&quot;: &quot;&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude&gt;\n\n&lt;$transclude tiddler=\&quot;$:/language/MissingTiddler/Hint\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$list&gt;\n\n&lt;/$reveal&gt;&quot;
         },
         &quot;$:/core/ui/ViewTemplate/classic&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/classic&quot;,
@@ -13348,11 +13360,11 @@ with this program; if not, write to the Free Software Foundation, Inc.,
         },
         &quot;$:/plugins/tiddlywiki/googleanalytics/settings&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/googleanalytics/settings&quot;,
-            &quot;text&quot;: &quot;You have only two value to set, only first is mandatory :\n\n# ''[[Google Analytics Account|$:/GoogleAnalyticsAccount]]'', usually a `UA-XXXXXX-XX` code where X are digits (yours is best ;-). ''This one is mandatory'', plugin will not work without it...&lt;br/&gt;&lt;$edit-text tiddler=\&quot;$:/GoogleAnalyticsAccount\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt;\n\n# ''[[Google Analytics Domain|$:/GoogleAnalyticsDomain]]''. Usually the website URL where your tiddlywiki is published. will fallback to `auto` if not set.&lt;br/&gt;&lt;$edit-text tiddler=\&quot;$:/GoogleAnalyticsDomain\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt;\n&quot;
+            &quot;text&quot;: &quot;You have only two value to set, only first is mandatory:\n\n# ''[[Google Analytics Account|$:/GoogleAnalyticsAccount]]'': (mandatory) a code of the form `UA-XXXXXX-XX` where X are digits&lt;br/&gt;&lt;$edit-text tiddler=\&quot;$:/GoogleAnalyticsAccount\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt;\n\n# ''[[Google Analytics Domain|$:/GoogleAnalyticsDomain]]'': (optional) the website URL where the TiddlyWiki file is published. Defaults to `auto` if not set.&lt;br/&gt;&lt;$edit-text tiddler=\&quot;$:/GoogleAnalyticsDomain\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt;\n&quot;
         },
         &quot;$:/plugins/tiddlywiki/googleanalytics/usage&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/googleanalytics/usage&quot;,
-            &quot;text&quot;: &quot;!! Create a google analytics account\nIf you already got one, go to next step, else\n\n# Go to the Google Analytics website: http://www.google.com/analytics/\n# Click the ''Access Google Analytics'' button and follow instructions to set up your account\n# Enter the URL of your hosting domain, might be a TiddlySpot one for example \&quot;mysite.tiddlyspot.com\&quot; or even a github.io or gitlab.io url\n# You will be given your own Tracking ID for this domain `UA-XXXXXX-XX`\n\n!! Install the plugin on your local copy of the tiddlywiki\n\n# ''BACKUP your tiddlywiki''. Just in case.\n# grab a copy of the plugin [[$:/plugins/tiddlywiki/googleanalytics]] from a wiki containing it like http://tiddlywiki.com to yours\n# save the tiddlywiki, refresh the page to load the plugin\n# in your tiddlywiki, go to [[$:/ControlPanel]] &gt; Plugins tab. Unfold the Google Analytics box.\n# go to //settings// tabs and edit parameters : Google Analytics Account and Google Analytics Domain\n# save the tiddlywiki\n\n!! Upload the new version of your tiddlywiki\n\n# Upload the saved tiddlywiki to TiddlySpot, github, gitlab or other web host\n# Return to your Google Analytics page to check that your site is being tracked\n&quot;
+            &quot;text&quot;: &quot;!! Create a Google Analytics account\n\nIf you don't already have an account:\n\n# Go to the Google Analytics website: http://www.google.com/analytics/\n# Click the ''Access Google Analytics'' button and follow instructions to set up your account\n# Enter the URL where the wiki is hosted\n# Note the Tracking ID for this domain of the form `UA-XXXXXX-XX`\n\n!! Install the plugin on your local copy of the TiddlyWiki\n\n# ''Backup your TiddlyWiki''. Just in case\n# Install the plugin via the plugin manager in control panel\n# Save the TiddlyWiki andrefresh the page to load the plugin\n# Go to [[$:/ControlPanel]] &gt; Plugins tab and unfold the Google Analytics Plugin\n# Go to the //settings// tab and edit the parameters\n# Save the TiddlyWiki\n\n!! Upload the new version of your TiddlyWiki\n\n# Upload the saved TiddlyWiki to TiddlySpot, GitHub, GitLab or other web host\n# Return to your Google Analytics page to check that your site is being tracked\n&quot;
         }
     }
 }</pre>
@@ -13777,7 +13789,7 @@ The ''action-deletefield'' widget is an [[action widget|ActionWidgets]] that del
 The ''action-deletefield'' widget is invisible. Any content within it is ignored.
 
 |!Attribute |!Description |
-|$tiddler |The title of the tiddler whose fields are to be modified (if not provided defaults to the [[current tiddler|Current Tiddler]] |
+|$tiddler |The title of the tiddler whose fields are to be modified (if not provided defaults to the [[current tiddler|Current Tiddler]]) |
 |$field |Optional name of a field to delete |
 |//{any attributes not starting with $}// |Each attribute name specifies a field to be deleted. The attribute value is ignored and need not be specified |
 
@@ -14039,7 +14051,7 @@ The ''action-setfield'' widget is an [[action widget|ActionWidgets]] that assign
 The ''action-setfield'' widget is invisible. Any content within it is ignored.
 
 |!Attribute |!Description |
-|$tiddler |The title of the tiddler whose fields are to be modified (if not provided defaults to the [[current tiddler|Current Tiddler]] |
+|$tiddler |The title of the tiddler whose fields are to be modified (if not provided defaults to the [[current tiddler|Current Tiddler]]) |
 |$field |Optional name of a field to be assigned the $value attribute |
 |$index |Optional index of a property in a [[data tiddler|DataTiddlers]] to be assigned the $value attribute|
 |$value |The value to be assigned to the field or index identified by the $field or $index attribute. If neither is specified then the value is assigned to the text field. If no value is specified, $field or $index will be deleted.|
@@ -17371,7 +17383,7 @@ Unlike most other [[Filter Operators]], the [[selection|Title Selection]] output
 <pre>//This is a sample task for the TaskManagementExample//
 </pre>
 </div>
-<div caption="getindex" created="20150203140000000" modified="20150203140000000" purpose="select all values of a data property in the input titles" tags="[[Filter Operators]] [[Field Operators]]" title="getindex Operator">
+<div caption="getindex" created="20150203140000000" modified="20150203140000000" op-purpose="select all values of a data property in the input titles" tags="[[Filter Operators]] [[Field Operators]]" title="getindex Operator">
 <pre>&lt;$macrocall $name=&quot;.operator-def&quot;
 input=&quot;a [[selection of titles|Title Selection]]&quot;
 parameter=&quot;the name of a [[property|DataTiddlers]]&quot;
@@ -17381,7 +17393,8 @@ output=&quot;the values of property &lt;&lt;.place P&gt;&gt; in each of the inpu
 
 Each input title is processed in turn, and is ignored if it does not denote a [[data tiddler|DataTiddlers]]. If the tiddler contains property &lt;&lt;.place P&gt;&gt;, the value of that property is [[dominantly appended|Dominant Append]] to the output.
 
-&lt;&lt;.operator-examples &quot;getindex&quot;&gt;&gt;</pre>
+&lt;&lt;.operator-examples &quot;getindex&quot;&gt;&gt;
+</pre>
 </div>
 <div created="20150203140000000" modified="20150203140000000" tags="[[getindex Operator]] [[Operator Examples]]" title="getindex Operator (Examples)">
 <pre>&lt;&lt;.operator-example 1 &quot;[[$:/palettes/Vanilla]getindex[background]]&quot; &quot;returns the value at index ''background'' of the [[DataTiddler|DataTiddlers]] [[$:/palettes/Vanilla]]&quot;&gt;&gt;

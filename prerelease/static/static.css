@@ -152,7 +152,7 @@ Error message and password prompt
 	right: 0;
 	width: 310px;
 	height: 400px;
-	overflow: scroll;
+	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
