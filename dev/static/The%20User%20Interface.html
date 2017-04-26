@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ The User Interface
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -78,7 +80,6 @@ To provide some more sophisticated UI elements, <a class="tc-tiddlylink tc-tiddl
 checkboxes, dynamic lists etc.
 In most cases, these widgets are used to directly modify or represent the information contained in other tiddlers.
 If a tiddler is changed and this change should reflect in an UI element e.g. a widget, a process called selective update takes place. Selective updating means when a tiddler or a set of tiddlers changes, each widget is asked, if changes to this tiddlers would affect its appearance. If so, the respective widget is re-rendered otherwise it remains unchanged.</p></div>
-
 
 
 </div>

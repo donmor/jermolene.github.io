@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,7 +22,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Commands"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
@@ -82,8 +82,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Enregistre un ensemble de tiddlers (sélectionnés par un filtre) dans le répertoire indiqué et avec l'extension indiquée — par défaut <code>.html</code>. Le choix du rendu est fonction du type de contenu (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>) spécifié — par défaut <code>text/html</code> :</p><pre><code>--rendertiddlers &lt;filtre&gt; &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;]</code></pre><p>Par exemple :</p><pre><code>--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain</code></pre><p>Tous les fichiers du répertoire cible sont supprimés. Le répertoire cible est créé récursivement s'il n'existe pas.</p></div>
-
+<div class="tc-tiddler-body tc-reveal"><p>Enregistre un ensemble de tiddlers (sélectionnés par un filtre) dans le répertoire indiqué et avec l'extension indiquée — par défaut <code>.html</code>. Le choix du rendu est fonction du type de contenu (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>) spécifié — par défaut <code>text/html</code> :</p><pre><code>--rendertiddlers &lt;filtre&gt; &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;] [&quot;noclean&quot;]</code></pre><p>Par exemple :</p><pre><code>--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain</code></pre><p>Par défaut, le nom de fichier est résolu relativement au sous-répertoire <code>output</code> du répertoire de l'édition. La commande <code>--output</code> peut servir à rediriger la sortie vers un répertoire différent.</p><p>Tous les fichiers du répertoire cible sont supprimés, sauf si le drapeau <strong>noclean</strong> est spécifié. Le répertoire cible est créé récursivement s'il n'existe pas.</p></div>
 
 
 </div>

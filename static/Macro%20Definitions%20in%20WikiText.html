@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ Macro Definitions in WikiText
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -105,7 +107,6 @@ Hi, I'm $(name)$ and I live in $(address)$.
 </div>
 </p><h2 class="">Scope</h2><p>Macros are available to the tiddler that defines them, plus any tiddlers that it transcludes.</p><p>To make a macro available to all tiddlers, define it in a tiddler that has the tag <code class="doc-tag"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FMacro.html">$:/tags/Macro</a></code>.</p><p>It is also possible to write a macro as a <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/index.html#JavaScript%20Macros" rel="noopener noreferrer" target="_blank">JavaScript module</a>. JavaScript macros are available to all tiddlers, and offer the maximum flexibility.</p><p>A tiddler can manually import macro definitions from a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a> of other tiddlers by using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html"><code class="doc-widget">$importvariables</code></a> widget.
 </p></div>
-
 
 
 </div>

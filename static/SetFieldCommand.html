@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ SetFieldCommand
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Commands
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -79,7 +81,6 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p><em>Note that this command is experimental and may change or be replaced before being finalised</em></p><p>Sets the specified field of a group of tiddlers to the result of wikifying a template tiddler with the <code>currentTiddler</code> variable set to the tiddler.</p><pre><code>--setfield &lt;filter&gt; &lt;fieldname&gt; &lt;templatetitle&gt; &lt;rendertype&gt;</code></pre><p>The parameters are:</p><ul><li><strong>filter</strong> - filter identifying the tiddlers to be affected</li><li><strong>fieldname</strong> - the field to modify (defaults to &quot;text&quot;)</li><li><strong>templatetitle</strong> - the tiddler to wikify into the specified field. If blank or missing then the specified field is deleted</li><li><strong>rendertype</strong> - the text type to render (defaults to &quot;text/plain&quot;; &quot;text/html&quot; can be used to include HTML tags)</li></ul></div>
-
 
 
 </div>

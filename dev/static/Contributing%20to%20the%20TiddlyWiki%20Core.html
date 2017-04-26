@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -63,7 +63,6 @@ Contributing to the TiddlyWiki Core
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> core is the container for all the generic features of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> that are of universal utility. Concretely, it comprises the tiddlers in the <code>$:/core</code> plugin.</p><h1 class="">Core Contribution Requirements</h1><p>There are requirements that must be met for any contribution that is to be accepted into the core:</p><ul><li>If appropriate, the new functionality must support both standalone and Node.js configurations. For example, any new widgets must be capable of being rendered on the server</li><li>The contribution must not compromise the backwards compatibility of the existing code</li><li>Code contributions must comply with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520Coding%2520Style%2520Guidelines.html">TiddlyWiki Coding Style Guidelines</a></li><li>Generic components are preferred over point solutions for specific problems (which belong in plugins)</li></ul><h1 class="">The Core and Innovation</h1><p>If you've created something new and innovative, don't try to rush to get it included into the core. Once new stuff is in the core it is subject to the core policies of strict backwards compatibility, making it frozen as far as radical innovation is concerned. It's usually better to release the new thing as a plugin so that it can be shared with the rest of the community for feedback.</p><p>The expected model of innovation is that the core development will move relatively slowly as more and more of the initial planned functionality is implemented. Innovation can take place in the much more unconstrained environment of plugins. Over time, as these third party plugins gain popularity and become more polished, some or all of their functionality will be migrated into the core.</p><h1 class="">Improving Hackability of the Core</h1><p>Don't be afraid to submit issues or pull requests that add hooks or other points of extensibility to help your plugin integrate with the core. An important goal for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> is for the core to be infinitely adaptable through plugins. It is expected that many more points of extension will need to be added to support a healthy ecosystem of plugins.
 </p></div>
-
 
 
 </div>

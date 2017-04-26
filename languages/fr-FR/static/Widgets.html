@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,7 +22,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts tc-tagged-Reference"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
@@ -94,6 +94,12 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>L'affichage de TiddlyWiki est piloté par un ensemble de <dfn class="doc-def">widgets</dfn> sous-jacents. Ceux-ci sont organisés dans une structure arborescente : chaque widget a un widget parent et zéro ou plusieurs widgets enfants.</p><p>TiddlyWiki génère cet <dfn class="doc-def">arbre widget</dfn> par l'analyse <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> des tiddlers. Chaque composant de la syntaxe <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, y compris le cas trivial du texte ordinaire, génère le widget correspondant. L'arborescence widget est une représentation intermédiaire, rendue, par la suite, dans l'affichage réel final.</p><p>Les Widgets sont similaires aux éléments HTML d'un document. En fait, les balises HTML dans Wikitext génèrent des <dfn class="doc-def">éléments widgets</dfn> dédiés. </p><p>Chaque classe de widget contribue a une aptitude spécifique de la fonctionnalité globale, comme l'aptitude à <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImageWidget.html">afficher une image</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">un bouton</a>, pour <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">appeler une macro</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">transclure un texte externe</a>, ou pour <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">marquer une partie du texte comme titre</a>.</p><p>Les widget plus spécialisés utilisent une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">syntaxe de widget</a> polyvalente comme seule représentation <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> possible.</p><p>Les classes de widget suivantes sont intégrées au noyau :</p><p><ul class="">
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
+action-createtiddler
+</a>
+</li>
 
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
@@ -168,6 +174,18 @@ codeblock
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CountWidget.html">
 count
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DraggableWidget.html">
+draggable
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DroppableWidget.html">
+droppable
 </a>
 </li>
 
@@ -346,7 +364,6 @@ wikify
 </li>
 
 </ul></p></div>
-
 
 
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,7 +22,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
@@ -81,6 +81,12 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>Les widgets enrichissent les fonctionnalités du <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. Ils ont la même syntaxe que les <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">éléments HTML</a>, mais leur nom de balise commence toujours par <code>$</code>. Par exemple :</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Fermez Moi !&lt;/$button&gt;</code></pre><p>Notez que les widgets héritent de toutes les caractéristiques du <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML dans WikiText</a>:</p><ul><li>Les attributs des Widgets peuvent être spécifiés via :<ul><li>Des chaines non-cotées (sans aucun espace)</li><li>Des chaines cotées par simple ou double cotes</li><li>Des chaines cotées par des doubles cotés triplées</li><li>Des invocations de Macro (eg <code>attr=&lt;&lt;maMacro&gt;&gt;</code>)</li><li>Des transclusions (eg, <code>attr={{MonTiddler!!champ}}</code>)</li></ul></li><li>Le contenu d'un widget est analysé en mode en ligne jusqu'à ce que l'ouverture d'une balise soit suivie par deux sautsdeligne, ce qui force le mode bloc<ul><li>Le 'mode Enligne' indique que les règles d'analyse en 'mode bloc' de rubriques, tables, listes, ... ne sont pas reconnues</li></ul></li></ul><p>Voir <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML dans WikiText</a> pour plus de détails.</p><p>Les widgets disponibles inclus :</p><p><ul class="">
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
+action-createtiddler
+</a>
+</li>
 
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
@@ -155,6 +161,18 @@ codeblock
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CountWidget.html">
 count
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DraggableWidget.html">
+draggable
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="DroppableWidget.html">
+droppable
 </a>
 </li>
 
@@ -333,7 +351,6 @@ wikify
 </li>
 
 </ul></p></div>
-
 
 
 </div>

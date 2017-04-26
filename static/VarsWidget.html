@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ VarsWidget
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -82,14 +84,13 @@ color:#333333;">
 
 &lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
-&lt;/$vars&gt;</code></pre><p>In contrast, here is the same example using the <code>&lt;$set&gt;</code> widget:</p><pre><code>&lt;$set name=&quot;greeting&quot; value=&quot;Hi&quot; /&gt;
-&lt;$set name=&quot;me&quot; value={{!!title}} /&gt;
-&lt;$set name=&quot;sentence&quot; value=&lt;&lt;helloworld&gt;&gt; /&gt;
+&lt;/$vars&gt;</code></pre><p>In contrast, here is the same example using the <code>&lt;$set&gt;</code> widget:</p><pre><code>&lt;$set name=&quot;greeting&quot; value=&quot;Hi&quot; &gt;
+&lt;$set name=&quot;me&quot; value={{!!title}} &gt;
+&lt;$set name=&quot;sentence&quot; value=&lt;&lt;helloworld&gt;&gt; &gt;
   &lt;&lt;greeting&gt;&gt;! I am &lt;&lt;me&gt;&gt; and I say: &lt;&lt;sentence&gt;&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;
 &lt;/$set&gt;</code></pre><h1 class="">Remarks</h1><p>It should be noted that this widget differs from the set widget in the following ways:</p><ul><li>A fallback (also known as &quot;emptyValue&quot;) cannot be specified</li><li>Filters cannot be used to produce a conditional variable assignement</li><li>Variable names must be literal strings</li></ul></div>
-
 
 
 </div>

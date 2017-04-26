@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -55,17 +55,19 @@ RevealWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 23rd December 2015 at 10:28pm
+</a> 16th December 2016 at 3:36pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -109,8 +111,12 @@ And this is some text
 
 &lt;/div&gt;
 &lt;/$reveal&gt;</code></pre><p>That renders as:</p><p><button class="">Pop me up!</button></p><p><span class=" tc-reveal" hidden="true"></span>
+</p></div><h2 class="">How to use text references with field content</h2><p>Here is a simple example how to use text references with field content to control the  <a class="tc-tiddlylink tc-tiddlylink-resolves" href="RevealWidget.html">RevealWidget</a>. If the field <code>jeremy</code> is populated with text <code>tiddlywiki</code>, a message will be displayed.</p><div class="doc-example"><pre><code>&lt;$reveal type=&quot;match&quot; state=&quot;!!jeremy&quot; text=&quot;tiddlywiki&quot;&gt;
+~TiddlyWiki!
+&lt;/$reveal&gt;</code></pre><p>That renders as:</p><p><span class=" tc-reveal">
+TiddlyWiki!
+</span>
 </p></div></div>
-
 
 
 </div>

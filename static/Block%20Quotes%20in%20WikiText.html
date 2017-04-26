@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -55,17 +55,19 @@ Block Quotes in WikiText
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 7th June 2016 at 10:24am
+</a> 17th April 2017 at 5:51pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  WikiText
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -100,7 +102,12 @@ Operating systems are like a brick wall for our minds
 &lt;&lt;&lt; Nobody
 </code></pre><p>That renders as:</p><blockquote class="tc-quote myClass another-class"><p>Operating systems are like a brick wall for our minds
 </p><cite>Nobody</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&quot;tc-quote myClass another-class&quot;&gt;&lt;p&gt;Operating systems are like a brick wall for our minds
-&lt;/p&gt;&lt;cite&gt;Nobody&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h1 class="">Single-line Block Quotes</h1><p>The single-line syntax for block quotes is actually an extension of the syntax for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Lists%2520in%2520WikiText.html">Lists in WikiText</a>. For example:</p><div class="doc-example"><pre><code>&gt; Quoted text
+&lt;/p&gt;&lt;cite&gt;Nobody&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><p>The core includes the class <code>tc-big-quote</code> that renders block quotes with outsize double quotes:</p><div class="doc-example"><pre><code>&lt;&lt;&lt;.tc-big-quote
+A dramatic quote
+&lt;&lt;&lt; Somebody Important
+</code></pre><p>That renders as:</p><blockquote class="tc-quote tc-big-quote"><p>A dramatic quote
+</p><cite>Somebody Important</cite></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote class=&quot;tc-quote tc-big-quote&quot;&gt;&lt;p&gt;A dramatic quote
+&lt;/p&gt;&lt;cite&gt;Somebody Important&lt;/cite&gt;&lt;/blockquote&gt;</pre></div><h1 class="">Single-line Block Quotes</h1><p>The single-line syntax for block quotes is actually an extension of the syntax for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Lists%2520in%2520WikiText.html">Lists in WikiText</a>. For example:</p><div class="doc-example"><pre><code>&gt; Quoted text
 &gt; Another line of quoted text
 </code></pre><p>That renders as:</p><blockquote><p>Quoted text</p><p>Another line of quoted text</p></blockquote><p>... and the underlying HTML is:</p><pre>&lt;blockquote&gt;&lt;p&gt;Quoted text&lt;/p&gt;&lt;p&gt;Another line of quoted text&lt;/p&gt;&lt;/blockquote&gt;</pre></div><p>You can also nest quotes like this:</p><pre><code>&gt; A top quote
 &gt;&gt; A subquote
@@ -110,7 +117,6 @@ Operating systems are like a brick wall for our minds
 **&gt; Another quote
 * List Three
 </code></pre><p>That renders as:</p><ul><li>List One<ul><li>List Two<blockquote><p>A quote</p><p>Another quote</p></blockquote></li></ul></li><li>List Three</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;List One&lt;ul&gt;&lt;li&gt;List Two&lt;blockquote&gt;&lt;p&gt;A quote&lt;/p&gt;&lt;p&gt;Another quote&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;List Three&lt;/li&gt;&lt;/ul&gt;</pre></div></div>
-
 
 
 </div>

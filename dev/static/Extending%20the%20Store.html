@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ Extending the Store
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -109,7 +111,6 @@ An example would be the search-operator. This filter operator looks for the sear
 If the provided filter operators are not enough, a developer can add new filters by adding a module with the <code>filteroperator</code> type.</p><h3 class="">System Tags</h3><p>Tags and the filter mechanism are used throughout the core plug-in for internal puproses.
 Tags which start with <code>$:/</code> are normally hidden from the casual user, similar to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="System%2520Tiddlers.html">System Tiddlers</a></p><p>The filter mechanism is added to the wiki store with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="wikimethod%2520module%2520type.html">wikimethod module type</a>.
 </p></div>
-
 
 
 </div>

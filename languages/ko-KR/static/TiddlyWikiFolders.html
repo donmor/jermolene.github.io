@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -57,7 +57,7 @@ TiddlyWikiFolders
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2015년 7월 28일 오전 11:44
+</a> 2016년 10월 15일 오후 2:44
 </div>
 </div>
 <div class=" tc-reveal">
@@ -81,58 +81,12 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>As well as traditional single file wikis, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a> supports wikis that are stored as a folder of individual tiddler files.</p><h1 class="">Wiki folder files and folders</h1><p>Wiki folders can contain the following files and folders:</p><ul><li><strong>tiddlywiki.info</strong> - JSON file containing metadata for the wiki</li><li><strong>\tiddlers</strong> - folder containing tiddler files comprising the wiki</li><li><strong>\plugins</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginMechanism.html">plugin folders</a> to be included in the wiki</li></ul><p>Only the <strong>tiddlywiki.info</strong> file is required, the <strong>tiddlers</strong> and <strong>plugins</strong> folders are optional. Any files and folders not listed above are ignored.</p><h2 class="">Content of <code>tiddlywiki.info</code> file</h2><p>The <code>tiddlywiki.info</code> file in a wiki folder contains a JSON object comprising the following fields:</p><ul><li><strong>plugins</strong> - an array of plugin names to be included in the wiki</li><li><strong>themes</strong> - an array of theme names to be included in the wiki</li><li><strong>languages</strong> - an array of language names to be included in the wiki</li><li><strong>includeWikis</strong> - an array of references to external wiki folders to be included in the wiki</li><li><strong>build</strong> - a hashmap of named build targets, each defined by an array of command tokens (see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="BuildCommand.html">BuildCommand</a>)</li><li><strong>config</strong> - an optional hashmap of configuration options (see below)</li></ul><h3 class=""><strong>includeWikis</strong></h3><p>The entries in the <strong>includeWikis</strong> array can be either a string specifying the relative path to the wiki, or an object with the following fields:</p><ul><li><strong>path</strong> - relative path to wiki folder</li><li><strong>read-only</strong> - set <em>true</em> to prevent the tiddlers in the included wiki from being modified. The modifications will be written to the directory specified in <strong>default-tiddler-location</strong>, described below</li></ul><h3 class=""><strong>build</strong></h3><p>Note that the build targets of included wikis are merged if a target of that name isn't defined in the current <code>tiddlywiki.info</code> file.</p><h3 class=""><strong>config</strong></h3><p>Configuration options include:</p><ul><li><strong>default-tiddler-location</strong> - a string path to the default location for the filesystem adaptor to save new tiddlers (resolved relative to the wiki folder)</li><li><strong>retain-original-tiddler-path</strong> - If true, the server will generate a tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252Fconfig%252FOriginalTiddlerPaths.html">$:/config/OriginalTiddlerPaths</a> containing the original file paths of each tiddler in the wiki</li></ul><h3 class="">Example</h3><p>For example:</p><pre><code>{
+<div class="tc-tiddler-body tc-reveal"><p>As well as traditional single file wikis, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a> supports wikis that are stored as a folder of individual tiddler files.</p><h1 class="">Wiki Folder Structure</h1><p>Wiki folders can contain the following files and folders:</p><ul><li><strong>tiddlywiki.info</strong> - JSON file containing metadata for the wiki – see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.info%2520Files.html">tiddlywiki.info Files</a></li><li><strong>\tiddlers</strong> - folder containing tiddler files comprising the wiki</li><li><strong>\plugins</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> to be included in the wiki</li><li><strong>\languages</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> for language plugins to be included in the wiki</li><li><strong>\themes</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> for theme plugins to be included in the wiki</li></ul><p>Only the <strong>tiddlywiki.info</strong> file is required; everything else is optional. Any files and folders not listed above are ignored.</p><h2 class="">Plugin processing</h2><p>To be usable in the browser, plugins just need to be included in the wiki. For wikis that are generated on the server, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">TiddlyWikiFolders</a> can contain a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.info%2520Files.html">tiddlywiki.info file</a> that identifies the plugins to be included in this wiki:</p><pre><code>{
 	&quot;plugins&quot;: [
-		&quot;tiddlywiki/tiddlyweb&quot;,
-		&quot;tiddlywiki/filesystem&quot;
-	],
-	&quot;includeWikis&quot;: [
-		&quot;../tw5.com&quot;
-	],
-	&quot;build&quot;: {
-		&quot;index&quot;: [
-			&quot;--rendertiddler&quot;,&quot;$:/core/save/all&quot;,&quot;index.html&quot;,&quot;text/plain&quot;],
-		&quot;favicon&quot;: [
-			&quot;--savetiddler&quot;,&quot;$:/favicon.ico&quot;,&quot;favicon.ico&quot;,
-			&quot;--savetiddler&quot;,&quot;$:/green_favicon.ico&quot;,&quot;static/favicon.ico&quot;]
-	},
-	&quot;config&quot;: {
-		&quot;retain-original-tiddler-path&quot;: true	
-	}
-}</code></pre><h2 class="">Content of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>. Newly created tiddlers are stored in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> directly beneath the <code>tiddlers</code> folder, unless <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">configured otherwise</a>.</p><p>Sub-folders within the <code>tiddlers</code> folder can also be given a <code>tiddlywiki.files</code> JSON file that overrides the default processing for that folder. The file format is illustrated with this example:</p><pre><code>{
-	&quot;tiddlers&quot;: [
-		{
-			&quot;file&quot;: &quot;d3.min.js&quot;,
-			&quot;fields&quot;: {
-				&quot;type&quot;: &quot;application/javascript&quot;,
-				&quot;title&quot;: &quot;$:/plugins/tiddlywiki/d3/d3.js&quot;,
-				&quot;module-type&quot;: &quot;library&quot;
-			},
-			&quot;prefix&quot;: &quot;var d3;if($tw.browser){\n&quot;,
-			&quot;suffix&quot;: &quot;}\nexports.d3 = d3;\n&quot;
-		},
-		{
-			&quot;file&quot;: &quot;cloud/d3.layout.cloud.js&quot;,
-			&quot;fields&quot;: {
-				&quot;type&quot;: &quot;application/javascript&quot;,
-				&quot;title&quot;: &quot;$:/plugins/tiddlywiki/d3/d3.layout.cloud.js&quot;,
-				&quot;module-type&quot;: &quot;library&quot;
-			}
-		},
-		{
-			&quot;file&quot;: &quot;local/mytiddler.tid&quot;,
-			&quot;isTiddlerFile&quot;: true,
-			&quot;fields&quot;: {
-				&quot;title&quot;: &quot;A different title&quot;
-			}
-		}
-	],
-	&quot;directories&quot;: [
-		&quot;../../mytiddlers/store&quot;
+		&quot;tiddlywiki/slider&quot;,
+		&quot;tiddlytools/chooser&quot;
 	]
-}</code></pre><p>The JSON data consists of an object with a <code>tiddlers</code> property that contains an array of information about each tiddler to be loaded into the wiki. That information consists of:</p><ul><li>The relative or absolute path to the file to include as either:<ul><li><code>file</code>: the file containing the tiddler</li><li><code>isTiddlerFile</code>: if <code>true</code>, the file will be deserialised to extract the tiddlers. Otherwise, the raw content of the file is assigned to the <code>text</code> field without any parsing</li></ul></li><li><code>fields</code>: an object containing fields that override any provided in the tiddler file</li><li><code>prefix</code> &amp; <code>suffix</code>: (optional) specify strings to be prefixed and suffixed to the tiddler file text content</li></ul><p>The <strong>directories</strong> property allows a list of directories to be specified. All tiddlers will be recursively loaded from each directory listed.
-</p></div>
-
+}</code></pre><p>Plugins names refer to plugin folders listed in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>'s root <code>plugins</code> folder. Plugins can also be included manually by copying them into the <code>plugins</code> subfolder of the wiki.</p><h2 class="">Processing of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>. Newly created tiddlers are stored in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> directly beneath the <code>tiddlers</code> folder, unless <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">configured otherwise</a>.</p><p>The default processing for sub-folders within the <code>tiddlers</code> folder can  be overridden by providing a JSON file called <code>tiddlywiki.files</code> – see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.files%2520Files.html">tiddlywiki.files Files</a>.</p></div>
 
 
 </div>

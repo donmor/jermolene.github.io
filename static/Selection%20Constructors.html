@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ Selection Constructors
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Filters
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -80,7 +82,6 @@ color:#333333;">
 
 <div class="tc-tiddler-body tc-reveal"><p>The output of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a> step depends on its <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operator</a>:</p><ul><li>Most operators derive their output from their input. For example, many of them output a subset of their input, and thus truly live up to the name of &quot;filters&quot;, narrowing down the overall output of the containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">run</a>. These operators are called <dfn class="doc-def">selection modifiers</dfn>.</li><li>A few operators ignore their input and generate an independent output instead. These are called <dfn class="doc-def">selection constructors</dfn>: they construct an entirely new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection</a>.</li></ul><p>A good example of a constructor is <a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html"><code class="doc-operator">title</code></a>. The output of <code>[title[A]title[B]]</code> is just <code class="doc-tiddler">B</code>. But the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="field%2520Operator.html"><code class="doc-operator">field</code></a> operator is a modifier, so <code>[title[A]field:title[B]</code> outputs nothing at all.
 </p></div>
-
 
 
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -22,7 +22,7 @@
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Mechanisms"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Autres actions">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires">
 
 
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler">
@@ -83,7 +83,6 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><ol><li>Open upgrade.html</li><li>Includes a data tiddler called <code>$:/UpgradeLibrary</code> that contains the latest compatible versions of all plugins in the library</li><li>Drag in old wiki file</li><li>Place tiddlers into a data tiddler <code>$:/Import</code> that is typed as a &quot;pending import&quot;</li><li>Kick off import processing for each tiddler<ol><li>Give each &quot;upgrader&quot; module a chance to inspect the incoming tiddlers</li><li>Upgrader modules can trigger actions for each tiddler:<ul><li>Display a warning message</li><li>Don't import</li><li>Replace with another tiddler from the upgrade library</li><li>Disable incompatible plugins</li></ul></li></ol></li><li>Display the newly created pending import tiddler through a new view template segment<ol><li>Displays the payload tiddlers as a list of titles and checkboxes, with a dropdown showing the full details of the tiddler</li><li>Perhaps we also suppress the usual JSON display for data tiddlers behind a reveal widget</li></ol></li><li>The user can adjust the selection checkboxes</li><li>Clicking &quot;Upgrade&quot; unpacks the selected tiddlers from the pending import tiddler</li><li>The pending import tiddler and the upgrade library tiddler are excluded from the subsequent save operation</li></ol></div>
-
 
 
 </div>

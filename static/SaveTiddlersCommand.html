@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ SaveTiddlersCommand
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Commands
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -80,7 +82,6 @@ color:#333333;">
 
 <div class="tc-tiddler-body tc-reveal"><p>Saves a group of tiddlers in their raw text or binary format to the specified directory.</p><pre><code>--savetiddlers &lt;filter&gt; &lt;pathname&gt; [&quot;noclean&quot;]</code></pre><p>By default, the pathname is resolved relative to the <code>output</code> subdirectory of the edition directory. The <code>--output</code> command can be used to direct output to a different directory.</p><p>The output directory is cleared of existing files before saving the specified files. The deletion can be disabled by specifying the <strong>noclean</strong> flag.</p><p>Any missing directories in the pathname are automatically created.
 </p></div>
-
 
 
 </div>

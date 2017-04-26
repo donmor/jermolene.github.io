@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ RootWidget and Rendering Startup
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -82,7 +84,6 @@ The <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252F
 A event of the type <code>tm-close-tiddler</code> would remove a specified tiddler from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252FStoryList.html">$:/StoryList</a>.
 The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a> would trigger a changed event which triggers a call of the ListWidget's refresh function which would remove the tiddler from the list, closing the tiddler.
 </p></div>
-
 
 
 </div>

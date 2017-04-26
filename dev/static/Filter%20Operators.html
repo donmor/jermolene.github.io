@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ Filter Operators
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  dev
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -103,7 +105,6 @@ exports.everyother = function(source, operator, options) {
 }
 })();</code></pre><p>Either way, we could interpret the <code>!</code> flag on the filter, if present, to mean that we want the <em>other</em> half of the tiddlers, by using it to set the initial value of <code>include</code>: <code>var include = operator.prefix !== &quot;!&quot;;</code></p><h1 class="">Filter Behaviour</h1><p>As with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript%2520Macros.html">JavaScript Macros</a>, filter operators should not make modifications to tiddlers, but only return a list of tiddlers or a tiddler iterator.
 </p></div>
-
 
 
 </div>

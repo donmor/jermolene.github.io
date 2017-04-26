@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.14" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -61,11 +61,13 @@ Data Management during Runtime
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
 
-<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
-</button>
+</span>
+
 <span class="tc-drop-down tc-reveal" hidden="true"></span>
 
 </span>
@@ -73,7 +75,6 @@ color:#4e432f;">
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>During the runtime the data of Tiddlywiki is stored in javascript objects. These objects are synchronized with the DOM-Representation of Tiddlywiki. This means every change of the original data of a Tiddler, fires an event which changes all DOM-Representations of the Tiddler and the javascript object. The bare-bones Wiki store is created during the boot process and is kept in a object called \$tw.Wiki. This object contains amongst others a hashmap of the different Tiddlers of Tiddlywiki. The Hashmap is used to store the javascript object representation of the different Tiddlers. Furthermore this object is used to manage the tiddlers during runtime, it provides methods for adding tiddlers, search tiddlers by name and delete tiddlers.
 As shown in the picture below, every change at the DOM triggers an event which changes the corresponding widget which again changes the store of the tiddlers. The whole image shows how <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> is parsed by a set of rules into the parse tree and this parse tree is rendered as a tree of widgets. This Rendertree is synchronised to the DOM. Every modification on the Rendertree provokes a start of the rendering-pipeline. As well as every change on the wikiText triggers an event at the <a class="tc-tiddlylink tc-tiddlylink-missing" href="RenderTree.html">RenderTree</a>. This Process uses a selective updating so that only the changed parts are updated. This means only widgets which have to change the DOM in consequence of a changed tiddler are refreshed.</p></div>
-
 
 
 </div>
