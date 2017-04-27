@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -80,7 +80,11 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>El output de un <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">paso</a> depende de su <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Operators.html">operador</a>:</p><ul><li>La mayoría de operadores obtienen su output a partir del input. Por ejemplo, muchos devuelven un subconjunto del input, cumpliendo así realmente con la función de &quot;filtros&quot;, al reducir el output de la instrucción que los contiene. Estos operadores se llaman <dfn class="doc-def">modificadores de selección</dfn>.</li><li>Unos pocos operadores, sin embargo, ignoran el input y generan un output independiente. A estos se les llama <dfn class="doc-def">constructores de selección</dfn>, porque construyen una <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selección</a> totalmente nueva.</li></ul><p>Un buen ejemplo de constructor es <a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html"><code class="doc-operator">title</code></a>. El output de <code>[title[A]title[B]]</code> es <code class="doc-tiddler">B</code>, mientras que <a class="tc-tiddlylink tc-tiddlylink-resolves" href="field%2520Operator.html"><code class="doc-operator">field</code></a> es un modificador, por lo que <code>[title[A]field:title[B]</code> no genera output alguno.
-</p></div>
+</p>
+
+
+
+</div>
 
 
 </div>

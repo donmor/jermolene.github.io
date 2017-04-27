@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="application-name" content="TiddlyWiki" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -152,7 +152,7 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.14-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.15-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/Acknowledgements&quot;: {
@@ -7384,7 +7384,7 @@ Error message and password prompt
         &quot;$:/core/ui/ViewTemplate/body&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/body&quot;,
             &quot;tags&quot;: &quot;$:/tags/ViewTemplate&quot;,
-            &quot;text&quot;: &quot;&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude&gt;\n\n&lt;$transclude tiddler=\&quot;$:/language/MissingTiddler/Hint\&quot;/&gt;\n\n&lt;/$transclude&gt;\n\n&lt;/$list&gt;\n\n&lt;/$reveal&gt;&quot;
+            &quot;text&quot;: &quot;\\define re() ^\\$\\:\\/([^/])*$\n\n&lt;$reveal tag=\&quot;div\&quot; class=\&quot;tc-tiddler-body\&quot; type=\&quot;nomatch\&quot; state=&lt;&lt;folded-state&gt;&gt; text=\&quot;hide\&quot; retain=\&quot;yes\&quot; animate=\&quot;yes\&quot;&gt;\n\n&lt;$list filter=\&quot;[all[current]is[missing]!is[shadow]]\&quot; template=\&quot;$:/language/MissingTiddler/Hint\&quot; emptyMessage=\&quot;\&quot;\&quot;\n\n&lt;$list filter=\&quot;[all[current]!is[system]] [all[current]tag[$:/tags/Image]] [all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$transclude/&gt;\n\n&lt;/$list&gt;\n\n&lt;$list filter=\&quot;[all[current]is[system]] -[all[current]tag[$:/tags/Image]] -[all[current]regexp&lt;re&gt;] +[!has[plugin-type]!field:hide-body[yes]]\&quot;&gt;\n\n&lt;$codeblock code={{!!text}} language={{!!type}}/&gt;\n\n&lt;/$list&gt;\n\n\&quot;\&quot;\&quot;/&gt;\n\n&lt;/$reveal&gt;&quot;
         },
         &quot;$:/core/ui/ViewTemplate/classic&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ViewTemplate/classic&quot;,
@@ -8355,7 +8355,7 @@ KaTeX
 ImplementationNotes
 </pre>
 </div>
-<div created="20170426153010706" current-tiddler="HelloThere" modified="20170426153010706" title="$:/HistoryList" type="application/json">
+<div created="20170427143619930" current-tiddler="HelloThere" modified="20170427143619930" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -8365,7 +8365,7 @@ ImplementationNotes
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="KaTeX: mathematical typography" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/katex" type="application/json" version="5.1.14-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="KaTeX: mathematical typography" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/katex" type="application/json" version="5.1.15-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/plugins/tiddlywiki/katex/katex.min.css&quot;: {
@@ -8530,7 +8530,7 @@ ImplementationNotes
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.14-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.15-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/snowwhite/base&quot;: {
@@ -8541,7 +8541,7 @@ ImplementationNotes
     }
 }</pre>
 </div>
-<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.14-prerelease">
+<div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Basic theme" name="Vanilla" plugin-type="theme" title="$:/themes/tiddlywiki/vanilla" type="application/json" version="5.1.15-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/themes/tiddlywiki/vanilla/themetweaks&quot;: {

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>Order of Tagged Tiddlers: TiddlyWiki Pre-release — 5.1.14-prerelease</title>
+<title>Order of Tagged Tiddlers: TiddlyWiki Pre-release — 5.1.15-prerelease</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
@@ -88,7 +88,11 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>When TiddlyWiki generates a list of the tiddlers that have a particular tag (e.g. the dropdown list of a tag pill), it orders the tiddlers using the following rules:</p><ol><li>Start with any that are <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">declared</a> in the <code class="doc-field">list</code> field of the tag tiddler, in the order given there.</li><li>In each remaining tiddler <code class="doc-place">T</code>, look for a <code class="doc-field">list-before</code> field. If this has a tiddler title as its value, place <code class="doc-place">T</code> just <em class="doc-em">before</em> that one.<ul><li>As a special case, if the field exists but its value is empty, place <code class="doc-place">T</code> at the very start of the list.</li></ul></li><li>In each remaining tiddler <code class="doc-place">T</code>, look for a <code class="doc-field">list-after</code> field. If this has a tiddler title as its value, place tiddler <code class="doc-place">T</code> just <em class="doc-em">after</em> that one.</li><li>If any tiddlers still remain, place them at the end of the list in ascending alphabetical order of title. The difference between capital and lowercase letters is ignored.</li></ol><p>The ordering of tiddlers with a particular tag can be directly modified using drag and drop within a tag pill dropdown. The underlying <a class="tc-tiddlylink tc-tiddlylink-resolves" href="list-tagged-draggable%2520Macro.html">list-tagged-draggable Macro</a> can also be used elsewhere.
-</p></div>
+</p>
+
+
+
+</div>
 
 
 </div>

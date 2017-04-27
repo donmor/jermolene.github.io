@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -153,7 +153,11 @@ and a listener is registered at the store which executes the refresh function of
 The <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FPageTemplate%252Fstory.html">story tiddler</a> transcluded in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FPageTemplate.html">$:/core/ui/PageTemplate</a> then uses a ListWidget to transclude all tiddlers in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252FStoryList.html">$:/StoryList</a> through a special template <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FViewTemplate.html">$:/core/ui/ViewTemplate</a>.
 A event of the type <code>tm-close-tiddler</code> would remove a specified tiddler from <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252FStoryList.html">$:/StoryList</a>.
 The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Event%2520Mechanism.html">Event Mechanism</a> would trigger a changed event which triggers a call of the ListWidget's refresh function which would remove the tiddler from the list, closing the tiddler.
-</p></div>
+</p>
+
+
+
+</div>
 
 
 </div>

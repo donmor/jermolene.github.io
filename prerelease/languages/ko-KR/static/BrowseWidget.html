@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -81,7 +81,11 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The browse widget displays an HTML file browser button that allows the user to choose one or more files to import. It sends a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-import-tiddlers.html">WidgetMessage: tm-import-tiddlers</a> carrying a JSON representation of the tiddlers imported from the files up through its parents. This message is usually handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a> which adds the tiddlers to the store and updates the story to display them.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$browse&gt;</code> widget is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">multiple</td><td align="left">Set to &quot;multiple&quot; to select multiple file upload</td></tr><tr class="evenRow"><td align="left">tooltip</td><td align="left">Optional tooltip text</td></tr><tr class="oddRow"><td align="left">message</td><td align="left">Optional override of widget message to be generated. The parameter for the message will be the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> object <code>event.target.files</code></td></tr></tbody></table><p>On iPhone/iPad choosing the multiple option will remove the ability to take photographs/videos directly into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>.</p><p><strong>e.g.</strong></p><pre><code>&lt;$browse&gt;</code></pre><p>renders as:</p><input type="file"></div>
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The browse widget displays an HTML file browser button that allows the user to choose one or more files to import. It sends a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-import-tiddlers.html">WidgetMessage: tm-import-tiddlers</a> carrying a JSON representation of the tiddlers imported from the files up through its parents. This message is usually handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a> which adds the tiddlers to the store and updates the story to display them.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$browse&gt;</code> widget is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">multiple</td><td align="left">Set to &quot;multiple&quot; to select multiple file upload</td></tr><tr class="evenRow"><td align="left">tooltip</td><td align="left">Optional tooltip text</td></tr><tr class="oddRow"><td align="left">message</td><td align="left">Optional override of widget message to be generated. The parameter for the message will be the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> object <code>event.target.files</code></td></tr></tbody></table><p>On iPhone/iPad choosing the multiple option will remove the ability to take photographs/videos directly into <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>.</p><p><strong>e.g.</strong></p><pre><code>&lt;$browse&gt;</code></pre><p>renders as:</p><input type="file">
+
+
+
+</div>
 
 
 </div>

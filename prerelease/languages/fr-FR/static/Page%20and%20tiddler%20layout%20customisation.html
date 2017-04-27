@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -100,7 +100,11 @@ title=&quot;New tiddler&quot;
 \end
 
 &lt;&lt;newHereButton&gt;&gt;</code></pre><h1 class="">Supprimer les tiddlers shadows de l'interface utilisateur</h1><p>Dans l'onglet 'Plus' &gt; option 'Shadows' sont listés tous les tiddlers shadows. Dans cette liste se trouvent plusieurs tiddlers préfixés <code>$:/core/ui/</code>. Ce sont les tiddlers du noyau définissant l'interface utilisateur. Ces tiddlers sont étiquetés par des <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTags.html">Tags système</a>, supprimer ou ajouter ces tags modifie la présentation de la page et des tiddlers.</p><p>Par exemple, <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FMore.html">$:/core/ui/SideBar/More</a> est le tiddler correspondant à l'onglet 'plus' du menu latéral, étiqueté par le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTags.html">Tag système</a> <code>$:/tags/SideBar</code> de façon à apparaître dans le menu latéral. Supprimer ce tag de ce tiddler supprime le tag du menu, et lui réajouter ce tag le fera y réapparaître. </p><p>Vous pouvez suivre le même procédé pour tout tiddler du noyau définissant l'interface utilisateur et donc préfixé par <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fcore%252Fui%252F..html">$:/core/ui/.</a> Ainsi encore, supprimer le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SystemTags.html">Tag Système</a> <code>$:/tags/ViewTemplate</code> du tiddler <code>$:/core/ui/ViewTemplate/subtitle</code> fera disparaître les sous-titres  de tous les tiddlers.</p><p>Modifier un tiddler shadow de cette façon remplacera la valeur par défaut. Pour réinitialiser, il suffit de supprimer le tiddler modifié pour restaurer le tiddler shadow sous-jacent.
-</p></div>
+</p>
+
+
+
+</div>
 
 
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14-prerelease" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -11,7 +11,7 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>importvariables: TiddlyWiki Pre-release — 5.1.14-prerelease</title>
+<title>importvariables: TiddlyWiki Pre-release — 5.1.15-prerelease</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
@@ -91,7 +91,11 @@ color:#333333;">
 All the macros defined in tiddlers with the tag &quot;mySpecialMacros&quot; are available here
 &lt;/$importvariables&gt;</code></pre><h1 class="">Attributes and Content</h1><p>The content of the importvariables widget is the scope within which the imported variable definitions are available.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">filter</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">Tiddler filter</a> defining the tiddlers from which macro definitions will be imported</td></tr></tbody></table><h1 class="">Global Macros</h1><p>So-called global macros are implemented within the main page template (<a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FPageTemplate.html">$:/core/ui/PageTemplate</a>) by wrapping the page content in the following importvariables widget:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
 ...
-&lt;/$importvariables&gt;</code></pre></div>
+&lt;/$importvariables&gt;</code></pre>
+
+
+
+</div>
 
 
 </div>

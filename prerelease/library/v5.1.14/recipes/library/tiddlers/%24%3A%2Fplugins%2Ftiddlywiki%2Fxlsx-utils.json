@@ -4,7 +4,7 @@
     "author": "Jeremy Ruston and SheetJS",
     "core-version": ">=5.0.0",
     "list": "readme controls license",
-    "version": "5.1.14-prerelease",
+    "version": "5.1.15-prerelease",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
