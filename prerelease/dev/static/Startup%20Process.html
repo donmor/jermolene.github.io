@@ -85,11 +85,7 @@ $tw.modules.forEachModuleOfType(&quot;startup&quot;,function(title,module) {
 $tw.boot.executedStartupModules = Object.create(null);
 $tw.boot.disabledStartupModules = $tw.boot.disabledStartupModules || [];
 // Repeatedly execute the next eligible task
-$tw.boot.executeNextStartupTask();</code></pre><p><code>executeNextStartupTask()</code> will execute the remaining startup modules in <code>remainingStartupModules</code>. A startup module can export the variables <code>before</code> and/or <code>after</code>, each containing an array of names of other startup modules. <code>executeNextStartupTask()</code> will use this information to execute the modules in the correct order.</p><p>Startup modules can be marked as synchronous by exporting <code>synchronous = true</code>. If synchronous is set to false, the startup function is executed with an callback function as the first argument. The startup function has to call this function to allow subsequent startup modules to get executed. This is necessary when the startup function itself uses asynchronous calls.</p>
-
-
-
-</div>
+$tw.boot.executeNextStartupTask();</code></pre><p><code>executeNextStartupTask()</code> will execute the remaining startup modules in <code>remainingStartupModules</code>. A startup module can export the variables <code>before</code> and/or <code>after</code>, each containing an array of names of other startup modules. <code>executeNextStartupTask()</code> will use this information to execute the modules in the correct order.</p><p>Startup modules can be marked as synchronous by exporting <code>synchronous = true</code>. If synchronous is set to false, the startup function is executed with an callback function as the first argument. The startup function has to call this function to allow subsequent startup modules to get executed. This is necessary when the startup function itself uses asynchronous calls.</p></div>
 
 
 </div>

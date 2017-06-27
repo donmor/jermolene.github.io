@@ -74,11 +74,7 @@ color:#4e432f;">
 </div>
 </div>
 <div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> currently only implements <a class="tc-tiddlylink tc-tiddlylink-missing" href="LazyLoading.html">LazyLoading</a> when it is running in the browser talking to a <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWeb.html">TiddlyWeb</a>-compatible server.</p><p>In the <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki%2520in%2520the%2520Sky%2520for%2520TiddlyWeb.html">configuration for TiddlyWeb</a>, the browser first requests a &quot;skinny&quot; version of each tiddler (consisting of all the fields apart from the text field). Subsequently, an attempt to read those skinny tiddlers with <code>wiki.getTiddler()</code> returns just the skinny fields, but an attempt to read one using <code>wiki.getTiddlerText()</code> will trigger an asynchronous load of the full tiddler text, which in turn triggers a refresh cycle, updating the display to reflect the newly loaded tiddler. Widgets that loop through all tiddlers are fine; it's only if they trigger <code>wiki.getTiddlerText()</code> for a tiddler that it will get loaded.</p><p>Lazy loading can also be used with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s own server. The core provides a template that enables images to be lazily loaded while other tiddlers are packaged into the initial HTML file in the usual way.</p><p>The browser-based search built into <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki5.html">TiddlyWiki5</a> will only search the text of tiddlers that have been fully loaded. The expectation is that when lazy loading is used in a client-server configuration, then it is the server that really needs to handle search operations, because it is only the server that can &quot;see&quot; the text of all tiddlers. So, the plan is to integrate the built in search with <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWeb.html">TiddlyWeb</a>'s search API. The simplest approach is that any local search triggers an asynchronous server side search. The results of the search would be asynchronously loaded such that they would dynamically appear in the local search results.
-</p>
-
-
-
-</div>
+</p></div>
 
 
 </div>

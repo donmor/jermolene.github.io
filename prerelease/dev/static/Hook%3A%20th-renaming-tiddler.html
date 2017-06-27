@@ -74,11 +74,7 @@ color:#4e432f;">
 </div>
 </div>
 <div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to inspect tiddlers before they are modified by the <code>tm-rename-tiddler</code> message.</p><p>Hook function parameters:</p><ul><li><strong>newTiddler</strong>: tiddler object incorporating the rename</li><li><strong>oldTiddler</strong>: optional existing tiddler object that will be overwritten</li></ul><p>Return value:</p><ul><li>newTiddler: tiddler object to be used for the renaming operation.</li></ul><p>The original tiddler object can be returned unmodified by the hook. If the hook needs to modify the tiddler then it should return a new tiddler object, for example:</p><pre><code>	return new $tw.Tiddler(tiddler,{&quot;my-field&quot;: value});</code></pre><p>Hooks must not change the <strong>title</strong> field but can freely modify any other field of the tiddler.
-</p>
-
-
-
-</div>
+</p></div>
 
 
 </div>
