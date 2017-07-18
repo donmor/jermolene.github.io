@@ -22,6 +22,18 @@ var assetList = [
         "readme": "This plugin packages [[async.js|https://github.com/caolan/async]] for use by other plugins. It does not provide any end-user visible features.\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/aws",
+        "description": "Tools for working with Amazon Web Services",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme setup commands lambda",
+        "version": "5.1.15-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides several tools for working with Amazon Web Services:\n\n* Templates for saving a TiddlyWiki as a single JavaScript file in a ZIP file that can be executed as an AWS Lambda function. In this form, TiddlyWiki is a self contained single file containing both code and data, just like the standalone HTML file configuration\n* Commands that can be used to interact with AWS services, under both the Node.js and Lambda configurations of TiddlyWiki\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/bibtex",
         "description": "BibTeX importer",
         "author": "Henrik Muehe and Mikola Lysenko, adapted by Jeremy Ruston",

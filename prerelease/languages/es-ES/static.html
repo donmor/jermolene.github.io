@@ -165,6 +165,8 @@ svg.railroad-diagram path.arrow {
 
 	border: none;
 	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
 }canvas.tc-edit-bitmapeditor  {
 	
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -1251,7 +1253,9 @@ a.tc-tiddlylink:hover {
 	font-size: 0.6em;
 }.tc-tiddler-controls .tc-drop-down .tc-drop-down {
 	font-size: 1em;
-}.tc-tiddler-controls > span > button {
+}.tc-tiddler-controls > span > button,
+.tc-tiddler-controls > span > span > button,
+.tc-tiddler-controls > span > span > span > button {
 	vertical-align: baseline;
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
@@ -1289,6 +1293,7 @@ a.tc-tiddlylink:hover {
 	background-color: #f8f8f8;
 	line-height: 1.3em;
 	-webkit-appearance: none;
+	font-family: ;
 }.tc-tiddler-frame .tc-binary-warning {
 	width: 100%;
 	height: 5em;
@@ -2169,7 +2174,28 @@ a.tc-tiddlylink:hover {
 */.tc-error {
 	background: #f00;
 	color: #fff;
+}/*
+** Tree macro
+*/.tc-tree div {
+    	padding-left: 14px;
+}.tc-tree ol {
+    	list-style-type: none;
+    	padding-left: 0;
+    	margin-top: 0;
+}.tc-tree ol ol {
+    	padding-left: 1em;    
+}.tc-tree button { 
+    	color: #acacac;
+}.tc-tree svg {
+     	fill: #acacac;
+}.tc-tree span svg {
+    	width: 1em;
+    	height: 1em;
+    	vertical-align: baseline;
+}.tc-tree li span {
+    	color: lightgray;
 }
+
 
 .doc-def {
 	font-style: normal;
@@ -2529,33 +2555,18 @@ Información para traductores
 </div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
-
-<svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
-</svg>
-
-
-</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
-
-<svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M116.870058,45.3431458 L108.870058,45.3431458 L108.870058,45.3431458 L108.870058,61.3431458 L116.870058,61.3431458 L116.870058,45.3431458 Z M124.870058,45.3431458 L127.649881,45.3431458 C132.066101,45.3431458 135.656854,48.9248678 135.656854,53.3431458 C135.656854,57.7524334 132.07201,61.3431458 127.649881,61.3431458 L124.870058,61.3431458 L124.870058,45.3431458 Z M100.870058,45.3431458 L15.6638275,45.3431458 C15.5064377,45.3431458 15.3501085,45.3476943 15.1949638,45.3566664 L15.1949638,45.3566664 C15.0628002,45.3477039 14.928279,45.3431458 14.7913977,45.3431458 C6.68160973,45.3431458 -8.34314575,53.3431458 -8.34314575,53.3431458 C-8.34314575,53.3431458 6.85614548,61.3431458 14.7913977,61.3431458 C14.9266533,61.3431458 15.0596543,61.3384973 15.190398,61.3293588 C15.3470529,61.3385075 15.5049057,61.3431458 15.6638275,61.3431458 L100.870058,61.3431458 L100.870058,45.3431458 L100.870058,45.3431458 Z" transform="translate(63.656854, 53.343146) rotate(-45.000000) translate(-63.656854, -53.343146) "></path>
         <path d="M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z"></path>
     </g>
-</svg>
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
-
-<svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M65.0864256,75.4091629 L14.9727349,125.522854 C11.8515951,128.643993 6.78104858,128.64922 3.65685425,125.525026 C0.539017023,122.407189 0.5336324,117.334539 3.65902635,114.209145 L53.7727171,64.0954544 L3.65902635,13.9817637 C0.537886594,10.8606239 0.532659916,5.79007744 3.65685425,2.6658831 C6.77469148,-0.451954124 11.8473409,-0.457338747 14.9727349,2.66805521 L65.0864256,52.7817459 L115.200116,2.66805521 C118.321256,-0.453084553 123.391803,-0.458311231 126.515997,2.6658831 C129.633834,5.78372033 129.639219,10.8563698 126.513825,13.9817637 L76.4001341,64.0954544 L126.513825,114.209145 C129.634965,117.330285 129.640191,122.400831 126.515997,125.525026 C123.39816,128.642863 118.32551,128.648248 115.200116,125.522854 L65.0864256,75.4091629 L65.0864256,75.4091629 Z"></path>
     </g>
 </svg>
-
-
-
 </button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
@@ -2703,33 +2714,18 @@ European Meetup 2017
 <div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-shadow  tc-tagged-Working%20with%20TiddlyWiki"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
-
-<svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
-</svg>
-
-
-</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
-
-<svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M116.870058,45.3431458 L108.870058,45.3431458 L108.870058,45.3431458 L108.870058,61.3431458 L116.870058,61.3431458 L116.870058,45.3431458 Z M124.870058,45.3431458 L127.649881,45.3431458 C132.066101,45.3431458 135.656854,48.9248678 135.656854,53.3431458 C135.656854,57.7524334 132.07201,61.3431458 127.649881,61.3431458 L124.870058,61.3431458 L124.870058,45.3431458 Z M100.870058,45.3431458 L15.6638275,45.3431458 C15.5064377,45.3431458 15.3501085,45.3476943 15.1949638,45.3566664 L15.1949638,45.3566664 C15.0628002,45.3477039 14.928279,45.3431458 14.7913977,45.3431458 C6.68160973,45.3431458 -8.34314575,53.3431458 -8.34314575,53.3431458 C-8.34314575,53.3431458 6.85614548,61.3431458 14.7913977,61.3431458 C14.9266533,61.3431458 15.0596543,61.3384973 15.190398,61.3293588 C15.3470529,61.3385075 15.5049057,61.3431458 15.6638275,61.3431458 L100.870058,61.3431458 L100.870058,45.3431458 L100.870058,45.3431458 Z" transform="translate(63.656854, 53.343146) rotate(-45.000000) translate(-63.656854, -53.343146) "></path>
         <path d="M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z"></path>
     </g>
-</svg>
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
-
-<svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M65.0864256,75.4091629 L14.9727349,125.522854 C11.8515951,128.643993 6.78104858,128.64922 3.65685425,125.525026 C0.539017023,122.407189 0.5336324,117.334539 3.65902635,114.209145 L53.7727171,64.0954544 L3.65902635,13.9817637 C0.537886594,10.8606239 0.532659916,5.79007744 3.65685425,2.6658831 C6.77469148,-0.451954124 11.8473409,-0.457338747 14.9727349,2.66805521 L65.0864256,52.7817459 L115.200116,2.66805521 C118.321256,-0.453084553 123.391803,-0.458311231 126.515997,2.6658831 C129.633834,5.78372033 129.639219,10.8563698 126.513825,13.9817637 L76.4001341,64.0954544 L126.513825,114.209145 C129.634965,117.330285 129.640191,122.400831 126.515997,125.525026 C123.39816,128.642863 118.32551,128.648248 115.200116,125.522854 L65.0864256,75.4091629 L65.0864256,75.4091629 Z"></path>
     </g>
 </svg>
-
-
-
 </button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
@@ -2845,33 +2841,18 @@ Descargar el wiki completo <svg class="tc-image-save-button tc-image-button" hei
 <div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones">
-
-<svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
-</svg>
-
-
-</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler">
-
-<svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M116.870058,45.3431458 L108.870058,45.3431458 L108.870058,45.3431458 L108.870058,61.3431458 L116.870058,61.3431458 L116.870058,45.3431458 Z M124.870058,45.3431458 L127.649881,45.3431458 C132.066101,45.3431458 135.656854,48.9248678 135.656854,53.3431458 C135.656854,57.7524334 132.07201,61.3431458 127.649881,61.3431458 L124.870058,61.3431458 L124.870058,45.3431458 Z M100.870058,45.3431458 L15.6638275,45.3431458 C15.5064377,45.3431458 15.3501085,45.3476943 15.1949638,45.3566664 L15.1949638,45.3566664 C15.0628002,45.3477039 14.928279,45.3431458 14.7913977,45.3431458 C6.68160973,45.3431458 -8.34314575,53.3431458 -8.34314575,53.3431458 C-8.34314575,53.3431458 6.85614548,61.3431458 14.7913977,61.3431458 C14.9266533,61.3431458 15.0596543,61.3384973 15.190398,61.3293588 C15.3470529,61.3385075 15.5049057,61.3431458 15.6638275,61.3431458 L100.870058,61.3431458 L100.870058,45.3431458 L100.870058,45.3431458 Z" transform="translate(63.656854, 53.343146) rotate(-45.000000) translate(-63.656854, -53.343146) "></path>
         <path d="M35.1714596,124.189544 C41.9594858,123.613403 49.068777,121.917633 58.85987,118.842282 C60.6854386,118.268877 62.4306907,117.705515 65.1957709,116.802278 C81.1962861,111.575575 87.0734839,109.994907 93.9414474,109.655721 C102.29855,109.242993 107.795169,111.785371 111.520478,118.355045 C112.610163,120.276732 115.051363,120.951203 116.97305,119.861518 C118.894737,118.771832 119.569207,116.330633 118.479522,114.408946 C113.146151,105.003414 104.734907,101.112919 93.5468356,101.66546 C85.6716631,102.054388 79.4899908,103.716944 62.7116783,109.197722 C59.9734132,110.092199 58.2519873,110.64787 56.4625698,111.20992 C37.002649,117.322218 25.6914684,118.282267 16.8654804,112.957098 C14.9739614,111.815848 12.5154166,112.424061 11.3741667,114.31558 C10.2329168,116.207099 10.84113,118.665644 12.7326489,119.806894 C19.0655164,123.627836 26.4866335,124.926678 35.1714596,124.189544 Z"></path>
     </g>
-</svg>
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler">
-
-<svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+</svg></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M65.0864256,75.4091629 L14.9727349,125.522854 C11.8515951,128.643993 6.78104858,128.64922 3.65685425,125.525026 C0.539017023,122.407189 0.5336324,117.334539 3.65902635,114.209145 L53.7727171,64.0954544 L3.65902635,13.9817637 C0.537886594,10.8606239 0.532659916,5.79007744 3.65685425,2.6658831 C6.77469148,-0.451954124 11.8473409,-0.457338747 14.9727349,2.66805521 L65.0864256,52.7817459 L115.200116,2.66805521 C118.321256,-0.453084553 123.391803,-0.458311231 126.515997,2.6658831 C129.633834,5.78372033 129.639219,10.8563698 126.513825,13.9817637 L76.4001341,64.0954544 L126.513825,114.209145 C129.634965,117.330285 129.640191,122.400831 126.515997,125.525026 C123.39816,128.642863 118.32551,128.648248 115.200116,125.522854 L65.0864256,75.4091629 L65.0864256,75.4091629 Z"></path>
     </g>
 </svg>
-
-
-
 </button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
@@ -2955,11 +2936,11 @@ Eventos
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522MathCell%2522%2520by%2520Ste%2520Wilson.html">&quot;MathCell&quot; by Ste Wilson</a></h1><p><div class="tc-subtitle">Posted hace 27 días</div></p><p>Mathcell allows spreadsheet-like abilities in a completely contained <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://mathcell.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://mathcell.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>Mathcell allows spreadsheet-like abilities in a completely contained <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Additional abilities allow it work as a general math engine.
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522MathCell%2522%2520by%2520Ste%2520Wilson.html">&quot;MathCell&quot; by Ste Wilson</a></h1><p><div class="tc-subtitle">Posted hace 48 días</div></p><p>Mathcell allows spreadsheet-like abilities in a completely contained <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.</p><p><a class="tc-tiddlylink-external" href="http://mathcell.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://mathcell.tiddlyspot.com/</a></p><blockquote class="tc-quote"><p>Mathcell allows spreadsheet-like abilities in a completely contained <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>. Additional abilities allow it work as a general math engine.
 </p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Wikilabs%2522%2520by%2520PMario.html">&quot;Wikilabs&quot; by PMario</a></h1><p><div class="tc-subtitle">Posted hace 2 meses</div></p><p>A collection of references for testing concepts around TiddlyWiki 5...</p><p><a class="tc-tiddlylink-external" href="https://wikilabs.github.io" rel="noopener noreferrer" target="_blank">https://wikilabs.github.io</a></p><blockquote class="tc-quote"><p>This is PMario's playground with ramblings about TiddlyWiki and related stuff.</p><p>It basically is a &quot;jump off&quot; page to various TiddlyWiki sites, that show editions, themes and plugins.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Tinka%2520by%2520Andreas%2520Hahn.html">Tinka by Andreas Hahn</a></h1><p><div class="tc-subtitle">Posted hace 3 meses</div></p><p>The Tinka plugin provides the ability to create and modify plugins in the browser, without requiring the use of Node.js.</p><p>See <a class="tc-tiddlylink-external" href="https://github.com/TinkaPlugin/Tinka" rel="noopener noreferrer" target="_blank">https://github.com/TinkaPlugin/Tinka</a> for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> repo.</p><p><a class="tc-tiddlylink-external" href="https://tinkaplugin.github.io/" rel="noopener noreferrer" target="_blank">https://tinkaplugin.github.io/</a></p><blockquote class="tc-quote"><p>This is a Control Panel extension that aims to simplify the plugin creation and editing process. After installing, you will find a new tab in your control panel that makes creating and modifying plugins a little bit easier.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Leaflet%2520maps%2520plugin%2520by%2520Sylvain%2520Comte.html">Leaflet maps plugin by Sylvain Comte</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>A mapping plugin based on <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">Leaflet</a> library. Allows you to create maps based upon geographical data contained in tiddlers.</p><p><a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin</a></p><blockquote class="tc-quote"><p>The <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">leaflet plugin</a> is a (working) attempt to integrate the <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">leaflet</a> library in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> in order to display geographical purpose tiddlers.</p><p>For now <code>&lt;$leafmap&gt;</code> widget displays an interactive map. Select size, location and zoom, clustering distance, and background. You can display data  : geojson, point(s), polygon(s) and/or polyline(s) directly or calling <em><a class="tc-tiddlylink tc-tiddlylink-missing" href="static/GeoTiddler.html">GeoTiddler</a></em>(s). Tiddler can be called individually, by list or with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Filters.html">filter</a>.</p><p>Have a look at <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#A%20plugin%20collection:%5B%5BA%20plugin%20collection%5D%5D%20%5B%5BLeaflet%20plugin%5D%5D" rel="noopener noreferrer" target="_blank">demo page on the web</a>.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Noteself%2522%2520by%2520Danielo%2520Rodr%25C3%25ADguez.html">&quot;Noteself&quot; by Danielo Rodríguez</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>NoteSelf is your personal, private, customizable, Evernote-like experience.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Tinka%2520by%2520Andreas%2520Hahn.html">Tinka by Andreas Hahn</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>The Tinka plugin provides the ability to create and modify plugins in the browser, without requiring the use of Node.js.</p><p>See <a class="tc-tiddlylink-external" href="https://github.com/TinkaPlugin/Tinka" rel="noopener noreferrer" target="_blank">https://github.com/TinkaPlugin/Tinka</a> for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/GitHub.html">GitHub</a> repo.</p><p><a class="tc-tiddlylink-external" href="https://tinkaplugin.github.io/" rel="noopener noreferrer" target="_blank">https://tinkaplugin.github.io/</a></p><blockquote class="tc-quote"><p>This is a Control Panel extension that aims to simplify the plugin creation and editing process. After installing, you will find a new tab in your control panel that makes creating and modifying plugins a little bit easier.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Leaflet%2520maps%2520plugin%2520by%2520Sylvain%2520Comte.html">Leaflet maps plugin by Sylvain Comte</a></h1><p><div class="tc-subtitle">Posted hace 6 meses</div></p><p>A mapping plugin based on <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">Leaflet</a> library. Allows you to create maps based upon geographical data contained in tiddlers.</p><p><a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin</a></p><blockquote class="tc-quote"><p>The <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#Leaflet%20plugin" rel="noopener noreferrer" target="_blank">leaflet plugin</a> is a (working) attempt to integrate the <a class="tc-tiddlylink-external" href="http://leafletjs.com/" rel="noopener noreferrer" target="_blank">leaflet</a> library in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> in order to display geographical purpose tiddlers.</p><p>For now <code>&lt;$leafmap&gt;</code> widget displays an interactive map. Select size, location and zoom, clustering distance, and background. You can display data  : geojson, point(s), polygon(s) and/or polyline(s) directly or calling <em><a class="tc-tiddlylink tc-tiddlylink-missing" href="static/GeoTiddler.html">GeoTiddler</a></em>(s). Tiddler can be called individually, by list or with a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Filters.html">filter</a>.</p><p>Have a look at <a class="tc-tiddlylink-external" href="http://sycom.github.io/TiddlyWiki-Plugins/#A%20plugin%20collection:%5B%5BA%20plugin%20collection%5D%5D%20%5B%5BLeaflet%20plugin%5D%5D" rel="noopener noreferrer" target="_blank">demo page on the web</a>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Noteself%2522%2520by%2520Danielo%2520Rodr%25C3%25ADguez.html">&quot;Noteself&quot; by Danielo Rodríguez</a></h1><p><div class="tc-subtitle">Posted hace 6 meses</div></p><p>NoteSelf is your personal, private, customizable, Evernote-like experience.
 You want cloud? Fine! You don't? Fine too! It's all yours, It's your decision!
 Why not be a bit selfish?</p><p><a class="tc-tiddlylink-external" href="https://noteself.github.io/" rel="noopener noreferrer" target="_blank">https://noteself.github.io/</a></p><blockquote class="tc-quote"><p>NoteSelf is the perfect place to store your ideas, notes, thoughts, tips, tricks, recipes... 
 whatever you want to put into it! NoteSelf will store, index, and make it easily 
@@ -2967,12 +2948,12 @@ searchable, so you will find it instantly whenever you need it! </p><p>You alrea
 Wow, it's almost perfect, but what about:</p><ul><li>Privacy - Everything is stored on the Evernote's servers!</li><li>Customization - If you don't like the interface of Evernote, there's nothing you can do</li></ul><p>NoteSelf is built on top of TiddlyWiki, a powerful, free, highly customizable and open-source personal wiki.
 We took the best of it, it's powerful customization system, and mixed it with one of the best
 embedded databases available, <a class="tc-tiddlylink-external" href="http://www.pouchdb.com" rel="noopener noreferrer" target="_blank">PouchDb</a>, for bringing the synchronization capabilities you need.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Slides%2520and%2520Stories%2522%2520by%2520Jan.html">&quot;Slides and Stories&quot; by Jan</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>Slides and Stories is a repository of the tools to optimize TW for scientific research and for presenting and publishing results.</p><p><a class="tc-tiddlylink-external" href="http://slidesnstories.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://slidesnstories.tiddlyspot.com</a></p><blockquote class="tc-quote"><h1 class="">SlidesnStories </h1><p>...is a tool to save and reload sets of Tiddlers. This is already working, The aim is to develop a mechanism to transform these into instant slideshows.</p><h1 class="">MetaTabs </h1><p>is a tool which gives you the possibility to attach and show specific information in tabs at the bottom of each Tiddler: ideas, notes, tasks, stories and presentations, comments, annotations and footnotes. <br>
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Slides%2520and%2520Stories%2522%2520by%2520Jan.html">&quot;Slides and Stories&quot; by Jan</a></h1><p><div class="tc-subtitle">Posted hace 6 meses</div></p><p>Slides and Stories is a repository of the tools to optimize TW for scientific research and for presenting and publishing results.</p><p><a class="tc-tiddlylink-external" href="http://slidesnstories.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://slidesnstories.tiddlyspot.com</a></p><blockquote class="tc-quote"><h1 class="">SlidesnStories </h1><p>...is a tool to save and reload sets of Tiddlers. This is already working, The aim is to develop a mechanism to transform these into instant slideshows.</p><h1 class="">MetaTabs </h1><p>is a tool which gives you the possibility to attach and show specific information in tabs at the bottom of each Tiddler: ideas, notes, tasks, stories and presentations, comments, annotations and footnotes. <br>
 It is inspired by MagicTabs and Tiddlyscholar by Alberto Molina Pérez, which are very elaborated tools that alas do not seem to be in active development any more.
-I wanted to change the behaviour in some ways. For example I wanted show tabs only if they have content. </p><h1 class="">...furthermore there is </h1><ul><li>an export-plugin,</li><li>a footnote-plugin,</li><li>and a plugin to rearrange Tiddlers in the StoryRiver</li></ul></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki%2520Knowledge%2520Network%2522%2520by%2520Dmitry%2520Sokolov.html">&quot;TiddlyWiki Knowledge Network&quot; by Dmitry Sokolov</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>A Knowledge Network about TiddlyWiki.</p><p><a class="tc-tiddlylink-external" href="http://confocal-manawatu.pbworks.com/w/page/113574373/TiddlyWiki" rel="noopener noreferrer" target="_blank">http://confocal-manawatu.pbworks.com/w/page/113574373/TiddlyWiki</a></p><blockquote class="tc-quote"><p>Interconnected with the visual taxonomy at every node:
+I wanted to change the behaviour in some ways. For example I wanted show tabs only if they have content. </p><h1 class="">...furthermore there is </h1><ul><li>an export-plugin,</li><li>a footnote-plugin,</li><li>and a plugin to rearrange Tiddlers in the StoryRiver</li></ul></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki%2520Knowledge%2520Network%2522%2520by%2520Dmitry%2520Sokolov.html">&quot;TiddlyWiki Knowledge Network&quot; by Dmitry Sokolov</a></h1><p><div class="tc-subtitle">Posted hace 6 meses</div></p><p>A Knowledge Network about TiddlyWiki.</p><p><a class="tc-tiddlylink-external" href="http://confocal-manawatu.pbworks.com/w/page/113574373/TiddlyWiki" rel="noopener noreferrer" target="_blank">http://confocal-manawatu.pbworks.com/w/page/113574373/TiddlyWiki</a></p><blockquote class="tc-quote"><p>Interconnected with the visual taxonomy at every node:
 <a class="tc-tiddlylink-external" href="http://debategraph.org/Stream.aspx?nid=457381&amp;vt=bubble&amp;dc=focus" rel="noopener noreferrer" target="_blank">http://debategraph.org/Stream.aspx?nid=457381&amp;vt=bubble&amp;dc=focus</a></p><p>TWKN will be transferred into TWederation/TiddlyMap format as soon as I am convinced in reliable and secure versioning and multi-user operation in TW format.
 Your assistance and support would be highly appreciated.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Cardo%2520-%2520Task%2520and%2520Project%2520Management%2520Wiki%2522%2520by%2520David%2520Szego.html">&quot;Cardo - Task and Project Management Wiki&quot; by David Szego</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>Task &amp; Delegation Tracking, Meetings &amp; Agenda Items, Project Roles, Progress &amp; Status Updates, Reference Items, Tickler Calendar, Conversation Logging, Book Notes &amp; Library, and More!</p><p><a class="tc-tiddlylink-external" href="http://cardo.wiki" rel="noopener noreferrer" target="_blank">http://cardo.wiki</a></p><blockquote class="tc-quote"><p>Cardo is a standalone, browser-based tool that can be used as a simple task manager, or as a complex Project Management system (and indeed, I do use it this way in my daily work) as well as a fully Wiki-ized personal knowledge store. It runs completely independently in the browser, even without an Internet connection, making it possible to carry around on a USB stick, or to use on the morning commute.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Cardo%2520-%2520Task%2520and%2520Project%2520Management%2520Wiki%2522%2520by%2520David%2520Szego.html">&quot;Cardo - Task and Project Management Wiki&quot; by David Szego</a></h1><p><div class="tc-subtitle">Posted hace 6 meses</div></p><p>Task &amp; Delegation Tracking, Meetings &amp; Agenda Items, Project Roles, Progress &amp; Status Updates, Reference Items, Tickler Calendar, Conversation Logging, Book Notes &amp; Library, and More!</p><p><a class="tc-tiddlylink-external" href="http://cardo.wiki" rel="noopener noreferrer" target="_blank">http://cardo.wiki</a></p><blockquote class="tc-quote"><p>Cardo is a standalone, browser-based tool that can be used as a simple task manager, or as a complex Project Management system (and indeed, I do use it this way in my daily work) as well as a fully Wiki-ized personal knowledge store. It runs completely independently in the browser, even without an Internet connection, making it possible to carry around on a USB stick, or to use on the morning commute.
 </p></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
