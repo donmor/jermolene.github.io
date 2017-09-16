@@ -1709,6 +1709,8 @@ a.tc-tiddlylink:hover {
 	border-right: 1px solid #cccccc;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }.tc-tab-buttons.tc-vertical button {
 	display: block;
 	width: 100%;
@@ -1721,6 +1723,8 @@ a.tc-tiddlylink:hover {
 	border-right: none;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }.tc-tab-buttons.tc-vertical button.tc-tab-selected {
 	background-color: #ffffff;
 	border-right: 1px solid #ffffff;
