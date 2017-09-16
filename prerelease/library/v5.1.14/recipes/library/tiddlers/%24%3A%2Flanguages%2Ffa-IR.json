@@ -5,6 +5,7 @@
     "description": "Persian (Iran)",
     "author": "amirography",
     "core-version": ">=5.0.0",
+    "text-direction": "rtl",
     "version": "5.1.15-prerelease",
     "dependents": "",
     "type": "application/json",
