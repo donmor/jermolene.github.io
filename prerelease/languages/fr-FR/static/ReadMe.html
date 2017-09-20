@@ -66,6 +66,18 @@ ReadMe
 </p><h1 class="">Utilisation de <em>TiddlyWiki</em> sur Node.js</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/TiddlyWiki5.html">TiddlyWiki5</a> peut être utilisé depuis la ligne de commande, dans le but d'effectuer un ensemble d'opérations qui manipulent <a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/TiddlyWikiFolders.html">dossiers TiddlyWiki</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/TiddlerFiles.html">fichiers de tiddlers</a> et <a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/TiddlyWikiFiles.html">fichiers TiddlyWiki</a>.</p><p>Par exemple, la commande ci-dessous charge les tiddlers d'un fichier <em>TiddlyWiki</em> HTML, et enregistre l'un d'eux dans un fichier HTML statique :</p><pre><code>tiddlywiki --verbose --load monwiki.html --rendertiddler LisezMoi ./lisezmoi.html</code></pre><p>L'exécution du programme <code>tiddlywiki</code> depuis la ligne de commande démarre le noyau <em>TiddlyWiki</em>, charge les plugins de base et met en place une structure de wiki vide. Puis les arguments de la ligne de commande sont traités à la suite, de gauche à droite. Les arguments sont séparés par des espaces.</p><p>Le premier argument est un chemin optionnel vers le <a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/TiddlyWikiFolders.html">dossier</a> à charger. Si absent, le répertoire courant est utilisé.</p><p>Suivent les commandes proprement dites, avec leurs arguments spécifiques, chaque commande étant annoncée par le préfixe <code>--</code>.</p><pre><code>tiddlywiki [&lt;cheminverslewiki&gt;] [--&lt;commande&gt; [&lt;arg&gt;[,&lt;arg&gt;]]]</code></pre><p>Les commandes disponibles sont :</p><p><ul class="">
 
 <li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/RenderCommand.html">
+render
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/SaveCommand.html">
+save
+</a>
+</li>
+
+<li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="http://tiddlywiki.com/static/BuildCommand.html">
 build
 </a>
