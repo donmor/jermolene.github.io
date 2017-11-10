@@ -118,6 +118,18 @@
         "readme": "This plugin contains tool to assist migration of content from Evernote ENEX files.\n\n!! Instructions\n\n# Download or save your ENEX file from Evernote\n# Rename the file to have an `.enex` extension\n# Drag the file into the TiddlyWiki browser window\n## Alternatively, click the \"Import\" button in the \"Tools\" sidebar tab\n# Review and accept the converted tiddlers\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/external-attachments",
+        "description": "External attachment support for TiddlyDesktop et al.",
+        "author": "Jeremy Ruston",
+        "core-version": ">=5.0.0",
+        "list": "readme settings",
+        "version": "5.1.15-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Introduction\n\nThis plugin provides support for importing tiddlers as external attachments. That means that instead of importing binary files as self-contained tiddlers, they are imported as \"skinny\" tiddlers that reference the original file via the ''_canonical_uri'' field. This reduces the size of the wiki and thus improves performance. However, it does mean that the wiki is no longer fully self-contained.\n\n! Compatibility\n\nThis plugin only works when using TiddlyWiki with platforms such as TiddlyDesktop that support the ''path'' attribute for imported/dragged files.\n\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/filesystem",
         "description": "Local filesystem syncadaptor",
         "author": "JeremyRuston",

@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Using ES2016 for Writing Plugins: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   "><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Using ES2016 for Writing Plugins
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 5th March 2016 at 10:29pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"></div>
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>With the advent of ES2015 (also known as ES6) and the availability of <a class="tc-tiddlylink-external" href="http://babeljs.io/" rel="noopener noreferrer" target="_blank">Babel.js</a> plugin developers can leverage ES2015 when writing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> plugins. Understanding the nuances between <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s module sandbox and how Babel compiles it's output ready for a module system like CommonJS/AMD.</p><p>Please understand how the <a class="tc-tiddlylink tc-tiddlylink-missing" href="PluginMechanism.html">PluginMechanism</a> works since this is all about writing a plugin using Babel to compile the output that will be included in the final <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> (for example <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>).</p><h2 class="">Installing and Configuring Babel</h2><p>You can install Babel using</p><pre><code>$ npm install --global babel-cli babel-presets-es2015</code></pre><p>If your developing the plugin for inclusion to the npm registry (or for convenience) you can avoid the global install and save it to the local <code>package.json</code> file with</p><pre><code>$ npm install --save-dev babel-cli babel-presets-es2015</code></pre><p>Inside your plugin project edit the file <code>.babelrc</code> and enter the following:</p><pre class="json hljs"><code>{
+  "<span class="hljs-attribute">presets</span>": <span class="hljs-value">[
+    <span class="hljs-string">"es2015"</span>
+  ]
+</span>}</code></pre><h2 class="">Compiling the Output</h2><p>Pick a folder to store the ES2015 <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> and a folder to output the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> ready <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a>. In this example I will use <code>src</code> and <code>lib</code> respectively. With Babel installed and working I can compile all the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> in the <code>src</code> folder to the <code>lib</code> folder by running this command:</p><pre><code>$ babel src -d lib</code></pre><h2 class="">Imports and Exports</h2><p>In a plugin written pre-ES2015 one would <code>require</code> a module through <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> like so:</p><pre class="javascript hljs"><code><span class="hljs-keyword">var</span> Widget = <span class="hljs-built_in">require</span>(<span class="hljs-string">'$:/core/modules/widgets/widget.js'</span>).widget;</code></pre><p>But in ES2015 the following would look like:</p><pre class="javascript hljs"><code><span class="hljs-keyword">import</span> { widget <span class="hljs-keyword">as</span> Widget } <span class="hljs-keyword">from</span> <span class="hljs-string">'$:/core/modules/widgets/widget.js'</span>;</code></pre><p>Conveniently when Babel compiles this it will essentially output the same <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> as the first pre-ES2016 code.</p><p>Also, in ES2016 you are required to declare your imports at the beginning and can not dynamically <code>require</code> things. This means you can not have an <code>import</code> statement in an if block or in a function. If that functionality is desired then you will have to go back to using the <code>require()</code> statement directly. But conciser that by doing so that you may be missing an oppertunity to make your code cleaner and better.</p><p>Exporting is the same thing. Instead of assigning to a property of the <code>exports</code> variable you use the <code>export</code> keyword:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> { MyWidget <span class="hljs-keyword">as</span> mywidget };</code></pre><p>It is important to understand that in ES2016 the <strong>default</strong> export is not supported in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>. This is mostly because the core code expects specific properties to be attached to the <code>exports</code> variable. Bable's <code>export</code> conversion plays well with this <em>except</em> with the default export.</p><h2 class="">Classes</h2><p>In the example of a widget ES2016 plays well with class inheritance. To contrast the typical Widget definition would look something like this:</p><pre class="javascript hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">MyWidget</span>(<span class="hljs-params"></span>) </span>{
+  Widget.call(<span class="hljs-keyword">this</span>);
+}
+MyWidget.prototype = <span class="hljs-keyword">new</span> Widget();
+MyWidget.prototype.render = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">parent, nextSibling</span>) </span>{…};
+<span class="hljs-comment">// And so on…</span></code></pre><p>With classes this ceremony can be tightened up:</p><pre class="javascript hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span> </span>{
+  render(parent, nextSibling) {…}
+  <span class="hljs-comment">// And so on…</span>
+}</code></pre><p>With classes one <em>could</em> eliminate much of the <code>Widget.execute()</code> cruft using . I found this to be more readable then the typical mass assignment to <code>this</code>. It gave me the added benefit of allowing calculations in properties that normally would have conflated the <code>execute()</code> method. For example developing a compound property like so:</p><pre class="javascript hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span> </span>{
+  get title() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'title'</span>); }
+  get firstName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'first'</span>); }
+  get lastName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'last'</span>); }
+  get fullName() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.title}</span>. <span class="hljs-subst">${this.firstName}</span> <span class="hljs-subst">${this.lastName}</span>`</span>; }
+}</code></pre><h3 class="">Non Class Modules</h3><p>For non class modules you can use the <code>export</code> keyword. Here is a simple <a class="tc-tiddlylink tc-tiddlylink-missing" href="ModuleType.html">Startup Module</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Do stuff here</span>
+}</code></pre><p>Or in the case of a <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/#JavaScript%20Macros" rel="noopener noreferrer" target="_blank">Macro</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> name = <span class="hljs-string">'my-macro'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> params = {};
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{…}</code></pre><h2 class="">Polyfills</h2><p>ES2015 comes with some features that are part of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> core objects. These are not supported by all browsers. To use these features in <a class="tc-tiddlylink tc-tiddlylink-missing" href="BrowserCompatibility.html">most browsers</a> you will need a . Babel has a polyfill package that you can include. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Adding%2520Babel%2520Polyfill%2520to%2520TiddlyWiki.html">Adding Babel Polyfill to TiddlyWiki</a> for how to accomplish this.</p><h2 class="">Example</h2><p>Here is an example ES2015 plugin/widget that will show the time and update it:</p><pre class="javascript hljs"><code>
+/*\
+title: $:/plugins/sukima/clock-widget.js
+type: application/javascript
+module-type: widget
+
+A updating time stamp
+
+\*/
+import { widget as Widget } from '$:/core/modules/widgets/widget.js';
+
+class ClockWidget extends Widget {
+  constructor(parseTreeNode, options) {
+    super(parseTreeNode, options);
+    this.logger = new $tw.utils.Logger('clock-widget');
+  }
+
+  render(parent, nextSibling) {
+    if (!$tw.browser) { return; }
+    this.logger.log('Rendering clock DOM nodes');
+    this.computeAttributes()
+    this.parentDomNode = parent;
+    this.domNode = $tw.utils.domMaker('div', {
+      document: this.document,
+      class: 'tc-clock-widget'
+    });
+    parent.insertBefore(this.domNode, nextSibling);
+    this.tick();
+  }
+
+  tick() {
+    this.logger.log('Tick!');
+    if (!document.contains(this.domNode)) {
+      // Apparently the widget was removed from the DOM. Do some clean up.
+      return this.stop();
+    }
+    this.start();
+    this.domNode.innerHTML = this.dateString;
+  }
+
+  start() {
+    if (!this.clockTicker) {
+      this.logger.log('Starting clock');
+      this.clockTicker = setInterval(this.tick.bind(this), 1000);
+    }
+  }
+
+  stop() {
+    this.logger.log('Stopping clock');
+    clearInterval(this.clockTicker);
+    this.clockTicker = null;
+  }
+
+  get dateString() {
+    const format = 'DDth MMM YYYY at hh12:0mm:0ss am';
+    return $tw.utils.formatDateString(new Date(), format);
+  }
+}
+
+export { ClockWidget as clock };</code></pre></div>
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
