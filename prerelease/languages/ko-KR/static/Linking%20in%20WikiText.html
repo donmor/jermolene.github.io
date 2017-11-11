@@ -14,7 +14,7 @@
 <title>Linking: 티들리위키 — 줄 없는 개인 웹 공책</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
 
@@ -78,17 +78,17 @@ color:#333333;">
         <path d="M-0.106255113,71.0452019 C-1.60580855,74.7509276 -2.43145751,78.8016001 -2.43145751,83.0452019 C-2.43145751,100.7222 11.8954151,115.045202 29.568508,115.045202 L61.568577,115.045202 C79.2482381,115.045202 93.5685425,100.718314 93.5685425,83.0452019 C93.5685425,65.3682041 79.2416699,51.0452019 61.568577,51.0452019 L29.568508,51.0452019 C28.206973,51.0452019 26.8653616,51.1301711 25.5486799,51.2950943 C32.1345,54.8242347 37.4947231,60.3415524 40.8264403,67.0452019 L61.563123,67.0452019 C70.4026721,67.0452019 77.5685425,74.206703 77.5685425,83.0452019 C77.5685425,91.8817579 70.413221,99.0452019 61.563123,99.0452019 L29.573962,99.0452019 C20.7344129,99.0452019 13.5685425,91.8837008 13.5685425,83.0452019 C13.5685425,79.6672162 14.6141741,76.533728 16.4003949,73.9514439 C14.2993609,72.1401527 11.5637054,71.0452019 8.5723215,71.0452019 L-0.106255113,71.0452019 Z" transform="translate(45.568542, 83.045202) rotate(-225.000000) translate(-45.568542, -83.045202)"></path>
     </g>
 </svg>), and search and select a tiddler.</p><h1 class="">CamelCase Links</h1><p>For tiddler titles that match the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="CamelCase.html">CamelCase</a> rules, just typing the title without double square brackets will automatically create a link.</p><p>You can suppress a link from being recognised by preceding it with <code>~</code>. For example:</p><div class="doc-example"><pre><code>* ~HelloThere is not a link
-* ~http://google.com/ is not a link</code></pre><p>That renders as:</p><ul><li>HelloThere is not a link</li><li>http://google.com/ is not a link</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;HelloThere is not a link&lt;/li&gt;&lt;li&gt;http://google.com/ is not a link&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">External Links</h1><p>To link to an external <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Web_resource" rel="noopener noreferrer" target="_blank">resource</a> such as a website or a file, type its <em>full</em> <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URL" rel="noopener noreferrer" target="_blank">URL</a>, including the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URI_scheme" rel="noopener noreferrer" target="_blank">URI scheme</a> such as a protocol (e.g. <code>http://</code>, <code>file://</code>) or <code>mailto</code>:</p><pre><code>http://tiddlywiki.com/
+* ~http://google.com/ is not a link</code></pre><p>That renders as:</p><ul><li>HelloThere is not a link</li><li>http://google.com/ is not a link</li></ul><p>... and the underlying HTML is:</p><pre>&lt;ul&gt;&lt;li&gt;HelloThere is not a link&lt;/li&gt;&lt;li&gt;http://google.com/ is not a link&lt;/li&gt;&lt;/ul&gt;</pre></div><h1 class="">External Links</h1><p>To link to an external <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Web_resource" rel="noopener noreferrer" target="_blank">resource</a> such as a website or a file, type its <em>full</em> <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URL" rel="noopener noreferrer" target="_blank">URL</a>, including the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URI_scheme" rel="noopener noreferrer" target="_blank">URI scheme</a> such as a protocol (e.g. <code>http://</code>, <code>file://</code>) or <code>mailto</code>:</p><pre><code>https://tiddlywiki.com/
 
-[[TW5|http://tiddlywiki.com/]]
+[[TW5|https://tiddlywiki.com/]]
 
 [[Mail me|mailto:me@where.net]]</code></pre><p>For this syntax to work, the URL has to be recognisable as a URL. Otherwise, it is treated as a tiddler title. As a result, in case you want to link to a resource locatable using a relative path, use the extended syntax:</p><pre><code>[ext[Open file|index.html]]
 
 [ext[Open file|./index.html]]
 
-[ext[Open file|../README.md]]</code></pre><p>The extended syntax still works with full URLs, although in that case it is not necessary:</p><pre><code>[ext[http://tiddlywiki.com]]
+[ext[Open file|../README.md]]</code></pre><p>The extended syntax still works with full URLs, although in that case it is not necessary:</p><pre><code>[ext[https://tiddlywiki.com]]
 
-[ext[TW5|http://tiddlywiki.com]]</code></pre><p>You can also use the extended syntax to force an external link:</p><pre><code>[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><h1 class="">Customising Tiddler Links</h1><p>See the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> for details of the underlying widget used to implement tiddler links, including macros that can be used to customise its behaviour.</p></div>
+[ext[TW5|https://tiddlywiki.com]]</code></pre><p>You can also use the extended syntax to force an external link:</p><pre><code>[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><h1 class="">Customising Tiddler Links</h1><p>See the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> for details of the underlying widget used to implement tiddler links, including macros that can be used to customise its behaviour.</p></div>
 
 
 </div>

@@ -14,7 +14,7 @@
 <title>Using ES2016 for Writing Plugins: TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
@@ -71,7 +71,7 @@ MyWidget.prototype.render = <span class="hljs-function"><span class="hljs-keywor
   get fullName() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.title}</span>. <span class="hljs-subst">${this.firstName}</span> <span class="hljs-subst">${this.lastName}</span>`</span>; }
 }</code></pre><h3 class="">Non Class Modules</h3><p>For non class modules you can use the <code>export</code> keyword. Here is a simple <a class="tc-tiddlylink tc-tiddlylink-missing" href="ModuleType.html">Startup Module</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Do stuff here</span>
-}</code></pre><p>Or in the case of a <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/#JavaScript%20Macros" rel="noopener noreferrer" target="_blank">Macro</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> name = <span class="hljs-string">'my-macro'</span>;
+}</code></pre><p>Or in the case of a <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/#JavaScript%20Macros" rel="noopener noreferrer" target="_blank">Macro</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> name = <span class="hljs-string">'my-macro'</span>;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> params = {};
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{…}</code></pre><h2 class="">Polyfills</h2><p>ES2015 comes with some features that are part of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> core objects. These are not supported by all browsers. To use these features in <a class="tc-tiddlylink tc-tiddlylink-missing" href="BrowserCompatibility.html">most browsers</a> you will need a . Babel has a polyfill package that you can include. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Adding%2520Babel%2520Polyfill%2520to%2520TiddlyWiki.html">Adding Babel Polyfill to TiddlyWiki</a> for how to accomplish this.</p><h2 class="">Example</h2><p>Here is an example ES2015 plugin/widget that will show the time and update it:</p><pre class="javascript hljs"><code>
 /*\
