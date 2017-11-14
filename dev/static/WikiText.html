@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.14" />
+<meta name="tiddlywiki-version" content="5.1.15" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -14,23 +14,14 @@
 <title>WikiText: TiddlyWiki/Dev — documentation for developers</title>
 </head>
 <body class="tc-body">
-<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/dev/</a></div></div>
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
 
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
-<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
-
-
-</button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
-
-
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
 </span>
 
 <span>
@@ -77,9 +68,9 @@ color:#4e432f;">
 During the saving process these tags renders to HTML elements for example:</p><pre><code>WikiText:--- 
 Renders as:
 HTML:&lt;hr&gt;
-WikiText:[img[http://tiddlywiki.com/favicon.ico]]
+WikiText:[img[https://tiddlywiki.com/favicon.ico]]
 Renders as: TW
-HTML:&lt;img src=&quot;http://tiddlywiki.com/favicon.ico&quot;&gt;</code></pre><p>Furthermore the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> is used to access the widgets which are integrated in the application.These widgets are used to enhance the the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> with a rich functionality. Widgets are based on the ~HTML-Syntax but always starts with a $.</p><pre><code>WikiText:
+HTML:&lt;img src=&quot;https://tiddlywiki.com/favicon.ico&quot;&gt;</code></pre><p>Furthermore the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> is used to access the widgets which are integrated in the application.These widgets are used to enhance the the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> with a rich functionality. Widgets are based on the ~HTML-Syntax but always starts with a $.</p><pre><code>WikiText:
 &lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt; </code></pre></div>
 
 

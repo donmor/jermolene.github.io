@@ -115,6 +115,8 @@ Error message and password prompt
 
 	border: none;
 	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
 }canvas.tc-edit-bitmapeditor  {
 	
   -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
@@ -1201,7 +1203,9 @@ a.tc-tiddlylink:hover {
 	font-size: 0.6em;
 }.tc-tiddler-controls .tc-drop-down .tc-drop-down {
 	font-size: 1em;
-}.tc-tiddler-controls > span > button {
+}.tc-tiddler-controls > span > button,
+.tc-tiddler-controls > span > span > button,
+.tc-tiddler-controls > span > span > span > button {
 	vertical-align: baseline;
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
@@ -1239,6 +1243,7 @@ a.tc-tiddlylink:hover {
 	background-color: #f8f8f8;
 	line-height: 1.3em;
 	-webkit-appearance: none;
+	font-family: ;
 }.tc-tiddler-frame .tc-binary-warning {
 	width: 100%;
 	height: 5em;
@@ -1654,6 +1659,8 @@ a.tc-tiddlylink:hover {
 	border-right: 1px solid #cccccc;
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }.tc-tab-buttons.tc-vertical button {
 	display: block;
 	width: 100%;
@@ -1666,6 +1673,8 @@ a.tc-tiddlylink:hover {
 	border-right: none;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }.tc-tab-buttons.tc-vertical button.tc-tab-selected {
 	background-color: #ffffff;
 	border-right: 1px solid #ffffff;
@@ -2102,7 +2111,28 @@ a.tc-tiddlylink:hover {
 */.tc-error {
 	background: #f00;
 	color: #fff;
+}/*
+** Tree macro
+*/.tc-tree div {
+    	padding-left: 14px;
+}.tc-tree ol {
+    	list-style-type: none;
+    	padding-left: 0;
+    	margin-top: 0;
+}.tc-tree ol ol {
+    	padding-left: 1em;    
+}.tc-tree button { 
+    	color: #acacac;
+}.tc-tree svg {
+     	fill: #acacac;
+}.tc-tree span svg {
+    	width: 1em;
+    	height: 1em;
+    	vertical-align: baseline;
+}.tc-tree li span {
+    	color: lightgray;
 }
+
 
 li.Done {
 list-style-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22tc-list-image-done%20tc-list-image%22%20height%3D%2215%22%20width%3D%2215%22%3E%0A%3Cpath%20id%3D%22path3757%22%20stroke-linejoin%3D%22round%22%20d%3D%22M3.5168%2C8.809%2C6.3999%2C12.172%2C12.747%2C5.9087%22%20stroke%3D%22%2331a837%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E);

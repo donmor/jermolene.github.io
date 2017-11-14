@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.15" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Hook: th-importing-file: TiddlyWiki/Dev — documentation for developers</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
+</p>
+<section class="tc-story-river">
+
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-HookMechanism"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Hook: th-importing-file
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 10th October 2017 at 12:51pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#4e432f;
+color:#4e432f;">
+ HookMechanism
+</span>
+
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
+</div>
+</div>
+<div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to inspect or modify the details of files imported via drag and drop or the &quot;import&quot; button. It is invoked as each <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/API/File" rel="noopener noreferrer" target="_blank">File object</a> provided by the browser in response to an import or drag and drop is being read. The hook function can choose to ignore the file, in which case <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s default processing proceeds to read and import the content of the file. Alternatively, the hook function can process the file to extract the tiddlers itself, and then pass them back to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> to be handled by the rest of the import process.</p><p>Use this hook if you want to control how tiddlers are extracted from files during an import. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Hook%253A%2520th-importing-tiddler.html">Hook: th-importing-tiddler</a> if you want to process each imported tiddler after they have been extracted from the files.</p><p>Hook function parameters:</p><ul><li><strong>info</strong>: an object with properties containing information relating to the current file:<ul><li><strong>file</strong>: reference to the browser's <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/API/File" rel="noopener noreferrer" target="_blank">File object</a></li><li><strong>type</strong>: the MIME type of the file. If not provided by the browser then <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> attempts to infer the type from the file extension</li><li><strong>isBinary</strong>: flag for whether the file contains binary data (which requires that the file type be recognised by <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>)</li><li><strong>callback</strong>: callback function to be called with an array of tiddler field objects extracted from the file object</li></ul></li></ul><p>Return value:</p><ul><li><strong>true</strong> indicates that the hook handled the file, and passed any extracted tiddlers to the callback</li><li><strong>false</strong> indicates that the hook didn't process the file</li></ul></div>
+
+
+</div>
+
+</p>
+
+</section>
+</body>
+</html>
