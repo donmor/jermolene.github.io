@@ -45,7 +45,7 @@ Edition des tiddlers avec Emacs
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 14 juin 2015 à 12h17
 </div>
@@ -71,7 +71,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Michael Fogleman a rédigé un mode  <a class="tc-tiddlylink-external" href="http://www.gnu.org/software/emacs/" rel="noopener noreferrer" target="_blank">Emacs</a> majeur appelé <a class="tc-tiddlylink-external" href="https://github.com/mwfogleman/tid-mode" rel="noopener noreferrer" target="_blank">tid-mode</a>, qui permet de modifier des fichiers <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> .tid. C'est une variante du mode-texte qui utilise les modes mineurs org-struct et subword, et met à jour les modifications à chaque sauvegarde du fichier .tid .</p><p>Il a aussi écrit deux fonction aidant à l'utilisation de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> sur Emacs. La première ouvre un dossier de tiddlers dans Dired ; la seconde ouvre <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> dans le navigateur.</p><pre><code>(defun open-wiki ()
+<div class="tc-tiddler-body tc-reveal"><p>Michael Fogleman a rédigé un mode  <a class="tc-tiddlylink-external" href="http://www.gnu.org/software/emacs/" rel="noopener noreferrer" target="_blank">Emacs</a> majeur appelé <a class="tc-tiddlylink-external" href="https://github.com/mwfogleman/tid-mode" rel="noopener noreferrer" target="_blank">tid-mode</a>, qui permet de modifier des fichiers <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> .tid. C'est une variante du mode-texte qui utilise les modes mineurs org-struct et subword, et met à jour les modifications à chaque sauvegarde du fichier .tid .</p><p>Il a aussi écrit deux fonction aidant à l'utilisation de <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> sur Emacs. La première ouvre un dossier de tiddlers dans Dired ; la seconde ouvre <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> dans le navigateur.</p><pre><code>(defun open-wiki ()
   &quot;Opens a TiddlyWiki directory in Dired.&quot;
   (interactive)
   (dired &quot;~/Dropbox/wiki/tiddlers/&quot;))</code></pre><pre><code>(defun browse-wiki ()

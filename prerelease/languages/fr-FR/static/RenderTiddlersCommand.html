@@ -47,7 +47,7 @@ RenderTiddlersCommand
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 
 </div>
@@ -73,7 +73,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Enregistre un ensemble de tiddlers (sélectionnés par un filtre) dans le répertoire indiqué et avec l'extension indiquée — par défaut <code>.html</code>. Le choix du rendu est fonction du type de contenu (<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>) spécifié — par défaut <code>text/html</code> :</p><pre><code>--rendertiddlers &lt;filtre&gt; &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;] [&quot;noclean&quot;]</code></pre><p>Par exemple :</p><pre><code>--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain</code></pre><p>Par défaut, le nom de fichier est résolu relativement au sous-répertoire <code>output</code> du répertoire de l'édition. La commande <code>--output</code> peut servir à rediriger la sortie vers un répertoire différent.</p><p>Tous les fichiers du répertoire cible sont supprimés, sauf si le drapeau <strong>noclean</strong> est spécifié. Le répertoire cible est créé récursivement s'il n'existe pas.</p></div>
+<div class="tc-tiddler-body tc-reveal"><p>Enregistre un ensemble de tiddlers (sélectionnés par un filtre) dans le répertoire indiqué et avec l'extension indiquée — par défaut <code>.html</code>. Le choix du rendu est fonction du type de contenu (<a class="tc-tiddlylink tc-tiddlylink-resolves " href="ContentType.html">ContentType</a>) spécifié — par défaut <code>text/html</code> :</p><pre><code>--rendertiddlers &lt;filtre&gt; &lt;modèle&gt; &lt;chemindurépertoire&gt; [&lt;type&gt;] [&lt;extension&gt;] [&quot;noclean&quot;]</code></pre><p>Par exemple :</p><pre><code>--rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html ./static text/plain</code></pre><p>Par défaut, le nom de fichier est résolu relativement au sous-répertoire <code>output</code> du répertoire de l'édition. La commande <code>--output</code> peut servir à rediriger la sortie vers un répertoire différent.</p><p>Tous les fichiers du répertoire cible sont supprimés, sauf si le drapeau <strong>noclean</strong> est spécifié. Le répertoire cible est créé récursivement s'il n'existe pas.</p></div>
 
 
 </div>

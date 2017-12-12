@@ -47,7 +47,7 @@ The Extended Listops Filters
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 8 novembre 2015 à 5h49
 </div>
@@ -79,7 +79,7 @@ Get days-of-the-week
 
 Clear
 </button></p><pre><code>DataIndex: 
-</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing" href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to insert items before and after a marker item (Wednesday) that are first appended to the list.</p><div class="doc-example"><pre><code>&lt;$button&gt;
+</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing " href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to insert items before and after a marker item (Wednesday) that are first appended to the list.</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-listops $tiddler=&quot;ListopsData&quot; $index=&quot;DataIndex&quot; $subfilter=&quot;one two +[putbefore:2[Wednesday]]&quot;/&gt;
 Put 2 Items Before Wednesday
 &lt;/$button&gt; 
@@ -96,7 +96,7 @@ Put 2 Items Before Wednesday
 
 Put One Item Before &amp; Two Items After Wednesday
 </button></p><pre><code>DataIndex: 
-</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing" href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to replace the marker item (Wednesday) with items which are first appended to the list. We shall then move 3 items to the head of the list which have first been appended to the list from referenced fields.</p><div class="doc-example"><pre><code>&lt;$button&gt;
+</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing " href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to replace the marker item (Wednesday) with items which are first appended to the list. We shall then move 3 items to the head of the list which have first been appended to the list from referenced fields.</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-listops $tiddler=&quot;ListopsData&quot; $index=&quot;DataIndex&quot; $subfilter=&quot;[[---o]] [[o---]] +[replace:2{!!marker}]&quot;/&gt;
 Replace '!!marker' with 2 Items
 &lt;/$button&gt;
@@ -113,7 +113,7 @@ Replace '!!marker' with 2 Items
 
 Put 3 Items First
 </button></p><pre><code>DataIndex: 
-</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing" href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to append to the truncated list, items from a referenced field. We shall then remove the first two of the items added.</p><div class="doc-example"><pre><code>|list: |&lt;$view field=&quot;list&quot;/&gt; |
+</code></pre></div><hr><p>In this example we shall slice the populated list from the '<a class="tc-tiddlylink tc-tiddlylink-missing " href="DaysOfTheWeek.html">DaysOfTheWeek</a>' index of the tiddler 'MyData' in order to append to the truncated list, items from a referenced field. We shall then remove the first two of the items added.</p><div class="doc-example"><pre><code>|list: |&lt;$view field=&quot;list&quot;/&gt; |
 
 &lt;$button&gt;
 &lt;$action-listops $tiddler=&quot;ListopsData&quot; $index=&quot;DataIndex&quot; $subfilter=&quot;+[allbefore:include[Wednesday]] +[prepend{!!list}]&quot;/&gt;

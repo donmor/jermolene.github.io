@@ -46,7 +46,7 @@ WidgetMessage: tm-modal
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 2014년 11월 7일 오후 2:28
 </div>
@@ -72,7 +72,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The modal message displays a specified tiddler in a modal overlay that dims the main page. It requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler to be displayed</td></tr><tr class="evenRow"><td align="left">paramObject</td><td align="left">Hashmap of variables to be provided to the modal</td></tr></tbody></table><p>The &quot;currentTiddler&quot; variable is set to the title of the modal tiddler, but can be overridden by specifying a different value in <code>paramObject</code>.</p><p>The modal message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>. The modal message is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> core.</p><h1 class="">Example</h1><p>Here is an example of displaying a modal and passing parameters to it:</p><div class="doc-example"><pre><code>Your name: &lt;$edit-text tiddler=&quot;$:/temp/yourName&quot; tag=&quot;input&quot; default=&quot;Your name&quot;/&gt;
+<div class="tc-tiddler-body tc-reveal"><p>The modal message displays a specified tiddler in a modal overlay that dims the main page. It requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler to be displayed</td></tr><tr class="evenRow"><td align="left">paramObject</td><td align="left">Hashmap of variables to be provided to the modal</td></tr></tbody></table><p>The &quot;currentTiddler&quot; variable is set to the title of the modal tiddler, but can be overridden by specifying a different value in <code>paramObject</code>.</p><p>The modal message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ButtonWidget.html">ButtonWidget</a>. The modal message is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> core.</p><h1 class="">Example</h1><p>Here is an example of displaying a modal and passing parameters to it:</p><div class="doc-example"><pre><code>Your name: &lt;$edit-text tiddler=&quot;$:/temp/yourName&quot; tag=&quot;input&quot; default=&quot;Your name&quot;/&gt;
 
 Your message:
 &lt;$edit-text tiddler=&quot;$:/temp/yourMessage&quot; default=&quot;Your message&quot;/&gt;

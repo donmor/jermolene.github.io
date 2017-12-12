@@ -46,7 +46,7 @@ How to apply custom styles by tag
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 2015년 10월 5일 오전 8:47
 </div>
@@ -72,7 +72,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>You can apply custom styles to tiddlers that have a particular tag by defining a CSS class with the name <code>tc-tagged-&lt;Tag Name&gt;</code>.</p><p>For example, to make tiddlers tagged &quot;<a class="tc-tiddlylink tc-tiddlylink-missing" href="NightReader.html">NightReader</a>&quot; appear in a special colour scheme suitable for night-time reading, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Using%2520Stylesheets.html">create a stylesheet</a> defining the class <code>tc-tagged-NightReader</code> like this:</p><pre><code>.tc-tagged-NightReader {
+<div class="tc-tiddler-body tc-reveal"><p>You can apply custom styles to tiddlers that have a particular tag by defining a CSS class with the name <code>tc-tagged-&lt;Tag Name&gt;</code>.</p><p>For example, to make tiddlers tagged &quot;<a class="tc-tiddlylink tc-tiddlylink-missing " href="NightReader.html">NightReader</a>&quot; appear in a special colour scheme suitable for night-time reading, <a class="tc-tiddlylink tc-tiddlylink-resolves " href="Using%2520Stylesheets.html">create a stylesheet</a> defining the class <code>tc-tagged-NightReader</code> like this:</p><pre><code>.tc-tagged-NightReader {
 	background-color:black;
 	color: orange;
 	padding: 35px 35px;
@@ -85,7 +85,7 @@ color:#333333;">
     background-repeat: no-repeat;
     background-position: right;
     color:#FBFBFB;
-}</code></pre><p>A utility function is available in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> to perform the conversion:</p><pre><code>$tw.utils.tagToCssSelector(&quot;$:/tags/Stylesheet&quot;)</code></pre><p>Generates the following output:</p><pre><code>tc-tagged-\%24\%3A\%2Ftags\%2FStylesheet</code></pre></div>
+}</code></pre><p>A utility function is available in <a class="tc-tiddlylink tc-tiddlylink-resolves " href="JavaScript.html">JavaScript</a> to perform the conversion:</p><pre><code>$tw.utils.tagToCssSelector(&quot;$:/tags/Stylesheet&quot;)</code></pre><p>Generates the following output:</p><pre><code>tc-tagged-\%24\%3A\%2Ftags\%2FStylesheet</code></pre></div>
 
 
 </div>

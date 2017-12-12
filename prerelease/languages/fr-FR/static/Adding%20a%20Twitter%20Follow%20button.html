@@ -45,7 +45,7 @@ Ajouter un bouton suivre sur twitter
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 14 juin 2015 à 11h44
 </div>
@@ -73,7 +73,7 @@ color:#333333;">
 
 <div class="tc-tiddler-body tc-reveal"><p>Voici une macro qui propose un Bouton suivre sur twitter pour un utilisateur particulier :</p><pre><code>\define twitterFollowButton(username)
 &lt;iframe allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//platform.twitter.com/widgets/follow_button.html?screen_name=$username$&quot;  style=&quot;width:300px; height:20px;&quot;&gt;&lt;/iframe&gt;
-\end</code></pre><p>La seule modification à la version publiée sur <a class="tc-tiddlylink-external" href="https://dev.twitter.com/docs/follow-button" rel="noopener noreferrer" target="_blank">https://dev.twitter.com/docs/follow-button</a> est la suppression des nouvelles lignes.</p><p>Notez que l'URL src est passée sans protocole (ie &quot;http&quot; or &quot;https&quot;). De cette façon, cela fonctionne que les sites soient sur un domaine en HTTP ou en HTTPS. Si vous voulez aussi que le bouton Twitter fonctionne en utilisant <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> horsligne par une URL &quot;<a class="tc-tiddlylink-external" href="file://" rel="noopener noreferrer" target="_blank">file://</a>&quot;, vous devrez ajouter manuellement le protocole. Par exemple:</p><pre><code>&lt;iframe allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://platform.twitter.com/widgets/follow_button.html?screen_name=jermolene&quot;  style=&quot;width:300px; height:20px;&quot;&gt;&lt;/iframe&gt;</code></pre></div>
+\end</code></pre><p>La seule modification à la version publiée sur <a class="tc-tiddlylink-external" href="https://dev.twitter.com/docs/follow-button" rel="noopener noreferrer" target="_blank">https://dev.twitter.com/docs/follow-button</a> est la suppression des nouvelles lignes.</p><p>Notez que l'URL src est passée sans protocole (ie &quot;http&quot; or &quot;https&quot;). De cette façon, cela fonctionne que les sites soient sur un domaine en HTTP ou en HTTPS. Si vous voulez aussi que le bouton Twitter fonctionne en utilisant <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> horsligne par une URL &quot;<a class="tc-tiddlylink-external" href="file://" rel="noopener noreferrer" target="_blank">file://</a>&quot;, vous devrez ajouter manuellement le protocole. Par exemple:</p><pre><code>&lt;iframe allowtransparency=&quot;true&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://platform.twitter.com/widgets/follow_button.html?screen_name=jermolene&quot;  style=&quot;width:300px; height:20px;&quot;&gt;&lt;/iframe&gt;</code></pre></div>
 
 
 </div>

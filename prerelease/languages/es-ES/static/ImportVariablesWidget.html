@@ -46,7 +46,7 @@ ImportVariablesWidget
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
 
 </a> 12 junio 2014 a las 18:59
 </div>
@@ -72,9 +72,9 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImportVariablesWidget.html">ImportVariablesWidget</a> imports macro and variable definitions from a list of other tiddlers and makes them available to its children. For example:</p><pre><code>&lt;$importvariables filter=&quot;[tag[mySpecialMacros]]&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ImportVariablesWidget.html">ImportVariablesWidget</a> imports macro and variable definitions from a list of other tiddlers and makes them available to its children. For example:</p><pre><code>&lt;$importvariables filter=&quot;[tag[mySpecialMacros]]&quot;&gt;
 All the macros defined in tiddlers with the tag &quot;mySpecialMacros&quot; are available here
-&lt;/$importvariables&gt;</code></pre><h1 class="">Attributes and Content</h1><p>The content of the importvariables widget is the scope within which the imported variable definitions are available.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">filter</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">Tiddler filter</a> defining the tiddlers from which macro definitions will be imported</td></tr></tbody></table><h1 class="">Global Macros</h1><p>So-called global macros are implemented within the main page template (<a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FPageTemplate.html">$:/core/ui/PageTemplate</a>) by wrapping the page content in the following importvariables widget:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
+&lt;/$importvariables&gt;</code></pre><h1 class="">Attributes and Content</h1><p>The content of the importvariables widget is the scope within which the imported variable definitions are available.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">filter</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves " href="Filters.html">Tiddler filter</a> defining the tiddlers from which macro definitions will be imported</td></tr></tbody></table><h1 class="">Global Macros</h1><p>So-called global macros are implemented within the main page template (<a class="tc-tiddlylink tc-tiddlylink-shadow " href="%2524%253A%252Fcore%252Fui%252FPageTemplate.html">$:/core/ui/PageTemplate</a>) by wrapping the page content in the following importvariables widget:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
 ...
 &lt;/$importvariables&gt;</code></pre></div>
 
