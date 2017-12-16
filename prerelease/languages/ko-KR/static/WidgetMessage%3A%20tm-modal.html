@@ -46,7 +46,7 @@ WidgetMessage: tm-modal
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 2014년 11월 7일 오후 2:28
 </div>
@@ -72,7 +72,24 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The modal message displays a specified tiddler in a modal overlay that dims the main page. It requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler to be displayed</td></tr><tr class="evenRow"><td align="left">paramObject</td><td align="left">Hashmap of variables to be provided to the modal</td></tr></tbody></table><p>The &quot;currentTiddler&quot; variable is set to the title of the modal tiddler, but can be overridden by specifying a different value in <code>paramObject</code>.</p><p>The modal message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ButtonWidget.html">ButtonWidget</a>. The modal message is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TiddlyWiki.html">TiddlyWiki</a> core.</p><h1 class="">Example</h1><p>Here is an example of displaying a modal and passing parameters to it:</p><div class="doc-example"><pre><code>Your name: &lt;$edit-text tiddler=&quot;$:/temp/yourName&quot; tag=&quot;input&quot; default=&quot;Your name&quot;/&gt;
+<div class="tc-tiddler-body tc-reveal"><p>The modal message displays a specified tiddler in a modal overlay that dims the main page. It requires the following properties on the <code>event</code> object:</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Title of the tiddler to be displayed</td></tr><tr class="evenRow"><td align="left">paramObject</td><td align="left">Hashmap of variables to be provided to the modal</td></tr></tbody></table><p>The &quot;currentTiddler&quot; variable is set to the title of the modal tiddler, but can be overridden by specifying a different value in <code>paramObject</code>.</p><p>The modal message is usually generated with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>. The modal message is handled by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> core.</p><h1 class="">Example</h1><p>Here is an example of displaying a modal and passing parameters to it:</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>Your name: &lt;$edit-text tiddler=&quot;$:/temp/yourName&quot; tag=&quot;input&quot; default=&quot;Your name&quot;/&gt;
 
 Your message:
 &lt;$edit-text tiddler=&quot;$:/temp/yourMessage&quot; default=&quot;Your message&quot;/&gt;

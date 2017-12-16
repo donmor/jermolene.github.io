@@ -47,7 +47,7 @@ Making a custom journal button
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 14 novembre 2017 à 21h58
 </div>
@@ -73,7 +73,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>To get your own <strong><em>custom</em></strong> Journal button, start by cloning the <a class="tc-tiddlylink tc-tiddlylink-shadow " href="%2524%253A%252Fcore%252Fui%252FButtons%252Fnew-journal.html">New Journal</a> button.</p><p>Then create your own config tiddlers, eg: </p><ul><li><code>$:/config/myNewTiddler/Tags</code> and ... </li><li><code>$:/config/myNewTiddler/Title</code> and ... </li><li><code>$:/config/myNewTiddler/Text</code></li></ul><p>Edit your custom button and &quot;search and replace&quot; the config tiddler names.</p><p>Change the following lines, near the end  of the tiddler 
+<div class="tc-tiddler-body tc-reveal"><p>To get your own <strong><em>custom</em></strong> Journal button, start by cloning the <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FButtons%252Fnew-journal.html">New Journal</a> button.</p><p>Then create your own config tiddlers, eg: </p><ul><li><code>$:/config/myNewTiddler/Tags</code> and ... </li><li><code>$:/config/myNewTiddler/Title</code> and ... </li><li><code>$:/config/myNewTiddler/Text</code></li></ul><p>Edit your custom button and &quot;search and replace&quot; the config tiddler names.</p><p>Change the following lines, near the end  of the tiddler 
 from</p><pre><code>&lt;$set name=&quot;journalTitleTemplate&quot; value={{$:/config/NewJournal/Title}}&gt;
 &lt;$set name=&quot;journalTags&quot; value={{$:/config/NewJournal/Tags}}&gt;
 &lt;$set name=&quot;journalText&quot; value={{$:/config/NewJournal/Text}}&gt;</code></pre><p>to</p><pre><code>&lt;$set name=&quot;journalTitleTemplate&quot; value={{$:/config/myNewTiddler/Title}}&gt;

@@ -46,7 +46,7 @@ ActionDeleteTiddlerWidget
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-missing " href=".html">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
 </a> 6 noviembre 2014 a las 17:34
 </div>
@@ -83,14 +83,14 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-deletetiddler</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ActionWidgets.html">action widget</a> that deletes tiddlers. <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ButtonWidget.html">ButtonWidget</a>.</p><p>There are several differences compared to the <a class="tc-tiddlylink tc-tiddlylink-resolves " href="WidgetMessage%253A%2520tm-delete-tiddler.html">WidgetMessage: tm-delete-tiddler</a>:</p><ul><li>The user is not prompted to confirm the deletion</li><li>No automatic updating of the story list</li><li>No special handling of draft tiddlers</li></ul><h1 class="">Content and Attributes</h1><p>The <strong>action-deletetiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">Optional title of the tiddler to be deleted</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">Optional filter identifying tiddlers to be deleted</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example of a button that deletes the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves " href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-deletetiddler</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that deletes tiddlers. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><p>There are several differences compared to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-delete-tiddler.html">WidgetMessage: tm-delete-tiddler</a>:</p><ul><li>The user is not prompted to confirm the deletion</li><li>No automatic updating of the story list</li><li>No special handling of draft tiddlers</li></ul><h1 class="">Content and Attributes</h1><p>The <strong>action-deletetiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">Optional title of the tiddler to be deleted</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">Optional filter identifying tiddlers to be deleted</td></tr></tbody></table><h1 class="">Examples</h1><p>Here is an example of a button that deletes the tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HelloThere.html">HelloThere</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-deletetiddler $tiddler=&quot;HelloThere&quot;/&gt;
 Delete &quot;~HelloThere&quot;
 &lt;/$button&gt;</code></pre><p>Este es su aspecto:</p><p><button class="">
 
 Delete &quot;HelloThere&quot;
 </button>
-</p></div><p>Here is an example of a button that deletes all tiddlers tagged <a class="tc-tiddlylink tc-tiddlylink-resolves " href="TableOfContents.html">TableOfContents</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
+</p></div><p>Here is an example of a button that deletes all tiddlers tagged <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TableOfContents.html">TableOfContents</a>:</p><div class="doc-example"><pre><code>&lt;$button&gt;
 &lt;$action-deletetiddler $filter=&quot;[tag[TableOfContents]]&quot;/&gt;
 Delete tiddlers tagged &quot;~TableOfContents&quot;
 &lt;/$button&gt;</code></pre><p>Este es su aspecto:</p><p><button class="">

@@ -45,7 +45,7 @@ TableOfContentsMacro
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-resolves " href="pmario.html">
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="pmario.html">
 pmario
 </a> 24. September 2014 um 00:59
 </div>
@@ -65,7 +65,7 @@ color:#333333;">
 </span>
 </div>
 </div>
-<div class="tc-tiddler-body tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als &quot;root tag&quot; bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den &quot;root tags&quot; getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing " href="Tagging.html">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves " href="EinsB.html">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des &quot;toc&quot; Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der &quot;erweitern&quot; Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die &quot;selective-expandable&quot; Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der &quot;root tag&quot; legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der &quot;tag&quot; und &quot;sort&quot; Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set ">
+<div class="tc-tiddler-body tc-reveal"><p>Das Inhaltsverzeichnis Makro (englisch: table of content) erstellt einen hierarchischen Baum von Verknüpfungen (Links), basierend auf ihren Tags.</p><p>Der Basis Eintrag in das Verzeichnis wird als &quot;root tag&quot; bezeichnet. Die weiteren Ebenen werden von Tiddlern gebildet, die mit den &quot;root tags&quot; getaggt sind. Einträge können sortiert werden, indem im <code>list</code> Feld eines Tags die Reihenfolge der Tiddler festgelegt wird. (Die Sortierung muss momentan per Hand vorgenommen werden). Siehe auch: <a class="tc-tiddlylink tc-tiddlylink-missing" href="Tagging.html">Tagging</a></p><p>Der Text für die Einträge wird aus dem <code>caption</code> Feld des Tiddlers genommen. Ist dieser nicht vorhanden, dann wird der Tiddler Titel angezeigt.Dieser Tiddler hat ein <code>caption</code> Feld mit dem Inhalt: <strong>toc-Inhaltsverzeichnis</strong>. Im (i)nfo Button unter Felder können Sie alle Felder sehen!</p><p>Die Einträge werden als Links dargestellt, außer, der Tiddler hat ein weiteres Feld mit dem Namen: <code>toc-link</code> und dem Wert: <code>no</code>. In den folgenden Beispielen ist dies der Fall für den Tiddler: <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsB.html">EinsB</a>.</strong></p><p>Es gibt mehrere Varianten des &quot;toc&quot; Makros:</p><ul><li><code>&lt;&lt;toc&gt;&gt;</code> erstellt eine hierarchische Liste mit Links.</li><li><code>&lt;&lt;toc-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum mit Links.</li><li><code>&lt;&lt;toc-selective-expandable&gt;&gt;</code> erstellt einen erweiterbaren Baum, bei dem der &quot;erweitern&quot; Button nur dann vorhanden ist, wenn der Zweig weitere Elemente hat. </li></ul><p>Die Makros erzeugen HTML <code>&lt;ol&gt;</code> Elemente (geordnete Listen):</p><ul><li>Die <code>&lt;ol&gt;</code> Elemente haben eine CSS Klasse: <code>tc-toc</code>.</li><li>Die erweiterbaren Elemente habe zusätzlich die Klasse: <code>tc-toc-expandable</code>.</li><li>Die &quot;selective-expandable&quot; Variante hat die Klasse: <code>tc-toc-selective-expandable</code></li></ul><h2 class="">Parameter</h2><table><thead><tr class="evenRow"><td align="left">Position</td><td align="left">Name</td><td align="left">Beschreibung</td><td align="left">Standard</td></tr></thead><tbody><tr class="oddRow"><td align="left">1</td><td align="left">tag</td><td align="left">Der &quot;root tag&quot; legt die erste Ebene der Hierarchie fest</td><td align="center"></td></tr><tr class="evenRow"><td align="left">2</td><td align="left">sort</td><td align="left">Optional können die Einträge sortiert werden. zB: <code>sort[title]</code></td><td align="center"></td></tr></tbody></table><p>Der &quot;tag&quot; und &quot;sort&quot; Parameter werden kombiniert und legen den Filterausdruck fest:</p><pre><code>[tag[$tag$]$sort$]</code></pre><h2 class="">Beispiele</h2><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 <button class=" tc-tab-selected">
 
@@ -104,7 +104,7 @@ Sorted Expandable
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="tocDrei.html">tocDrei</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tocDrei.html">tocDrei</a>
           <ol class="tc-toc">
   
 </ol>
@@ -115,19 +115,19 @@ Sorted Expandable
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="tocEins.html">tocEins</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tocEins.html">tocEins</a>
           <ol class="tc-toc">
   
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="EinsA.html">EinsA</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsA.html">EinsA</a>
           <ol class="tc-toc">
   
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="EinsA1.html">EinsA1</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsA1.html">EinsA1</a>
           <ol class="tc-toc">
   
 </ol>
@@ -155,7 +155,7 @@ Sorted Expandable
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="EinsB1.html">EinsB1</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsB1.html">EinsB1</a>
           <ol class="tc-toc">
   
 </ol>
@@ -171,7 +171,7 @@ Sorted Expandable
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="EinsC.html">EinsC</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="EinsC.html">EinsC</a>
           <ol class="tc-toc">
   
 </ol>
@@ -187,13 +187,13 @@ Sorted Expandable
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="tocZwei.html">tocZwei</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tocZwei.html">tocZwei</a>
           <ol class="tc-toc">
   
     
       
         <li class="toc-item">
-          <a class="tc-tiddlylink tc-tiddlylink-resolves " href="ZweiA.html">ZweiA</a>
+          <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ZweiA.html">ZweiA</a>
           <ol class="tc-toc">
   
 </ol>
