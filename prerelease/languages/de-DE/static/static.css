@@ -1685,6 +1685,7 @@ a.tc-tiddlylink:hover {
 }.tc-tab-content {
 	margin-top: 14px;
 }.tc-tab-content.tc-vertical  {
+    word-break: break-word;
 	display: inline-block;
 	vertical-align: top;
 	padding-top: 0;

@@ -106,6 +106,18 @@
         "readme": "The D3 plugin is a proof-of-concept demo of integration with the D3.js data visualisation framework (http://d3js.org).\n\nIt is not currently in a state where it can be used for anything useful.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/d3]]\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/dynaview",
+        "description": "Dynamic scrolling and zooming effects",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme docs examples",
+        "version": "5.1.16-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Dynaview\n\nThis plugin makes it possible to build user interfaces that dynamically respond to changes in the browser viewport via scrolling or zooming:\n\n* CSS classes that allow rendering to be deferred until the output is scrolled into view\n* CSS classes that allow the opacity of DOM elements to vary according to the current zoom level\n\nSome points to note about the zoom features:\n\n* The zoom level currently only works on Safari, both on Mac OS and on the iPhone/iPad\n* The zoom level tracked by the plugin is the pinch-zoom level, and not the text-zoom level\n* Rather than being progressively rendered as needed, hidden item are rendered with zero opacity. Which means that they can still be interacted with\n\nThis is really just a proof of concept to allow the user experience to be evaluated. A production version would need to work in all browsers, which would mean adopting a polyfill such as [[Hammer.js|http://hammerjs.github.io/]] to give us manual pan and zoom support. It would also allow deeper levels of zoom.\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/evernote",
         "description": "Evernote migration tools",
         "author": "JeremyRuston",
