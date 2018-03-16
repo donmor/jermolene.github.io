@@ -2353,6 +2353,20 @@ a.tc-tiddlylink:hover {
 	filter: alpha(opacity=1);
 	opacity: 1;
 }/*
+** Diffs
+*/.tc-diff-equal {
+	background-color: ;
+	color: #4e432f;
+}.tc-diff-insert {
+	background-color: #aaefad;
+	color: #4e432f;
+}.tc-diff-delete {
+	background-color: #ffc9c9;
+	color: #4e432f;
+}.tc-diff-invisible {
+	background-color: ;
+	color: #bbb;
+}/*
 ** Errors
 */.tc-error {
 	background: #f00;
