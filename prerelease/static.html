@@ -75,503 +75,6 @@ Error message and password prompt
 </div>
 <style type="text/css">
 
-.tc-help-panel {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 310px;
-	height: 400px;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-
-	border: 1px solid #ffffff;
-	background: #ffffff;
-	padding: 1em;
-	margin: 0.5em;
-	z-index: 1000;
-}dl.tc-help-cheatsheet {
-	overflow: hidden;
-}dl.tc-help-cheatsheet .red {
-	color: red;
-}.tc-help-cheatsheet > dt {
-	display: block;
-	float: left;
-	clear: left;
-	margin: 2% 1em 0 0;
-	padding;
-	font-weight: normal;
-	width: 45%;
-}.tc-help-cheatsheet > dt > pre {
-	margin: 0;
-}.tc-help-cheatsheet > dd {
-	display: block;
-	float: left;
-	width: 45%;
-	margin: 1em 0 0 0;
-	padding: 0;
-}.tc-help-cheatsheet > dd > p,
-.tc-help-cheatsheet > dd > h1,
-.tc-help-cheatsheet > dd > pre,
-.tc-help-cheatsheet > dd > ul,
-.tc-help-cheatsheet > dd > ol,
-.tc-help-cheatsheet > dd > dl,
-.tc-help-cheatsheet > dd > table,
-.tc-help-cheatsheet > dd > blockquote,
-.tc-help-cheatsheet > dd > blockquote >p {
-	margin: 0;
-}.tc-help-cheatsheet .tc-image {
-	width: 16px;
-}
-
-
-/* Left will inherit from right (so we don't need to duplicate code */
-.github-fork-ribbon {
-  /* The right and left lasses determine the side we attach our banner to */
-  position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
-  padding: 2px 0;/* Set the base colour */
-  background-color: #a00;/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');/* Add a drop shadow */
-  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);z-index: 999;
-  pointer-events: auto;
-}.github-fork-ribbon a, .github-fork-ribbon a.tc-tiddlylink,
-.github-fork-ribbon a:hover, .github-fork-ribbon a.tc-tiddlylink:hover  {
-  /* Set the font */
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: white;/* Set the text properties */
-  text-decoration: none;
-  text-shadow: 0 -1px rgba(0,0,0,0.5);
-  text-align: center;/* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
-  width: 200px;
-  line-height: 20px;/* Set the layout properties */
-  display: inline-block;
-  padding: 2px 0;/* Add "stitching" effect */
-  border-width: 1px 0;
-  border-style: dotted;
-  border-color: rgba(255,255,255,0.7);
-}.github-fork-ribbon-wrapper {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  z-index: 999;
-  pointer-events: none;
-}.github-fork-ribbon-wrapper.fixed {
-  position: fixed;
-}.github-fork-ribbon-wrapper.left {
-  left: 0;
-}.github-fork-ribbon-wrapper.right {
-  right: 0;
-}.github-fork-ribbon-wrapper.left-bottom {
-  position: fixed;
-  top: inherit;
-  bottom: 0;
-  left: 0;
-}.github-fork-ribbon-wrapper.right-bottom {
-  position: fixed;
-  top: inherit;
-  bottom: 0;
-  right: 0;
-}.github-fork-ribbon-wrapper.right .github-fork-ribbon {
-  top: 42px;
-  right: -43px;/* Rotate the banner 45 degrees */
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}.github-fork-ribbon-wrapper.left .github-fork-ribbon {
-  top: 42px;
-  left: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
-  top: 80px;
-  left: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-}.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
-  top: 80px;
-  right: -43px;/* Rotate the banner -45 degrees */
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-
-/*
-
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  background: #f0f0f0;
-  -webkit-text-size-adjust: none;
-}
-
-.hljs,
-.hljs-subst,
-.hljs-tag .hljs-title,
-.nginx .hljs-title {
-  color: black;
-}
-
-.hljs-string,
-.hljs-title,
-.hljs-constant,
-.hljs-parent,
-.hljs-tag .hljs-value,
-.hljs-rule .hljs-value,
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-name,
-.haml .hljs-symbol,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-template_tag,
-.django .hljs-variable,
-.smalltalk .hljs-class,
-.hljs-addition,
-.hljs-flow,
-.hljs-stream,
-.bash .hljs-variable,
-.pf .hljs-variable,
-.apache .hljs-tag,
-.apache .hljs-cbracket,
-.tex .hljs-command,
-.tex .hljs-special,
-.erlang_repl .hljs-function_or_atom,
-.asciidoc .hljs-header,
-.markdown .hljs-header,
-.coffeescript .hljs-attribute,
-.tp .hljs-variable {
-  color: #800;
-}
-
-.smartquote,
-.hljs-comment,
-.hljs-annotation,
-.diff .hljs-header,
-.hljs-chunk,
-.asciidoc .hljs-blockquote,
-.markdown .hljs-blockquote {
-  color: #888;
-}
-
-.hljs-number,
-.hljs-date,
-.hljs-regexp,
-.hljs-literal,
-.hljs-hexcolor,
-.smalltalk .hljs-symbol,
-.smalltalk .hljs-char,
-.go .hljs-constant,
-.hljs-change,
-.lasso .hljs-variable,
-.makefile .hljs-variable,
-.asciidoc .hljs-bullet,
-.markdown .hljs-bullet,
-.asciidoc .hljs-link_url,
-.markdown .hljs-link_url {
-  color: #080;
-}
-
-.hljs-label,
-.ruby .hljs-string,
-.hljs-decorator,
-.hljs-filter .hljs-argument,
-.hljs-localvars,
-.hljs-array,
-.hljs-attr_selector,
-.hljs-important,
-.hljs-pseudo,
-.hljs-pi,
-.haml .hljs-bullet,
-.hljs-doctype,
-.hljs-deletion,
-.hljs-envvar,
-.hljs-shebang,
-.apache .hljs-sqbracket,
-.nginx .hljs-built_in,
-.tex .hljs-formula,
-.erlang_repl .hljs-reserved,
-.hljs-prompt,
-.asciidoc .hljs-link_label,
-.markdown .hljs-link_label,
-.vhdl .hljs-attribute,
-.clojure .hljs-attribute,
-.asciidoc .hljs-attribute,
-.lasso .hljs-attribute,
-.coffeescript .hljs-property,
-.hljs-phony {
-  color: #88f;
-}
-
-.hljs-keyword,
-.hljs-id,
-.hljs-title,
-.hljs-built_in,
-.css .hljs-tag,
-.hljs-doctag,
-.smalltalk .hljs-class,
-.hljs-winutils,
-.bash .hljs-variable,
-.pf .hljs-variable,
-.apache .hljs-tag,
-.hljs-type,
-.hljs-typename,
-.tex .hljs-command,
-.asciidoc .hljs-strong,
-.markdown .hljs-strong,
-.hljs-request,
-.hljs-status,
-.tp .hljs-data,
-.tp .hljs-io {
-  font-weight: bold;
-}
-
-.asciidoc .hljs-emphasis,
-.markdown .hljs-emphasis,
-.tp .hljs-units {
-  font-style: italic;
-}
-
-.nginx .hljs-built_in {
-  font-weight: normal;
-}
-
-.coffeescript .javascript,
-.javascript .xml,
-.lasso .markup,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
-  opacity: 0.5;
-}
-
-
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:teal}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.hljs-dartdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:navy;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:teal}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
-
-
-
-.tc-powered-by-tiddlywiki-banner {
-	position: fixed;
-	right: 1em;
-	bottom: 0;
-    z-index: 2000;
-}
-
-.tc-drop-down .tc-qrcode-drop-down img {
-	width: 100%;
-	height: 100%;
-}
-
-
-/* CSS modified for TiddlyWiki */
-svg.railroad-diagram {
-	background-color: hsl(30,20%,98%);
-	border-radius: 5px;
-}
-svg.railroad-diagram:hover {
-	background-color: hsl(30,20%,96%);
-}
-svg.railroad-diagram path,
-svg.railroad-diagram rect {
-	stroke-width: 2;
-	stroke: #333;
-}
-svg.railroad-diagram path {
-	fill: rgba(0,0,0,0);
-}
-svg.railroad-diagram rect {
-	fill: hsl(120,100%,90%);
-}
-svg.railroad-diagram text {
-	font: 14px monospace;
-	text-anchor: middle;
-}
-svg.railroad-diagram text.label {
-	text-anchor: start;
-}
-svg.railroad-diagram text.comment {
-	font: italic 12px monospace;
-}
-svg.railroad-diagram path.arrow {
-    stroke-width: 2;
-}
-
-.tc-sidebar-header {
-	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
-}.tc-tiddler-info {
-	
-  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-     -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-          box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-
-}@media screen {
-	.tc-tiddler-frame {
-		
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-
-	}
-}@media (max-width: 960px) {
-	.tc-tiddler-frame {
-		
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-
-	}
-}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
-	
-  -webkit-transition: fill 150ms ease-in-out;
-     -moz-transition: fill 150ms ease-in-out;
-          transition: fill 150ms ease-in-out;
-
-}.tc-tiddler-controls button.tc-selected,
-.tc-page-controls button.tc-selected {
-	
-  -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-     -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-          filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-
-}.tc-tiddler-frame input.tc-edit-texteditor {
-	
-  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-
-}.tc-edit-tags {
-	
-  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-
-}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
-	
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-
-	border: none;
-	outline: none;
-}textarea.tc-edit-texteditor {
-	font-family: ;
-}canvas.tc-edit-bitmapeditor  {
-	
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-}.tc-drop-down {
-	border-radius: 4px;
-	
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-
-}.tc-block-dropdown {
-	border-radius: 4px;
-	
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-
-}.tc-modal {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-
-}.tc-modal-footer {
-	border-radius: 0 0 6px 6px;
-	
-  -webkit-box-shadow: inset 0 1px 0 #fff;
-     -moz-box-shadow: inset 0 1px 0 #fff;
-          box-shadow: inset 0 1px 0 #fff;
-;
-}.tc-alert {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-
-}.tc-notification {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-
-	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
-}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
-	border-top: none;
-	height: 1px;
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-
-}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-
-}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-
-}.tc-message-box img {
-	
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-
-}.tc-plugin-info {
-	
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-
-}
-
-
 /*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -2529,6 +2032,503 @@ a.tc-tiddlylink:hover {
 }
 
 
+.tc-sidebar-header {
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-tiddler-info {
+	
+  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+     -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+          box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+
+}@media screen {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+	}
+}@media (max-width: 960px) {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	}
+}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
+	
+  -webkit-transition: fill 150ms ease-in-out;
+     -moz-transition: fill 150ms ease-in-out;
+          transition: fill 150ms ease-in-out;
+
+}.tc-tiddler-controls button.tc-selected,
+.tc-page-controls button.tc-selected {
+	
+  -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+     -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+          filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+
+}.tc-tiddler-frame input.tc-edit-texteditor {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-edit-tags {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
+	
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	border: none;
+	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
+}canvas.tc-edit-bitmapeditor  {
+	
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}.tc-drop-down {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-block-dropdown {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-modal {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+}.tc-modal-footer {
+	border-radius: 0 0 6px 6px;
+	
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+     -moz-box-shadow: inset 0 1px 0 #fff;
+          box-shadow: inset 0 1px 0 #fff;
+;
+}.tc-alert {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+
+}.tc-notification {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+	border-top: none;
+	height: 1px;
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+
+}.tc-message-box img {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}.tc-plugin-info {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}
+
+
+.tc-help-panel {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 1000;
+}dl.tc-help-cheatsheet {
+	overflow: hidden;
+}dl.tc-help-cheatsheet .red {
+	color: red;
+}.tc-help-cheatsheet > dt {
+	display: block;
+	float: left;
+	clear: left;
+	margin: 2% 1em 0 0;
+	padding;
+	font-weight: normal;
+	width: 45%;
+}.tc-help-cheatsheet > dt > pre {
+	margin: 0;
+}.tc-help-cheatsheet > dd {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 1em 0 0 0;
+	padding: 0;
+}.tc-help-cheatsheet > dd > p,
+.tc-help-cheatsheet > dd > h1,
+.tc-help-cheatsheet > dd > pre,
+.tc-help-cheatsheet > dd > ul,
+.tc-help-cheatsheet > dd > ol,
+.tc-help-cheatsheet > dd > dl,
+.tc-help-cheatsheet > dd > table,
+.tc-help-cheatsheet > dd > blockquote,
+.tc-help-cheatsheet > dd > blockquote >p {
+	margin: 0;
+}.tc-help-cheatsheet .tc-image {
+	width: 16px;
+}
+
+
+/* Left will inherit from right (so we don't need to duplicate code */
+.github-fork-ribbon {
+  /* The right and left lasses determine the side we attach our banner to */
+  position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
+  padding: 2px 0;/* Set the base colour */
+  background-color: #a00;/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');/* Add a drop shadow */
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);z-index: 999;
+  pointer-events: auto;
+}.github-fork-ribbon a, .github-fork-ribbon a.tc-tiddlylink,
+.github-fork-ribbon a:hover, .github-fork-ribbon a.tc-tiddlylink:hover  {
+  /* Set the font */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;/* Set the text properties */
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,0.5);
+  text-align: center;/* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
+  width: 200px;
+  line-height: 20px;/* Set the layout properties */
+  display: inline-block;
+  padding: 2px 0;/* Add "stitching" effect */
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: rgba(255,255,255,0.7);
+}.github-fork-ribbon-wrapper {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 999;
+  pointer-events: none;
+}.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
+}.github-fork-ribbon-wrapper.left {
+  left: 0;
+}.github-fork-ribbon-wrapper.right {
+  right: 0;
+}.github-fork-ribbon-wrapper.left-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  left: 0;
+}.github-fork-ribbon-wrapper.right-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  right: 0;
+}.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+  top: 42px;
+  right: -43px;/* Rotate the banner 45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.left .github-fork-ribbon {
+  top: 42px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+  top: 80px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
+  top: 80px;
+  right: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #f0f0f0;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs,
+.hljs-subst,
+.hljs-tag .hljs-title,
+.nginx .hljs-title {
+  color: black;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-constant,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-name,
+.haml .hljs-symbol,
+.ruby .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.bash .hljs-variable,
+.pf .hljs-variable,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.tex .hljs-special,
+.erlang_repl .hljs-function_or_atom,
+.asciidoc .hljs-header,
+.markdown .hljs-header,
+.coffeescript .hljs-attribute,
+.tp .hljs-variable {
+  color: #800;
+}
+
+.smartquote,
+.hljs-comment,
+.hljs-annotation,
+.diff .hljs-header,
+.hljs-chunk,
+.asciidoc .hljs-blockquote,
+.markdown .hljs-blockquote {
+  color: #888;
+}
+
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.hljs-literal,
+.hljs-hexcolor,
+.smalltalk .hljs-symbol,
+.smalltalk .hljs-char,
+.go .hljs-constant,
+.hljs-change,
+.lasso .hljs-variable,
+.makefile .hljs-variable,
+.asciidoc .hljs-bullet,
+.markdown .hljs-bullet,
+.asciidoc .hljs-link_url,
+.markdown .hljs-link_url {
+  color: #080;
+}
+
+.hljs-label,
+.ruby .hljs-string,
+.hljs-decorator,
+.hljs-filter .hljs-argument,
+.hljs-localvars,
+.hljs-array,
+.hljs-attr_selector,
+.hljs-important,
+.hljs-pseudo,
+.hljs-pi,
+.haml .hljs-bullet,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-envvar,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in,
+.tex .hljs-formula,
+.erlang_repl .hljs-reserved,
+.hljs-prompt,
+.asciidoc .hljs-link_label,
+.markdown .hljs-link_label,
+.vhdl .hljs-attribute,
+.clojure .hljs-attribute,
+.asciidoc .hljs-attribute,
+.lasso .hljs-attribute,
+.coffeescript .hljs-property,
+.hljs-phony {
+  color: #88f;
+}
+
+.hljs-keyword,
+.hljs-id,
+.hljs-title,
+.hljs-built_in,
+.css .hljs-tag,
+.hljs-doctag,
+.smalltalk .hljs-class,
+.hljs-winutils,
+.bash .hljs-variable,
+.pf .hljs-variable,
+.apache .hljs-tag,
+.hljs-type,
+.hljs-typename,
+.tex .hljs-command,
+.asciidoc .hljs-strong,
+.markdown .hljs-strong,
+.hljs-request,
+.hljs-status,
+.tp .hljs-data,
+.tp .hljs-io {
+  font-weight: bold;
+}
+
+.asciidoc .hljs-emphasis,
+.markdown .hljs-emphasis,
+.tp .hljs-units {
+  font-style: italic;
+}
+
+.nginx .hljs-built_in {
+  font-weight: normal;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.lasso .markup,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+
+
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:teal}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.hljs-dartdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:navy;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:teal}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
+
+
+
+.tc-powered-by-tiddlywiki-banner {
+	position: fixed;
+	right: 1em;
+	bottom: 0;
+    z-index: 2000;
+}
+
+.tc-drop-down .tc-qrcode-drop-down img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* CSS modified for TiddlyWiki */
+svg.railroad-diagram {
+	background-color: hsl(30,20%,98%);
+	border-radius: 5px;
+}
+svg.railroad-diagram:hover {
+	background-color: hsl(30,20%,96%);
+}
+svg.railroad-diagram path,
+svg.railroad-diagram rect {
+	stroke-width: 2;
+	stroke: #333;
+}
+svg.railroad-diagram path {
+	fill: rgba(0,0,0,0);
+}
+svg.railroad-diagram rect {
+	fill: hsl(120,100%,90%);
+}
+svg.railroad-diagram text {
+	font: 14px monospace;
+	text-anchor: middle;
+}
+svg.railroad-diagram text.label {
+	text-anchor: start;
+}
+svg.railroad-diagram text.comment {
+	font: italic 12px monospace;
+}
+svg.railroad-diagram path.arrow {
+    stroke-width: 2;
+}
+
 .tc-thumbnail-tabs .tc-tab-buttons {
 	background: #ecf2ff;
     text-align: center;
@@ -3108,7 +3108,7 @@ TiddlyWiki Pre-release
 
 <div class="tc-tiddler-body tc-reveal"><p>This is a pre-release build of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/prerelease/empty.html" rel="noopener noreferrer" target="_blank">also available in empty form</a>. It is provided for testing purposes. <strong>Please don't try to use it for anything important</strong> – you should use the latest official release from <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com</a>.</p><p>
 <h1>Release 5.1.16</h1>
-<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.15...v5.1.16" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><h2 class="">New and Improved Plugins</h2><ul><li>New <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Dynaview%2520Plugin.html">Dynaview Plugin</a> makes it possible to build user interfaces that dynamically respond to changes in scrolling or zooming</li><li>Improved <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Text-Slicer%2520Edition.html">Text-Slicer Plugin</a> with customisable JSON rules</li><li>Updated <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/KaTeX%2520Plugin.html">KaTeX Plugin</a> to latest v0.9.0</li></ul><h2 class="">Translation Improvements</h2><p>New and improved translations:</p><ul><li>New Slovenian translation</li><li>New Português (Brasil) translation</li><li>Improved Dutch translation</li><li>Improved French translation</li><li>Improved German translation</li><li>Improved Traditional and Simplified Chinese translations<ul><li>These translations now also reset the minimum search length to one character</li></ul></li></ul><h2 class="">Privacy Improvements</h2><p>Prompted by the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation" rel="noopener noreferrer" target="_blank">General Data Protection Regulation (GDPR)</a>, we've <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3106" rel="noopener noreferrer" target="_blank">removed all third party cookies from tiddlywiki.com</a>.</p><h2 class="">Usability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3112" rel="noopener noreferrer" target="_blank">Added</a> new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/DiffTextWidget.html">DiffTextWidget</a>, and integrated it into the import listing and as a preview pane</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3155" rel="noopener noreferrer" target="_blank">Added</a> new editor toolbar buttons for wrapping the selection with double square and curly brackets</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3134" rel="noopener noreferrer" target="_blank">Added</a> new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/sortan%2520Operator.html">sortan Operator</a> for sorting alphanumeric values such as &quot;Apple 6&quot;, &quot;Apple 7&quot;, &quot;Apple 8&quot;, &quot;Apple 9&quot;, &quot;Apple 10&quot;, &quot;Apple 20&quot;, &quot;Apple 30&quot;, &quot;Apple 100&quot;</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/da0ffce2d66f16ad14587fbe58b8d7a5c8d36657" rel="noopener noreferrer" target="_blank">Improved</a> default fonts for readability as advised by <a class="tc-tiddlylink-external" href="http://markdotto.com/2018/02/07/github-system-fonts/" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3131" rel="noopener noreferrer" target="_blank">Added</a> an editor toolbar button for stamping fragments of formulae for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/KaTeX%2520Plugin.html">KaTeX Plugin</a> </li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1c8170463c80a18c0753783aa0b32a0ff2f9028c" rel="noopener noreferrer" target="_blank">Simplified</a> the page scrolling behaviour: navigating to a tiddler now scrolls the top of the tiddler to the top of the viewport</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/d2ff164c07788818ded9826c9e3811599272e69c" rel="noopener noreferrer" target="_blank">Added</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WidgetMessage%253A%2520tm-copy-to-clipboard.html">WidgetMessage: tm-copy-to-clipboard</a> and <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1b6a06a4d79ad5c58593a7844e306c25848979ea" rel="noopener noreferrer" target="_blank">also</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/copy-to-clipboard%2520Macro.html">copy-to-clipboard Macro</a> for copying text directly to the clipboard</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3040" rel="noopener noreferrer" target="_blank">Added</a> a hint to the field list dropdown</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3135" rel="noopener noreferrer" target="_blank">Added</a> a control panel setting for the default tab in the More sidebar</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3149" rel="noopener noreferrer" target="_blank">Added</a> a control panel setting for the titles of new tiddlers</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c0569849d22f99623423d349c0d96ecae11ffbe8" rel="noopener noreferrer" target="_blank">Added</a> &quot;rotate left&quot; button to bitmap editor toolbar</li></ul><h2 class="">Hackability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3167" rel="noopener noreferrer" target="_blank">Extended</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/DroppableWidget.html">DroppableWidget</a> to pass modifier keys in a variable</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/7cb54f32c6ee2d98f3f13ddda39f92281d419afd" rel="noopener noreferrer" target="_blank">Added</a> a new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TaskManagementExample%2520(Draggable).html">TaskManagementExample (Draggable)</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/460a07ca03a501009530a57352d6bec0e3cf49cd" rel="noopener noreferrer" target="_blank">Added</a> new 'Stylesheets' tab to control panel</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b4c7c59d5d1bc5282fcfed58abbf087b9f65b86c" rel="noopener noreferrer" target="_blank">Added</a> new 'emptyMessage' parameter to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/list-links%2520Macro.html">list-links Macro</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/list-tagged-draggable%2520Macro.html">list-tagged-draggable Macro</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/de4eb5ca89132db136c8f5fb3103f289f25fe98a" rel="noopener noreferrer" target="_blank">Added</a> new <code>th-page-refreshed</code> hook</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3063" rel="noopener noreferrer" target="_blank">Enhanced</a> macro evaluation by making parameters available as variables - see &quot;Parameters as Variables&quot; in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Macro%2520Definitions%2520in%2520WikiText.html">Macro Definitions in WikiText</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3052" rel="noopener noreferrer" target="_blank">Enhanced</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/LinkWidget.html">LinkWidget</a> to allow better customisation of CSS classes</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3124" rel="noopener noreferrer" target="_blank">Added</a> new &quot;value&quot; suffix for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/each%2520Operator.html">each Operator</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b4c7c59d5d1bc5282fcfed58abbf087b9f65b86c" rel="noopener noreferrer" target="_blank">Added</a> 'emptyMessage' parameter to list-links and list-tagged-draggable macros</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/0d354fe57f7424c1751a5c0cf5fbf1203803f3c8" rel="noopener noreferrer" target="_blank">Added</a> new <strong>subtiddler</strong> attribute to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SetWidget.html">SetWidget</a></li></ul><h2 class="">Node.js Improvements</h2><ul><li></li></ul><h2 class="">Bug Fixes</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3043" rel="noopener noreferrer" target="_blank">Removed</a> superfluous list item at the end of list-links-draggable macro</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/7e71fcfab80bed9aed4389eea386fb2036cc4a85" rel="noopener noreferrer" target="_blank">Fixed</a> problem with the content area of vertical tabs sometimes overflowing their right hand margin</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3079" rel="noopener noreferrer" target="_blank">Fixed</a> problem with double quotes within the new journal template</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3070" rel="noopener noreferrer" target="_blank">Fixed</a> problem with dragging inside a textarea</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3099" rel="noopener noreferrer" target="_blank">Fixed</a> usage of &quot;default&quot; attribute of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SelectWidget.html">SelectWidget</a> when &quot;index&quot; attribute is used</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3093" rel="noopener noreferrer" target="_blank">Fixed</a> problem with crash when dragging over <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> on some browsers</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3079" rel="noopener noreferrer" target="_blank">Fixed</a> issue with new journal button</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3164" rel="noopener noreferrer" target="_blank">Fixed</a> problem with <strong>filter</strong> and <strong>value</strong> attributes of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SetWidget.html">SetWidget</a></li></ul><h2 class="">Developer Bug Fixes and Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3113" rel="noopener noreferrer" target="_blank">Fixed</a> problems with plugin ordering</li><li>Several optimisations to the tiddler store:<ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/254e1ca7f7a5fe9d2deef72692ada2b7637f34ce" rel="noopener noreferrer" target="_blank">Avoiding slow Object.keys calls</a> - saving 50% of some operations</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/e4b10d42f9480c0505862a93f0b97d1c4270ed65" rel="noopener noreferrer" target="_blank">Optimising the tag filter</a> - saving 50% on some tag operations</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/358d4165260311446f2b433591762dd667250975" rel="noopener noreferrer" target="_blank">Minor improvements to tiddler deletion</a></li></ul></li></ul><h1 class="">Contributors</h1><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" rel="noopener noreferrer" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>:</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/alexhough" rel="noopener noreferrer" target="_blank">@alexhough</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/anavarre" rel="noopener noreferrer" target="_blank">@anavarre</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/BramChen" rel="noopener noreferrer" target="_blank">@BramChen</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/BurningTreeC" rel="noopener noreferrer" target="_blank">@BurningTreeC</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/furicle" rel="noopener noreferrer" target="_blank">@furicle</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/gernert" rel="noopener noreferrer" target="_blank">@gernert</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/ibnishak" rel="noopener noreferrer" target="_blank">@ibnishak</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Marxsal" rel="noopener noreferrer" target="_blank">@Marxsal</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/pmario" rel="noopener noreferrer" target="_blank">@pmario</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Skeeve" rel="noopener noreferrer" target="_blank">@Skeeve</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/TheDiveO" rel="noopener noreferrer" target="_blank">@TheDiveO</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/tobibeer" rel="noopener noreferrer" target="_blank">@tobibeer</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/twMat" rel="noopener noreferrer" target="_blank">@twMat</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/xcazin" rel="noopener noreferrer" target="_blank">@xcazin</a></li></ul>
+<p><em><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/compare/v5.1.15...v5.1.16" rel="noopener noreferrer" target="_blank">See GitHub for detailed change history of this release</a></em></p><h2 class="">New and Improved Plugins</h2><ul><li>New <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Dynaview%2520Plugin.html">Dynaview Plugin</a> makes it possible to build user interfaces that dynamically respond to changes in scrolling or zooming</li><li>Improved <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Text-Slicer%2520Edition.html">Text-Slicer Plugin</a> with customisable JSON rules</li><li>Updated <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/KaTeX%2520Plugin.html">KaTeX Plugin</a> to latest v0.9.0</li></ul><h2 class="">Translation Improvements</h2><p>New and improved translations:</p><ul><li>New Slovenian translation</li><li>New Português (Brasil) translation</li><li>Improved Dutch translation</li><li>Improved French translation</li><li>Improved German translation</li><li>Improved Traditional and Simplified Chinese translations<ul><li>These translations now also reset the minimum search length to one character</li></ul></li></ul><h2 class="">Privacy Improvements</h2><p>Prompted by the <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/General_Data_Protection_Regulation" rel="noopener noreferrer" target="_blank">General Data Protection Regulation (GDPR)</a>, we've <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3106" rel="noopener noreferrer" target="_blank">removed all third party cookies from tiddlywiki.com</a>.</p><h2 class="">Usability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3112" rel="noopener noreferrer" target="_blank">Added</a> new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/DiffTextWidget.html">DiffTextWidget</a>, and integrated it into the import listing and as a preview pane</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3155" rel="noopener noreferrer" target="_blank">Added</a> new editor toolbar buttons for wrapping the selection with double square and curly brackets</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3134" rel="noopener noreferrer" target="_blank">Added</a> new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/sortan%2520Operator.html">sortan Operator</a> for sorting alphanumeric values such as &quot;Apple 6&quot;, &quot;Apple 7&quot;, &quot;Apple 8&quot;, &quot;Apple 9&quot;, &quot;Apple 10&quot;, &quot;Apple 20&quot;, &quot;Apple 30&quot;, &quot;Apple 100&quot;</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/da0ffce2d66f16ad14587fbe58b8d7a5c8d36657" rel="noopener noreferrer" target="_blank">Improved</a> default fonts for readability as advised by <a class="tc-tiddlylink-external" href="http://markdotto.com/2018/02/07/github-system-fonts/" rel="noopener noreferrer" target="_blank">GitHub</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3131" rel="noopener noreferrer" target="_blank">Added</a> an editor toolbar button for stamping fragments of formulae for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/KaTeX%2520Plugin.html">KaTeX Plugin</a> </li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1c8170463c80a18c0753783aa0b32a0ff2f9028c" rel="noopener noreferrer" target="_blank">Simplified</a> the page scrolling behaviour: navigating to a tiddler now scrolls the top of the tiddler to the top of the viewport</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/d2ff164c07788818ded9826c9e3811599272e69c" rel="noopener noreferrer" target="_blank">Added</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/WidgetMessage%253A%2520tm-copy-to-clipboard.html">WidgetMessage: tm-copy-to-clipboard</a> and <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1b6a06a4d79ad5c58593a7844e306c25848979ea" rel="noopener noreferrer" target="_blank">also</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/copy-to-clipboard%2520Macro.html">copy-to-clipboard Macro</a> for copying text directly to the clipboard</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3040" rel="noopener noreferrer" target="_blank">Added</a> a hint to the field list dropdown</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3135" rel="noopener noreferrer" target="_blank">Added</a> a control panel setting for the default tab in the More sidebar</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3149" rel="noopener noreferrer" target="_blank">Added</a> a control panel setting for the titles of new tiddlers</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/c0569849d22f99623423d349c0d96ecae11ffbe8" rel="noopener noreferrer" target="_blank">Added</a> &quot;rotate left&quot; button to bitmap editor toolbar</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3180" rel="noopener noreferrer" target="_blank">Improved</a> criteria under which certain editor toolbar buttons are displayed</li></ul><h2 class="">Hackability Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/033feda02d7f5cdf27a9393b8229f22219cdab88" rel="noopener noreferrer" target="_blank">Added</a> support for comparison operators to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/RevealWidget.html">RevealWidget</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1c6942402ee7b6d938f01bad23130ebe75b109f2" rel="noopener noreferrer" target="_blank">Added</a> support for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/StartupActions.html">StartupActions</a> to execute action widgets at startup</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/f4fd5e76f8da8555bb9056725f11e0c0c91649f7" rel="noopener noreferrer" target="_blank">Extended</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/ServerCommand.html">ServerCommand</a> to allow the port number to be specified as an environment variable</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/28e713caac1582e30b9ab8f7364ac8a564f4ffd7" rel="noopener noreferrer" target="_blank">Added</a> screen width/height to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/InfoMechanism.html">platform information exposed at startup</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3167" rel="noopener noreferrer" target="_blank">Extended</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/DroppableWidget.html">DroppableWidget</a> to pass modifier keys in a variable</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/7cb54f32c6ee2d98f3f13ddda39f92281d419afd" rel="noopener noreferrer" target="_blank">Added</a> a new <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TaskManagementExample%2520(Draggable).html">TaskManagementExample (Draggable)</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/460a07ca03a501009530a57352d6bec0e3cf49cd" rel="noopener noreferrer" target="_blank">Added</a> new 'Stylesheets' tab to control panel</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b4c7c59d5d1bc5282fcfed58abbf087b9f65b86c" rel="noopener noreferrer" target="_blank">Added</a> new 'emptyMessage' parameter to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/list-links%2520Macro.html">list-links Macro</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/list-tagged-draggable%2520Macro.html">list-tagged-draggable Macro</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/de4eb5ca89132db136c8f5fb3103f289f25fe98a" rel="noopener noreferrer" target="_blank">Added</a> new <code>th-page-refreshed</code> hook</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3063" rel="noopener noreferrer" target="_blank">Enhanced</a> macro evaluation by making parameters available as variables - see &quot;Parameters as Variables&quot; in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Macro%2520Definitions%2520in%2520WikiText.html">Macro Definitions in WikiText</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3052" rel="noopener noreferrer" target="_blank">Enhanced</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/LinkWidget.html">LinkWidget</a> to allow better customisation of CSS classes</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3124" rel="noopener noreferrer" target="_blank">Added</a> new &quot;value&quot; suffix for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/each%2520Operator.html">each Operator</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/b4c7c59d5d1bc5282fcfed58abbf087b9f65b86c" rel="noopener noreferrer" target="_blank">Added</a> 'emptyMessage' parameter to list-links and list-tagged-draggable macros</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/0d354fe57f7424c1751a5c0cf5fbf1203803f3c8" rel="noopener noreferrer" target="_blank">Added</a> new <strong>subtiddler</strong> attribute to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SetWidget.html">SetWidget</a></li></ul><h2 class="">Node.js Improvements</h2><ul><li></li></ul><h2 class="">Bug Fixes</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3043" rel="noopener noreferrer" target="_blank">Removed</a> superfluous list item at the end of list-links-draggable macro</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/7e71fcfab80bed9aed4389eea386fb2036cc4a85" rel="noopener noreferrer" target="_blank">Fixed</a> problem with the content area of vertical tabs sometimes overflowing their right hand margin</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3079" rel="noopener noreferrer" target="_blank">Fixed</a> problem with double quotes within the new journal template</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3070" rel="noopener noreferrer" target="_blank">Fixed</a> problem with dragging inside a textarea</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3099" rel="noopener noreferrer" target="_blank">Fixed</a> usage of &quot;default&quot; attribute of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SelectWidget.html">SelectWidget</a> when &quot;index&quot; attribute is used</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3093" rel="noopener noreferrer" target="_blank">Fixed</a> problem with crash when dragging over <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> on some browsers</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3079" rel="noopener noreferrer" target="_blank">Fixed</a> issue with new journal button</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3164" rel="noopener noreferrer" target="_blank">Fixed</a> problem with <strong>filter</strong> and <strong>value</strong> attributes of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/SetWidget.html">SetWidget</a></li></ul><h2 class="">Developer Bug Fixes and Improvements</h2><ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/1dc764764055243acd07d0c4f480e6e912be6870" rel="noopener noreferrer" target="_blank">Added</a> <strong>plugin-priority</strong> field to core plugins</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/pull/3113" rel="noopener noreferrer" target="_blank">Fixed</a> problems with plugin ordering</li><li>Several optimisations to the tiddler store:<ul><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/254e1ca7f7a5fe9d2deef72692ada2b7637f34ce" rel="noopener noreferrer" target="_blank">Avoiding slow Object.keys calls</a> - saving 50% of some operations</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/e4b10d42f9480c0505862a93f0b97d1c4270ed65" rel="noopener noreferrer" target="_blank">Optimising the tag filter</a> - saving 50% on some tag operations</li><li><a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/commit/358d4165260311446f2b433591762dd667250975" rel="noopener noreferrer" target="_blank">Minor improvements to tiddler deletion</a></li></ul></li></ul><h1 class="">Contributors</h1><p><a class="tc-tiddlylink-external" href="https://github.com/Jermolene" rel="noopener noreferrer" target="_blank">@Jermolene</a> would like to thank the contributors to this release who have generously given their time to help improve <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>:</p><ul><li><a class="tc-tiddlylink-external" href="https://github.com/alexhough" rel="noopener noreferrer" target="_blank">@alexhough</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/anavarre" rel="noopener noreferrer" target="_blank">@anavarre</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/BramChen" rel="noopener noreferrer" target="_blank">@BramChen</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/BurningTreeC" rel="noopener noreferrer" target="_blank">@BurningTreeC</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/diego898" rel="noopener noreferrer" target="_blank">@diego898</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/furicle" rel="noopener noreferrer" target="_blank">@furicle</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/gernert" rel="noopener noreferrer" target="_blank">@gernert</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/ibnishak" rel="noopener noreferrer" target="_blank">@ibnishak</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Marxsal" rel="noopener noreferrer" target="_blank">@Marxsal</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/metebalci" rel="noopener noreferrer" target="_blank">@metebalci</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/mklauber" rel="noopener noreferrer" target="_blank">@mklauber</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/pmario" rel="noopener noreferrer" target="_blank">@pmario</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/Skeeve" rel="noopener noreferrer" target="_blank">@Skeeve</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/TheDiveO" rel="noopener noreferrer" target="_blank">@TheDiveO</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/tobibeer" rel="noopener noreferrer" target="_blank">@tobibeer</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/twMat" rel="noopener noreferrer" target="_blank">@twMat</a></li><li><a class="tc-tiddlylink-external" href="https://github.com/xcazin" rel="noopener noreferrer" target="_blank">@xcazin</a></li></ul>
 </p><h1 class="">Features held back for later release</h1><p>These unfinished features are included in this prerelease build, but are not planned for inclusion in the next release.</p><ul><li><button class="">
 
 Set &quot;Stacked&quot; story view
@@ -3688,11 +3688,23 @@ Awkward but useful emergency technique for saving tiddlers
 </div>
 </div>
 
+</button><button class="">
+
+
+<div class="tc-saving-thumbnail-wrapper">
+<div class="tc-saving-thumbnail-caption">
+Internet Information Services
+</div>
+<div class="tc-saving-thumbnail-description">
+Windows' built-in web server
+</div>
+</div>
+
 </button>
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div>
 </div>
@@ -3839,10 +3851,11 @@ Meetups
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Widdly%2520by%2520Opennota.html">Widdly by Opennota</a></h1><p><div class="tc-subtitle">Posted 7 days ago</div></p><p>A cross platform server application that can save tiddlers to a local database</p><p><a class="tc-tiddlylink-external" href="https://github.com/opennota/widdly" rel="noopener noreferrer" target="_blank">https://github.com/opennota/widdly</a></p><blockquote class="tc-quote"><p>a minimal self-hosted app, written in Go, that can serve as a backend for a personal <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Dynamic%2520Tables%2522%2520by%2520Jed%2520Carty.html">&quot;Dynamic Tables&quot; by Jed Carty</a></h1><p><div class="tc-subtitle">Posted 7 days ago</div></p><p><em><strong>Dynamic Tables</strong></em> is a set of  macros that allow you to create tables where the rows are created from tiddlers and the columns from the tiddler fields, or where the columns are created from tiddlers and the rows from their fields. Individual cells can be edited on the fly. Row tables can be sorted by columns and column tables can be sorted by rows.</p><p><a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/DynamicTables/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/DynamicTables/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522ATWiki%2522%2520by%2520Lamusia%2520Project.html">&quot;ATWiki&quot; by Lamusia Project</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A desktop application for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, running on Windows.</p><p><a class="tc-tiddlylink-external" href="https://lamusia.github.io/#ATWiki" rel="noopener noreferrer" target="_blank">https://lamusia.github.io/#ATWiki</a></p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> for Windows. A unique non-linear notebook for capturing, organising and sharing complex information.
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522muritest%2522%2520by%2520Simon%2520Huber.html">&quot;muritest&quot; by Simon Huber</a></h1><p><div class="tc-subtitle">Posted 2 months ago</div></p><p>A terrific demo of drag and drop, pan and zoom, and other sophisticated touch effects. Based on the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Plugins%2520by%2520Uwe%2520Stuehler.html">muuri plugin by Uwe Stuehler</a>.</p><p><a class="tc-tiddlylink-external" href="http://muritest.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://muritest.tiddlyspot.com</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Plugins%2520by%2520Uwe%2520Stuehler.html">Plugins by Uwe Stuehler</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of plugins from Uwe Stuehler, including:</p><ul><li>Material Edition, a theme based on Google's &quot;material&quot; design language</li><li>A wrapper for the <a class="tc-tiddlylink-external" href="https://github.com/haltu/muuri" rel="noopener noreferrer" target="_blank">MUURI plugin</a>, bringing complex &quot;masonry&quot;-style layouts to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></li></ul><p><a class="tc-tiddlylink-external" href="https://ustuehler.github.io" rel="noopener noreferrer" target="_blank">https://ustuehler.github.io</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522file-backups%2522%2520Extension%2520for%2520Firefox%2520by%2520pmario.html">&quot;file-backups&quot; Extension for Firefox by pmario</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>An extension for Mozilla Firefox that smoothes out some of the friction from TiddlyWiki's built-in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Saving%2520with%2520the%2520HTML5%2520fallback%2520saver.html">HTML5 fallback saver</a>, making it almost as easy to use as TiddlyFox. The workflow is intended to work out of the box, without configuration.</p><p><a class="tc-tiddlylink-external" href="https://github.com/pmario/file-backups" rel="noopener noreferrer" target="_blank">https://github.com/pmario/file-backups</a> which contains links to the documentation and introduction video(s).</p><p>A chrome version is planned!</p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Tekan%253A%2520Kanban%2520that%2520stays%2520with%2520you%2522%2520by%2520Riz.html">&quot;Tekan: Kanban that stays with you&quot; by Riz</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A Kanban implementation for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> with a familiar look and feel (see the <a class="tc-tiddlylink-external" href="https://ibnishak.github.io/Tesseract/projects/tekan/" rel="noopener noreferrer" target="_blank">demo</a>).</p><p><a class="tc-tiddlylink-external" href="https://ibnishak.github.io/Tesseract/projects/tekan/Tekan.html" rel="noopener noreferrer" target="_blank">https://ibnishak.github.io/Tesseract/projects/tekan/Tekan.html</a></p><blockquote class="tc-quote"><p>This is Tekan, a TW based kanban. The easiest way to know tekan is to use it. So let us begin, shall we?
-</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522X3DOM%2520for%2520TiddlyWiki%25205%2522%2520by%2520Jamal%2520Wills.html">&quot;X3DOM for TiddlyWiki 5&quot; by Jamal Wills</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An experiment to embed interactive 3D graphics within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> by <a class="tc-tiddlylink-external" href="http://zemox.tiddlyspot.com" rel="noopener noreferrer" target="_blank">Jamal Wills</a>. It is based <a class="tc-tiddlylink-external" href="https://www.x3dom.org" rel="noopener noreferrer" target="_blank">X3DOM</a>, an open source <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/JavaScript.html">JavaScript</a> library.</p><p><a class="tc-tiddlylink-external" href="http://x3dom.tiddlyspot.com/" rel="noopener noreferrer" target="_blank">http://x3dom.tiddlyspot.com/</a></p></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>The latest news, articles, resources and examples.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TW5-SingleExecutable%2520by%2520Jed%2520Carty.html">TW5-SingleExecutable by Jed Carty</a></h1><p><div class="tc-subtitle">Posted 9 days ago</div></p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki5.html">TiddlyWiki5</a> Packaged with the multi-user plugin in a single executable file. </p><p><a class="tc-tiddlylink-external" href="https://github.com/OokTech/TW5-SingleExecutable" rel="noopener noreferrer" target="_blank">https://github.com/OokTech/TW5-SingleExecutable</a></p><blockquote class="tc-quote"><p>Tiddlywiki, node js, multiuser plugin - all packaged into a single file so user can just download the file and run it and not have to install anything else. Versions available for windows, osx, and linux. 
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Widdly%2520by%2520Opennota.html">Widdly by Opennota</a></h1><p><div class="tc-subtitle">Posted 19 days ago</div></p><p>A cross platform server application that can save tiddlers to a local database</p><p><a class="tc-tiddlylink-external" href="https://github.com/opennota/widdly" rel="noopener noreferrer" target="_blank">https://github.com/opennota/widdly</a></p><blockquote class="tc-quote"><p>a minimal self-hosted app, written in Go, that can serve as a backend for a personal <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Dynamic%2520Tables%2522%2520by%2520Jed%2520Carty.html">&quot;Dynamic Tables&quot; by Jed Carty</a></h1><p><div class="tc-subtitle">Posted 19 days ago</div></p><p><em><strong>Dynamic Tables</strong></em> is a set of  macros that allow you to create tables where the rows are created from tiddlers and the columns from the tiddler fields, or where the columns are created from tiddlers and the rows from their fields. Individual cells can be edited on the fly. Row tables can be sorted by columns and column tables can be sorted by rows.</p><p><a class="tc-tiddlylink-external" href="http://ooktech.com/jed/ExampleWikis/DynamicTables/" rel="noopener noreferrer" target="_blank">http://ooktech.com/jed/ExampleWikis/DynamicTables/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522ATWiki%2522%2520by%2520Lamusia%2520Project.html">&quot;ATWiki&quot; by Lamusia Project</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A desktop application for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a>, running on Windows.</p><p><a class="tc-tiddlylink-external" href="https://lamusia.github.io/#ATWiki" rel="noopener noreferrer" target="_blank">https://lamusia.github.io/#ATWiki</a></p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> for Windows. A unique non-linear notebook for capturing, organising and sharing complex information.
+</p></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522muritest%2522%2520by%2520Simon%2520Huber.html">&quot;muritest&quot; by Simon Huber</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A terrific demo of drag and drop, pan and zoom, and other sophisticated touch effects. Based on the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Plugins%2520by%2520Uwe%2520Stuehler.html">muuri plugin by Uwe Stuehler</a>.</p><p><a class="tc-tiddlylink-external" href="http://muritest.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://muritest.tiddlyspot.com</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Plugins%2520by%2520Uwe%2520Stuehler.html">Plugins by Uwe Stuehler</a></h1><p><div class="tc-subtitle">Posted 3 months ago</div></p><p>A collection of plugins from Uwe Stuehler, including:</p><ul><li>Material Edition, a theme based on Google's &quot;material&quot; design language</li><li>A wrapper for the <a class="tc-tiddlylink-external" href="https://github.com/haltu/muuri" rel="noopener noreferrer" target="_blank">MUURI plugin</a>, bringing complex &quot;masonry&quot;-style layouts to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></li></ul><p><a class="tc-tiddlylink-external" href="https://ustuehler.github.io" rel="noopener noreferrer" target="_blank">https://ustuehler.github.io</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522file-backups%2522%2520Extension%2520for%2520Firefox%2520by%2520pmario.html">&quot;file-backups&quot; Extension for Firefox by pmario</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>An extension for Mozilla Firefox that smoothes out some of the friction from TiddlyWiki's built-in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Saving%2520with%2520the%2520HTML5%2520fallback%2520saver.html">HTML5 fallback saver</a>, making it almost as easy to use as TiddlyFox. The workflow is intended to work out of the box, without configuration.</p><p><a class="tc-tiddlylink-external" href="https://github.com/pmario/file-backups" rel="noopener noreferrer" target="_blank">https://github.com/pmario/file-backups</a> which contains links to the documentation and introduction video(s).</p><p>A chrome version is planned!</p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Tekan%253A%2520Kanban%2520that%2520stays%2520with%2520you%2522%2520by%2520Riz.html">&quot;Tekan: Kanban that stays with you&quot; by Riz</a></h1><p><div class="tc-subtitle">Posted 4 months ago</div></p><p>A Kanban implementation for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> with a familiar look and feel (see the <a class="tc-tiddlylink-external" href="https://ibnishak.github.io/Tesseract/projects/tekan/" rel="noopener noreferrer" target="_blank">demo</a>).</p><p><a class="tc-tiddlylink-external" href="https://ibnishak.github.io/Tesseract/projects/tekan/Tekan.html" rel="noopener noreferrer" target="_blank">https://ibnishak.github.io/Tesseract/projects/tekan/Tekan.html</a></p><blockquote class="tc-quote"><p>This is Tekan, a TW based kanban. The easiest way to know tekan is to use it. So let us begin, shall we?
+</p></blockquote></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
 
