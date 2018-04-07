@@ -583,6 +583,8 @@ input[type=""],
 input:not([type]) {
 	color: #333333;
 	background: #ffffff;
+}input[type="checkbox"] {
+  vertical-align: middle;
 }.tc-muted {
 	color: #bbb;
 }svg.tc-image-button {
@@ -922,6 +924,8 @@ a.tc-tiddlylink:hover {
 }.tc-page-controls {
 	margin-top: 14px;
 	font-size: 1.5em;
+}.tc-page-controls .tc-drop-down {
+  font-size: 1rem;
 }.tc-page-controls button {
 	margin-right: 0.5em;
 }.tc-page-controls a.tc-tiddlylink:hover {
@@ -1304,9 +1308,6 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 }.tc-drop-down img {
 	width: 1em;
-}.tc-drop-down-language-chooser img {
-	width: 2em;
-	vertical-align: baseline;
 }.tc-drop-down a, .tc-drop-down button {
 	display: block;
 	padding: 0 14px 0 14px;
@@ -1747,6 +1748,10 @@ a.tc-tiddlylink:hover {
 	font-size: 0.8em;
 }.tc-plugin-info-dropdown-body {
 	padding: 1em 1em 1em 1em;
+}.tc-check-list {
+	line-height: 2em;
+}.tc-check-list .tc-image-button {
+	height: 1.5em;
 }/*
 ** Message boxes
 */.tc-message-box {
@@ -1773,19 +1778,41 @@ a.tc-tiddlylink:hover {
 }/*
 ** Chooser
 */.tc-chooser {
-	border: 1px solid #dddddd;
+	border-right: 1px solid #f0f0f0;
+	border-left: 1px solid #f0f0f0;
 }.tc-chooser-item {
-	border: 8px;
-	padding: 2px 4px;
-}.tc-chooser-item a.tc-tiddlylink {
+	border-bottom: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+	padding: 2px 4px 2px 14px;
+}.tc-drop-down .tc-chooser-item {
+	padding: 2px;
+}.tc-chosen,
+.tc-chooser-item:hover {
+	background-color: #f0f0f0;
+	border-color: #a8a8a8;
+}.tc-chosen .tc-tiddlylink {
+	cursor:default;
+}.tc-chooser-item .tc-tiddlylink {
 	display: block;
 	text-decoration: none;
-	color: #5778d8;
-	background-color: #ffffff;
-}.tc-chooser-item a.tc-tiddlylink:hover {
+	background-color: transparent;
+}.tc-chooser-item:hover .tc-tiddlylink:hover {
 	text-decoration: none;
-	color: #ffffff;
-	background-color: #5778d8;
+}.tc-drop-down .tc-chosen .tc-tiddlylink,
+.tc-drop-down .tc-chooser-item .tc-tiddlylink:hover {
+	color: #333333;
+}.tc-chosen > .tc-tiddlylink:before {
+	margin-left: -10px;
+	position: relative;
+	content: "» ";
+}.tc-chooser-item svg,
+.tc-chooser-item img{
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+}.tc-language-chooser .tc-image-button img {
+	width: 2em;
+	vertical-align: -0.15em;
 }/*
 ** Palette swatches
 */.tc-swatches-horiz {

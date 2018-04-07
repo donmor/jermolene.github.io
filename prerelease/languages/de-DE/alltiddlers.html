@@ -746,6 +746,8 @@ input[type=""],
 input:not([type]) {
 	color: #333333;
 	background: #ffffff;
+}input[type="checkbox"] {
+  vertical-align: middle;
 }.tc-muted {
 	color: #bbb;
 }svg.tc-image-button {
@@ -1085,6 +1087,8 @@ a.tc-tiddlylink:hover {
 }.tc-page-controls {
 	margin-top: 14px;
 	font-size: 1.5em;
+}.tc-page-controls .tc-drop-down {
+  font-size: 1rem;
 }.tc-page-controls button {
 	margin-right: 0.5em;
 }.tc-page-controls a.tc-tiddlylink:hover {
@@ -1450,9 +1454,6 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 }.tc-drop-down img {
 	width: 1em;
-}.tc-drop-down-language-chooser img {
-	width: 2em;
-	vertical-align: baseline;
 }.tc-drop-down a, .tc-drop-down button {
 	display: block;
 	padding: 0 14px 0 14px;
@@ -1893,6 +1894,10 @@ a.tc-tiddlylink:hover {
 	font-size: 0.8em;
 }.tc-plugin-info-dropdown-body {
 	padding: 1em 1em 1em 1em;
+}.tc-check-list {
+	line-height: 2em;
+}.tc-check-list .tc-image-button {
+	height: 1.5em;
 }/*
 ** Message boxes
 */.tc-message-box {
@@ -1919,19 +1924,41 @@ a.tc-tiddlylink:hover {
 }/*
 ** Chooser
 */.tc-chooser {
-	border: 1px solid #dddddd;
+	border-right: 1px solid #f0f0f0;
+	border-left: 1px solid #f0f0f0;
 }.tc-chooser-item {
-	border: 8px;
-	padding: 2px 4px;
-}.tc-chooser-item a.tc-tiddlylink {
+	border-bottom: 1px solid #f0f0f0;
+	border-top: 1px solid #f0f0f0;
+	padding: 2px 4px 2px 14px;
+}.tc-drop-down .tc-chooser-item {
+	padding: 2px;
+}.tc-chosen,
+.tc-chooser-item:hover {
+	background-color: #f0f0f0;
+	border-color: #a8a8a8;
+}.tc-chosen .tc-tiddlylink {
+	cursor:default;
+}.tc-chooser-item .tc-tiddlylink {
 	display: block;
 	text-decoration: none;
-	color: #5778d8;
-	background-color: #ffffff;
-}.tc-chooser-item a.tc-tiddlylink:hover {
+	background-color: transparent;
+}.tc-chooser-item:hover .tc-tiddlylink:hover {
 	text-decoration: none;
-	color: #ffffff;
-	background-color: #5778d8;
+}.tc-drop-down .tc-chosen .tc-tiddlylink,
+.tc-drop-down .tc-chooser-item .tc-tiddlylink:hover {
+	color: #333333;
+}.tc-chosen > .tc-tiddlylink:before {
+	margin-left: -10px;
+	position: relative;
+	content: "» ";
+}.tc-chooser-item svg,
+.tc-chooser-item img{
+	width: 1em;
+	height: 1em;
+	vertical-align: middle;
+}.tc-language-chooser .tc-image-button img {
+	width: 2em;
+	vertical-align: -0.15em;
 }/*
 ** Palette swatches
 */.tc-swatches-horiz {
@@ -3003,7 +3030,7 @@ margin: 1em;
             <g transform="translate(0.000000, 0.000000)">
                 <path d="M9.99631148,0 C4.4755011,0 -2.27373675e-13,4.48070044 -2.27373675e-13,9.99759461 L-2.27373675e-13,91.6128884 C-2.27373675e-13,97.1344074 4.46966773,101.610483 9.99631148,101.610483 L68.9318917,101.610483 C74.4527021,101.610483 78.9282032,97.1297826 78.9282032,91.6128884 L78.9282032,9.99759461 C78.9282032,4.47607557 74.4585355,0 68.9318917,0 L9.99631148,0 Z M20.8885263,26 C24.2022348,26 26.8885263,23.3137085 26.8885263,20 C26.8885263,16.6862915 24.2022348,14 20.8885263,14 C17.5748178,14 14.8885263,16.6862915 14.8885263,20 C14.8885263,23.3137085 17.5748178,26 20.8885263,26 Z M57.3033321,25.6783342 C60.6170406,25.6783342 63.3033321,22.9920427 63.3033321,19.6783342 C63.3033321,16.3646258 60.6170406,13.6783342 57.3033321,13.6783342 C53.9896236,13.6783342 51.3033321,16.3646258 51.3033321,19.6783342 C51.3033321,22.9920427 53.9896236,25.6783342 57.3033321,25.6783342 Z"></path>
                 <text fill="#FFFFFF" font-family="Helvetica" font-size="47.1724138" font-weight="bold">
-                    <tspan text-anchor="middle" x="42" y="77.4847912">3</tspan>
+                    <tspan text-anchor="middle" x="42" y="77.4847912">7</tspan>
                 </text>
             </g>
         </g>
