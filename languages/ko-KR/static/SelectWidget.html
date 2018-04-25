@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.15" />
+<meta name="tiddlywiki-version" content="5.1.16" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="SelectWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -73,11 +73,30 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
-Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
+Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler=&lt;&lt;qualify 'select-demo'&gt;&gt; default='HelloThere'&gt;
 &lt;$list filter='[all[shadows+tiddlers]tags[]sort[title]]'&gt;
 &lt;option value=&lt;&lt;currentTiddler&gt;&gt;&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
 &lt;/$select&gt;</code></pre><p>That renders as:</p><p><select value="HelloThere">
+
+<option value="$:/deprecated">$:/deprecated</option>
 
 <option value="$:/tags/AboveStory">$:/tags/AboveStory</option>
 
@@ -112,6 +131,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/Filter">$:/tags/Filter</option>
 
 <option value="$:/tags/Image">$:/tags/Image</option>
+
+<option value="$:/tags/ImportPreview">$:/tags/ImportPreview</option>
 
 <option value="$:/tags/Macro">$:/tags/Macro</option>
 
@@ -207,13 +228,21 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Contents">Contents</option>
 
+<option value="copy-to-clipboard Macro">copy-to-clipboard Macro</option>
+
 <option value="Core Macros">Core Macros</option>
 
 <option value="Core Variables">Core Variables</option>
 
 <option value="currentTiddler Variable">currentTiddler Variable</option>
 
+<option value="Custom data-styles">Custom data-styles</option>
+
+<option value="Custom Styles FAQ">Custom Styles FAQ</option>
+
 <option value="Customise TiddlyWiki">Customise TiddlyWiki</option>
+
+<option value="data-tags-styles">data-tags-styles</option>
 
 <option value="datauri Macro">datauri Macro</option>
 
@@ -251,11 +280,17 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="escaperegexp Operator">escaperegexp Operator</option>
 
+<option value="example-hardlinebreaks">example-hardlinebreaks</option>
+
+<option value="example-test">example-test</option>
+
 <option value="Examples">Examples</option>
 
 <option value="external-image">external-image</option>
 
 <option value="external-text">external-text</option>
+
+<option value="FAQ-group">FAQ-group</option>
 
 <option value="Features">Features</option>
 
@@ -287,6 +322,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Group Operators">Group Operators</option>
 
+<option value="Hard Linebreaks in WikiText">Hard Linebreaks in WikiText</option>
+
 <option value="has Operator">has Operator</option>
 
 <option value="HelloThere">HelloThere</option>
@@ -298,6 +335,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Hidden Settings">Hidden Settings</option>
 
 <option value="Hosting your TiddlyWiki on the web">Hosting your TiddlyWiki on the web</option>
+
+<option value="How to apply custom styles">How to apply custom styles</option>
 
 <option value="HTML in WikiText">HTML in WikiText</option>
 
@@ -346,6 +385,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="listed Operator">listed Operator</option>
 
 <option value="Listops Operators">Listops Operators</option>
+
+<option value="Lists">Lists</option>
 
 <option value="ListWidget">ListWidget</option>
 
@@ -485,6 +526,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="sort Operator">sort Operator</option>
 
+<option value="sortan Operator">sortan Operator</option>
+
 <option value="sortby Operator">sortby Operator</option>
 
 <option value="sortcs Operator">sortcs Operator</option>
@@ -590,7 +633,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="Working with TiddlyWiki">Working with TiddlyWiki</option>
 
 </select>
-</p></div><p>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="select-demo-896909202.html">state tiddler</a> currently contains:</p><input value=""><p>See the text change as you switch entries in the select widget. Try changing the value of the state tiddler and see the select widget change. Notice how the select widget only displays an entry if there is a precise match with the tiddler text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$select&gt;</code> widget should be one or more HTML <code>&lt;option&gt;</code> or <code>&lt;optiongroup&gt;</code> elements that provide the available values.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">The title of the tiddler containing the value to be displayed/modified by the select widget (defaults to the current tiddler)</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The field name for the value in the current tiddler (defaults to &quot;text&quot;)</td></tr><tr class="oddRow"><td align="left">index</td><td align="left">The index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> (takes precedence over the field attribute)</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">CSS classes to be assigned to the HTML select element</td></tr><tr class="oddRow"><td align="left">default</td><td align="left">Default value to be used if the tiddler, field or index specifies a missing value</td></tr><tr class="evenRow"><td align="left">multiple</td><td align="left">If present, switches to multiple selection mode</td></tr><tr class="oddRow"><td align="left">size</td><td align="left">The number of rows to display in multiple selection mode</td></tr><tr class="evenRow"><td align="left">actions</td><td align="left">A string containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered when the key combination is detected</td></tr></tbody></table><h1 class="">Examples</h1><h2 class="">Simple Lists</h2><p>This example sets the title of the current wiki <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a> to one of a list of book titles:</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
+</p></div><p>The <a class="tc-tiddlylink tc-tiddlylink-missing" href="select-demo-896909202.html">state tiddler</a> currently contains:</p><input value=""><p>See the text change as you switch entries in the select widget. Try changing the value of the state tiddler and see the select widget change. Notice how the select widget only displays an entry if there is a precise match with the tiddler text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$select&gt;</code> widget should be one or more HTML <code>&lt;option&gt;</code> or <code>&lt;optiongroup&gt;</code> elements that provide the available values.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">The title of the tiddler containing the value to be displayed/modified by the select widget (defaults to the current tiddler)</td></tr><tr class="evenRow"><td align="left">field</td><td align="left">The field name for the value in the current tiddler (defaults to &quot;text&quot;)</td></tr><tr class="oddRow"><td align="left">index</td><td align="left">The index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">DataTiddler</a> (takes precedence over the field attribute)</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">CSS classes to be assigned to the HTML select element</td></tr><tr class="oddRow"><td align="left">default</td><td align="left">Default value to be used if the tiddler, field or index specifies a missing value</td></tr><tr class="evenRow"><td align="left">multiple</td><td align="left">If present, switches to multiple selection mode</td></tr><tr class="oddRow"><td align="left">size</td><td align="left">The number of rows to display in multiple selection mode</td></tr><tr class="evenRow"><td align="left">actions</td><td align="left">A string containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> to be triggered when the key combination is detected</td></tr></tbody></table><h1 class="">Examples</h1><h2 class="">Simple Lists</h2><p>This example sets the title of the current wiki <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FSiteTitle.html">$:/SiteTitle</a> to one of a list of book titles:</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
 &lt;option&gt;A Tale of Two Cities&lt;/option&gt;
 &lt;option&gt;A New Kind of Science&lt;/option&gt;
 &lt;option&gt;The Dice Man&lt;/option&gt;
@@ -599,7 +659,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option>A New Kind of Science</option>
 <option>The Dice Man</option>
 </select>
-</p></div><h2 class="">Value lists</h2><p>In this example the <code>value</code> attribute has been used to specify the text that should be used as the value of the entry instead of the display text.</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
+</p></div><h2 class="">Value lists</h2><p>In this example the <code>value</code> attribute has been used to specify the text that should be used as the value of the entry instead of the display text.</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
 &lt;option value='cities'&gt;A Tale of Two Cities&lt;/option&gt;
 &lt;option value='science'&gt;A New Kind of Science&lt;/option&gt;
 &lt;option value='dice'&gt;The Dice Man&lt;/option&gt;
@@ -608,7 +685,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="science">A New Kind of Science</option>
 <option value="dice">The Dice Man</option>
 </select>
-</p></div><h2 class="">Option Groups</h2><p>Entries in the list can be grouped together with the <code>&lt;optgroup&gt;</code> element</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
+</p></div><h2 class="">Option Groups</h2><p>Entries in the list can be grouped together with the <code>&lt;optgroup&gt;</code> element</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/SiteTitle'&gt;
 &lt;optgroup label='Fiction'&gt;
 &lt;option value='cities'&gt;A Tale of Two Cities&lt;/option&gt;
 &lt;option value='dice'&gt;The Dice Man&lt;/option&gt;
@@ -627,7 +721,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="recursive">The Recursive Universe</option>
 </optgroup>
 </select>
-</p></div><h2 class="">Generated Lists</h2><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a> can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TableOfContents.html">TableOfContents</a></strong> with a transclusion to display the text of the selected one.</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state'&gt;
+</p></div><h2 class="">Generated Lists</h2><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a> can be used to generate the options for a select widget. For example, here we combine a select widget listing all the tiddlers tagged <strong><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TableOfContents.html">TableOfContents</a></strong> with a transclusion to display the text of the selected one.</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/generated-list-demo-state'&gt;
 &lt;$list filter='[tag[TableOfContents]]'&gt;
 &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;
@@ -664,7 +775,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 
 
-</p></div><h2 class="">Nested Lists</h2><p>This example uses a nested pair of list widgets. The outer one generates the <code>&lt;optgroup&gt;</code> elements, and the inner one generates <code>&lt;option&gt;</code> elements:</p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-nestedstate' field='type' default='text/vnd.tiddlywiki'&gt;
+</p></div><h2 class="">Nested Lists</h2><p>This example uses a nested pair of list widgets. The outer one generates the <code>&lt;optgroup&gt;</code> elements, and the inner one generates <code>&lt;option&gt;</code> elements:</p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/generated-list-demo-nestedstate' field='type' default='text/vnd.tiddlywiki'&gt;
 &lt;$list filter='[all[shadows+tiddlers]prefix[$:/language/Docs/Types/]each[group]sort[group]]'&gt;
 &lt;optgroup label={{!!group}}&gt;
 &lt;$list filter='[all[shadows+tiddlers]prefix[$:/language/Docs/Types/]group{!!group}] +[sort[description]]'&gt;
@@ -713,7 +841,24 @@ Every time the user selects a new value in the menu, the selected value is writt
 </optgroup>
 
 </select>
-</p></div><h2 class="">Multiple Selections</h2><p>This example uses the <code>multiple</code> keyword to specify that we should be able to select multiple items.</p><p><div class="doc-example"><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='testing' multiple size='8'&gt;
+</p></div><h2 class="">Multiple Selections</h2><p>This example uses the <code>multiple</code> keyword to specify that we should be able to select multiple items.</p><p><div class="doc-example"><p><div style="position: relative;">
+<div style="position: absolute; bottom: 0; right: 0;">
+<button class="tc-btn-invisible" title="Copy this text to the clipboard">
+<svg class="tc-image-copy-clipboard tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+	<g fill-rule="evenodd">
+		<rect height="8" rx="4" width="33" x="40" y="40"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="82"></rect>
+		<rect height="8" rx="4" width="17" x="40" y="54"></rect>
+		<rect height="8" rx="4" width="33" x="40" y="96"></rect>
+		<rect height="8" rx="4" width="12" x="40" y="68"></rect>
+		<path d="M40,16 L23.9992458,16 C19.5813843,16 16,19.5907123 16,24 C16,24.0016363 16.0000005,24.0032725 16.0000015,24.0049086 C16.0000005,24.0065441 16,24.0081803 16,24.0098166 L16,119.990183 C16,119.99182 16.0000005,119.993456 16.0000015,119.995092 C16.0000005,119.996727 16,119.998364 16,120 C16,124.409288 19.5813843,128 23.9992458,128 L104.000754,128 C106.205061,128 108.203844,127.105595 109.652065,125.659342 C111.102424,124.21251 112,122.214511 112,120.007595 L112,103.992405 C112,99.5776607 108.418278,96 104,96 C99.5907123,96 96,99.5783218 96,103.992405 L96,112 L32,112 L32,32 L96,32 L96,40.0075946 C96,44.4223393 99.581722,48 104,48 C108.409288,48 112,44.4216782 112,40.0075946 L112,23.9924054 C112,21.7851587 111.104671,19.7871591 109.657101,18.3409203 C108.203844,16.8944047 106.205061,16 104.000754,16 L88,16 C88,11.5907123 84.4151006,8 79.9929031,8 L48.0070969,8 C43.5881712,8 40,11.581722 40,16 Z M44,14.9958262 C44,12.7889923 45.7964248,11 48.0000255,11 L79.9999745,11 C82.2091276,11 84,12.7965212 84,14.9958262 L84,19.0041738 C84,21.2110077 82.2035752,23 79.9999745,23 L48.0000255,23 C45.7908724,23 44,21.2034788 44,19.0041738 L44,14.9958262 Z"></path>
+		<rect height="16" rx="8" width="66" x="62" y="64"></rect>
+		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
+	</g>
+</svg> copy to clipboard
+</button>
+</div>
+</div></p><pre><code>&lt;$select tiddler='$:/generated-list-demo-state' field='testing' multiple size='8'&gt;
 &lt;$list filter='[tag[TableOfContents]]'&gt;
 &lt;option&gt;&lt;$view field='title'/&gt;&lt;/option&gt;
 &lt;/$list&gt;

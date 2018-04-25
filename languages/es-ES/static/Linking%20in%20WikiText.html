@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.15" />
+<meta name="tiddlywiki-version" content="5.1.16" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,7 @@
 </p>
 <section class="tc-story-river">
 
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText " data-tags="WikiText" data-tiddler-title="Linking in WikiText"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -82,13 +82,21 @@ color:#333333;">
 
 [[TW5|https://tiddlywiki.com/]]
 
-[[Mail me|mailto:me@where.net]]</code></pre><p>For this syntax to work, the URL has to be recognisable as a URL. Otherwise, it is treated as a tiddler title. As a result, in case you want to link to a resource locatable using a relative path, use the extended syntax:</p><pre><code>[ext[Open file|index.html]]
+[[Mail me|mailto:me@where.net]]
+
+[[Open file|file:///c:/users/me/index.html]]</code></pre><p>For this syntax to work, the URL has to be recognisable as a URL. Otherwise, it is treated as a tiddler title. As a result, in case you want to link to a resource locatable using a relative path, use the extended syntax:</p><pre><code>[ext[Open file|index.html]]
 
 [ext[Open file|./index.html]]
 
-[ext[Open file|../README.md]]</code></pre><p>The extended syntax still works with full URLs, although in that case it is not necessary:</p><pre><code>[ext[https://tiddlywiki.com]]
+[ext[Open file|../README.md]]
 
-[ext[TW5|https://tiddlywiki.com]]</code></pre><p>You can also use the extended syntax to force an external link:</p><pre><code>[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><h1 class="">Customising Tiddler Links</h1><p>See the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> for details of the underlying widget used to implement tiddler links, including macros that can be used to customise its behaviour.</p></div>
+[ext[Open file|c:\users\me\index.html]]</code></pre><p>The extended syntax still works with full URLs, although in that case it is not necessary:</p><pre><code>[ext[https://tiddlywiki.com]]
+
+[ext[TW5|https://tiddlywiki.com]]
+
+[ext[Mail me|mailto:me@where.net]]
+
+[ext[Open file|file:///c:/users/me/index.html]]</code></pre><p>You can also use the extended syntax to force an external link:</p><pre><code>[ext[Donate|bitcoin:1aabbdd....?amount=0.001]]</code></pre><h1 class="">Customising Tiddler Links</h1><p>See the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> for details of the underlying widget used to implement tiddler links, including macros that can be used to customise its behaviour.</p></div>
 
 
 </div>

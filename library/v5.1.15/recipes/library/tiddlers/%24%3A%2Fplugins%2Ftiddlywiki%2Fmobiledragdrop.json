@@ -4,7 +4,7 @@
     "author": "Tim Ruffles, adapted by Jeremy Ruston ",
     "core-version": ">=5.0.0",
     "list": "readme license",
-    "version": "5.1.15",
+    "version": "5.1.16",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
