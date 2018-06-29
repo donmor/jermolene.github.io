@@ -83,6 +83,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>TiddlyWiki's display is driven by an underlying collection of <dfn class="doc-def">widgets</dfn>. These are organised into a tree structure: each widget has a parent widget and zero or more child widgets.</p><p>TiddlyWiki generates this <dfn class="doc-def">widget tree</dfn> by parsing the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> of tiddlers. Each component of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> syntax, including even the trivial case of ordinary text, generates a corresponding widget. The widget tree is an intermediate representation that is subsequently rendered into the actual display.</p><p>Widgets are analogous to elements in an HTML document. Indeed, HTML tags in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> generate dedicated <dfn class="doc-def">element widgets</dfn>.</p><p>Each class of widget contributes a specific ability to the overall functionality, such as the ability to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ImageWidget.html">display an image</a> or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">a button</a>, to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="MacroCallWidget.html">call a macro</a> or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">transclude text from elsewhere</a>, or to <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">mark a piece of text as a heading</a>.</p><p>The more specialised widgets use a general-purpose <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">widget syntax</a> as their only possible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> representation.</p><p>The following classes of widget are built into the core:</p><p><ul class="">
 
 <li>
@@ -364,6 +365,24 @@ wikify
 </li>
 
 </ul></p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

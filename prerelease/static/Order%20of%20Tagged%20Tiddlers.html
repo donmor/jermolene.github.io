@@ -71,8 +71,27 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>When TiddlyWiki generates a list of the tiddlers that have a particular tag (e.g. the dropdown list of a tag pill), it orders the tiddlers using the following rules:</p><ol><li>Start with any that are <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">declared</a> in the <code class="doc-field">list</code> field of the tag tiddler, in the order given there.</li><li>In each remaining tiddler <code class="doc-place">T</code>, look for a <code class="doc-field">list-before</code> field. If this has a tiddler title as its value, place <code class="doc-place">T</code> just <em class="doc-em">before</em> that one.<ul><li>As a special case, if the field exists but its value is empty, place <code class="doc-place">T</code> at the very start of the list.</li></ul></li><li>In each remaining tiddler <code class="doc-place">T</code>, look for a <code class="doc-field">list-after</code> field. If this has a tiddler title as its value, place tiddler <code class="doc-place">T</code> just <em class="doc-em">after</em> that one.</li><li>If any tiddlers still remain, place them at the end of the list in ascending alphabetical order of title. The difference between capital and lowercase letters is ignored.</li></ol><p>The ordering of tiddlers with a particular tag can be directly modified using drag and drop within a tag pill dropdown. The underlying <a class="tc-tiddlylink tc-tiddlylink-resolves" href="list-tagged-draggable%2520Macro.html">list-tagged-draggable Macro</a> can also be used elsewhere.
 </p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

@@ -83,7 +83,26 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The <dfn class="doc-def">timeline</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> returns a list of tiddlers in reverse chronological order of modification (or some other <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Date%2520Fields.html">date field</a>), grouped by day.</p><h2 class="">Parameters</h2><dl><dt>limit</dt><dd>The maximum number of tiddlers to include, defaulting to 100. But if <em class="doc-em">any</em> tiddlers are included for a particular day, <em class="doc-em">all</em> of the other tiddlers for that day will also be included – even if this exceeds the limit</dd><dt>format</dt><dd>A string specifying the desired <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DateFormat.html">format</a>, defaulting to <code>DDth MMM YYYY</code></dd><dt>subfilter</dt><dd>An optional extra <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">filter step</a>, e.g. <code>tag[MyTag]</code></dd><dt>dateField</dt><dd>The name of the date field to use, defaulting to <code>modified</code></dd></dl><p>The tiddlers are selected by means of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a>, into which the <code class="doc-param">subfilter</code> and <code class="doc-param">limit</code> parameters are spliced as follows:</p><blockquote><p><code>[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]</code></p></blockquote><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro%2520(Examples).html">Examples</a></p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

@@ -259,6 +259,18 @@
         "readme": "This plugin enhances the [[CodeMirror|http://codemirror.net]] text editor with Search and Replace functionality. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed\n\nIt adds these Keyboard Shortcuts to ~CodeMirror:\n\n|Shortcut |Function |h\n|Ctrl-F / Cmd-F |Start searching |\n|Ctrl-G / Cmd-G / Shift-F3 |Find next |\n|Shift-Ctrl-G / Shift-Cmd-G / F3 |Find previous |\n|Shift-Ctrl-F / Cmd-Option-F |Replace |\n|Shift-Ctrl-R / Shift-Cmd-Option-F |Replace all |\n|Alt-F |Persistent search (dialog doesn't autoclose, enter to find next, Shift-Enter to find previous) |\n|Alt-G |Jump to line |\n\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/comments",
+        "description": "Comments",
+        "author": "JeremyRuston",
+        "core-version": ">=5.0.0",
+        "list": "readme config",
+        "version": "5.1.18-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin provides a simple means for adding threaded comments to tiddlers.\n\n* Click the \"add comment\" button to make a new comment, and then click the \"save\" button to save it\n* You can comment on a tiddler itself, or add a comment to an existing comment\n* The sidebar tab ''Comments'' lists a timeline of all comments\n* Comments are attributed to the username stored in the system tiddler [[$:/status/UserName]]\n* By default, comments are available on all non-system tiddlers. The ''config'' tab lets you customise which tiddlers can accept comments by specifying a filter extension\n* The buttons for adding and editing comments are only available if the system tiddler [[$:/status/IsReadOnly]] is not set to `yes`\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/d3",
         "description": "D3: data visualisation",
         "author": "JeremyRuston",

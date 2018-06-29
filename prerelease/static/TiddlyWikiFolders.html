@@ -71,12 +71,31 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>As well as traditional single file wikis, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a> supports wikis that are stored as a folder of individual tiddler files.</p><h1 class="">Wiki Folder Structure</h1><p>Wiki folders can contain the following files and folders:</p><ul><li><strong>tiddlywiki.info</strong> - JSON file containing metadata for the wiki – see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.info%2520Files.html">tiddlywiki.info Files</a></li><li><strong>\tiddlers</strong> - folder containing tiddler files comprising the wiki</li><li><strong>\plugins</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> to be included in the wiki</li><li><strong>\languages</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> for language plugins to be included in the wiki</li><li><strong>\themes</strong> - folder containing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="PluginFolders.html">plugin folders</a> for theme plugins to be included in the wiki</li></ul><p>Only the <strong>tiddlywiki.info</strong> file is required; everything else is optional. Any files and folders not listed above are ignored.</p><h2 class="">Plugin processing</h2><p>To be usable in the browser, plugins just need to be included in the wiki. For wikis that are generated on the server, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">TiddlyWikiFolders</a> can contain a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.info%2520Files.html">tiddlywiki.info file</a> that identifies the plugins to be included in this wiki:</p><pre><code>{
 	&quot;plugins&quot;: [
 		&quot;tiddlywiki/slider&quot;,
 		&quot;tiddlytools/chooser&quot;
 	]
 }</code></pre><p>Plugins names refer to plugin folders listed in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>'s root <code>plugins</code> folder. Plugins can also be included manually by copying them into the <code>plugins</code> subfolder of the wiki.</p><h2 class="">Processing of <code>tiddlers</code> folder</h2><p>All the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> in the <code>tiddlers</code> folder are read into the wiki at startup. Sub-folders are scanned recursively for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a>. Newly created tiddlers are stored in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">TiddlerFiles</a> directly beneath the <code>tiddlers</code> folder, unless <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Customising%2520Tiddler%2520File%2520Naming.html">configured otherwise</a>.</p><p>The default processing for sub-folders within the <code>tiddlers</code> folder can  be overridden by providing a JSON file called <code>tiddlywiki.files</code> – see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="tiddlywiki.files%2520Files.html">tiddlywiki.files Files</a>.</p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

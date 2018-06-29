@@ -71,8 +71,27 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a> supports the following OS environment variables for specifying a delimited list of paths to search for plugins and editions:</p><ul><li><code>TIDDLYWIKI_PLUGIN_PATH</code> - Search path for ordinary plugins</li><li><code>TIDDLYWIKI_THEME_PATH</code> - Search path for themes</li><li><code>TIDDLYWIKI_LANGUAGE_PATH</code> - Search path for languages</li><li><code>TIDDLYWIKI_EDITION_PATH</code> - Search path for editions (used by the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="InitCommand.html">InitCommand</a>)</li></ul><p><strong>Note</strong>: The delimiter may vary between operating systems. While on Windows a semicolon <code>;</code> is used, Linux implements a colon <code>:</code>.</p><p>The additional paths should each point to folders structured like the equivalent directories in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="GitHub.html">GitHub</a> repository: the plugin, theme and language directories contain <code>publisher/pluginname/&lt;files&gt;</code> while the edition directories contain <code>editionname/&lt;files&gt;</code></p><p>For example:</p><pre><code>TIDDLYWIKI_PLUGIN_PATH=~/MyPluginStore
 tiddlywiki mywiki --build index</code></pre></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

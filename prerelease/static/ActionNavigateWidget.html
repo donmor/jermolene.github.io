@@ -83,6 +83,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-navigate</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that sends a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-navigate.html">tm-navigate</a> message back up the widget tree. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-navigate</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$to</td><td align="left">The title of the target tiddler for the navigation (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$scroll</td><td align="left">Optional parameter determining whether the navigation will also cause a scroll to the target tiddler (see below)</td></tr></tbody></table><h2 class="">Scroll handling</h2><p>The optional <code>$scroll</code> attribute can be set to &quot;yes&quot; to force scrolling to occur to bring the target tiddler into view. If set to &quot;no&quot; then scrolling does not occur. If the <code>$scroll</code> attribute is omitted then scrolling occurs unless either:</p><ul><li>the control key is pressed</li><li>the action was initiated with the middle mouse button (if available)</li></ul><p>Note that if navigating to multiple tiddlers at once you should use the same <code>$scroll</code> setting for all of them.</p><h1 class="">Examples</h1><p>Here is an example of button that navigates to two different tiddlers at once:</p><div class="doc-example"><p><div style="position: relative;">
 <div style="position: absolute; bottom: 0; right: 0;">
 <button class="tc-btn-invisible" title="Copy this text to the clipboard">
@@ -110,6 +111,24 @@ Click me!
 Click me!
 </button>
 </p></div></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

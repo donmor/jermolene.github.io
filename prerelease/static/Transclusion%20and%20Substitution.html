@@ -59,8 +59,27 @@ Transclusion and Substitution
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The power of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> comes from the ability to use the content of one tiddler inside another one. This ability takes several different forms that can easily be confused.</p><p>The main distinction is between a transclusion and a textual substitution:</p><ul><li>A transclusion is replaced dynamically with the value of either:<ul><li>a tiddler field</li><li>a variable</li></ul></li><li>Textual substitutions are performed on the text of macro definitions before they are used</li></ul><h1 class="">Tiddler Field Transclusion</h1><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520in%2520WikiText.html">Transclusion in WikiText</a> describes the basics of transclusion. For example:</p><pre><code>{{MyTiddler}}</code></pre><p>As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>, you can also transclude tiddler field values as attributes of HTML elements and widgets. For example:</p><pre><code>&lt;$text text={{MyTiddler}}/&gt;</code></pre><p>As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Introduction%2520to%2520filter%2520notation.html">Introduction to filter notation</a>, you can also transclude tiddler field values as filter operands. For example:</p><pre><code>{{{ [tag{TiddlerContainingMyTag}] }}}</code></pre><h1 class="">Variable/Macro Transclusion</h1><p>Variables that were defined with parameter or variable substitution are referred to as &quot;macros&quot;. The value of a variable/macro can be transcluded with the syntax:</p><pre><code>&lt;&lt;myMacro param:&quot;Value of parameter&quot;&gt;&gt;</code></pre><p>As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>, you can also transclude a variable as the value of an attribute of HTML elements and widgets. For example:</p><pre><code>&lt;$text text=&lt;&lt;myMacro&gt;&gt;/&gt;</code></pre><p>As described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Introduction%2520to%2520filter%2520notation.html">Introduction to filter notation</a>, you can also transclude a variable as the value of a filter operand. For example:</p><pre><code>{{{ [tag&lt;myMacro&gt;] }}}</code></pre><h1 class="">Textual Substitution</h1><p>Textual substitution occurs when the value of a macro/variable is used. It is described in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">Macros in WikiText</a>.</p><p>The key difference between substitution and transclusion is that substitution occurs before <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> parsing. This means that you can use substitution to build <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> constructions. Transclusions are processed independently, and cannot be combined with adjacent text to define <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> constructions.
 </p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>

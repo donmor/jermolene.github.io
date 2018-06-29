@@ -83,8 +83,27 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>A <dfn class="doc-def">variable</dfn> is a snippet of text that can be accessed by name within a particular branch of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">widget tree</a>. The snippet is known as the variable's <dfn class="doc-def">value</dfn>.</p><p>A new variable is defined using a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html"><code class="doc-widget">$set</code></a> widget, and is then available to any of the children of that widget, including transcluded content. A <code class="doc-widget">$set</code> widget can reuse an existing name, thus binding a different snippet to that name for the duration of the widget's children.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html"><code class="doc-widget">$list</code></a> widget also sets a particular variable (<code class="doc-var">currentTiddler</code> by default) to each listed title in turn.</p><p>For an overview of how to use variables, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables%2520in%2520WikiText.html">Variables in WikiText</a>.</p><p>Despite the term &quot;variable&quot;, each snippet is a constant string. The apparent variability is actually the result of the presence of multiple variables with the same name in different parts of the widget tree.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">Macros</a> are a special form of variable whose value can contain placeholders that get filled in with parameters whenever the macro is used.</p><p>By themselves, the snippets are <em class="doc-em">not</em> parsed as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. However, a variable reference will transclude a snippet into a context where WikiText parsing <em class="doc-em">may</em> be occurring. Within a snippet, the only markup detected is <code>$name$</code> for a macro parameter transclusion and <code>$(name)$</code> for a variable transclusion.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="dumpvariables%2520Macro.html"><code class="doc-var">dumpvariables</code></a> macro lists all variables (including macros) that are available at that position in the widget tree.</p><p>TiddlyWiki's core has <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Core%2520Variables.html">several variables</a> built in.
 </p></div>
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+
+
+
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
+
 
 
 </div>
