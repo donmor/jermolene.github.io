@@ -48,7 +48,7 @@ Example web.config for IIS
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2018년 3월 28일 오후 4:10
+</a> 2018년 7월 1일 오후 7:52
 </div>
 </div>
 <div class=" tc-reveal">
@@ -78,7 +78,7 @@ Example web.config for IIS
            stdoutLogFile=&quot;.\node.log&quot;
            startupTimeLimit=&quot;20&quot;
            processPath=&quot;C:\Program Files\nodejs\node.exe&quot;
-           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --server PORT $:/core/save/all text/plain text/html &amp;quot;&amp;quot; &amp;quot;&amp;quot; 127.0.0.1 /MyApp&quot;&gt;
+           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp&quot;&gt;
             &lt;environmentVariables&gt;
                 &lt;environmentVariable name=&quot;PORT&quot; value=&quot;%HTTP_PLATFORM_PORT%&quot; /&gt;
                 &lt;environmentVariable name=&quot;NODE_ENV&quot; value=&quot;Production&quot; /&gt;
