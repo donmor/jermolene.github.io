@@ -2281,6 +2281,9 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
 }.tc-comment-button button {
 	width: 100%;
 	text-align: right;
+}.tc-sidebar-scrollable .tc-comment-button button {
+	width: auto;
+	text-align: right;
 }.tc-comment-button button svg {
 	fill: #26cb56;
 	height: 2em;
