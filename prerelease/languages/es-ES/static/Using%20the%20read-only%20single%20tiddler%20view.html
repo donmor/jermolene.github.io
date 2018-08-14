@@ -48,7 +48,7 @@ Using the read-only single tiddler view
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 3 julio 2018 a las 11:05
+</a> 8 agosto 2018 a las 10:42
 </div>
 </div>
 <div class=" tc-reveal">
@@ -72,7 +72,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>As well as serving the full interactive wiki at the path <code>/</code> (e.g. <a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/</a>), <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> also serves an experimental single tiddler per page, read-only view of the wiki at the path <code>/&lt;url-encoded-tiddler-title&gt;</code> (e.g. <a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/HelloThere" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/HelloThere</a>). It uses a simplified page layout, and implements links between tiddlers, but there are no other interactive features.</p></div>
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s experimental single tiddler per page, read-only view uses a simplified page layout, and implements links between tiddlers, but there are no other interactive features. Compared to a full <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> user interface, it is very lightweight and usable even over very slow connections.</p><p>Alongside serving the full interactive wiki at the path <code>/</code> (e.g. <a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/</a>), <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> serves each tiddler at the path <code>/&lt;url-encoded-tiddler-title&gt;</code>. For example:</p><ul><li><a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/HelloThere" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/HelloThere</a></li><li><a class="tc-tiddlylink-external" href="http://127.0.0.1:8080/Philosophy%20of%20Tiddlers" rel="noopener noreferrer" target="_blank">http://127.0.0.1:8080/Philosophy%20of%20Tiddlers</a></li></ul><p>Ordinary, non-system tiddlers are rendered through a special view template while system tiddlers are rendered through a template that returns the raw text of the rendered output. In this way ordinary tiddlers can be browsed by end users while system tiddlers can be included in their raw form to use them as JS, HTML or CSS templates.</p><p>The templates are controlled by these parameters:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520system-tiddler-render-type.html">system-tiddler-render-type</a></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="WebServer%2520Parameter%253A%2520system-tiddler-template.html">system-tiddler-template</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520tiddler-render-type.html">tiddler-render-type</a></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="WebServer%2520Parameter%253A%2520tiddler-template.html">tiddler-template</a></li></ul></div>
 
 
 </div>
