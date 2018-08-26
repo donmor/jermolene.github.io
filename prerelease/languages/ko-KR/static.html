@@ -1878,6 +1878,33 @@ a.tc-tiddlylink:hover {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
 }/*
+** Floating drafts list
+*/.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid #ffffff;
+	border-bottom-none;
+	background: #ff0000;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
 ** Control panel
 */.tc-control-panel td {
 	padding: 4px;
@@ -2708,6 +2735,12 @@ a .doc-attr {
 
 
 
+History
+
+</button><button class="">
+
+
+
 최근
 
 </button><button class="">
@@ -2727,7 +2760,7 @@ a .doc-attr {
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
 <div class=" tc-reveal"><p><button aria-label="닫기" class="tc-btn-invisible tc-btn-mini" title="이 티들러를 닫습니다">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></p><p><button aria-label="닫기" class="tc-btn-invisible tc-btn-mini" title="이 티들러를 닫습니다">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">GettingStarted</a></p><p><button aria-label="닫기" class="tc-btn-invisible tc-btn-mini" title="이 티들러를 닫습니다">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Community</a></p><p><button class="tc-btn-invisible tc-btn-mini">모두 닫기</button>
-</p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+</p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents " data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
@@ -3464,6 +3497,6 @@ Meetups
 
 </div>
 
-<section class="story-frontdrop"></section></section><div class="tc-alerts"></div></div></div>
+<section class="story-frontdrop"></section></section><div class="tc-alerts"></div><p><div class="tc-drafts-list tc-reveal"></div></p></div></div>
 </body>
 </html>
