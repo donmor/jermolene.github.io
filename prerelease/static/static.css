@@ -2341,57 +2341,31 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
 }
 
 
-.tc-help-panel {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 310px;
-	height: 400px;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-
-	border: 1px solid #ffffff;
-	background: #ffffff;
-	padding: 1em;
-	margin: 0.5em;
-	z-index: 1000;
-}dl.tc-help-cheatsheet {
-	overflow: hidden;
-}dl.tc-help-cheatsheet .red {
-	color: red;
-}.tc-help-cheatsheet > dt {
-	display: block;
-	float: left;
-	clear: left;
-	margin: 2% 1em 0 0;
-	padding;
-	font-weight: normal;
-	width: 45%;
-}.tc-help-cheatsheet > dt > pre {
-	margin: 0;
-}.tc-help-cheatsheet > dd {
-	display: block;
-	float: left;
-	width: 45%;
-	margin: 1em 0 0 0;
-	padding: 0;
-}.tc-help-cheatsheet > dd > p,
-.tc-help-cheatsheet > dd > h1,
-.tc-help-cheatsheet > dd > pre,
-.tc-help-cheatsheet > dd > ul,
-.tc-help-cheatsheet > dd > ol,
-.tc-help-cheatsheet > dd > dl,
-.tc-help-cheatsheet > dd > table,
-.tc-help-cheatsheet > dd > blockquote,
-.tc-help-cheatsheet > dd > blockquote >p {
-	margin: 0;
-}.tc-help-cheatsheet .tc-image {
-	width: 16px;
-}
+body.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1b-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1c-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-2-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-2a-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-3-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-4-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1,
+body.tc-dynaview .tc-dynaview-zoom-visible-2,
+body.tc-dynaview .tc-dynaview-zoom-visible-3,
+body.tc-dynaview .tc-dynaview-zoom-visible-4 {
+	transition: opacity 150ms ease-in-out;
+	opacity: 0;
+}body.tc-dynaview .tc-dynaview-zoom-visible-1-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1a-and-above .tc-dynaview-zoom-visible-1a-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1b-and-above .tc-dynaview-zoom-visible-1b-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1c-and-above .tc-dynaview-zoom-visible-1c-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2-and-above .tc-dynaview-zoom-visible-2-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2a-and-above .tc-dynaview-zoom-visible-2a-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-3-and-above .tc-dynaview-zoom-visible-3-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-4-and-above .tc-dynaview-zoom-visible-4-and-above {opacity: 1;}body.tc-dynaview.tc-dynaview-zoom-factor-1 .tc-dynaview-zoom-visible-1 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2 .tc-dynaview-zoom-visible-2 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-3 .tc-dynaview-zoom-visible-3 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity: 1;}
 
 
 /* Left will inherit from right (so we don't need to duplicate code */
@@ -2479,6 +2453,59 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+
+.tc-help-panel {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 1000;
+}dl.tc-help-cheatsheet {
+	overflow: hidden;
+}dl.tc-help-cheatsheet .red {
+	color: red;
+}.tc-help-cheatsheet > dt {
+	display: block;
+	float: left;
+	clear: left;
+	margin: 2% 1em 0 0;
+	padding;
+	font-weight: normal;
+	width: 45%;
+}.tc-help-cheatsheet > dt > pre {
+	margin: 0;
+}.tc-help-cheatsheet > dd {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 1em 0 0 0;
+	padding: 0;
+}.tc-help-cheatsheet > dd > p,
+.tc-help-cheatsheet > dd > h1,
+.tc-help-cheatsheet > dd > pre,
+.tc-help-cheatsheet > dd > ul,
+.tc-help-cheatsheet > dd > ol,
+.tc-help-cheatsheet > dd > dl,
+.tc-help-cheatsheet > dd > table,
+.tc-help-cheatsheet > dd > blockquote,
+.tc-help-cheatsheet > dd > blockquote >p {
+	margin: 0;
+}.tc-help-cheatsheet .tc-image {
+	width: 16px;
 }
 
 
