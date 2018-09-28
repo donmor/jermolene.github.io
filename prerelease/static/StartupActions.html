@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features " data-tags="Features" data-tiddler-title="StartupActions"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -126,9 +125,7 @@ color:#333333;">
 
 &lt;$reveal type=&quot;gteq&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; $value=&quot;yes&quot;/&gt;
-&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
-...actions that depend upon global macros...
-&lt;/$importvariables&gt;</code></pre></div>
+&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them with an <strong>import</strong> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma.html">pragma</a> at the top of the tiddler:</p><pre><code>\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]</code></pre></div>
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">
@@ -149,7 +146,6 @@ add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" view
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

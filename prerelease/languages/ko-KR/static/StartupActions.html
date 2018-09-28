@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features " data-tags="Features" data-tiddler-title="StartupActions"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -122,15 +121,12 @@ color:#333333;">
 
 &lt;$reveal type=&quot;gteq&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; $value=&quot;yes&quot;/&gt;
-&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
-...actions that depend upon global macros...
-&lt;/$importvariables&gt;</code></pre></div>
+&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them with an <strong>import</strong> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma.html">pragma</a> at the top of the tiddler:</p><pre><code>\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]</code></pre></div>
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>
