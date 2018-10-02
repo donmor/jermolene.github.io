@@ -11,13 +11,13 @@
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <link rel="stylesheet" href="static.css">
-<title>WebServer Routing: 티들리위키 — 줄 없는 개인 웹 공책</title>
+<title>WebServer API: Force Basic Authentication Login: 티들리위키 — 줄 없는 개인 웹 공책</title>
 </head>
 <body class="tc-body">
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WebServer " data-tags="WebServer" data-tiddler-title="WebServer Routing"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WebServer%20API " data-tags="[[WebServer API]]" data-tiddler-title="WebServer API: Force Basic Authentication Login"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -33,7 +33,7 @@
 
 <h2 class="tc-title">
 
-WebServer Routing
+WebServer API: Force Basic Authentication Login
 
 </h2>
 
@@ -47,7 +47,7 @@ WebServer Routing
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2018년 6월 30일 오후 8:40
+</a> 2018년 10월 2일 오후 1:52
 </div>
 </div>
 <div class=" tc-reveal">
@@ -57,7 +57,7 @@ WebServer Routing
 <button class="tc-btn-invisible tc-tag-label" style="background-color:;
 fill:#333333;
 color:#333333;">
- WebServer
+ WebServer API
 </button>
 <span class=" tc-reveal" hidden="true"></span>
 
@@ -71,7 +71,9 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"></div>
+<div class="tc-tiddler-body tc-reveal"><p>Forces the server to request basic authentication login, and then redirects to the root</p><pre><code>GET /login-basic</code></pre><p>Requests an basic authentication from the browser, and redirects to the root if successful.</p><p>Parameters:</p><ul><li>none</li></ul><p>Response:</p><ul><li>302 Found<blockquote><p><code>Location: /</code></p></blockquote></li><li>401 Unauthorized<blockquote><p><code>WWW-Authenticate: Basic realm=&quot;Please provide your username and password to login to &lt;servername&gt;&quot;
+
+</code></p></blockquote></li></ul></div>
 
 
 </div>
