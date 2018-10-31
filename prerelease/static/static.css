@@ -1180,6 +1180,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
+	color: #ffffff;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more {
 	white-space: normal;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more button {
