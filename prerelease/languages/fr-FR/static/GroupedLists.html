@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Listes groupées: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-ListWidget " data-tags="ListWidget" data-tiddler-title="GroupedLists"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Listes groupées
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 19 juin 2015 à 16h11
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widget list
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Les onglets suivants du menu latéral offrent un exemple de listes groupées créées par imbrication.</p><h2 class="">Option 'types' (de l'onglet plus)</h2><p>Pour l'option <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FMoreSideBar%252FTypes.html">Types</a>, la sortie de liste filtrée sélectionne chaque valeur trouvée dans le champ <code>type</code>, comme exposé çi-dessous. Le filtre d'entrée filtre les tiddlers (non-système) de ce type.</p><p><pre><code>&lt;$list filter={{$:/core/Filters/TypedTiddlers!!filter}}&gt;
+&lt;div class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$view field=&quot;type&quot;/&gt;
+&lt;$list filter=&quot;[type{!!type}!is[system]sort[title]]&quot;&gt;
+&lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
+&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+</code></pre></p><h2 class="">Onglet 'récent'</h2><p>Dans l'onglet <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fui%252FSideBar%252FRecent.html">Récent</a> la liste est générée en utilisant la macro <a class="tc-tiddlylink tc-tiddlylink-resolves" href="timeline%2520Macro.html"><code class="doc-var">timeline</code></a>. Ici, la sortie de liste filtre chaque jour trouvé dans le champ <code>modifié</code>, tandis que l'entrée de liste filtre tous les tiddlers datés du même jour dans le champ <code>modifié</code>.</p><p><a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmacros%252Ftimeline.html">$:/core/macros/timeline</a>:</p><p><pre><code>\define timeline-title()
+&lt;!-- Override this macro with a global macro 
+     of the same name if you need to change 
+     how titles are displayed on the timeline 
+     --&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+\end
+\define timeline(limit:&quot;100&quot;,format:&quot;DDth MMM YYYY&quot;,subfilter:&quot;&quot;,dateField:&quot;modified&quot;)
+&lt;div class=&quot;tc-timeline&quot;&gt;
+&lt;$list filter=&quot;[!is[system]$subfilter$has[$dateField$]!sort[$dateField$]limit[$limit$]eachday[$dateField$]]&quot;&gt;
+&lt;div class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$view field=&quot;$dateField$&quot; format=&quot;date&quot; template=&quot;$format$&quot;/&gt;
+&lt;$list filter=&quot;[sameday:$dateField${!!$dateField$}!is[system]$subfilter$!sort[$dateField$]]&quot;&gt;
+&lt;div class=&quot;tc-menu-list-subitem&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;&lt;timeline-title&gt;&gt;
+&lt;/$link&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+&lt;/$list&gt;
+&lt;/div&gt;
+\end
+</code></pre></p></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

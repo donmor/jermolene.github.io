@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>ExternalImages: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts tc-tagged-Features " data-tags="Concepts Features" data-tiddler-title="ExternalImages"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Images externes
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 24 juin 2015 à 10h26
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:#FF8383;
+fill:#333333;
+color:#333333;">
+ Concepts
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Fonctionnalités
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Les images externes dans <em>TiddlyWiki</em> sont des tiddlers qui pointent sur l'URI d'une image, plutôt que d'avoir à incorporer toutes les données de l'image. Ils fonctionnent mieux que l'affichage d'images incorporées, notamment avec les images de grande taille. Cependant, leur utilisation détourne <em>TiddlyWiki</em> de sa vocation de fichier unique.</p><p>Les images externes sont utilisées dans le navigateur. Elles peuvent être créées soit par la configuration Node.js lors de la production d'un <em>TiddlyWiki</em>, soit manuellement en éditant un <em>TiddlyWiki</em> dans le navigateur .</p><h1 class="">Qu'est-ce qu'une image externe</h1><p>Une image externe est un tiddler image ordinaire avec un champ <strong>_canonical_uri</strong> contenant l'URI de l'image. L'URI pointe de façon absolue ou relative vers le document HTML. Si le champ <strong>_canonical_uri</strong> est renseigné, alors le champ <strong>text</strong> du tiddler est ignoré et peut être omis.</p><h1 class="">Création manuelle d'Images Externes</h1><p>Pour créer manuellement une image externe, il suffit juste de créer un tiddler avec le type de contenu image approprié, puis d'ajouter un champ <strong>_canonical_uri</strong> dont l'URI pointe vers l'emplacement de stockage de l'image.</p><p><strong>IMPORTANT :</strong> Revérifiez votre orthographe. <code>_canonical_uri</code> s'épelle <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/URI#The_relationship_between_URIs.2C_URLs.2C_and_URNs" rel="noopener noreferrer" target="_blank">URI</a>, et pas URL.</p><h1 class="">Création d'images externes sous Node.js</h1><p>Suivre les étapes suivantes pour créer une version HTML statique d'un fichier wiki accompagné d'un dossier <strong> images </strong> contenant les références des images externes :</p><ol><li>Créer des Tiddlers image dans votre <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">TiddlyWikiFolders</a> de façon habituelle</li><li>Sauvegardez les images en fichiers séparées (par convention, dans le sous-répertoire nommé <strong>images</strong>)</li><li>Externalisez les Tiddlers image en leur attribuant un champ <strong>_canonical_uri</strong> </li><li>Sauvegardez le fichier HTML principal</li></ol><p>Notez que les fichiers images doivent être sauvegardés avant d'être externalisés. Leur externalisation écrasera les champs <strong>text</strong> de la mémoire de votre wiki, ce qui signifie que toute tentative de sauvegarde échouera.</p><p>Pour un exemple, voir la génération de la cible <strong>externalimages</strong> dans la demo <strong>tw5.com</strong> wiki :</p><pre><code>--savetiddlers [is[image]] images
+--setfield [is[image]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain
+--setfield [is[image]] text &quot;&quot; text/plain
+--rendertiddler $:/core/save/all externalimages.html text/plain</code></pre><h2 class="">Sauvegardez les images en fichiers séparées</h2><p>La commande <code>--savetiddlers</code> suivante peut être utilisée pour sauvegarder les images d'un wiki dans un sous-répertoire <strong>images</strong> :</p><pre><code>--savetiddlers [is[image]] images</code></pre><h2 class="">Externalisez les Tiddlers Image</h2><p>Deux commandes <code>--setfield</code> sont utilisées : la première affecte au champ <strong>_canonical_uri</strong> l'URI correspondant au titre du tiddler, et la deuxième efface le champ text.</p><pre><code>--setfield [is[image]] _canonical_uri $:/core/templates/canonical-uri-external-image text/plain
+--setfield [is[image]] text &quot;&quot; text/plain</code></pre><p>Le tiddler gabarit <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Ftemplates%252Fcanonical-uri-external-image.html">$:/core/templates/canonical-uri-external-image</a> contient :</p><pre>&lt;!--
+
+This template is used to assign the ''_canonical_uri'' field to external images.
+
+Change the `./images/` part to a different base URI. The URI can be relative or absolute.
+
+--&gt;
+./images/&lt;$view field=&quot;title&quot; format=&quot;doubleurlencoded&quot;/&gt;</pre><p>Notez que ces opérations modifient les tiddlers dans la mémoire du wiki et peuvent donc affecter le fonctionnement de commandes ultérieures.</p><h1 class="">Utilisation d'Images Externes</h1><p>Vous ne pouvez pas éditer une image externe directement dans le navigateur, sauf en changeant le champ URI pour pointer vers une image différente.
+</p></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

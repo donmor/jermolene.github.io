@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>action-createtiddler: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets tc-tagged-ActionWidgets " data-tags="Widgets ActionWidgets" data-tiddler-title="ActionCreateTiddlerWidget"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+ActionCreateTiddlerWidget
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 20 octobre 2016 à 16h51
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ ActionWidgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Widgets
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-createtiddler</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that creates new tiddlers. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><p>There are several differences from the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WidgetMessage%253A%2520tm-new-tiddler.html">tm-new-tiddler message</a>:</p><ul><li>The new tiddler is not automatically displayed in the <a class="tc-tiddlylink tc-tiddlylink-missing" href="StoryRiver.html">story river</a></li><li>The title of the new tiddler is made available for subsequent operations</li></ul><h1 class="">Content and Attributes</h1><p>The <strong>action-createtiddler</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$basetitle</td><td>The initial title that will be attempted. If a tiddler with that title already exists, then a numerical counter is added to the title and incremented until it is unique</td></tr><tr class="evenRow"><td align="left">$savetitle</td><td align="left">A text reference identifying a field or index into which the title of the newly created tiddler will be stored after it is created</td></tr><tr class="oddRow"><td align="left">$timestamp</td><td align="left">Specifies whether the timestamp(s) of the target tiddler will be updated (<strong>modified</strong> and <strong>modifier</strong>, plus <strong>created</strong> and <strong>creator</strong> for newly created tiddlers). Can be &quot;yes&quot; (the default) or &quot;no&quot;</td></tr><tr class="evenRow"><td align="left"><em>{any attributes not starting with $}</em></td><td align="left">Each attribute name specifies a field to be created in the new tiddler</td></tr></tbody></table><h1 class="">Examples</h1><div class="doc-example"><pre><code>New button caption: &lt;$edit-text tiddler=&quot;$:/state/new-button-caption&quot; tag=&quot;input&quot; default=&quot;&quot;/&gt;
+
+&lt;$button&gt;
+&lt;$action-createtiddler $basetitle=&quot;Homemade Button&quot; tags=&quot;$:/tags/PageControls&quot; text={{$:/state/new-button-caption}}/&gt;
+Create non-functional page control button
+&lt;/$button&gt;</code></pre><p>Affichera ceci :</p><p>New button caption: <input value=""></p><p><button class="">
+
+Create non-functional page control button
+</button>
+</p></div></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>FIltros: Introducción: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning tc-tagged-Filters " data-tags="Learning Filters" data-tiddler-title="Introduction to filter notation"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Introducción a la notación de filtros
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 20 abril 2016 a las 18:30
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ FIltros y expresiones de búsqueda
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Aprende a usar TiddlyWiki
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><dl><dd class="doc-preamble">Aquí se tratan los fundamentos de la creación de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filtros</a> para obtener una selección de tiddlers. Para una exposición más técnica del tema, véase <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Sintaxis de filtros</a>.</dd></dl><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M64,128.241818 C99.346224,128.241818 128,99.5880417 128,64.2418177 C128,28.8955937 99.346224,0.241817675 64,0.241817675 C28.653776,0.241817675 0,28.8955937 0,64.2418177 C0,99.5880417 28.653776,128.241818 64,128.241818 Z M75.9358659,91.4531941 C75.3115438,95.581915 70.2059206,98.8016748 64,98.8016748 C57.7940794,98.8016748 52.6884562,95.581915 52.0641341,91.4531941 C54.3299053,94.0502127 58.8248941,95.8192805 64,95.8192805 C69.1751059,95.8192805 73.6700947,94.0502127 75.9358659,91.4531941 L75.9358659,91.4531941 Z M75.9358659,95.9453413 C75.3115438,100.074062 70.2059206,103.293822 64,103.293822 C57.7940794,103.293822 52.6884562,100.074062 52.0641341,95.9453413 C54.3299053,98.5423599 58.8248941,100.311428 64,100.311428 C69.1751059,100.311428 73.6700947,98.5423599 75.9358659,95.9453413 L75.9358659,95.9453413 Z M75.9358659,100.40119 C75.3115438,104.529911 70.2059206,107.74967 64,107.74967 C57.7940794,107.74967 52.6884562,104.529911 52.0641341,100.40119 C54.3299053,102.998208 58.8248941,104.767276 64,104.767276 C69.1751059,104.767276 73.6700947,102.998208 75.9358659,100.40119 L75.9358659,100.40119 Z M75.9358659,104.893337 C75.3115438,109.022058 70.2059206,112.241818 64,112.241818 C57.7940794,112.241818 52.6884562,109.022058 52.0641341,104.893337 C54.3299053,107.490356 58.8248941,109.259423 64,109.259423 C69.1751059,109.259423 73.6700947,107.490356 75.9358659,104.893337 L75.9358659,104.893337 Z M64.3010456,24.2418177 C75.9193117,24.2418188 88.0000013,32.0619847 88,48.4419659 C87.9999987,64.8219472 75.9193018,71.7540963 75.9193021,83.5755932 C75.9193022,89.4486648 70.0521957,92.8368862 63.9999994,92.8368862 C57.947803,92.8368862 51.9731007,89.8295115 51.9731007,83.5755932 C51.9731007,71.1469799 39.9999998,65.4700602 40,48.4419647 C40.0000002,31.4138691 52.6827796,24.2418166 64.3010456,24.2418177 Z"></path>
+    </g>
+</svg></div> Los filtros no hacen nada por sí mismos. Necesitan siempre un contexto. La manera más sencilla de experimentar con expresiones de filtro es escribirlos en el campo de búsqueda de la pestaña <span class="doc-tab">Filtro</span>, en la <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252FAdvancedSearch.html">Búsqueda avanzada</a>.</div></p><p>El caso más simple es aquel en que ya conoces exactamente qué tiddlers quieres seleccionar. Escribe cada título en corchetes dobles, separados por por un espacio:</p><blockquote><p><code>[[Libro de recetas]] [[HuevosRevueltos]] [[Tarta de manzana de mamá]]</code></p></blockquote><p>Se pueden opitir los corchetes si el título no contiene espacios:</p><blockquote><p><code>[[Libro de recetas]] HuevosRevueltos [[Tarta de manzana de mamá]]</code></p></blockquote><p>Los corchetes dobles son, de hecho, la abreviatura de un filtro:</p><blockquote><p><code>[title[HuevosRevueltos]]</code></p></blockquote><p>... que nos sirve de <dfn class="doc-def">modelo genera</dfn> para cualquier filtro:</p><blockquote><p><code>[operador[parámetro]]</code></p></blockquote><p>Por ejemplo: Para seleccionar todos los tiddlers etiquetados como <code class="doc-tag">Receta</code>:
+operador
+&gt; <code>[tag[Recetas]]</code></p><p>Podemos invertir el significado añadiendo un signo de exclamación <code>!</code> al operador. Así, por ejemplo, para seleccionar aquellos tiddlers que <em class="doc-em">no</em> contengan la etiqueta <code class="doc-tag">Recetas</code>, escribiremos:</p><blockquote><p><code>[!tag[Recipe]]</code></p></blockquote><p>Se pueden filtrar tiddlers por otros campos, no sólo por título y etiqueta: </p><blockquote><p><code>[field:raciones[4]]</code></p></blockquote><p>Con este ejemplo se seleccionarán todos aquellos tiddlers que tengan <code class="doc-value">4</code> como valor del campo <code class="doc-field">raciones</code>.</p><p>Como la palabra &quot;raciones&quot; no es operador estándar de filtro y es improbable que alguna vez lo sea, se puede omitir sin peligro alguno el prefijo <code>field:</code></p><blockquote><p><code>[raciones[4]]</code> </p></blockquote><h2 class="">Combinaciones</h2><p>Los filtros vistos hasta ahora constan de un único paso, pero se se puede ejecutar una <dfn class="doc-def">instrucción</dfn> que consta de varios varios <dfn class="doc-def">pasos</dfn>, del modo siguiente:</p><blockquote><p><code>[tag[Vegetariano]!tag[sopas]raciones[4]]</code></p><p>(Nótese cómo la instrucción entera queda encerrada por corchetes.</p></blockquote><p>Un tiddler debe coincidir con <em class="doc-em">todos</em> los pasos de la instrucción. Así, el ejemplo anterior nos devolverá una lista de recetas vegetarianas –excepto sopas–, para 4 personas.</p><p>Una secuencia de instrucciones separadas seleccionará los tiddlers que coincidan con <em class="doc-em">cualquiera</em> de ellas. Puede servirnos para, por ejemplo, encontrar recetas para 3, 4 ó 5 personas, es decir, que cumplan <em class="doc-em">cualquiera</em> de las condiciones impuestas por estas: la primera, la segunda <dfn class="doc-def">O</dfn> la tercera.</p><blockquote><p><code>[raciones[3]] [raciones[4]] [raciones[5]]</code></p></blockquote><p>Y, si quisiéramos ignorar las recetas vegetarianas para 4 personas, podríamos decir:</p><blockquote><p><code>[raciones[3]] [raciones[4]!tag[Vegetariano]] [serving[5]]</code></p></blockquote><p>Por defecto, cada instrucción toma en consideración todos los tiddlers del wiki, pero podemos usar el signo <code>+</code> para restringir la acción de una instrucción a los tiddlers seleccionados por las precedentes, del modo que el resultado cumpla <em class="doc-em">todas</em> las condiciones: la anterior <dfn class="doc-def">Y</dfn> esta.</p><blockquote><p><code>[raciones[3]] [raciones[4]] [raciones[5]] + [tag[Vegetariano]] +[sort[title]]</code></p></blockquote><p>Asi seleccionaremos recetas para 3, 4 ó 5 personas y <em class="doc-em">de entre estas, únicamente</em> las vegetarianas, para, finalmente, ordenarlas por orden alfabético de sus títulos.</p><p>De forma análoga podemos usar el signo <code>-</code> para <em class="doc-em">eliminar</em> los tiddlers que cumplen determinada condición de los resultados obtenidos hasta el momento, de modo que se cumplan unas condiciones <dfn class="doc-def">Y NO</dfn> las otras. </p><p>Así podemos, por ejemplo, seleccionar todas las recetas vegetarianas salvo dos de ellas en particular:</p><blockquote><p><code>[tag[Vegetariano]] -[title[HuevosRevueltos]] -RopaVieja</code></p></blockquote><p>...o todas las recetas sin gluten, menos las vegetarianas:</p><blockquote><p><code>[raciones[3]] [raciones[4]] [raciones[5]] + [tag[Sin gluten]] -[tag[Vegetariano]] +[sort[title]]</code></p></blockquote><h2 class="">Parámetros especiales</h2><p>Los parámetros de cada instrucción de filtrado vista hasta el momento se indica entre corchetes, significando con ello que TiddlyWiki debe interpretarlos literalmente, pero tenemos otras formas de indicar parámetros:</p><p><dfn class="doc-def">Entre llaves</dfn> <code>{}</code>, para indicar que el parámetro es una <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">referencia de texto</a> y que debe buscar su valor en el <code class="doc-field">texto</code> de un tiddler en particular. </p><p>Por ejemplo: si tenemos un tiddler llamado <code class="doc-tiddler">Preferencias</code>, cuyo texto es la palabra <code class="doc-value">Vegetariano</code>, podemos decir</p><blockquote><p><code>[tag{Preferencias}]</code></p></blockquote><p>como alternativa a <code>[tag[Vegetariano]]</code>. Esto permite que las preferencias cambien, sin necesidad de modificar el criterio de búsqueda.</p><p><dfn class="doc-def">Entre comillas angulares simples</dfn> <code>&lt;&gt;</code>, para indicar que el parámetro es el nombre de una <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> cuyo valor debe usar. </p><p>Aquí usaremos la variable incorporada <a class="tc-tiddlylink tc-tiddlylink-resolves" href="currentTiddler%2520Variable.html"><code class="doc-var">currentTiddler</code></a> en un filtro que selecciona todos los tiddlers cuyo texto contiene el título del actual:</p><blockquote><p><code>[search&lt;currentTiddler&gt;]</code></p></blockquote></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

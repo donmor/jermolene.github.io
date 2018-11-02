@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>HTML: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WikiText " data-tags="WikiText" data-tiddler-title="HTML in WikiText"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+HTML in WikiText
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 21 octubre 2016 a las 11:24
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ WikiText
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>HTML tags and comments can be used directly in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. For example:</p><pre><code>&lt;article class=&quot;hello&quot;&gt;
+This is my nice and simple block of text. HelloThere
+&lt;!-- This comment will not appear in the wikified output --&gt;
+&lt;/article&gt;</code></pre><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets%2520in%2520WikiText.html">Widgets share the same syntax as HTML tags</a>, and so the following information applies to them, too.</p><h1 class="">Block mode versus Inline mode</h1><p>To get the content of an HTML element to be parsed in block mode, the opening tag must be followed by two linebreaks.</p><p>Without the two linebreaks, the tag content will be parsed in inline mode which means that block mode formatting such as wikitext tables, lists and headings is not recognised.</p><h1 class="">Attributes</h1><p>In an extension of conventional HTML syntax, attributes of elements/widgets can be specified in several different ways: </p><ul><li>a literal string</li><li>a transclusion of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a></li><li>a transclusion of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros%2520in%2520WikiText.html">macro/variable</a></li><li>as the result of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">Filter Expression</a></li></ul><h2 class="">Literal Attribute Values</h2><p>Literal attribute values can use several different styles of quoting:</p><ul><li>Single quotes (eg <code>attr='value'</code>)</li><li>Double quotes (eg <code>attr=&quot;value&quot;</code>)</li><li>Tripe double quotes (eg <code>attr=&quot;&quot;&quot;value&quot;&quot;&quot;</code>)</li><li>No quoting is necessary for values that do not contain spaces (eg <code>attr=value</code>)</li></ul><p>Literal attribute values can include line breaks. For example:</p><pre><code>&lt;div data-address=&quot;Mouse House,
+Mouse Lane,
+Rodentville,
+Ratland.&quot;/&gt;</code></pre><p>By using triple-double quotes you can specify attribute values that contain single double quotes. For example:</p><pre><code>&lt;div data-address=&quot;&quot;&quot;Mouse House,
+&quot;Mouse&quot; Lane,
+Rodentville,
+Ratland.&quot;&quot;&quot;/&gt;</code></pre><h2 class="">Transcluded Attribute Values</h2><p>Transcluded attribute values are indicated with double curly braces around a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">TextReference</a>. For example:</p><pre><code>attr={{tiddler}}
+attr={{!!field}}
+attr={{tiddler!!field}}</code></pre><h2 class="">Variable Attribute Values</h2><p>Variable attribute values are indicated with double angle brackets around a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macro%2520Calls%2520in%2520WikiText.html">macro invocation</a>. For example:</p><pre><code>&lt;div title=&lt;&lt;MyMacro &quot;Brian&quot;&gt;&gt;&gt;
+...
+&lt;/div&gt;</code></pre><h2 class="">Filtered Attribute Values</h2><p>Filtered attribute values are indicated with triple curly braces around a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">Filter Expression</a>. The value will be the first item in the resulting list, or the empty string if the list is empty.</p><p>This example shows how to add a prefix to a value:</p><pre><code>&lt;$text text={{{ [&lt;currentTiddler&gt;]addPrefix[$:/myprefix/]] }}}&gt;</code></pre></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

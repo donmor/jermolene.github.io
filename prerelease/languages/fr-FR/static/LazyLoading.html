@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.18-prerelease" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>LazyLoading: TiddlyWiki — un carnet de notes web personnel et non linéaire
+</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features " data-tags="Features" data-tiddler-title="LazyLoading"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+Chargement différé (Lazy Loading)
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 24 juin 2015 à 10h42
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Fonctionnalités
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>Habituellement, avec <em>TiddlyWiki</em>, le contenu complet de tous les tiddlers est intégré dans le fichier HTML principal. Le <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="LazyLoading.html">LazyLoading</a></dfn> (chargement différé) fait référence à une  technique qui intègre seulement les métadonnées dans le tiddler (en d'autres termes, tous les champs hormis le champ <strong>text</strong>), et demande le contenu au serveur quand il est requis.</p><p>Le <em>Lazy Loading</em> peut être utilisée dans deux configurations:</p><ul><li>À l'exécution de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki sous Node.js</a>, les tiddlers images peuvent être soumis au Chargement Allégé</li><li>À l'exécution de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520in%2520the%2520Sky%2520for%2520TiddlyWeb.html">TiddlyWiki au Ciel pour TiddlyWeb</a>, tous les tiddlers sont soumis au Chargement Allégé</li></ul><p>Voir le <a class="tc-tiddlylink tc-tiddlylink-missing" href="LazyLoadingMechanism.html">LazyLoadingMechanism</a> pour plus de détails sur la façon dont le <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="LazyLoading.html">LazyLoading</a></dfn> est implémentée.</p><h1 class="">Le <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="LazyLoading.html">LazyLoading</a></dfn> sous Node.js</h1><p>Pour exécuter le chargement différé des images par <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>, lancer le serveur par cette <a class="tc-tiddlylink tc-tiddlylink-missing" href="commande%2520serveur.html">ServerCommand</a> :</p><pre><code>tiddlywiki --server 8080 $:/core/save/lazy-images</code></pre><h1 class="">Le <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="LazyLoading.html">LazyLoading</a></dfn> sous <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWeb.html">TiddlyWeb</a></h1><p>Dans la configuration actuelle, le <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="LazyLoading.html">LazyLoading</a></dfn> est activée par défaut.
+</p></div>
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>
