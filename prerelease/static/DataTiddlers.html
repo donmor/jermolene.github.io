@@ -75,6 +75,7 @@ color:#333333;">
 nov:30
 dec:31</code></pre><p>... then <code>{{MonthDays##nov}}</code> will resolve to the value <code>30</code>.</p><p>The same is true if <code>MonthDays</code> is a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">JSONTiddler</a> with the following content:</p><pre><code>{&quot;oct&quot;:31,&quot;nov&quot;:30,&quot;dec&quot;:31}</code></pre><p>Note: <em>It is currently only possible to retrieve data from the immediate properties of the root object of a JSONTiddler.</em></p><p>The widgets <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">ActionSetFieldWidget</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">ActionListopsWidget</a> can manipulate named properties of data tiddlers by indicating the name of the property in the $index attribute. To create or modify a named property with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">ActionSetFieldWidget</a>, provide a $value attribute. To delete a named property with <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">ActionSetFieldWidget</a>, omit the $value attribute. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">ActionListopsWidget</a> assigns the named property the list constructed through its $filter and $subfilter attributes.
 </p></div>
+
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">

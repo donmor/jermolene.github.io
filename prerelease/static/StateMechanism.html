@@ -75,6 +75,7 @@ color:#333333;">
 &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;&amp;times;&lt;/$button&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;
 &lt;/$list&gt;</code></pre><p>Now consider the implementation of the info panel within the tiddler template. We want to be able to toggle the info panel open and closed, which means that we must track its current state in a tiddler.</p><p>However, we can't track the state in a tiddler called, say, <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252FInfoPanelState.html">$:/InfoPanelState</a> because every tiddler would share the same state; changing the value of the tiddler would affect all tiddlers displayed in the story.</p><p>The solution is to dynamically generate a unique title for each state tiddler that we need. We need to ensure that the same state tiddler title is generated each time a user interface element is rendered. To do that, we append together tokens representating each of the stack of transclusions that led to the current rendering location. Then that string of symbols is hashed to a simple numeric value.</p><p>The process of generating a state tiddler title is encapsulated in the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="qualify%2520Macro.html"><code class="doc-var">qualify</code></a> macro.
 </p></div>
+
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">

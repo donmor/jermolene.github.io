@@ -75,6 +75,7 @@ color:#333333;">
 [tag[task]addprefix[mytasks/]]
 [!has[draft.of]]</code></pre><p>This will store newly created system tiddlers in <code>tiddlers/_system</code> (after stripping the <code>$:/</code> prefix), tiddlers tagged <a class="tc-tiddlylink tc-tiddlylink-resolves" href="task.html">task</a> in a subdirectory <code>tiddlers/mytasks</code>, and also create subdirectory structures for all other non-draft tiddlers.</p><p>Thus, <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fconfig%252FFileSystemPaths.html">$:/config/FileSystemPaths</a> itself will end up in <code>tiddlers/_system/config/FileSystemPaths.tid</code> or <code>tiddlers\_system\config\FileSystemPaths.tid</code>, depending on the platform.</p><p>The final <code>[!has[draft.of]]</code> will match all remaining non-draft tiddlers. Because there was a match, any <code>/</code> or <code>\</code> in the tiddler title is mapped to a path separator. Thus, <code>some/thing/entirely/new</code> will be saved to <code>tiddlers/some/thing/entirely/new.tid</code> (ie, the file <code>new.tid</code> in a directory called <code>entirely</code>).
 </p></div>
+
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">

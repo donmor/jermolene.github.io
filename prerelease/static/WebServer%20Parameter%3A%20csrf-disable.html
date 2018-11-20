@@ -72,6 +72,7 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>csrf-disable</strong> causes the usual <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" rel="noopener noreferrer" target="_blank">cross-site request forgery</a> checks to be disabled. This might be necessary in unusual or experimental configurations.</p><p>The only currently implemented check is the use of a <a class="tc-tiddlylink-external" href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Protecting_REST_Services:_Use_of_Custom_Request_Headers" rel="noopener noreferrer" target="_blank">custom header</a> called <code>x-requested-with</code> that must contain the string <code>TiddlyWiki</code> in order for write requests to succeed.</p></div>
+
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">

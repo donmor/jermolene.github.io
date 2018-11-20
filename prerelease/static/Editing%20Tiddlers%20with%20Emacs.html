@@ -80,6 +80,7 @@ color:#333333;">
   (browse-url &quot;127.0.0.1:8080/&quot;))</code></pre><p>This latter function may require specifying a browser:</p><pre><code>(setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program &quot;chromium&quot;)</code></pre><p>You can bind either of these functions with the global-set-key function:</p><pre><code>(global-set-key (kbd &quot;C-c w&quot;) 'open-wiki)</code></pre><p>At the moment, these are not integrated into tid-mode.
 </p></div>
+
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
 <button class="tc-btn-invisible">
