@@ -71,7 +71,12 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table></div>
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text without parsing it as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, opposite of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikifyWidget.html">WikifyWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table><h1 class="">Example</h1><pre><code>&lt;$vars string=&quot;//italic//&quot;&gt;
+
+* &lt;&lt;string&gt;&gt;
+* &lt;$text text=&lt;&lt;string&gt;&gt;/&gt;
+
+&lt;/$vars&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><ul><li><em>italic</em></li><li>//italic//</li></ul></blockquote></div>
 
 
 
