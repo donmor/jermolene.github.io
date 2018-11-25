@@ -1052,7 +1052,6 @@ a.tc-tiddlylink:hover {
 }.tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
-	fill: #ffffff;
 	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
