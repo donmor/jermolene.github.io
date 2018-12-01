@@ -58,11 +58,27 @@ TiddlyWiki2ReadMe
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Building <span>TiddlyWikiClassic</span></h1><p><span>TiddlyWiki5</span> can be used to build older 2.x.x versions of <span>TiddlyWikiClassic</span> from their constituent components. Doing so involves these features:</p><ul><li>The <code>tiddlywiki/classictools</code> plugin, containing a deserializer module which allows tiddlers to be loaded from <span>TiddlyWiki</span> 2.x.x <code>.recipe</code> files</li><li>The <code>stripcomments</code> format for the <span>ViewWidget</span>, which strips single line <span>JavaScript</span> comments starting <code>//#</code></li><li>The <code>stripTitlePrefix='yes'</code> attribute of the <span>FieldsWidget</span>, which removes prefixes wrapped in curly braces from the <code>title</code> attribute<ul><li>For example, <code>{tiddler}HelloThere</code> would be transformed to <code>HelloThere</code></li></ul></li></ul><h1 class="">Usage</h1><p><span>TiddlyWikiClassic</span> is built from the command line by running <span>TiddlyWiki on Node.js</span>. A typical usage would be:</p><pre><code>node ../../tiddlywiki.js \
 	--verbose \
 	--load &lt;path_to_recipe_file&gt; \
 	--rendertiddler $:/core/templates/tiddlywiki2.template.html &lt;path_to_write_index_file&gt; text/plain \
 	|| exit 1</code></pre></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

@@ -71,155 +71,6 @@ Error message and password prompt
 	width: 100%;
 }
 
-.tc-sidebar-header {
-	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
-}.tc-tiddler-info {
-	
-  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-     -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-          box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
-
-}@media screen {
-	.tc-tiddler-frame {
-		
-  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-
-	}
-}@media (max-width: 960px) {
-	.tc-tiddler-frame {
-		
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-
-	}
-}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
-	
-  -webkit-transition: fill 150ms ease-in-out;
-     -moz-transition: fill 150ms ease-in-out;
-          transition: fill 150ms ease-in-out;
-
-}.tc-tiddler-controls button.tc-selected,
-.tc-page-controls button.tc-selected {
-	
-  -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-     -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-          filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
-
-}.tc-tiddler-frame input.tc-edit-texteditor {
-	
-  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-
-}.tc-edit-tags {
-	
-  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
-
-}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
-	
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-
-	border: none;
-	outline: none;
-}textarea.tc-edit-texteditor {
-	font-family: ;
-}canvas.tc-edit-bitmapeditor  {
-	
-  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-
-}.tc-drop-down {
-	border-radius: 4px;
-	
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-
-}.tc-block-dropdown {
-	border-radius: 4px;
-	
-  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-
-}.tc-modal {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-
-}.tc-modal-footer {
-	border-radius: 0 0 6px 6px;
-	
-  -webkit-box-shadow: inset 0 1px 0 #fff;
-     -moz-box-shadow: inset 0 1px 0 #fff;
-          box-shadow: inset 0 1px 0 #fff;
-;
-}.tc-alert {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.6);
-
-}.tc-notification {
-	border-radius: 6px;
-	
-  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
-
-	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
-}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
-	border-top: none;
-	height: 1px;
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
-
-}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
-
-}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
-	
-background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
-
-}.tc-message-box img {
-	
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-
-}.tc-plugin-info {
-	
-  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-
-}
-
-
 /*
 ** Start with the normalize CSS reset, and then belay some of its effects
 *//*! normalize.css v3.0.0 | MIT License | git.io/normalize */
@@ -2249,6 +2100,581 @@ a.tc-tiddlylink:hover {
 }select {
         color: ;
         background: ;
+}
+
+.tc-sidebar-header {
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-tiddler-info {
+	
+  -webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+     -moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+          box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+
+}@media screen {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+	}
+}@media (max-width: 960px) {
+	.tc-tiddler-frame {
+		
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	}
+}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
+	
+  -webkit-transition: fill 150ms ease-in-out;
+     -moz-transition: fill 150ms ease-in-out;
+          transition: fill 150ms ease-in-out;
+
+}.tc-tiddler-controls button.tc-selected,
+.tc-page-controls button.tc-selected {
+	
+  -webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+     -moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+          filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+
+}.tc-tiddler-frame input.tc-edit-texteditor {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-edit-tags {
+	
+  -webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+     -moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
+	
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+
+	border: none;
+	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
+}canvas.tc-edit-bitmapeditor  {
+	
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}.tc-drop-down {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-block-dropdown {
+	border-radius: 4px;
+	
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+     -moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-modal {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+}.tc-modal-footer {
+	border-radius: 0 0 6px 6px;
+	
+  -webkit-box-shadow: inset 0 1px 0 #fff;
+     -moz-box-shadow: inset 0 1px 0 #fff;
+          box-shadow: inset 0 1px 0 #fff;
+;
+}.tc-alert {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+
+}.tc-notification {
+	border-radius: 6px;
+	
+  -webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+     -moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+          box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+	border-top: none;
+	height: 1px;
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+
+}.tc-message-box img {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}.tc-plugin-info {
+	
+  -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+     -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+          box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}
+
+
+.CodeMirror{font-family:monospace;height:300px;color:black;direction:ltr}.CodeMirror-lines{padding:4px 0}.CodeMirror pre{padding:0 4px}.CodeMirror-scrollbar-filler,.CodeMirror-gutter-filler{background-color:white}.CodeMirror-gutters{border-right:1px solid #ddd;background-color:#f7f7f7;white-space:nowrap}.CodeMirror-linenumber{padding:0 3px 0 5px;min-width:20px;text-align:right;color:#999;white-space:nowrap}.CodeMirror-guttermarker{color:black}.CodeMirror-guttermarker-subtle{color:#999}.CodeMirror-cursor{border-left:1px solid black;border-right:none;width:0}.CodeMirror div.CodeMirror-secondarycursor{border-left:1px solid silver}.cm-fat-cursor .CodeMirror-cursor{width:auto;border:0!important;background:#7e7}.cm-fat-cursor div.CodeMirror-cursors{z-index:1}.cm-fat-cursor-mark{background-color:rgba(20,255,20,.5);-webkit-animation:blink 1.06s steps(1) infinite;-moz-animation:blink 1.06s steps(1) infinite;animation:blink 1.06s steps(1) infinite}.cm-animate-fat-cursor{width:auto;border:0;-webkit-animation:blink 1.06s steps(1) infinite;-moz-animation:blink 1.06s steps(1) infinite;animation:blink 1.06s steps(1) infinite;background-color:#7e7}@-moz-keyframes blink{0%{}50%{background-color:transparent}}@-webkit-keyframes blink{0%{}50%{background-color:transparent}}@keyframes blink{0%{}50%{background-color:transparent}}.cm-tab{display:inline-block;text-decoration:inherit}.CodeMirror-rulers{position:absolute;left:0;right:0;top:-50px;bottom:-20px;overflow:hidden}.CodeMirror-ruler{border-left:1px solid #ccc;top:0;bottom:0;position:absolute}.cm-s-default .cm-header{color:blue}.cm-s-default .cm-quote{color:#090}.cm-negative{color:#d44}.cm-positive{color:#292}.cm-header,.cm-strong{font-weight:700}.cm-em{font-style:italic}.cm-link{text-decoration:underline}.cm-strikethrough{text-decoration:line-through}.cm-s-default .cm-keyword{color:#708}.cm-s-default .cm-atom{color:#219}.cm-s-default .cm-number{color:#164}.cm-s-default .cm-def{color:#00f}.cm-s-default .cm-variable-2{color:#05a}.cm-s-default .cm-variable-3,.cm-s-default .cm-type{color:#085}.cm-s-default .cm-comment{color:#a50}.cm-s-default .cm-string{color:#a11}.cm-s-default .cm-string-2{color:#f50}.cm-s-default .cm-meta{color:#555}.cm-s-default .cm-qualifier{color:#555}.cm-s-default .cm-builtin{color:#30a}.cm-s-default .cm-bracket{color:#997}.cm-s-default .cm-tag{color:#170}.cm-s-default .cm-attribute{color:#00c}.cm-s-default .cm-hr{color:#999}.cm-s-default .cm-link{color:#00c}.cm-s-default .cm-error{color:red}.cm-invalidchar{color:red}.CodeMirror-composing{border-bottom:2px solid}div.CodeMirror span.CodeMirror-matchingbracket{color:#0b0}div.CodeMirror span.CodeMirror-nonmatchingbracket{color:#a22}.CodeMirror-matchingtag{background:rgba(255,150,0,.3)}.CodeMirror-activeline-background{background:#e8f2ff}.CodeMirror{position:relative;overflow:hidden;background:white}.CodeMirror-scroll{overflow:scroll!important;margin-bottom:-30px;margin-right:-30px;padding-bottom:30px;height:100%;outline:none;position:relative}.CodeMirror-sizer{position:relative;border-right:30px solid transparent}.CodeMirror-vscrollbar,.CodeMirror-hscrollbar,.CodeMirror-scrollbar-filler,.CodeMirror-gutter-filler{position:absolute;z-index:6;display:none}.CodeMirror-vscrollbar{right:0;top:0;overflow-x:hidden;overflow-y:scroll}.CodeMirror-hscrollbar{bottom:0;left:0;overflow-y:hidden;overflow-x:scroll}.CodeMirror-scrollbar-filler{right:0;bottom:0}.CodeMirror-gutter-filler{left:0;bottom:0}.CodeMirror-gutters{position:absolute;left:0;top:0;min-height:100%;z-index:3}.CodeMirror-gutter{white-space:normal;height:100%;display:inline-block;vertical-align:top;margin-bottom:-30px}.CodeMirror-gutter-wrapper{position:absolute;z-index:4;background:none!important;border:none!important}.CodeMirror-gutter-background{position:absolute;top:0;bottom:0;z-index:4}.CodeMirror-gutter-elt{position:absolute;cursor:default;z-index:4}.CodeMirror-gutter-wrapper ::selection{background-color:transparent}.CodeMirror-gutter-wrapper ::-moz-selection{background-color:transparent}.CodeMirror-lines{cursor:text;min-height:1px}.CodeMirror pre{-moz-border-radius:0;-webkit-border-radius:0;border-radius:0;border-width:0;background:transparent;font-family:inherit;font-size:inherit;margin:0;white-space:pre;word-wrap:normal;line-height:inherit;color:inherit;z-index:2;position:relative;overflow:visible;-webkit-tap-highlight-color:transparent;-webkit-font-variant-ligatures:contextual;font-variant-ligatures:contextual}.CodeMirror-wrap pre{word-wrap:break-word;white-space:pre-wrap;word-break:normal}.CodeMirror-linebackground{position:absolute;left:0;right:0;top:0;bottom:0;z-index:0}.CodeMirror-linewidget{position:relative;z-index:2;padding:.1px}.CodeMirror-rtl pre{direction:rtl}.CodeMirror-code{outline:none}.CodeMirror-scroll,.CodeMirror-sizer,.CodeMirror-gutter,.CodeMirror-gutters,.CodeMirror-linenumber{-moz-box-sizing:content-box;box-sizing:content-box}.CodeMirror-measure{position:absolute;width:100%;height:0;overflow:hidden;visibility:hidden}.CodeMirror-cursor{position:absolute;pointer-events:none}.CodeMirror-measure pre{position:static}div.CodeMirror-cursors{visibility:hidden;position:relative;z-index:3}div.CodeMirror-dragcursors{visibility:visible}.CodeMirror-focused div.CodeMirror-cursors{visibility:visible}.CodeMirror-selected{background:#d9d9d9}.CodeMirror-focused .CodeMirror-selected{background:#d7d4f0}.CodeMirror-crosshair{cursor:crosshair}.CodeMirror-line::selection,.CodeMirror-line>span::selection,.CodeMirror-line>span>span::selection{background:#d7d4f0}.CodeMirror-line::-moz-selection,.CodeMirror-line>span::-moz-selection,.CodeMirror-line>span>span::-moz-selection{background:#d7d4f0}.cm-searching{background-color:#ffa;background-color:rgba(255,255,0,.4)}.cm-force-border{padding-right:.1px}@media print{.CodeMirror div.CodeMirror-cursors{visibility:hidden}}.cm-tab-wrap-hack:after{content:}span.CodeMirror-selectedtext{background:none}
+
+
+.CodeMirror-dialog {
+  position: absolute;
+  left: 0; right: 0;
+  background: inherit;
+  z-index: 15;
+  padding: .1em .8em;
+  overflow: hidden;
+  color: inherit;
+}
+
+.CodeMirror-dialog-top {
+  border-bottom: 1px solid #eee;
+  top: 0;
+}
+
+.CodeMirror-dialog-bottom {
+  border-top: 1px solid #eee;
+  bottom: 0;
+}
+
+.CodeMirror-dialog input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 20em;
+  color: inherit;
+  font-family: monospace;
+}
+
+.CodeMirror-dialog button {
+  font-size: 70%;
+}
+
+
+/* Make the editor resize to fit its content */.CodeMirror {
+	height: auto;
+	border: 1px solid #ddd;
+	line-height: 1.5;
+	font-family: ;
+	font-size: 15px;
+}.CodeMirror-scroll {
+	overflow-x: auto;
+	overflow-y: hidden;	
+}
+
+
+.tc-is-comment-header {
+	background: #c1e1e9;
+	padding: 0.25em;
+}.tc-comments-segment {
+	border-top: 2px solid #c1e1e9;
+}.tc-comment-button button {
+	width: 100%;
+	text-align: right;
+}.tc-sidebar-scrollable .tc-comment-button button {
+	width: auto;
+	text-align: right;
+}.tc-comment-button button svg {
+	fill: #26cb56;
+	height: 2em;
+	width: 2em;
+}.tc-comments {
+}.tc-comment-list {
+	list-style: none;
+     padding-left: 0;
+}.tc-comment-list .tc-comments {
+	padding-left: 1em;
+}.tc-comment-entry {
+	border: 1px solid #c1e1ea;
+	margin: 0.5em 0 0 0;
+	background: #dbf6ff;
+}.tc-comment-entry-heading {
+	font-size: 0.7em;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: #c1e1ea;
+	color: #5B6D80;
+	padding: 0 0.5em;
+}.tc-comment-entry-body {
+	font-size: 0.8em;
+	padding: 0 0.5em;
+}.tc-comment-entry-body textarea {
+	font-size: 1.1em;
+	width: 100%
+}
+
+
+body.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1b-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1c-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-2-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-2a-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-3-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-4-and-above,
+body.tc-dynaview .tc-dynaview-zoom-visible-1,
+body.tc-dynaview .tc-dynaview-zoom-visible-2,
+body.tc-dynaview .tc-dynaview-zoom-visible-3,
+body.tc-dynaview .tc-dynaview-zoom-visible-4 {
+	transition: opacity 150ms ease-in-out;
+	opacity: 0;
+}body.tc-dynaview .tc-dynaview-zoom-visible-1-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1a-and-above .tc-dynaview-zoom-visible-1a-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1b-and-above .tc-dynaview-zoom-visible-1b-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-1c-and-above .tc-dynaview-zoom-visible-1c-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2-and-above .tc-dynaview-zoom-visible-2-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2a-and-above .tc-dynaview-zoom-visible-2a-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-3-and-above .tc-dynaview-zoom-visible-3-and-above {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-4-and-above .tc-dynaview-zoom-visible-4-and-above {opacity: 1;}body.tc-dynaview.tc-dynaview-zoom-factor-1 .tc-dynaview-zoom-visible-1 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-2 .tc-dynaview-zoom-visible-2 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-3 .tc-dynaview-zoom-visible-3 {opacity: 1;}
+body.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity: 1;}
+
+
+/* Left will inherit from right (so we don't need to duplicate code */
+.github-fork-ribbon {
+  /* The right and left lasses determine the side we attach our banner to */
+  position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
+  padding: 2px 0;/* Set the base colour */
+  background-color: #a00;/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');/* Add a drop shadow */
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);z-index: 999;
+  pointer-events: auto;
+}.github-fork-ribbon a, .github-fork-ribbon a.tc-tiddlylink,
+.github-fork-ribbon a:hover, .github-fork-ribbon a.tc-tiddlylink:hover  {
+  /* Set the font */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;/* Set the text properties */
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,0.5);
+  text-align: center;/* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
+  width: 200px;
+  line-height: 20px;/* Set the layout properties */
+  display: inline-block;
+  padding: 2px 0;/* Add "stitching" effect */
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: rgba(255,255,255,0.7);
+}.github-fork-ribbon-wrapper {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 999;
+  pointer-events: none;
+}.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
+}.github-fork-ribbon-wrapper.left {
+  left: 0;
+}.github-fork-ribbon-wrapper.right {
+  right: 0;
+}.github-fork-ribbon-wrapper.left-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  left: 0;
+}.github-fork-ribbon-wrapper.right-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  right: 0;
+}.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+  top: 42px;
+  right: -43px;/* Rotate the banner 45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.left .github-fork-ribbon {
+  top: 42px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+  top: 80px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
+  top: 80px;
+  right: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+.tc-help-panel {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 1000;
+}dl.tc-help-cheatsheet {
+	overflow: hidden;
+}dl.tc-help-cheatsheet .red {
+	color: red;
+}.tc-help-cheatsheet > dt {
+	display: block;
+	float: left;
+	clear: left;
+	margin: 2% 1em 0 0;
+	padding;
+	font-weight: normal;
+	width: 45%;
+}.tc-help-cheatsheet > dt > pre {
+	margin: 0;
+}.tc-help-cheatsheet > dd {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 1em 0 0 0;
+	padding: 0;
+}.tc-help-cheatsheet > dd > p,
+.tc-help-cheatsheet > dd > h1,
+.tc-help-cheatsheet > dd > pre,
+.tc-help-cheatsheet > dd > ul,
+.tc-help-cheatsheet > dd > ol,
+.tc-help-cheatsheet > dd > dl,
+.tc-help-cheatsheet > dd > table,
+.tc-help-cheatsheet > dd > blockquote,
+.tc-help-cheatsheet > dd > blockquote >p {
+	margin: 0;
+}.tc-help-cheatsheet .tc-image {
+	width: 16px;
+}
+
+
+/*
+
+Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #f0f0f0;
+  -webkit-text-size-adjust: none;
+}
+
+.hljs,
+.hljs-subst,
+.hljs-tag .hljs-title,
+.nginx .hljs-title {
+  color: black;
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-constant,
+.hljs-parent,
+.hljs-tag .hljs-value,
+.hljs-rule .hljs-value,
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-name,
+.haml .hljs-symbol,
+.ruby .hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-template_tag,
+.django .hljs-variable,
+.smalltalk .hljs-class,
+.hljs-addition,
+.hljs-flow,
+.hljs-stream,
+.bash .hljs-variable,
+.pf .hljs-variable,
+.apache .hljs-tag,
+.apache .hljs-cbracket,
+.tex .hljs-command,
+.tex .hljs-special,
+.erlang_repl .hljs-function_or_atom,
+.asciidoc .hljs-header,
+.markdown .hljs-header,
+.coffeescript .hljs-attribute,
+.tp .hljs-variable {
+  color: #800;
+}
+
+.smartquote,
+.hljs-comment,
+.hljs-annotation,
+.diff .hljs-header,
+.hljs-chunk,
+.asciidoc .hljs-blockquote,
+.markdown .hljs-blockquote {
+  color: #888;
+}
+
+.hljs-number,
+.hljs-date,
+.hljs-regexp,
+.hljs-literal,
+.hljs-hexcolor,
+.smalltalk .hljs-symbol,
+.smalltalk .hljs-char,
+.go .hljs-constant,
+.hljs-change,
+.lasso .hljs-variable,
+.makefile .hljs-variable,
+.asciidoc .hljs-bullet,
+.markdown .hljs-bullet,
+.asciidoc .hljs-link_url,
+.markdown .hljs-link_url {
+  color: #080;
+}
+
+.hljs-label,
+.ruby .hljs-string,
+.hljs-decorator,
+.hljs-filter .hljs-argument,
+.hljs-localvars,
+.hljs-array,
+.hljs-attr_selector,
+.hljs-important,
+.hljs-pseudo,
+.hljs-pi,
+.haml .hljs-bullet,
+.hljs-doctype,
+.hljs-deletion,
+.hljs-envvar,
+.hljs-shebang,
+.apache .hljs-sqbracket,
+.nginx .hljs-built_in,
+.tex .hljs-formula,
+.erlang_repl .hljs-reserved,
+.hljs-prompt,
+.asciidoc .hljs-link_label,
+.markdown .hljs-link_label,
+.vhdl .hljs-attribute,
+.clojure .hljs-attribute,
+.asciidoc .hljs-attribute,
+.lasso .hljs-attribute,
+.coffeescript .hljs-property,
+.hljs-phony {
+  color: #88f;
+}
+
+.hljs-keyword,
+.hljs-id,
+.hljs-title,
+.hljs-built_in,
+.css .hljs-tag,
+.hljs-doctag,
+.smalltalk .hljs-class,
+.hljs-winutils,
+.bash .hljs-variable,
+.pf .hljs-variable,
+.apache .hljs-tag,
+.hljs-type,
+.hljs-typename,
+.tex .hljs-command,
+.asciidoc .hljs-strong,
+.markdown .hljs-strong,
+.hljs-request,
+.hljs-status,
+.tp .hljs-data,
+.tp .hljs-io {
+  font-weight: bold;
+}
+
+.asciidoc .hljs-emphasis,
+.markdown .hljs-emphasis,
+.tp .hljs-units {
+  font-style: italic;
+}
+
+.nginx .hljs-built_in {
+  font-weight: normal;
+}
+
+.coffeescript .javascript,
+.javascript .xml,
+.lasso .markup,
+.tex .hljs-formula,
+.xml .javascript,
+.xml .vbscript,
+.xml .css,
+.xml .hljs-cdata {
+  opacity: 0.5;
+}
+
+
+.hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:teal}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.hljs-dartdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:navy;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:teal}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
+
+
+
+.tc-powered-by-tiddlywiki-banner {
+	position: fixed;
+	right: 1em;
+	bottom: 0;
+    z-index: 2000;
 }
 
 /* CSS modified for TiddlyWiki */

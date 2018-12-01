@@ -70,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>action-listops</strong> widget is an <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">action widget</a> that manipulates user lists in any field or data index. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> are used within triggering widgets such as the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The <strong>action-listops</strong> widget is invisible. Any content within it is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$tiddler</td><td align="left">The title of the tiddler whose lists are to be modified (if not provided defaults to the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Current%2520Tiddler.html">current tiddler</a></td></tr><tr class="evenRow"><td align="left">$field</td><td align="left">The name of a field to be manipulated as a list (defaults to 'list')</td></tr><tr class="oddRow"><td align="left">$index</td><td align="left">Optional index of a property in a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DataTiddlers.html">data tiddler</a> index to be manipulated as a list</td></tr><tr class="evenRow"><td align="left">$filter</td><td align="left">An optional filter expression, the output of which will be saved to the field/index being manipulated</td></tr><tr class="oddRow"><td align="left">$subfilter</td><td align="left">An optional subfilter expression, which takes the list being manipulated as input, and saves the modified list back to the field/index being manipulated</td></tr><tr class="evenRow"><td align="left">$tags</td><td align="left">An optional subfilter expression, which takes the 'tags' field of the target tiddler as input, and saves the modified list of tags back to the 'tags' field</td></tr></tbody></table><h1 class="">Extended Filter Operators</h1><p>A number of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="The%2520Extended%2520Listops%2520Filters.html">extended filter operators</a> are necessary for the manipulation of lists. These operators have been designed primarily for use in subfilter expressions whereby the modified current list is returned in place of the current list.</p><p><table>
 <tr class="doc-table-subheading"><th align="center" colspan="3">Listops Operators</th></tr>
 <tr>
@@ -284,6 +285,21 @@ Remove User Tags
 
 Clear Tags
 </button></p><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a></div><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Widgets.html">Widgets</a></div></div></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

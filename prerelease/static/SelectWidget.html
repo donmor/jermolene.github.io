@@ -64,6 +64,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
 Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><p><div style="position: relative;">
 <div style="position: absolute; bottom: 0; right: 0;">
@@ -90,13 +91,37 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="$:/deprecated">$:/deprecated</option>
 
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Browser Architecture</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Connection">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Connection</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/DOM</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Events</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Node.js</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Potatoes</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Server Architecture</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/Service Workers</option>
+
+<option value="$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture">$:/plugins/tiddlywiki/dynaview/zoomable-diagram/TiddlyWiki Architecture</option>
+
+<option value="$:/tags:/ZoomableDiagram">$:/tags:/ZoomableDiagram</option>
+
 <option value="$:/tags/AboveStory">$:/tags/AboveStory</option>
+
+<option value="$:/tags/AboveStory-disabled">$:/tags/AboveStory-disabled</option>
 
 <option value="$:/tags/Actions">$:/tags/Actions</option>
 
 <option value="$:/tags/AdvancedSearch">$:/tags/AdvancedSearch</option>
 
 <option value="$:/tags/AdvancedSearch/FilterButton">$:/tags/AdvancedSearch/FilterButton</option>
+
+<option value="$:/tags/CommentToolbarButton">$:/tags/CommentToolbarButton</option>
 
 <option value="$:/tags/ControlPanel">$:/tags/ControlPanel</option>
 
@@ -110,7 +135,13 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="$:/tags/ControlPanel/Settings">$:/tags/ControlPanel/Settings</option>
 
+<option value="$:/tags/ControlPanel/Settings/CodeMirror">$:/tags/ControlPanel/Settings/CodeMirror</option>
+
+<option value="$:/tags/ControlPanel/SettingsTab">$:/tags/ControlPanel/SettingsTab</option>
+
 <option value="$:/tags/ControlPanel/Toolbars">$:/tags/ControlPanel/Toolbars</option>
+
+<option value="$:/tags/dynaviewExamples">$:/tags/dynaviewExamples</option>
 
 <option value="$:/tags/EditorToolbar">$:/tags/EditorToolbar</option>
 
@@ -123,6 +154,10 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/tags/Exporter">$:/tags/Exporter</option>
 
 <option value="$:/tags/Filter">$:/tags/Filter</option>
+
+<option value="$:/tags/HelpPanel">$:/tags/HelpPanel</option>
+
+<option value="$:/tags/HelpPanel/Videos">$:/tags/HelpPanel/Videos</option>
 
 <option value="$:/tags/Image">$:/tags/Image</option>
 
@@ -860,6 +895,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="text/html">HTML markup (text/html)</option>
 
+<option value="text/x-markdown">Markdown (text/x-markdown)</option>
+
 <option value="text/plain">Plain text (text/plain)</option>
 
 <option value="text/vnd.tiddlywiki">TiddlyWiki 5 (text/vnd.tiddlywiki)</option>
@@ -922,6 +959,21 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 </select><br>
 </p></div></p></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

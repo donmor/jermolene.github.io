@@ -64,6 +64,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>codeblock</strong> widget renders text in <code>&lt;pre&gt;</code> and <code>&lt;code&gt;</code> blocks, causing it to be
 displayed monospace. A language may optionally be specified using the
 <strong>language</strong> attribute, however syntax highlighting will only be used if the
@@ -105,8 +106,23 @@ Hi, I'm $name$ and I live in $address$.
 </svg> copy to clipboard
 </button>
 </div>
-</div></p><pre><code>&lt;$codeblock code=&quot;SELECT * FROM users WHERE deleted = false&quot; language=&quot;sql&quot; /&gt;</code></pre><p>That renders as:</p><p><pre><code>SELECT * FROM users WHERE deleted = false</code></pre>
+</div></p><pre><code>&lt;$codeblock code=&quot;SELECT * FROM users WHERE deleted = false&quot; language=&quot;sql&quot; /&gt;</code></pre><p>That renders as:</p><p><pre class="sql hljs"><code><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> <span class="hljs-keyword">users</span> <span class="hljs-keyword">WHERE</span> deleted = <span class="hljs-literal">false</span></span></code></pre>
 </p></div></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

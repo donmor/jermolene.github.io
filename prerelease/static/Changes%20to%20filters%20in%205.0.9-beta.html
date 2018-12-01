@@ -64,8 +64,24 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>This release resolves a number of inconsistencies with the way that filters are handled. The changes mean that existing filters may need to be updated - particularly those that must deal with missing or shadow tiddlers.</p><h1 class="">Changes to <strong>is</strong> and addition of <strong>all</strong></h1><p>Most filter operators act by choosing some or all of their source titles to pass through or re-order. Those that add new entries that are not drawn from the source list are referred to as selectors. Prior to 5.0.9-beta, a few filter operators were inconsistent in whether they filtered from the source list or selected new entries into it. </p><p>The specific changes are:</p><ul><li>The <strong>is</strong> operator now always strictly filters from the currently selected list of tiddlers</li><li>The new <strong>all</strong> operator acts as a selector by replacing the current list with a combination of tiddlers from specific sources:<ul><li><strong>current</strong> for the current tiddler</li><li><strong>missing</strong> for all missing tiddlers</li><li><strong>orphans</strong> for all orphan tiddlers</li><li><strong>shadows</strong> for all shadow tiddlers</li><li><strong>tiddlers</strong> for all non-shadow tiddlers (including both system and non-system tiddlers)</li></ul></li></ul><p>The sources for the <strong>all</strong> operator can be combined with the <code>+</code> character. For example, <code>[all[shadows+tiddlers]]</code> returns all shadow tiddlers and all ordinary tiddlers.</p><p>Previously, it was common to have <code>[is[shadow]]</code> at the start of a filter string to select all the shadow tiddlers. In 5.0.9 and above, this will not return all the shadow tiddlers, but instead just those ordinary tiddlers that are also shadow tiddlers (by virtue of having overridden one). The resolution is to use the new <strong>all</strong> operator. For example, consider this filter from 5.0.8:</p><pre><code>[is[shadow]!has[draft.of]tag[$:/tags/AdvancedSearch]] [!is[shadow]!has[draft.of]tag[$:/tags/AdvancedSearch]] +[tag[$:/tags/AdvancedSearch]]</code></pre><p>In 5.0.9, that filter has been changed to:</p><pre><code>[all[shadows+tiddlers]tag[$:/tags/AdvancedSearch]!has[draft.of]]</code></pre><p>Note how the <strong>all</strong> operator allows operations to be performed on tiddlers from combinations of sources.</p><h2 class="">Changes to <code>[is[current]]</code></h2><p>One result of the changes is that <code>[is[current]]</code> now strictly filters from the source tiddlers; so, if the current tiddler is a missing tiddler not in the source list, then <code>[is[current]]</code> will return an empty list.</p><p>The solution is generally to use <code>[all[current]]</code> instead. It doesn't read as well, but has the required behaviour of returning just the current tiddler, regardless of whether it is in the source tiddlers.</p><h1 class="">Changes to <strong>title</strong> and <strong>field</strong></h1><p>There are minor changes to the way that the <strong>title</strong> and <strong>field</strong> operators work.</p><p>The <strong>title</strong> operator is a selector: it returns the specified title regardless of whether it is in the current source. <strong>title</strong> is used as the default operator if none is specified</p><p>The <strong>field</strong> operator is a filter: it only returns a subset of the source tiddlers. <strong>field</strong> is used as the default operator if the supplied operator is not defined (the supplied operator is passed as the suffix to the field operator, so <code>[description[Missing]]</code> is equivalent to <code>[field:description[Missing]]</code>).
 </p></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

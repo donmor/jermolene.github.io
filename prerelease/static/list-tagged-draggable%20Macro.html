@@ -70,7 +70,23 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The <dfn class="doc-def">list-tagged-draggable</dfn> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> renders the tiddlers with a particular tag as a list of links that can be reordered via <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Drag%2520and%2520Drop.html">drag and drop</a>.</p><h2 class="">Parameters</h2><dl><dt>tag</dt><dd>The title of the tag</dd><dt>subFilter</dt><dd>An optional subfilter to filter out unwanted items (eg <code>!tag[done]</code>)</dd><dt>itemTemplate</dt><dd>Optional title of a tiddler to use as the template for rendering list items</dd><dt>emptyMessage</dt><dd>Optional wikitext to display if there are no tiddlers with the specified tag</dd></dl><p>Note that the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Order%2520of%2520Tagged%2520Tiddlers.html">ordering</a> is accomplished by assigning a new list to the <code>list</code> field of the tag tiddler. Any <code>list-before</code> or <code>list-after</code> fields on any of the other tiddlers carrying the tag are also removed to ensure the <code>list</code> field is respected.</p><p>If the <code>itemTemplate</code> parameter is not provided then the list items are rendered as simple links. Within the <code>itemTemplate</code>, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="currentTiddler%2520Variable.html">currentTiddler Variable</a> refers to the current list item.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="list-tagged-draggable%2520Macro%2520(Examples).html">Examples</a></p></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 

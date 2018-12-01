@@ -64,7 +64,23 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>(Note: The <code>--rendertiddler</code> command is deprecated in favour of the new, more flexible <code>--render</code> command)</p><p>Render an individual tiddler as a specified <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">ContentType</a>, defaulting to <code>text/html</code> and save it to the specified filename.</p><p>Optionally the title of a template tiddler can be specified, in which case the template tiddler is rendered with the &quot;currentTiddler&quot; variable set to the tiddler that is being rendered (the first parameter value).</p><p>A name and value for an additional variable may optionally also be specified.</p><pre><code>--rendertiddler &lt;title&gt; &lt;filename&gt; [&lt;type&gt;] [&lt;template&gt;] [&lt;name&gt;] [&lt;value&gt;]</code></pre><p>By default, the filename is resolved relative to the <code>output</code> subdirectory of the edition directory. The <code>--output</code> command can be used to direct output to a different directory.</p><p>Any missing directories in the path to the filename are automatically created.</p><p>For example, the following command saves all tiddlers matching the filter <code>[tag[done]]</code> to a JSON file titled <code>output.json</code> by employing the core template <code>$:/core/templates/exporters/JsonFile</code>.</p><pre><code>--rendertiddler &quot;$:/core/templates/exporters/JsonFile&quot; output.json text/plain &quot;&quot; exportFilter &quot;[tag[done]]&quot;</code></pre></div>
+
+<div class="tc-comments-segment">
+<div class="tc-comment-button tc-reveal">
+<button class="tc-btn-invisible">
+add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+
+<div class="tc-comments">
+<ol class="tc-comment-list">
+
+</ol>
+</div>
+
+</div>
 
 
 
