@@ -1057,6 +1057,8 @@ a.tc-tiddlylink:hover {
 	white-space: normal;
 }.tc-tag-manager-tag {
 	width: 100%;
+}button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
 }/*
 ** Page layout
 */.tc-topbar {
