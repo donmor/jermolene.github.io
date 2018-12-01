@@ -50,20 +50,13 @@ Custom styles by data-tiddler-title
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  How to apply custom styles
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
-
 
 
 
@@ -80,21 +73,6 @@ color:#333333;">
 }</code></pre><p>To create a green border for every tiddler that starts with <code>$:/</code> aka system tiddlers, you'd need to use CSS like so: (not applied here but you can experiment with it! )</p><pre><code>[data-tiddler-title^=&quot;$:/&quot;] {
   border: 1px solid green;
 }</code></pre><h2 class="">More Possibilities</h2><dl><dt>[attr]</dt><dd>Represents an element with an attribute name of attr.</dd><dt>[attr=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr and whose value is exactly &quot;value&quot;.</dd><dt>[attr~=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly &quot;value&quot;.</dd><dt>[attr|=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr. Its value can be exactly “value” or can begin with “value” immediately followed by “-” (U+002D). It can be used for language subcode matches.</dd><dt>[attr^=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr and whose first value is prefixed by &quot;value&quot;.</dd><dt>[attr$=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr and whose last value is suffixed by &quot;value&quot;.</dd><dt>[attr*=&quot;value&quot;]</dt><dd>Represents an element with an attribute name of attr and whose value contains at least one occurrence of string &quot;value&quot; as substring.</dd><dt>[attr &quot;operator value&quot; i]</dt><dd>Adding an i (or I) before the closing bracket causes the value to be compared case-insensitively (for characters within the ASCII range). </dd></dl><p>Learn more at: <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors" rel="noopener noreferrer" target="_blank">Attribute selectors - CSS</a> or <a class="tc-tiddlylink-external" href="https://www.w3.org/TR/CSS22/selector.html#attribute-selectors" rel="noopener noreferrer" target="_blank">CSS-Specification</a></p></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 
 
 

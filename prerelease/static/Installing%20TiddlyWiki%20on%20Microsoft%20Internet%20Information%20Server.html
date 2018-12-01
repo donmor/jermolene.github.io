@@ -50,44 +50,25 @@ Installing TiddlyWiki on Microsoft Internet Information Server
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Saving
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
-<span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  TiddlyWiki on Node.js
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
-<span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Windows
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
-
 
 
 
@@ -193,21 +174,6 @@ text: $protocol$//$host$/MyApp/
 	</g>
 </svg> copy to clipboard
 </button></p></blockquote><ul><li>(See <a class="tc-tiddlylink-external" href="https://docs.microsoft.com/en-us/iis/extensions/httpplatformhandler/httpplatformhandler-configuration-reference" rel="noopener noreferrer" target="_blank">the documentation</a> for details of the configuration fields for HttpPlatformHandler</li></ul></li><li>Execute the command <code>npm install</code> within the <code>C:/MyStuff</code> directory</li></ol><h1 class="">4. Setup the application in IIS</h1><ul><li>In Windows, run the IIS Manager application (use the start menu to run <code>inetmgr.exe</code>)</li><li>Locate the server in the <strong>Connections</strong> column on the left, and click the disclosure triangle to show its content</li><li>Open the <strong>Sites</strong> folder</li><li>Right click on the <strong>Default Web Site</strong> entry, and select <strong>Add application..</strong> from the menu</li><li>Enter the following information in the dialogue box:<ol><li><strong>Alias</strong>: <code>MyApp</code></li><li><strong>Physical path</strong>: <code>C:\MyStuff</code></li></ol></li><li>Click <strong>OK</strong></li></ul><h1 class="">5. Test the application</h1><p>Test the app by visiting <a class="tc-tiddlylink-external" href="http://localhost/MyApp/" rel="noopener noreferrer" target="_blank">http://localhost/MyApp/</a> in a browser.</p><h1 class="">Notes</h1><ul><li>If you require authentication, specify a username and password in the <code>--listen</code> command in <code>web.config</code>. For example:<ul><li><code>arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki-server --listen username=joe &amp;quot;password=bloggs&amp;quot; port=PORT path-prefix=/MyApp&quot;&gt;</code></li><li>Take note of the need to use double quotes around non-alphanumeric passwords, and to HTML encode them into <code>&amp;quot;</code></li></ul></li><li>If you change the settings in the <code>web.config</code> file, or modify the app code, then you'll need to restart the server using the IIS manager application</li></ul></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 
 
 

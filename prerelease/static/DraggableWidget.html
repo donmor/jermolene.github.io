@@ -50,20 +50,13 @@ DraggableWidget
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Widgets
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
-
 
 
 
@@ -75,21 +68,6 @@ color:#333333;">
 If desired it can invoke actions when dragging starts and when it ends.
 See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DragAndDropMechanism.html">DragAndDropMechanism</a> for an overview.</p><h1 class="">Content and Attributes</h1><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">tiddler</td><td align="left">Optional title of the payload tiddler for the drag</td></tr><tr class="evenRow"><td align="left">filter</td><td align="left">Optional filter defining the payload tiddlers for the drag</td></tr><tr class="oddRow"><td align="left">class</td><td align="left">Optional CSS classes to assign to the draggable element. The class <code>tc-draggable</code> is added automatically, and the class <code>tc-dragging</code> is applied while the element is being dragged</td></tr><tr class="evenRow"><td align="left">tag</td><td align="left">Optional tag to override the default &quot;div&quot; element</td></tr><tr class="oddRow"><td align="left">startactions</td><td align="left">Optional action string that gets invoked when dragging <strong>starts</strong></td></tr><tr class="evenRow"><td align="left">endactions</td><td align="left">Optional action string that gets invoked when dragging <strong>ends</strong></td></tr></tbody></table><p>Either or both of the <strong>tiddler</strong> and <strong>filter</strong> attributes must be specified in order for there to be a payload to drag.</p><p>The <strong>actionTiddler</strong> variable is accessible in both <em>startactions</em> and <em>endactions</em>. It holds the payload tiddler(s) specified through the <em>tiddler</em> attribute.</p><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="LinkWidget.html">LinkWidget</a> incorporates the functionality of the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DraggableWidget.html">DraggableWidget</a> via the <strong>draggable</strong> attribute.
 </p></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 
 
 

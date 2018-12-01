@@ -1,0 +1,13 @@
+{
+    "title": "$:/languages/rtl",
+    "name": "rtl",
+    "plugin-type": "language",
+    "description": "Generic Right-to-left Language Plugin",
+    "author": "JeremyRuston",
+    "core-version": ">=5.0.0",
+    "text-direction": "rtl",
+    "version": "5.1.18-prerelease",
+    "dependents": "",
+    "type": "application/json",
+    "text": "{\n    \"tiddlers\": {\n        \"$:/languages/rtl/icon\": {\n            \"title\": \"$:/languages/rtl/icon\",\n            \"type\": \"image/svg+xml\",\n            \"text\": \"<?xml version=\\\"1.0\\\" standalone=\\\"no\\\"?>\\n<!DOCTYPE svg PUBLIC \\\"-//W3C//DTD SVG 1.1//EN\\\" \\\"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\\\">\\n<svg\\n\\twidth=\\\"1050\\\"\\n\\theight=\\\"600\\\"\\n\\txmlns=\\\"http://www.w3.org/2000/svg\\\"\\n\\tid=\\\"Flag_of_Iran_1964\\\">\\n\\t<rect height=\\\"200\\\" width=\\\"1050\\\" fill=\\\"#da0000\\\" x=\\\"0\\\" y=\\\"400\\\" />\\n\\t<rect height=\\\"200\\\" width=\\\"1050\\\" fill=\\\"white\\\" x=\\\"0\\\" y=\\\"200\\\" />\\n\\t<rect height=\\\"200\\\" width=\\\"1050\\\" fill=\\\"#239f40\\\" x=\\\"0\\\" y=\\\"0\\\" />\\n</svg>\"\n        }\n    }\n}"
+}

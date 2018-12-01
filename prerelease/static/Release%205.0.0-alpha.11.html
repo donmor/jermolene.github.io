@@ -50,20 +50,13 @@ Release 5.0.0-alpha.11
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  AlphaReleaseNotes
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
-
 
 
 
@@ -72,21 +65,6 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>This release is the culmination of a large scale refactoring of the widget mechanism of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>. There are several changes to be aware of if upgrading from earlier versions:</p><ul><li>The following widgets have been removed:<ul><li><code>&lt;$setstyle&gt;</code> - use <code>&lt;div style=&lt;&lt;macroName Param&gt;&gt;&gt;</code> instead</li><li><code>&lt;$video&gt;</code> - will return in a later release</li><li><code>&lt;$datauri&gt;</code> - use the <code>&lt;&lt;makedatauri&gt;&gt;</code> built-in macro instead</li><li><code>&lt;$error&gt;</code> - may return in a later release</li><li><code>&lt;$import&gt;</code> - use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="BrowseWidget.html">BrowseWidget</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DropzoneWidget.html">DropzoneWidget</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="NavigatorWidget.html">NavigatorWidget</a> instead</li><li><code>&lt;$info&gt;</code> - use the <code>&lt;&lt;changecount&gt;&gt;</code> built-in macro instead</li><li><code>&lt;$version&gt;</code> - use the <code>&lt;&lt;version&gt;&gt;</code> built-in macro instead</li></ul></li><li>The following widgets have had significant changes:<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditWidget.html">EditWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListWidget.html">ListWidget</a> - the list widget itself no longer generates HTML nodes, so you'll often need to wrap the template in a <code>&lt;div&gt;</code> or a <code>&lt;span&gt;</code> to be able to style the content</li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">ViewWidget</a> - has several changes:<ul><li><code>&lt;$view format=&quot;link&quot;/&gt;</code> is no longer available; use an explicit <code>&lt;$link&gt;</code> widget instead</li><li><code>&lt;$view format=&quot;link&quot;/&gt;</code> is no longer available; use the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TranscludeWidget.html">TranscludeWidget</a> instead</li></ul></li></ul></li><li>The following new widgets have been added:<ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="BrowseWidget.html">BrowseWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="DropzoneWidget.html">DropzoneWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditTextWidget.html">EditTextWidget</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="EditBitmapWidget.html">EditBitmapWidget</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetVariableWidget.html">SetVariableWidget</a></li></ul></li><li>Widget attribute names have been made more consistent. In particular, <code>tiddler</code> is used to reference a tiddler by title, not <code>title</code></li><li>It is no longer possible to import the macro definitions within another tiddler by transcluding that tiddler</li><li>The <code>body</code> element now has the class <code>tw-body</code>, which will need to be specified in any overrides<ul><li>This was done due to the new support for HTML foreign objects, which makes it possible to have multiple <code>&lt;body&gt;</code> elements in a document</li></ul></li></ul></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 
 
 

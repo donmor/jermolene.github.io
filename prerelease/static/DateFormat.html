@@ -50,20 +50,13 @@ DateFormat
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Features
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
-
 
 
 
@@ -72,21 +65,6 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>When used to display date values (with the <code>format</code> attribute set to <strong>date</strong>), the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ViewWidget.html">ViewWidget</a> accepts a <code>template</code> attribute that allows the format of the date values to be specified. The format string is processed with the following substitutions:</p><table><tbody><tr class="evenRow"><th align="left">Token</th><th align="left">Substituted Value</th></tr><tr class="oddRow"><td align="left"><code>DDD</code></td><td align="left">Day of week in full (eg, &quot;Monday&quot;)</td></tr><tr class="evenRow"><td align="left"><code>ddd</code></td><td align="left">Short day of week (eg, &quot;Mon&quot;)</td></tr><tr class="oddRow"><td align="left"><code>DD</code></td><td align="left">Day of month</td></tr><tr class="evenRow"><td align="left"><code>0DD</code></td><td align="left">Adds a leading zero</td></tr><tr class="oddRow"><td align="left"><code>DDth</code></td><td align="left">Adds a suffix</td></tr><tr class="evenRow"><td align="left"><code>WW</code></td><td align="left">ISO-8601 week number of year</td></tr><tr class="oddRow"><td align="left"><code>0WW</code></td><td align="left">Adds a leading zero</td></tr><tr class="evenRow"><td align="left"><code>MMM</code></td><td align="left">Month in full (eg, &quot;July&quot;)</td></tr><tr class="oddRow"><td align="left"><code>mmm</code></td><td align="left">Short month (eg, &quot;Jul&quot;)</td></tr><tr class="evenRow"><td align="left"><code>MM</code></td><td align="left">Month number</td></tr><tr class="oddRow"><td align="left"><code>0MM</code></td><td align="left">Adds leading zero</td></tr><tr class="evenRow"><td align="left"><code>YYYY</code></td><td align="left">Full year</td></tr><tr class="oddRow"><td align="left"><code>YY</code></td><td align="left">Two digit year</td></tr><tr class="evenRow"><td align="left"><code>wYYYY</code></td><td align="left">Full year with respect to week number</td></tr><tr class="oddRow"><td align="left"><code>wYY</code></td><td align="left">Two digit year with respect to week number</td></tr><tr class="evenRow"><td align="left"><code>hh</code></td><td align="left">Hours</td></tr><tr class="oddRow"><td align="left"><code>0hh</code></td><td align="left">Adds a leading zero</td></tr><tr class="evenRow"><td align="left"><code>hh12</code></td><td align="left">Hours in 12 hour clock</td></tr><tr class="oddRow"><td align="left"><code>0hh12</code></td><td align="left">Hours in 12 hour clock with leading zero</td></tr><tr class="evenRow"><td align="left"><code>mm</code></td><td align="left">Minutes</td></tr><tr class="oddRow"><td align="left"><code>0mm</code></td><td align="left">Minutes with leading zero</td></tr><tr class="evenRow"><td align="left"><code>ss</code></td><td align="left">Seconds</td></tr><tr class="oddRow"><td align="left"><code>0ss</code></td><td align="left">Seconds with leading zero</td></tr><tr class="evenRow"><td align="left"><code>XXX</code></td><td align="left">Milliseconds</td></tr><tr class="oddRow"><td align="left"><code>0XXX</code></td><td align="left">Milliseconds with leading zero</td></tr><tr class="evenRow"><td align="left"><code>am</code> or <code>pm</code></td><td align="left">Lower case AM/PM indicator</td></tr><tr class="oddRow"><td align="left"><code>AM</code> or <code>PM</code></td><td align="left">Upper case AM/PM indicator</td></tr><tr class="evenRow"><td align="left"><code>TZD</code></td><td align="left">Timezone offset</td></tr><tr class="oddRow"><td align="left"><code>\x</code></td><td align="left">Used to escape a character that would otherwise have special meaning</td></tr><tr class="evenRow"><td><code>[UTC]</code></td><td>Time-shift the represented date to UTC. Must be at very start of format string</td></tr></tbody></table><p>Note that other text is passed through unchanged, allowing commas, colons or other separators to be used.</p><h1 class="">Examples</h1><table><tbody><tr class="evenRow"><th align="left">Template</th><th align="left">Output</th></tr><tr class="oddRow"><td align="left"><code>DDth MMM YYYY</code></td><td align="left">16th February 2011</td></tr><tr class="evenRow"><td align="left"><code>DDth MMM \M\M\M YYYY</code></td><td align="left">16th February MMM 2011</td></tr><tr class="oddRow"><td align="left"><code>DDth mmm YYYY 0hh:0mm:0ss</code></td><td align="left">16th Feb 2011 11:38:42</td></tr></tbody></table></div>
-
-<div class="tc-comments-segment">
-<div class="tc-comment-button tc-reveal">
-<button class="tc-btn-invisible">
-add comment <svg class="tc-image-add-comment tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 56H36a8 8 0 1 0 0 16h20v20a8 8 0 1 0 16 0V72h20a8 8 0 1 0 0-16H72V36a8 8 0 1 0-16 0v20zm-12.595 58.362c-6.683 7.659-20.297 12.903-36.006 12.903-2.196 0-4.35-.102-6.451-.3 9.652-3.836 17.356-12.24 21.01-22.874C8.516 94.28 0 79.734 0 63.5 0 33.953 28.206 10 63 10s63 23.953 63 53.5S97.794 117 63 117c-6.841 0-13.428-.926-19.595-2.638z" fill-rule="evenodd"></path></svg>
-</button>
-</div>
-
-<div class="tc-comments">
-<ol class="tc-comment-list">
-
-</ol>
-</div>
-
-</div>
 
 
 
