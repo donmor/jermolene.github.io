@@ -1412,13 +1412,16 @@ background-color: #ffffff;
 }.tc-tiddler-preview {
 	overflow: auto;
 	margin-left: -0.3em;
+	margin-right: -0.3em;
 	padding-left: 0.3em;
+	padding-right: 0.3em;
 }.tc-tiddler-preview-preview {
 	float: right;
 	width: 49%;
 	border: 1px solid #cccccc;
+	border-radius: 2px;
 	margin: 4px 0 3px 3px;
-	padding: 3px 3px 3px 3px;
+	padding: 3px 3px 3px 0.5em;
 }.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
 	width: 49%;
 }.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {

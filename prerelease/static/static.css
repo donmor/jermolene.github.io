@@ -1257,13 +1257,16 @@ background-color: #ffffff;
 }.tc-tiddler-preview {
 	overflow: auto;
 	margin-left: -0.3em;
+	margin-right: -0.3em;
 	padding-left: 0.3em;
+	padding-right: 0.3em;
 }.tc-tiddler-preview-preview {
 	float: right;
 	width: 49%;
 	border: 1px solid #cccccc;
+	border-radius: 2px;
 	margin: 4px 0 3px 3px;
-	padding: 3px 3px 3px 3px;
+	padding: 3px 3px 3px 0.5em;
 }.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
 	width: 49%;
 }.tc-tiddler-frame .tc-tiddler-preview canvas.tc-edit-bitmapeditor {
@@ -2314,10 +2317,12 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
 
 
 .tc-is-comment-header {
-	background: #c1e1e9;
 	padding: 0.25em;
+	border: 2px solid #c1e1ea;
+	border-radius: 4px;
+	background: #f1fcff;
 }.tc-comments-segment {
-	border-top: 2px solid #c1e1e9;
+	border-top: 2px solid #d7eef4;
 }.tc-comment-button button {
 	width: 100%;
 	text-align: right;
@@ -2335,14 +2340,16 @@ background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,25
 }.tc-comment-list .tc-comments {
 	padding-left: 1em;
 }.tc-comment-entry {
-	border: 1px solid #c1e1ea;
+	position: relative;
+	border: 2px solid #c1e1ea;
+	border-radius: 4px;
 	margin: 0.5em 0 0 0;
-	background: #dbf6ff;
+	background: #f1fcff;
 }.tc-comment-entry-heading {
 	font-size: 0.7em;
 	font-weight: bold;
 	text-transform: uppercase;
-	background: #c1e1ea;
+	background: #d7eef4;
 	color: #5B6D80;
 	padding: 0 0.5em;
 }.tc-comment-entry-body {
