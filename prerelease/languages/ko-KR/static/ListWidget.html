@@ -82,6 +82,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The list widget displays a sequence of tiddlers that match a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">tiddler filter</a>. It can be used for many purposes:</p><ul><li>Displaying custom lists of links, like in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki5.html">TiddlyWiki5</a>'s sidebar</li><li>Custom lists, such as &quot;all tiddlers tagged 'task' that are not tagged 'done'&quot;</li><li>Listing each of the tags applied to a tiddler</li><li>Handling the main story river</li></ul><p>The tiddlers are displayed by transcluding each in turn through a template. There are several ways to specify the template and for controlling the behaviour of the list.</p><h1 class="">Examples</h1><p><strong>plain list</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot;/&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><div><a class="tc-tiddlylink tc-tiddlylink-resolves" href="GroupedLists.html">GroupedLists</a></div></blockquote><p><strong>custom item output</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot;&gt;
 &lt;&lt;currentTiddler&gt;&gt;
 {{||$:/core/ui/ViewTemplate/tags}}
@@ -112,6 +113,7 @@ color:#333333;">
 
 </span></div>
 </div>
+
 
 </p></blockquote><p><strong>custom item template</strong></p><pre><code>&lt;$list filter=&quot;[tag[ListWidget]sort[title]]&quot; template=&quot;$:/core/ui/ViewTemplate/subtitle&quot;/&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><div class=" tc-reveal">
 <div class="tc-subtitle">

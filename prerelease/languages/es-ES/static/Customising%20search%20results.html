@@ -69,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Por defecto, los resultados de búsquedas en la barra lateral se muestran como una simple lista de títulos de tiddler. La forma de mostrar los resultados puede modificarse a gusto mediante plugins de visualización. Si el sistema detecta visualizaciones adicionales, las mostrará en pestañas. </p><p>Las distintas visualizaciones de resultados se guardan en tiddlers con la etiqueta <code class="doc-tag">$:/tags/SearchResults</code>. La lista por defecto de resultados de búsqueda está implementada en el sistema y reside en el tiddler <code class="doc-tiddler">$:/core/ui/DefaultSearchResultList</code>.</p><p>Para crear una nueva visualización de resultados:</p><ol><li>Crea un nuevo tiddler con la etiqueta <code class="doc-tag">$:/tags/SearchResults</code></li><li>Usa la variable <code class="doc-var">searchTiddler</code> para acceder al título del tiddler que contiene el término de búsqueda actual</li></ol><p>Si quieres que sea la nueva visualización la que se muestre por defecto, crea un tiddler llamado <code class="doc-tiddler">$:/config/SearchResults/Default</code> que contenga en el texto el título de la nueva visualización. </p><p>Este es un ejemplo de visualización alternativa que muestra los resultados en orden cronológicamente inverso:</p><pre><code>\define searchResults()
 &lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter=&quot;[!is[system]search{$(searchTiddler)$}]&quot;/&gt;&quot;&quot;&quot;&gt;
 

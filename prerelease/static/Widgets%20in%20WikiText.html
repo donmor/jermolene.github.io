@@ -65,6 +65,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Widgets provide rich functionality within <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. They have the same syntax as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML elements</a>, but the tag name always starts with <code>$</code>. For example:</p><pre><code>&lt;$button message=&quot;tm-close-tiddler&quot;&gt;Close Me!&lt;/$button&gt;</code></pre><p>Note that widgets inherit all the features of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a>:</p><ul><li>Widget attributes can be specified as:<ul><li>Unquoted strings (that cannot contain spaces)</li><li>Strings quoted with single or double quotes</li><li>Strings quoted with triple-double quotes</li><li>Macro invocations (eg <code>attr=&lt;&lt;myMacro&gt;&gt;</code>)</li><li>Transclusions (eg, <code>attr={{MyTiddler!!field}}</code>)</li><li>Filtered transclusions (eg, <code>attr={{{ [filter[op]] }}}</code>)</li></ul></li><li>The content of a widget is parsed in inline mode unless the opening tag is followed by two linebreaks, which forces block mode<ul><li>'Inline mode' means that 'block mode' parse rules like headings, tables and lists are not recognised</li></ul></li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="HTML%2520in%2520WikiText.html">HTML in WikiText</a> for more details.</p><p>The available widgets include:</p><p><ul class="">
 
 <li>

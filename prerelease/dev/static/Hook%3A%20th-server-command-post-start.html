@@ -57,6 +57,7 @@ color:#4e432f;">
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
+
 <div class="tc-tiddler-body tc-reveal"><p>This hook allows plugins to extend the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> server command after it initializes. The two 
 most obvious use cases are adding routes (such as an attachments folder for external files) 
 to the <a class="tc-tiddlylink tc-tiddlylink-missing" href="SimpleServer.html">SimpleServer</a> instance and adding a websockets handler to the HTTP server. </p><p>Hook function parameters: </p><ul><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="SimpleServer.html">SimpleServer</a> instance<ul><li>Defined in core/modules/commands/server.js</li></ul></li><li><a class="tc-tiddlylink tc-tiddlylink-missing" href="NodeJS.html">NodeJS</a> HTTP Server instance<ul><li>See the <a class="tc-tiddlylink tc-tiddlylink-missing" href="NodeJS.html">NodeJS</a> docs at <a class="tc-tiddlylink-external" href="https://nodejs.org/docs/latest-v8.x/api/http.html#http_class_http_server" rel="noopener noreferrer" target="_blank">https://nodejs.org/docs/latest-v8.x/api/http.html#http_class_http_server</a></li></ul></li><li>Name of server invoking this hook (for special handling of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="NodeJS.html">NodeJS</a> HTTP server instance argument). <ul><li>Current known values: <code>tiddlywiki</code>, <code>tiddlyserver</code>. </li></ul></li></ul><p>Return value is ignored.

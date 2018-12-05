@@ -69,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Para crear un formato personalizado de exportación de tiddlers en texto plano, sigue los siguientes pasos:</p><ol><li>Crea un tiddler con los siguientes campos y valores:<ul><li><code class="doc-field">Tags</code>: <code class="doc-tag">$:/tags/Exporter</code></li><li><code class="doc-field">description</code>: descripción del formato</li><li><code class="doc-field">extension</code>: extensión de archivo por defecto, incluyendo el punto; por ejemplo, <code>.tmx</code></li></ul></li><li>Escribe el siguiente contenido:</li></ol><pre><code>\define renderContent()
 {{{ $(exportFilter)$ ||$:/core/templates/plain-text-tiddler}}}
 \end

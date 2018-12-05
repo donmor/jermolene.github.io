@@ -57,6 +57,7 @@ color:#4e432f;">
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
+
 <div class="tc-tiddler-body tc-reveal"><p>The microkernel only contains a bare store and some deserializers to load tiddlers from JSON files or from the DOM of the current HTML file.
 The core plug-in adds some more deserializers and a new mechanism for persisting and synchronising tiddlers.</p><p>This mechanism is provided as a global module in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fsyncer.js.html">$:/core/modules/syncer.js</a>.
 The saver module has three responsibilities:</p><ol><li>Save the whole wiki.</li><li>Provide the ability to download single tiddlers as files.</li><li>Synchronise the local wiki store with a remote wiki store, i.e. running in Node.js</li></ol><p>The syncer module is connected mainly to two other modules.

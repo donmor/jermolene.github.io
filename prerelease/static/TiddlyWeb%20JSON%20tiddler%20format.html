@@ -65,6 +65,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The web server API uses tiddlers in a special format originally designed for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWeb.html">TiddlyWeb</a>:</p><ul><li>Field values are represented as strings. Lists (like the <strong>tags</strong> and <strong>list</strong> fields) use double square brackets to quote values that contain spaces</li><li>Tiddlers are represented as an object containing any of a fixed set of standard fields, with custom fields being relegated to a special property called <strong>fields</strong></li><li>The standard fields are: <strong>bag</strong>, <strong>created</strong>, <strong>creator</strong>, <strong>modified</strong>, <strong>modifier</strong>, <strong>permissions</strong>, <strong>recipe</strong>, <strong>revision</strong>, <strong>tags</strong>, <strong>text</strong>, <strong>title</strong>, <strong>type</strong>, <strong>uri</strong></li></ul><p>For example, consider the following tiddler:</p><pre><code>{
 	&quot;title&quot;: &quot;HelloThere&quot;,
 	&quot;tags&quot;: &quot;FirstTag [[Second Tag]]&quot;,

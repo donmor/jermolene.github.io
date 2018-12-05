@@ -71,6 +71,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>username</strong>, in conjunction with its companion <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520password.html">password</a>:</p><ul><li>Enables <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Basic%2520Authentication.html">Basic Authentication</a> with the specified username/password combination being added to any credentials specified with the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520credentials.html">credentials</a> parameter</li><li>The specified username is used as a default value for the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520readers.html">readers</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameter%253A%2520writers.html">writers</a> authorization parameters if they are not specified</li></ul><h2 class="">Examples</h2><p>Serve anonymous users, setting the username to &quot;joe&quot;:</p><pre><code>tiddlywik mywikifolder --listen anon-username=joe</code></pre><p>Restrict access to the user &quot;joe&quot; with a password of &quot;secret&quot;:</p><pre><code>tiddlywik mywikifolder --listen username=joe password=secret</code></pre></div>
 
 

@@ -71,6 +71,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The <code>tm-load-plugin-from-library</code> message load the specified tiddler or plugin from the specified plugin library.</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">title</td><td align="left">Title of the tiddler or plugin to be loaded into the current wiki</td></tr><tr class="evenRow"><td align="left">url</td><td align="left">Url specifying the plugin library from which the tiddler or plugin is to be loaded.</td></tr></tbody></table><h1 class="">Example</h1><p>The following snippet will install the <a class="tc-tiddlylink tc-tiddlylink-missing" href="CodeMirror.html">CodeMirror</a> plugin from the official plugin library:</p><pre><code>&lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-load-plugin-from-library&quot; title=&quot;$:/plugins/tiddlywiki/codemirror&quot; url=&quot;https://tiddlywiki.com/library/v5.1.11/index.html&quot;/&gt;
 Install CodeMirror

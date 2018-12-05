@@ -57,6 +57,7 @@ color:#4e432f;">
 </span>
 <span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
+
 <div class="tc-tiddler-body tc-reveal"><p>Modules with <code>module-type: startup</code> have to export a  function named <code>startup</code> and may export a name property to identify this module. The startup function will be executed by the boot kernel at the end of the boot process.</p><pre><code>// From boot.js:
 // Gather up any startup modules
 $tw.boot.remainingStartupModules = []; // Array of startup modules

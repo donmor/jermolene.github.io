@@ -65,6 +65,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>In <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Transclusion%2520Basic%2520Usage.html">Transclusion Basic Usage</a> we have seen how to include the content of a tiddler A into a tiddler B. Now suppose that tiddler A contains:</p><pre><code>@@background-color:yellow;
 Hello, my title is {{!!title}}
 @@</code></pre><p>This makes tiddler A display its title with a yellow background (see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Styles%2520and%2520Classes%2520in%2520WikiText.html">Styles and Classes in WikiText</a> to learn about CSS style). Imagine that you want to display the title in the same way in tiddler B. But you don't want to copy/paste the style instructions, because you might want to change the background colour later and you want to keep it consistent among tiddlers. This looks like a typical case of transclusion, so let's try to transclude tiddler A in tiddler B the usual way with <code>{{A}}</code>. You should see the following content in tiddler B:</p><blockquote class="tc-quote"><p style="background-color:yellow;">Hello, my title is A

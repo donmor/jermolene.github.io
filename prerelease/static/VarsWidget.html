@@ -65,6 +65,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The <strong>vars</strong> widget allows multiple variables to be set in one operation. In some situations it can result in simpler code than using the more flexible <a class="tc-tiddlylink tc-tiddlylink-resolves" href="SetWidget.html">SetWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$vars&gt;</code> widget is the scope for the value assigned to the variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left"><em>{attributes not starting with $}</em></td><td align="left">Each attribute name specifies a variable name. The attribute value is assigned to the variable</td></tr></tbody></table><h1 class="">Examples</h1><p>Consider a case where you need to set multiple variables.</p><p>Using the <code>&lt;$vars&gt;</code> widget, this situation may be handled in the following way:</p><pre><code>\define helloworld() Hello world!
 
 &lt;$vars greeting=&quot;Hi&quot; me={{!!title}} sentence=&lt;&lt;helloworld&gt;&gt;&gt;

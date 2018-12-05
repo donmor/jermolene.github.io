@@ -72,6 +72,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>The <code>tm-load-plugin-library</code> message loads the specified plugin library and imports information about the contained plugins in temporary tiddlers.</p><table><tbody><tr class="evenRow"><th align="left">Name</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">url</td><td align="left">Url specifying the plugin library to be loaded.</td></tr><tr class="evenRow"><td>infoTitlePrefix</td><td align="left">Prefix to the temporary tiddlers being created, containing information about the plugins the plugin library offers. Defaults to <code class="doc-value"><a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftemp%252FRemoteAssetInfo%252F.html">$:/temp/RemoteAssetInfo/</a></code></td></tr></tbody></table><h1 class="">Example</h1><p>The following snippet will load the official plugin library:</p><pre><code>&lt;$button&gt;
 &lt;$action-sendmessage $message=&quot;tm-load-plugin-library&quot; infoTitlePrefix=&quot;$:/temp/RemoteAssetInfo/&quot; url=&quot;https://tiddlywiki.com/library/v5.1.11/index.html&quot;/&gt;
 Load official plugin library

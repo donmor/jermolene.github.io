@@ -70,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Transclusion Simple</h1><p>Pour inclure le contenu d'un <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlerA.html">TiddlerA</a> dans un <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlerB.html">TiddlerB</a>, modifier le précédent pour y inclure le texte suivant : </p><pre><code>
 Voici le contenu de TiddlerA: {{TiddlerA}}</code></pre><p>Le résultat permet au contenu du champ <strong>text</strong> (c.à.d le contenu principal) du <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlerA.html">TiddlerA</a> de s'afficher dans le <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlerB.html">TiddlerB</a>. </p><h1 class="">Utilisation</h1><p>La notation <code>{{TiddlerA}}</code> est une abréviation de <code>{{TiddlerA!!text}}</code>, puisque le champ de transclusion par défaut est <strong>text</strong>, mais tout autre <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFields.html">champ</a> peut être spécifié. Par exemple, vous pouvez visualiser la dernière fois que le <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlerA.html">TiddlerA</a> fut modifié par :</p><pre><code>
 TiddlerA a été modifié le {{TiddlerA!!modified}}</code></pre><p>En omettant le titre du tiddler, la notation de transclusion peut aussi être utilisé pour afficher le contenu d'un champ du tiddler en cours, par exemple :</p><pre><code>

@@ -70,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Le tiddler système <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%2524%253A%252FHistoryList.html">$:/HistoryList</a> garde la trace d'une liste de tiddlers composé de l'historique de navigation. Chaque fois que vous cliquez sur un lien vers un tiddler, le titre du tiddler cible est ajouté au sommet de la pile.</p><p>La liste historique est mémorisée en JSON qui permettent des détails additionnels au sujet des coordonnées du nœud DOM initialisant la navigation. Ce champ peut être utilisé comme suit :</p><pre><code>&lt;$list filter=&quot;[list[$:/StoryList]]&quot; history=&quot;$:/HistoryList&quot; storyview=&quot;pop&quot;&gt;
 
 &lt;$button message=&quot;tm-close-tiddler&quot; class=&quot;tc-btn-invisible tc-btn-mini&quot;&gt;&amp;times;&lt;/$button&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt; &lt;$reveal type=&quot;match&quot; state=&quot;$:/HistoryList!!current-tiddler&quot; text=&lt;&lt;currentTiddler&gt;&gt;&gt;&amp;#x2713;&lt;/$reveal&gt;&lt;/$link&gt;

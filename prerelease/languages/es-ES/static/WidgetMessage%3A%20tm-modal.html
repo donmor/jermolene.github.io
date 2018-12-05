@@ -69,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>El mensaje <code>tm-modal</code> muestra determinado tiddler sobre una ventana modal que atenúa la página principal. Requiere de las siguientes propiedades en el objeto <code>event</code>:</p><table><tbody><tr class="evenRow"><th align="left">Nombre</th><th align="left">Descripción</th></tr><tr class="oddRow"><td align="left">param</td><td align="left">Título del tiddler que se quiere mostrar</td></tr><tr class="evenRow"><td align="left">paramObject</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-missing" href="HashMap.html">HashMap</a> de variables que se le suministra al modal</td></tr></tbody></table><p>La variable <dfn class="doc-def">current tiddler</dfn> se asigna al tiddler modal, pero puede anularse especificando un valor diferente en <code>paramObject</code>.</p><p>Este mensaje se genera normalmente con <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a> y lo procesa el núcleo de TiddlyWiki.</p><h2 class="">Ejemplo</h2><p>Este es un ejemplo de modal y de cómo se le pasan parámetros:</p><p><div class="doc-example"><pre><code>Escribe tu nombre: &lt;$edit-text tiddler=&quot;$:/temp/yourName&quot; tag=&quot;input&quot; default=&quot;Nombre&quot;/&gt;
 
 Escribe tu mensaje:

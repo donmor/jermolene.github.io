@@ -69,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Un <dfn class="doc-def">tiddler de datos</dfn> o <dfn class="doc-def"><a class="tc-tiddlylink tc-tiddlylink-missing" href="DataTiddler.html">DataTiddler</a></dfn> es una base de datos en miniatura, contenida en un tiddler.</p><p>Existen dos formatos estándar:</p><ul><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">Diccionarios</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">Tiddlers JSON</a></li></ul><p>Se pueden definir otros formatos para obtener bloques de datos que se comporten como tiddlers de datos. </p><p>Para buscar un valor por su nombre, usa una <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TextReference.html">Referencia textual</a>. Por ejemplo, si un <a class="tc-tiddlylink tc-tiddlylink-resolves" href="DictionaryTiddlers.html">diccionario</a> llamado <code>DiasdelMes</code> contiene:</p><pre><code>oct:31
 nov:30
 dec:31</code></pre><p>... entonces, <code>{{MonthDays##nov}}</code> devolverá el valor <code>30</code>.</p><p>Lo mismo sucede si <code>DiasdelMes</code> es un <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JSONTiddlers.html">tiddler JSON</a> con el siguiente contenido:</p><pre><code>{&quot;oct&quot;:31,&quot;nov&quot;:30,&quot;dec&quot;:31}</code></pre><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
