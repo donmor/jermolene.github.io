@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Concepts " data-tags="Concepts" data-tiddler-title="Order of Tagged Tiddlers"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -71,13 +70,14 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Quand TiddlyWiki génère une liste de tiddlers portant un tag particulier (ex : la liste déroulante d'un tag pilule), it trie les tiddlers selon les règles suivantes :</p><ol><li>Commencer par tout tiddler <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">declaré</a> dans le champ <code class="doc-field">list</code> du tiddler, en suivant l'ordre donné.</li><li>Pour chaque tiddler <code class="doc-place">T</code> restant, chercher un champ <code class="doc-field">list-before</code>. s'il a le titre du tiddler comme valeur, placer le tiddler <code class="doc-place">T</code> juste <em class="doc-em">avant</em> celle-ci.<ul><li>Au cas particulier, où le champ existe mais que sa valeur soit vide, placer <code class="doc-place">T</code> au tout début de la liste.</li></ul></li><li>Pour chaque tiddler <code class="doc-place">T</code> restant, chercher un champ <code class="doc-field">list-after</code> field. S'il a le titre du tiddler title comme valeur, placer le tiddler <code class="doc-place">T</code> juste <em class="doc-em">après</em> ce dernier.</li><li>Si des tiddlers restent encore, les placer en queue de liste dans l'ordre alphabétique croissant des titres. Les différences entre majuscule et minuscule sont ignorées.</li></ol></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

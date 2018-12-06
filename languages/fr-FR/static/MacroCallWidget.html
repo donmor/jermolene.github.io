@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="MacroCallWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -71,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>Le widget d'appel de macro propose une syntaxe alternative pour invoquer des macros. L'avantage de la forme de ce widget est de passer des paramètres de macro en attributs de widget, ce qui permet d'utiliser des indirections et d'affecter des valeurs de macro.</p><p>Par exemple, une macro appelée <code>italicise</code> ayant pour seul paramètre <code>texte</code> peut être invoquée de ces différentes façons :</p><pre><code>&lt;&lt;italicise &quot;Texte à mettre en italiques&quot;&gt;&gt;
 &lt;&lt;italicise text:&quot;Texte à mettre en italiques&quot;&gt;&gt;
 &lt;$macrocall $name=&quot;italicise&quot; text=&quot;Texte à mettre en italiques&quot;/&gt;
@@ -78,10 +78,10 @@ color:#333333;">
 &lt;$macrocall $name=&quot;italicise&quot; text=&lt;&lt;textMaker &quot;Une autre macro pour générer du texte à italiciser&quot;&gt;&gt;/&gt;</code></pre><p>Vous pouvez examiner plusieurs exemples du widget d'appel de macro dans le noyau :</p><ul><li>Liste les informations du module : <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252Fmodules.html">$:/snippets/modules</a></li><li>Liste les informations du champ : <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fsnippets%252Fallfields.html">$:/snippets/allfields</a></li><li>Génère les URIs <code>data:</code> : <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Fthemes%252Ftiddlywiki%252Fstarlight%252Fstyles.tid.html">$:/themes/tiddlywiki/starlight/styles.tid</a></li></ul><h1 class="">Contenu et Attributs</h1><p>Le contenu du widget <code>&lt;$macrocall&gt;</code> est ignoré.</p><table><tbody><tr class="evenRow"><th align="left">Attribut</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">$name</td><td align="left">Nom de la macro appelée</td></tr><tr class="evenRow"><td align="left">$type</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">Type de contenu</a> par lequel le texte entrée sera analysé (par défault <code>text/vnd.tiddlywiki</code>)</td></tr><tr class="oddRow"><td align="left">$output</td><td align="left"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ContentType.html">Type de contenu</a> affiché en sortie (par défaut <code>text/html</code>, peut aussi être <code>text/plain</code>)</td></tr><tr class="evenRow"><td align="left"><em>parameters</em></td><td align="left">Paramètres de macro spécifiés comme attributs</td></tr></tbody></table></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

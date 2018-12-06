@@ -1052,12 +1052,13 @@ a.tc-tiddlylink:hover {
 }.tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
-	fill: #ffffff;
 	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
 	width: 100%;
+}button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
 }/*
 ** Page layout
 */.tc-topbar {
@@ -1329,6 +1330,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
+	color: #ffffff;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more {
 	white-space: normal;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more button {
@@ -1844,6 +1846,33 @@ a.tc-tiddlylink:hover {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
 }/*
+** Floating drafts list
+*/.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid #ffffff;
+	border-bottom-none;
+	background: #ff0000;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
 ** Control panel
 */.tc-control-panel td {
 	padding: 4px;
@@ -2202,8 +2231,10 @@ a.tc-tiddlylink:hover {
     	vertical-align: baseline;
 }.tc-tree li span {
     	color: lightgray;
+}select {
+        color: ;
+        background: ;
 }
-
 
 li.Done {
 list-style-image:url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20class%3D%22tc-list-image-done%20tc-list-image%22%20height%3D%2215%22%20width%3D%2215%22%3E%0A%3Cpath%20id%3D%22path3757%22%20stroke-linejoin%3D%22round%22%20d%3D%22M3.5168%2C8.809%2C6.3999%2C12.172%2C12.747%2C5.9087%22%20stroke%3D%22%2331a837%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%222.5%22%20fill%3D%22none%22%2F%3E%0A%3C%2Fsvg%3E);

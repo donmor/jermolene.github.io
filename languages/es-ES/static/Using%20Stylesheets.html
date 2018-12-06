@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Customise%20TiddlyWiki " data-tags="[[Customise TiddlyWiki]]" data-tiddler-title="Using Stylesheets"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -70,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>El primer paso para cambiar la apariencia de TiddlyWiki es elegir y aplicar uno de los temas disponibles o modificar la <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ColourPalettes.html">paleta de colores</a>.</p><p>Además, pueden definirse <a class="tc-tiddlylink-external" href="http://www.w3schools.com/css" rel="noopener noreferrer" target="_blank">hojas de estilos CSS</a> mediante la etiqueta <code class="doc-tag">$:/Stylesheet</code>. Intenta crear una hoja de estilos con el siguiente contenido para cambiar el actual color de fondo a rojo:</p><pre><code>html body.tc-body {
 	background: red;
 }</code></pre><h1 class="">Puentear estilos del tema</h1><p>Las hojas personales de estilos se aplican independientemente de los estilos definidos por el tema. Por ello, a menudo es necesario que las reglas CSS de tu hoja de estilos sean más específicas que las del tema que quieres puentear. Por ejemplo, <code>html body.tc-body</code> es más específco que <code>body.tc-body</code>.</p><h1 class="">Tipo &quot;estilos&quot;</h1><p>Normalmente es mejor definir como  el valor <code class="doc-place">text/css</code>. Así te aseguras de que TiddlyWiki entienda el contenido como hoja de estilos en texto plano y no aplique reglas de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> en su interpretación.</p><p>Si necesitas usar macros y transclusiones en tu hoja de estilos, tendrás que usar el <code class="doc-field">type</code> por defecto <code>text/vnd.tiddlywiki</code>, permitiendo así el proceso de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>. Ahí va un ejemplo:</p><pre><code>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
@@ -84,10 +84,10 @@ body.tc-body pre {
 &lt;/pre&gt;</code></pre><h1 class="">Stylesheet Macros</h1><p>El núcleo de TiddlyWiki proporciona una serie de <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stylesheet%2520Macros.html">macros globales</a>, útiles para la construcción de hojas de estilos. </p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features " data-tags="Features" data-tiddler-title="LazyLoading"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -70,13 +69,14 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Generalmente, todo el contenido de todos los tiddlers se incrusta en el archivo HTML principal. <dfn class="doc-def">Lazy loading</dfn> o <dfn class="doc-def">Carga diferida</dfn> es la técnica por la que sólo se incrustan los metadatos del tiddler (es decir, todos los campos menos <code class="doc-field">text</code>), que se pide al servidor cuando se necesita. (<a class="tc-tiddlylink-external" href="https://es.wikipedia.org/wiki/Lazy_loading" rel="noopener noreferrer" target="_blank">Más información, aquí</a>)</p><p>Puede aplicarse carga diferida en dos configuraciones:</p><ul><li>En <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520on%2520Node.js.html">Node.js</a> se puede aplicar a los tiddlers de imágenes o a todos los tiddlers excepto los de sistema</li><li>En <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki%2520in%2520the%2520Sky%2520for%2520TiddlyWeb.html">TiddlyWiki in the Sky for TiddlyWeb</a>, se puede aplicar a todos los tiddlers</li></ul><h1 class="">Carga diferida en Node.js</h1><p>Para iniciar TiddlyWiki en carga diferida de imágenes, utiliza este comando: </p><pre><code>tiddlywiki --server 8080 $:/core/save/lazy-images</code></pre><p>para aplicar la carga diferida a todos los tiddlers salvo los de sistema, utiliza este este otro:</p><pre><code>tiddlywiki --server 8080 $:/core/save/lazy-all</code></pre><h1 class="">Carga diferida en <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWeb.html">TiddlyWeb</a></h1><p>En la configuración actual, la carga diferida se aplica por defecto.</p></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

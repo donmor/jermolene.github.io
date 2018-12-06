@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc " data-tags="doc" data-tiddler-title="Extended Persistence"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -51,19 +50,14 @@ Extended Persistence
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
+
 <div class="tc-tiddler-body tc-reveal"><p>The microkernel only contains a bare store and some deserializers to load tiddlers from JSON files or from the DOM of the current HTML file.
 The core plug-in adds some more deserializers and a new mechanism for persisting and synchronising tiddlers.</p><p>This mechanism is provided as a global module in <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fcore%252Fmodules%252Fsyncer.js.html">$:/core/modules/syncer.js</a>.
 The saver module has three responsibilities:</p><ol><li>Save the whole wiki.</li><li>Provide the ability to download single tiddlers as files.</li><li>Synchronise the local wiki store with a remote wiki store, i.e. running in Node.js</li></ol><p>The syncer module is connected mainly to two other modules.
@@ -83,10 +77,10 @@ Saves are triggered by messages from the UI. The syncer module uses the saver wi
 </p><h2 class="">Syncadaptor</h2><p>A module with <code>module-type: syncadaptor</code> provides functionality to get a list of tiddlers (this list is provided as SkinnyTiddlers, which are normal tiddlers without the text field) and to load, save and delete single tiddlers. A syncadaptor can also provide functions to login and logout so that syncadaptor modules can be used to synchronize tiddlers with a remote server.</p><p>The syncer module only uses one syncadaptor and honours a special <a class="tc-tiddlylink tc-tiddlylink-resolves" href="System%2520Tiddlers.html">system tiddler</a> <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fconfig%252FSyncFilter.html">$:/config/SyncFilter</a> containing a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Tags%2520and%2520Filter%2520Mechanism.html">filter string</a>. Tiddlers matching this filter string are not synced with a syncadapter.</p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

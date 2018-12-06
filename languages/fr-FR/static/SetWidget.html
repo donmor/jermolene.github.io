@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="SetWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -71,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>Le widget set variable affecte une valeur à une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Variables.html">variable</a> spécifiée. La nouvelle valeur est alors disponible par le contenu dans le cadre défini du widget.</p><h1 class="">Contenu et Attributs</h1><p>Le contenu du widget <code>&lt;$set&gt;</code> forme le cadre de la valeur affectée à la variable.</p><table><tbody><tr class="evenRow"><th align="left">Attribut</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">name</td><td align="left">Le nom de la variable à affecter (par défaut du &quot;Tiddlercourant&quot;)</td></tr><tr class="evenRow"><td align="left">value</td><td align="left">La valeur à affecter à la variable si le filtre est manquant ou non vide</td></tr><tr class="oddRow"><td align="left">filter</td><td align="left">Un filtre optionnel à évaluer et à affecter à la variable (voir ci-dessous)</td></tr><tr class="evenRow"><td align="left">emptyValue</td><td align="left">La valeur à affecter à la variable si le filtre évalue une liste vide (voir ci-dessous)</td></tr></tbody></table><h2 class="">Affectation simple d'une variable</h2><p>L'utilisation la plus simple du widget set variable affecte une chaine à une variable. L'exemple suivant affecte une chaine littérale</p><pre><code>&lt;$set name=&quot;maVariable&quot; value=&quot;du texte&quot;&gt;
 &lt;$text text=&lt;&lt;maVariable&gt;&gt;/&gt;
 &lt;/$set&gt;</code></pre><p>Les attributs nom et valeur peuvent tous deux être transclus. Par exemple :</p><pre><code>&lt;$set name=&lt;&lt;autreVariable&gt;&gt; value={{gabarit!!texte}}&gt;
@@ -82,10 +82,10 @@ color:#333333;">
 &lt;/$set&gt;</code></pre></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

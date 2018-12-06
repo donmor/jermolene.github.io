@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features tc-tagged-Concepts " data-tags="Features Concepts" data-tiddler-title="PermaLinks"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -51,31 +50,20 @@ PermaLinks
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:#FF8383;
 fill:#333333;
 color:#333333;">
  Concepts
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
-<span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Features
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
+
 
 
 
@@ -94,10 +82,10 @@ color:#333333;">
 </svg> <strong>Settings</strong> tab:</p><ul><li>Whether to automatically update the address bar at each navigation, and if so whether to include the story sequence as well as the target tiddler</li><li>Whether the updates to the address bar should affect browser history. The default is <strong>no</strong>; when switched to <strong>yes</strong> you can rewind navigation between tiddlers using the browser back and forward buttons</li></ul><p>Note that typing or navigating to a permalink will always cause the permalink to be processed, and tiddlers opened and closed as appropriate.</p><h2 class="">Technical Details</h2><p>When <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> starts up it processes permalinks according to the following steps; the same steps are repeated if the permalink changes dynamically (this happens in response to the user editing the address bar, for example).</p><ol><li>If the permalink contains a colon, treat the string before as the <strong>target</strong> and the string after it as the <strong>story filter</strong></li><li>If the permalink doesn't contain a colon, treat the entire string as the <strong>target</strong> and mark the <strong>story filter</strong> as <em>unspecified</em></li><li>If the <strong>story filter</strong> was unspecified and we're in the process of starting up, then set the <strong>story filter</strong> to the empty string if the <strong>target</strong> is specified, or to the default tiddlers if the <strong>target</strong> is unspecified</li><li>If the <strong>story filter</strong> was unspecified and we're not starting up, then set the <strong>story filter</strong> to the current story list</li><li>Evaluate the <strong>story filter</strong> as the <strong>story list</strong></li><li>If the <strong>target</strong> is specified and not present in the <strong>story list</strong> then add it at the top</li><li>If the <strong>target</strong> is specified then navigate to it, otherwise navigate to the first tiddler in the <strong>story list</strong></li></ol></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

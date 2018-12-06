@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="ImageWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -72,14 +71,15 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The image widget displays images that can be specified as a remote URL or the title of a local tiddler containing the image.</p><h1 class="">Content and Attributes</h1><p>Any content of the <code>&lt;$image&gt;</code> widget is ignored.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">source</td><td align="left">The URL of the image, or the title of an image tiddler</td></tr><tr class="evenRow"><td align="left">width</td><td align="left">The width of the image</td></tr><tr class="oddRow"><td align="left">height</td><td align="left">The height of the image</td></tr><tr class="evenRow"><td align="left">tooltip</td><td align="left">The tooltip to be displayed over the image</td></tr><tr class="oddRow"><td align="left">alt</td><td align="left">The alternative text to be associated with the image</td></tr><tr class="evenRow"><td align="left">class</td><td align="left">CSS classes to be assigned to the <code>&lt;img&gt;</code> element</td></tr></tbody></table><p>The width and the height can be specified as pixel values (eg &quot;23&quot; or &quot;23px&quot;) or percentages (eg &quot;23%&quot;). They are both optional; if not provided the browser will use CSS rules to size the image.</p><h1 class="">External Images and the <strong>_canonical_uri</strong> field</h1><p>When used to display tiddler-based images, the image widget operates in two distinct modes:</p><ul><li>If the <strong>_canonical_uri</strong> field is present then it is used as the <strong>src</strong> attribute of the generated <code>&lt;img&gt;</code> element and the <strong>text</strong> field is ignored</li><li>Without the <strong>_canonical_uri</strong> field, the image widget generates an <code>&lt;img&gt;</code> element that embeds the image data directly using a <code>data:</code> URI.</li></ul><p>See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ExternalImages.html">ExternalImages</a> for more details.
 </p></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

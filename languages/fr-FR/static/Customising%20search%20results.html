@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Customise%20TiddlyWiki " data-tags="[[Customise TiddlyWiki]]" data-tiddler-title="Customising search results"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -71,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Par défaut les résultats de la recherche du menu latéral sont affichés comme une simple liste de titres de tiddler. Ce résultat de recherche peut être personnalisé en ajoutant des plugins de visualisation qui les montreront de différentes façons. (les onglets sont affichés automatiquement si un résultat de recherche additionnel est détecté).</p><p>Les visualisations des résultats de recherche sont mémorisés dans les tiddlers étiquetés <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FSearchResults.html">$:/tags/SearchResults</a>. La liste de résultats de recherche par défaut est implémentée dans le tiddler système <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="%2524%253A%252Fcore%252Fui%252FDefaultSearchResultList.html">$:/core/ui/DefaultSearchResultList</a>.</p><p>Pour créer un nouvel affichage de liste de recherche :</p><ol><li>Créez un nouveau tiddler étiqueté <a class="tc-tiddlylink tc-tiddlylink-missing" href="%2524%253A%252Ftags%252FSearchResults.html">$:/tags/SearchResults</a></li><li>Utilise la variable widget <strong>searchTiddler</strong> pour accéder au titre de chaque tiddler contenant les termes de la recherche en cours</li></ol><p>Si vous voulez faire du nouvel affichage celui du résultat de recherche par défaut, créez un tiddler appelé <a class="tc-tiddlylink tc-tiddlylink-shadow" href="%2524%253A%252Fconfig%252FSearchResults%252FDefault.html">$:/config/SearchResults/Default</a> contenant le titre de cet affichage.</p><p>Voici un exemple d'affichage montrant les résultats dans l'ordre chronologique inverse :</p><pre><code>\define searchResults()
 &lt;$set name=&quot;resultCount&quot; value=&quot;&quot;&quot;&lt;$count filter=&quot;[!is[system]search{$(searchTiddler)$}]&quot;/&gt;&quot;&quot;&quot;&gt;
 
@@ -82,10 +82,10 @@ color:#333333;">
 &lt;&lt;searchResults&gt;&gt;</code></pre></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

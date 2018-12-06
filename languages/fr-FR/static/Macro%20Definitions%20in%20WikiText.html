@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists    " data-tags="" data-tiddler-title="Macro Definitions in WikiText"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -60,6 +59,7 @@ Définitions de macros en WikiText
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Une <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macro</a> est définie par l'utilisation du <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma.html">pragma</a> <code>\define</code>. Comme tout pragma, il peut seulement prendre place au début d'un tiddler.</p><p>La première ligne de la définition indique le nom de la macro suivi de ses paramètres. Chaque paramètre a un nom, et de façon optionnelle une valeur par défaut utilisée si aucune valeur n'est passée lors de l'appel de la macro. Les lignes qui suivent contiennent le texte de la macro (càd l'extrait de code représenté par le nom de la macro), jusqu'à l'apparition du <code>\end</code> :</p><pre><code>\define sayhi(name:&quot;Bugs Bunny&quot; address:&quot;Rabbit Hole Hill&quot;)
 Salut, Je suis $name$ et je vis à $address$.
 \end
@@ -89,10 +89,10 @@ Salut, je suis $(name)$ et je vis à $(address)$.
 </p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

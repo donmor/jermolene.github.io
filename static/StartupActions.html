@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Features " data-tags="Features" data-tiddler-title="StartupActions"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -51,19 +50,14 @@ StartupActions
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Features
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
+
 
 
 
@@ -72,68 +66,42 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>During startup, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> executes any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> found in tiddlers with the following system tags:</p><ul><li><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/StartupAction
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
- (executed on all platforms)</li><li><span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span> (executed on all platforms)</li><li><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/StartupAction/Browser
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
- (only executed when running in the browser)</li><li><span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span> (only executed when running in the browser)</li><li><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/StartupAction/Node
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
- (only executed when running under Node.js)</li></ul><p>Startup actions are useful for customising <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> according to environmental factors such as the screen size. For example, the following action widgets when placed in a tiddler tagged <span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span> (only executed when running under Node.js)</li></ul><p>Startup actions are useful for customising <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> according to environmental factors such as the screen size. For example, the following action widgets when placed in a tiddler tagged <span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  $:/tags/StartupAction/Browser
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
- will cause the sidebar to be hidden by default when the screen width is less than 1000 pixels:</p><pre><code>&lt;$reveal type=&quot;lt&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span> will cause the sidebar to be hidden by default when the screen width is less than 1000 pixels:</p><pre><code>&lt;$reveal type=&quot;lt&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; $value=&quot;no&quot;/&gt;
 &lt;/$reveal&gt;
 
 &lt;$reveal type=&quot;gteq&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; $value=&quot;yes&quot;/&gt;
-&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them:</p><pre><code>&lt;$importvariables filter=&quot;[[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]&quot;&gt;
-...actions that depend upon global macros...
-&lt;/$importvariables&gt;</code></pre></div>
+&lt;/$reveal&gt;</code></pre><p>Note that global macros are not available within startup action tiddlers by default. If you need to access them then you'll need to explicitly include them with an <strong>import</strong> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pragma.html">pragma</a> at the top of the tiddler:</p><pre><code>\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]</code></pre></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

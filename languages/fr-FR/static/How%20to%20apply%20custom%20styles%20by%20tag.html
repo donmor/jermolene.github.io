@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Learning " data-tags="Learning" data-tiddler-title="How to apply custom styles by tag"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -71,6 +70,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>Vous pouvez appliquer des styles personnalisés aux tiddlers ayant un tag particulier en définissant une classe CSS nommée <code>tc-tagged-&lt;Nom du tag&gt;</code>.</p><p>Par exemple, pour coloriser les tiddlers étiquetés &quot;<a class="tc-tiddlylink tc-tiddlylink-missing" href="NightReader.html">NightReader</a>&quot; d'une façon spéciale, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Using%2520Stylesheets.html">Créer une feuille de style </a> définissant la classe <code>tc-tagged-NightReader</code> comme suit :</p><pre><code>.tc-tagged-NightReader {
 	background-color:black;
 	color: orange;
@@ -82,10 +82,10 @@ color:#333333;">
 }</code></pre><p>La classe <code>tc-tagged-NightReader</code> s'applique au tiddler tou entier et pas seulement au texte du tiddler. Si vous désirez l'appliquer à une portion plus réduite du tiddler vous pouvez ajuster le sélecteur CSS, comme ici avec <code>.tc-tagged-NightReader .tc-tiddler-body</code>.</p><p>Notez que les tags contenant des espaces et des caractères non-alphanumériques seront convertis en utilisant le codage URI, rendant le nom de classe CSS généré difficile à prévoir. Par exemple :</p><table><tbody><tr class="evenRow"><th align="left">Tag</th><th align="left">Nom généré pour la classe</th></tr><tr class="oddRow"><td align="left"><code>$:/mytag</code></td><td align="left"><code>tc-tagged-%24%3A%2Fmytag</code></td></tr><tr class="evenRow"><td align="left"><code>one two</code></td><td align="left"><code>tc-tagged-one%20two</code></td></tr><tr class="oddRow"><td align="left"><code>£35.23</code></td><td align="left"><code>tc-tagged-%C2%A335.23</code></td></tr></tbody></table></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

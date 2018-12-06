@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists    " data-tags="" data-tiddler-title="Example web.config for IIS"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -49,12 +48,13 @@ Example web.config for IIS
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 28 mars 2018 à 16h10
+</a> 1 juillet 2018 à 19h52
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"></div>
 </div>
+
 
 
 
@@ -79,7 +79,7 @@ Example web.config for IIS
            stdoutLogFile=&quot;.\node.log&quot;
            startupTimeLimit=&quot;20&quot;
            processPath=&quot;C:\Program Files\nodejs\node.exe&quot;
-           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./MyStuff --server PORT $:/core/save/all text/plain text/html &amp;quot;&amp;quot; &amp;quot;&amp;quot; 127.0.0.1 /MyApp&quot;&gt;
+           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp&quot;&gt;
             &lt;environmentVariables&gt;
                 &lt;environmentVariable name=&quot;PORT&quot; value=&quot;%HTTP_PLATFORM_PORT%&quot; /&gt;
                 &lt;environmentVariable name=&quot;NODE_ENV&quot; value=&quot;Production&quot; /&gt;
@@ -90,10 +90,10 @@ Example web.config for IIS
 </code></pre></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

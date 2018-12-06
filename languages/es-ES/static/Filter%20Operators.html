@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Filters " data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -72,6 +71,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>A <dfn class="doc-def">filter operator</dfn> is a predefined keyword attached to an individual <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">step</a> of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filters.html">filter</a>. It defines the particular action of that step.</p><p><strong>Important:</strong> Each first <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html">step</a> of a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Run.html">filter run</a> not given any input titles receives the output of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="all%2520Operator.html">[all[tiddlers]]</a> as its input.</p><p>The following table lists all core operators, the most common ones marked ✓. The last column indicates whether an operator allows <strong>negation</strong> using the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Step.html"><code>!</code> prefix</a>. For specifics as to each operator's negated output please refer to its documentation.</p><p><table>
 <tr>
 <th align="left">Operator</th>
@@ -89,6 +89,11 @@ color:#333333;">
 <td>find the titles that link to each input title</td>
 <td align="center"></td>
 <td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="contains%2520Operator.html">contains</a></td>
+<td>filter the input by searching list fields for a value</td>
+<td align="center"></td>
+<td align="center"><code>!</code></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="count%2520Operator.html">count</a></td>
 <td>count the number of entries in a list</td>
@@ -180,6 +185,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="range%2520Operator.html">range</a></td>
+<td>generate a range of numbers</td>
+<td align="center"></td>
+<td align="center"><code>!</code></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="regexp%2520Operator.html">regexp</a></td>
 <td>filter the input by pattern-matched field</td>
 <td align="center"></td>
@@ -193,6 +203,11 @@ color:#333333;">
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="search%2520Operator.html">search</a></td>
 <td>filter the input by searching tiddler content</td>
 <td align="center">✓</td>
+<td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subfilter%2520Operator.html">subfilter</a></td>
+<td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a></td>
+<td align="center"></td>
 <td align="center"><code>!</code></td>
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html">title</a></td>
@@ -518,10 +533,10 @@ color:#333333;">
 </table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead. For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.</p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

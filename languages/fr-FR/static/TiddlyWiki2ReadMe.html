@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists    " data-tags="" data-tiddler-title="TiddlyWiki2ReadMe"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -62,6 +61,7 @@ TiddlyWiki2ReadMe
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Building <span>TiddlyWikiClassic</span></h1><p><span>TiddlyWiki5</span> can be used to build older 2.x.x versions of <span>TiddlyWikiClassic</span> from their constituent components. Doing so involves these features:</p><ul><li>The <code>tiddlywiki/classictools</code> plugin, containing a deserializer module which allows tiddlers to be loaded from <span>TiddlyWiki</span> 2.x.x <code>.recipe</code> files</li><li>The <code>stripcomments</code> format for the <span>ViewWidget</span>, which strips single line <span>JavaScript</span> comments starting <code>//#</code></li><li>The <code>stripTitlePrefix='yes'</code> attribute of the <span>FieldsWidget</span>, which removes prefixes wrapped in curly braces from the <code>title</code> attribute<ul><li>For example, <code>{tiddler}HelloThere</code> would be transformed to <code>HelloThere</code></li></ul></li></ul><h1 class="">Usage</h1><p><span>TiddlyWikiClassic</span> is built from the command line by running <span>TiddlyWiki on Node.js</span>. A typical usage would be:</p><pre><code>node ../../tiddlywiki.js \
 	--verbose \
 	--load &lt;path_to_recipe_file&gt; \
@@ -69,10 +69,10 @@ TiddlyWiki2ReadMe
 	|| exit 1</code></pre></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

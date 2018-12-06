@@ -1052,12 +1052,13 @@ a.tc-tiddlylink:hover {
 }.tc-tag-label svg, .tc-tag-label img {
 	height: 1em;
 	width: 1em;
-	fill: #ffffff;
 	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
 	width: 100%;
+}button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
 }/*
 ** Page layout
 */.tc-topbar {
@@ -1329,6 +1330,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button:hover {
 	background-color: #444444;
 	fill: #ffffff;
+	color: #ffffff;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more {
 	white-space: normal;
 }.tc-editor-toolbar .tc-text-editor-toolbar-more button {
@@ -1861,6 +1863,33 @@ a.tc-tiddlylink:hover {
 	padding: 0 2px 2px 42px;
 	color: #aaaaaa;
 }/*
+** Floating drafts list
+*/.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid #ffffff;
+	border-bottom-none;
+	background: #ff0000;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: #333333;
+	color: #ffffff;
+	fill: #ffffff;
+}.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
 ** Control panel
 */.tc-control-panel td {
 	padding: 4px;
@@ -2219,8 +2248,10 @@ a.tc-tiddlylink:hover {
     	vertical-align: baseline;
 }.tc-tree li span {
     	color: lightgray;
+}select {
+        color: ;
+        background: ;
 }
-
 
 /* CSS modified for TiddlyWiki */
 svg.railroad-diagram {

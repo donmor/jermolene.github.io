@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="TextWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -72,13 +71,19 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table></div>
+
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text without parsing it as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, opposite of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikifyWidget.html">WikifyWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table><h1 class="">Example</h1><pre><code>&lt;$vars string=&quot;//italic//&quot;&gt;
+
+* &lt;&lt;string&gt;&gt;
+* &lt;$text text=&lt;&lt;string&gt;&gt;/&gt;
+
+&lt;/$vars&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><ul><li><em>italic</em></li><li>//italic//</li></ul></blockquote></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

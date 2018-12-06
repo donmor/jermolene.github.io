@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Widgets " data-tags="Widgets" data-tiddler-title="SelectWidget"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -72,6 +71,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The select widget displays a popup menu based on a <a class="tc-tiddlylink-external" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select" rel="noopener noreferrer" target="_blank">HTML select element</a>. The popup (or dropdown) contains a list of items defined by <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements. 
 Every time the user selects a new value in the menu, the selected value is written to the text of a specified tiddler field or index and any <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionWidgets.html">ActionWidgets</a> within the <code>actions</code> attribute are triggered. Conversely, if the tiddler value is changed independently the select widget is automatically updated to reflect the new value.</p><p>In multiple selection mode, the list of selected values is bound to the specified tiddler field or index. Browsers generally use the <kbd>ctrl</kbd> or <kbd>cmd</kbd> keys for multiple selection.</p><p>For example, this select widget displays a list of the tags in this wiki:</p><div class="doc-example"><p><div style="position: relative;">
 <div style="position: absolute; bottom: 0; right: 0;">
@@ -99,6 +99,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="$:/deprecated">$:/deprecated</option>
 
 <option value="$:/tags/AboveStory">$:/tags/AboveStory</option>
+
+<option value="$:/tags/Actions">$:/tags/Actions</option>
 
 <option value="$:/tags/AdvancedSearch">$:/tags/AdvancedSearch</option>
 
@@ -134,6 +136,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="$:/tags/ImportPreview">$:/tags/ImportPreview</option>
 
+<option value="$:/tags/KeyboardShortcut">$:/tags/KeyboardShortcut</option>
+
 <option value="$:/tags/Macro">$:/tags/Macro</option>
 
 <option value="$:/tags/Manager/ItemMain">$:/tags/Manager/ItemMain</option>
@@ -152,9 +156,13 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="$:/tags/PluginLibrary">$:/tags/PluginLibrary</option>
 
+<option value="$:/tags/RawMarkupWikified/TopBody">$:/tags/RawMarkupWikified/TopBody</option>
+
 <option value="$:/tags/SearchResults">$:/tags/SearchResults</option>
 
 <option value="$:/tags/SideBar">$:/tags/SideBar</option>
+
+<option value="$:/tags/SideBarSegment">$:/tags/SideBarSegment</option>
 
 <option value="$:/tags/Stylesheet">$:/tags/Stylesheet</option>
 
@@ -226,6 +234,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Configuration Variables">Configuration Variables</option>
 
+<option value="contains Operator">contains Operator</option>
+
 <option value="Contents">Contents</option>
 
 <option value="copy-to-clipboard Macro">copy-to-clipboard Macro</option>
@@ -269,6 +279,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="eachday Operator">eachday Operator</option>
 
 <option value="Editions">Editions</option>
+
+<option value="Editor toolbar">Editor toolbar</option>
 
 <option value="encodehtml Operator">encodehtml Operator</option>
 
@@ -316,6 +328,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="first Operator">first Operator</option>
 
+<option value="Formatting text in TiddlyWiki">Formatting text in TiddlyWiki</option>
+
 <option value="get Operator">get Operator</option>
 
 <option value="getindex Operator">getindex Operator</option>
@@ -331,6 +345,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="HelloThumbnail">HelloThumbnail</option>
 
 <option value="HelloThumbnail-disabled">HelloThumbnail-disabled</option>
+
+<option value="Hidden Setting">Hidden Setting</option>
 
 <option value="Hidden Settings">Hidden Settings</option>
 
@@ -383,6 +399,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="list-tagged-draggable Macro">list-tagged-draggable Macro</option>
 
 <option value="listed Operator">listed Operator</option>
+
+<option value="ListenCommand">ListenCommand</option>
 
 <option value="Listops Operators">Listops Operators</option>
 
@@ -448,9 +466,9 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="PluginMechanism">PluginMechanism</option>
 
-<option value="plugins">plugins</option>
-
 <option value="Plugins">Plugins</option>
+
+<option value="plugins">plugins</option>
 
 <option value="plugintiddlers Operator">plugintiddlers Operator</option>
 
@@ -522,6 +540,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Selection Constructors">Selection Constructors</option>
 
+<option value="ServerCommand">ServerCommand</option>
+
 <option value="shadowsource Operator">shadowsource Operator</option>
 
 <option value="sort Operator">sort Operator</option>
@@ -544,7 +564,11 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="stringify Operator">stringify Operator</option>
 
+<option value="subfilter Operator">subfilter Operator</option>
+
 <option value="suffix Operator">suffix Operator</option>
+
+<option value="SystemTags">SystemTags</option>
 
 <option value="SystemTiddlers">SystemTiddlers</option>
 
@@ -578,8 +602,6 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="TiddlyDesktop">TiddlyDesktop</option>
 
-<option value="TiddlyDesktopReleaseNotes">TiddlyDesktopReleaseNotes</option>
-
 <option value="TiddlyWiki on Node.js">TiddlyWiki on Node.js</option>
 
 <option value="TiddlyWikiFolders">TiddlyWikiFolders</option>
@@ -596,6 +618,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="Tutorials">Tutorials</option>
 
+<option value="tv-adjust-heading-level Variable">tv-adjust-heading-level Variable</option>
+
 <option value="tv-config-toolbar-class Variable">tv-config-toolbar-class Variable</option>
 
 <option value="tv-config-toolbar-icons Variable">tv-config-toolbar-icons Variable</option>
@@ -610,6 +634,8 @@ Every time the user selects a new value in the menu, the selected value is writt
 
 <option value="untagged Operator">untagged Operator</option>
 
+<option value="Using TiddlyWiki on Node.js">Using TiddlyWiki on Node.js</option>
+
 <option value="Variable Examples">Variable Examples</option>
 
 <option value="Variables">Variables</option>
@@ -617,6 +643,16 @@ Every time the user selects a new value in the menu, the selected value is writt
 <option value="version Macro">version Macro</option>
 
 <option value="Videos">Videos</option>
+
+<option value="WebServer">WebServer</option>
+
+<option value="WebServer API">WebServer API</option>
+
+<option value="WebServer Authentication">WebServer Authentication</option>
+
+<option value="WebServer Guides">WebServer Guides</option>
+
+<option value="WebServer Parameters">WebServer Parameters</option>
 
 <option value="Widget Examples">Widget Examples</option>
 
@@ -896,10 +932,10 @@ Every time the user selects a new value in the menu, the selected value is writt
 </p></div></p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

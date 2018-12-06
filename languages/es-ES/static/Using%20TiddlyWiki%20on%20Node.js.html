@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TiddlyWiki%20on%20Node.js " data-tags="[[TiddlyWiki on Node.js]]" data-tiddler-title="Using TiddlyWiki on Node.js"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -70,6 +69,7 @@ color:#333333;">
 
 
 
+
 <div class="tc-tiddler-body tc-reveal"><p>TiddlyWiki se puede usar desde la línea de comandos para ejecutar una larga lista de operaciones basadas en <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">carpetas</a>, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlerFiles.html">tiddlers</a> y archivos HTML de ~Tiddlywiki.</p><p>Por ejemplo, el siguiente comando carga tiddlers de un archivo HTML de TiddlyWIki y guarda uno de ellos (ReadMe) como HTML estático (readme.html):</p><pre><code>tiddlywiki --verbose --load mi_wiki.html --rendertiddler ReadMe ./readme.html</code></pre><p>Ejecutar TiddlyWiki desde la línea de comandos pone en marcha el núcleo, carga los plugins y establece un &quot;almacén&quot; de tiddlers en blanco. A partir de entonces procesa los argumentos de la línea de comandos de izquierda a derecha. Los argumentos se separan con espacios.</p><p>El primer argumento es la ruta opcional al <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWikiFolders.html">WikiFolder</a> que se va a cargar. Si no se especifica, se usa el directorio actual.</p><p>Le siguen uno o varios comandos con sus respectivos argumentos. Los comandos se identifican con el prefijo <code>--</code>.</p><pre><code>tiddlywiki [&lt;ruta&gt;] [--&lt;comando&gt; [&lt;argumento&gt;[,&lt;argumento&gt;]]]</code></pre><p>Los comandos disponibles son:</p><p><ul class="">
 
 <li>
@@ -111,6 +111,12 @@ import
 <li>
 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="InitCommand.html">
 init
+</a>
+</li>
+
+<li>
+<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ListenCommand.html">
+listen
 </a>
 </li>
 
@@ -207,10 +213,10 @@ version
 </ul></p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

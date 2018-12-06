@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Saving tc-tagged-TiddlyWiki%20on%20Node.js tc-tagged-Windows " data-tags="Saving [[TiddlyWiki on Node.js]] Windows" data-tiddler-title="Installing TiddlyWiki on Microsoft Internet Information Server"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -46,48 +45,31 @@ Installing TiddlyWiki on Microsoft Internet Information Server
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 28th March 2018 at 4:14pm
+</a> 1st July 2018 at 7:57pm
 </div>
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Saving
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
-<span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  TiddlyWiki on Node.js
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
-<span class="tc-tag-list-item">
-
-
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#333333;
 color:#333333;">
  Windows
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
+
 
 
 
@@ -132,7 +114,7 @@ color:#333333;">
            stdoutLogFile=&quot;.\node.log&quot;
            startupTimeLimit=&quot;20&quot;
            processPath=&quot;C:\Program Files\nodejs\node.exe&quot;
-           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./MyStuff --server PORT $:/core/save/all text/plain text/html &amp;quot;&amp;quot; &amp;quot;&amp;quot; 127.0.0.1 /MyApp&quot;&gt;
+           arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki --listen port=PORT path-prefix=/MyApp&quot;&gt;
             &lt;environmentVariables&gt;
                 &lt;environmentVariable name=&quot;PORT&quot; value=&quot;%HTTP_PLATFORM_PORT%&quot; /&gt;
                 &lt;environmentVariable name=&quot;NODE_ENV&quot; value=&quot;Production&quot; /&gt;
@@ -192,13 +174,13 @@ text: $protocol$//$host$/MyApp/
 		<path d="M60.6568542,85.6568542 L76.6568542,69.6568543 L65.3431458,69.6568542 L81.3431458,85.6568542 C84.4673401,88.7810486 89.5326599,88.7810486 92.6568542,85.6568542 C95.7810486,82.5326599 95.7810486,77.4673401 92.6568542,74.3431458 L76.6568542,58.3431458 C73.5326599,55.2189514 68.4673401,55.2189514 65.3431458,58.3431457 L49.3431458,74.3431457 C46.2189514,77.4673401 46.2189514,82.5326599 49.3431457,85.6568542 C52.4673401,88.7810486 57.5326599,88.7810486 60.6568542,85.6568542 L60.6568542,85.6568542 Z" transform="translate(71.000000, 72.000000) rotate(-90.000000) translate(-71.000000, -72.000000) "></path>
 	</g>
 </svg> copy to clipboard
-</button></p></blockquote><ul><li>(See <a class="tc-tiddlylink-external" href="https://docs.microsoft.com/en-us/iis/extensions/httpplatformhandler/httpplatformhandler-configuration-reference" rel="noopener noreferrer" target="_blank">the documentation</a> for details of the configuration fields for HttpPlatformHandler</li></ul></li></ol><h1 class="">4. Setup the application in IIS</h1><ul><li>In Windows, run the IIS Manager application (use the start menu to run <code>inetmgr.exe</code>)</li><li>Locate the server in the <strong>Connections</strong> column on the left, and click the disclosure triangle to show its content</li><li>Open the <strong>Sites</strong> folder</li><li>Right click on the <strong>Default Web Site</strong> entry, and select <strong>Add application..</strong> from the menu</li><li>Enter the following information in the dialogue box:<ol><li><strong>Alias</strong>: <code>MyApp</code></li><li><strong>Physical path</strong>: <code>C:\MyStuff</code></li></ol></li><li>Click <strong>OK</strong></li></ul><h1 class="">5. Test the application</h1><p>Test the app by visiting <a class="tc-tiddlylink-external" href="http://localhost/MyApp/" rel="noopener noreferrer" target="_blank">http://localhost/MyApp/</a> in a browser.</p><h1 class="">Notes</h1><ul><li>If you require authentication, specify a username and password in the <code>--server</code> command in <code>web.config</code>. For example:<ul><li><code>arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki-server --server PORT $:/core/save/all text/plain text/html &amp;quot;username&amp;quot; &amp;quot;password&amp;quot; 127.0.0.1 /MyApp&quot;&gt;</code></li><li>Take note of the need to HTML encode the double quotes around the username and password into <code>&amp;quot;</code></li></ul></li><li>If you change the settings in the <code>web.config</code> file, or modify the app code, then you'll need to restart the server using the IIS manager application</li></ul></div>
+</button></p></blockquote><ul><li>(See <a class="tc-tiddlylink-external" href="https://docs.microsoft.com/en-us/iis/extensions/httpplatformhandler/httpplatformhandler-configuration-reference" rel="noopener noreferrer" target="_blank">the documentation</a> for details of the configuration fields for HttpPlatformHandler</li></ul></li><li>Execute the command <code>npm install</code> within the <code>C:/MyStuff</code> directory</li></ol><h1 class="">4. Setup the application in IIS</h1><ul><li>In Windows, run the IIS Manager application (use the start menu to run <code>inetmgr.exe</code>)</li><li>Locate the server in the <strong>Connections</strong> column on the left, and click the disclosure triangle to show its content</li><li>Open the <strong>Sites</strong> folder</li><li>Right click on the <strong>Default Web Site</strong> entry, and select <strong>Add application..</strong> from the menu</li><li>Enter the following information in the dialogue box:<ol><li><strong>Alias</strong>: <code>MyApp</code></li><li><strong>Physical path</strong>: <code>C:\MyStuff</code></li></ol></li><li>Click <strong>OK</strong></li></ul><h1 class="">5. Test the application</h1><p>Test the app by visiting <a class="tc-tiddlylink-external" href="http://localhost/MyApp/" rel="noopener noreferrer" target="_blank">http://localhost/MyApp/</a> in a browser.</p><h1 class="">Notes</h1><ul><li>If you require authentication, specify a username and password in the <code>--listen</code> command in <code>web.config</code>. For example:<ul><li><code>arguments=&quot;.\node_modules\tiddlywiki\tiddlywiki.js ./wiki-server --listen username=joe &amp;quot;password=bloggs&amp;quot; port=PORT path-prefix=/MyApp&quot;&gt;</code></li><li>Take note of the need to use double quotes around non-alphanumeric passwords, and to HTML encode them into <code>&amp;quot;</code></li></ul></li><li>If you change the settings in the <code>web.config</code> file, or modify the app code, then you'll need to restart the server using the IIS manager application</li></ul></div>
+
 
 
 </div>
 
 </p>
-
 </section>
 </body>
 </html>

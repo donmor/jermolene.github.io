@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.17" />
+<meta name="tiddlywiki-version" content="5.1.18" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,6 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
-
 <p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc " data-tags="doc" data-tiddler-title="Tags and Filter Mechanism"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
@@ -51,19 +50,14 @@ Tags and Filter Mechanism
 </div>
 <div class=" tc-reveal">
 <div class="tc-tags-wrapper"><span class="tc-tag-list-item">
-
-
 <span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
 fill:#4e432f;
 color:#4e432f;">
  doc
 </span>
-
-<span class="tc-drop-down tc-reveal" hidden="true"></span>
-
-</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
 </div>
-</div>
+
 <div class="tc-tiddler-body tc-reveal"><h3 class="">Tags</h3><p>The core plug-in extends the store by a simple mechanism to tag a tiddler.
 This provides the functionality to</p><ul><li>retrieve tiddlers with a specific tag</li><li>retreive a hashmap of <code>{ tag: [tiddler1, tiddler3, tiddler3] }</code></li><li>list or iterate tiddlers not tagged with a specific tag</li></ul><p>The tags are stored directly in the tiddler. Each tiddler can have a field named &quot;tag&quot;, which contains an array of its tags.
 The above functions use this field to calculate their results and cache them in a global cache.</p><p>Organising information with tags is easy, intuitive and is common throughout the web.
@@ -81,10 +75,10 @@ Tags which start with <code>$:/</code> are normally hidden from the casual user,
 </p></div>
 
 
+
 </div>
 
 </p>
-
 </section>
 </body>
 </html>
