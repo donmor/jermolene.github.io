@@ -3,7 +3,7 @@
     "description": "CodeMirror Mode: XML Highlighting",
     "author": "JeremyRuston",
     "list": "readme",
-    "version": "5.1.18",
+    "version": "5.1.19-prerelease",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",

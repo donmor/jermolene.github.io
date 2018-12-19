@@ -3,7 +3,7 @@
     "description": "CodeMirror _Editor",
     "author": "JeremyRuston",
     "list": "readme usage keyboard license",
-    "version": "5.1.18",
+    "version": "5.1.19-prerelease",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
