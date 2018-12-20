@@ -3,7 +3,7 @@
     "description": "CodeMirror Keymap: Emacs",
     "author": "JeremyRuston",
     "list": "readme",
-    "version": "5.1.18",
+    "version": "5.1.19",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
