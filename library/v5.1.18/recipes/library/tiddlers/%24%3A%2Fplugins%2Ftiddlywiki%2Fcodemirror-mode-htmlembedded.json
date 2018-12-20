@@ -3,7 +3,7 @@
     "description": "CodeMirror Mode: Embedded-HTML Highlighting",
     "author": "JeremyRuston",
     "list": "readme",
-    "version": "5.1.19",
+    "version": "5.1.18",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
