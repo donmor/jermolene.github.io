@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.18" />
+<meta name="tiddlywiki-version" content="5.1.19" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -73,7 +73,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>port</strong> specifies the TCP port on which the server will listen for connections. The default value is <code>8080</code>.</p><p>The <strong>port</strong> parameter accepts two types of value:</p><ul><li>Numerical values are interpreted as a decimal port number</li><li>Non-numeric values are interpreted as an environment variable from which the port should be read</li></ul><p>This example configures the server to listen on port 8090:</p><pre><code>tiddlywiki mywikifolder --listen port:8090</code></pre><p>This example configures the server to listen on the port specified in the environment variable <code>THE_PORT</code>:</p><pre><code>tiddlywiki mywikifolder --listen port:THE_PORT</code></pre></div>
+<div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>port</strong> specifies the TCP port on which the server will listen for connections. The default value is <code>8080</code>.</p><p>The <strong>port</strong> parameter accepts two types of value:</p><ul><li>Numerical values are interpreted as a decimal port number</li><li>Non-numeric values are interpreted as an environment variable from which the port should be read</li></ul><p>This example configures the server to listen on port 8090:</p><pre><code>tiddlywiki mywikifolder --listen port=8090</code></pre><p>This example configures the server to listen on the port specified in the environment variable <code>THE_PORT</code>:</p><pre><code>tiddlywiki mywikifolder --listen port=THE_PORT</code></pre></div>
 
 
 
