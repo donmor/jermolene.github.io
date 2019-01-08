@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>Adding a table of contents to the sidebar: TiddlyWiki — Cuaderno de notas personal no-lineal en la web</title>
+</head>
+<body class="tc-body">
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
+</p>
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Customise%20TiddlyWiki " data-tags="[[Customise TiddlyWiki]]" data-tiddler-title="Adding a table of contents to the sidebar"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Editar" class="tc-btn-invisible" title="Permite editar este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="Cerrar" class="tc-btn-invisible" title="Cierra este tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+
+Adding a table of contents to the sidebar
+
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 6 noviembre 2018 a las 22:41
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<button class="tc-btn-invisible tc-tag-label" style="background-color:;
+fill:#333333;
+color:#333333;">
+ Cómo modificar TiddlyWiki
+</button>
+<span class=" tc-reveal" hidden="true"></span>
+
+
+</span></div>
+</div>
+
+
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p>The standard mechanisms in TiddlyWiki for creating Table-of-Contents are macros known collectively as &quot;toc&quot; <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Macros.html">macros</a> (click on link to learn more about macros). They use <code>Tagging</code> as their means of creating relationships, so be sure to review the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Tagging.html">Tagging</a> topic tiddler if tagging is a new concept for you.</p><p>A customisable <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Table-of-Contents%2520Macros.html">table of contents</a> can be added to the sidebar with the following steps:</p><ol><li>Create a tiddler called <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TableOfContents.html">TableOfContents</a></li><li>Give it the tag <strong>$:/tags/SideBar</strong></li><li>Set the text to <div><pre><code>
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+
+&lt;&lt;toc-selective-expandable 'TableOfContents'&gt;&gt;
+
+&lt;/div&gt;</code></pre></div></li><li>Add a <strong>caption</strong> field with the text <strong>Contents</strong></li><li>Add a <strong>list-after</strong> field with the text <strong>$:/core/ui/SideBar/Open</strong></li></ol><p>Add entries to the table of contents by creating tiddlers tagged <strong>TableOfContents</strong>. An easy way is to choose <svg class="tc-image-new-here-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+    	<g transform="translate(52.233611, 64.389922) rotate(75.000000) translate(-52.233611, -64.389922) translate(-7.734417, 3.702450)">
+	        <path d="M18.9270186,45.959338 L18.9080585,49.6521741 C18.8884833,53.4648378 21.0574548,58.7482162 23.7526408,61.4434022 L78.5671839,116.257945 C81.2617332,118.952495 85.6348701,118.950391 88.3334363,116.251825 L115.863237,88.7220241 C118.555265,86.0299959 118.564544,81.6509578 115.869358,78.9557717 L61.0548144,24.1412286 C58.3602652,21.4466794 53.0787224,19.2788426 49.2595808,19.3006519 L25.9781737,19.4336012 C22.1633003,19.4553862 19.0471195,22.5673232 19.0275223,26.3842526 L18.9871663,34.2443819 C19.0818862,34.255617 19.1779758,34.2665345 19.2754441,34.2771502 C22.6891275,34.6489512 27.0485594,34.2348566 31.513244,33.2285542 C31.7789418,32.8671684 32.075337,32.5211298 32.4024112,32.1940556 C34.8567584,29.7397084 38.3789778,29.0128681 41.4406288,30.0213822 C41.5958829,29.9543375 41.7503946,29.8866669 41.9041198,29.8183808 L42.1110981,30.2733467 C43.1114373,30.6972371 44.0473796,31.3160521 44.8614145,32.1300869 C48.2842088,35.5528813 48.2555691,41.130967 44.7974459,44.5890903 C41.4339531,47.952583 36.0649346,48.0717177 32.6241879,44.9262969 C27.8170558,45.8919233 23.0726921,46.2881596 18.9270186,45.959338 Z"></path>
+	        <path d="M45.4903462,38.8768094 C36.7300141,42.6833154 26.099618,44.7997354 18.1909048,43.9383587 C7.2512621,42.7468685 1.50150083,35.8404432 4.66865776,24.7010202 C7.51507386,14.6896965 15.4908218,6.92103848 24.3842626,4.38423012 C34.1310219,1.60401701 42.4070208,6.15882777 42.4070209,16.3101169 L34.5379395,16.310117 C34.5379394,11.9285862 31.728784,10.3825286 26.5666962,11.8549876 C20.2597508,13.6540114 14.3453742,19.4148216 12.2444303,26.8041943 C10.4963869,32.9523565 12.6250796,35.5092726 19.0530263,36.2093718 C25.5557042,36.9176104 35.0513021,34.9907189 42.7038419,31.5913902 L42.7421786,31.6756595 C44.3874154,31.5384763 47.8846101,37.3706354 45.9274416,38.6772897 L45.9302799,38.6835285 C45.9166992,38.6895612 45.9031139,38.6955897 45.8895238,38.7016142 C45.8389288,38.7327898 45.7849056,38.7611034 45.7273406,38.7863919 C45.6506459,38.8200841 45.571574,38.8501593 45.4903462,38.8768094 Z"></path>
+        </g>
+        <rect height="48" rx="8" width="16" x="96" y="80"></rect>
+        <rect height="16" rx="8" width="48" x="80" y="96"></rect>
+    </g>
+    &lt;/g&gt;
+</svg> <strong>new here</strong> from the tiddler toolbar of the <strong>TableOfContents</strong> tiddler. 
+(if you don't see the &quot;new here&quot; button, click on the down arrow <svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <path d="M109.35638,81.3533152 C107.923899,82.7869182 105.94502,83.6751442 103.759224,83.6751442 L24.5910645,83.6751442 C20.225873,83.6751442 16.6751442,80.1307318 16.6751442,75.7584775 C16.6751442,71.3951199 20.2192225,67.8418109 24.5910645,67.8418109 L95.8418109,67.8418109 L95.8418109,-3.40893546 C95.8418109,-7.77412698 99.3862233,-11.3248558 103.758478,-11.3248558 C108.121835,-11.3248558 111.675144,-7.78077754 111.675144,-3.40893546 L111.675144,75.7592239 C111.675144,77.9416955 110.789142,79.9205745 109.356651,81.3538862 Z" transform="translate(64.175144, 36.175144) rotate(45.000000) translate(-64.175144, -36.175144) "></path>
+</svg> to see more menu options.)</p><p>To create child tiddlers (tiddlers that come below other tiddlers), tag them with the name of the parent tiddler.
+</p></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>
