@@ -182,7 +182,7 @@ Error message and password prompt
 
 <div id="storeArea" style="display:none;">
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 3afb251b3a64305d78ebb6b365c649ebe811836d of https://github.com/Jermolene/TiddlyWiki5.git at 2019-01-14 11:06:41 UTC
+<pre>Prerelease built from branch 'master' at commit 952826e0fa7ddcf4a1154960884c25ea82573821 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-01-18 17:59:20 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -9111,7 +9111,6 @@ $:/state/folded/$(currentTiddler)$
 &lt;$vars storyTiddler=&lt;&lt;currentTiddler&gt;&gt; tiddlerInfoState=&lt;&lt;qualify &quot;$:/state/popup/tiddler-info&quot;&gt;&gt; userClass={{!!class}}&gt;
 &lt;$tiddler tiddler=&lt;&lt;currentTiddler&gt;&gt;&gt;
 &lt;div data-tiddler-title=&lt;&lt;currentTiddler&gt;&gt; data-tags={{!!tags}} class=&lt;&lt;frame-classes&gt;&gt;&gt;
-
 &lt;$set name=&quot;state&quot; value={{{ [[$:/state/viewtemplate/visibility/]addsuffix&lt;currentTiddler&gt;] }}}&gt;
 &lt;$reveal stateTitle=&lt;&lt;state&gt;&gt; type=&quot;match&quot; text=&quot;true&quot; tag=&quot;div&quot;&gt;
 &lt;div class=&quot;tc-dynaview-set-tiddler-when-visible tc-dynaview-expand-viewport&quot; data-dynaview-set-tiddler=&lt;&lt;state&gt;&gt; data-dynaview-set-value=&quot;true&quot; data-dynaview-unset-tiddler=&lt;&lt;state&gt;&gt; data-dynaview-unset-value=&quot;false&quot; data-dynaview-has-triggered={{{ [&lt;state&gt;get[text]] }}}&gt;
@@ -9125,7 +9124,6 @@ $:/state/folded/$(currentTiddler)$
 &lt;/div&gt;
 &lt;/$reveal&gt;
 &lt;/$set&gt;
-
 &lt;/div&gt;
 &lt;/$tiddler&gt;
 &lt;/$vars&gt;
@@ -9136,7 +9134,7 @@ $:/state/folded/$(currentTiddler)$
 $:/plugins/tiddlywiki/dynaview
 [list[Alice in Wonderland:]]</pre>
 </div>
-<div created="20190114110757724" current-tiddler="HelloThere" modified="20190114110757724" title="$:/HistoryList" type="application/json">
+<div created="20190118180033102" current-tiddler="HelloThere" modified="20190118180033102" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
@@ -9354,7 +9352,7 @@ $:/plugins/tiddlywiki/dynaview
         &quot;$:/plugins/tiddlywiki/dynaview/styles&quot;: {
             &quot;title&quot;: &quot;$:/plugins/tiddlywiki/dynaview/styles&quot;,
             &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
-            &quot;text&quot;: &quot;\\define if-tiddler-is(title,value,text)\n&lt;$reveal stateTitle=&lt;&lt;__title__&gt;&gt; text=&lt;&lt;__value__&gt;&gt; type=\&quot;match\&quot;&gt;\n&lt;$text text=&lt;&lt;__text__&gt;&gt;/&gt;\n&lt;/$reveal&gt;\n\\end\n\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n&lt;&lt;if-tiddler-is title:\&quot;$:/config/DynaView/PreserveScrollPosition\&quot; value:\&quot;yes\&quot; text:\&quot;\&quot;\&quot;\nbody {\n\toverflow-anchor: none; /* Turn off browser scroll anchoring */\n}\n\&quot;\&quot;\&quot;&gt;&gt;\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1b-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1c-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4 {\n\ttransition: opacity 150ms ease-in-out;\n\topacity: 0;\n}\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1a-and-above .tc-dynaview-zoom-visible-1a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1b-and-above .tc-dynaview-zoom-visible-1b-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1c-and-above .tc-dynaview-zoom-visible-1c-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2-and-above .tc-dynaview-zoom-visible-2-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2a-and-above .tc-dynaview-zoom-visible-2a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3-and-above .tc-dynaview-zoom-visible-3-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4-and-above .tc-dynaview-zoom-visible-4-and-above {opacity: 1;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .tc-dynaview-zoom-visible-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .tc-dynaview-zoom-visible-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .tc-dynaview-zoom-visible-3 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity: 1;}\n&quot;
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1b-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1c-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2a-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4-and-above,\nbody.tc-dynaview .tc-dynaview-zoom-visible-1,\nbody.tc-dynaview .tc-dynaview-zoom-visible-2,\nbody.tc-dynaview .tc-dynaview-zoom-visible-3,\nbody.tc-dynaview .tc-dynaview-zoom-visible-4 {\n\ttransition: opacity 150ms ease-in-out;\n\topacity: 0;\n}\n\nbody.tc-dynaview .tc-dynaview-zoom-visible-1-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1a-and-above .tc-dynaview-zoom-visible-1a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1b-and-above .tc-dynaview-zoom-visible-1b-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-1c-and-above .tc-dynaview-zoom-visible-1c-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2-and-above .tc-dynaview-zoom-visible-2-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2a-and-above .tc-dynaview-zoom-visible-2a-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3-and-above .tc-dynaview-zoom-visible-3-and-above {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4-and-above .tc-dynaview-zoom-visible-4-and-above {opacity: 1;}\n\nbody.tc-dynaview.tc-dynaview-zoom-factor-1 .tc-dynaview-zoom-visible-1 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-2 .tc-dynaview-zoom-visible-2 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-3 .tc-dynaview-zoom-visible-3 {opacity: 1;}\nbody.tc-dynaview.tc-dynaview-zoom-factor-4 .tc-dynaview-zoom-visible-4 {opacity: 1;}\n&quot;
         }
     }
 }</pre>
