@@ -47,7 +47,7 @@ TextWidget
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 19 enero 2014 a las 8:37
+</a> 15 enero 2019 a las :00
 </div>
 </div>
 <div class=" tc-reveal">
@@ -72,12 +72,17 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text without parsing it as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, opposite of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikifyWidget.html">WikifyWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table><h1 class="">Example</h1><pre><code>&lt;$vars string=&quot;//italic//&quot;&gt;
+<div class="tc-tiddler-body tc-reveal"><h1 class="">Introduction</h1><p>The text widget displays plain text without parsing it as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a>, opposite of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikifyWidget.html">WikifyWidget</a>.</p><h1 class="">Content and Attributes</h1><p>The content of the <code>&lt;$text&gt;</code> widget is not used.</p><table><tbody><tr class="evenRow"><th align="left">Attribute</th><th align="left">Description</th></tr><tr class="oddRow"><td align="left">text</td><td align="left">The text to display</td></tr></tbody></table><h1 class="">Example</h1><div class="doc-example"><pre><code>&lt;$vars string=&quot;//italic//&quot;&gt;
 
 * &lt;&lt;string&gt;&gt;
 * &lt;$text text=&lt;&lt;string&gt;&gt;/&gt;
 
-&lt;/$vars&gt;</code></pre><p>Displays as:</p><blockquote class="tc-quote"><ul><li><em>italic</em></li><li>//italic//</li></ul></blockquote></div>
+&lt;/$vars&gt;
+</code></pre><p>Este es su aspecto:</p><ul><li><em>italic</em></li><li>//italic//</li></ul></div><div class="doc-example"><pre><code>
+The text-test field of this tiddler has a field value: &lt;$text text={{!!text-test}}/&gt;
+
+It displays in its normal WikiText format as: {{!!text-test}}
+</code></pre><p>Este es su aspecto:</p><p>The text-test field of this tiddler has a field value: e=mc^^2^^</p><p>It displays in its normal <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WikiText.html">WikiText</a> format as: e=mc<sup>2</sup></p></div></div>
 
 
 
