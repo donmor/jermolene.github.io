@@ -401,6 +401,17 @@ var assetList = [
         "readme": "This plugin provides syntax highlighting of code blocks using v8.8.0 of [[highlight.js|https://github.com/highlightjs/highlight.js]] from Ivan Sagalaev and others.\n\n! Usage\n\nWhen the plugin is installed it automatically applies highlighting to all codeblocks defined with triple backticks or with the CodeBlockWidget.\n\nThe language can optionally be specified after the opening triple braces:\n\n<$codeblock code=\"\"\"```css\n * { margin: 0; padding: 0; } /* micro reset */\n\nhtml { font-size: 62.5%; }\nbody { font-size: 14px; font-size: 1.4rem; } /* =14px */\nh1   { font-size: 24px; font-size: 2.4rem; } /* =24px */\n```\"\"\"/>\n\nIf no language is specified highlight.js will attempt to automatically detect the language.\n\n! Built-in Language Brushes\n\nThe plugin includes support for the following languages (referred to as \"brushes\" by highlight.js):\n\n* apache\n* bash\n* coffeescript\n* cpp\n* cs\n* css\n* diff\n* http\n* ini\n* java\n* javascript\n* json\n* makefile\n* markdown\n* nginx\n* objectivec\n* perl\n* php\n* python\n* ruby\n* sql\n* xml\n\nYou can also specify the language as a MIME content type (eg `text/html` or `text/css`). The mapping is accomplished via mapping tiddlers whose titles start with `$:/config/HighlightPlugin/TypeMappings/`.\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/innerwiki",
+        "description": "Innerwiki: programmable screenshots",
+        "author": "Jeremy Ruston",
+        "plugin-type": "plugin",
+        "list": "readme docs examples",
+        "version": "5.1.20-prerelease",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "!! Introduction\n\nThis plugin enables TiddlyWiki to embed a modified copy of itself (an \"innerwiki\"). The primary motivation is to be able to produce screenshot illustrations that are automatically up-to-date with the appearance of TiddlyWiki as it changes over time, or to produce the same screenshot in different languages.\n\nIn the browser, innerwikis are displayed as an embedded iframe. Under Node.js [[Google's Puppeteer|https://pptr.dev/]] is used to load the innerwikis as off-screen web pages and then snapshot them as a PNG image.\n\n!! Warnings\n\nThe `<$innerwiki>` widget is relatively slow and resource intensive: each time it is refreshed it will entirely rebuild the iframe containing the innerwiki.\n\nThe `<$innerwiki>` widget does not automatically resize with its container (for example, try hiding the sidebar in this wiki).\n\n!! Prequisites\n\nIn order to take screenshots under Node.js, Google Puppeteer must first be installed from [[npm|https://npmjs.org//]]. For most situations, it should be installed at the root of the TiddlyWiki 5 repo:\n\n```\ncd Jermolene/TiddlyWiki5\nnpm install puppeteer\n```\n\nHowever, if you're working in a different repo that uses npm to install TiddlyWiki 5 then you should install Puppeteer into the same repo. The general rule is that the `node_modules` folder containing Puppeteer should be contained within an ancestor of the folder containing TiddlyWiki's `tiddlywiki.js` file.\n\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/internals",
         "description": "Tools for exploring the internals of TiddlyWiki",
         "author": "JeremyRuston",
