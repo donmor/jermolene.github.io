@@ -59,6 +59,18 @@
         "readme": "This plugin adds a number of `$:/info/` tiddlers containing information about the current browser.\n\nIt allows you to create content that is presented in a way that is responsive to different browsers.\n\nFor example, https://tiddlywiki.com uses this plugin to present the user with the best options for getting started depending on their browser.\n\n[[Source code|https://github.com/Jermolene/TiddlyWiki5/blob/master/plugins/tiddlywiki/browser-sniff]]\n"
     },
     {
+        "title": "$:/plugins/tiddlywiki/browser-storage",
+        "description": "Local storage in the browser",
+        "author": "Jeremy Ruston ",
+        "core-version": ">=5.0.0",
+        "list": "readme",
+        "version": "5.1.20-prerelease",
+        "plugin-type": "plugin",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "This plugin enables TiddlyWiki to save tiddlers in [[browser local storage|https://en.wikipedia.org/wiki/Web_storage#localStorage]]. This means that changes are stored within the browser, and automatically re-applied any time the base wiki is reloaded.\n\nAt startup, the plugin reads tiddlers from local storage. Any tiddlers that are identical to those built into the file are deleted from local storage. Once the wiki is up and running, any tiddler changes are written straight to local storage.\n\nBrowser local storage is not a panacea for TiddlyWiki:\n\n* Browsers limit the amount of local storage available to a page, typically to 5 or 10MB\n* Keeping personal data in browser local storage can lead to unexpected privacy violations\n* Browsers reserve the right to without warning delete data stored in local storage at any time\n* Browsers tie local storage to a URL which can lead to problems if you move a wiki to a URL previously occupied by a different wiki\n\nPlease use this plugin with caution. There are a number of unresolved issues and open questions:\n\n* An \"red screen of embarrassment\" error is raised when local storage is full\n* Innerwikis read the local storage of their parent wikis\n* This plugin does not interfere with the existing saver mechanism, so you'll still get warnings when refreshing the page, even if your changes are safely committed to local storage\n"
+    },
+    {
         "title": "$:/plugins/tiddlywiki/cecily",
         "description": "Zoomable storyview (Cecily)",
         "author": "JeremyRuston",
