@@ -11532,7 +11532,7 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/Fields/library&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/library&quot;,
-            &quot;text&quot;: &quot;若设为 “yes”，表示条目应该被保存为一个 JavaScript 程序库&quot;
+            &quot;text&quot;: &quot;若设为 \&quot;yes\&quot;，表示条目应该被保存为一个 JavaScript 程序库&quot;
         },
         &quot;$:/language/Docs/Fields/list&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list&quot;,
@@ -11540,11 +11540,11 @@ Error message and password prompt
         },
         &quot;$:/language/Docs/Fields/list-before&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-before&quot;,
-            &quot;text&quot;: &quot;前条目名称将被添加到条目排序清单中的设置条目名称之前，或若此栏位存在但是空的，则被添加於清单的前端&quot;
+            &quot;text&quot;: &quot;前条目名称将被添加到条目排序清单中的设置条目名称之前，或若此栏位存在但是空的，则被添加于清单的前端&quot;
         },
         &quot;$:/language/Docs/Fields/list-after&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/list-after&quot;,
-            &quot;text&quot;: &quot;当前条目名称将被添加到条目排序清单的设置条目名称之后，或若此栏位存在但是空的，則被添加於清單的尾端&quot;
+            &quot;text&quot;: &quot;当前条目名称将被添加到条目排序清单的设置条目名称之后，或若此栏位存在但是空的，则被添加于清单的尾端&quot;
         },
         &quot;$:/language/Docs/Fields/modified&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/modified&quot;,
@@ -11593,6 +11593,10 @@ Error message and password prompt
         &quot;$:/language/Docs/Fields/title&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/title&quot;,
             &quot;text&quot;: &quot;条目的唯一名称&quot;
+        },
+        &quot;$:/language/Docs/Fields/toc-link&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/toc-link&quot;,
+            &quot;text&quot;: &quot;若设为: \&quot;no\&quot;，则抑制目录树中的条目链接。&quot;
         },
         &quot;$:/language/Docs/Fields/type&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/type&quot;,
@@ -11700,7 +11704,7 @@ Error message and password prompt
         &quot;$:/language/Help/listen&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/listen&quot;,
             &quot;description&quot;: &quot;为 TiddlyWiki 提供一个 HTTP 服务器接口&quot;,
-            &quot;text&quot;: &quot;通过 HTTP 提供一个维基服务。\n\nlisten 命令使用[[命名的命令参数|NamedCommandParameters]]：\n\n```\n--listen [&lt;name&gt;=&lt;value&gt;]...\n```\n\n所有参数都是可选的, 具有安全的默认值, 可以按任意顺序指定。认可的参数有:\n\n* ''host'' - 可选的主机名称， (默认为 \&quot;127.0.0.1\&quot; 或名为 \&quot;localhost\&quot;)\n* ''path-prefix'' - 可选的路径前缀\n* ''port'' - 侦听的埠号；非数值会被解译为一个系统环境变数，从其中提取埠号 (默认为 \&quot;8080\&quot;)\n* ''credentials'' - 凭证 CSV 文件的路径名（相对于维基文件夹）\n* ''anon-username'' - 匿名用户的编辑署名\n* ''username'' - 可选的基本验证用户名称\n* ''password'' - 可选的基本验证密码\n* ''authenticated-user-header'' - 可选的标头名称，用于受信任身份验证\n* ''readers'' - 允许读取此维基的主体，以逗号分隔的清单\n* ''writers'' - 允许写入此维基的主体，以逗号分隔的清单\n* ''csrf-disable'' - 设置为 \&quot;yes\&quot; 以禁用 CSRF 检查 (默认为 \&quot;no\&quot;)\n* ''root-tiddler'' - 服务的基本条目 (默认为 \&quot;$:/core/save/all\&quot;)\n* ''root-render-type'' - 呈现的基本条目的内容类型 (默认为 \&quot;text/plain\&quot;)\n* ''root-serve-type'' - 服务的基本条目的内容类型 (默认为 \&quot;text/html\&quot;)\n* ''tls-cert'' - TLS 证书文件的路径名（相对于维基文件夹）\n* ''tls-key'' - TLS 密钥文件的路径名（相对于维基文件夹）\n* ''debug-level'' - 可选的调试级别；设置为 \&quot;debug\&quot; 来查看请求的详细信息；(默认为 \&quot;none\&quot;)\n\n有关向整个本地网络开启实例的信息，以及可能的安全问题，请参阅 TiddlyWiki.com 的 WebServer 条目。\n&quot;
+            &quot;text&quot;: &quot;通过 HTTP 提供一个维基服务。\n\nlisten 命令使用[[命名的命令参数|NamedCommandParameters]]：\n\n```\n--listen [&lt;name&gt;=&lt;value&gt;]...\n```\n\n所有参数都是可选的, 具有安全的默认值, 可以按任意顺序指定。认可的参数有:\n\n* ''host'' - 可选的主机名称， (默认为 \&quot;127.0.0.1\&quot; 或名为 \&quot;localhost\&quot;)\n* ''path-prefix'' - 可选的路径前缀\n* ''port'' - 侦听的埠号；非数值会被解译为一个系统环境变数，从其中提取埠号 (默认为 \&quot;8080\&quot;)\n* ''credentials'' - 凭证 CSV 文件的路径名（相对于维基文件夹）\n* ''anon-username'' - 匿名用户的编辑署名\n* ''username'' - 可选的基本验证用户名称\n* ''password'' - 可选的基本验证密码\n* ''authenticated-user-header'' - 可选的标头名称，用于受信任身份验证\n* ''readers'' - 允许读取此维基的主体，以逗号分隔的清单\n* ''writers'' - 允许写入此维基的主体，以逗号分隔的清单\n* ''csrf-disable'' - 设置为 \&quot;yes\&quot; 以禁用 CSRF 检查 (默认为 \&quot;no\&quot;)\n* ''root-tiddler'' - 服务的基本条目 (默认为 \&quot;$:/core/save/all\&quot;)\n* ''root-render-type'' - 呈现的基本条目的内容类型 (默认为 \&quot;text/plain\&quot;)\n* ''root-serve-type'' - 服务的基本条目的内容类型 (默认为 \&quot;text/html\&quot;)\n* ''tls-cert'' - TLS 证书文件的路径名（相对于维基文件夹）\n* ''tls-key'' - TLS 密钥文件的路径名（相对于维基文件夹）\n* ''debug-level'' - 可选的调试级别；设置为 \&quot;debug\&quot; 来查看请求的详细信息；(默认为 \&quot;none\&quot;)\n* ''gzip'' - 设为 \&quot;yes\&quot; 以启用某些 http 端点的 gzip 压缩 (默认为 \&quot;no\&quot;)\n\n有关向整个本地网络开启实例的信息，以及可能的安全问题，请参阅 TiddlyWiki.com 的 WebServer 条目。\n&quot;
         },
         &quot;$:/language/Help/load&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/load&quot;,
@@ -11852,6 +11856,14 @@ Error message and password prompt
         &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,
             &quot;text&quot;: &quot;封锁的系统条目&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Warning&quot;,
+            &quot;text&quot;: &quot;核心模块条目&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Alert&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Alert&quot;,
+            &quot;text&quot;: &quot;您即将导入一个条目会覆盖一个核心模块条目。不建议这样做，因为可能会使系统不稳定。&quot;
         },
         &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;,
