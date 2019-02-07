@@ -9577,6 +9577,7 @@ describe(&quot;Filter tests&quot;, function() {
 		});
 
 		it(&quot;should handle the '[is[missing]]' operator&quot;, function() {
+			expect(wiki.filterTiddlers(&quot;[all[]]&quot;).join(&quot;,&quot;)).toBe(&quot;TiddlerOne,$:/TiddlerTwo,Tiddler Three,a fourth tiddler,one&quot;);
 			expect(wiki.filterTiddlers(&quot;[all[missing]]&quot;).join(&quot;,&quot;)).toBe(&quot;TiddlerZero&quot;);
 			expect(wiki.filterTiddlers(&quot;[!is[missing]sort[title]]&quot;).join(&quot;,&quot;)).toBe(&quot;$:/TiddlerTwo,a fourth tiddler,one,Tiddler Three,TiddlerOne&quot;);
 			expect(wiki.filterTiddlers(&quot;[[TiddlerOne]is[missing]]&quot;).join(&quot;,&quot;)).toBe(&quot;&quot;);
