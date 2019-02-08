@@ -180,7 +180,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8b04cfd4d5142a957f2e3da80c3f079e215b9e75 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-07 18:33:44 UTC
+<pre>Prerelease built from branch 'master' at commit 0e6855eba8945e023cc5ef19809cfb6d6025627b of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-08 11:10:55 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -3371,6 +3371,10 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
             &quot;text&quot;: &quot;Overridden shadow tiddlers&quot;
+        },
+        &quot;$:/language/Filters/SessionTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SessionTiddlers&quot;,
+            &quot;text&quot;: &quot;Tiddlers modified since the wiki was loaded&quot;
         },
         &quot;$:/language/Filters/SystemTags&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
@@ -7436,6 +7440,13 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
             &quot;tags&quot;: &quot;$:/tags/Filter&quot;,
             &quot;filter&quot;: &quot;[!is[system]has[modified]!sort[modified]limit[50]]&quot;,
             &quot;description&quot;: &quot;{{$:/language/Filters/RecentTiddlers}}&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
+        &quot;$:/core/Filters/SessionTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/core/Filters/SessionTiddlers&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Filter&quot;,
+            &quot;filter&quot;: &quot;[haschanged[]]&quot;,
+            &quot;description&quot;: &quot;{{$:/language/Filters/SessionTiddlers}}&quot;,
             &quot;text&quot;: &quot;&quot;
         },
         &quot;$:/core/Filters/ShadowTiddlers&quot;: {

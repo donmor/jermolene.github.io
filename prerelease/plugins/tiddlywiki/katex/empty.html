@@ -176,7 +176,7 @@ Error message and password prompt
 
 <div id="storeArea" style="display:none;">
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8b04cfd4d5142a957f2e3da80c3f079e215b9e75 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-07 18:33:44 UTC
+<pre>Prerelease built from branch 'master' at commit 0e6855eba8945e023cc5ef19809cfb6d6025627b of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-08 11:10:55 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -3358,6 +3358,10 @@ Error message and password prompt
         &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/OverriddenShadowTiddlers&quot;,
             &quot;text&quot;: &quot;Overridden shadow tiddlers&quot;
+        },
+        &quot;$:/language/Filters/SessionTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Filters/SessionTiddlers&quot;,
+            &quot;text&quot;: &quot;Tiddlers modified since the wiki was loaded&quot;
         },
         &quot;$:/language/Filters/SystemTags&quot;: {
             &quot;title&quot;: &quot;$:/language/Filters/SystemTags&quot;,
@@ -7425,6 +7429,13 @@ Error message and password prompt
             &quot;description&quot;: &quot;{{$:/language/Filters/RecentTiddlers}}&quot;,
             &quot;text&quot;: &quot;&quot;
         },
+        &quot;$:/core/Filters/SessionTiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/core/Filters/SessionTiddlers&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Filter&quot;,
+            &quot;filter&quot;: &quot;[haschanged[]]&quot;,
+            &quot;description&quot;: &quot;{{$:/language/Filters/SessionTiddlers}}&quot;,
+            &quot;text&quot;: &quot;&quot;
+        },
         &quot;$:/core/Filters/ShadowTiddlers&quot;: {
             &quot;title&quot;: &quot;$:/core/Filters/ShadowTiddlers&quot;,
             &quot;tags&quot;: &quot;$:/tags/Filter&quot;,
@@ -9085,7 +9096,7 @@ KaTeX
 ImplementationNotes
 </pre>
 </div>
-<div created="20190207183506342" current-tiddler="HelloThere" modified="20190207183506342" title="$:/HistoryList" type="application/json">
+<div created="20190208111211592" current-tiddler="HelloThere" modified="20190208111211592" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
