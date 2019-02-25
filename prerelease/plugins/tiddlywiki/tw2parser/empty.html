@@ -178,7 +178,7 @@ Error message and password prompt
 
 <div id="storeArea" style="display:none;">
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 810033bd71abfad14c7d92f340ce26c33eab4ce8 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-12 18:35:20 UTC
+<pre>Prerelease built from branch 'master' at commit 36e76429b1a1d4638374d513430393db5693b932 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-25 13:16:33 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -4892,6 +4892,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;isfilteroperator&quot;
         },
+        &quot;$:/core/modules/filters/is/variable.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/is/variable.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/variable.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[variable]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.variable = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!title in options.widget.variables) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(title in options.widget.variables) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;isfilteroperator&quot;
+        },
         &quot;$:/core/modules/filters/is.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/is.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for checking tiddler properties\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar isFilterOperators;\n\nfunction getIsFilterOperators() {\n\tif(!isFilterOperators) {\n\t\tisFilterOperators = {};\n\t\t$tw.modules.applyMethods(\&quot;isfilteroperator\&quot;,isFilterOperators);\n\t}\n\treturn isFilterOperators;\n}\n\n/*\nExport our filter function\n*/\nexports.is = function(source,operator,options) {\n\t// Dispatch to the correct isfilteroperator\n\tvar isFilterOperators = getIsFilterOperators();\n\tif(operator.operand) {\n\t\tvar isFilterOperator = isFilterOperators[operator.operand];\n\t\tif(isFilterOperator) {\n\t\t\treturn isFilterOperator(source,operator.prefix,options);\n\t\t} else {\n\t\t\treturn [$tw.language.getString(\&quot;Error/IsFilterOperator\&quot;)];\n\t\t}\n\t} else {\n\t\t// Return all tiddlers if the operand is missing\n\t\tvar results = [];\n\t\tsource(function(tiddler,title) {\n\t\t\tresults.push(title);\n\t\t});\n\t\treturn results;\n\t}\n};\n\n})();&quot;,
@@ -9101,7 +9107,7 @@ Error message and password prompt
 [[Markup]]
 [[Developers Notes]]</pre>
 </div>
-<div created="20190212183640553" current-tiddler="Classic Parser Plugin Demo" modified="20190212183640553" title="$:/HistoryList" type="application/json">
+<div created="20190225131752712" current-tiddler="Classic Parser Plugin Demo" modified="20190225131752712" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;Classic Parser Plugin Demo&quot;

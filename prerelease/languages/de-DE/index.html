@@ -180,7 +180,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 810033bd71abfad14c7d92f340ce26c33eab4ce8 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-12 18:35:20 UTC
+<pre>Prerelease built from branch 'master' at commit 36e76429b1a1d4638374d513430393db5693b932 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-02-25 13:16:33 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -4900,6 +4900,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/core/modules/filters/is/tiddler.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/is/tiddler.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/tiddler.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[tiddler]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.tiddler = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!options.wiki.tiddlerExists(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(options.wiki.tiddlerExists(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;isfilteroperator&quot;
+        },
+        &quot;$:/core/modules/filters/is/variable.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/is/variable.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/variable.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[variable]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.variable = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!title in options.widget.variables) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(title in options.widget.variables) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;isfilteroperator&quot;
         },
