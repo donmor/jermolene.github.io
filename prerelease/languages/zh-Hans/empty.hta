@@ -9080,7 +9080,7 @@ Error message and password prompt
 <div title="$:/language">
 <pre>$:/languages/zh-Hans</pre>
 </div>
-<div author="BramChen" core-version="&gt;=5.0.8" dependents="" description="Chinese (Simplified)" name="zh-Hans" plugin-type="language" title="$:/languages/zh-Hans" type="application/json" version="5.1.20-prerelease">
+<div author="BramChen" core-version="&gt;=5.0.8" dependents="" description="Chinese (Simplified)" name="zh-Hans" plugin-priority="100" plugin-type="language" title="$:/languages/zh-Hans" type="application/json" version="5.1.20-prerelease">
 <pre>{
     &quot;tiddlers&quot;: {
         &quot;$:/language/Buttons/AdvancedSearch/Caption&quot;: {
@@ -11674,7 +11674,7 @@ Error message and password prompt
         &quot;$:/language/Help/load&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/load&quot;,
             &quot;description&quot;: &quot;从文件中加载条目&quot;,
-            &quot;text&quot;: &quot;从 TiddlyWiki (`.html`), `.tiddler`, `.tid`, `.json` 或其他本机文件加载条目。应用的处理程序取决于导入文件的扩展名。如果您需要明确指定解串器和编码，请改用 `import` 命令。\n\n```\n--load &lt;filepath&gt;\n--load &lt;dirpath&gt;\n```\n\n从已加密的 TiddlyWiki 文件中加载条目，须使用 PasswordCommand 指定密码，例如：\n\n```\ntiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html\n```\n\n请注意 TiddlyWiki 将不加载旧版本的已挂载的插件。\n&quot;
+            &quot;text&quot;: &quot;从 TiddlyWiki (`.html`), `.tiddler`, `.tid`, `.json` 或其他本机文件加载条目。应用的处理程序取决于导入文件的扩展名。如果您需要明确指定解串器和编码，请改用 `import` 命令。\n\n```\n--load &lt;filepath&gt; [noerror]\n--load &lt;dirpath&gt; [noerror]\n```\n\n默认情况下, 如果未找到条目，load 命令会引发错误。通过提供可选的 \&quot;noerror\&quot; 参数可以抑制该错误。\n\n从已加密的 TiddlyWiki 文件中加载条目，须使用 PasswordCommand 指定密码，例如：\n\n```\ntiddlywiki ./MyWiki --password pa55w0rd --load my_encrypted_wiki.html\n```\n\n请注意 TiddlyWiki 将不加载旧版本的已挂载的插件。\n&quot;
         },
         &quot;$:/language/Help/makelibrary&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/makelibrary&quot;,
