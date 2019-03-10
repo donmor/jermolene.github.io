@@ -729,7 +729,8 @@ a.tc-tiddlylink:hover {
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
 	cursor: move;
-}.tc-sidebar-tab-open .tc-droppable-placeholder {
+}.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
 	line-height: 2em;
 	height: 2em;
 }.tc-sidebar-tab-open-item {
