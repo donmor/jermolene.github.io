@@ -53,10 +53,10 @@ Using ES2016 for Writing Plugins
 </div>
 
 <div class="tc-tiddler-body tc-reveal"><p>With the advent of ES2015 (also known as ES6) and the availability of <a class="tc-tiddlylink-external" href="http://babeljs.io/" rel="noopener noreferrer" target="_blank">Babel.js</a> plugin developers can leverage ES2015 when writing <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> plugins. Understanding the nuances between <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a>'s module sandbox and how Babel compiles it's output ready for a module system like CommonJS/AMD.</p><p>Please understand how the <a class="tc-tiddlylink tc-tiddlylink-missing" href="PluginMechanism.html">PluginMechanism</a> works since this is all about writing a plugin using Babel to compile the output that will be included in the final <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> (for example <a class="tc-tiddlylink tc-tiddlylink-missing" href="TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>).</p><h2 class="">Installing and Configuring Babel</h2><p>You can install Babel using</p><pre><code>$ npm install --global babel-cli babel-presets-es2015</code></pre><p>If your developing the plugin for inclusion to the npm registry (or for convenience) you can avoid the global install and save it to the local <code>package.json</code> file with</p><pre><code>$ npm install --save-dev babel-cli babel-presets-es2015</code></pre><p>Inside your plugin project edit the file <code>.babelrc</code> and enter the following:</p><pre class="json hljs"><code>{
-  "<span class="hljs-attribute">presets</span>": <span class="hljs-value">[
+  <span class="hljs-attr">"presets"</span>: [
     <span class="hljs-string">"es2015"</span>
   ]
-</span>}</code></pre><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+}</code></pre><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M64,128.241818 C99.346224,128.241818 128,99.5880417 128,64.2418177 C128,28.8955937 99.346224,0.241817675 64,0.241817675 C28.653776,0.241817675 0,28.8955937 0,64.2418177 C0,99.5880417 28.653776,128.241818 64,128.241818 Z M75.9358659,91.4531941 C75.3115438,95.581915 70.2059206,98.8016748 64,98.8016748 C57.7940794,98.8016748 52.6884562,95.581915 52.0641341,91.4531941 C54.3299053,94.0502127 58.8248941,95.8192805 64,95.8192805 C69.1751059,95.8192805 73.6700947,94.0502127 75.9358659,91.4531941 L75.9358659,91.4531941 Z M75.9358659,95.9453413 C75.3115438,100.074062 70.2059206,103.293822 64,103.293822 C57.7940794,103.293822 52.6884562,100.074062 52.0641341,95.9453413 C54.3299053,98.5423599 58.8248941,100.311428 64,100.311428 C69.1751059,100.311428 73.6700947,98.5423599 75.9358659,95.9453413 L75.9358659,95.9453413 Z M75.9358659,100.40119 C75.3115438,104.529911 70.2059206,107.74967 64,107.74967 C57.7940794,107.74967 52.6884562,104.529911 52.0641341,100.40119 C54.3299053,102.998208 58.8248941,104.767276 64,104.767276 C69.1751059,104.767276 73.6700947,102.998208 75.9358659,100.40119 L75.9358659,100.40119 Z M75.9358659,104.893337 C75.3115438,109.022058 70.2059206,112.241818 64,112.241818 C57.7940794,112.241818 52.6884562,109.022058 52.0641341,104.893337 C54.3299053,107.490356 58.8248941,109.259423 64,109.259423 C69.1751059,109.259423 73.6700947,107.490356 75.9358659,104.893337 L75.9358659,104.893337 Z M64.3010456,24.2418177 C75.9193117,24.2418188 88.0000013,32.0619847 88,48.4419659 C87.9999987,64.8219472 75.9193018,71.7540963 75.9193021,83.5755932 C75.9193022,89.4486648 70.0521957,92.8368862 63.9999994,92.8368862 C57.947803,92.8368862 51.9731007,89.8295115 51.9731007,83.5755932 C51.9731007,71.1469799 39.9999998,65.4700602 40,48.4419647 C40.0000002,31.4138691 52.6827796,24.2418166 64.3010456,24.2418177 Z"></path>
     </g>
@@ -77,74 +77,74 @@ MyWidget.prototype.render = <span class="hljs-function"><span class="hljs-keywor
   render(parent, nextSibling) {…}
   <span class="hljs-comment">// And so on…</span>
 }</code></pre><p>With classes one <em>could</em> eliminate much of the <code>Widget.execute()</code> cruft using <dfn class="doc-def">getters</dfn>. I found this to be more readable then the typical mass assignment to <code>this</code>. It gave me the added benefit of allowing calculations in properties that normally would have conflated the <code>execute()</code> method. For example developing a compound property like so:</p><pre class="javascript hljs"><code><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NameWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span> </span>{
-  get title() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'title'</span>); }
-  get firstName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'first'</span>); }
-  get lastName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'last'</span>); }
-  get fullName() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${this.title}</span>. <span class="hljs-subst">${this.firstName}</span> <span class="hljs-subst">${this.lastName}</span>`</span>; }
+  <span class="hljs-keyword">get</span> title() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'title'</span>); }
+  <span class="hljs-keyword">get</span> firstName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'first'</span>); }
+  <span class="hljs-keyword">get</span> lastName() { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.getAttribute(<span class="hljs-string">'last'</span>); }
+  <span class="hljs-keyword">get</span> fullName() { <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.title}</span>. <span class="hljs-subst">${<span class="hljs-keyword">this</span>.firstName}</span> <span class="hljs-subst">${<span class="hljs-keyword">this</span>.lastName}</span>`</span>; }
 }</code></pre><h3 class="">Non Class Modules</h3><p>For non class modules you can use the <code>export</code> keyword. Here is a simple <a class="tc-tiddlylink tc-tiddlylink-missing" href="ModuleType.html">Startup Module</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">startup</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-comment">// Do stuff here</span>
 }</code></pre><p>Or in the case of a <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/#JavaScript%20Macros" rel="noopener noreferrer" target="_blank">Macro</a>:</p><pre class="javascript hljs"><code><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> name = <span class="hljs-string">'my-macro'</span>;
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> params = {};
 <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params"></span>) </span>{…}</code></pre><h2 class="">Polyfills</h2><p>ES2015 comes with some features that are part of the <a class="tc-tiddlylink tc-tiddlylink-missing" href="JavaScript.html">JavaScript</a> core objects. These are not supported by all browsers. To use these features in <a class="tc-tiddlylink tc-tiddlylink-missing" href="BrowserCompatibility.html">most browsers</a> you will need a <dfn class="doc-def">polyfill</dfn>. Babel has a polyfill package that you can include. See <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Adding%2520Babel%2520Polyfill%2520to%2520TiddlyWiki.html">Adding Babel Polyfill to TiddlyWiki</a> for how to accomplish this.</p><h2 class="">Example</h2><p>Here is an example ES2015 plugin/widget that will show the time and update it:</p><pre class="javascript hljs"><code>
-/*\
+<span class="hljs-comment">/*\
 title: $:/plugins/sukima/clock-widget.js
 type: application/javascript
 module-type: widget
 
 A updating time stamp
 
-\*/
-import { widget as Widget } from '$:/core/modules/widgets/widget.js';
+\*/</span>
+<span class="hljs-keyword">import</span> { widget <span class="hljs-keyword">as</span> Widget } <span class="hljs-keyword">from</span> <span class="hljs-string">'$:/core/modules/widgets/widget.js'</span>;
 
-class ClockWidget extends Widget {
-  constructor(parseTreeNode, options) {
-    super(parseTreeNode, options);
-    this.logger = new $tw.utils.Logger('clock-widget');
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ClockWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Widget</span> </span>{
+  <span class="hljs-keyword">constructor</span>(parseTreeNode, options) {
+    <span class="hljs-keyword">super</span>(parseTreeNode, options);
+    <span class="hljs-keyword">this</span>.logger = <span class="hljs-keyword">new</span> $tw.utils.Logger(<span class="hljs-string">'clock-widget'</span>);
   }
 
   render(parent, nextSibling) {
-    if (!$tw.browser) { return; }
-    this.logger.log('Rendering clock DOM nodes');
-    this.computeAttributes()
-    this.parentDomNode = parent;
-    this.domNode = $tw.utils.domMaker('div', {
-      document: this.document,
-      class: 'tc-clock-widget'
+    <span class="hljs-keyword">if</span> (!$tw.browser) { <span class="hljs-keyword">return</span>; }
+    <span class="hljs-keyword">this</span>.logger.log(<span class="hljs-string">'Rendering clock DOM nodes'</span>);
+    <span class="hljs-keyword">this</span>.computeAttributes()
+    <span class="hljs-keyword">this</span>.parentDomNode = parent;
+    <span class="hljs-keyword">this</span>.domNode = $tw.utils.domMaker(<span class="hljs-string">'div'</span>, {
+      <span class="hljs-attr">document</span>: <span class="hljs-keyword">this</span>.document,
+      <span class="hljs-attr">class</span>: <span class="hljs-string">'tc-clock-widget'</span>
     });
-    parent.insertBefore(this.domNode, nextSibling);
-    this.tick();
+    parent.insertBefore(<span class="hljs-keyword">this</span>.domNode, nextSibling);
+    <span class="hljs-keyword">this</span>.tick();
   }
 
   tick() {
-    this.logger.log('Tick!');
-    if (!document.contains(this.domNode)) {
-      // Apparently the widget was removed from the DOM. Do some clean up.
-      return this.stop();
+    <span class="hljs-keyword">this</span>.logger.log(<span class="hljs-string">'Tick!'</span>);
+    <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">document</span>.contains(<span class="hljs-keyword">this</span>.domNode)) {
+      <span class="hljs-comment">// Apparently the widget was removed from the DOM. Do some clean up.</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.stop();
     }
-    this.start();
-    this.domNode.innerHTML = this.dateString;
+    <span class="hljs-keyword">this</span>.start();
+    <span class="hljs-keyword">this</span>.domNode.innerHTML = <span class="hljs-keyword">this</span>.dateString;
   }
 
   start() {
-    if (!this.clockTicker) {
-      this.logger.log('Starting clock');
-      this.clockTicker = setInterval(this.tick.bind(this), 1000);
+    <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>.clockTicker) {
+      <span class="hljs-keyword">this</span>.logger.log(<span class="hljs-string">'Starting clock'</span>);
+      <span class="hljs-keyword">this</span>.clockTicker = setInterval(<span class="hljs-keyword">this</span>.tick.bind(<span class="hljs-keyword">this</span>), <span class="hljs-number">1000</span>);
     }
   }
 
   stop() {
-    this.logger.log('Stopping clock');
-    clearInterval(this.clockTicker);
-    this.clockTicker = null;
+    <span class="hljs-keyword">this</span>.logger.log(<span class="hljs-string">'Stopping clock'</span>);
+    clearInterval(<span class="hljs-keyword">this</span>.clockTicker);
+    <span class="hljs-keyword">this</span>.clockTicker = <span class="hljs-literal">null</span>;
   }
 
-  get dateString() {
-    const format = 'DDth MMM YYYY at hh12:0mm:0ss am';
-    return $tw.utils.formatDateString(new Date(), format);
+  <span class="hljs-keyword">get</span> dateString() {
+    <span class="hljs-keyword">const</span> format = <span class="hljs-string">'DDth MMM YYYY at hh12:0mm:0ss am'</span>;
+    <span class="hljs-keyword">return</span> $tw.utils.formatDateString(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(), format);
   }
 }
 
-export { ClockWidget as clock };</code></pre><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+<span class="hljs-keyword">export</span> { ClockWidget <span class="hljs-keyword">as</span> clock };</code></pre><p><div class="doc-icon-block"><div class="doc-block-icon"><svg class="tc-image-tip tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
         <path d="M64,128.241818 C99.346224,128.241818 128,99.5880417 128,64.2418177 C128,28.8955937 99.346224,0.241817675 64,0.241817675 C28.653776,0.241817675 0,28.8955937 0,64.2418177 C0,99.5880417 28.653776,128.241818 64,128.241818 Z M75.9358659,91.4531941 C75.3115438,95.581915 70.2059206,98.8016748 64,98.8016748 C57.7940794,98.8016748 52.6884562,95.581915 52.0641341,91.4531941 C54.3299053,94.0502127 58.8248941,95.8192805 64,95.8192805 C69.1751059,95.8192805 73.6700947,94.0502127 75.9358659,91.4531941 L75.9358659,91.4531941 Z M75.9358659,95.9453413 C75.3115438,100.074062 70.2059206,103.293822 64,103.293822 C57.7940794,103.293822 52.6884562,100.074062 52.0641341,95.9453413 C54.3299053,98.5423599 58.8248941,100.311428 64,100.311428 C69.1751059,100.311428 73.6700947,98.5423599 75.9358659,95.9453413 L75.9358659,95.9453413 Z M75.9358659,100.40119 C75.3115438,104.529911 70.2059206,107.74967 64,107.74967 C57.7940794,107.74967 52.6884562,104.529911 52.0641341,100.40119 C54.3299053,102.998208 58.8248941,104.767276 64,104.767276 C69.1751059,104.767276 73.6700947,102.998208 75.9358659,100.40119 L75.9358659,100.40119 Z M75.9358659,104.893337 C75.3115438,109.022058 70.2059206,112.241818 64,112.241818 C57.7940794,112.241818 52.6884562,109.022058 52.0641341,104.893337 C54.3299053,107.490356 58.8248941,109.259423 64,109.259423 C69.1751059,109.259423 73.6700947,107.490356 75.9358659,104.893337 L75.9358659,104.893337 Z M64.3010456,24.2418177 C75.9193117,24.2418188 88.0000013,32.0619847 88,48.4419659 C87.9999987,64.8219472 75.9193018,71.7540963 75.9193021,83.5755932 C75.9193022,89.4486648 70.0521957,92.8368862 63.9999994,92.8368862 C57.947803,92.8368862 51.9731007,89.8295115 51.9731007,83.5755932 C51.9731007,71.1469799 39.9999998,65.4700602 40,48.4419647 C40.0000002,31.4138691 52.6827796,24.2418166 64.3010456,24.2418177 Z"></path>
     </g>
