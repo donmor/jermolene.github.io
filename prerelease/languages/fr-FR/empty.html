@@ -9272,11 +9272,11 @@ Error message and password prompt
         },
         &quot;$:/language/Buttons/FoldAll/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FoldAll/Caption&quot;,
-            &quot;text&quot;: &quot;replie tous les tiddlers&quot;
+            &quot;text&quot;: &quot;replier tous les tiddlers&quot;
         },
         &quot;$:/language/Buttons/FoldAll/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/FoldAll/Hint&quot;,
-            &quot;text&quot;: &quot;Replier le corps de tous les tiddlers ouverts&quot;
+            &quot;text&quot;: &quot;Replie le corps de tous les tiddlers ouverts&quot;
         },
         &quot;$:/language/Buttons/UnfoldAll/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/UnfoldAll/Caption&quot;,
@@ -9333,6 +9333,14 @@ Error message and password prompt
         &quot;$:/language/Buttons/Language/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Language/Hint&quot;,
             &quot;text&quot;: &quot;Choix de la langue pour l'interface utilisateur&quot;
+        },
+        &quot;$:/language/Buttons/Manager/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Manager/Caption&quot;,
+            &quot;text&quot;: &quot;gestionnaire de tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/Manager/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/Manager/Hint&quot;,
+            &quot;text&quot;: &quot;Ouvre le gestionnaire de tiddlers&quot;
         },
         &quot;$:/language/Buttons/More/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/More/Caption&quot;,
@@ -10488,7 +10496,7 @@ Error message and password prompt
         },
         &quot;$:/language/ControlPanel/Stylesheets/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Stylesheets/Caption&quot;,
-            &quot;text&quot;: &quot;Stylesheets&quot;
+            &quot;text&quot;: &quot;Feuilles de style&quot;
         },
         &quot;$:/language/ControlPanel/Stylesheets/Expand/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Stylesheets/Expand/Caption&quot;,
@@ -11682,6 +11690,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Docs/Fields/title&quot;,
             &quot;text&quot;: &quot;Nom unique du tiddler&quot;
         },
+        &quot;$:/language/Docs/Fields/toc-link&quot;: {
+            &quot;title&quot;: &quot;$:/language/Docs/Fields/toc-link&quot;,
+            &quot;text&quot;: &quot;Une valeur à ''no'' supprime le lien vers le tiddler dans l'arborescences des tables des matières&quot;
+        },
         &quot;$:/language/Docs/Fields/type&quot;: {
             &quot;title&quot;: &quot;$:/language/Docs/Fields/type&quot;,
             &quot;text&quot;: &quot;Type de contenu du tiddler&quot;
@@ -11785,10 +11797,15 @@ Error message and password prompt
             &quot;description&quot;: &quot;Initialise un nouveau dossier wiki&quot;,
             &quot;text&quot;: &quot;Initialise un [[dossier wiki (WikiFolder)|WikiFolders]] vide en copiant l'une des éditions présentes dans le répertoire //editions//.\n\n```\n--init &lt;édition&gt; [&lt;édition&gt; ...]\n```\n\nPar exemple :\n\n```\ntiddlywiki ./MonDossierWiki --init empty\n```\n\nNote :\n\n* Le répertoire correspondant au dossier wiki est créé si nécessaire\n* L'édition par défaut est ''empty''\n* La commande //init// échoue si le dossier wiki n'est pas vide\n* La commande //init// supprime les éventuelles définitions `includeWikis` du fichier `tiddlywiki.info` de l'édition spécifiée\n* Lorsque plusieurs éditions sont spécifiées, chaque édition écrase les fichiers qu'elle a en commun avec les précédentes (par conséquent, le fichier `tiddlywiki.info` proviendra de la dernière édition spécifiée)\n* `--editions` renvoie une liste des éditions disponibles\n&quot;
         },
+        &quot;$:/language/Help/listen&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/listen&quot;,
+            &quot;description&quot;: &quot;Fournit à TiddlyWiki une interface serveur HTTP&quot;,
+            &quot;text&quot;: &quot;Sert un wiki via HTTP.\n\nLa commande //listen// utilise des [[paramètres de commande nommés|NamedCommandParameters]] :\n\n```\n--listen [&lt;nom&gt;=&lt;valeur&gt;]...\n```\n\nTous les paramètres sont optionnels avec des valeurs par défaut sûres, et peuvent être spécifiés dans n'importe quel ordre. Les paramètres reconnus sont les suivants :\n\n* ''host'' - nom ou adresse de machine hôte à laquelle sera attaché le service (par défaut \&quot;127.0.0.1\&quot;, autrement dit \&quot;localhost\&quot;)\n* ''path-prefix'' - préfixe optionnel pour les noms de chemin\n* ''port'' - numéro de port sur lequel écouter ; une valeur non numérique est interprétée comme un nom de variable d'environnement dont sera extrait le numéro de port (par défaut à \&quot;8080\&quot;)\n* ''credentials'' - chemin vers le fichier CSV d'autorisations (relativement au dossier du wiki)\n* ''anon-username'' - nom d'utilisateur qui servira à signer les modifications si l'utilisateur est anonyme\n* ''username'' - nom d'utilisateur optionnel pour l'authentification basique\n* ''password'' - mot de passe optionnel pour l'authentification basique\n* ''authenticated-user-header'' - nom d'en-tête optionnel à utiliser pour les authentifications de confiance\n* ''readers'' - liste de personnes de confiance autorisées à lire ce wiki, séparées par des virgules \n* ''writers'' - liste de personnes de confiance autorisées à modifier ce wiki, séparées par des virgules\n* ''csrf-disable'' - donner la valeur \&quot;yes\&quot; pour désactiver les vérifications CSRF (vaut \&quot;no\&quot; par défaut)\n* ''root-tiddler'' - le tiddler à servir à la racine (par défaut \&quot;$:/core/save/all\&quot;)\n* ''root-render-type'' - le type de contenu avec lequel le tiddler racine doit être rendu (par défaut \&quot;text/plain\&quot;)\n* ''root-serve-type'' - le type de contenu avec lequel le tiddler racine doit être servi (par défaut \&quot;text/html\&quot;)\n* ''tls-cert'' - nom de chemin du fichier de certificat TLS (relativement au dossier du wiki)\n* ''tls-key'' - nom de chemin du fichier de clé TLS (relativement au dossier du wiki)\n* ''debug-level'' - niveau de débogage optionnel ; mettre à \&quot;debug\&quot; pour voir le détail des requêtes (par défaut à \&quot;none\&quot;)\n* ''gzip'' - donner la valeur \&quot;yes\&quot; pour activer la compression gzip pour certaines interactions http (par défaut à \&quot;no\&quot;)\n\nPour plus d'informations sur la manière de donner accès à votre instance de serveur à l'ensemble de votre réseau local, ainsi que sur les risques éventuels en matière de sécurité, voir le tiddler [[WebServer sur tiddlywiki.com|https://tiddlywiki.com/#WebServer]].\n\n&quot;
+        },
         &quot;$:/language/Help/load&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/load&quot;,
             &quot;description&quot;: &quot;Charge des tiddlers à partir d'un fichier&quot;,
-            &quot;text&quot;: &quot;Charge des tiddlers à partir de fichiers ~TiddlyWikiClassic 2.x.x (`.html`), `.tiddler`, `.tid`, `.json` ou d'autres types de fichiers.\n\n```\n--load &lt;chemindufichier&gt;\n```\n\nPour charger des tiddlers à partir d'un fichier ~TiddlyWiki chiffré, vous devrez d'abord spécifier le mot de passe à l'aide de la [[commande password|PasswordCommand]]. Par exemple :\n\n```\ntiddlywiki ./MonWiki --password pa55w0rd --load mon_wiki_secret.html\n```\n\nÀ noter que Tiddlywiki refusera de charger une version plus ancienne d'un plugin déjà chargé.&quot;
+            &quot;text&quot;: &quot;Charge des tiddlers à partir de fichiers ~TiddlyWikiClassic 2.x.x\n(`.html`), `.tiddler`, `.tid`, `.json` ou d'autres types de\nfichiers. Le traitement appliqué aux fichiers entrants est déterminé par l'extension du fichier. Utilisez plutôt la commande `import` si vous devez spécifier explicitement le désérialiseur et l'encodage.\n\n\n```\n--load &lt;chemindufichier&gt; [noerror]\n--load &lt;chemindurépertoire&gt; [noerror]\n```\n\nPar défaut, la commande //load// provoque une erreur si aucun tiddler n'est trouvé. L'erreur peut être supprimée en spécifiant le paramètre optionnel \&quot;noerror\&quot;.\n\nPour charger des tiddlers à partir d'un fichier ~TiddlyWiki chiffré, vous devrez d'abord spécifier le mot de passe à l'aide de la [[commande password|PasswordCommand]]. Par exemple :\n\n```\ntiddlywiki ./MonWiki --password pa55w0rd --load mon_wiki_secret.html\n```\n\nÀ noter : TiddlyWiki refusera de charger une version plus ancienne d'un plugin déjà chargé.&quot;
         },
         &quot;$:/language/Help/makelibrary&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/makelibrary&quot;,
@@ -11935,6 +11952,14 @@ Error message and password prompt
         &quot;$:/language/Import/Upgrader/System/Suppressed&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Suppressed&quot;,
             &quot;text&quot;: &quot;Tiddler système bloqué&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Warning&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Warning&quot;,
+            &quot;text&quot;: &quot;Tiddler du module //core//&quot;
+        },
+        &quot;$:/language/Import/Upgrader/System/Alert&quot;: {
+            &quot;title&quot;: &quot;$:/language/Import/Upgrader/System/Alert&quot;,
+            &quot;text&quot;: &quot;Vous êtes sur le point d'importer un tiddler qui écrasera un tiddler du module //core//. Ceci est déconseillé car cela peut rendre le système instable&quot;
         },
         &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;: {
             &quot;title&quot;: &quot;$:/language/Import/Upgrader/ThemeTweaks/Created&quot;,
@@ -12294,7 +12319,7 @@ Error message and password prompt
         },
         &quot;$:/language/Search/Search&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Search&quot;,
-            &quot;text&quot;: &quot;Recherch&quot;
+            &quot;text&quot;: &quot;Recherche&quot;
         },
         &quot;$:/language/Search/Search/TooShort&quot;: {
             &quot;title&quot;: &quot;$:/language/Search/Search/TooShort&quot;,
@@ -12347,6 +12372,10 @@ Error message and password prompt
         &quot;$:/language/SideBar/Drafts/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Drafts/Caption&quot;,
             &quot;text&quot;: &quot;Brouillons&quot;
+        },
+        &quot;$:/language/SideBar/Explorer/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/SideBar/Explorer/Caption&quot;,
+            &quot;text&quot;: &quot;Explorateur&quot;
         },
         &quot;$:/language/SideBar/Missing/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/SideBar/Missing/Caption&quot;,
