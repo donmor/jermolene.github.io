@@ -5212,6 +5212,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;macro&quot;
         },
+        &quot;$:/core/modules/macros/unusedtitle.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/macros/unusedtitle.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/macros/unusedtitle.js\ntype: application/javascript\nmodule-type: macro\nMacro to return a new title that is unused in the wiki. It can be given a name as a base.\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nInformation about this macro\n*/\n\nexports.name = \&quot;unusedtitle\&quot;;\n\nexports.params = [\n\t{name: \&quot;baseName\&quot;},\n\t{name: \&quot;options\&quot;}\n];\n\n/*\nRun the macro\n*/\nexports.run = function(baseName, options) {\n\tif(!baseName) {\n\t\tbaseName = $tw.language.getString(\&quot;DefaultNewTiddlerTitle\&quot;);\n\t}\n\treturn this.wiki.generateNewTitle(baseName, options);\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;macro&quot;
+        },
         &quot;$:/core/modules/macros/version.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/macros/version.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/macros/version.js\ntype: application/javascript\nmodule-type: macro\n\nMacro to return the TiddlyWiki core version number\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nInformation about this macro\n*/\n\nexports.name = \&quot;version\&quot;;\n\nexports.params = [];\n\n/*\nRun the macro\n*/\nexports.run = function() {\n\treturn $tw.version;\n};\n\n})();\n&quot;,
