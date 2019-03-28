@@ -195,8 +195,8 @@ Error message and password prompt
   &lt;$list filter=&quot;&quot;&quot;[all[shadows+tiddlers]tag&lt;__tag__&gt;!has[draft.of]$sort$] -[&lt;__tag__&gt;] -[enlist&lt;__exclude__&gt;]&quot;&quot;&quot;&gt;
     &lt;$vars item=&lt;&lt;currentTiddler&gt;&gt; path={{{ [&lt;__path__&gt;addsuffix[/]addsuffix&lt;__tag__&gt;] }}} excluded=&quot;&quot;&quot;[enlist&lt;__exclude__&gt;] -[&lt;__tag__&gt;]&quot;&quot;&quot;&gt;
       &lt;li&gt;
-        &lt;$link to={{{ [enlist{!!tiddler-list}] }}}&gt;
-					&lt;$list filter=&quot;[enlist{!!tiddler-list}addprefix[$:/state/viewtemplate/visibility/]text[2]limit[1]]&quot; variable=&quot;listItem&quot; emptyMessage=&quot;&quot;&quot;&lt;div style=&quot;display:inline-block;width:4px;height:1em;background-color:transparent;&quot;&gt;&lt;/div&gt;&quot;&quot;&quot;&gt;
+        &lt;$link to={{{ [enlist{!!story-tiddlers}] }}}&gt;
+					&lt;$list filter=&quot;[enlist{!!story-tiddlers}addprefix[$:/state/viewtemplate/visibility/]text[2]limit[1]]&quot; variable=&quot;listItem&quot; emptyMessage=&quot;&quot;&quot;&lt;div style=&quot;display:inline-block;width:4px;height:1em;background-color:transparent;&quot;&gt;&lt;/div&gt;&quot;&quot;&quot;&gt;
 						&lt;div style=&quot;display:inline-block;width:4px;height:1em;background-color:red;&quot;&gt;&lt;/div&gt;
 					&lt;/$list&gt;
           &lt;$view field='caption'&gt;
@@ -222,7 +222,7 @@ Error message and password prompt
 </pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 94607aa9cdc4a853710ea48544aa5f99bfdc017a of https://github.com/Jermolene/TiddlyWiki5.git at 2019-03-27 16:15:30 UTC
+<pre>Prerelease built from branch 'master' at commit 1c436cbbf356779a006220ee594653fadd8a79cd of https://github.com/Jermolene/TiddlyWiki5.git at 2019-03-28 12:24:00 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -9278,7 +9278,7 @@ $:/state/folded/$(currentTiddler)$
 $:/plugins/tiddlywiki/dynaview
 [list[Alice in Wonderland:]]</pre>
 </div>
-<div created="20190327161652499" current-tiddler="HelloThere" modified="20190327161652499" title="$:/HistoryList" type="application/json">
+<div created="20190328122530200" current-tiddler="HelloThere" modified="20190328122530200" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
