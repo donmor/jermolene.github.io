@@ -176,7 +176,7 @@ Error message and password prompt
 
 <div id="storeArea" style="display:none;">
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 662ae91067f475d4035b7d6f7174d1a3650cc8a5 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-06 09:30:24 UTC
+<pre>Prerelease built from branch 'master' at commit 73703da2e7a8762cfd9cfe881e989f34f85519bc of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-08 20:41:03 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -1810,6 +1810,38 @@ Error message and password prompt
         &quot;$:/language/ControlPanel/Saving/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/Hint&quot;,
             &quot;text&quot;: &quot;Settings used for saving the entire TiddlyWiki as a single file via a saver module&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Branch&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Branch&quot;,
+            &quot;text&quot;: &quot;Target branch for saving (defaults to `master`)&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Caption&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Caption&quot;,
+            &quot;text&quot;: &quot;~GitHub Saver&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Description&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Description&quot;,
+            &quot;text&quot;: &quot;These settings are only used when saving to ~GitHub&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Filename&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Filename&quot;,
+            &quot;text&quot;: &quot;Filename of target file (e.g. `index.html`)&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Password&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Password&quot;,
+            &quot;text&quot;: &quot;Password, OAUTH token, or personal access token&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Path&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Path&quot;,
+            &quot;text&quot;: &quot;Path to target file (e.g. `/wiki/`)&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/Repo&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/Repo&quot;,
+            &quot;text&quot;: &quot;Target repository (e.g. `Jermolene/TiddlyWiki5`)&quot;
+        },
+        &quot;$:/language/ControlPanel/Saving/GitHub/UserName&quot;: {
+            &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/GitHub/UserName&quot;,
+            &quot;text&quot;: &quot;Username&quot;
         },
         &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;: {
             &quot;title&quot;: &quot;$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading&quot;,
@@ -5550,6 +5582,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;saver&quot;
         },
+        &quot;$:/core/modules/savers/github.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/savers/github.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/github.js\ntype: application/javascript\nmodule-type: saver\n\nSaves wiki by pushing a commit to the GitHub v3 REST API\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar base64utf8 = require(\&quot;$:/core/modules/utils/base64-utf8/base64-utf8.module.js\&quot;);\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar GitHubSaver = function(wiki) {\n\tthis.wiki = wiki;\n};\n\nGitHubSaver.prototype.save = function(text,method,callback) {\n\tvar self = this,\n\t\tusername = this.wiki.getTiddlerText(\&quot;$:/GitHub/Username\&quot;),\n\t\tpassword = $tw.utils.getPassword(\&quot;github\&quot;),\n\t\trepo = this.wiki.getTiddlerText(\&quot;$:/GitHub/Repo\&quot;),\n\t\tpath = this.wiki.getTiddlerText(\&quot;$:/GitHub/Path\&quot;),\n\t\tfilename = this.wiki.getTiddlerText(\&quot;$:/GitHub/Filename\&quot;),\n\t\tbranch = this.wiki.getTiddlerText(\&quot;$:/GitHub/Branch\&quot;) || \&quot;master\&quot;,\n\t\theaders = {\n\t\t\t\&quot;Accept\&quot;: \&quot;application/vnd.github.v3+json\&quot;,\n\t\t\t\&quot;Content-Type\&quot;: \&quot;application/json;charset=UTF-8\&quot;,\n\t\t\t\&quot;Authorization\&quot;: \&quot;Basic \&quot; + window.btoa(username + \&quot;:\&quot; + password)\n\t\t};\n\t// Make sure the path start and ends with a slash\n\tif(path.substring(0,1) !== \&quot;/\&quot;) {\n\t\tpath = \&quot;/\&quot; + path;\n\t}\n\tif(path.substring(path.length - 1) !== \&quot;/\&quot;) {\n\t\tpath = path + \&quot;/\&quot;;\n\t}\n\t// Compose the base URI\n\tvar uri = \&quot;https://api.github.com/repos/\&quot; + repo + \&quot;/contents\&quot; + path;\n\t// Bail if we don't have everything we need\n\tif(!username || !password || !repo || !path || !filename) {\n\t\treturn false;\n\t}\n\t// Perform a get request to get the details (inc shas) of files in the same path as our file\n\t$tw.utils.httpRequest({\n\t\turl: uri,\n\t\ttype: \&quot;GET\&quot;,\n\t\theaders: headers,\n\t\tdata: {\n\t\t\tref: branch\n\t\t},\n\t\tcallback: function(err,getResponseDataJson,xhr) {\n\t\t\tif(err) {\n\t\t\t\treturn callback(err);\t\t\t\t\t\n\t\t\t}\n\t\t\tvar getResponseData = JSON.parse(getResponseDataJson),\n\t\t\t\tsha = \&quot;\&quot;;\n\t\t\t$tw.utils.each(getResponseData,function(details) {\n\t\t\t\tif(details.name === filename) {\n\t\t\t\t\tsha = details.sha;\n\t\t\t\t}\n\t\t\t});\n\t\t\tvar data = {\n\t\t\t\t\tmessage: \&quot;Saved by TiddlyWiki\&quot;,\n\t\t\t\t\tcontent: base64utf8.base64.encode.call(base64utf8,text),\n\t\t\t\t\tbranch: branch,\n\t\t\t\t\tsha: sha\n\t\t\t\t};\n\t\t\t// Perform a PUT request to save the file\n\t\t\t$tw.utils.httpRequest({\n\t\t\t\turl: uri + filename,\n\t\t\t\ttype: \&quot;PUT\&quot;,\n\t\t\t\theaders: headers,\n\t\t\t\tdata: JSON.stringify(data),\n\t\t\t\tcallback: function(err,putResponseDataJson,xhr) {\n\t\t\t\t\tif(err) {\n\t\t\t\t\t\treturn callback(err);\n\t\t\t\t\t}\n\t\t\t\t\tvar putResponseData = JSON.parse(putResponseDataJson);\n\t\t\t\t\tcallback(null);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t});\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nGitHubSaver.prototype.info = {\n\tname: \&quot;github\&quot;,\n\tpriority: 2000,\n\tcapabilities: [\&quot;save\&quot;, \&quot;autosave\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn true;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new GitHubSaver(wiki);\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;saver&quot;
+        },
         &quot;$:/core/modules/savers/manualdownload.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/savers/manualdownload.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/savers/manualdownload.js\ntype: application/javascript\nmodule-type: saver\n\nHandles saving changes via HTML5's download APIs\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Title of the tiddler containing the download message\nvar downloadInstructionsTitle = \&quot;$:/language/Modals/Download\&quot;;\n\n/*\nSelect the appropriate saver module and set it up\n*/\nvar ManualDownloadSaver = function(wiki) {\n};\n\nManualDownloadSaver.prototype.save = function(text,method,callback) {\n\t$tw.modal.display(downloadInstructionsTitle,{\n\t\tdownloadLink: \&quot;data:text/html,\&quot; + encodeURIComponent(text)\n\t});\n\t// Callback that we succeeded\n\tcallback(null);\n\treturn true;\n};\n\n/*\nInformation about this saver\n*/\nManualDownloadSaver.prototype.info = {\n\tname: \&quot;manualdownload\&quot;,\n\tpriority: 0,\n\tcapabilities: [\&quot;save\&quot;, \&quot;download\&quot;]\n};\n\n/*\nStatic method that returns true if this saver is capable of working\n*/\nexports.canSave = function(wiki) {\n\treturn true;\n};\n\n/*\nCreate an instance of this saver\n*/\nexports.create = function(wiki) {\n\treturn new ManualDownloadSaver(wiki);\n};\n\n})();\n&quot;,
@@ -5789,6 +5827,12 @@ Error message and password prompt
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/upgraders/themetweaks.js\ntype: application/javascript\nmodule-type: upgrader\n\nUpgrader module that handles the change in theme tweak storage introduced in 5.0.14-beta.\n\nPreviously, theme tweaks were stored in two data tiddlers:\n\n* $:/themes/tiddlywiki/vanilla/metrics\n* $:/themes/tiddlywiki/vanilla/settings\n\nNow, each tweak is stored in its own separate tiddler.\n\nThis upgrader copies any values from the old format to the new. The old data tiddlers are not deleted in case they have been used to store additional indexes.\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\nvar MAPPINGS = {\n\t\&quot;$:/themes/tiddlywiki/vanilla/metrics\&quot;: {\n\t\t\&quot;fontsize\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/fontsize\&quot;,\n\t\t\&quot;lineheight\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/lineheight\&quot;,\n\t\t\&quot;storyleft\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/storyleft\&quot;,\n\t\t\&quot;storytop\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/storytop\&quot;,\n\t\t\&quot;storyright\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/storyright\&quot;,\n\t\t\&quot;storywidth\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/storywidth\&quot;,\n\t\t\&quot;tiddlerwidth\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth\&quot;\n\t},\n\t\&quot;$:/themes/tiddlywiki/vanilla/settings\&quot;: {\n\t\t\&quot;fontfamily\&quot;: \&quot;$:/themes/tiddlywiki/vanilla/settings/fontfamily\&quot;\n\t}\n};\n\nexports.upgrade = function(wiki,titles,tiddlers) {\n\tvar self = this,\n\t\tmessages = {};\n\t// Check for tiddlers on our list\n\t$tw.utils.each(titles,function(title) {\n\t\tvar mapping = MAPPINGS[title];\n\t\tif(mapping) {\n\t\t\tvar tiddler = new $tw.Tiddler(tiddlers[title]),\n\t\t\t\ttiddlerData = wiki.getTiddlerDataCached(tiddler,{});\n\t\t\tfor(var index in mapping) {\n\t\t\t\tvar mappedTitle = mapping[index];\n\t\t\t\tif(!tiddlers[mappedTitle] || tiddlers[mappedTitle].title !== mappedTitle) {\n\t\t\t\t\ttiddlers[mappedTitle] = {\n\t\t\t\t\t\ttitle: mappedTitle,\n\t\t\t\t\t\ttext: tiddlerData[index]\n\t\t\t\t\t};\n\t\t\t\t\tmessages[mappedTitle] = $tw.language.getString(\&quot;Import/Upgrader/ThemeTweaks/Created\&quot;,{variables: {\n\t\t\t\t\t\tfrom: title + \&quot;##\&quot; + index\n\t\t\t\t\t}});\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t});\n\treturn messages;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;upgrader&quot;
+        },
+        &quot;$:/core/modules/utils/base64-utf8/base64-utf8.module.js&quot;: {
+            &quot;text&quot;: &quot;(function(){// From https://gist.github.com/Nijikokun/5192472\n//\n// UTF8 Module\n//\n// Cleaner and modularized utf-8 encoding and decoding library for javascript.\n//\n// copyright: MIT\n// author: Nijiko Yonskai, @nijikokun, nijikokun@gmail.com\n!function(r,e,o,t){void 0!==o.module&amp;&amp;o.module.exports?o.module.exports=e.apply(o):void 0!==o.define&amp;&amp;\&quot;function\&quot;===o.define&amp;&amp;o.define.amd?define(\&quot;utf8\&quot;,[],e):o.utf8=e.apply(o)}(0,function(){return{encode:function(r){if(\&quot;string\&quot;!=typeof r)return r;r=r.replace(/\\r\\n/g,\&quot;\\n\&quot;);for(var e,o=\&quot;\&quot;,t=0;t&lt;r.length;t++)(e=r.charCodeAt(t))&lt;128?o+=String.fromCharCode(e):e&gt;127&amp;&amp;e&lt;2048?(o+=String.fromCharCode(e&gt;&gt;6|192),o+=String.fromCharCode(63&amp;e|128)):(o+=String.fromCharCode(e&gt;&gt;12|224),o+=String.fromCharCode(e&gt;&gt;6&amp;63|128),o+=String.fromCharCode(63&amp;e|128));return o},decode:function(r){if(\&quot;string\&quot;!=typeof r)return r;for(var e=\&quot;\&quot;,o=0,t=0;o&lt;r.length;)(t=r.charCodeAt(o))&lt;128?(e+=String.fromCharCode(t),o++):t&gt;191&amp;&amp;t&lt;224?(e+=String.fromCharCode((31&amp;t)&lt;&lt;6|63&amp;r.charCodeAt(o+1)),o+=2):(e+=String.fromCharCode((15&amp;t)&lt;&lt;12|(63&amp;r.charCodeAt(o+1))&lt;&lt;6|63&amp;r.charCodeAt(o+2)),o+=3);return e}}},this),function(r,e,o,t){if(void 0!==o.module&amp;&amp;o.module.exports){if(t&amp;&amp;o.require)for(var n=0;n&lt;t.length;n++)o[t[n]]=o.require(t[n]);o.module.exports=e.apply(o)}else void 0!==o.define&amp;&amp;\&quot;function\&quot;===o.define&amp;&amp;o.define.amd?define(\&quot;base64\&quot;,t||[],e):o.base64=e.apply(o)}(0,function(r){var e=r||this.utf8,o=\&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=\&quot;;return{encode:function(r){if(void 0===e)throw{error:\&quot;MissingMethod\&quot;,message:\&quot;UTF8 Module is missing.\&quot;};if(\&quot;string\&quot;!=typeof r)return r;r=e.encode(r);for(var t,n,i,d,f,a,h,c=\&quot;\&quot;,u=0;u&lt;r.length;)d=(t=r.charCodeAt(u++))&gt;&gt;2,f=(3&amp;t)&lt;&lt;4|(n=r.charCodeAt(u++))&gt;&gt;4,a=(15&amp;n)&lt;&lt;2|(i=r.charCodeAt(u++))&gt;&gt;6,h=63&amp;i,isNaN(n)?a=h=64:isNaN(i)&amp;&amp;(h=64),c+=o.charAt(d)+o.charAt(f)+o.charAt(a)+o.charAt(h);return c},decode:function(r){if(void 0===e)throw{error:\&quot;MissingMethod\&quot;,message:\&quot;UTF8 Module is missing.\&quot;};if(\&quot;string\&quot;!=typeof r)return r;r=r.replace(/[^A-Za-z0-9\\+\\/\\=]/g,\&quot;\&quot;);for(var t,n,i,d,f,a,h=\&quot;\&quot;,c=0;c&lt;r.length;)t=o.indexOf(r.charAt(c++))&lt;&lt;2|(d=o.indexOf(r.charAt(c++)))&gt;&gt;4,n=(15&amp;d)&lt;&lt;4|(f=o.indexOf(r.charAt(c++)))&gt;&gt;2,i=(3&amp;f)&lt;&lt;6|(a=o.indexOf(r.charAt(c++))),h+=String.fromCharCode(t),64!=f&amp;&amp;(h+=String.fromCharCode(n)),64!=a&amp;&amp;(h+=String.fromCharCode(i));return e.decode(h)}}},this,[\&quot;utf8\&quot;]);}).call(exports);&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;title&quot;: &quot;$:/core/modules/utils/base64-utf8/base64-utf8.module.js&quot;,
+            &quot;module-type&quot;: &quot;library&quot;
         },
         &quot;$:/core/modules/utils/crypto.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/utils/crypto.js&quot;,
@@ -6758,6 +6802,12 @@ Error message and password prompt
             &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Saving/General/Caption}}&quot;,
             &quot;list-before&quot;: &quot;&quot;,
             &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Settings/\n\n{{$:/language/ControlPanel/Saving/General/Hint}}\n\n!! &lt;$link to=\&quot;$:/config/AutoSave\&quot;&gt;&lt;&lt;lingo AutoSave/Caption&gt;&gt;&lt;/$link&gt;\n\n&lt;&lt;lingo AutoSave/Hint&gt;&gt;\n\n&lt;$radio tiddler=\&quot;$:/config/AutoSave\&quot; value=\&quot;yes\&quot;&gt; &lt;&lt;lingo AutoSave/Enabled/Description&gt;&gt; &lt;/$radio&gt;\n\n&lt;$radio tiddler=\&quot;$:/config/AutoSave\&quot; value=\&quot;no\&quot;&gt; &lt;&lt;lingo AutoSave/Disabled/Description&gt;&gt; &lt;/$radio&gt;\n&quot;
+        },
+        &quot;$:/core/ui/ControlPanel/Saving/GitHub&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Saving/GitHub&quot;,
+            &quot;tags&quot;: &quot;$:/tags/ControlPanel/Saving&quot;,
+            &quot;caption&quot;: &quot;{{$:/language/ControlPanel/Saving/GitHub/Caption}}&quot;,
+            &quot;text&quot;: &quot;\\define lingo-base() $:/language/ControlPanel/Saving/GitHub/\n\n&lt;&lt;lingo Description&gt;&gt;\n\n|&lt;&lt;lingo UserName&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/GitHub/Username\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Password&gt;&gt; |&lt;$password name=\&quot;github\&quot;/&gt; |\n|&lt;&lt;lingo Repo&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/GitHub/Repo\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Branch&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/GitHub/Branch\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Path&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/GitHub/Path\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n|&lt;&lt;lingo Filename&gt;&gt; |&lt;$edit-text tiddler=\&quot;$:/GitHub/Filename\&quot; default=\&quot;\&quot; tag=\&quot;input\&quot;/&gt; |\n&quot;
         },
         &quot;$:/core/ui/ControlPanel/Saving/TiddlySpot&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/ControlPanel/Saving/TiddlySpot&quot;,
@@ -9162,7 +9212,7 @@ KaTeX
 ImplementationNotes
 </pre>
 </div>
-<div created="20190406093150784" current-tiddler="HelloThere" modified="20190406093150784" title="$:/HistoryList" type="application/json">
+<div created="20190408204229418" current-tiddler="HelloThere" modified="20190408204229418" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
