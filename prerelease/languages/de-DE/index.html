@@ -180,7 +180,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 9b72eabd1ae6260f7e07e35c3072b65149cb919c of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-11 07:25:22 UTC
+<pre>Prerelease built from branch 'master' at commit 8c72a28f0c70e6a62387ccdd1431f9225a5fd2de of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-12 17:13:40 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -17436,8 +17436,10 @@ $tw.loadPlugin = function(name,paths) {
 		var pluginFields = $tw.loadPluginFolder(pluginPath);
 		if(pluginFields) {
 			$tw.wiki.addTiddler(pluginFields);
+			return;
 		}
 	}
+	console.log("Warning: Cannot find plugin '" + name + "'");
 };
 
 /*
@@ -17451,7 +17453,7 @@ $tw.getLibraryItemSearchPaths = function(libraryPath,envVar) {
 	if(env) {
 		env.split(path.delimiter).map(function(item) {
 			if(item) {
-				pluginPaths.push(item)
+				pluginPaths.push(item);
 			}
 		});
 	}
@@ -17587,6 +17589,14 @@ $tw.loadTiddlersNode = function() {
 	});
 	// Load the core tiddlers
 	$tw.wiki.addTiddler($tw.loadPluginFolder($tw.boot.corePath));
+	// Load any extra plugins
+	$tw.utils.each($tw.boot.extraPlugins,function(name) {
+		var parts = name.split("/"),
+			type = parts[0];
+		if(parts.length  === 3 && ["plugins","themes","languages"].indexOf(type) !== -1) {
+			$tw.loadPlugins([parts[1] + "/" + parts[2]],$tw.config[type + "Path"],$tw.config[type + "EnvVar"]);
+		}
+	});
 	// Load the tiddlers from the wiki directory
 	if($tw.boot.wikiPath) {
 		$tw.boot.wikiInfo = $tw.loadWikiTiddlers($tw.boot.wikiPath);
@@ -17649,6 +17659,12 @@ $tw.boot.startup = function(options) {
 		// If there's no arguments then default to `--help`
 		if($tw.boot.argv.length === 0) {
 			$tw.boot.argv = ["--help"];
+		}
+		// Parse any extra plugin references
+		$tw.boot.extraPlugins = $tw.boot.extraPlugins || [];
+		while($tw.boot.argv[0] && $tw.boot.argv[0].indexOf("+") === 0) {
+			$tw.boot.extraPlugins.push($tw.boot.argv[0].substring(1));
+			$tw.boot.argv.splice(0,1);
 		}
 		// If the first command line argument doesn't start with `--` then we
 		// interpret it as the path to the wiki folder, which will otherwise default
