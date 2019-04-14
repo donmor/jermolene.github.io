@@ -11869,6 +11869,11 @@ Error message and password prompt
             &quot;description&quot;: &quot;將一群條目的原始內容儲存到一個資料夾&quot;,
             &quot;text&quot;: &quot;(請注意：`--savetiddlers` 命令已被棄用，而支援新的、更靈活得 `--save` 命令)\n\n儲存一群條目的原始文字或二進位格式到指定的資料夾。\n\n```\n--savetiddlers &lt;filter&gt; &lt;pathname&gt; [noclean]\n```\n\n預設情況下，路徑名被解析為相對於發行版資料夾的 `output` 子資料夾。 `--output` 命令可以用於將輸出指定到一個不同的資料夾。\n\n儲存指定的檔案之前，會先清除輸出目錄的現有檔案。可藉由指定 ''noclean'' 旗標，停用該刪除動作。\n\n自動建立在路徑中任何缺少的資料夾。\n&quot;
         },
+        &quot;$:/language/Help/savewikifolder&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savewikifolder&quot;,
+            &quot;description&quot;: &quot;將維基儲存到一個新的維基資料夾&quot;,
+            &quot;text&quot;: &quot;將當前維基儲存為一個維基資料夾，包含條目、插件和配置：\n\n```\n--savewikifolder &lt;wikifolderpath&gt; [&lt;filter&gt;]\n```\n\n* 目標維基資料夾必須為空或不存在\n* 篩選器指定應包括哪些條目。其為可選，預設為 `[all[tiddlers]]`\n* 官方插件庫中的插件，將替換為 `tiddlywiki.info` 檔案中引用到的插件\n* 自訂插件將解壓縮到自己的資料夾中\n\n常見的用法是將一個 TiddlyWiki HTML 檔案轉換成維基資料夾:\n\n```\ntiddlywiki --load ./mywiki.html --savewikifolder ./mywikifolder\n```\n&quot;
+        },
         &quot;$:/language/Help/server&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/server&quot;,
             &quot;description&quot;: &quot;提供一個 HTTP 伺服器介面到 TiddlyWiki (已棄用，支持新的 listen 命令)&quot;,
