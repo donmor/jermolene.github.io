@@ -222,7 +222,7 @@ Error message and password prompt
 </pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit df416814b13fadd541ca30dffe3f77d24e63f8b0 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-16 15:00:15 UTC
+<pre>Prerelease built from branch 'master' at commit 07198b9cda12da82fc66dcf0589d6a9caab1cdf6 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-04-23 16:59:41 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -8333,7 +8333,7 @@ Error message and password prompt
             &quot;tags&quot;: &quot;$:/tags/ViewToolbar&quot;,
             &quot;caption&quot;: &quot;{{$:/core/images/new-here-button}} {{$:/language/Buttons/NewHere/Caption}}&quot;,
             &quot;description&quot;: &quot;{{$:/language/Buttons/NewHere/Hint}}&quot;,
-            &quot;text&quot;: &quot;\\whitespace trim\n\\define newHereButtonTags()\n[[$(currentTiddler)$]]\n\\end\n\\define newHereButton()\n&lt;$button tooltip={{$:/language/Buttons/NewHere/Hint}} aria-label={{$:/language/Buttons/NewHere/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; tags=&lt;&lt;newHereButtonTags&gt;&gt;/&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/new-here-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;\n&lt;$text text={{$:/language/Buttons/NewHere/Caption}}/&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n\\end\n&lt;&lt;newHereButton&gt;&gt;&quot;
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define newHereActions()\n&lt;$set name=\&quot;tags\&quot; filter=\&quot;[&lt;currentTiddler&gt;]\&quot;&gt;\n&lt;$action-sendmessage $message=\&quot;tm-new-tiddler\&quot; tags=&lt;&lt;tags&gt;&gt;/&gt;\n&lt;/$set&gt;\n\\end\n\\define newHereButton()\n&lt;$button actions=&lt;&lt;newHereActions&gt;&gt; tooltip={{$:/language/Buttons/NewHere/Hint}} aria-label={{$:/language/Buttons/NewHere/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]\&quot;&gt;\n{{$:/core/images/new-here-button}}\n&lt;/$list&gt;\n&lt;$list filter=\&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]\&quot;&gt;\n&lt;span class=\&quot;tc-btn-text\&quot;&gt;\n&lt;$text text={{$:/language/Buttons/NewHere/Caption}}/&gt;\n&lt;/span&gt;\n&lt;/$list&gt;\n&lt;/$button&gt;\n\\end\n&lt;&lt;newHereButton&gt;&gt;&quot;
         },
         &quot;$:/core/ui/Buttons/new-journal-here&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/Buttons/new-journal-here&quot;,
@@ -9354,7 +9354,7 @@ $:/state/folded/$(currentTiddler)$
 $:/plugins/tiddlywiki/dynaview
 [list[Alice in Wonderland:]]</pre>
 </div>
-<div created="20190416150140503" current-tiddler="HelloThere" modified="20190416150140503" title="$:/HistoryList" type="application/json">
+<div created="20190423170059320" current-tiddler="HelloThere" modified="20190423170059320" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
