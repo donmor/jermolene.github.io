@@ -45,7 +45,7 @@ Performance Instrumentation
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 16th March 2019 at 4:36pm
+</a> 10th May 2019 at 1:34pm
 </div>
 </div>
 <div class=" tc-reveal">
@@ -67,12 +67,8 @@ color:#333333;">
 
 
 <div class="tc-tiddler-body tc-reveal"><p>The core has built-in performance instrumentation for the refresh cycle. See “Performance Instrumentation” on the “Settings” tab of control panel. The wiki will need to be reloaded before it takes effect.</p><p>With performance instrumentation switched on, there is additional timing information displayed the browser developer console each time a refresh cycle is triggered. For example:</p><pre><code>performance: mainRender: 327.83ms 
-performance: +filter: 49.70ms 
 performance: styleRefresh: 9.14ms 
-performance: +filter: 2.46ms 
-performance: mainRefresh: 68.10ms 
-performance: +filter: 37.69ms </code></pre><p>The information above should be interpreted as follows:</p><blockquote class="tc-quote"><p>&quot;Initial rendering of the main page took 327ms (of which 50ms was filter evaluation). Refreshing the page stylesheet took 9ms (of which 2ms was filter evaluation). Refreshing the main page took 68ms (of which 38ms was filter evaluation)&quot;
-</p></blockquote><ul><li>mainRender is the time taken for the initial display of the page template</li><li>styleRefresh is the time taken to refresh the page stylesheet</li><li>mainRender is the time taken to refresh the main page template</li><li>in each case, +filter denotes the time taken up with filter evaluation.</li></ul><p>As an example, try switching between the sidebar tabs to compare how long they take to render.</p></div>
+performance: mainRefresh: 68.10ms </code></pre><p>The information above should be interpreted as follows:</p><ul><li>mainRender is the time taken for the initial display of the page template</li><li>styleRefresh is the time taken to refresh the page stylesheet</li><li>mainRender is the time taken to refresh the main page template</li></ul><p>As an example, try switching between the sidebar tabs to compare how long they take to render.</p><p>More detailed information on filter execution timings is also available. With performance instrumentation enabled, ype the following <a class="tc-tiddlylink tc-tiddlylink-resolves" href="JavaScript.html">JavaScript</a> command in the browser developer console:</p><pre><code>tw.perf.log()</code></pre><p>A table is displayed with the following information:</p><ul><li><strong>name</strong> - the string &quot;Filter: &quot; plus the text of the filter</li><li><strong>invocations</strong> - the number of invocations of the filter since startup</li><li><strong>totalTime</strong> - the total time in milliseconds spent evaluating this filter since startup</li><li><strong>percentTime</strong> - the percentage of the execution time of this filter against the total execution time of all filters</li></ul></div>
 
 <div class="tc-comments-segment">
 <div class="tc-comment-button tc-reveal">
