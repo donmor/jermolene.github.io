@@ -180,7 +180,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
 <div title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 2f8053265e96e0ae57b8d7b6c841af15aebd3f6d of https://github.com/Jermolene/TiddlyWiki5.git at 2019-05-20 11:53:46 UTC
+<pre>Prerelease built from branch 'master' at commit feab75a6d1723cd6db5912b2902f0ec33c550fb6 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-05-24 11:11:55 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -17640,10 +17640,17 @@ $tw.loadTiddlersNode = function() {
 	$tw.wiki.addTiddler($tw.loadPluginFolder($tw.boot.corePath));
 	// Load any extra plugins
 	$tw.utils.each($tw.boot.extraPlugins,function(name) {
-		var parts = name.split("/"),
-			type = parts[0];
-		if(parts.length  === 3 && ["plugins","themes","languages"].indexOf(type) !== -1) {
-			$tw.loadPlugins([parts[1] + "/" + parts[2]],$tw.config[type + "Path"],$tw.config[type + "EnvVar"]);
+		if(name.charAt(0) === "+") { // Relative path to plugin
+			var pluginFields = $tw.loadPluginFolder(name.substring(1));;
+			if(pluginFields) {
+				$tw.wiki.addTiddler(pluginFields);
+			}
+		} else {
+			var parts = name.split("/"),
+				type = parts[0];
+			if(parts.length  === 3 && ["plugins","themes","languages"].indexOf(type) !== -1) {
+				$tw.loadPlugins([parts[1] + "/" + parts[2]],$tw.config[type + "Path"],$tw.config[type + "EnvVar"]);
+			}			
 		}
 	});
 	// Load the tiddlers from the wiki directory
