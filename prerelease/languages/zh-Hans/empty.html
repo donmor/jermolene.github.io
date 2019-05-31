@@ -11816,6 +11816,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\n用法: tiddlywiki [&lt;wikifolder&gt;] [--&lt;command&gt; [&lt;args&gt;...]...]\n```\n\n可用的命令：\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt;: &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\n取得关于某个命令的详细帮助：\n\n```\ntiddlywiki --help &lt;command&gt;\n```\n&quot;
         },
+        &quot;$:/language/Help/deletetiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/deletetiddlers&quot;,
+            &quot;description&quot;: &quot;删除一组条目&quot;,
+            &quot;text&quot;: &quot;删除由筛选器标识的一组条目。\n\n```\n--deletetiddlers &lt;filter&gt;\n```\n&quot;
+        },
         &quot;$:/language/Help/editions&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
             &quot;description&quot;: &quot;列出可用的 TiddlyWiki 版本&quot;,
