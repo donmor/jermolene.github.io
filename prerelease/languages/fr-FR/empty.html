@@ -11877,6 +11877,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Help/default&quot;,
             &quot;text&quot;: &quot;\\define commandTitle()\n$:/language/Help/$(command)$\n\\end\n```\nusage: tiddlywiki [&lt;dossierwiki&gt;] [--&lt;commande&gt; [&lt;arguments&gt;...]...]\n```\n\nListe des commandes disponibles :\n\n&lt;ul&gt;\n&lt;$list filter=\&quot;[commands[]sort[title]]\&quot; variable=\&quot;command\&quot;&gt;\n&lt;li&gt;&lt;$link to=&lt;&lt;commandTitle&gt;&gt;&gt;&lt;$macrocall $name=\&quot;command\&quot; $type=\&quot;text/plain\&quot; $output=\&quot;text/plain\&quot;/&gt;&lt;/$link&gt; : &lt;$transclude tiddler=&lt;&lt;commandTitle&gt;&gt; field=\&quot;description\&quot;/&gt;&lt;/li&gt;\n&lt;/$list&gt;\n&lt;/ul&gt;\n\nPour obtenir de l'aide sur une commande précise :\n\n```\ntiddlywiki --help &lt;commande&gt;\n```\n&quot;
         },
+        &quot;$:/language/Help/deletetiddlers&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/deletetiddlers&quot;,
+            &quot;description&quot;: &quot;Supprime un groupe de tiddlers&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;.from-version \&quot;5.1.20\&quot;&gt;&gt; Supprime un groupe de tiddlers identifiés par un filtre.\n\n```\n--deletetiddlers &lt;filtre&gt;\n```\n&quot;
+        },
         &quot;$:/language/Help/editions&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/editions&quot;,
             &quot;description&quot;: &quot;Liste les éditions TiddlyWiki disponibles&quot;,
@@ -11960,6 +11965,11 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/language/Help/savetiddlers&quot;,
             &quot;description&quot;: &quot;Enregistre un groupe de tiddlers vers un répertoire&quot;,
             &quot;text&quot;: &quot;Enregistre un groupe de tiddlers vers le chemin spécifié, sous leur forme brute, texte ou binaire. \n\n```\n--savetiddlers &lt;filtre&gt; &lt;chemin-de-répertoire&gt; [\&quot;noclean\&quot;]\n```\n\nPar défaut, le répertoire de sortie est calculé relativement au sous-répertoire `output` du répertoire de l'édition. La commande `--output` peut servir à diriger la sortie vers un répertoire différent.\n\nLes fichiers présents dans le répertoire de sortie sont supprimés avant que soient enregistrés les fichiers des tiddlers spécifiés par le filtre. Pour empêcher cette suppression, ajouter le drapeau ''noclean''.\n\nLes éventuels répertoires manquants dans le chemin spécifié sont créés automatiquement.\n&quot;
+        },
+        &quot;$:/language/Help/savewikifolder&quot;: {
+            &quot;title&quot;: &quot;$:/language/Help/savewikifolder&quot;,
+            &quot;description&quot;: &quot;Enregistre un wiki dans un nouveau dossier wiki&quot;,
+            &quot;text&quot;: &quot;&lt;&lt;.from-version \&quot;5.1.20\&quot;&gt;&gt; Enregistre le wiki courant sous la forme d'un dossier wiki, comprenant les tiddlers, les plugins et les informations de configuration&amp;nbsp;:\n\n```\n--savewikifolder &lt;chemindudossierwiki&gt; [&lt;filtre&gt;]\n```\n\n* Le dossier wiki cible doit être vide ou inexistant\n* Le filtre spécifie les tiddlers à inclure. Il est optionnel et vaut par défaut `[all[tiddlers]]`\n* Les plugins appartenant à la bibliothèque officielle de plugins sont remplacés par des références à ces plugins dans le fichier `tiddlywiki.info`\n* Les plugins sur mesure sont déballés dans leur propre dossier\n\nOn utilise typiquement cette commande avec la commande `--load` pour convertir un fichier TiddlyWiki HTML en un dossier wiki&amp;nbsp;:\n\n```\ntiddlywiki --load ./monwiki.html --savewikifolder ./mondossierwiki\n```\n&quot;
         },
         &quot;$:/language/Help/server&quot;: {
             &quot;title&quot;: &quot;$:/language/Help/server&quot;,
