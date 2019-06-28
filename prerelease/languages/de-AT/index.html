@@ -179,8 +179,8 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
 
 &lt;&lt;list-links filter:&quot;[tag{!!title}]&quot;&gt;&gt;</pre>
 </div>
-<div commit="274dffe75053b165b4498c42fc70f1fa9488cedf" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 274dffe75053b165b4498c42fc70f1fa9488cedf of https://github.com/Jermolene/TiddlyWiki5.git at 2019-06-26 15:48:02 UTC
+<div commit="bf51ae001993565fd43443d053ea83e209b67c6f" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit bf51ae001993565fd43443d053ea83e209b67c6f of https://github.com/Jermolene/TiddlyWiki5.git at 2019-06-28 16:31:24 UTC
 </pre>
 </div>
 <div created="20140909085347212" modified="20140909085346177" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home" type="text/vnd.tiddlywiki">
@@ -855,6 +855,10 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/ExportTiddlers/Hint&quot;,
             &quot;text&quot;: &quot;Export tiddlers&quot;
+        },
+        &quot;$:/language/Buttons/FocusSidebarSearch/Hint&quot;: {
+            &quot;title&quot;: &quot;$:/language/Buttons/FocusSidebarSearch/Hint&quot;,
+            &quot;text&quot;: &quot;Focus the sidebar search field&quot;
         },
         &quot;$:/language/Buttons/Fold/Caption&quot;: {
             &quot;title&quot;: &quot;$:/language/Buttons/Fold/Caption&quot;,
@@ -5823,7 +5827,7 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         },
         &quot;$:/core/modules/startup/rootwidget.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/startup/rootwidget.js&quot;,
-            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup/rootwidget.js\ntype: application/javascript\nmodule-type: startup\n\nSetup the root widget and the core root widget handlers\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;rootwidget\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.before = [\&quot;story\&quot;];\nexports.synchronous = true;\n\nexports.startup = function() {\n\t// Install the modal message mechanism\n\t$tw.modal = new $tw.utils.Modal($tw.wiki);\n\t$tw.rootWidget.addEventListener(\&quot;tm-modal\&quot;,function(event) {\n\t\t$tw.modal.display(event.param,{variables: event.paramObject, event: event});\n\t});\n\t// Install the notification  mechanism\n\t$tw.notifier = new $tw.utils.Notifier($tw.wiki);\n\t$tw.rootWidget.addEventListener(\&quot;tm-notify\&quot;,function(event) {\n\t\t$tw.notifier.display(event.param,{variables: event.paramObject});\n\t});\n\t// Install the copy-to-clipboard  mechanism\n\t$tw.rootWidget.addEventListener(\&quot;tm-copy-to-clipboard\&quot;,function(event) {\n\t\t$tw.utils.copyToClipboard(event.param);\n\t});\n\t// Install the scroller\n\t$tw.pageScroller = new $tw.utils.PageScroller();\n\t$tw.rootWidget.addEventListener(\&quot;tm-scroll\&quot;,function(event) {\n\t\t$tw.pageScroller.handleEvent(event);\n\t});\n\tvar fullscreen = $tw.utils.getFullScreenApis();\n\tif(fullscreen) {\n\t\t$tw.rootWidget.addEventListener(\&quot;tm-full-screen\&quot;,function(event) {\n\t\t\tvar fullScreenDocument = event.event ? event.event.target.ownerDocument : document;\n\t\t\tif(event.param === \&quot;enter\&quot;) {\n\t\t\t\tfullScreenDocument.documentElement[fullscreen._requestFullscreen](Element.ALLOW_KEYBOARD_INPUT);\n\t\t\t} else if(event.param === \&quot;exit\&quot;) {\n\t\t\t\tfullScreenDocument[fullscreen._exitFullscreen]();\n\t\t\t} else {\n\t\t\t\tif(fullScreenDocument[fullscreen._fullscreenElement]) {\n\t\t\t\t\tfullScreenDocument[fullscreen._exitFullscreen]();\n\t\t\t\t} else {\n\t\t\t\t\tfullScreenDocument.documentElement[fullscreen._requestFullscreen](Element.ALLOW_KEYBOARD_INPUT);\n\t\t\t\t}\t\t\t\t\n\t\t\t}\n\t\t});\n\t}\n\t// If we're being viewed on a data: URI then give instructions for how to save\n\tif(document.location.protocol === \&quot;data:\&quot;) {\n\t\t$tw.rootWidget.dispatchEvent({\n\t\t\ttype: \&quot;tm-modal\&quot;,\n\t\t\tparam: \&quot;$:/language/Modals/SaveInstructions\&quot;\n\t\t});\n\t}\n};\n\n})();\n&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/startup/rootwidget.js\ntype: application/javascript\nmodule-type: startup\n\nSetup the root widget and the core root widget handlers\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n// Export name and synchronous status\nexports.name = \&quot;rootwidget\&quot;;\nexports.platforms = [\&quot;browser\&quot;];\nexports.after = [\&quot;startup\&quot;];\nexports.before = [\&quot;story\&quot;];\nexports.synchronous = true;\n\nexports.startup = function() {\n\t// Install the modal message mechanism\n\t$tw.modal = new $tw.utils.Modal($tw.wiki);\n\t$tw.rootWidget.addEventListener(\&quot;tm-modal\&quot;,function(event) {\n\t\t$tw.modal.display(event.param,{variables: event.paramObject, event: event});\n\t});\n\t// Install the notification  mechanism\n\t$tw.notifier = new $tw.utils.Notifier($tw.wiki);\n\t$tw.rootWidget.addEventListener(\&quot;tm-notify\&quot;,function(event) {\n\t\t$tw.notifier.display(event.param,{variables: event.paramObject});\n\t});\n\t// Install the copy-to-clipboard  mechanism\n\t$tw.rootWidget.addEventListener(\&quot;tm-copy-to-clipboard\&quot;,function(event) {\n\t\t$tw.utils.copyToClipboard(event.param);\n\t});\n\t// Install the tm-focus-selector message\n\t$tw.rootWidget.addEventListener(\&quot;tm-focus-selector\&quot;,function(event) {\n\t\tvar selector = event.param || \&quot;\&quot;,\n\t\t\telement;\n\t\ttry {\n\t\t\telement = document.querySelector(selector);\n\t\t} catch(e) {\n\t\t\tconsole.log(\&quot;Error in selector: \&quot;,selector)\n\t\t}\n\t\tif(element &amp;&amp; element.focus) {\n\t\t\telement.focus();\n\t\t}\n\t});\n\t// Install the scroller\n\t$tw.pageScroller = new $tw.utils.PageScroller();\n\t$tw.rootWidget.addEventListener(\&quot;tm-scroll\&quot;,function(event) {\n\t\t$tw.pageScroller.handleEvent(event);\n\t});\n\tvar fullscreen = $tw.utils.getFullScreenApis();\n\tif(fullscreen) {\n\t\t$tw.rootWidget.addEventListener(\&quot;tm-full-screen\&quot;,function(event) {\n\t\t\tvar fullScreenDocument = event.event ? event.event.target.ownerDocument : document;\n\t\t\tif(event.param === \&quot;enter\&quot;) {\n\t\t\t\tfullScreenDocument.documentElement[fullscreen._requestFullscreen](Element.ALLOW_KEYBOARD_INPUT);\n\t\t\t} else if(event.param === \&quot;exit\&quot;) {\n\t\t\t\tfullScreenDocument[fullscreen._exitFullscreen]();\n\t\t\t} else {\n\t\t\t\tif(fullScreenDocument[fullscreen._fullscreenElement]) {\n\t\t\t\t\tfullScreenDocument[fullscreen._exitFullscreen]();\n\t\t\t\t} else {\n\t\t\t\t\tfullScreenDocument.documentElement[fullscreen._requestFullscreen](Element.ALLOW_KEYBOARD_INPUT);\n\t\t\t\t}\t\t\t\t\n\t\t\t}\n\t\t});\n\t}\n\t// If we're being viewed on a data: URI then give instructions for how to save\n\tif(document.location.protocol === \&quot;data:\&quot;) {\n\t\t$tw.rootWidget.dispatchEvent({\n\t\t\ttype: \&quot;tm-modal\&quot;,\n\t\t\tparam: \&quot;$:/language/Modals/SaveInstructions\&quot;\n\t\t});\n\t}\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;startup&quot;
         },
@@ -7687,6 +7691,12 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
             &quot;caption&quot;: &quot;{{$:/language/Import/Listing/Preview/TextRaw}}&quot;,
             &quot;text&quot;: &quot;&lt;pre&gt;&lt;code&gt;&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; subtiddler=&lt;&lt;payloadTiddler&gt;&gt; /&gt;&lt;/code&gt;&lt;/pre&gt;&quot;
         },
+        &quot;$:/core/ui/KeyboardShortcuts/focus-sidebar-search&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/KeyboardShortcuts/focus-sidebar-search&quot;,
+            &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
+            &quot;key&quot;: &quot;((focus-sidebar-search))&quot;,
+            &quot;text&quot;: &quot;&lt;$action-sendmessage $message=\&quot;tm-focus-selector\&quot; $param=\&quot;.tc-search input\&quot;/&gt;\n&quot;
+        },
         &quot;$:/core/ui/KeyboardShortcuts/new-image&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/KeyboardShortcuts/new-image&quot;,
             &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
@@ -8704,6 +8714,10 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/excise&quot;,
             &quot;text&quot;: &quot;{{$:/language/Buttons/Excise/Hint}}&quot;
         },
+        &quot;$:/config/ShortcutInfo/focus-sidebar-search&quot;: {
+            &quot;title&quot;: &quot;$:/config/ShortcutInfo/focus-sidebar-search&quot;,
+            &quot;text&quot;: &quot;{{$:/language/Buttons/FocusSidebarSearch/Hint}}&quot;
+        },
         &quot;$:/config/ShortcutInfo/heading-1&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/heading-1&quot;,
             &quot;text&quot;: &quot;{{$:/language/Buttons/Heading1/Hint}}&quot;
@@ -8951,6 +8965,10 @@ Der Unterstrich `_` hier, hat den Vorteil, dass der Tag in Listen ganz oben ange
         &quot;$:/config/shortcuts/excise&quot;: {
             &quot;title&quot;: &quot;$:/config/shortcuts/excise&quot;,
             &quot;text&quot;: &quot;ctrl-E&quot;
+        },
+        &quot;$:/config/shortcuts/focus-sidebar-search&quot;: {
+            &quot;title&quot;: &quot;$:/config/shortcuts/focus-sidebar-search&quot;,
+            &quot;text&quot;: &quot;ctrl-shift-F&quot;
         },
         &quot;$:/config/shortcuts/heading-1&quot;: {
             &quot;title&quot;: &quot;$:/config/shortcuts/heading-1&quot;,
