@@ -73,51 +73,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>Action widgets are a special type of widget that have no visual appearance but perform an action when triggered (such as sending a message, navigating to a tiddler, or changing the value of a tiddler). Action widgets are used in association with other widgets that trigger those actions (for example, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>).</p><p>The following action widgets are provided:</p><p><ul class="">
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">
-action-createtiddler
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">
-action-deletefield
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteTiddlerWidget.html">
-action-deletetiddler
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">
-action-listops
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionNavigateWidget.html">
-action-navigate
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSendMessageWidget.html">
-action-sendmessage
-</a>
-</li>
-
-<li>
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">
-action-setfield
-</a>
-</li>
-
-</ul></p><p>There are two ways to use action widgets:</p><ul><li>Using the <code>actions</code> attribute of the triggering widget (this is the preferred way)</li><li>Embedding the actions within the triggering widget (an older technique that is now deprecated)</li></ul><h2 class="">Assigning action widgets with the <code>actions</code> attribute</h2><p>The action widgets are passed as a string to the <code>actions</code> attribute of the triggering widget. Usually, it is more convenient to use a macro to assign the action widgets to a variable. For example, here is a button that triggers two actions of sending different messages:</p><pre><code>\define my-actions()
+<div class="tc-tiddler-body tc-reveal"><p>Action widgets are a special type of widget that have no visual appearance but perform an action when triggered (such as sending a message, navigating to a tiddler, or changing the value of a tiddler). Action widgets are used in association with other widgets that trigger those actions (for example, the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="ButtonWidget.html">ButtonWidget</a>).</p><p>The following action widgets are provided:</p><p><ul class=""><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionCreateTiddlerWidget.html">action-createtiddler</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteFieldWidget.html">action-deletefield</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionDeleteTiddlerWidget.html">action-deletetiddler</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionListopsWidget.html">action-listops</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionNavigateWidget.html">action-navigate</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSendMessageWidget.html">action-sendmessage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ActionSetFieldWidget.html">action-setfield</a></li></ul></p><p>There are two ways to use action widgets:</p><ul><li>Using the <code>actions</code> attribute of the triggering widget (this is the preferred way)</li><li>Embedding the actions within the triggering widget (an older technique that is now deprecated)</li></ul><h2 class="">Assigning action widgets with the <code>actions</code> attribute</h2><p>The action widgets are passed as a string to the <code>actions</code> attribute of the triggering widget. Usually, it is more convenient to use a macro to assign the action widgets to a variable. For example, here is a button that triggers two actions of sending different messages:</p><pre><code>\define my-actions()
 &lt;$action-sendmessage $message=&quot;tm-home&quot;/&gt;
 &lt;$action-sendmessage $message=&quot;tm-full-screen&quot;/&gt;
 \end
