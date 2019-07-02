@@ -177,8 +177,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="de04755a0a9f78bbe46b2146dae144e70b46e31d" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit de04755a0a9f78bbe46b2146dae144e70b46e31d of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-02 15:14:57 UTC
+<div commit="16a53ae394b36d2abea659d5bcb3cde638c6a5a8" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 16a53ae394b36d2abea659d5bcb3cde638c6a5a8 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-02 15:52:05 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -7484,7 +7484,7 @@ Error message and password prompt
         },
         &quot;$:/core/ui/EditorToolbar/stamp-dropdown&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/EditorToolbar/stamp-dropdown&quot;,
-            &quot;text&quot;: &quot;\\define toolbar-button-stamp-inner()\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;replace-selection\&quot;\n\ttext={{$(snippetTitle)$}}\n/&gt;\n\n&lt;$action-deletetiddler\n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt;\n/&gt;\n\n&lt;$view tiddler=&lt;&lt;snippetTitle&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n&lt;$view tiddler=&lt;&lt;snippetTitle&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n&lt;/$view&gt;\n\n&lt;/$button&gt;\n\\end\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/Snippet]!has[draft.of]sort[caption]]\&quot; variable=\&quot;snippetTitle\&quot;&gt;\n\n&lt;&lt;toolbar-button-stamp-inner&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/Snippet\&quot;\n\tcaption={{$:/language/Buttons/Stamp/New/Title}}\n\ttext={{$:/language/Buttons/Stamp/New/Text}}\n/&gt;\n\n&lt;$action-deletetiddler\n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt;\n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
+            &quot;text&quot;: &quot;\\define toolbar-button-stamp-inner()\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$list filter=\&quot;[[$(snippetTitle)$]addsuffix[/prefix]is[missing]removesuffix[/prefix]addsuffix[/suffix]is[missing]]\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;replace-selection\&quot;\n\ttext={{$(snippetTitle)$}}\n/&gt;\n\n&lt;/$list&gt;\n\n\n&lt;$list filter=\&quot;[[$(snippetTitle)$]addsuffix[/prefix]is[missing]removesuffix[/prefix]addsuffix[/suffix]!is[missing]] [[$(snippetTitle)$]addsuffix[/prefix]!is[missing]removesuffix[/prefix]addsuffix[/suffix]is[missing]] [[$(snippetTitle)$]addsuffix[/prefix]!is[missing]removesuffix[/prefix]addsuffix[/suffix]!is[missing]]\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-edit-text-operation\&quot;\n\t$param=\&quot;wrap-selection\&quot;\n\tprefix={{{ [[$(snippetTitle)$]addsuffix[/prefix]get[text]] }}}\nsuffix={{{ [[$(snippetTitle)$]addsuffix[/suffix]get[text]] }}}\n/&gt;\n\n&lt;/$list&gt;\n\n&lt;$action-deletetiddler\n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt;\n/&gt;\n\n&lt;$view tiddler=&lt;&lt;snippetTitle&gt;&gt; field=\&quot;caption\&quot; mode=\&quot;inline\&quot;&gt;\n\n&lt;$view tiddler=&lt;&lt;snippetTitle&gt;&gt; field=\&quot;title\&quot; mode=\&quot;inline\&quot;/&gt;\n\n&lt;/$view&gt;\n\n&lt;/$button&gt;\n\\end\n\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/TextEditor/Snippet]!has[draft.of]sort[caption]]\&quot; variable=\&quot;snippetTitle\&quot;&gt;\n\n&lt;&lt;toolbar-button-stamp-inner&gt;&gt;\n\n&lt;/$list&gt;\n\n----\n\n&lt;$button tag=\&quot;a\&quot;&gt;\n\n&lt;$action-sendmessage\n\t$message=\&quot;tm-new-tiddler\&quot;\n\ttags=\&quot;$:/tags/TextEditor/Snippet\&quot;\n\tcaption={{$:/language/Buttons/Stamp/New/Title}}\n\ttext={{$:/language/Buttons/Stamp/New/Text}}\n/&gt;\n\n&lt;$action-deletetiddler\n\t$tiddler=&lt;&lt;dropdown-state&gt;&gt;\n/&gt;\n\n&lt;em&gt;\n\n&lt;$text text={{$:/language/Buttons/Stamp/Caption/New}}/&gt;\n\n&lt;/em&gt;\n\n&lt;/$button&gt;\n&quot;
         },
         &quot;$:/core/ui/EditorToolbar/stamp&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/EditorToolbar/stamp&quot;,
@@ -9301,7 +9301,7 @@ Error message and password prompt
 [[Markup]]
 [[Developers Notes]]</pre>
 </div>
-<div created="20190702151615428" current-tiddler="Classic Parser Plugin Demo" modified="20190702151615428" title="$:/HistoryList" type="application/json">
+<div created="20190702155328621" current-tiddler="Classic Parser Plugin Demo" modified="20190702155328621" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;Classic Parser Plugin Demo&quot;
