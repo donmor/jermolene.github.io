@@ -1328,6 +1328,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button {
 	vertical-align: middle;
 	background-color: #9eaeb4;
+	color: #444444;
 	fill: #444444;
 	border-radius: 4px;
 	padding: 3px;
