@@ -175,8 +175,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="8e7c0907f8cce4708a02486fc93dcea1ab115196" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 8e7c0907f8cce4708a02486fc93dcea1ab115196 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-14 12:46:30 UTC
+<div commit="2bcb36f15147e3470688bd90276fa038c2991976" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 2bcb36f15147e3470688bd90276fa038c2991976 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-14 14:51:59 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -7682,6 +7682,11 @@ Error message and password prompt
             &quot;caption&quot;: &quot;{{$:/language/Import/Listing/Preview/TextRaw}}&quot;,
             &quot;text&quot;: &quot;&lt;pre&gt;&lt;code&gt;&lt;$view tiddler=&lt;&lt;currentTiddler&gt;&gt; subtiddler=&lt;&lt;payloadTiddler&gt;&gt; /&gt;&lt;/code&gt;&lt;/pre&gt;&quot;
         },
+        &quot;$:/core/ui/KeyboardShortcuts/advanced-search&quot;: {
+            &quot;title&quot;: &quot;$:/core/ui/KeyboardShortcuts/advanced-search&quot;,
+            &quot;key&quot;: &quot;((advanced-search))&quot;,
+            &quot;text&quot;: &quot;&lt;$navigator story=\&quot;$:/StoryList\&quot; history=\&quot;$:/HistoryList\&quot;&gt;\n&lt;$action-navigate $to=\&quot;$:/AdvancedSearch\&quot;/&gt;\n&lt;$action-sendmessage $message=\&quot;tm-focus-selector\&quot; $param=\&quot;\&quot;\&quot;[data-tiddler-title=\&quot;$:/AdvancedSearch\&quot;] .tc-search input\&quot;\&quot;\&quot;/&gt;\n&lt;/$navigator&gt;\n&quot;
+        },
         &quot;$:/core/ui/KeyboardShortcuts/new-image&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/KeyboardShortcuts/new-image&quot;,
             &quot;tags&quot;: &quot;$:/tags/KeyboardShortcut&quot;,
@@ -8699,6 +8704,10 @@ Error message and password prompt
             &quot;title&quot;: &quot;$:/config/SearchResults/Default&quot;,
             &quot;text&quot;: &quot;$:/core/ui/DefaultSearchResultList&quot;
         },
+        &quot;$:/config/ShortcutInfo/advanced-search&quot;: {
+            &quot;title&quot;: &quot;$:/config/ShortcutInfo/advanced-search&quot;,
+            &quot;text&quot;: &quot;{{$:/language/Buttons/AdvancedSearch/Hint}}&quot;
+        },
         &quot;$:/config/ShortcutInfo/bold&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/bold&quot;,
             &quot;text&quot;: &quot;{{$:/language/Buttons/Bold/Hint}}&quot;
@@ -8710,10 +8719,6 @@ Error message and password prompt
         &quot;$:/config/ShortcutInfo/excise&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/excise&quot;,
             &quot;text&quot;: &quot;{{$:/language/Buttons/Excise/Hint}}&quot;
-        },
-        &quot;$:/config/ShortcutInfo/sidebar-search&quot;: {
-            &quot;title&quot;: &quot;$:/config/ShortcutInfo/sidebar-search&quot;,
-            &quot;text&quot;: &quot;{{$:/language/Buttons/SidebarSearch/Hint}}&quot;
         },
         &quot;$:/config/ShortcutInfo/heading-1&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/heading-1&quot;,
@@ -8790,6 +8795,10 @@ Error message and password prompt
         &quot;$:/config/ShortcutInfo/save-tiddler&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/save-tiddler&quot;,
             &quot;text&quot;: &quot;{{$:/language/Buttons/Save/Hint}}&quot;
+        },
+        &quot;$:/config/ShortcutInfo/sidebar-search&quot;: {
+            &quot;title&quot;: &quot;$:/config/ShortcutInfo/sidebar-search&quot;,
+            &quot;text&quot;: &quot;{{$:/language/Buttons/SidebarSearch/Hint}}&quot;
         },
         &quot;$:/config/ShortcutInfo/stamp&quot;: {
             &quot;title&quot;: &quot;$:/config/ShortcutInfo/stamp&quot;,
@@ -8958,6 +8967,10 @@ Error message and password prompt
         &quot;$:/config/shortcuts-not-mac/new-tiddler&quot;: {
             &quot;title&quot;: &quot;$:/config/shortcuts-not-mac/new-tiddler&quot;,
             &quot;text&quot;: &quot;alt-N&quot;
+        },
+        &quot;$:/config/shortcuts/advanced-search&quot;: {
+            &quot;title&quot;: &quot;$:/config/shortcuts/advanced-search&quot;,
+            &quot;text&quot;: &quot;ctrl-shift-A&quot;
         },
         &quot;$:/config/shortcuts/cancel-edit-tiddler&quot;: {
             &quot;title&quot;: &quot;$:/config/shortcuts/cancel-edit-tiddler&quot;,
@@ -9322,7 +9335,7 @@ KaTeX
 ImplementationNotes
 </pre>
 </div>
-<div created="20190714124750994" current-tiddler="HelloThere" modified="20190714124750994" title="$:/HistoryList" type="application/json">
+<div created="20190714145319337" current-tiddler="HelloThere" modified="20190714145319337" title="$:/HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;HelloThere&quot;
