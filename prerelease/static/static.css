@@ -1098,6 +1098,7 @@ a.tc-tiddlylink:hover {
 	color: #ffffff;
 	fill: #ffffff;
 	border: none;
+	border-radius: 2px;
 	font-size: 1.2em;
 	line-height: 1.4em;
 	text-decoration: none;
