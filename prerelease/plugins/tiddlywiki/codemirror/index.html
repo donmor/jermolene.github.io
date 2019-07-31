@@ -219,8 +219,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="7f78065992baf290ae221fb12c63e52e0f8da403" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 7f78065992baf290ae221fb12c63e52e0f8da403 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-30 16:14:14 UTC
+<div commit="5faae2547d68d386b2aa33255dcceed3539aa57e" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 5faae2547d68d386b2aa33255dcceed3539aa57e of https://github.com/Jermolene/TiddlyWiki5.git at 2019-07-31 08:13:58 UTC
 </pre>
 </div>
 <div caption="Keymap" tags="$:/tags/SideBar" title="$:/codemirrordemo/sidebar/cheatsheet">
@@ -5143,6 +5143,12 @@ $:/codemirrordemo/sidebar/cheatsheet
         &quot;$:/core/modules/filters/lookup.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/lookup.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/lookup.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator that looks up values via a title prefix\n\n[lookup:&lt;field&gt;[&lt;prefix&gt;]]\n\nPrepends the prefix to the selected items and returns the specified field value\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.lookup = function(source,operator,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tresults.push(options.wiki.getTiddlerText(operator.operand + title) || options.wiki.getTiddlerText(operator.operand + operator.suffix));\n\t});\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
+        &quot;$:/core/modules/filters/match.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/match.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/match.js\ntype: application/javascript\nmodule-type: filteroperator\n\nFilter operator for checking if a title matches a string\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.match = function(source,operator,options) {\n\tvar results = [],\n\t\tsuffixes = (operator.suffixes || [])[0] || [];\n\tif(suffixes.indexOf(\&quot;caseinsensitive\&quot;) !== -1) {\n\t\tif(operator.prefix === \&quot;!\&quot;) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(title.toLowerCase() !== (operator.operand || \&quot;\&quot;).toLowerCase()) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(title.toLowerCase() === (operator.operand || \&quot;\&quot;).toLowerCase()) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t} else {\n\t\tif(operator.prefix === \&quot;!\&quot;) {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(title !== operator.operand) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t} else {\n\t\t\tsource(function(tiddler,title) {\n\t\t\t\tif(title === operator.operand) {\n\t\t\t\t\tresults.push(title);\n\t\t\t\t}\n\t\t\t});\n\t\t}\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
