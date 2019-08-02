@@ -177,8 +177,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="2d4831f9204bc3e854d8fdbf4241b18ed94cc06d" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 2d4831f9204bc3e854d8fdbf4241b18ed94cc06d of https://github.com/Jermolene/TiddlyWiki5.git at 2019-08-01 16:36:12 UTC
+<div commit="8db893b9c99744e02797aa1837657f33b9222d62" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 8db893b9c99744e02797aa1837657f33b9222d62 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-08-02 07:51:40 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.20-prerelease">
@@ -8060,7 +8060,7 @@ Error message and password prompt
         },
         &quot;$:/core/ui/PageTemplate/pagecontrols&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/PageTemplate/pagecontrols&quot;,
-            &quot;text&quot;: &quot;\\define config-title()\n$:/config/PageControlButtons/Visibility/$(listItem)$\n\\end\n&lt;div class=\&quot;tc-page-controls\&quot;&gt;\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n&lt;$reveal type=\&quot;nomatch\&quot; state=&lt;&lt;config-title&gt;&gt; text=\&quot;hide\&quot;&gt;\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; filter=\&quot;[&lt;tv-config-toolbar-class&gt;] [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]]\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;inline\&quot;/&gt;\n&lt;/$set&gt;\n&lt;/$reveal&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n\n&quot;
+            &quot;text&quot;: &quot;\\whitespace trim\n\\define config-title()\n$:/config/PageControlButtons/Visibility/$(listItem)$\n\\end\n&lt;div class=\&quot;tc-page-controls\&quot;&gt;\n&lt;$list filter=\&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]\&quot; variable=\&quot;listItem\&quot;&gt;\n&lt;$set name=\&quot;hidden\&quot; value=&lt;&lt;config-title&gt;&gt;&gt;\n&lt;$list filter=\&quot;[&lt;hidden&gt;!text[hide]]\&quot; storyview=\&quot;pop\&quot;&gt;\n&lt;$set name=\&quot;tv-config-toolbar-class\&quot; filter=\&quot;[&lt;tv-config-toolbar-class&gt;] [&lt;listItem&gt;encodeuricomponent[]addprefix[tc-btn-]]\&quot;&gt;\n&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=\&quot;inline\&quot;/&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&lt;/$set&gt;\n&lt;/$list&gt;\n&lt;/div&gt;\n&quot;
         },
         &quot;$:/core/ui/PageStylesheet&quot;: {
             &quot;title&quot;: &quot;$:/core/ui/PageStylesheet&quot;,
