@@ -84,13 +84,7 @@ fill:#333333;
 color:#333333;">
  $:/tags/StartupAction/Node
 </span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span> (only executed when running under Node.js)</li></ul><p>Startup actions are useful for customising <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> according to environmental factors such as the screen size. For example, the following action widgets when placed in a tiddler tagged <span class="tc-tag-list-item">
-<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
-fill:#333333;
-color:#333333;">
- $:/tags/StartupAction/Browser
-</span>
-<span class="tc-drop-down tc-reveal" hidden="true"></span></span> will cause the sidebar to be hidden by default when the screen width is less than 1000 pixels:</p><pre><code>&lt;$reveal type=&quot;lt&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span> (only executed when running under Node.js)</li></ul><p>Startup actions are useful for customising <a class="tc-tiddlylink tc-tiddlylink-resolves" href="TiddlyWiki.html">TiddlyWiki</a> according to environmental factors such as the screen size. For example, the following action widgets when placed in a tiddler tagged <code>$:/tags/StartupAction/Browser</code> will cause the sidebar to be hidden by default when the screen width is less than 1000 pixels:</p><pre><code>&lt;$reveal type=&quot;lt&quot; state=&quot;$:/info/browser/screen/width&quot; text=&quot;3000&quot;&gt;
 &lt;$action-setfield $tiddler=&quot;$:/state/sidebar&quot; $value=&quot;no&quot;/&gt;
 &lt;/$reveal&gt;
 
