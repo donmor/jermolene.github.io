@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="tiddlywiki-version" content="5.1.20" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -18,7 +18,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/</a></div></div>
 </p>
 <section class="tc-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-WebServer%20Parameters " data-tags="[[WebServer Parameters]]" data-tiddler-title="WebServer Parameter: csrf-disable"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-WebServer%20Parameters" data-tags="[[WebServer Parameters]]" data-tiddler-title="WebServer Parameter: csrf-disable"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="plus" class="tc-btn-invisible" title="Actions supplémentaires"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="éditer" class="tc-btn-invisible" title="Édite ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="fermer" class="tc-btn-invisible" title="Ferme ce tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -48,7 +48,7 @@ WebServer Parameter: csrf-disable
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2 juillet 2018 à 14h20
+</a> 19 avril 2019 à 17h13
 </div>
 </div>
 <div class=" tc-reveal">
@@ -73,7 +73,7 @@ color:#333333;">
 
 
 
-<div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>csrf-disable</strong> causes the usual <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" rel="noopener noreferrer" target="_blank">cross-site request forgery</a> checks to be disabled. This might be necessary in unusual or experimental configurations.</p><p>The only currently implemented check is the use of a <a class="tc-tiddlylink-external" href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Protecting_REST_Services:_Use_of_Custom_Request_Headers" rel="noopener noreferrer" target="_blank">custom header</a> called <code>x-requested-with</code> that must contain the string <code>TiddlyWiki</code> in order for write requests to succeed.</p></div>
+<div class="tc-tiddler-body tc-reveal"><p>The <a class="tc-tiddlylink tc-tiddlylink-resolves" href="WebServer%2520Parameters.html">web server configuration parameter</a> <strong>csrf-disable</strong> causes the usual <a class="tc-tiddlylink-external" href="https://en.wikipedia.org/wiki/Cross-site_request_forgery" rel="noopener noreferrer" target="_blank">cross-site request forgery</a> checks to be disabled. This might be necessary in unusual or experimental configurations.</p><p>Setting <strong>csrf-disable</strong> to <code>yes</code> disables the CSRF checks; <code>no</code> (or any other value) enables them.</p><p>The only currently implemented check is the use of a <a class="tc-tiddlylink-external" href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet#Protecting_REST_Services:_Use_of_Custom_Request_Headers" rel="noopener noreferrer" target="_blank">custom header</a> called <code>x-requested-with</code> that must contain the string <code>TiddlyWiki</code> in order for write requests to succeed.</p></div>
 
 
 

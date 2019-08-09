@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="tiddlywiki-version" content="5.1.20" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -755,6 +755,8 @@ th {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
+}button, textarea, input, select {
+	outline-color: #5778d8;
 }textarea,
 input[type=text],
 input[type=search],
@@ -893,6 +895,15 @@ a.tc-tiddlylink:hover {
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
 	cursor: move;
+}.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
+	line-height: 2em;
+	height: 2em;
+}.tc-sidebar-tab-open-item {
+	position: relative;
+}.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
+	font-size: 0.7em;
+	fill: #bbb;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
@@ -969,6 +980,7 @@ a.tc-tiddlylink:hover {
 	color: #e5f8fd;
 	fill: #e5f8fd;
 	border: none;
+	border-radius: 2px;
 	font-size: 1.2em;
 	line-height: 1.4em;
 	text-decoration: none;
@@ -978,6 +990,8 @@ a.tc-tiddlylink:hover {
 	width: 2em;
 	vertical-align: middle;
 	fill: #e5f8fd;
+}.tc-primary-btn {
+ 	background: #5778d8;
 }.tc-sidebar-lists input {
 	color: #4e432f;
 }.tc-sidebar-lists button {
@@ -1070,6 +1084,9 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 	width: 1em;
 	vertical-align: text-bottom;
+}.tc-edit-tags button.tc-remove-tag-button svg {
+	font-size: 0.7em;
+	vertical-align: middle;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
@@ -1329,6 +1346,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button {
 	vertical-align: middle;
 	background-color: #9eaeb4;
+	color: #444444;
 	fill: #444444;
 	border-radius: 4px;
 	padding: 3px;
@@ -2022,6 +2040,9 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 	margin: 0.4em;
 	border: 1px solid #888;
+}input.tc-palette-manager-colour-input {
+	width: 100%;
+	padding: 0;
 }/*
 ** Table of contents
 */.tc-sidebar-lists .tc-table-of-contents {
@@ -2343,7 +2364,7 @@ a.tc-tiddlylink:hover {
 
 /*
 
-Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 */
 
@@ -2351,150 +2372,94 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #f0f0f0;
-  -webkit-text-size-adjust: none;
+  background: #F0F0F0;
 }
+
+
+/* Base color: saturation 0; */
 
 .hljs,
-.hljs-subst,
-.hljs-tag .hljs-title,
-.nginx .hljs-title {
-  color: black;
+.hljs-subst {
+  color: #444;
 }
 
-.hljs-string,
-.hljs-title,
-.hljs-constant,
-.hljs-parent,
-.hljs-tag .hljs-value,
-.hljs-rule .hljs-value,
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-name,
-.haml .hljs-symbol,
-.ruby .hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.hljs-template_tag,
-.django .hljs-variable,
-.smalltalk .hljs-class,
-.hljs-addition,
-.hljs-flow,
-.hljs-stream,
-.bash .hljs-variable,
-.pf .hljs-variable,
-.apache .hljs-tag,
-.apache .hljs-cbracket,
-.tex .hljs-command,
-.tex .hljs-special,
-.erlang_repl .hljs-function_or_atom,
-.asciidoc .hljs-header,
-.markdown .hljs-header,
-.coffeescript .hljs-attribute,
-.tp .hljs-variable {
-  color: #800;
-}
-
-.smartquote,
-.hljs-comment,
-.hljs-annotation,
-.diff .hljs-header,
-.hljs-chunk,
-.asciidoc .hljs-blockquote,
-.markdown .hljs-blockquote {
-  color: #888;
-}
-
-.hljs-number,
-.hljs-date,
-.hljs-regexp,
-.hljs-literal,
-.hljs-hexcolor,
-.smalltalk .hljs-symbol,
-.smalltalk .hljs-char,
-.go .hljs-constant,
-.hljs-change,
-.lasso .hljs-variable,
-.makefile .hljs-variable,
-.asciidoc .hljs-bullet,
-.markdown .hljs-bullet,
-.asciidoc .hljs-link_url,
-.markdown .hljs-link_url {
-  color: #080;
-}
-
-.hljs-label,
-.ruby .hljs-string,
-.hljs-decorator,
-.hljs-filter .hljs-argument,
-.hljs-localvars,
-.hljs-array,
-.hljs-attr_selector,
-.hljs-important,
-.hljs-pseudo,
-.hljs-pi,
-.haml .hljs-bullet,
-.hljs-doctype,
-.hljs-deletion,
-.hljs-envvar,
-.hljs-shebang,
-.apache .hljs-sqbracket,
-.nginx .hljs-built_in,
-.tex .hljs-formula,
-.erlang_repl .hljs-reserved,
-.hljs-prompt,
-.asciidoc .hljs-link_label,
-.markdown .hljs-link_label,
-.vhdl .hljs-attribute,
-.clojure .hljs-attribute,
-.asciidoc .hljs-attribute,
-.lasso .hljs-attribute,
-.coffeescript .hljs-property,
-.hljs-phony {
-  color: #88f;
+.hljs-comment {
+  color: #888888;
 }
 
 .hljs-keyword,
-.hljs-id,
-.hljs-title,
-.hljs-built_in,
-.css .hljs-tag,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
 .hljs-doctag,
-.smalltalk .hljs-class,
-.hljs-winutils,
-.bash .hljs-variable,
-.pf .hljs-variable,
-.apache .hljs-tag,
-.hljs-type,
-.hljs-typename,
-.tex .hljs-command,
-.asciidoc .hljs-strong,
-.markdown .hljs-strong,
-.hljs-request,
-.hljs-status,
-.tp .hljs-data,
-.tp .hljs-io {
+.hljs-name {
   font-weight: bold;
 }
 
-.asciidoc .hljs-emphasis,
-.markdown .hljs-emphasis,
-.tp .hljs-units {
+
+/* User color: hue: 0 */
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060;
+}
+
+
+/* Language color: hue: 90; */
+
+.hljs-literal {
+  color: #78A960;
+}
+
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #397300;
+}
+
+
+/* Meta color: hue: 200 */
+
+.hljs-meta {
+  color: #1f7199;
+}
+
+.hljs-meta-string {
+  color: #4d99bf;
+}
+
+
+/* Misc effects */
+
+.hljs-emphasis {
   font-style: italic;
 }
 
-.nginx .hljs-built_in {
-  font-weight: normal;
-}
-
-.coffeescript .javascript,
-.javascript .xml,
-.lasso .markup,
-.tex .hljs-formula,
-.xml .javascript,
-.xml .vbscript,
-.xml .css,
-.xml .hljs-cdata {
-  opacity: 0.5;
+.hljs-strong {
+  font-weight: bold;
 }
 
 
@@ -2517,21 +2482,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 </svg></button>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</span><div class="tc-sidebar-scrollable" style="overflowY:auto;overflowX:auto;webkitOverflowScrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title">TiddlyWiki/Dev</h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">documentation for developers</div></div><div class=" tc-reveal"><p><div class="tc-page-controls">
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
-<button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler">
+</span><div class="tc-sidebar-scrollable" style="overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title">TiddlyWiki/Dev</h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">documentation for developers</div></div><div class=" tc-reveal"><p><div class="tc-page-controls"><button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler">
 
 <svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
@@ -2541,20 +2492,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 
 </button>
-
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
 <button aria-label="control panel" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fcontrol-panel " title="Open control panel">
 
 <svg class="tc-image-options-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2565,34 +2502,6 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 
 </button>
-
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
 <button aria-label="save changes" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Save changes">
 
 
@@ -2607,21 +2516,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 
 </span>
-</button>
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
-<div class="github-fork-ribbon-wrapper right" style="true"><div class="github-fork-ribbon" style="background-color:#DF4848;"><a href="https://github.com/Jermolene/TiddlyWiki5" rel="noopener noreferrer" target="_blank">Find me on GitHub</a></div></div>
-
-</span>
-
-</div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists"><p>
+</button><div class="github-fork-ribbon-wrapper right" style="true"><div class="github-fork-ribbon" style="background-color:#DF4848;"><a href="https://github.com/Jermolene/TiddlyWiki5" rel="noopener noreferrer" target="_blank">Find me on GitHub</a></div></div></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p>
 <div class="tc-search">
 <input class="tc-popup-handle" type="search" value="">
 <span class=" tc-reveal" hidden="true"></span>
@@ -2641,7 +2536,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 <div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div>
 
-</p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists"><p><div class="tc-tab-set ">
+</p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 <button class="">
 
@@ -2677,9 +2572,19 @@ More
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><div style="position: relative;"><span class=" tc-droppable"><div class="tc-droppable-placeholder"> </div><div><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></div></span></div><div style="position: relative;"><span class=" tc-droppable"><div class="tc-droppable-placeholder"> </div><div><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler">×</button><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Introduction.html">Introduction</a></div></span></div><span class=" tc-droppable"><div class="tc-droppable-placeholder"> </div><button class="tc-btn-invisible tc-btn-mini">close all</button></span></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p><div class="tc-sidebar-tab-open"><div class="tc-sidebar-tab-open-item"><span class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M65.0864256,75.4091629 L14.9727349,125.522854 C11.8515951,128.643993 6.78104858,128.64922 3.65685425,125.525026 C0.539017023,122.407189 0.5336324,117.334539 3.65902635,114.209145 L53.7727171,64.0954544 L3.65902635,13.9817637 C0.537886594,10.8606239 0.532659916,5.79007744 3.65685425,2.6658831 C6.77469148,-0.451954124 11.8473409,-0.457338747 14.9727349,2.66805521 L65.0864256,52.7817459 L115.200116,2.66805521 C118.321256,-0.453084553 123.391803,-0.458311231 126.515997,2.6658831 C129.633834,5.78372033 129.639219,10.8563698 126.513825,13.9817637 L76.4001341,64.0954544 L126.513825,114.209145 C129.634965,117.330285 129.640191,122.400831 126.515997,125.525026 C123.39816,128.642863 118.32551,128.648248 115.200116,125.522854 L65.0864256,75.4091629 L65.0864256,75.4091629 Z"></path>
+    </g>
+</svg>
+</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">HelloThere</a></div></span></div><div class="tc-sidebar-tab-open-item"><span class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button aria-label="close" class="tc-btn-invisible tc-btn-mini" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+    <g fill-rule="evenodd">
+        <path d="M65.0864256,75.4091629 L14.9727349,125.522854 C11.8515951,128.643993 6.78104858,128.64922 3.65685425,125.525026 C0.539017023,122.407189 0.5336324,117.334539 3.65902635,114.209145 L53.7727171,64.0954544 L3.65902635,13.9817637 C0.537886594,10.8606239 0.532659916,5.79007744 3.65685425,2.6658831 C6.77469148,-0.451954124 11.8473409,-0.457338747 14.9727349,2.66805521 L65.0864256,52.7817459 L115.200116,2.66805521 C118.321256,-0.453084553 123.391803,-0.458311231 126.515997,2.6658831 C129.633834,5.78372033 129.639219,10.8563698 126.513825,13.9817637 L76.4001341,64.0954544 L126.513825,114.209145 C129.634965,117.330285 129.640191,122.400831 126.515997,125.525026 C123.39816,128.642863 118.32551,128.648248 115.200116,125.522854 L65.0864256,75.4091629 L65.0864256,75.4091629 Z"></path>
+    </g>
+</svg>
+</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Introduction.html">Introduction</a></div></span></div><div><span class=" tc-droppable"><div class="tc-droppable-placeholder"></div><div><button class="tc-btn-invisible tc-btn-mini">close all</button></div></span></div></div></p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
-</div></p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents " data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
+</div></p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2738,7 +2643,7 @@ color:#4e432f;">
 
 </div>
 
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-doc " data-tags="doc" data-tiddler-title="Introduction"><div class="tc-tiddler-title">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-doc" data-tags="doc" data-tiddler-title="Introduction"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">

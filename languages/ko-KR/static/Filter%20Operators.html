@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="tiddlywiki-version" content="5.1.20" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">이 문서는 <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/languages/ko-KR/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/languages/ko-KR/</a>에서 티들리위키의 정적 HTML 표현의 일부입니다</div></div>
 </p>
 <section class="tc-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-Filters " data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-Filters" data-tags="Filters" data-tiddler-title="Filter Operators"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="더 보기" class="tc-btn-invisible" title="더 많은 동작을 봅니다"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="편집" class="tc-btn-invisible" title="이 티들러를 편집합니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="닫기" class="tc-btn-invisible" title="이 티들러를 닫습니다"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -47,7 +47,7 @@ Filter Operators
 <div class="tc-subtitle">
 <a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
 
-</a> 2016년 10월 17일 오후 3:40
+</a> 2019년 2월 6일 오후 2:04
 </div>
 </div>
 <div class=" tc-reveal">
@@ -115,6 +115,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="else%2520Operator.html">else</a></td>
+<td>if the list of input titles is empty then return a list consisting of a single constant string, otherwise return the original titles</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="enlist%2520Operator.html">enlist</a></td>
 <td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520List.html">title list</a></td>
 <td align="center"></td>
@@ -160,6 +165,16 @@ color:#333333;">
 <td align="center">✓</td>
 <td align="center"><code>!</code></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="join%2520Operator.html">join</a></td>
+<td>join a list of strings together with the separator <code class="doc-place">S</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="length%2520Operator.html">length</a></td>
+<td>returns the lengths of each item in the list</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="links%2520Operator.html">links</a></td>
 <td>find the titles linked to by each input title</td>
 <td align="center">✓</td>
@@ -177,6 +192,16 @@ color:#333333;">
 </tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="lookup%2520Operator.html">lookup</a></td>
 <td>applies a prefix to each input title to yield the title of a tiddler from which the final value is retrieved</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="lowercase%2520Operator.html">lowercase</a></td>
+<td>returns each item in the list as lowercase</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="match%2520Operator.html">match</a></td>
+<td>returns each item in the list that matches the operand string</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
@@ -205,15 +230,50 @@ color:#333333;">
 <td align="center">✓</td>
 <td align="center"><code>!</code></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sentencecase%2520Operator.html">sentencecase</a></td>
+<td>returns each item in the list with the first letter capitalised</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="split%2520Operator.html">split</a></td>
+<td>returns each item in the list split into separate strings according to the specified separator <code class="doc-place">S</code>; duplicates are <em class="doc-em">not</em> removed</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="splitregexp%2520Operator.html">splitregexp</a></td>
+<td>returns each item in the list split into separate strings according to the specified regular expression <code class="doc-place">R</code></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subfilter%2520Operator.html">subfilter</a></td>
 <td>select titles from the operand interpreted as a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Expression.html">filter expression</a></td>
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="then%2520Operator.html">then</a></td>
+<td>replace input titles by a constant string</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="title%2520Operator.html">title</a></td>
 <td>select a single title</td>
 <td align="center">✓</td>
 <td align="center"><code>!</code></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="titlecase%2520Operator.html">titlecase</a></td>
+<td>returns each item in the list with each word capitalised</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="trim%2520Operator.html">trim</a></td>
+<td>returns each item in the list with whitespace trimmed from the start and end</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="uppercase%2520Operator.html">uppercase</a></td>
+<td>returns each item in the list as uppercase</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">Order Operators</th></tr>
 <tr>
@@ -421,6 +481,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="escapecss%2520Operator.html">escapecss</a></td>
+<td>apply CSS escaping to a selection of titles through the CSS.escape() method / operation</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="escaperegexp%2520Operator.html">escaperegexp</a></td>
 <td>escape special characters used in regular expressions</td>
 <td align="center"></td>
@@ -461,6 +526,118 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"><code>!</code></td>
 </tr>
+<tr class="doc-table-subheading"><th align="center" colspan="4">Mathematics Operators</th></tr>
+<tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="abs%2520Operator.html">abs</a></td>
+<td>calculate the absolute value of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="add%2520Operator.html">add</a></td>
+<td>treating each input title as a number, add to each the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="ceil%2520Operator.html">ceil</a></td>
+<td>rounds a list of numbers up to the next largest integer</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="divide%2520Operator.html">divide</a></td>
+<td>treating each input title as a number, divide them by the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="exponential%2520Operator.html">exponential</a></td>
+<td>convert each number to exponential notation with <code class="doc-place">N</code> digits</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="fixed%2520Operator.html">fixed</a></td>
+<td>convert each number to fixed point notation with <code class="doc-place">N</code> digits after the decimal point</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="floor%2520Operator.html">floor</a></td>
+<td>rounds a list of numbers to the largest integer less than or equal to each number</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="max%2520Operator.html">max</a></td>
+<td>treating each input title as a number, take the maximum of its value and the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="maxall%2520Operator.html">maxall</a></td>
+<td>find the largest of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="min%2520Operator.html">min</a></td>
+<td>treating each input title as a number, take the minimum of its value and the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="minall%2520Operator.html">minall</a></td>
+<td>find the smallest of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="multiply%2520Operator.html">multiply</a></td>
+<td>treating each input title as a number, multiply it by the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="negate%2520Operator.html">negate</a></td>
+<td>calculate the negation of a list of numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="precision%2520Operator.html">precision</a></td>
+<td>convert each number to a string with <code class="doc-place">N</code> significant digits</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="product%2520Operator.html">product</a></td>
+<td>produce the product of the input numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="remainder%2520Operator.html">remainder</a></td>
+<td>treating each input title as a number, return the remainder when divided by the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="round%2520Operator.html">round</a></td>
+<td>rounds a list of numbers to the nearest integer</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sign%2520Operator.html">sign</a></td>
+<td>return -1, 0 or +1 for a list of numbers according to whether each number is negative, zero, or positive</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="subtract%2520Operator.html">subtract</a></td>
+<td>treating each input title as a number, subtract from each the numeric value of the operand</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="sum%2520Operator.html">sum</a></td>
+<td>produce the sum of the input numbers</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="trunc%2520Operator.html">trunc</a></td>
+<td>truncates a list of numbers to their integer part, removing any fractional part</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="untrunc%2520Operator.html">untrunc</a></td>
+<td>rounds a list of numbers to the next integer with largest absolute value, that is, away from zero</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
 <tr class="doc-table-subheading"><th align="center" colspan="4">Tag Operators</th></tr>
 <tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="tag%2520Operator.html">tag</a></td>
@@ -500,6 +677,11 @@ color:#333333;">
 <td align="center"></td>
 <td align="center"></td>
 </tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="getvariable%2520Operator.html">getvariable</a></td>
+<td>select all values of variables named in the input titles</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr><tr>
 <td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="modules%2520Operator.html">modules</a></td>
 <td>select the names of all modules of the input module types</td>
 <td align="center"></td>
@@ -529,8 +711,14 @@ color:#333333;">
 <td>select all fields present in the selected tiddlers within a plugin</td>
 <td align="center"></td>
 <td align="center"></td>
+</tr><tr>
+<td><a class="tc-tiddlylink tc-tiddlylink-resolves" href="variables%2520Operator.html">variables</a></td>
+<td>select the names of all the actively defined variables</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
-</table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead. For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.</p></div>
+</table></p><p>A typical step is written as <code>[operator[parameter]]</code>, although not all of the operators need a <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Parameter.html">parameter</a>.</p><p>Most steps process the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Title%2520Selection.html">selection of titles</a> that are supplied as their input, but a few <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Selection%2520Constructors.html">construct an entirely new selection</a> instead. For the exact rules, see <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Filter%2520Syntax.html">Filter Syntax</a>.
+</p></div>
 
 
 

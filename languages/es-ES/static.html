@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="tiddlywiki-version" content="5.1.20" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -755,6 +755,8 @@ th {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
+}button, textarea, input, select {
+	outline-color: #5778d8;
 }textarea,
 input[type=text],
 input[type=search],
@@ -893,6 +895,15 @@ a.tc-tiddlylink:hover {
 	border: 2px dashed rgba(0,200,0,0.7);
 }.tc-draggable {
 	cursor: move;
+}.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
+	line-height: 2em;
+	height: 2em;
+}.tc-sidebar-tab-open-item {
+	position: relative;
+}.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
+	font-size: 0.7em;
+	fill: #bbb;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
@@ -969,6 +980,7 @@ a.tc-tiddlylink:hover {
 	color: #ffffff;
 	fill: #ffffff;
 	border: none;
+	border-radius: 2px;
 	font-size: 1.2em;
 	line-height: 1.4em;
 	text-decoration: none;
@@ -978,6 +990,8 @@ a.tc-tiddlylink:hover {
 	width: 2em;
 	vertical-align: middle;
 	fill: #ffffff;
+}.tc-primary-btn {
+ 	background: #5778d8;
 }.tc-sidebar-lists input {
 	color: #333333;
 }.tc-sidebar-lists button {
@@ -1070,6 +1084,9 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 	width: 1em;
 	vertical-align: text-bottom;
+}.tc-edit-tags button.tc-remove-tag-button svg {
+	font-size: 0.7em;
+	vertical-align: middle;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
@@ -1329,6 +1346,7 @@ a.tc-tiddlylink:hover {
 }.tc-editor-toolbar button {
 	vertical-align: middle;
 	background-color: #cccccc;
+	color: #444444;
 	fill: #444444;
 	border-radius: 4px;
 	padding: 3px;
@@ -2039,6 +2057,9 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 	margin: 0.4em;
 	border: 1px solid #888;
+}input.tc-palette-manager-colour-input {
+	width: 100%;
+	padding: 0;
 }/*
 ** Table of contents
 */.tc-sidebar-lists .tc-table-of-contents {
@@ -2303,7 +2324,7 @@ svg.railroad-diagram path.arrow {
     stroke-width: 2;
 }
 
-[data-tiddler-title="Custom styles by title"] {
+[data-tiddler-title="Custom styles by data-tiddler-title"] {
   border: 1px solid blue;
 }[data-tags*="example-test"] {
   border: 2px solid pink;
@@ -2602,21 +2623,7 @@ a .doc-attr {
 </svg></button>
 </span>
 <span class=" tc-reveal" hidden="true"></span>
-</span><div class="tc-sidebar-scrollable" style="overflowY:auto;overflowX:auto;webkitOverflowScrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">Cuaderno de notas personal no-lineal en la web</div></div><div class=" tc-reveal"><p><div class="tc-page-controls">
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
-<button aria-label="Nuevo tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Crea un tiddler nuevo">
+</span><div class="tc-sidebar-scrollable" style="overflow-y:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;"><div><div class="tc-sidebar-header"><div class=" tc-reveal"><div class=" tc-reveal"><h1 class="tc-site-title"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a></h1></div><div class=" tc-reveal"><div class="tc-site-subtitle">Cuaderno de notas personal no-lineal en la web</div></div><div class=" tc-reveal"><p><div class="tc-page-controls"><button aria-label="Nuevo tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Crea un tiddler nuevo">
 
 <svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
     <g fill-rule="evenodd">
@@ -2626,20 +2633,6 @@ a .doc-attr {
 
 
 </button>
-
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
 <button aria-label="Panel de Control" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fcontrol-panel " title="Abre el Panel de Control">
 
 <svg class="tc-image-options-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2650,34 +2643,6 @@ a .doc-attr {
 
 
 </button>
-
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal">
-
 <button aria-label="Guardar cambios" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Confirma y guarda todos los cambios realizados en el wiki">
 
 
@@ -2692,15 +2657,7 @@ a .doc-attr {
 
 
 </span>
-</button>
-
-</span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-<span class=" tc-reveal" hidden="true"></span>
-
-</div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists"><p>
+</button></div></p></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-search"><p>
 <div class="tc-search">
 <input class="tc-popup-handle" type="search" value="">
 <span class=" tc-reveal" hidden="true"></span>
@@ -2720,7 +2677,7 @@ a .doc-attr {
 
 <div class="tc-block-dropdown-wrapper tc-reveal" hidden="true"></div>
 
-</p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists"><p><div class="tc-tab-set ">
+</p></div></div><div class=" tc-reveal"><div class="tc-sidebar-lists tc-sidebar-tabs"><p><div class="tc-tab-set ">
 <div class="tc-tab-buttons ">
 <button class=" tc-tab-selected">
 
@@ -2767,7 +2724,7 @@ Información para traductores
 <div class=" tc-reveal"><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/HelloThere.html">¡Hola! ¿Qué tal?</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-shadow tc-tiddlylink-resolves" href="static/GettingStarted.html">Puesta en marcha</a></p><p><button aria-label="Cerrar" class="tc-btn-invisible tc-btn-mini" title="Cierra este tiddler">×</button> <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Community.html">Comunidad</a></p><p><button class="tc-btn-invisible tc-btn-mini">Cerrar todo</button>
 </p></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
-</div></p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents " data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
+</div></p></div></div></div></div></div></div><section class="tc-story-river"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="HelloThere"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -2855,7 +2812,7 @@ Amable introducción
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
 <img src="New Release Banner.png">
 </div><div class="tc-thumbnail-background tc-reveal" hidden="true" style="width:168px;height:95px;background-color:;"></div></div><div class="tc-thumbnail-icon" style="fill:#fff;color:#fff;"></div><div class="tc-thumbnail-caption">
-Qué hay de nuevo en 5.1.19
+Qué hay de nuevo en 5.1.20
 </div>
 </div></a><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyMap%2520Plugin%2520by%2520Felix%2520K%25C3%25BCppers.html"><div class="tc-thumbnail-wrapper">
 <div class="tc-thumbnail-image" style="width:168px;height:95px;"><div class=" tc-reveal" style="width:168px;height:95px;">
@@ -2920,7 +2877,7 @@ TiddlyWiki Classic
 
 </div>
 
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-shadow  tc-tagged-Working%20with%20TiddlyWiki " data-tags="[[Working with TiddlyWiki]]" data-tiddler-title="GettingStarted"><div class="tc-tiddler-title">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-exists tc-tiddler-shadow  tc-tagged-Working%20with%20TiddlyWiki" data-tags="[[Working with TiddlyWiki]]" data-tiddler-title="GettingStarted"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -3057,7 +3014,7 @@ Descargar el wiki completo <svg class="tc-image-save-button tc-image-button" hei
 
 </div>
 
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-TableOfContents " data-tags="TableOfContents" data-tiddler-title="Community"><div class="tc-tiddler-title">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-TableOfContents" data-tags="TableOfContents" data-tiddler-title="Community"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="Más" class="tc-btn-invisible" title="Otras acciones"><svg class="tc-image-down-arrow tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
@@ -3170,11 +3127,11 @@ Eventos
 </div>
 <div class="tc-tab-divider "></div>
 <div class="tc-tab-content ">
-<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Font%2520Awesome%25205%2520Free%2520SVGs%2520for%2520TiddlyWiki%2522%2520by%2520morosanuae.html">&quot;Font Awesome 5 Free SVGs for TiddlyWiki&quot; by morosanuae</a></h1><p><div class="tc-subtitle">Posted hace 6 días</div></p><p>The <strong>Font Awesome 5 Free</strong> SVG images collection converted to tiddlers that you can easily import (drag'n'drop) in your wiki.</p><p><a class="tc-tiddlylink-external" href="http://fa5-free-svg.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://fa5-free-svg.tiddlyspot.com</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyDrive%2520Add-on%2520for%2520Google%2520Drive%2520by%2520Joshua%2520Stubbs.html">TiddlyDrive Add-on for Google Drive by Joshua Stubbs</a></h1><p><div class="tc-subtitle">Posted hace 45 días</div></p><p>An add-on for Google Drive that allows <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> files stored there to be opened and saved directly</p><p>To find out how to add it to your account, go to the project's info page: 
+<div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal"><p>Las últimas noticias, artículos, recursos y ejemplos.</p><div class="tc-link-info"><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522Font%2520Awesome%25205%2520Free%2520SVGs%2520for%2520TiddlyWiki%2522%2520by%2520morosanuae.html">&quot;Font Awesome 5 Free SVGs for TiddlyWiki&quot; by morosanuae</a></h1><p><div class="tc-subtitle">Posted hace 30 días</div></p><p>The <strong>Font Awesome 5 Free</strong> SVG images collection converted to tiddlers that you can easily import (drag'n'drop) in your wiki.</p><p><a class="tc-tiddlylink-external" href="http://fa5-free-svg.tiddlyspot.com" rel="noopener noreferrer" target="_blank">http://fa5-free-svg.tiddlyspot.com</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyDrive%2520Add-on%2520for%2520Google%2520Drive%2520by%2520Joshua%2520Stubbs.html">TiddlyDrive Add-on for Google Drive by Joshua Stubbs</a></h1><p><div class="tc-subtitle">Posted hace 2 meses</div></p><p>An add-on for Google Drive that allows <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> files stored there to be opened and saved directly</p><p>To find out how to add it to your account, go to the project's info page: 
 <a class="tc-tiddlylink-external" href="https://lordratte.gitlab.io/tiddlydrive/#installation-guide" rel="noopener noreferrer" target="_blank">https://lordratte.gitlab.io/tiddlydrive/#installation-guide</a></p><blockquote class="tc-quote"><p>I made an app that lets one edit <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> files saved in your Google drive and then saving them back automagically. The page is here <a class="tc-tiddlylink-external" href="https://chrome.google.com/webstore/detail/tiddly-drive/oaphhjhbbabdjnpjpiliepphpmnioolo" rel="noopener noreferrer" target="_blank">https://chrome.google.com/webstore/detail/tiddly-drive/oaphhjhbbabdjnpjpiliepphpmnioolo</a> but I think you need to add it from the Google Drive web interface.</p><p>I even added an optional ability to save with ctrl + s hotkeys.
-</p><cite><a class="tc-tiddlylink-external" href="https://groups.google.com/d/topic/tiddlywiki/7pNJizR57e8/discussion" rel="noopener noreferrer" target="_blank">Joshua's launch post</a></cite></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Json%2520Mangler%2520plugin%2520by%2520Joshua%2520Fontany.html">Json Mangler plugin by Joshua Fontany</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>Extend tiddlywiki to parse complex (&quot;nested&quot;) json data tiddlers.</p><p>Json Mangler introduces a new path syntax for indexes of json data tiddlers , and includes many supporting tools, filters, widgets, etc.</p><p>Example Wiki: <a class="tc-tiddlylink-external" href="https://joshuafontany.github.io/TW5-JsonManglerPlugin/" rel="noopener noreferrer" target="_blank">https://joshuafontany.github.io/TW5-JsonManglerPlugin/</a></p><p>Source: <a class="tc-tiddlylink-external" href="https://github.com/joshuafontany/TW5-JsonManglerPlugin" rel="noopener noreferrer" target="_blank">https://github.com/joshuafontany/TW5-JsonManglerPlugin</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Disqus%2520comments%2520plugin%2520by%2520bimlas.html">Disqus comments plugin by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>Use this plugin to give your visitors the opportunity to comment on your tiddlers without changing the wiki itself.</p><p><a class="tc-tiddlylink-external" href="https://disqus.com/" rel="noopener noreferrer" target="_blank">Disqus</a> is a networked community platform used by hundreds of thousands of sites all over the web. With Disqus, your website gains a feature-rich comment system complete with social network integration, advanced administration and moderation options, and other extensive community functions.</p><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-disqus/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-disqus/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Locator%2520plugin%2520by%2520bimlas.html">Locator plugin by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>For those who use many tags or store many different topics in a common wiki the Locator plugin is a table of contents widget and an enhanced search engine that gives you the opportunity to filter results by related tags. Unlike table of contents, standard search and list of tags, this plugin offers these features in an organic, collaborative way.</p><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-locator/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-locator/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Kin%2520filter%2520operator%2520by%2520bimlas.html">Kin filter operator by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>The purpose of the kin operator with examples:</p><ul><li>Finds related tags, related tiddlers in any depth</li><li>Finds out where base tiddler originates and what other elements originate from it</li><li>Finds the ancestors and successors of a family member</li><li>Finds the &quot;leaves&quot; of the branch of the base tiddler in a tree-like structure (where the base tiddler is a leaf)</li><li>Finds the super- and subsets / groups of a mathematical set (where the base tiddler is a set)</li></ul><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-kin-filter/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-kin-filter/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki5%255E2%2520documenting%2520while%2520learning%2520TiddlyWiki5%2522%2520by%2520Iannis%2520Zannos.html">&quot;TiddlyWiki5^2 documenting while learning TiddlyWiki5&quot; by Iannis Zannos</a></h1><p><div class="tc-subtitle">Posted hace 4 meses</div></p><p>A wealth of hints, tips and notes about using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>:</p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is different from other wikis because of its principle of dynamically customizeable &quot;storyline&quot; based on tiddlers as basic units of information. That is, the user &quot;composes&quot; their own version of the webpage by clicking on tiddler links, which add tiddlers to the page in order to compose a storyline.</p><p>The Node.js implementation in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki5.html">TiddlyWiki5</a> adds all the advantages of flat-file markup language based type of site. This makes <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> an excellent alternative to flat-file based CMS/webpage/blog authoring systems for the web.</p><p>Also very cool is the treatment of tags as menus everywhere.
+</p><cite><a class="tc-tiddlylink-external" href="https://groups.google.com/d/topic/tiddlywiki/7pNJizR57e8/discussion" rel="noopener noreferrer" target="_blank">Joshua's launch post</a></cite></blockquote></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Json%2520Mangler%2520plugin%2520by%2520Joshua%2520Fontany.html">Json Mangler plugin by Joshua Fontany</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>Extend tiddlywiki to parse complex (&quot;nested&quot;) json data tiddlers.</p><p>Json Mangler introduces a new path syntax for indexes of json data tiddlers , and includes many supporting tools, filters, widgets, etc.</p><p>Example Wiki: <a class="tc-tiddlylink-external" href="https://joshuafontany.github.io/TW5-JsonManglerPlugin/" rel="noopener noreferrer" target="_blank">https://joshuafontany.github.io/TW5-JsonManglerPlugin/</a></p><p>Source: <a class="tc-tiddlylink-external" href="https://github.com/joshuafontany/TW5-JsonManglerPlugin" rel="noopener noreferrer" target="_blank">https://github.com/joshuafontany/TW5-JsonManglerPlugin</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Disqus%2520comments%2520plugin%2520by%2520bimlas.html">Disqus comments plugin by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>Use this plugin to give your visitors the opportunity to comment on your tiddlers without changing the wiki itself.</p><p><a class="tc-tiddlylink-external" href="https://disqus.com/" rel="noopener noreferrer" target="_blank">Disqus</a> is a networked community platform used by hundreds of thousands of sites all over the web. With Disqus, your website gains a feature-rich comment system complete with social network integration, advanced administration and moderation options, and other extensive community functions.</p><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-disqus/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-disqus/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Locator%2520plugin%2520by%2520bimlas.html">Locator plugin by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>For those who use many tags or store many different topics in a common wiki the Locator plugin is a table of contents widget and an enhanced search engine that gives you the opportunity to filter results by related tags. Unlike table of contents, standard search and list of tags, this plugin offers these features in an organic, collaborative way.</p><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-locator/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-locator/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Kin%2520filter%2520operator%2520by%2520bimlas.html">Kin filter operator by bimlas</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>The purpose of the kin operator with examples:</p><ul><li>Finds related tags, related tiddlers in any depth</li><li>Finds out where base tiddler originates and what other elements originate from it</li><li>Finds the ancestors and successors of a family member</li><li>Finds the &quot;leaves&quot; of the branch of the base tiddler in a tree-like structure (where the base tiddler is a leaf)</li><li>Finds the super- and subsets / groups of a mathematical set (where the base tiddler is a set)</li></ul><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-kin-filter/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-kin-filter/</a></p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/%2522TiddlyWiki5%255E2%2520documenting%2520while%2520learning%2520TiddlyWiki5%2522%2520by%2520Iannis%2520Zannos.html">&quot;TiddlyWiki5^2 documenting while learning TiddlyWiki5&quot; by Iannis Zannos</a></h1><p><div class="tc-subtitle">Posted hace 5 meses</div></p><p>A wealth of hints, tips and notes about using <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki%2520on%2520Node.js.html">TiddlyWiki on Node.js</a>:</p><blockquote class="tc-quote"><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> is different from other wikis because of its principle of dynamically customizeable &quot;storyline&quot; based on tiddlers as basic units of information. That is, the user &quot;composes&quot; their own version of the webpage by clicking on tiddler links, which add tiddlers to the page in order to compose a storyline.</p><p>The Node.js implementation in <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki5.html">TiddlyWiki5</a> adds all the advantages of flat-file markup language based type of site. This makes <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> an excellent alternative to flat-file based CMS/webpage/blog authoring systems for the web.</p><p>Also very cool is the treatment of tags as menus everywhere.
 </p></blockquote><p><a href="https://web.archive.org/web/20170728212414/http://larigot.avarts.ionio.gr/users/iani/wikis/tw5square.html">http://larigot.avarts.ionio.gr/users/iani/wikis/tw5square.html</a></p><p>Also available on <a class="tc-tiddlylink-external" href="https://github.com/iani/tw5square" rel="noopener noreferrer" target="_blank">GitHub</a> (download and save index.html and open it in your browser).
-</p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Code%2520styles%2520and%2520auto%2520format%2520settings%2520for%2520IDEs.html">Code styles and auto format settings for IDEs</a></h1><p><div class="tc-subtitle">Posted hace 8 meses</div></p><p>Implementation of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/#TiddlyWiki%20Coding%20Style%20Guidelines" rel="noopener noreferrer" target="_blank">Coding Style Guidelines</a> for different IDEs.</p><p><a class="tc-tiddlylink-external" href="https://gitlab.com/bimlas/tw5-code-style-auto-format" rel="noopener noreferrer" target="_blank">https://gitlab.com/bimlas/tw5-code-style-auto-format</a></p></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
+</p></div><div class="tc-link-info-item"><h1 class=""><a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/Code%2520styles%2520and%2520auto%2520format%2520settings%2520for%2520IDEs.html">Code styles and auto format settings for IDEs</a></h1><p><div class="tc-subtitle">Posted hace 9 meses</div></p><p>Implementation of <a class="tc-tiddlylink tc-tiddlylink-resolves" href="static/TiddlyWiki.html">TiddlyWiki</a> <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/#TiddlyWiki%20Coding%20Style%20Guidelines" rel="noopener noreferrer" target="_blank">Coding Style Guidelines</a> for different IDEs.</p><p><a class="tc-tiddlylink-external" href="https://gitlab.com/bimlas/tw5-code-style-auto-format" rel="noopener noreferrer" target="_blank">https://gitlab.com/bimlas/tw5-code-style-auto-format</a></p></div></div></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div><div class=" tc-reveal" hidden="true"></div>
 </div>
 </div></p></div>
 

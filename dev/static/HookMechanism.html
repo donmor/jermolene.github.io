@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="tiddlywiki-version" content="5.1.20" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -17,7 +17,7 @@
 <p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/" rel="noopener noreferrer" target="_blank">https://tiddlywiki.com/dev/</a></div></div>
 </p>
 <section class="tc-story-river">
-<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists    " data-tags="" data-tiddler-title="HookMechanism"><div class="tc-tiddler-title">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="HookMechanism"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -52,9 +52,9 @@ HookMechanism
 <div class="tc-tags-wrapper"></div>
 </div>
 
-<div class="tc-tiddler-body tc-reveal"><p>The hook mechanism provides a way for plugins to intercept and modify default functionality. Hooks are added as follows:</p><pre><code>$tw.hooks.addHook(name,handler);</code></pre><p>Multiple handlers can be assigned to the same name using repeated calls. When a hook is invoked by name all registered functions will be called sequentially in their order of addition.</p><p>Though not essential care should be taken to ensure that hooks are added before they are invoked. For example: <a class="tc-tiddlylink tc-tiddlylink-missing" href="Hook%253A%2520tc-opening-default-tiddlers-list.html">Hook: tc-opening-default-tiddlers-list</a> should ideally be added before the story startup module is invoked otherwise any hook specified additions to the default tiddlers will not be seen on the initial loading of the page, though will be visible if the user clicks the home button.</p><h2 class="">Example</h2><p>A working example of a hook that adds &quot;test&quot; to the default tiddlers.</p><pre><code>$tw.hooks.addHook(&quot;th-opening-default-tiddlers-list&quot;,function(list) { 
-    list.push(&quot;test&quot;);
-    return list; 
+<div class="tc-tiddler-body tc-reveal"><p>The hook mechanism provides a way for plugins to intercept and modify default functionality. Hooks are added as follows:</p><pre class="js hljs"><code>$tw.hooks.addHook(name,handler);</code></pre><p>Multiple handlers can be assigned to the same name using repeated calls. When a hook is invoked by name all registered functions will be called sequentially in their order of addition.</p><p>Though not essential care should be taken to ensure that hooks are added before they are invoked. For example: <a class="tc-tiddlylink tc-tiddlylink-missing" href="Hook%253A%2520tc-opening-default-tiddlers-list.html">Hook: tc-opening-default-tiddlers-list</a> should ideally be added before the story startup module is invoked otherwise any hook specified additions to the default tiddlers will not be seen on the initial loading of the page, though will be visible if the user clicks the home button.</p><h2 class="">Example</h2><p>A working example of a hook that adds &quot;test&quot; to the default tiddlers.</p><pre class="js hljs"><code>$tw.hooks.addHook(<span class="hljs-string">"th-opening-default-tiddlers-list"</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">list</span>) </span>{ 
+    list.push(<span class="hljs-string">"test"</span>);
+    <span class="hljs-keyword">return</span> list; 
 });</code></pre></div>
 
 
