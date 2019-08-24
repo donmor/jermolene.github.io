@@ -173,8 +173,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="fada96651e2834992d93c226ddbbb09e71cccd71" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit fada96651e2834992d93c226ddbbb09e71cccd71 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-08-24 09:29:58 UTC
+<div commit="67066fe86e2e40e1830579b6b3cab4c2fc281e91" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 67066fe86e2e40e1830579b6b3cab4c2fc281e91 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-08-24 10:37:32 UTC
 </pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="TiddlyWiki5 core" list="readme" plugin-priority="0" plugin-type="plugin" title="$:/core" type="application/json" version="5.1.21-prerelease">
@@ -10200,13 +10200,13 @@ $tw.utils.parseDate = function(value) {
 // Stringify an array of tiddler titles into a list string
 $tw.utils.stringifyList = function(value) {
 	if($tw.utils.isArray(value)) {
-		var result = [];
-		for(var t=0; t<value.length; t++) {
+		var result = new Array(value.length);
+		for(var t=0, l=value.length; t<l; t++) {
 			var entry = value[t] || "";
-			if(entry.indexOf(" ") !== -1) {
-				result.push("[[" + entry + "]]");
+			if(entry.indexOf(" ") !== -1 || "+-~=".indexOf(entry[0]) !== -1) {
+				result[t] = "[[" + entry + "]]";
 			} else {
-				result.push(entry);
+				result[t] = entry;
 			}
 		}
 		return result.join(" ");
