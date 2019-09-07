@@ -1055,6 +1055,8 @@ a.tc-tiddlylink:hover {
 	vertical-align: baseline;
 	background-color: #ec6;
 	border-radius: 1em;
+}.tc-sidebar-scrollable .tc-tag-label {
+	text-shadow: none;
 }.tc-untagged-separator {
 	width: 10em;
 	left: 0;
