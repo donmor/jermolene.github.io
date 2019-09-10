@@ -907,7 +907,8 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
-    cursor: pointer;
+    	cursor: pointer;
+	color: #333333;
 }.tc-btn-boxed {
 	font-size: 0.6em;
 	padding: 0.2em;
@@ -1054,6 +1055,8 @@ a.tc-tiddlylink:hover {
 	vertical-align: baseline;
 	background-color: #ec6;
 	border-radius: 1em;
+}.tc-sidebar-scrollable .tc-tag-label {
+	text-shadow: none;
 }.tc-untagged-separator {
 	width: 10em;
 	left: 0;
