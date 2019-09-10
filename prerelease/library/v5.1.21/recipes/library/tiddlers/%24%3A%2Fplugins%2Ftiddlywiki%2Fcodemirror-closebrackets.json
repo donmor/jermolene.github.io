@@ -3,7 +3,7 @@
     "description": "CodeMirror AddOn: Close Brackets",
     "author": "JeremyRuston",
     "list": "readme",
-    "version": "5.1.21-prerelease",
+    "version": "5.1.21",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",

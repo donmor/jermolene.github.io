@@ -4,7 +4,7 @@
     "author": "JeremyRuston",
     "core-version": ">=5.0.0",
     "list": "readme",
-    "version": "5.1.21-prerelease",
+    "version": "5.1.21",
     "plugin-type": "plugin",
     "dependents": "",
     "type": "application/json",
