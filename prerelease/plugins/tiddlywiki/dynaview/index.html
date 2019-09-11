@@ -1875,8 +1875,8 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div commit="11506e9acf9fccee96f569dd7c6cc13890f29a80" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 11506e9acf9fccee96f569dd7c6cc13890f29a80 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-09-11 09:24:18 UTC
+<div commit="68163684a2e57108e160295e445c194268b873c5" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 68163684a2e57108e160295e445c194268b873c5 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-09-11 10:43:37 UTC
 </pre>
 </div>
 <div title="$:/config/AnimationDuration">
@@ -8289,7 +8289,7 @@ Error message and password prompt
         },
         &quot;$:/core/save/all-external-js&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all-external-js&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
         },
         &quot;$:/core/templates/tiddlywiki5.js&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/tiddlywiki5.js&quot;,
@@ -8333,7 +8333,7 @@ Error message and password prompt
         },
         &quot;$:/core/save/all&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
         },
         &quot;$:/core/save/empty&quot;: {
             &quot;title&quot;: &quot;$:/core/save/empty&quot;,

@@ -6547,7 +6547,7 @@ Error message and password prompt
         },
         &quot;$:/core/save/all-external-js&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all-external-js&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/core]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5-external-js.html}}\n&quot;
         },
         &quot;$:/core/templates/tiddlywiki5.js&quot;: {
             &quot;title&quot;: &quot;$:/core/templates/tiddlywiki5.js&quot;,
@@ -6591,7 +6591,7 @@ Error message and password prompt
         },
         &quot;$:/core/save/all&quot;: {
             &quot;title&quot;: &quot;$:/core/save/all&quot;,
-            &quot;text&quot;: &quot;\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
+            &quot;text&quot;: &quot;\\import [[$:/core/ui/PageMacros]] [all[shadows+tiddlers]tag[$:/tags/Macro]!has[draft.of]]\n\\define saveTiddlerFilter()\n[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] +[sort[title]] $(publishFilter)$\n\\end\n{{$:/core/templates/tiddlywiki5.html}}\n&quot;
         },
         &quot;$:/core/save/empty&quot;: {
             &quot;title&quot;: &quot;$:/core/save/empty&quot;,
