@@ -311,8 +311,8 @@ Error message and password prompt
 <!--~~ Ordinary tiddlers ~~-->
 
 <div id="storeArea" style="display:none;">
-<div commit="1150c87edb7478af6cc943eb0ef52fdf3051c121" title="$:/build">
-<pre>Prerelease built from branch 'master' at commit 1150c87edb7478af6cc943eb0ef52fdf3051c121 of https://github.com/Jermolene/TiddlyWiki5.git at 2019-09-16 15:18:37 UTC
+<div commit="83954582f465677ebbd2e16dfea504b95b61fffe" title="$:/build">
+<pre>Prerelease built from branch 'master' at commit 83954582f465677ebbd2e16dfea504b95b61fffe of https://github.com/Jermolene/TiddlyWiki5.git at 2019-09-16 15:27:03 UTC
 </pre>
 </div>
 <div created="20150719185223155" modified="20150719185226532" title="$:/config/DefaultSidebarTab">
@@ -5088,6 +5088,12 @@ Error message and password prompt
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/insertbefore.js\ntype: application/javascript\nmodule-type: filteroperator\n\nInsert an item before another item in a list\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nOrder a list\n*/\nexports.insertbefore = function(source,operator,options) {\n\tvar results = [];\n\tsource(function(tiddler,title) {\n\t\tresults.push(title);\n\t});\n\tvar target = options.widget &amp;&amp; options.widget.getVariable(operator.suffix || \&quot;currentTiddler\&quot;);\n\tif(target !== operator.operand) {\n\t\t// Remove the entry from the list if it is present\n\t\tvar pos = results.indexOf(operator.operand);\n\t\tif(pos !== -1) {\n\t\t\tresults.splice(pos,1);\n\t\t}\n\t\t// Insert the entry before the target marker\n\t\tpos = results.indexOf(target);\n\t\tif(pos !== -1) {\n\t\t\tresults.splice(pos,0,operator.operand);\n\t\t} else {\n\t\t\tresults.push(operator.operand);\n\t\t}\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
+        },
+        &quot;$:/core/modules/filters/is/binary.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/is/binary.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/binary.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[binary]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.binary = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!options.wiki.isBinaryTiddler(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(options.wiki.isBinaryTiddler(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;isfilteroperator&quot;
         },
         &quot;$:/core/modules/filters/is/blank.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/is/blank.js&quot;,

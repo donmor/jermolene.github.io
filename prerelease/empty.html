@@ -4930,6 +4930,12 @@ Error message and password prompt
             &quot;type&quot;: &quot;application/javascript&quot;,
             &quot;module-type&quot;: &quot;filteroperator&quot;
         },
+        &quot;$:/core/modules/filters/is/binary.js&quot;: {
+            &quot;title&quot;: &quot;$:/core/modules/filters/is/binary.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/binary.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[binary]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.binary = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!options.wiki.isBinaryTiddler(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(options.wiki.isBinaryTiddler(title)) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;isfilteroperator&quot;
+        },
         &quot;$:/core/modules/filters/is/blank.js&quot;: {
             &quot;title&quot;: &quot;$:/core/modules/filters/is/blank.js&quot;,
             &quot;text&quot;: &quot;/*\\\ntitle: $:/core/modules/filters/is/blank.js\ntype: application/javascript\nmodule-type: isfilteroperator\n\nFilter function for [is[blank]]\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\&quot;use strict\&quot;;\n\n/*\nExport our filter function\n*/\nexports.blank = function(source,prefix,options) {\n\tvar results = [];\n\tif(prefix === \&quot;!\&quot;) {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(title) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t} else {\n\t\tsource(function(tiddler,title) {\n\t\t\tif(!title) {\n\t\t\t\tresults.push(title);\n\t\t\t}\n\t\t});\n\t}\n\treturn results;\n};\n\n})();\n&quot;,
