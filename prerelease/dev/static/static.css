@@ -1903,10 +1903,13 @@ a.tc-tiddlylink:hover {
 	display: flex;
 	border: 1px solid #bbb;
 	fill: #bbb;
-	background-colour: #e5f8fd;
+	background-color: #e5f8fd;
 	margin: 0.5em 0 0.5em 0;
 	padding: 4px;
     align-items: center;
+}.tc-plugin-info-sub-plugins .tc-plugin-info {
+	margin: 0.5em 1em 0.5em 1em;
+	background: rgba(255,255,0,0.05);
 }.tc-plugin-info-disabled {
 	background: -webkit-repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
 	background: repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
