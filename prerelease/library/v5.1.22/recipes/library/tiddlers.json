@@ -17,9 +17,9 @@
         "name": "AWS",
         "description": "Amazon Web Services extensions and tools",
         "list": "readme setup commands lambda",
+        "dependents": "$:/plugins/tiddlywiki/async $:/plugins/tiddlywiki/jszip",
         "version": "5.1.22-prerelease",
         "plugin-type": "plugin",
-        "dependents": "",
         "type": "application/json",
         "readme": "This plugin provides several tools for working with Amazon Web Services:\n\n* Templates for saving a TiddlyWiki as a single JavaScript file in a ZIP file that can be executed as an AWS Lambda function. In this form, TiddlyWiki is a self contained single file containing both code and data, just like the standalone HTML file configuration\n* Commands that can be used to interact with AWS services, under both the Node.js and Lambda configurations of TiddlyWiki\n",
         "contains-javascript": "yes"
@@ -619,9 +619,9 @@
         "name": "Text Slicer",
         "description": "Tools for slicing text into tiddlers",
         "list": "readme docs",
+        "dependents": "$:/plugins/tiddlywiki/sax",
         "version": "5.1.22-prerelease",
         "plugin-type": "plugin",
-        "dependents": "",
         "type": "application/json",
         "readme": "This plugin contains tools to help slice up long texts into individual tiddlers. It currently works directly with XHTML documents and with Microsoft Word compatible DOCX documents via conversion to HTML.\n\nIt is an expression of the philosophy of TiddlyWiki: that text is easier to re-use and work with if it is sliced up into separate chunks that can be independently manipulated, and then woven back together to make up stories and narratives for publication.\n\n",
         "contains-javascript": "yes"
@@ -679,9 +679,9 @@
         "name": "XLSX Utils",
         "description": "XLSX spreadsheet utilities",
         "list": "readme controls license",
+        "dependents": "$:/plugins/tiddlywiki/jszip",
         "version": "5.1.22-prerelease",
         "plugin-type": "plugin",
-        "dependents": "",
         "type": "application/json",
         "readme": "This plugin provides a flexible way to import tiddlers from Excel files. It is based on the library [[js-xlsx|https://github.com/SheetJS/js-xlsx]].\n\nThe plugin uses //import specifications// to determine how incoming spreadsheets are processed. You can view, create and edit import specifications in the control panel \"XLSX Utilities\" tab, or directly in the [[plugin controls|$:/plugins/tiddlywiki/xlsx-utils]]. This is also where you select which import specification is selected for use during the next import operation.\n\nEach sheet is expected to consist of a single header row followed by multiple content rows, each consisting of an independent record. The plugin automatically detects the extent of each sheet by looking for the bottom right cell that contains a value. This can lead to unexpected results if a cell is accidentally created with an invisible, blank value.\n\nImport specifications describe how tiddlers are created from a particular row of a sheet; multiple tiddlers can be generated from a single row. (Conversely, if different rows yield tiddlers with the same title then they will overwrite one another).\n\nEach field of each tiddler can be assigned a constant value, or a value taken from a named column of the sheet, optionally with a prefix and/or suffix added. There is special support for handling list fields (like the tags field), with the ability to append new items to the list.\n\nInternally, each import specifier is actually modelled as a hierarchy of connected tiddlers with the field ''import-spec-role'' indicating the following roles:\n\n* ''workbook'': describes the sheets to be imported from the workbook\n* ''sheet'': describes each sheet to be processed\n* ''row'': describes the tiddlers to be imported from each row of each sheet\n* ''field'': describes the fields to be assigned to each tiddler from each row of each sheet\n\nThe easiest way to understand the structure is to explore the example import specifications, and the corresponding spreadsheets they are designed to handle.\n\nNote that there are many possible different ways of importing a particular spreadsheet, depending on whether the structures are modelled with fields, tags, prefixes or other mechanisms. The plugin is designed to support a wide range of applications.\n\nThis plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to be installed.\n",
         "contains-javascript": "yes"
