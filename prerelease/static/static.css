@@ -2347,6 +2347,7 @@ z-index: 100;
 	height: 2em;
 }.tc-plugin-info-dropdown {
 	border: 1px solid #bbb;
+	background: #ffffff;
 	margin-top: -8px;
 }.tc-plugin-info-dropdown-message {
 	background: #ecf2ff;
@@ -2355,6 +2356,7 @@ z-index: 100;
 	font-size: 0.8em;
 }.tc-plugin-info-dropdown-body {
 	padding: 1em 1em 0 1em;
+	background: #ffffff;
 }.tc-plugin-info-sub-plugins {
 	padding-top: 0.5em;
 	background: #ecf2ff;

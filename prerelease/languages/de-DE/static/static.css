@@ -1964,6 +1964,7 @@ a.tc-tiddlylink:hover {
 	height: 2em;
 }.tc-plugin-info-dropdown {
 	border: 1px solid #bbb;
+	background: #ffffff;
 	margin-top: -8px;
 }.tc-plugin-info-dropdown-message {
 	background: #ecf2ff;
@@ -1972,6 +1973,7 @@ a.tc-tiddlylink:hover {
 	font-size: 0.8em;
 }.tc-plugin-info-dropdown-body {
 	padding: 1em 1em 0 1em;
+	background: #ffffff;
 }.tc-plugin-info-sub-plugins {
 	padding-top: 0.5em;
 	background: #ecf2ff;
